@@ -449,8 +449,8 @@ Both methods are identicial except for how binarization is performed.</p><ul><li
 <li><p>3. contingency table: A contingency table is calculated based on all edges of neighboring cells and the binarized expression (0-0, 0-1, 1-0 or 1-1)</p></li>
 <li><p>4. For each gene an odds-ratio (OR) and fisher.test (optional) is calculated</p></li>
 </ul><p>Three different kmeans algorithmes have been implemented:</p><ul><li><p>1. kmeans: default, see <code><a href="https://rdrr.io/r/stats/kmeans.html" class="external-link">kmeans</a></code></p></li>
-<li><p>2. kmeans_arma: from ClusterR, see <code><a href="https://rdrr.io/pkg/ClusterR/man/KMeans_arma.html" class="external-link">KMeans_arma</a></code></p></li>
-<li><p>3. kmeans_arma_subst: from ClusterR, see <code><a href="https://rdrr.io/pkg/ClusterR/man/KMeans_arma.html" class="external-link">KMeans_arma</a></code>,
+<li><p>2. kmeans_arma: from ClusterR, see <code>KMeans_arma</code></p></li>
+<li><p>3. kmeans_arma_subst: from ClusterR, see <code>KMeans_arma</code>,
    but random subsetting the vector for each gene to increase speed. Change extreme_nr and sample_nr for control.</p></li>
 </ul><p>Other statistics are provided (optional):</p><ul><li><p>Number of cells with high expression (binary = 1)</p></li>
 <li><p>Average expression of each gene within high expressing cells</p></li>
