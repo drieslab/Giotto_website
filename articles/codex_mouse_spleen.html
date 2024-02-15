@@ -261,7 +261,7 @@
     <li class="divider">
     </li>
 <li>
-      <a href="https://drieslab.github.io/GiottoClass/articles/spatial_geometries.html">Spatial geometries</a>
+      <a href="https://drieslab.github.io/GiottoClass/articles/spatial_geometries.html" class="external-link">Spatial geometries</a>
     </li>
     <li class="divider">
     </li>
@@ -392,18 +392,18 @@ sample “BALBc-3” were selected for the analysis.</p>
 <span><span class="op">}</span></span>
 <span></span>
 <span><span class="co"># Ensure the Python environment for Giotto has been installed.</span></span>
-<span><span class="va">genv_exists</span> <span class="op">=</span> <span class="fu">Giotto</span><span class="fu">::</span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/checkGiottoEnvironment.html">checkGiottoEnvironment</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">genv_exists</span> <span class="op">=</span> <span class="fu">Giotto</span><span class="fu">::</span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/checkGiottoEnvironment.html" class="external-link">checkGiottoEnvironment</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="kw">if</span><span class="op">(</span><span class="op">!</span><span class="va">genv_exists</span><span class="op">)</span><span class="op">{</span></span>
 <span>  <span class="co"># The following command need only be run once to install the Giotto environment.</span></span>
-<span>  <span class="fu">Giotto</span><span class="fu">::</span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/installGiottoEnvironment.html">installGiottoEnvironment</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="fu">Giotto</span><span class="fu">::</span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/installGiottoEnvironment.html" class="external-link">installGiottoEnvironment</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="op">}</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="giotto-global-instructions-and-preparations">1. Giotto global instructions and preparations<a class="anchor" aria-label="anchor" href="#giotto-global-instructions-and-preparations"></a>
 </h2>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://drieslab.github.io/Giotto/">Giotto</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://drieslab.github.io/GiottoData/">GiottoData</a></span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://drieslab.github.io/Giotto/" class="external-link">Giotto</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://drieslab.github.io/GiottoData/" class="external-link">GiottoData</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># 1. set working directory</span></span>
 <span><span class="va">results_folder</span> <span class="op">=</span> <span class="st">'path/to/result'</span></span>
@@ -416,12 +416,12 @@ sample “BALBc-3” were selected for the analysis.</p>
 <code class="sourceCode R"><span><span class="co"># download data to working directory</span></span>
 <span><span class="co"># use method = 'wget' if wget is available. This should be much faster.</span></span>
 <span><span class="co"># if you run into authentication issues with wget, then add " extra = '--no-check-certificate' "</span></span>
-<span><span class="fu"><a href="https://drieslab.github.io/GiottoData/reference/getSpatialDataset.html">getSpatialDataset</a></span><span class="op">(</span>dataset <span class="op">=</span> <span class="st">'codex_spleen'</span>, </span>
+<span><span class="fu"><a href="https://drieslab.github.io/GiottoData/reference/getSpatialDataset.html" class="external-link">getSpatialDataset</a></span><span class="op">(</span>dataset <span class="op">=</span> <span class="st">'codex_spleen'</span>, </span>
 <span>                  directory <span class="op">=</span> <span class="va">results_folder</span>, </span>
 <span>                  method <span class="op">=</span> <span class="st">'wget'</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># 1. (optional) set Giotto instructions</span></span>
-<span><span class="va">instrs</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/createGiottoInstructions.html">createGiottoInstructions</a></span><span class="op">(</span>show_plot <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span><span class="va">instrs</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/createGiottoInstructions.html" class="external-link">createGiottoInstructions</a></span><span class="op">(</span>show_plot <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>                                  save_plot <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>                                  save_dir <span class="op">=</span> <span class="va">results_folder</span>,</span>
 <span>                                  python_path <span class="op">=</span> <span class="va">my_python_path</span><span class="op">)</span></span>
@@ -438,7 +438,7 @@ sample “BALBc-3” were selected for the analysis.</p>
 <code class="sourceCode R"><span><span class="co"># read in data information</span></span>
 <span></span>
 <span><span class="co"># expression info</span></span>
-<span><span class="va">codex_expression</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/readExprMatrix.html">readExprMatrix</a></span><span class="op">(</span><span class="va">expr_path</span>, transpose <span class="op">=</span> <span class="cn">F</span><span class="op">)</span></span>
+<span><span class="va">codex_expression</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/readExprMatrix.html" class="external-link">readExprMatrix</a></span><span class="op">(</span><span class="va">expr_path</span>, transpose <span class="op">=</span> <span class="cn">F</span><span class="op">)</span></span>
 <span><span class="co"># cell coordinate info</span></span>
 <span><span class="va">codex_locations</span> <span class="op">=</span> <span class="fu">data.table</span><span class="fu">::</span><span class="fu"><a href="https://rdatatable.gitlab.io/data.table/reference/fread.html" class="external-link">fread</a></span><span class="op">(</span><span class="va">loc_path</span><span class="op">)</span></span>
 <span><span class="co"># metadata</span></span>
@@ -448,26 +448,26 @@ sample “BALBc-3” were selected for the analysis.</p>
 <span><span class="va">xtilespan</span> <span class="op">=</span> <span class="fl">1344</span>;</span>
 <span><span class="va">ytilespan</span> <span class="op">=</span> <span class="fl">1008</span>;</span>
 <span><span class="co"># TODO: expand the documentation and input format of stitchTileCoordinates. Probably not enough information for new users.</span></span>
-<span><span class="va">stitch_file</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/stitchTileCoordinates.html">stitchTileCoordinates</a></span><span class="op">(</span>location_file <span class="op">=</span> <span class="va">codex_metadata</span>,</span>
+<span><span class="va">stitch_file</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/stitchTileCoordinates.html" class="external-link">stitchTileCoordinates</a></span><span class="op">(</span>location_file <span class="op">=</span> <span class="va">codex_metadata</span>,</span>
 <span>                                    Xtilespan <span class="op">=</span> <span class="va">xtilespan</span>,</span>
 <span>                                    Ytilespan <span class="op">=</span> <span class="va">ytilespan</span><span class="op">)</span></span>
 <span><span class="va">codex_locations</span> <span class="op">=</span> <span class="va">stitch_file</span><span class="op">[</span>,<span class="fu">.</span><span class="op">(</span><span class="va">Xcoord</span>, <span class="va">Ycoord</span><span class="op">)</span><span class="op">]</span></span>
 <span></span>
 <span><span class="co"># create Giotto object</span></span>
-<span><span class="va">codex_test</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/createGiottoObject.html">createGiottoObject</a></span><span class="op">(</span>expression <span class="op">=</span> <span class="va">codex_expression</span>, </span>
+<span><span class="va">codex_test</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/createGiottoObject.html" class="external-link">createGiottoObject</a></span><span class="op">(</span>expression <span class="op">=</span> <span class="va">codex_expression</span>, </span>
 <span>                                 spatial_locs <span class="op">=</span> <span class="va">codex_locations</span>,</span>
 <span>                                 instructions <span class="op">=</span> <span class="va">instrs</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">codex_metadata</span><span class="op">$</span><span class="va">cell_ID</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">as.character</a></span><span class="op">(</span><span class="va">codex_metadata</span><span class="op">$</span><span class="va">cellID</span><span class="op">)</span></span>
-<span><span class="va">codex_test</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/addCellMetadata.html">addCellMetadata</a></span><span class="op">(</span><span class="va">codex_test</span>, new_metadata <span class="op">=</span> <span class="va">codex_metadata</span>,</span>
+<span><span class="va">codex_test</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/addCellMetadata.html" class="external-link">addCellMetadata</a></span><span class="op">(</span><span class="va">codex_test</span>, new_metadata <span class="op">=</span> <span class="va">codex_metadata</span>,</span>
 <span>                              by_column <span class="op">=</span> <span class="cn">T</span>,</span>
 <span>                              column_cell_ID <span class="op">=</span> <span class="st">"cell_ID"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># subset Giotto object</span></span>
-<span><span class="va">cell_meta</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/pDataDT.html">pDataDT</a></span><span class="op">(</span><span class="va">codex_test</span><span class="op">)</span></span>
+<span><span class="va">cell_meta</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/pDataDT.html" class="external-link">pDataDT</a></span><span class="op">(</span><span class="va">codex_test</span><span class="op">)</span></span>
 <span><span class="va">cell_IDs_to_keep</span> <span class="op">=</span> <span class="va">cell_meta</span><span class="op">[</span><span class="va">Imaging_phenotype_cell_type</span> <span class="op">!=</span> <span class="st">"dirt"</span> <span class="op">&amp;</span> <span class="va">Imaging_phenotype_cell_type</span> <span class="op">!=</span> <span class="st">"noid"</span> <span class="op">&amp;</span> <span class="va">Imaging_phenotype_cell_type</span> <span class="op">!=</span> <span class="st">"capsule"</span>,<span class="op">]</span><span class="op">$</span><span class="va">cell_ID</span></span>
 <span></span>
-<span><span class="va">codex_test</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/subsetGiotto.html">subsetGiotto</a></span><span class="op">(</span><span class="va">codex_test</span>,</span>
+<span><span class="va">codex_test</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/subsetGiotto.html" class="external-link">subsetGiotto</a></span><span class="op">(</span><span class="va">codex_test</span>,</span>
 <span>                          cell_ids <span class="op">=</span> <span class="va">cell_IDs_to_keep</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co">## filter</span></span>
@@ -498,13 +498,13 @@ sample “BALBc-3” were selected for the analysis.</p>
 <span>                                 update_slot <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'custom'</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co">## visualize</span></span>
-<span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatPlot.html">spatPlot</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">codex_test</span>,point_size <span class="op">=</span> <span class="fl">0.1</span>, </span>
+<span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatPlot.html" class="external-link">spatPlot</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">codex_test</span>,point_size <span class="op">=</span> <span class="fl">0.1</span>, </span>
 <span>         coord_fix_ratio <span class="op">=</span> <span class="cn">NULL</span>,point_shape <span class="op">=</span> <span class="st">'no_border'</span>,</span>
 <span>         save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>save_name <span class="op">=</span> <span class="st">'2_a_spatPlot'</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p><img src="images/codex_mouse_spleen/2_a_spatPlot.png"></p>
 <p>Show different regions of the dataset</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatPlot.html">spatPlot</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">codex_test</span>,</span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatPlot.html" class="external-link">spatPlot</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">codex_test</span>,</span>
 <span>         point_size <span class="op">=</span> <span class="fl">0.2</span>,</span>
 <span>         coord_fix_ratio <span class="op">=</span> <span class="fl">1</span>,</span>
 <span>         cell_color <span class="op">=</span> <span class="st">'sample_Xtile_Ytile'</span>,</span>
@@ -530,7 +530,7 @@ sample “BALBc-3” were selected for the analysis.</p>
 <span>        save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>save_name <span class="op">=</span> <span class="st">'3_a_spatPlot'</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p><img src="images/codex_mouse_spleen/3_a_spatPlot.png"></p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/plotPCA.html">plotPCA</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">codex_test</span>,</span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/plotPCA.html" class="external-link">plotPCA</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">codex_test</span>,</span>
 <span>        point_shape <span class="op">=</span> <span class="st">'no_border'</span>,</span>
 <span>        point_size <span class="op">=</span> <span class="fl">0.2</span>,</span>
 <span>        save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>save_name <span class="op">=</span> <span class="st">'3_b_PCA'</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
@@ -542,7 +542,7 @@ sample “BALBc-3” were selected for the analysis.</p>
 <span>                      n_components <span class="op">=</span> <span class="fl">2</span>,</span>
 <span>                      n_threads <span class="op">=</span> <span class="fl">12</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/plotUMAP.html">plotUMAP</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">codex_test</span>,</span>
+<span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/plotUMAP.html" class="external-link">plotUMAP</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">codex_test</span>,</span>
 <span>         point_shape <span class="op">=</span> <span class="st">'no_border'</span>,</span>
 <span>         point_size <span class="op">=</span> <span class="fl">0.2</span>,</span>
 <span>         save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>save_name <span class="op">=</span> <span class="st">'3_c_UMAP'</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
@@ -553,7 +553,7 @@ sample “BALBc-3” were selected for the analysis.</p>
 </h2>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## sNN network (default)</span></span>
-<span><span class="va">codex_test</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/createNearestNetwork.html">createNearestNetwork</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">codex_test</span>,</span>
+<span><span class="va">codex_test</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/createNearestNetwork.html" class="external-link">createNearestNetwork</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">codex_test</span>,</span>
 <span>                                   dimensions_to_use <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">14</span>,</span>
 <span>                                   k <span class="op">=</span> <span class="fl">20</span><span class="op">)</span></span>
 <span></span>
@@ -563,11 +563,11 @@ sample “BALBc-3” were selected for the analysis.</p>
 <span>                              n_iterations <span class="op">=</span> <span class="fl">100</span>,</span>
 <span>                              name <span class="op">=</span> <span class="st">'leiden'</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">codex_metadata</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/pDataDT.html">pDataDT</a></span><span class="op">(</span><span class="va">codex_test</span><span class="op">)</span></span>
-<span><span class="va">leiden_colors</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/Giotto/reference/getDistinctColors.html">getDistinctColors</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">codex_metadata</span><span class="op">$</span><span class="va">leiden</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">codex_metadata</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/pDataDT.html" class="external-link">pDataDT</a></span><span class="op">(</span><span class="va">codex_test</span><span class="op">)</span></span>
+<span><span class="va">leiden_colors</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/Giotto/reference/getDistinctColors.html" class="external-link">getDistinctColors</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">codex_metadata</span><span class="op">$</span><span class="va">leiden</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">leiden_colors</span><span class="op">)</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">codex_metadata</span><span class="op">$</span><span class="va">leiden</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/plotUMAP.html">plotUMAP</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">codex_test</span>, </span>
+<span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/plotUMAP.html" class="external-link">plotUMAP</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">codex_test</span>, </span>
 <span>         cell_color <span class="op">=</span> <span class="st">'leiden'</span>,</span>
 <span>         point_shape <span class="op">=</span> <span class="st">'no_border'</span>,</span>
 <span>         point_size <span class="op">=</span> <span class="fl">0.2</span>,</span>
@@ -575,7 +575,7 @@ sample “BALBc-3” were selected for the analysis.</p>
 <span>         save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>save_name <span class="op">=</span> <span class="st">'4_a_UMAP'</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p><img src="images/codex_mouse_spleen/4_a_UMAP.png"></p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatPlot.html">spatPlot</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">codex_test</span>,</span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatPlot.html" class="external-link">spatPlot</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">codex_test</span>,</span>
 <span>         cell_color <span class="op">=</span> <span class="st">'leiden'</span>,</span>
 <span>         point_shape <span class="op">=</span> <span class="st">'no_border'</span>,</span>
 <span>         point_size <span class="op">=</span> <span class="fl">0.2</span>, </span>
@@ -591,7 +591,7 @@ sample “BALBc-3” were selected for the analysis.</p>
 <h2 id="co-visualize">5. Co-visualize<a class="anchor" aria-label="anchor" href="#co-visualize"></a>
 </h2>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatDimPlot.html">spatDimPlot2D</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">codex_test</span>,</span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatDimPlot.html" class="external-link">spatDimPlot2D</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">codex_test</span>,</span>
 <span>              cell_color <span class="op">=</span> <span class="st">'leiden'</span>,</span>
 <span>              spat_point_shape <span class="op">=</span> <span class="st">'no_border'</span>, </span>
 <span>              spat_point_size <span class="op">=</span> <span class="fl">0.2</span>,</span>
@@ -616,7 +616,7 @@ sample “BALBc-3” were selected for the analysis.</p>
 <span></span>
 <span><span class="va">markergenes_scran</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">markers_scran</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">.SD</span>, <span class="fl">5</span><span class="op">)</span>, by<span class="op">=</span><span class="st">"cluster"</span><span class="op">]</span><span class="op">[[</span><span class="st">"feats"</span><span class="op">]</span><span class="op">]</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/plotMetaDataHeatmap.html">plotMetaDataHeatmap</a></span><span class="op">(</span><span class="va">codex_test</span>,</span>
+<span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/plotMetaDataHeatmap.html" class="external-link">plotMetaDataHeatmap</a></span><span class="op">(</span><span class="va">codex_test</span>,</span>
 <span>                    expression_values <span class="op">=</span> <span class="st">"normalized"</span>,</span>
 <span>                    metadata_cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">cluster_column</span><span class="op">)</span>, </span>
 <span>                    selected_feats <span class="op">=</span> <span class="va">markergenes_scran</span>,</span>
@@ -627,7 +627,7 @@ sample “BALBc-3” were selected for the analysis.</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">topgenes_scran</span> <span class="op">=</span> <span class="va">markers_scran</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">.SD</span>, <span class="fl">1</span><span class="op">)</span>, by <span class="op">=</span> <span class="st">'cluster'</span><span class="op">]</span><span class="op">$</span><span class="va">feats</span></span>
 <span></span>
-<span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/violinPlot.html">violinPlot</a></span><span class="op">(</span><span class="va">codex_test</span>,</span>
+<span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/violinPlot.html" class="external-link">violinPlot</a></span><span class="op">(</span><span class="va">codex_test</span>,</span>
 <span>           feats <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">topgenes_scran</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">8</span><span class="op">]</span>,</span>
 <span>           cluster_column <span class="op">=</span> <span class="va">cluster_column</span>,</span>
 <span>           strip_text <span class="op">=</span> <span class="fl">8</span>,</span>
@@ -644,7 +644,7 @@ sample “BALBc-3” were selected for the analysis.</p>
 <span></span>
 <span><span class="va">markergenes_gini</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">markers_gini</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">.SD</span>, <span class="fl">5</span><span class="op">)</span>, by <span class="op">=</span> <span class="st">"cluster"</span><span class="op">]</span><span class="op">[[</span><span class="st">"feats"</span><span class="op">]</span><span class="op">]</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/plotMetaDataHeatmap.html">plotMetaDataHeatmap</a></span><span class="op">(</span><span class="va">codex_test</span>,</span>
+<span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/plotMetaDataHeatmap.html" class="external-link">plotMetaDataHeatmap</a></span><span class="op">(</span><span class="va">codex_test</span>,</span>
 <span>                    expression_values <span class="op">=</span> <span class="st">"normalized"</span>, </span>
 <span>                    metadata_cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">cluster_column</span><span class="op">)</span>,</span>
 <span>                    selected_feats <span class="op">=</span> <span class="va">markergenes_gini</span>,</span>
@@ -654,7 +654,7 @@ sample “BALBc-3” were selected for the analysis.</p>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">topgenes_gini</span> <span class="op">=</span> <span class="va">markers_gini</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">.SD</span>, <span class="fl">1</span><span class="op">)</span>, by <span class="op">=</span> <span class="st">'cluster'</span><span class="op">]</span><span class="op">$</span><span class="va">feats</span></span>
 <span></span>
-<span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/violinPlot.html">violinPlot</a></span><span class="op">(</span><span class="va">codex_test</span>,</span>
+<span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/violinPlot.html" class="external-link">violinPlot</a></span><span class="op">(</span><span class="va">codex_test</span>,</span>
 <span>           feats <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">topgenes_gini</span><span class="op">)</span>,</span>
 <span>           cluster_column <span class="op">=</span> <span class="va">cluster_column</span>,</span>
 <span>           strip_text <span class="op">=</span> <span class="fl">8</span>,</span>
@@ -673,12 +673,12 @@ sample “BALBc-3” were selected for the analysis.</p>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">clusters_cell_types</span><span class="op">)</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">15</span>,<span class="fl">13</span>,<span class="fl">5</span>,<span class="fl">8</span>,<span class="fl">9</span>,<span class="fl">19</span>,<span class="fl">1</span>,<span class="fl">10</span>,<span class="fl">3</span>,<span class="fl">12</span>,<span class="fl">14</span>,<span class="fl">4</span>,<span class="fl">6</span>,<span class="fl">7</span>,<span class="fl">16</span>,<span class="fl">17</span>,<span class="fl">18</span>,<span class="fl">11</span>,<span class="fl">20</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">codex_test</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/annotateGiotto.html">annotateGiotto</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">codex_test</span>,</span>
+<span><span class="va">codex_test</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/annotateGiotto.html" class="external-link">annotateGiotto</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">codex_test</span>,</span>
 <span>                            annotation_vector <span class="op">=</span> <span class="va">clusters_cell_types</span>,</span>
 <span>                            cluster_column <span class="op">=</span> <span class="st">'leiden'</span>, </span>
 <span>                            name <span class="op">=</span> <span class="st">'cell_types'</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/plotUMAP.html">plotUMAP</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">codex_test</span>,</span>
+<span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/plotUMAP.html" class="external-link">plotUMAP</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">codex_test</span>,</span>
 <span>         cell_color <span class="op">=</span> <span class="st">'cell_types'</span>,</span>
 <span>         point_shape <span class="op">=</span> <span class="st">'no_border'</span>,</span>
 <span>         point_size <span class="op">=</span> <span class="fl">0.2</span>,</span>
@@ -690,7 +690,7 @@ sample “BALBc-3” were selected for the analysis.</p>
 <p><img src="images/codex_mouse_spleen/7_a_umap_celltypes.png"></p>
 <p>Or, this dataset comes with the imaging phenotype annotation</p>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/plotUMAP.html">plotUMAP</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">codex_test</span>,</span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/plotUMAP.html" class="external-link">plotUMAP</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">codex_test</span>,</span>
 <span>         cell_color <span class="op">=</span> <span class="st">'Imaging_phenotype_cell_type'</span>,</span>
 <span>         point_shape <span class="op">=</span> <span class="st">'no_border'</span>,</span>
 <span>         point_size <span class="op">=</span> <span class="fl">0.2</span>,</span>
@@ -701,7 +701,7 @@ sample “BALBc-3” were selected for the analysis.</p>
 <span>         save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>save_name <span class="op">=</span> <span class="st">'7_b_umap'</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p><img src="images/codex_mouse_spleen/7_b_umap.png"></p>
 <div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatPlot.html">spatPlot</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">codex_test</span>,</span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatPlot.html" class="external-link">spatPlot</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">codex_test</span>,</span>
 <span>         cell_color <span class="op">=</span> <span class="st">'Imaging_phenotype_cell_type'</span>,</span>
 <span>         point_shape <span class="op">=</span> <span class="st">'no_border'</span>,</span>
 <span>         point_size <span class="op">=</span> <span class="fl">0.2</span>, </span>
@@ -716,13 +716,13 @@ sample “BALBc-3” were selected for the analysis.</p>
 <h2 id="visualize-cell-types-and-gene-expression-in-selected-zones">8. Visualize cell types and gene expression in selected zones<a class="anchor" aria-label="anchor" href="#visualize-cell-types-and-gene-expression-in-selected-zones"></a>
 </h2>
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">cell_metadata</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/pDataDT.html">pDataDT</a></span><span class="op">(</span><span class="va">codex_test</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="va">cell_metadata</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/pDataDT.html" class="external-link">pDataDT</a></span><span class="op">(</span><span class="va">codex_test</span><span class="op">)</span></span>
 <span><span class="va">subset_cell_ids</span> <span class="op">=</span> <span class="va">cell_metadata</span><span class="op">[</span><span class="va">sample_Xtile_Ytile</span><span class="op">==</span><span class="st">"BALBc-3_X04_Y08"</span><span class="op">]</span><span class="op">$</span><span class="va">cell_ID</span></span>
 <span></span>
-<span><span class="va">codex_test_zone1</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/subsetGiotto.html">subsetGiotto</a></span><span class="op">(</span><span class="va">codex_test</span>,</span>
+<span><span class="va">codex_test_zone1</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/subsetGiotto.html" class="external-link">subsetGiotto</a></span><span class="op">(</span><span class="va">codex_test</span>,</span>
 <span>                                cell_ids <span class="op">=</span> <span class="va">subset_cell_ids</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/plotUMAP.html">plotUMAP</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">codex_test_zone1</span>, </span>
+<span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/plotUMAP.html" class="external-link">plotUMAP</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">codex_test_zone1</span>, </span>
 <span>         cell_color <span class="op">=</span> <span class="st">'Imaging_phenotype_cell_type'</span>,</span>
 <span>         point_shape <span class="op">=</span> <span class="st">'no_border'</span>,</span>
 <span>         point_size <span class="op">=</span> <span class="fl">1</span>,</span>
@@ -733,7 +733,7 @@ sample “BALBc-3” were selected for the analysis.</p>
 <span>         save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>save_name <span class="op">=</span> <span class="st">'8_a_umap'</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p><img src="images/codex_mouse_spleen/8_a_umap.png"></p>
 <div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatPlot.html">spatPlot</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">codex_test_zone1</span>, </span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatPlot.html" class="external-link">spatPlot</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">codex_test_zone1</span>, </span>
 <span>         cell_color <span class="op">=</span> <span class="st">'Imaging_phenotype_cell_type'</span>,</span>
 <span>         point_shape <span class="op">=</span> <span class="st">'no_border'</span>,</span>
 <span>         point_size <span class="op">=</span> <span class="fl">1</span>, </span>
@@ -744,7 +744,7 @@ sample “BALBc-3” were selected for the analysis.</p>
 <span>         save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>save_name <span class="op">=</span> <span class="st">'8_b_spatplot'</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p><img src="images/codex_mouse_spleen/8_b_spatplot.png"></p>
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatDimFeatPlot2D.html">spatDimFeatPlot2D</a></span><span class="op">(</span><span class="va">codex_test_zone1</span>, </span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatDimFeatPlot2D.html" class="external-link">spatDimFeatPlot2D</a></span><span class="op">(</span><span class="va">codex_test_zone1</span>, </span>
 <span>                  expression_values <span class="op">=</span> <span class="st">'scaled'</span>,</span>
 <span>                  feats <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"CD8a"</span>,<span class="st">"CD19"</span><span class="op">)</span>,</span>
 <span>                  spat_point_shape <span class="op">=</span> <span class="st">'no_border'</span>,</span>
@@ -754,14 +754,14 @@ sample “BALBc-3” were selected for the analysis.</p>
 <p><img src="images/codex_mouse_spleen/8_c_spatdimplot.png"></p>
 <p>Test on another region:</p>
 <div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">cell_metadata</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/pDataDT.html">pDataDT</a></span><span class="op">(</span><span class="va">codex_test</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="va">cell_metadata</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/pDataDT.html" class="external-link">pDataDT</a></span><span class="op">(</span><span class="va">codex_test</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">subset_cell_ids</span> <span class="op">=</span> <span class="va">cell_metadata</span><span class="op">[</span><span class="va">sample_Xtile_Ytile</span><span class="op">==</span><span class="st">"BALBc-3_X04_Y03"</span><span class="op">]</span><span class="op">$</span><span class="va">cell_ID</span></span>
 <span></span>
-<span><span class="va">codex_test_zone2</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/subsetGiotto.html">subsetGiotto</a></span><span class="op">(</span><span class="va">codex_test</span>, </span>
+<span><span class="va">codex_test_zone2</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/subsetGiotto.html" class="external-link">subsetGiotto</a></span><span class="op">(</span><span class="va">codex_test</span>, </span>
 <span>                                cell_ids <span class="op">=</span> <span class="va">subset_cell_ids</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/plotUMAP.html">plotUMAP</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">codex_test_zone2</span>,</span>
+<span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/plotUMAP.html" class="external-link">plotUMAP</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">codex_test_zone2</span>,</span>
 <span>         cell_color <span class="op">=</span> <span class="st">'Imaging_phenotype_cell_type'</span>,</span>
 <span>         point_shape <span class="op">=</span> <span class="st">'no_border'</span>,</span>
 <span>         point_size <span class="op">=</span> <span class="fl">1</span>,</span>
@@ -772,7 +772,7 @@ sample “BALBc-3” were selected for the analysis.</p>
 <span>         save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>save_name <span class="op">=</span> <span class="st">'8_d_umap'</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p><img src="images/codex_mouse_spleen/8_d_umap.png"></p>
 <div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatPlot.html">spatPlot</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">codex_test_zone2</span>,</span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatPlot.html" class="external-link">spatPlot</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">codex_test_zone2</span>,</span>
 <span>         cell_color <span class="op">=</span> <span class="st">'Imaging_phenotype_cell_type'</span>,</span>
 <span>         point_shape <span class="op">=</span> <span class="st">'no_border'</span>,</span>
 <span>         point_size <span class="op">=</span> <span class="fl">1</span>, </span>
@@ -783,7 +783,7 @@ sample “BALBc-3” were selected for the analysis.</p>
 <span>         save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>save_name <span class="op">=</span> <span class="st">'8_e_spatPlot'</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p><img src="images/codex_mouse_spleen/8_e_spatPlot.png"></p>
 <div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatDimFeatPlot2D.html">spatDimFeatPlot2D</a></span><span class="op">(</span><span class="va">codex_test_zone2</span>, </span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatDimFeatPlot2D.html" class="external-link">spatDimFeatPlot2D</a></span><span class="op">(</span><span class="va">codex_test_zone2</span>, </span>
 <span>                  expression_values <span class="op">=</span> <span class="st">'scaled'</span>,</span>
 <span>                  feats <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"CD4"</span>, <span class="st">"CD106"</span><span class="op">)</span>,</span>
 <span>                  spat_point_shape <span class="op">=</span> <span class="st">'no_border'</span>,</span>

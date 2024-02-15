@@ -261,7 +261,7 @@
     <li class="divider">
     </li>
 <li>
-      <a href="https://drieslab.github.io/GiottoClass/articles/spatial_geometries.html">Spatial geometries</a>
+      <a href="https://drieslab.github.io/GiottoClass/articles/spatial_geometries.html" class="external-link">Spatial geometries</a>
     </li>
     <li class="divider">
     </li>
@@ -415,11 +415,11 @@ ambiguity.</p>
 <p>A summary of what information the object contains can be viewed by
 directly returning it.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://drieslab.github.io/Giotto/">Giotto</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://drieslab.github.io/GiottoData/">GiottoData</a></span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://drieslab.github.io/Giotto/" class="external-link">Giotto</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://drieslab.github.io/GiottoData/" class="external-link">GiottoData</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://r-datatable.com" class="external-link">data.table</a></span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">vizmini</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoData/reference/loadGiottoMini.html">loadGiottoMini</a></span><span class="op">(</span><span class="st">'vizgen'</span><span class="op">)</span></span></code></pre></div>
+<span><span class="va">vizmini</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoData/reference/loadGiottoMini.html" class="external-link">loadGiottoMini</a></span><span class="op">(</span><span class="st">'vizgen'</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">vizmini</span></span></code></pre></div>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    An object of class giotto </span>
@@ -830,7 +830,7 @@ information exists within each of these slots and its nesting.</p>
 the slot, but do not return information</li>
 </ul>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/showGiottoSpatLocs.html">showGiottoSpatLocs</a></span><span class="op">(</span><span class="va">vizmini</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/showGiottoSpatLocs.html" class="external-link">showGiottoSpatLocs</a></span><span class="op">(</span><span class="va">vizmini</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    ├──Spatial unit <span class="st">"z0"</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    │  └──S4 spatLocsObj <span class="st">"raw"</span> coordinates<span class="sc">:</span>   (<span class="dv">498</span> rows)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    │        An object of class spatLocsObj </span>
@@ -920,8 +920,8 @@ within a tissue. The aggregated information produced then could be drawn
 from different z-planes or combinations thereof. Giotto tracks this
 provenance information for each set of aggregated data.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">expr_mat</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/getExpression.html">getExpression</a></span><span class="op">(</span><span class="va">vizmini</span>, spat_unit <span class="op">=</span> <span class="st">'aggregate'</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/prov-generic.html">prov</a></span><span class="op">(</span><span class="va">expr_mat</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">expr_mat</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/getExpression.html" class="external-link">getExpression</a></span><span class="op">(</span><span class="va">vizmini</span>, spat_unit <span class="op">=</span> <span class="st">'aggregate'</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/prov-generic.html" class="external-link">prov</a></span><span class="op">(</span><span class="va">expr_mat</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">1</span>] <span class="st">"z0"</span> <span class="st">"z1"</span></span></code></pre></div>
 </div>
 </div>
@@ -961,15 +961,15 @@ the <code>[</code> and <code>[&lt;-</code> generics (see Section
 <p>For directly creating a subobject, constructor functions can be
 used.</p>
 <p>constructors</p>
-<p><code><a href="https://drieslab.github.io/GiottoClass/reference/createExprObj.html">createExprObj()</a></code> <code><a href="https://drieslab.github.io/GiottoClass/reference/createCellMetaObj.html">createCellMetaObj()</a></code>
-<code><a href="https://drieslab.github.io/GiottoClass/reference/createFeatMetaObj.html">createFeatMetaObj()</a></code> <code><a href="https://drieslab.github.io/GiottoClass/reference/createDimObj.html">createDimObj()</a></code>
-<code><a href="https://drieslab.github.io/GiottoClass/reference/createNearestNetObj.html">createNearestNetObj()</a></code> <code><a href="https://drieslab.github.io/GiottoClass/reference/createSpatLocsObj.html">createSpatLocsObj()</a></code>
-<code><a href="https://drieslab.github.io/GiottoClass/reference/createSpatNetObj.html">createSpatNetObj()</a></code> <code><a href="https://drieslab.github.io/GiottoClass/reference/createSpatEnrObj.html">createSpatEnrObj()</a></code>
-<code><a href="https://drieslab.github.io/GiottoClass/reference/createSpatialGrid.html">createSpatialGrid()</a></code> <code><a href="https://drieslab.github.io/GiottoClass/reference/createGiottoPoints.html">createGiottoPoints()</a></code>
-<code><a href="https://drieslab.github.io/GiottoClass/reference/createGiottoPolygon.html">createGiottoPolygonsFromDfr()</a></code>
-<code><a href="https://drieslab.github.io/GiottoClass/reference/createGiottoPolygon.html">createGiottoPolygonsFromMask()</a></code>
-<code><a href="https://drieslab.github.io/GiottoClass/reference/createGiottoImage.html">createGiottoImage()</a></code>
-<code><a href="https://drieslab.github.io/GiottoClass/reference/createGiottoLargeImage.html">createGiottoLargeImage()</a></code></p>
+<p><code><a href="https://drieslab.github.io/GiottoClass/reference/createExprObj.html" class="external-link">createExprObj()</a></code> <code><a href="https://drieslab.github.io/GiottoClass/reference/createCellMetaObj.html" class="external-link">createCellMetaObj()</a></code>
+<code><a href="https://drieslab.github.io/GiottoClass/reference/createFeatMetaObj.html" class="external-link">createFeatMetaObj()</a></code> <code><a href="https://drieslab.github.io/GiottoClass/reference/createDimObj.html" class="external-link">createDimObj()</a></code>
+<code><a href="https://drieslab.github.io/GiottoClass/reference/createNearestNetObj.html" class="external-link">createNearestNetObj()</a></code> <code><a href="https://drieslab.github.io/GiottoClass/reference/createSpatLocsObj.html" class="external-link">createSpatLocsObj()</a></code>
+<code><a href="https://drieslab.github.io/GiottoClass/reference/createSpatNetObj.html" class="external-link">createSpatNetObj()</a></code> <code><a href="https://drieslab.github.io/GiottoClass/reference/createSpatEnrObj.html" class="external-link">createSpatEnrObj()</a></code>
+<code><a href="https://drieslab.github.io/GiottoClass/reference/createSpatialGrid.html" class="external-link">createSpatialGrid()</a></code> <code><a href="https://drieslab.github.io/GiottoClass/reference/createGiottoPoints.html" class="external-link">createGiottoPoints()</a></code>
+<code><a href="https://drieslab.github.io/GiottoClass/reference/createGiottoPolygon.html" class="external-link">createGiottoPolygonsFromDfr()</a></code>
+<code><a href="https://drieslab.github.io/GiottoClass/reference/createGiottoPolygon.html" class="external-link">createGiottoPolygonsFromMask()</a></code>
+<code><a href="https://drieslab.github.io/GiottoClass/reference/createGiottoImage.html" class="external-link">createGiottoImage()</a></code>
+<code><a href="https://drieslab.github.io/GiottoClass/reference/createGiottoLargeImage.html" class="external-link">createGiottoLargeImage()</a></code></p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">coords</span> <span class="op">=</span> <span class="fu"><a href="https://rdatatable.gitlab.io/data.table/reference/data.table.html" class="external-link">data.table</a></span><span class="op">(</span></span>
 <span>  sdimx <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span><span class="op">)</span>,</span>
@@ -977,7 +977,7 @@ used.</p>
 <span>  cell_ID <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'A'</span>,<span class="st">'B'</span>,<span class="st">'C'</span><span class="op">)</span></span>
 <span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">st</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/createSpatLocsObj.html">createSpatLocsObj</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">'test'</span>,</span>
+<span><span class="va">st</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/createSpatLocsObj.html" class="external-link">createSpatLocsObj</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">'test'</span>,</span>
 <span>                       spat_unit <span class="op">=</span> <span class="st">'cell'</span>,</span>
 <span>                       coordinates <span class="op">=</span> <span class="va">coords</span>,</span>
 <span>                       provenance <span class="op">=</span> <span class="st">'cell'</span><span class="op">)</span></span></code></pre></div>
@@ -1010,13 +1010,13 @@ matrix. Other non numeric columns will be removed</p>
 of raw data input and convert them to lists of subobjects which are
 directly usable by the setter functions.</p>
 <p>readers</p>
-<p><code><a href="https://drieslab.github.io/GiottoClass/reference/readPolygonData.html">readPolygonData()</a></code> <code><a href="https://drieslab.github.io/GiottoClass/reference/readFeatData.html">readFeatData()</a></code>
-<code><a href="https://drieslab.github.io/GiottoClass/reference/readExprData.html">readExprData()</a></code> <code><a href="https://drieslab.github.io/GiottoClass/reference/readCellMetadata.html">readCellMetadata()</a></code>
-<code><a href="https://drieslab.github.io/GiottoClass/reference/readFeatMetadata.html">readFeatMetadata()</a></code> <code><a href="https://drieslab.github.io/GiottoClass/reference/readSpatLocsData.html">readSpatLocsData()</a></code>
-<code><a href="https://drieslab.github.io/GiottoClass/reference/readSpatNetData.html">readSpatNetData()</a></code> <code><a href="https://drieslab.github.io/GiottoClass/reference/readSpatEnrichData.html">readSpatEnrichData()</a></code>
-<code><a href="https://drieslab.github.io/GiottoClass/reference/readDimReducData.html">readDimReducData()</a></code> <code><a href="https://drieslab.github.io/GiottoClass/reference/readNearestNetData.html">readNearestNetData()</a></code></p>
+<p><code><a href="https://drieslab.github.io/GiottoClass/reference/readPolygonData.html" class="external-link">readPolygonData()</a></code> <code><a href="https://drieslab.github.io/GiottoClass/reference/readFeatData.html" class="external-link">readFeatData()</a></code>
+<code><a href="https://drieslab.github.io/GiottoClass/reference/readExprData.html" class="external-link">readExprData()</a></code> <code><a href="https://drieslab.github.io/GiottoClass/reference/readCellMetadata.html" class="external-link">readCellMetadata()</a></code>
+<code><a href="https://drieslab.github.io/GiottoClass/reference/readFeatMetadata.html" class="external-link">readFeatMetadata()</a></code> <code><a href="https://drieslab.github.io/GiottoClass/reference/readSpatLocsData.html" class="external-link">readSpatLocsData()</a></code>
+<code><a href="https://drieslab.github.io/GiottoClass/reference/readSpatNetData.html" class="external-link">readSpatNetData()</a></code> <code><a href="https://drieslab.github.io/GiottoClass/reference/readSpatEnrichData.html" class="external-link">readSpatEnrichData()</a></code>
+<code><a href="https://drieslab.github.io/GiottoClass/reference/readDimReducData.html" class="external-link">readDimReducData()</a></code> <code><a href="https://drieslab.github.io/GiottoClass/reference/readNearestNetData.html" class="external-link">readNearestNetData()</a></code></p>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">st2</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/readSpatLocsData.html">readSpatLocsData</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>cell2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>test1 <span class="op">=</span> <span class="va">coords</span>,</span>
+<code class="sourceCode R"><span><span class="va">st2</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/readSpatLocsData.html" class="external-link">readSpatLocsData</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>cell2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>test1 <span class="op">=</span> <span class="va">coords</span>,</span>
 <span>                                         test2 <span class="op">=</span> <span class="va">coords</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>    list depth of <span class="dv">2</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1082,21 +1082,21 @@ External data can read into the appropriate formats using the above
 <code>reader</code> functions. The <code>getter</code> functions return
 S4 subobjects by default.</p>
 <p>getters</p>
-<p><code><a href="https://drieslab.github.io/GiottoClass/reference/getExpression.html">getExpression()</a></code> <code><a href="https://drieslab.github.io/GiottoClass/reference/getCellMetadata.html">getCellMetadata()</a></code>
-<code>getFeatMetadata()</code> <code><a href="https://drieslab.github.io/GiottoClass/reference/getSpatialLocations.html">getSpatialLocations()</a></code>
-<code><a href="https://drieslab.github.io/GiottoClass/reference/getDimReduction.html">getDimReduction()</a></code> <code><a href="https://drieslab.github.io/GiottoClass/reference/getNearestNetwork.html">getNearestNetwork()</a></code>
-<code><a href="https://drieslab.github.io/GiottoClass/reference/getSpatialNetwork.html">getSpatialNetwork()</a></code> <code><a href="https://drieslab.github.io/GiottoClass/reference/getPolygonInfo.html">getPolygonInfo()</a></code>
-<code><a href="https://drieslab.github.io/GiottoClass/reference/getFeatureInfo.html">getFeatureInfo()</a></code> <code><a href="https://drieslab.github.io/GiottoClass/reference/getSpatialEnrichment.html">getSpatialEnrichment()</a></code>
-<code><a href="https://drieslab.github.io/GiottoClass/reference/getGiottoImage.html">getGiottoImage()</a></code></p>
+<p><code><a href="https://drieslab.github.io/GiottoClass/reference/getExpression.html" class="external-link">getExpression()</a></code> <code><a href="https://drieslab.github.io/GiottoClass/reference/getCellMetadata.html" class="external-link">getCellMetadata()</a></code>
+<code>getFeatMetadata()</code> <code><a href="https://drieslab.github.io/GiottoClass/reference/getSpatialLocations.html" class="external-link">getSpatialLocations()</a></code>
+<code><a href="https://drieslab.github.io/GiottoClass/reference/getDimReduction.html" class="external-link">getDimReduction()</a></code> <code><a href="https://drieslab.github.io/GiottoClass/reference/getNearestNetwork.html" class="external-link">getNearestNetwork()</a></code>
+<code><a href="https://drieslab.github.io/GiottoClass/reference/getSpatialNetwork.html" class="external-link">getSpatialNetwork()</a></code> <code><a href="https://drieslab.github.io/GiottoClass/reference/getPolygonInfo.html" class="external-link">getPolygonInfo()</a></code>
+<code><a href="https://drieslab.github.io/GiottoClass/reference/getFeatureInfo.html" class="external-link">getFeatureInfo()</a></code> <code><a href="https://drieslab.github.io/GiottoClass/reference/getSpatialEnrichment.html" class="external-link">getSpatialEnrichment()</a></code>
+<code><a href="https://drieslab.github.io/GiottoClass/reference/getGiottoImage.html" class="external-link">getGiottoImage()</a></code></p>
 <p>setters</p>
-<p><code><a href="https://drieslab.github.io/GiottoClass/reference/setExpression.html">setExpression()</a></code> <code><a href="https://drieslab.github.io/GiottoClass/reference/setCellMetadata.html">setCellMetadata()</a></code>
-<code><a href="https://drieslab.github.io/GiottoClass/reference/setFeatureMetadata.html">setFeatureMetadata()</a></code> <code><a href="https://drieslab.github.io/GiottoClass/reference/setSpatialLocations.html">setSpatialLocations()</a></code>
-<code><a href="https://drieslab.github.io/GiottoClass/reference/setDimReduction.html">setDimReduction()</a></code> <code><a href="https://drieslab.github.io/GiottoClass/reference/setNearestNetwork.html">setNearestNetwork()</a></code>
-<code><a href="https://drieslab.github.io/GiottoClass/reference/setSpatialNetwork.html">setSpatialNetwork()</a></code> <code><a href="https://drieslab.github.io/GiottoClass/reference/setPolygonInfo.html">setPolygonInfo()</a></code>
-<code><a href="https://drieslab.github.io/GiottoClass/reference/setFeatureInfo.html">setFeatureInfo()</a></code> <code><a href="https://drieslab.github.io/GiottoClass/reference/setSpatialEnrichment.html">setSpatialEnrichment()</a></code>
-<code><a href="https://drieslab.github.io/GiottoClass/reference/setGiottoImage.html">setGiottoImage()</a></code></p>
+<p><code><a href="https://drieslab.github.io/GiottoClass/reference/setExpression.html" class="external-link">setExpression()</a></code> <code><a href="https://drieslab.github.io/GiottoClass/reference/setCellMetadata.html" class="external-link">setCellMetadata()</a></code>
+<code><a href="https://drieslab.github.io/GiottoClass/reference/setFeatureMetadata.html" class="external-link">setFeatureMetadata()</a></code> <code><a href="https://drieslab.github.io/GiottoClass/reference/setSpatialLocations.html" class="external-link">setSpatialLocations()</a></code>
+<code><a href="https://drieslab.github.io/GiottoClass/reference/setDimReduction.html" class="external-link">setDimReduction()</a></code> <code><a href="https://drieslab.github.io/GiottoClass/reference/setNearestNetwork.html" class="external-link">setNearestNetwork()</a></code>
+<code><a href="https://drieslab.github.io/GiottoClass/reference/setSpatialNetwork.html" class="external-link">setSpatialNetwork()</a></code> <code><a href="https://drieslab.github.io/GiottoClass/reference/setPolygonInfo.html" class="external-link">setPolygonInfo()</a></code>
+<code><a href="https://drieslab.github.io/GiottoClass/reference/setFeatureInfo.html" class="external-link">setFeatureInfo()</a></code> <code><a href="https://drieslab.github.io/GiottoClass/reference/setSpatialEnrichment.html" class="external-link">setSpatialEnrichment()</a></code>
+<code><a href="https://drieslab.github.io/GiottoClass/reference/setGiottoImage.html" class="external-link">setGiottoImage()</a></code></p>
 <div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">expval</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/getExpression.html">getExpression</a></span><span class="op">(</span><span class="va">vizmini</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="va">expval</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/getExpression.html" class="external-link">getExpression</a></span><span class="op">(</span><span class="va">vizmini</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">expval</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>    An object of class exprObj <span class="sc">:</span> <span class="st">"raw"</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    spat_unit <span class="sc">:</span> <span class="st">"z0"</span></span>
@@ -1125,23 +1125,23 @@ S4 subobjects by default.</p>
 <div class="section level3">
 <h3 id="get-and-set-s4-spat_unit-feat_type-provenance">3.3 Get and set S4 spat_unit, feat_type, provenance<a class="anchor" aria-label="anchor" href="#get-and-set-s4-spat_unit-feat_type-provenance"></a>
 </h3>
-<p><code><a href="https://drieslab.github.io/GiottoClass/reference/spatUnit-generic.html">spatUnit()</a></code>, <code><a href="https://drieslab.github.io/GiottoClass/reference/featType-generic.html">featType()</a></code>, and
-<code><a href="https://drieslab.github.io/GiottoClass/reference/prov-generic.html">prov()</a></code> are replacement functions for tagged spatial unit,
+<p><code><a href="https://drieslab.github.io/GiottoClass/reference/spatUnit-generic.html" class="external-link">spatUnit()</a></code>, <code><a href="https://drieslab.github.io/GiottoClass/reference/featType-generic.html" class="external-link">featType()</a></code>, and
+<code><a href="https://drieslab.github.io/GiottoClass/reference/prov-generic.html" class="external-link">prov()</a></code> are replacement functions for tagged spatial unit,
 feature type, and provenance information respectively.</p>
 <div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># spat_unit</span></span>
-<span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/spatUnit-generic.html">spatUnit</a></span><span class="op">(</span><span class="va">expval</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="st">'new_spat'</span></span>
-<span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/spatUnit-generic.html">spatUnit</a></span><span class="op">(</span><span class="va">expval</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/spatUnit-generic.html" class="external-link">spatUnit</a></span><span class="op">(</span><span class="va">expval</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="st">'new_spat'</span></span>
+<span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/spatUnit-generic.html" class="external-link">spatUnit</a></span><span class="op">(</span><span class="va">expval</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">1</span>] <span class="st">"new_spat"</span></span></code></pre></div>
 <div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># feat_type</span></span>
-<span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/featType-generic.html">featType</a></span><span class="op">(</span><span class="va">expval</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="st">'new_feat'</span></span>
-<span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/featType-generic.html">featType</a></span><span class="op">(</span><span class="va">expval</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/featType-generic.html" class="external-link">featType</a></span><span class="op">(</span><span class="va">expval</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="st">'new_feat'</span></span>
+<span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/featType-generic.html" class="external-link">featType</a></span><span class="op">(</span><span class="va">expval</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">1</span>] <span class="st">"new_feat"</span></span></code></pre></div>
 <div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># provenance</span></span>
-<span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/prov-generic.html">prov</a></span><span class="op">(</span><span class="va">expval</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="st">'cell'</span></span>
-<span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/prov-generic.html">prov</a></span><span class="op">(</span><span class="va">expval</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/prov-generic.html" class="external-link">prov</a></span><span class="op">(</span><span class="va">expval</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="st">'cell'</span></span>
+<span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/prov-generic.html" class="external-link">prov</a></span><span class="op">(</span><span class="va">expval</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">1</span>] <span class="st">"cell"</span></span></code></pre></div>
 </div>
 <div class="section level3">
@@ -1155,7 +1155,7 @@ then it is prioritized over the tagged information and the tagged
 information is updated.</p>
 <div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># set exprObj to tagged nesting location</span></span>
-<span><span class="va">vizmini</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/setExpression.html">setExpression</a></span><span class="op">(</span><span class="va">vizmini</span>, <span class="va">expval</span><span class="op">)</span></span></code></pre></div>
+<span><span class="va">vizmini</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/setExpression.html" class="external-link">setExpression</a></span><span class="op">(</span><span class="va">vizmini</span>, <span class="va">expval</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>    Setting expression [new_spat][new_feat] raw</span></code></pre></div>
 <div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">Giottolist_expression</span><span class="op">(</span><span class="va">vizmini</span><span class="op">)</span></span></code></pre></div>
@@ -1180,7 +1180,7 @@ example, with a <code>spatLocsObj</code>:</p>
 <p>In this way, the S4 subobjects can be used in contexts that the
 wrapped objects could be.</p>
 <div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">st</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/getSpatialLocations.html">getSpatialLocations</a></span><span class="op">(</span><span class="va">vizmini</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="va">st</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/getSpatialLocations.html" class="external-link">getSpatialLocations</a></span><span class="op">(</span><span class="va">vizmini</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="va">st</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">1</span>] <span class="st">"spatLocsObj"</span></span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">attr</span>(,<span class="st">"package"</span>)</span>
