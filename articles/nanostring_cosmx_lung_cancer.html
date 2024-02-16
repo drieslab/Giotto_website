@@ -365,6 +365,9 @@
 
     
     
+<div class="section level2">
+<h2 id="dataset-explanation">Dataset explanation<a class="anchor" aria-label="anchor" href="#dataset-explanation"></a>
+</h2>
 <p>This example uses subcellular data from Nanostring’s CosMx Spatial
 Molecular Imager. This publicly available <a href="https://nanostring.com/resources/smi-ffpe-dataset-lung12-data/" class="external-link">dataset</a>
 is from an FFPE sample of non-small-cell lung cancer (NSCLC). This
@@ -381,6 +384,7 @@ example works with Lung12.</p>
 <span>  <span class="co"># The following command need only be run once to install the Giotto environment.</span></span>
 <span>  <span class="fu">Giotto</span><span class="fu">::</span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/installGiottoEnvironment.html" class="external-link">installGiottoEnvironment</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="op">}</span></span></code></pre></div>
+</div>
 <div class="section level2">
 <h2 id="setup">1. Setup<a class="anchor" aria-label="anchor" href="#setup"></a>
 </h2>
@@ -391,6 +395,7 @@ example works with Lung12.</p>
 <span><span class="co"># pal10 = rcartocolor::carto_pal(n = 10, name = 'Pastel')</span></span>
 <span><span class="va">pal10</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"#66C5CC"</span>,<span class="st">"#F6CF71"</span>,<span class="st">"#F89C74"</span>,<span class="st">"#DCB0F2"</span>,<span class="st">"#87C55F"</span>,</span>
 <span>          <span class="st">"#9EB9F3"</span>,<span class="st">"#FE88B1"</span>,<span class="st">"#C9DB74"</span>,<span class="st">"#8BE0A4"</span>,<span class="st">"#B3B3B3"</span><span class="op">)</span></span>
+<span></span>
 <span><span class="co"># viv10 = rcartocolor::carto_pal(n = 10, name = 'Vivid')</span></span>
 <span><span class="va">viv10</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"#E58606"</span>,<span class="st">"#5D69B1"</span>,<span class="st">"#52BCA3"</span>,<span class="st">"#99C945"</span>,<span class="st">"#CC61B0"</span>,</span>
 <span>          <span class="st">"#24796C"</span>,<span class="st">"#DAA51B"</span>,<span class="st">"#2F8AC4"</span>,<span class="st">"#764E9F"</span>,<span class="st">"#A5AA99"</span><span class="op">)</span></span>
@@ -430,10 +435,10 @@ matrix can be found at Section 6.4.</p>
 <span><span class="va">data_path</span> <span class="op">=</span> <span class="st">'/path/to/data/Lung12-Flat_files_and_images/'</span></span>
 <span></span>
 <span><span class="co">## create giotto cosmx object</span></span>
-<span><span class="va">fov_join</span> <span class="op">=</span> <span class="fu"><a href="../reference/createGiottoCosMxObject.html">createGiottoCosMxObject</a></span><span class="op">(</span>cosmx_dir <span class="op">=</span> <span class="va">data_path</span>,</span>
-<span>                                   data_to_use <span class="op">=</span> <span class="st">'subcellular'</span>, <span class="co"># only subcellular</span></span>
-<span>                                   FOVs <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">3</span>,<span class="fl">4</span><span class="op">)</span>,</span>
-<span>                                   instructions <span class="op">=</span> <span class="va">instrs</span><span class="op">)</span></span>
+<span><span class="va">fov_join</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/createGiottoCosMxObject.html">createGiottoCosMxObject</a></span><span class="op">(</span>cosmx_dir <span class="op">=</span> <span class="va">data_path</span>,</span>
+<span>                                    data_to_use <span class="op">=</span> <span class="st">'subcellular'</span>, <span class="co"># only subcellular</span></span>
+<span>                                    FOVs <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">3</span>,<span class="fl">4</span><span class="op">)</span>,</span>
+<span>                                    instructions <span class="op">=</span> <span class="va">instrs</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/showGiottoFeatInfo.html" class="external-link">showGiottoFeatInfo</a></span><span class="op">(</span><span class="va">fov_join</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/showGiottoSpatialInfo.html" class="external-link">showGiottoSpatialInfo</a></span><span class="op">(</span><span class="va">fov_join</span><span class="op">)</span></span></code></pre></div>
@@ -487,22 +492,6 @@ happened in (0, Cytoplasm, Membrane, Nuclear)</li>
 <span></span>
 <span><span class="co"># Cell compartment</span></span>
 <span><span class="va">tx_coord_all</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">CellComp</span><span class="op">)</span><span class="op">]</span></span></code></pre></div>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># [1] "fov"         "cell_ID"     "x_global_px" "y_global_px"</span></span>
-<span><span class="co"># [5] "x_local_px"  "y_local_px"  "z"           "target"     </span></span>
-<span><span class="co"># [9] "CellComp" </span></span>
-<span><span class="co"># </span></span>
-<span><span class="co"># z</span></span>
-<span><span class="co">#      -1       0       1       2       3       4       5       6 </span></span>
-<span><span class="co">#   23723 3466178 2522315 2694973 2686531 2648926 2660346 2711105 </span></span>
-<span><span class="co">#       7       8       9      10      11      12      13      14 </span></span>
-<span><span class="co"># 2855259 3700831   36840    6594    6466    6787    6944    6959 </span></span>
-<span><span class="co">#      15      16 </span></span>
-<span><span class="co">#   17603       2 </span></span>
-<span><span class="co">#   </span></span>
-<span><span class="co"># CellComp</span></span>
-<span><span class="co">#         0 Cytoplasm  Membrane   Nuclear </span></span>
-<span><span class="co">#   6619744   5770549   3368411  10299678</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="split-detections-by-features-vs-negative-probes">2.2 Split detections by features vs negative probes<a class="anchor" aria-label="anchor" href="#split-detections-by-features-vs-negative-probes"></a>
@@ -513,7 +502,7 @@ are targeted to alien sequences defined by the External RNA Controls
 Consortium (ERCC) that do not exist in human tissue. These two types of
 detections will be treated as separate feature types
 (<code>feat_type</code>) and placed in separate expression matrices.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">all_IDs</span> <span class="op">=</span> <span class="va">tx_coord_all</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">target</span><span class="op">)</span><span class="op">]</span></span>
 <span></span>
 <span><span class="co"># negative probe IDs</span></span>
@@ -530,18 +519,6 @@ detections will be treated as separate feature types
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="st">'\nFeatures: '</span>, <span class="va">feat_coords_all</span><span class="op">[</span>, <span class="va">.N</span><span class="op">]</span>, <span class="st">'\n'</span>,</span>
 <span>    <span class="st">'NegProbes: '</span>, <span class="va">neg_coords_all</span><span class="op">[</span>, <span class="va">.N</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Negative Probe IDs</span></span>
-<span><span class="co">#  [1] "NegPrb15" "NegPrb18" "NegPrb7"  "NegPrb21" "NegPrb13"</span></span>
-<span><span class="co">#  [6] "NegPrb10" "NegPrb11" "NegPrb9"  "NegPrb3"  "NegPrb16"</span></span>
-<span><span class="co"># [11] "NegPrb23" "NegPrb14" "NegPrb20" "NegPrb8"  "NegPrb19"</span></span>
-<span><span class="co"># [16] "NegPrb6"  "NegPrb5"  "NegPrb12" "NegPrb17" "NegPrb22"</span></span>
-<span><span class="co"># </span></span>
-<span><span class="co"># Number of feature IDs</span></span>
-<span><span class="co"># [1] 960</span></span>
-<span><span class="co"># </span></span>
-<span><span class="co"># Features:  25875734</span></span>
-<span><span class="co"># NegProbes:  182648</span></span></code></pre></div>
 <div class="section level4">
 <h4 id="preview-negative-probes-optional">2.2.1 Preview negative probes (optional)<a class="anchor" aria-label="anchor" href="#preview-negative-probes-optional"></a>
 </h4>
@@ -552,11 +529,14 @@ show a preview of the negative probes.</p>
 it is highly recommended to set a subset of features using the
 <code>feats</code> param. The default is to plot all points, which can
 be very slow for large data.</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">neg_points</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/createGiottoPoints.html" class="external-link">createGiottoPoints</a></span><span class="op">(</span></span>
 <span>  x <span class="op">=</span> <span class="va">neg_coords_all</span><span class="op">[</span>, <span class="fu">.</span><span class="op">(</span><span class="va">target</span>, <span class="va">x_global_px</span>, <span class="va">y_global_px</span><span class="op">)</span><span class="op">]</span></span>
 <span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">neg_points</span>, point_size <span class="op">=</span> <span class="fl">0.2</span>, feats <span class="op">=</span> <span class="va">neg_IDs</span><span class="op">)</span></span></code></pre></div>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">neg_points</span>, </span>
+<span>     point_size <span class="op">=</span> <span class="fl">0.2</span>, </span>
+<span>     feats <span class="op">=</span> <span class="va">neg_IDs</span><span class="op">)</span></span></code></pre></div>
 <p><img src="images/nanostring_cosmx_lung_cancer/preview_negprb.png"></p>
 </div>
 </div>
@@ -567,7 +547,7 @@ be very slow for large data.</p>
 y shifts needed in order to put the FOVs tiles together into a cohesive
 whole. This information is needed during the image attachment and
 alignment process.</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#  load field of vision (fov) positions</span></span>
 <span><span class="va">fov_offset_file</span> <span class="op">=</span> <span class="fu">data.table</span><span class="fu">::</span><span class="fu"><a href="https://rdatatable.gitlab.io/data.table/reference/fread.html" class="external-link">fread</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="va">data_path</span>, </span>
 <span>                                           <span class="st">'Lung12_fov_positions_file.csv'</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
@@ -581,7 +561,7 @@ computers to handle at once.</p>
 <p>This tutorial will use FOVs ‘02’, ‘03’, and ‘04’ which correspond to
 the 3 FOVs visible on the bottom right in the negative probe preview
 above.</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">gobjects_list</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">id_set</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'02'</span>, <span class="st">'03'</span>, <span class="st">'04'</span><span class="op">)</span></span></code></pre></div>
@@ -590,11 +570,10 @@ above.</p>
 <div class="section level2">
 <h2 id="create-a-giotto-object-for-each-fov">3. Create a Giotto Object for each FOV<a class="anchor" aria-label="anchor" href="#create-a-giotto-object-for-each-fov"></a>
 </h2>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw">for</span><span class="op">(</span><span class="va">fov_i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">id_set</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
 <span></span>
 <span>  <span class="va">fov_id</span> <span class="op">=</span> <span class="va">id_set</span><span class="op">[</span><span class="va">fov_i</span><span class="op">]</span></span>
-<span></span>
 <span></span>
 <span>  <span class="co"># 1. original composite image as png</span></span>
 <span>  <span class="va">original_composite_image</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="va">data_path</span>, <span class="st">'CellComposite/CellComposite_F0'</span>, <span class="va">fov_id</span>,<span class="st">'.jpg'</span><span class="op">)</span></span>
@@ -641,7 +620,6 @@ above.</p>
 <span></span>
 <span></span>
 <span>  <span class="va">fovsubset</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/convertGiottoLargeImageToMG.html" class="external-link">convertGiottoLargeImageToMG</a></span><span class="op">(</span>giottoLargeImage <span class="op">=</span> <span class="va">composite</span>,</span>
-<span>                                          <span class="co">#mg_name = 'composite',</span></span>
 <span>                                          gobject <span class="op">=</span> <span class="va">fovsubset</span>,</span>
 <span>                                          return_gobject <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span></span>
@@ -652,7 +630,7 @@ above.</p>
 <div class="section level2">
 <h2 id="join-fov-giotto-objects">4. Join FOV Giotto Objects<a class="anchor" aria-label="anchor" href="#join-fov-giotto-objects"></a>
 </h2>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">new_names</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"fov0"</span>, <span class="va">id_set</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">id_match</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/match.html" class="external-link">match</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/numeric.html" class="external-link">as.numeric</a></span><span class="op">(</span><span class="va">id_set</span><span class="op">)</span>, <span class="va">fov_offset_file</span><span class="op">$</span><span class="va">fov</span><span class="op">)</span></span>
@@ -660,11 +638,11 @@ above.</p>
 <span><span class="va">y_shifts</span> <span class="op">=</span> <span class="va">fov_offset_file</span><span class="op">[</span><span class="va">id_match</span><span class="op">]</span><span class="op">$</span><span class="va">y_global_px</span></span>
 <span></span>
 <span><span class="co"># Create Giotto object that includes all selected FOVs</span></span>
-<span><span class="va">fov_join</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/joinGiottoObjects.html" class="external-link">joinGiottoObjects</a></span><span class="op">(</span>gobject_list <span class="op">=</span> <span class="va">gobjects_list</span>,</span>
-<span>                             gobject_names <span class="op">=</span> <span class="va">new_names</span>,</span>
-<span>                             join_method <span class="op">=</span> <span class="st">'shift'</span>,</span>
-<span>                             x_shift <span class="op">=</span> <span class="va">x_shifts</span>,</span>
-<span>                             y_shift <span class="op">=</span> <span class="va">y_shifts</span><span class="op">)</span></span></code></pre></div>
+<span><span class="va">fov_join</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/joinGiottoObjects.html" class="external-link">joinGiottoObjects</a></span><span class="op">(</span>gobject_list <span class="op">=</span> <span class="va">gobjects_list</span>,</span>
+<span>                              gobject_names <span class="op">=</span> <span class="va">new_names</span>,</span>
+<span>                              join_method <span class="op">=</span> <span class="st">'shift'</span>,</span>
+<span>                              x_shift <span class="op">=</span> <span class="va">x_shifts</span>,</span>
+<span>                              y_shift <span class="op">=</span> <span class="va">y_shifts</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="visualize-cells-and-genes-of-interest">5. Visualize Cells and Genes of Interest<a class="anchor" aria-label="anchor" href="#visualize-cells-and-genes-of-interest"></a>
@@ -673,7 +651,7 @@ above.</p>
 <code>spatInSituPlot</code> functions. Spatial plots showing the feature
 points and polygons are plotted using
 <code><a href="https://drieslab.github.io/GiottoVisuals/reference/spatInSituPlotPoints.html" class="external-link">spatInSituPlotPoints()</a></code>.</p>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/showGiottoImageNames.html" class="external-link">showGiottoImageNames</a></span><span class="op">(</span><span class="va">fov_join</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Set up vector of image names</span></span>
@@ -704,7 +682,7 @@ points and polygons are plotted using
 this works off only the aggregated information that is assembled based
 on the subcellular information. Plotting information based on cell
 centroids can be done through this function.</p>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatPlot.html" class="external-link">spatPlot2D</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">fov_join</span>,</span>
 <span>           image_name <span class="op">=</span> <span class="va">image_names</span>,</span>
 <span>           show_image <span class="op">=</span> <span class="cn">TRUE</span>,</span>
@@ -735,22 +713,28 @@ the two sources of information.</p>
 <p>In this step, we will be aggregating the feature points of
 <code>'rna'</code> and <code>'neg_probe'</code> into the
 <code>'cell'</code> spatial unit.</p>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Find the feature points overlapped by polygons. This overlap information is then</span></span>
 <span><span class="co"># returned to the relevant giottoPolygon object's overlaps slot.</span></span>
-<span><span class="va">fov_join</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/calculateOverlapRaster.html" class="external-link">calculateOverlapRaster</a></span><span class="op">(</span><span class="va">fov_join</span>, feat_info <span class="op">=</span> <span class="st">'rna'</span><span class="op">)</span></span>
-<span><span class="va">fov_join</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/calculateOverlapRaster.html" class="external-link">calculateOverlapRaster</a></span><span class="op">(</span><span class="va">fov_join</span>, feat_info <span class="op">=</span> <span class="st">'neg_probe'</span><span class="op">)</span></span>
+<span><span class="va">fov_join</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/calculateOverlapRaster.html" class="external-link">calculateOverlapRaster</a></span><span class="op">(</span><span class="va">fov_join</span>, </span>
+<span>                                   feat_info <span class="op">=</span> <span class="st">'rna'</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">fov_join</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/calculateOverlapRaster.html" class="external-link">calculateOverlapRaster</a></span><span class="op">(</span><span class="va">fov_join</span>, </span>
+<span>                                   feat_info <span class="op">=</span> <span class="st">'neg_probe'</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Convert the overlap information into a cell by feature expression matrix which</span></span>
 <span><span class="co"># is then stored in the Giotto object's expression slot</span></span>
-<span><span class="va">fov_join</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/overlapToMatrix.html" class="external-link">overlapToMatrix</a></span><span class="op">(</span><span class="va">fov_join</span>, feat_info <span class="op">=</span> <span class="st">'rna'</span><span class="op">)</span></span>
-<span><span class="va">fov_join</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/overlapToMatrix.html" class="external-link">overlapToMatrix</a></span><span class="op">(</span><span class="va">fov_join</span>, feat_info <span class="op">=</span> <span class="st">'neg_probe'</span><span class="op">)</span></span>
+<span><span class="va">fov_join</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/overlapToMatrix.html" class="external-link">overlapToMatrix</a></span><span class="op">(</span><span class="va">fov_join</span>, </span>
+<span>                            feat_info <span class="op">=</span> <span class="st">'rna'</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">fov_join</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/overlapToMatrix.html" class="external-link">overlapToMatrix</a></span><span class="op">(</span><span class="va">fov_join</span>, </span>
+<span>                            feat_info <span class="op">=</span> <span class="st">'neg_probe'</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/showGiottoExpression.html" class="external-link">showGiottoExpression</a></span><span class="op">(</span><span class="va">fov_join</span><span class="op">)</span></span></code></pre></div>
 <div class="section level3">
 <h3 id="plot-histograms-of-total-counts-per-cell">6.1 Plot histograms of total counts per cell<a class="anchor" aria-label="anchor" href="#plot-histograms-of-total-counts-per-cell"></a>
 </h3>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/filterDistributions.html">filterDistributions</a></span><span class="op">(</span><span class="va">fov_join</span>,</span>
 <span>                    plot_type <span class="op">=</span> <span class="st">'hist'</span>,</span>
 <span>                    detection <span class="op">=</span> <span class="st">'cells'</span>,</span>
@@ -779,7 +763,7 @@ viewing the raw points information, especially when points are dense
 enough that there is overplotting. After overlaps information has been
 calculated, <code><a href="https://drieslab.github.io/GiottoVisuals/reference/spatInSituPlotDensity.html" class="external-link">spatInSituPlotDensity()</a></code> can be used in order to
 get a general idea of how much expression there is of a feature.</p>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatInSituPlotDensity.html" class="external-link">spatInSituPlotDensity</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">fov_join</span>,</span>
 <span>                      feats <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"MMP2"</span>, <span class="st">"VEGFA"</span>, <span class="st">"IGF1R"</span>,</span>
 <span>                                <span class="st">'MKI67'</span>, <span class="st">'EPCAM'</span>, <span class="st">'KRT8'</span><span class="op">)</span>,</span>
@@ -791,7 +775,7 @@ get a general idea of how much expression there is of a feature.</p>
 <div class="section level3">
 <h3 id="extract-data-from-giotto-object">6.3 Extract Data from Giotto Object<a class="anchor" aria-label="anchor" href="#extract-data-from-giotto-object"></a>
 </h3>
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># combine cell data</span></span>
 <span><span class="va">morphometa</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/combineCellData.html" class="external-link">combineCellData</a></span><span class="op">(</span><span class="va">fov_join</span>,</span>
 <span>                             feat_type <span class="op">=</span> <span class="st">'rna'</span><span class="op">)</span></span>
@@ -812,9 +796,8 @@ matrices<a class="anchor" aria-label="anchor" href="#comparison-of-giotto-aggreg
 by Nanostring. Only FOV2 will be used in this comparison. Matrices are
 expected to be similar when the same sets of cell polygons/masks are
 used for both.</p>
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Load and prepare data</span></span>
-<span></span>
 <span><span class="va">nanoDT</span> <span class="op">=</span> <span class="fu">data.table</span><span class="fu">::</span><span class="fu"><a href="https://rdatatable.gitlab.io/data.table/reference/fread.html" class="external-link">fread</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="va">data_path</span>, <span class="st">'Lung12_exprMat_file.csv'</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">test1</span> <span class="op">=</span> <span class="va">nanoDT</span><span class="op">[</span><span class="va">fov</span> <span class="op">==</span> <span class="fl">2</span><span class="op">]</span></span>
 <span></span>
@@ -823,7 +806,7 @@ used for both.</p>
 <span><span class="va">test1</span><span class="op">[</span>, <span class="va">cell_ID</span> <span class="op">:=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">'f'</span>, <span class="va">fov</span>, <span class="st">'-'</span>, <span class="va">cell_ID</span><span class="op">)</span><span class="op">]</span></span>
 <span><span class="va">test1</span><span class="op">[</span>, <span class="va">fov</span> <span class="op">:=</span> <span class="cn">NULL</span><span class="op">]</span></span>
 <span></span>
-<span><span class="va">test1mat</span> <span class="op">=</span> <span class="fu">GiottoClass</span><span class="fu">::</span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/t_flex.html" class="external-link">t_flex</a></span><span class="op">(</span><span class="fu">GiottoUtils</span><span class="fu">::</span><span class="fu"><a href="https://drieslab.github.io/GiottoUtils/reference/dt_to_matrix.html" class="external-link">dt_to_matrix</a></span><span class="op">(</span><span class="va">test1</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">test1mat</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/t_flex.html" class="external-link">t_flex</a></span><span class="op">(</span><span class="fu">GiottoUtils</span><span class="fu">::</span><span class="fu"><a href="https://drieslab.github.io/GiottoUtils/reference/dt_to_matrix.html" class="external-link">dt_to_matrix</a></span><span class="op">(</span><span class="va">test1</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">testnano_f2</span> <span class="op">=</span> <span class="va">test1mat</span></span>
 <span></span>
 <span><span class="co"># Remove cell_0 (all tx counts that do not fall within a polygon)</span></span>
@@ -848,7 +831,7 @@ used for both.</p>
 <span></span>
 <span><span class="co"># Combine sparse matrix indices</span></span>
 <span><span class="va">testDT</span><span class="op">[</span>, <span class="va">combo</span> <span class="op">:=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="va">i</span>,<span class="st">'-'</span>,<span class="va">j</span><span class="op">)</span><span class="op">]</span></span></code></pre></div>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Plot results</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
 <span></span>
@@ -869,15 +852,17 @@ used for both.</p>
 <span>                    panel.grid.minor <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html" class="external-link">element_blank</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>                    panel.background <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html" class="external-link">element_rect</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"black"</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
-<span></span>
 <span><span class="va">combplot</span> <span class="op">=</span> <span class="fu">cowplot</span><span class="fu">::</span><span class="fu"><a href="https://wilkelab.org/cowplot/reference/plot_grid.html" class="external-link">plot_grid</a></span><span class="op">(</span><span class="va">pl_n</span>, <span class="va">pl_g</span>,</span>
 <span>                              nrow <span class="op">=</span> <span class="fl">2</span>,</span>
 <span>                              labels <span class="op">=</span> <span class="st">'AUTO'</span><span class="op">)</span></span>
-<span><span class="va">combplot</span></span></code></pre></div>
+<span><span class="va">combplot</span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsave.html" class="external-link">ggsave</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="va">results_folder</span>,<span class="st">"mat_comparison.png"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p><img src="images/nanostring_cosmx_lung_cancer/mat_comparison.png"></p>
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># directly compare differences in matrix values (counts assigned)</span></span>
 <span><span class="va">vartestDT</span> <span class="op">=</span> <span class="va">testDT</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>var <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.html" class="external-link">var</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, diff <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/diff.html" class="external-link">diff</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span>, by <span class="op">=</span> <span class="fu">.</span><span class="op">(</span><span class="va">i</span>,<span class="va">j</span><span class="op">)</span><span class="op">]</span></span>
+<span></span>
 <span><span class="fu">data.table</span><span class="fu">::</span><span class="fu"><a href="https://rdatatable.gitlab.io/data.table/reference/setorder.html" class="external-link">setorder</a></span><span class="op">(</span><span class="va">vartestDT</span>, <span class="va">var</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># check arbitrary index values</span></span>
@@ -892,18 +877,14 @@ used for both.</p>
 <span><span class="va">pl</span> <span class="op">=</span> <span class="va">pl</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">'difference nanostring - Giotto'</span><span class="op">)</span></span>
 <span><span class="va">pl</span></span>
 <span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsave.html" class="external-link">ggsave</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="va">results_folder</span>,<span class="st">"values_diff.png"</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
 <span><span class="va">testDT</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/order.html" class="external-link">order</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">]</span></span></code></pre></div>
 <p><img src="images/nanostring_cosmx_lung_cancer/values_diff.png"></p>
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">testDT</span><span class="op">[</span>, <span class="va">.N</span>, by <span class="op">=</span> <span class="st">'method'</span><span class="op">]</span></span>
 <span></span>
 <span><span class="va">testDT</span><span class="op">[</span>, <span class="va">method</span>, by <span class="op">=</span> <span class="va">combo</span><span class="op">]</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/duplicated.html" class="external-link">duplicated</a></span><span class="op">(</span><span class="va">combo</span><span class="op">)</span><span class="op">)</span><span class="op">]</span></span></code></pre></div>
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co">#        method      N</span></span>
-<span><span class="co"># 1:     giotto 415952</span></span>
-<span><span class="co"># 2: nanostring 416099</span></span>
-<span><span class="co"># </span></span>
-<span><span class="co"># 411050</span></span></code></pre></div>
 <p>Overall, the nanostring matrix has <strong>416099 - 415952 =
 147</strong> more non-zero values than giotto’s matrix for FOV2. Within
 the <strong>411050</strong> shared entries that were called by both
@@ -936,7 +917,7 @@ to a scaled matrix and offer improvements to both HVF detection and PCA
 generation. These values should not be used for statistics, plotting of
 expression values, or differential expression analysis.</p></li>
 </ul>
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># filter (feat_type = 'rna' by default)</span></span>
 <span><span class="va">fov_join</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/filterGiotto.html">filterGiotto</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">fov_join</span>,</span>
 <span>                         feat_type <span class="op">=</span> <span class="st">'rna'</span>,</span>
@@ -967,15 +948,15 @@ expression values, or differential expression analysis.</p></li>
 <span>                            update_slot <span class="op">=</span> <span class="st">'pearson'</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/showGiottoExpression.html" class="external-link">showGiottoExpression</a></span><span class="op">(</span><span class="va">fov_join</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># add statistics based on log normalized values for features rna and negative probes</span></span>
-<span><span class="va">fov_join</span> <span class="op">=</span> <span class="fu"><a href="../reference/addStatistics.html">addStatistics</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">fov_join</span>,</span>
-<span>                         expression_values <span class="op">=</span> <span class="st">'normalized'</span>,</span>
-<span>                         feat_type <span class="op">=</span> <span class="st">'rna'</span><span class="op">)</span></span>
+<span><span class="va">fov_join</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/addStatistics.html">addStatistics</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">fov_join</span>,</span>
+<span>                          expression_values <span class="op">=</span> <span class="st">'normalized'</span>,</span>
+<span>                          feat_type <span class="op">=</span> <span class="st">'rna'</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">fov_join</span> <span class="op">=</span> <span class="fu"><a href="../reference/addStatistics.html">addStatistics</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">fov_join</span>,</span>
-<span>                         expression_values <span class="op">=</span> <span class="st">'normalized'</span>,</span>
-<span>                         feat_type <span class="op">=</span> <span class="st">'neg_probe'</span><span class="op">)</span></span>
+<span><span class="va">fov_join</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/addStatistics.html">addStatistics</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">fov_join</span>,</span>
+<span>                          expression_values <span class="op">=</span> <span class="st">'normalized'</span>,</span>
+<span>                          feat_type <span class="op">=</span> <span class="st">'neg_probe'</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># View cellular data (default is feat = 'rna')</span></span>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/showGiottoCellMetadata.html" class="external-link">showGiottoCellMetadata</a></span><span class="op">(</span><span class="va">fov_join</span><span class="op">)</span></span>
@@ -993,7 +974,7 @@ the information. To retrieve the metadata information, instead use
 <div class="section level3">
 <h3 id="histogram-of-log-normalized-data">8.1 Histogram of log normalized data<a class="anchor" aria-label="anchor" href="#histogram-of-log-normalized-data"></a>
 </h3>
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/filterDistributions.html">filterDistributions</a></span><span class="op">(</span><span class="va">fov_join</span>,</span>
 <span>                    detection <span class="op">=</span> <span class="st">'cells'</span>,</span>
 <span>                    feat_type <span class="op">=</span> <span class="st">'rna'</span>,</span>
@@ -1019,7 +1000,7 @@ the information. To retrieve the metadata information, instead use
 <div class="section level3">
 <h3 id="plot-spatially-as-centroids">8.2 Plot spatially as centroids<a class="anchor" aria-label="anchor" href="#plot-spatially-as-centroids"></a>
 </h3>
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatPlot.html" class="external-link">spatPlot2D</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">fov_join</span>,</span>
 <span>           cell_color <span class="op">=</span> <span class="st">'total_expr'</span>,</span>
 <span>           color_as_factor <span class="op">=</span> <span class="cn">FALSE</span>,</span>
@@ -1034,7 +1015,7 @@ the information. To retrieve the metadata information, instead use
 <div class="section level3">
 <h3 id="plot-spatially-as-color-scaled-polygons">8.3 Plot spatially as color-scaled polygons<a class="anchor" aria-label="anchor" href="#plot-spatially-as-color-scaled-polygons"></a>
 </h3>
-<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatInSituPlotPoints.html" class="external-link">spatInSituPlotPoints</a></span><span class="op">(</span><span class="va">fov_join</span>,</span>
 <span>                     show_polygon <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>                     polygon_color <span class="op">=</span> <span class="st">'gray'</span>,</span>
@@ -1071,22 +1052,22 @@ new ‘hvf’ column in the ‘rna’ feature metadata.</p>
 <p>PCA generation will also be based on the ‘pearson’ matrix. Scaling
 and centering of the PCA which is usually done by default will be
 skipped since the pearson matrix is already scaled.</p>
-<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">fov_join</span> <span class="op">=</span> <span class="fu"><a href="../reference/calculateHVF.html">calculateHVF</a></span><span class="op">(</span><span class="va">fov_join</span>,</span>
-<span>                        method <span class="op">=</span> <span class="st">'var_p_resid'</span>,</span>
-<span>                        expression_values <span class="op">=</span> <span class="st">'pearson'</span>,</span>
-<span>                        save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>base_height <span class="op">=</span> <span class="fl">5</span>,</span>
-<span>                                          save_name <span class="op">=</span> <span class="st">'6.1_pearson_HVF'</span><span class="op">)</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">fov_join</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/calculateHVF.html">calculateHVF</a></span><span class="op">(</span><span class="va">fov_join</span>,</span>
+<span>                         method <span class="op">=</span> <span class="st">'var_p_resid'</span>,</span>
+<span>                         expression_values <span class="op">=</span> <span class="st">'pearson'</span>,</span>
+<span>                         save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>base_height <span class="op">=</span> <span class="fl">5</span>,</span>
+<span>                                           save_name <span class="op">=</span> <span class="st">'6.1_pearson_HVF'</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># print HVFs</span></span>
 <span><span class="va">gene_meta</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/fDataDT.html" class="external-link">fDataDT</a></span><span class="op">(</span><span class="va">fov_join</span><span class="op">)</span></span>
 <span><span class="va">gene_meta</span><span class="op">[</span><span class="va">hvf</span> <span class="op">==</span> <span class="st">'yes'</span>, <span class="va">feat_ID</span><span class="op">]</span></span></code></pre></div>
 <p><img src="images/nanostring_cosmx_lung_cancer/6.1_pearson_HVF.png"></p>
-<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">fov_join</span> <span class="op">=</span> <span class="fu"><a href="../reference/runPCA.html">runPCA</a></span><span class="op">(</span><span class="va">fov_join</span>,</span>
-<span>                  scale_unit <span class="op">=</span> <span class="cn">FALSE</span>,</span>
-<span>                  center <span class="op">=</span> <span class="cn">FALSE</span>,</span>
-<span>                  expression_values <span class="op">=</span> <span class="st">'pearson'</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">fov_join</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/runPCA.html">runPCA</a></span><span class="op">(</span><span class="va">fov_join</span>,</span>
+<span>                   scale_unit <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>                   center <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>                   expression_values <span class="op">=</span> <span class="st">'pearson'</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># screeplot uses the generated PCA. No need to specify expr values</span></span>
 <span><span class="fu"><a href="../reference/screePlot.html">screePlot</a></span><span class="op">(</span><span class="va">fov_join</span>, </span>
@@ -1104,7 +1085,7 @@ skipped since the pearson matrix is already scaled.</p>
 <div class="section level3">
 <h3 id="run-umap">9.2 Run UMAP<a class="anchor" aria-label="anchor" href="#run-umap"></a>
 </h3>
-<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Generate UMAP from PCA</span></span>
 <span><span class="va">fov_join</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/runUMAP.html">runUMAP</a></span><span class="op">(</span><span class="va">fov_join</span>,</span>
 <span>                    dimensions_to_use <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span>,</span>
@@ -1117,7 +1098,7 @@ skipped since the pearson matrix is already scaled.</p>
 <div class="section level3">
 <h3 id="plot-features-on-expression-space">9.3 Plot features on expression space<a class="anchor" aria-label="anchor" href="#plot-features-on-expression-space"></a>
 </h3>
-<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/dimFeatPlot2D.html" class="external-link">dimFeatPlot2D</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">fov_join</span>,</span>
 <span>              feat_type <span class="op">=</span> <span class="st">'rna'</span>,</span>
 <span>              feats <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'MKI67'</span>, <span class="st">'CD8A'</span>, <span class="st">'CD4'</span>,</span>
@@ -1137,7 +1118,7 @@ skipped since the pearson matrix is already scaled.</p>
 <div class="section level3">
 <h3 id="visualize-clustering">10.1 Visualize clustering<a class="anchor" aria-label="anchor" href="#visualize-clustering"></a>
 </h3>
-<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">fov_join</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/createNearestNetwork.html" class="external-link">createNearestNetwork</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">fov_join</span>,</span>
 <span>                                 dimensions_to_use <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span>,</span>
 <span>                                 k <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
@@ -1158,7 +1139,7 @@ skipped since the pearson matrix is already scaled.</p>
 <div class="section level3">
 <h3 id="visualize-clustering-on-expression-and-spatial-space">10.2 Visualize clustering on expression and spatial space<a class="anchor" aria-label="anchor" href="#visualize-clustering-on-expression-and-spatial-space"></a>
 </h3>
-<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># visualize UMAP and spatial results</span></span>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatDimPlot.html" class="external-link">spatDimPlot2D</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">fov_join</span>,</span>
 <span>              show_image <span class="op">=</span> <span class="cn">TRUE</span>,</span>
@@ -1172,7 +1153,7 @@ skipped since the pearson matrix is already scaled.</p>
 <div class="section level3">
 <h3 id="map-clustering-spatially">10.3 Map clustering spatially<a class="anchor" aria-label="anchor" href="#map-clustering-spatially"></a>
 </h3>
-<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatInSituPlotPoints.html" class="external-link">spatInSituPlotPoints</a></span><span class="op">(</span><span class="va">fov_join</span>,</span>
 <span>                     feats <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="st">'rna'</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'MMP2'</span>, <span class="st">'VEGFA'</span>, <span class="st">'IGF1R'</span>,</span>
 <span>                                            <span class="st">'MKI67'</span>, <span class="st">'EPCAM'</span>, <span class="st">'MZB1'</span><span class="op">)</span><span class="op">)</span>,</span>
@@ -1192,7 +1173,7 @@ skipped since the pearson matrix is already scaled.</p>
 <div class="section level2">
 <h2 id="small-subset-visualization">11. Small Subset Visualization<a class="anchor" aria-label="anchor" href="#small-subset-visualization"></a>
 </h2>
-<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#subset a Giotto object based on spatial locations</span></span>
 <span><span class="va">smallfov</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/subsetGiottoLocs.html" class="external-link">subsetGiottoLocs</a></span><span class="op">(</span><span class="va">fov_join</span>,</span>
 <span>                             x_max <span class="op">=</span> <span class="fl">3000</span>,</span>
@@ -1244,12 +1225,11 @@ skipped since the pearson matrix is already scaled.</p>
 </h2>
 <p>Find spatially organized gene expression by examining the binarized
 expression of cells and their spatial neighbors.</p>
-<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># create spatial network based on physical distance of cell centroids</span></span>
-<span><span class="va">fov_join</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/createSpatialNetwork.html" class="external-link">createSpatialNetwork</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">fov_join</span>,</span>
-<span>                                minimum_k <span class="op">=</span> <span class="fl">2</span>,</span>
-<span>                                maximum_distance_delaunay <span class="op">=</span> <span class="fl">50</span><span class="op">)</span></span>
-<span></span>
+<span><span class="va">fov_join</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/createSpatialNetwork.html" class="external-link">createSpatialNetwork</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">fov_join</span>,</span>
+<span>                                 minimum_k <span class="op">=</span> <span class="fl">2</span>,</span>
+<span>                                 maximum_distance_delaunay <span class="op">=</span> <span class="fl">50</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># perform Binary Spatial Extraction of genes - NOTE: Depending on your system this could take time</span></span>
 <span><span class="va">km_spatialgenes</span> <span class="op">=</span> <span class="fu"><a href="../reference/binSpect.html">binSpect</a></span><span class="op">(</span><span class="va">fov_join</span><span class="op">)</span></span>
@@ -1271,7 +1251,7 @@ expression of cells and their spatial neighbors.</p>
 <div class="section level3">
 <h3 id="violin-plot">13.1 Violin plot<a class="anchor" aria-label="anchor" href="#violin-plot"></a>
 </h3>
-<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Gini</span></span>
 <span><span class="va">markers</span> <span class="op">=</span> <span class="fu"><a href="../reference/findMarkers_one_vs_all.html">findMarkers_one_vs_all</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">fov_join</span>,</span>
 <span>                                 method <span class="op">=</span> <span class="st">'gini'</span>,</span>
@@ -1279,6 +1259,7 @@ expression of cells and their spatial neighbors.</p>
 <span>                                 cluster_column <span class="op">=</span> <span class="st">'leiden_clus'</span>,</span>
 <span>                                 min_feats <span class="op">=</span> <span class="fl">1</span>,</span>
 <span>                                 rank_score <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
+<span></span>
 <span><span class="co"># First 5 results by cluster</span></span>
 <span><span class="va">markers</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">.SD</span>, <span class="fl">5</span><span class="op">)</span>, by <span class="op">=</span> <span class="st">'cluster'</span><span class="op">]</span></span>
 <span></span>
@@ -1295,7 +1276,7 @@ expression of cells and their spatial neighbors.</p>
 <div class="section level3">
 <h3 id="heatmap">13.2 Heatmap<a class="anchor" aria-label="anchor" href="#heatmap"></a>
 </h3>
-<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">cluster_order</span> <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span></span>
 <span></span>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/plotMetaDataHeatmap.html" class="external-link">plotMetaDataHeatmap</a></span><span class="op">(</span><span class="va">fov_join</span>,</span>
@@ -1310,7 +1291,7 @@ expression of cells and their spatial neighbors.</p>
 <div class="section level3">
 <h3 id="plot-gini-genes-on-umap">13.3 Plot gini genes on UMAP<a class="anchor" aria-label="anchor" href="#plot-gini-genes-on-umap"></a>
 </h3>
-<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># low, mid, high</span></span>
 <span><span class="va">custom_scale</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'#440154'</span>, <span class="st">'#1F968B'</span>, <span class="st">'#FDE725'</span><span class="op">)</span></span>
 <span></span>
@@ -1329,7 +1310,7 @@ expression of cells and their spatial neighbors.</p>
 <div class="section level3">
 <h3 id="annotate-giotto-object">13.4 Annotate Giotto Object<a class="anchor" aria-label="anchor" href="#annotate-giotto-object"></a>
 </h3>
-<div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## add cell types ###</span></span>
 <span><span class="va">clusters_cell_types_lung</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'Normal Epithelial 1'</span>, <span class="st">'Cancer'</span>, <span class="st">'Stromal'</span>, <span class="st">'B-lineage'</span>,</span>
 <span>                             <span class="st">'Macrophage'</span>, <span class="st">'B-lineage'</span>, <span class="st">'Cancer'</span>,</span>
@@ -1337,10 +1318,10 @@ expression of cells and their spatial neighbors.</p>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">clusters_cell_types_lung</span><span class="op">)</span> <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span></span>
 <span></span>
-<span><span class="va">fov_join</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/annotateGiotto.html" class="external-link">annotateGiotto</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">fov_join</span>,</span>
-<span>                          annotation_vector <span class="op">=</span> <span class="va">clusters_cell_types_lung</span>,</span>
-<span>                          cluster_column <span class="op">=</span> <span class="st">'leiden_clus'</span>,</span>
-<span>                          name <span class="op">=</span> <span class="st">'cell_types'</span><span class="op">)</span></span>
+<span><span class="va">fov_join</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/annotateGiotto.html" class="external-link">annotateGiotto</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">fov_join</span>,</span>
+<span>                           annotation_vector <span class="op">=</span> <span class="va">clusters_cell_types_lung</span>,</span>
+<span>                           cluster_column <span class="op">=</span> <span class="st">'leiden_clus'</span>,</span>
+<span>                           name <span class="op">=</span> <span class="st">'cell_types'</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/plotUMAP.html" class="external-link">plotUMAP</a></span><span class="op">(</span><span class="va">fov_join</span>,</span>
 <span>         cell_color <span class="op">=</span> <span class="st">'cell_types'</span>,</span>
@@ -1352,7 +1333,7 @@ expression of cells and their spatial neighbors.</p>
 <div class="section level3">
 <h3 id="visualize">13.5 Visualize<a class="anchor" aria-label="anchor" href="#visualize"></a>
 </h3>
-<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatDimPlot.html" class="external-link">spatDimPlot2D</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">fov_join</span>,</span>
 <span>              show_image <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>              image_name <span class="op">=</span> <span class="va">image_names</span>,</span>
@@ -1361,7 +1342,7 @@ expression of cells and their spatial neighbors.</p>
 <span>              spat_point_size <span class="op">=</span> <span class="fl">1</span>,</span>
 <span>              save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>save_name <span class="op">=</span> <span class="st">'12_spatdim_type'</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p><img src="images/nanostring_cosmx_lung_cancer/12_spatdim_type.png"></p>
-<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatInSituPlotPoints.html" class="external-link">spatInSituPlotPoints</a></span><span class="op">(</span><span class="va">fov_join</span>,</span>
 <span>                     show_polygon <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>                     polygon_feat_type <span class="op">=</span> <span class="st">'cell'</span>,</span>
@@ -1378,7 +1359,7 @@ expression of cells and their spatial neighbors.</p>
 <div class="section level2">
 <h2 id="interaction-changed-genes">14. Interaction Changed Genes<a class="anchor" aria-label="anchor" href="#interaction-changed-genes"></a>
 </h2>
-<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">future</span><span class="fu">::</span><span class="fu">plan</span><span class="op">(</span><span class="st">'multisession'</span>, workers <span class="op">=</span> <span class="fl">4</span><span class="op">)</span> <span class="co"># NOTE: Depending on your system this could take time</span></span>
 <span></span>
 <span><span class="va">icf</span> <span class="op">=</span> <span class="fu"><a href="../reference/findInteractionChangedFeats.html">findInteractionChangedFeats</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">fov_join</span>,</span>
@@ -1418,67 +1399,67 @@ are broken and can produce errors when loaded again.</p>
 <p><code><a href="https://drieslab.github.io/GiottoClass/reference/saveGiotto.html" class="external-link">saveGiotto()</a></code> is a function that can save Giotto Suite
 projects into a contained structured directory that can then be properly
 loaded again later using <code><a href="https://drieslab.github.io/GiottoClass/reference/loadGiotto.html" class="external-link">loadGiotto()</a></code>.</p>
-<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/saveGiotto.html" class="external-link">saveGiotto</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">fov_join</span>,</span>
 <span>           foldername <span class="op">=</span> <span class="st">'new_folder_name'</span>,</span>
 <span>           dir <span class="op">=</span> <span class="st">'/directory/to/save/to/'</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>R version <span class="dv">4</span>.<span class="fl">3.2</span> (<span class="dv">2023-10-31</span>)</span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>Platform<span class="sc">:</span> x86_64<span class="sc">-</span>apple<span class="sc">-</span><span class="fu">darwin20</span> (<span class="dv">64</span><span class="sc">-</span>bit)</span>
-<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>Running under<span class="sc">:</span> macOS Sonoma <span class="fl">14.3</span></span>
-<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>Matrix products<span class="sc">:</span> default</span>
-<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>BLAS<span class="sc">:</span>   <span class="er">/</span>System<span class="sc">/</span>Library<span class="sc">/</span>Frameworks<span class="sc">/</span>Accelerate.framework<span class="sc">/</span>Versions<span class="sc">/</span>A<span class="sc">/</span>Frameworks<span class="sc">/</span>vecLib.framework<span class="sc">/</span>Versions<span class="sc">/</span>A<span class="sc">/</span>libBLAS.dylib </span>
-<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>LAPACK<span class="sc">:</span> <span class="er">/</span>Library<span class="sc">/</span>Frameworks<span class="sc">/</span>R.framework<span class="sc">/</span>Versions<span class="sc">/</span><span class="fl">4.3</span><span class="sc">-</span>x86_64<span class="sc">/</span>Resources<span class="sc">/</span>lib<span class="sc">/</span>libRlapack.dylib;  LAPACK version <span class="dv">3</span>.<span class="fl">11.0</span></span>
-<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>locale<span class="sc">:</span></span>
-<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] en_US.UTF<span class="dv">-8</span><span class="sc">/</span>en_US.UTF<span class="dv">-8</span><span class="sc">/</span>en_US.UTF<span class="dv">-8</span><span class="sc">/</span>C<span class="sc">/</span>en_US.UTF<span class="dv">-8</span><span class="sc">/</span>en_US.UTF<span class="dv">-8</span></span>
-<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a>time zone<span class="sc">:</span> America<span class="sc">/</span>New_York</span>
-<span id="cb47-13"><a href="#cb47-13" aria-hidden="true" tabindex="-1"></a>tzcode source<span class="sc">:</span> internal</span>
-<span id="cb47-14"><a href="#cb47-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-15"><a href="#cb47-15" aria-hidden="true" tabindex="-1"></a>attached base packages<span class="sc">:</span></span>
-<span id="cb47-16"><a href="#cb47-16" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] stats     graphics  grDevices utils     datasets  methods   base     </span>
-<span id="cb47-17"><a href="#cb47-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-18"><a href="#cb47-18" aria-hidden="true" tabindex="-1"></a>other attached packages<span class="sc">:</span></span>
-<span id="cb47-19"><a href="#cb47-19" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] ggplot2_3.<span class="fl">4.4</span>     Giotto_4.<span class="fl">0.2</span>      GiottoClass_0.<span class="fl">1.3</span></span>
-<span id="cb47-20"><a href="#cb47-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-21"><a href="#cb47-21" aria-hidden="true" tabindex="-1"></a>loaded via a <span class="fu">namespace</span> (and not attached)<span class="sc">:</span></span>
-<span id="cb47-22"><a href="#cb47-22" aria-hidden="true" tabindex="-1"></a>  [<span class="dv">1</span>] tidyselect_1.<span class="fl">2.0</span>            viridisLite_0.<span class="fl">4.2</span>           dplyr_1.<span class="fl">1.4</span>                </span>
-<span id="cb47-23"><a href="#cb47-23" aria-hidden="true" tabindex="-1"></a>  [<span class="dv">4</span>] farver_2.<span class="fl">1.1</span>                GiottoVisuals_0.<span class="fl">1.4</span>         bitops_1<span class="fl">.0</span><span class="dv">-7</span>               </span>
-<span id="cb47-24"><a href="#cb47-24" aria-hidden="true" tabindex="-1"></a>  [<span class="dv">7</span>] fastmap_1.<span class="fl">1.1</span>               SingleCellExperiment_1.<span class="fl">24.0</span> RCurl_1<span class="fl">.98-1.14</span>            </span>
-<span id="cb47-25"><a href="#cb47-25" aria-hidden="true" tabindex="-1"></a> [<span class="dv">10</span>] rsvd_1.<span class="fl">0.5</span>                  digest_0.<span class="fl">6.34</span>               lifecycle_1.<span class="fl">0.4</span>            </span>
-<span id="cb47-26"><a href="#cb47-26" aria-hidden="true" tabindex="-1"></a> [<span class="dv">13</span>] terra_1<span class="fl">.7</span><span class="dv">-71</span>                dbscan_1<span class="fl">.1</span><span class="dv">-12</span>               magrittr_2.<span class="fl">0.3</span>             </span>
-<span id="cb47-27"><a href="#cb47-27" aria-hidden="true" tabindex="-1"></a> [<span class="dv">16</span>] compiler_4.<span class="fl">3.2</span>              rlang_1.<span class="fl">1.3</span>                 tools_4.<span class="fl">3.2</span>                </span>
-<span id="cb47-28"><a href="#cb47-28" aria-hidden="true" tabindex="-1"></a> [<span class="dv">19</span>] igraph_2.<span class="dv">0</span>.<span class="fl">1.1</span>              utf8_1.<span class="fl">2.4</span>                  yaml_2.<span class="fl">3.8</span>                 </span>
-<span id="cb47-29"><a href="#cb47-29" aria-hidden="true" tabindex="-1"></a> [<span class="dv">22</span>] data.table_1.<span class="fl">15.0</span>           knitr_1<span class="fl">.45</span>                  S4Arrays_1.<span class="fl">2.0</span>             </span>
-<span id="cb47-30"><a href="#cb47-30" aria-hidden="true" tabindex="-1"></a> [<span class="dv">25</span>] labeling_0.<span class="fl">4.3</span>              reticulate_1.<span class="fl">35.0</span>           DelayedArray_0.<span class="fl">28.0</span>        </span>
-<span id="cb47-31"><a href="#cb47-31" aria-hidden="true" tabindex="-1"></a> [<span class="dv">28</span>] RColorBrewer_1<span class="fl">.1</span><span class="dv">-3</span>          BiocParallel_1.<span class="fl">36.0</span>         abind_1<span class="fl">.4</span><span class="dv">-5</span>                </span>
-<span id="cb47-32"><a href="#cb47-32" aria-hidden="true" tabindex="-1"></a> [<span class="dv">31</span>] withr_3.<span class="fl">0.0</span>                 BiocGenerics_0.<span class="fl">48.1</span>         grid_4.<span class="fl">3.2</span>                 </span>
-<span id="cb47-33"><a href="#cb47-33" aria-hidden="true" tabindex="-1"></a> [<span class="dv">34</span>] stats4_4.<span class="fl">3.2</span>                fansi_1.<span class="fl">0.6</span>                 beachmat_2.<span class="fl">18.0</span>            </span>
-<span id="cb47-34"><a href="#cb47-34" aria-hidden="true" tabindex="-1"></a> [<span class="dv">37</span>] colorspace_2<span class="fl">.1</span><span class="dv">-0</span>            future_1.<span class="fl">33.1</span>               progressr_0.<span class="fl">14.0</span>           </span>
-<span id="cb47-35"><a href="#cb47-35" aria-hidden="true" tabindex="-1"></a> [<span class="dv">40</span>] globals_0.<span class="fl">16.2</span>              scales_1.<span class="fl">3.0</span>                gtools_3.<span class="fl">9.5</span>               </span>
-<span id="cb47-36"><a href="#cb47-36" aria-hidden="true" tabindex="-1"></a> [<span class="dv">43</span>] MASS_7<span class="fl">.3</span><span class="dv">-60</span>.<span class="fl">0.1</span>             SummarizedExperiment_1.<span class="fl">32.0</span> cli_3.<span class="fl">6.2</span>                  </span>
-<span id="cb47-37"><a href="#cb47-37" aria-hidden="true" tabindex="-1"></a> [<span class="dv">46</span>] rmarkdown_2<span class="fl">.25</span>              crayon_1.<span class="fl">5.2</span>                ragg_1.<span class="fl">2.7</span>                 </span>
-<span id="cb47-38"><a href="#cb47-38" aria-hidden="true" tabindex="-1"></a> [<span class="dv">49</span>] generics_0.<span class="fl">1.3</span>              rstudioapi_0.<span class="fl">15.0</span>           future.apply_1.<span class="fl">11.1</span>        </span>
-<span id="cb47-39"><a href="#cb47-39" aria-hidden="true" tabindex="-1"></a> [<span class="dv">52</span>] rjson_0.<span class="fl">2.21</span>                zlibbioc_1.<span class="fl">48.0</span>             parallel_4.<span class="fl">3.2</span>             </span>
-<span id="cb47-40"><a href="#cb47-40" aria-hidden="true" tabindex="-1"></a> [<span class="dv">55</span>] XVector_0.<span class="fl">42.0</span>              matrixStats_1.<span class="fl">2.0</span>           vctrs_0.<span class="fl">6.5</span>                </span>
-<span id="cb47-41"><a href="#cb47-41" aria-hidden="true" tabindex="-1"></a> [<span class="dv">58</span>] Matrix_1<span class="fl">.6</span><span class="dv">-5</span>                jsonlite_1.<span class="fl">8.8</span>              BiocSingular_1.<span class="fl">18.0</span>        </span>
-<span id="cb47-42"><a href="#cb47-42" aria-hidden="true" tabindex="-1"></a> [<span class="dv">61</span>] IRanges_2.<span class="fl">36.0</span>              S4Vectors_0.<span class="fl">40.2</span>            ggrepel_0.<span class="fl">9.5</span>              </span>
-<span id="cb47-43"><a href="#cb47-43" aria-hidden="true" tabindex="-1"></a> [<span class="dv">64</span>] irlba_2.<span class="dv">3</span>.<span class="fl">5.1</span>               scattermore_1<span class="fl">.2</span>             listenv_0.<span class="fl">9.1</span>              </span>
-<span id="cb47-44"><a href="#cb47-44" aria-hidden="true" tabindex="-1"></a> [<span class="dv">67</span>] systemfonts_1.<span class="fl">0.5</span>           magick_2.<span class="fl">8.2</span>                GiottoUtils_0.<span class="fl">1.3</span>          </span>
-<span id="cb47-45"><a href="#cb47-45" aria-hidden="true" tabindex="-1"></a> [<span class="dv">70</span>] parallelly_1.<span class="fl">36.0</span>           glue_1.<span class="fl">7.0</span>                  codetools_0<span class="fl">.2</span><span class="dv">-19</span>           </span>
-<span id="cb47-46"><a href="#cb47-46" aria-hidden="true" tabindex="-1"></a> [<span class="dv">73</span>] uwot_0.<span class="fl">1.16</span>                 cowplot_1.<span class="fl">1.3</span>               RcppAnnoy_0.<span class="fl">0.22</span>           </span>
-<span id="cb47-47"><a href="#cb47-47" aria-hidden="true" tabindex="-1"></a> [<span class="dv">76</span>] gtable_0.<span class="fl">3.4</span>                deldir_2<span class="fl">.0</span><span class="dv">-2</span>                GenomeInfoDb_1.<span class="fl">38.5</span>        </span>
-<span id="cb47-48"><a href="#cb47-48" aria-hidden="true" tabindex="-1"></a> [<span class="dv">79</span>] GenomicRanges_1.<span class="fl">54.1</span>        ScaledMatrix_1.<span class="fl">10.0</span>         munsell_0.<span class="fl">5.0</span>              </span>
-<span id="cb47-49"><a href="#cb47-49" aria-hidden="true" tabindex="-1"></a> [<span class="dv">82</span>] tibble_3.<span class="fl">2.1</span>                pillar_1.<span class="fl">9.0</span>                htmltools_0.<span class="fl">5.7</span>            </span>
-<span id="cb47-50"><a href="#cb47-50" aria-hidden="true" tabindex="-1"></a> [<span class="dv">85</span>] GenomeInfoDbData_1.<span class="fl">2.11</span>     R6_2.<span class="fl">5.1</span>                    textshaping_0.<span class="fl">3.7</span>          </span>
-<span id="cb47-51"><a href="#cb47-51" aria-hidden="true" tabindex="-1"></a> [<span class="dv">88</span>] evaluate_0<span class="fl">.23</span>               lattice_0<span class="fl">.22</span><span class="dv">-5</span>              Biobase_2.<span class="fl">62.0</span>             </span>
-<span id="cb47-52"><a href="#cb47-52" aria-hidden="true" tabindex="-1"></a> [<span class="dv">91</span>] png_0<span class="fl">.1</span><span class="dv">-8</span>                   backports_1.<span class="fl">4.1</span>             SpatialExperiment_1.<span class="fl">12.0</span>   </span>
-<span id="cb47-53"><a href="#cb47-53" aria-hidden="true" tabindex="-1"></a> [<span class="dv">94</span>] Rcpp_1.<span class="fl">0.12</span>                 SparseArray_1.<span class="fl">2.3</span>           checkmate_2.<span class="fl">3.1</span>            </span>
-<span id="cb47-54"><a href="#cb47-54" aria-hidden="true" tabindex="-1"></a> [<span class="dv">97</span>] colorRamp2_0.<span class="fl">1.0</span>            xfun_0<span class="fl">.41</span>                   MatrixGenerics_1.<span class="fl">14.0</span>      </span>
-<span id="cb47-55"><a href="#cb47-55" aria-hidden="true" tabindex="-1"></a>[<span class="dv">100</span>] pkgconfig_2.<span class="fl">0.3</span>  </span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>R version <span class="dv">4</span>.<span class="fl">3.2</span> (<span class="dv">2023-10-31</span>)</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>Platform<span class="sc">:</span> x86_64<span class="sc">-</span>apple<span class="sc">-</span><span class="fu">darwin20</span> (<span class="dv">64</span><span class="sc">-</span>bit)</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>Running under<span class="sc">:</span> macOS Sonoma <span class="dv">14</span>.<span class="fl">3.1</span></span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>Matrix products<span class="sc">:</span> default</span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>BLAS<span class="sc">:</span>   <span class="er">/</span>System<span class="sc">/</span>Library<span class="sc">/</span>Frameworks<span class="sc">/</span>Accelerate.framework<span class="sc">/</span>Versions<span class="sc">/</span>A<span class="sc">/</span>Frameworks<span class="sc">/</span>vecLib.framework<span class="sc">/</span>Versions<span class="sc">/</span>A<span class="sc">/</span>libBLAS.dylib </span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>LAPACK<span class="sc">:</span> <span class="er">/</span>Library<span class="sc">/</span>Frameworks<span class="sc">/</span>R.framework<span class="sc">/</span>Versions<span class="sc">/</span><span class="fl">4.3</span><span class="sc">-</span>x86_64<span class="sc">/</span>Resources<span class="sc">/</span>lib<span class="sc">/</span>libRlapack.dylib;  LAPACK version <span class="dv">3</span>.<span class="fl">11.0</span></span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>locale<span class="sc">:</span></span>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] en_US.UTF<span class="dv">-8</span><span class="sc">/</span>en_US.UTF<span class="dv">-8</span><span class="sc">/</span>en_US.UTF<span class="dv">-8</span><span class="sc">/</span>C<span class="sc">/</span>en_US.UTF<span class="dv">-8</span><span class="sc">/</span>en_US.UTF<span class="dv">-8</span></span>
+<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a>time zone<span class="sc">:</span> America<span class="sc">/</span>New_York</span>
+<span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a>tzcode source<span class="sc">:</span> internal</span>
+<span id="cb44-14"><a href="#cb44-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-15"><a href="#cb44-15" aria-hidden="true" tabindex="-1"></a>attached base packages<span class="sc">:</span></span>
+<span id="cb44-16"><a href="#cb44-16" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] stats     graphics  grDevices utils     datasets  methods   base     </span>
+<span id="cb44-17"><a href="#cb44-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-18"><a href="#cb44-18" aria-hidden="true" tabindex="-1"></a>other attached packages<span class="sc">:</span></span>
+<span id="cb44-19"><a href="#cb44-19" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] ggplot2_3.<span class="fl">4.4</span>     Giotto_4.<span class="fl">0.2</span>      GiottoClass_0.<span class="fl">1.3</span></span>
+<span id="cb44-20"><a href="#cb44-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-21"><a href="#cb44-21" aria-hidden="true" tabindex="-1"></a>loaded via a <span class="fu">namespace</span> (and not attached)<span class="sc">:</span></span>
+<span id="cb44-22"><a href="#cb44-22" aria-hidden="true" tabindex="-1"></a>  [<span class="dv">1</span>] tidyselect_1.<span class="fl">2.0</span>            viridisLite_0.<span class="fl">4.2</span>           dplyr_1.<span class="fl">1.4</span>                </span>
+<span id="cb44-23"><a href="#cb44-23" aria-hidden="true" tabindex="-1"></a>  [<span class="dv">4</span>] farver_2.<span class="fl">1.1</span>                GiottoVisuals_0.<span class="fl">1.4</span>         bitops_1<span class="fl">.0</span><span class="dv">-7</span>               </span>
+<span id="cb44-24"><a href="#cb44-24" aria-hidden="true" tabindex="-1"></a>  [<span class="dv">7</span>] fastmap_1.<span class="fl">1.1</span>               SingleCellExperiment_1.<span class="fl">24.0</span> RCurl_1<span class="fl">.98-1.14</span>            </span>
+<span id="cb44-25"><a href="#cb44-25" aria-hidden="true" tabindex="-1"></a> [<span class="dv">10</span>] digest_0.<span class="fl">6.34</span>               rsvd_1.<span class="fl">0.5</span>                  lifecycle_1.<span class="fl">0.4</span>            </span>
+<span id="cb44-26"><a href="#cb44-26" aria-hidden="true" tabindex="-1"></a> [<span class="dv">13</span>] terra_1<span class="fl">.7</span><span class="dv">-71</span>                dbscan_1<span class="fl">.1</span><span class="dv">-12</span>               magrittr_2.<span class="fl">0.3</span>             </span>
+<span id="cb44-27"><a href="#cb44-27" aria-hidden="true" tabindex="-1"></a> [<span class="dv">16</span>] compiler_4.<span class="fl">3.2</span>              rlang_1.<span class="fl">1.3</span>                 tools_4.<span class="fl">3.2</span>                </span>
+<span id="cb44-28"><a href="#cb44-28" aria-hidden="true" tabindex="-1"></a> [<span class="dv">19</span>] igraph_2.<span class="dv">0</span>.<span class="fl">1.1</span>              utf8_1.<span class="fl">2.4</span>                  yaml_2.<span class="fl">3.8</span>                 </span>
+<span id="cb44-29"><a href="#cb44-29" aria-hidden="true" tabindex="-1"></a> [<span class="dv">22</span>] data.table_1.<span class="fl">15.0</span>           knitr_1<span class="fl">.45</span>                  S4Arrays_1.<span class="fl">2.0</span>             </span>
+<span id="cb44-30"><a href="#cb44-30" aria-hidden="true" tabindex="-1"></a> [<span class="dv">25</span>] labeling_0.<span class="fl">4.3</span>              reticulate_1.<span class="fl">35.0</span>           DelayedArray_0.<span class="fl">28.0</span>        </span>
+<span id="cb44-31"><a href="#cb44-31" aria-hidden="true" tabindex="-1"></a> [<span class="dv">28</span>] RColorBrewer_1<span class="fl">.1</span><span class="dv">-3</span>          abind_1<span class="fl">.4</span><span class="dv">-5</span>                 BiocParallel_1.<span class="fl">36.0</span>        </span>
+<span id="cb44-32"><a href="#cb44-32" aria-hidden="true" tabindex="-1"></a> [<span class="dv">31</span>] withr_3.<span class="fl">0.0</span>                 BiocGenerics_0.<span class="fl">48.1</span>         grid_4.<span class="fl">3.2</span>                 </span>
+<span id="cb44-33"><a href="#cb44-33" aria-hidden="true" tabindex="-1"></a> [<span class="dv">34</span>] stats4_4.<span class="fl">3.2</span>                fansi_1.<span class="fl">0.6</span>                 beachmat_2.<span class="fl">18.0</span>            </span>
+<span id="cb44-34"><a href="#cb44-34" aria-hidden="true" tabindex="-1"></a> [<span class="dv">37</span>] future_1.<span class="fl">33.1</span>               colorspace_2<span class="fl">.1</span><span class="dv">-0</span>            progressr_0.<span class="fl">14.0</span>           </span>
+<span id="cb44-35"><a href="#cb44-35" aria-hidden="true" tabindex="-1"></a> [<span class="dv">40</span>] globals_0.<span class="fl">16.2</span>              MASS_7<span class="fl">.3</span><span class="dv">-60</span>.<span class="fl">0.1</span>             scales_1.<span class="fl">3.0</span>               </span>
+<span id="cb44-36"><a href="#cb44-36" aria-hidden="true" tabindex="-1"></a> [<span class="dv">43</span>] gtools_3.<span class="fl">9.5</span>                SummarizedExperiment_1.<span class="fl">32.0</span> cli_3.<span class="fl">6.2</span>                  </span>
+<span id="cb44-37"><a href="#cb44-37" aria-hidden="true" tabindex="-1"></a> [<span class="dv">46</span>] rmarkdown_2<span class="fl">.25</span>              crayon_1.<span class="fl">5.2</span>                ragg_1.<span class="fl">2.7</span>                 </span>
+<span id="cb44-38"><a href="#cb44-38" aria-hidden="true" tabindex="-1"></a> [<span class="dv">49</span>] generics_0.<span class="fl">1.3</span>              future.apply_1.<span class="fl">11.1</span>         rstudioapi_0.<span class="fl">15.0</span>          </span>
+<span id="cb44-39"><a href="#cb44-39" aria-hidden="true" tabindex="-1"></a> [<span class="dv">52</span>] rjson_0.<span class="fl">2.21</span>                zlibbioc_1.<span class="fl">48.0</span>             parallel_4.<span class="fl">3.2</span>             </span>
+<span id="cb44-40"><a href="#cb44-40" aria-hidden="true" tabindex="-1"></a> [<span class="dv">55</span>] XVector_0.<span class="fl">42.0</span>              matrixStats_1.<span class="fl">2.0</span>           vctrs_0.<span class="fl">6.5</span>                </span>
+<span id="cb44-41"><a href="#cb44-41" aria-hidden="true" tabindex="-1"></a> [<span class="dv">58</span>] Matrix_1<span class="fl">.6</span><span class="dv">-5</span>                jsonlite_1.<span class="fl">8.8</span>              BiocSingular_1.<span class="fl">18.0</span>        </span>
+<span id="cb44-42"><a href="#cb44-42" aria-hidden="true" tabindex="-1"></a> [<span class="dv">61</span>] IRanges_2.<span class="fl">36.0</span>              S4Vectors_0.<span class="fl">40.2</span>            ggrepel_0.<span class="fl">9.5</span>              </span>
+<span id="cb44-43"><a href="#cb44-43" aria-hidden="true" tabindex="-1"></a> [<span class="dv">64</span>] irlba_2.<span class="dv">3</span>.<span class="fl">5.1</span>               scattermore_1<span class="fl">.2</span>             listenv_0.<span class="fl">9.1</span>              </span>
+<span id="cb44-44"><a href="#cb44-44" aria-hidden="true" tabindex="-1"></a> [<span class="dv">67</span>] systemfonts_1.<span class="fl">0.5</span>           magick_2.<span class="fl">8.2</span>                GiottoUtils_0.<span class="fl">1.5</span>          </span>
+<span id="cb44-45"><a href="#cb44-45" aria-hidden="true" tabindex="-1"></a> [<span class="dv">70</span>] parallelly_1.<span class="fl">36.0</span>           glue_1.<span class="fl">7.0</span>                  codetools_0<span class="fl">.2</span><span class="dv">-19</span>           </span>
+<span id="cb44-46"><a href="#cb44-46" aria-hidden="true" tabindex="-1"></a> [<span class="dv">73</span>] cowplot_1.<span class="fl">1.3</span>               uwot_0.<span class="fl">1.16</span>                 RcppAnnoy_0.<span class="fl">0.22</span>           </span>
+<span id="cb44-47"><a href="#cb44-47" aria-hidden="true" tabindex="-1"></a> [<span class="dv">76</span>] gtable_0.<span class="fl">3.4</span>                deldir_2<span class="fl">.0</span><span class="dv">-2</span>                GenomeInfoDb_1.<span class="fl">38.6</span>        </span>
+<span id="cb44-48"><a href="#cb44-48" aria-hidden="true" tabindex="-1"></a> [<span class="dv">79</span>] GenomicRanges_1.<span class="fl">54.1</span>        ScaledMatrix_1.<span class="fl">10.0</span>         munsell_0.<span class="fl">5.0</span>              </span>
+<span id="cb44-49"><a href="#cb44-49" aria-hidden="true" tabindex="-1"></a> [<span class="dv">82</span>] tibble_3.<span class="fl">2.1</span>                pillar_1.<span class="fl">9.0</span>                htmltools_0.<span class="fl">5.7</span>            </span>
+<span id="cb44-50"><a href="#cb44-50" aria-hidden="true" tabindex="-1"></a> [<span class="dv">85</span>] GenomeInfoDbData_1.<span class="fl">2.11</span>     R6_2.<span class="fl">5.1</span>                    textshaping_0.<span class="fl">3.7</span>          </span>
+<span id="cb44-51"><a href="#cb44-51" aria-hidden="true" tabindex="-1"></a> [<span class="dv">88</span>] evaluate_0<span class="fl">.23</span>               lattice_0<span class="fl">.22</span><span class="dv">-5</span>              Biobase_2.<span class="fl">62.0</span>             </span>
+<span id="cb44-52"><a href="#cb44-52" aria-hidden="true" tabindex="-1"></a> [<span class="dv">91</span>] png_0<span class="fl">.1</span><span class="dv">-8</span>                   backports_1.<span class="fl">4.1</span>             SpatialExperiment_1.<span class="fl">12.0</span>   </span>
+<span id="cb44-53"><a href="#cb44-53" aria-hidden="true" tabindex="-1"></a> [<span class="dv">94</span>] Rcpp_1.<span class="fl">0.12</span>                 SparseArray_1.<span class="fl">2.4</span>           checkmate_2.<span class="fl">3.1</span>            </span>
+<span id="cb44-54"><a href="#cb44-54" aria-hidden="true" tabindex="-1"></a> [<span class="dv">97</span>] colorRamp2_0.<span class="fl">1.0</span>            xfun_0<span class="fl">.42</span>                   MatrixGenerics_1.<span class="fl">14.0</span>      </span>
+<span id="cb44-55"><a href="#cb44-55" aria-hidden="true" tabindex="-1"></a>[<span class="dv">100</span>] pkgconfig_2.<span class="fl">0.3</span></span></code></pre></div>
 </div>
   </div>
 
