@@ -23,7 +23,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Giotto</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.5</span>
       </span>
     </div>
 
@@ -286,7 +286,7 @@
     </div>
 
     <div class="ref-description">
-    <p>run scrublet doublet detection for raw expression.</p>
+    <p>run <em>scrublet</em> doublet detection for raw expression.</p>
     </div>
 
     <div id="ref-usage">
@@ -300,7 +300,8 @@
 <span>  min_cells <span class="op">=</span> <span class="fl">1</span>,</span>
 <span>  min_gene_variability_pctl <span class="op">=</span> <span class="fl">85</span>,</span>
 <span>  n_prin_comps <span class="op">=</span> <span class="fl">30</span>,</span>
-<span>  return_gobject <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span>  return_gobject <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  seed <span class="op">=</span> <span class="fl">1234</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -323,19 +324,23 @@
 
 
 <dt>expected_doublet_rate</dt>
-<dd><p>expected transcriptomes that are doublets. 0.06 is from 10x Chromium guide.</p></dd>
+<dd><p>expected transcriptomes that are doublets. 0.06
+is from 10x Chromium guide.</p></dd>
 
 
 <dt>min_counts</dt>
-<dd><p>scrublet internal data filtering, min counts found to be considered a cell</p></dd>
+<dd><p>scrublet internal data filtering, min counts found to be
+considered a cell</p></dd>
 
 
 <dt>min_cells</dt>
-<dd><p>scrublet internal data filtering. min cells expressed to be considered a feat</p></dd>
+<dd><p>scrublet internal data filtering. min cells expressed to be
+considered a feat</p></dd>
 
 
 <dt>min_gene_variability_pctl</dt>
-<dd><p>scrublet internal PCA generation. highly variable gene percentile cutoff</p></dd>
+<dd><p>scrublet internal PCA generation. highly
+variable gene percentile cutoff</p></dd>
 
 
 <dt>n_prin_comps</dt>
@@ -343,18 +348,27 @@
 
 
 <dt>return_gobject</dt>
-<dd><p>return as gobject if TRUE, data.frame with cell_ID if FALSE</p></dd>
+<dd><p>return as gobject if TRUE, data.frame with cell_ID if
+FALSE</p></dd>
+
+
+<dt>seed</dt>
+<dd><p>If a numeric is provided, then it will be used as a seed. If
+NULL, no seed will be set.</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
     
 
-<p>list including doublet scores and classifications</p>
+<p>if <code>return_gobject = FALSE</code>, a <code>data.table</code> cell_ID, doublet scores,
+and classifications are returned. If <code>TRUE</code>, that information is appended into
+the input <code>giotto</code> object's metadata and the <code>giotto</code> object is returned.</p>
     </div>
     <div id="see-also">
     <h2>See also</h2>
-    <div class="dont-index"><p>This function wraps the python package scrublet <a href="https://doi.org/10.1016/j.cels.2018.11.005" class="external-link">doi:10.1016/j.cels.2018.11.005</a></p></div>
+    <div class="dont-index"><p>This function wraps the python package scrublet
+<a href="https://doi.org/10.1016/j.cels.2018.11.005" class="external-link">doi:10.1016/j.cels.2018.11.005</a></p></div>
     </div>
 
   </div>

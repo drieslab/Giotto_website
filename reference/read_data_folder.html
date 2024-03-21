@@ -27,7 +27,7 @@ reader functions should be built using it as a base."><!-- mathjax --><script sr
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Giotto</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.5</span>
       </span>
     </div>
 
@@ -305,11 +305,11 @@ reader functions should be built using it as a base.</p>
 <span>  load_format <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  <span class="va">require_data_DT</span>,</span>
 <span>  cores <span class="op">=</span> <span class="cn">NA</span>,</span>
-<span>  verbose <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  verbose <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  toplevel <span class="op">=</span> <span class="fl">2L</span></span>
 <span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu">.read_merscope_folder</span><span class="op">(</span><span class="va">merscope_dir</span>, <span class="va">data_to_use</span>, cores <span class="op">=</span> <span class="cn">NA</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu">.read_merscope_folder</span><span class="op">(</span><span class="va">merscope_dir</span>, <span class="va">data_to_use</span>, cores <span class="op">=</span> <span class="cn">NA</span>, verbose <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -327,12 +327,14 @@ reader functions should be built using it as a base.</p>
 
 
 <dt>data_to_use</dt>
-<dd><p>which type(s) of expression data to build the gobject with</p></dd>
+<dd><p>character. Which type(s) of expression data to build the
+gobject with. Values should match with a <em>workflow</em> item in require_data_DT
+(see details)</p></dd>
 
 
 <dt>require_data_DT</dt>
 <dd><p>data.table detailing if expected data items are required
-or optional for each <code>data_to_use</code> workflow</p></dd>
+or optional for each <code>data_to_use</code> <em>workflow</em></p></dd>
 
 
 <dt>cores</dt>
@@ -350,15 +352,52 @@ default is one stackframe above <code>.read_data_folder</code>.</p></dd>
 </dl></div>
     <div id="details">
     <h2>Details</h2>
-    <p>Steps performed:</p><ul><li><p>1. detection of items within <code>data_dir</code> by looking for keywords
+    <p><strong>Steps performed:</strong></p><ul><li><p>1. detection of items within <code>data_dir</code> by looking for keywords
 assigned through <code>dir_items</code></p></li>
 <li><p>2. check of detected items to see if everything needed has been found.
-Dictionary of necessary vs optional items for each <code>data_to_use</code> workflow
+Dictionary of necessary vs optional items for each <code>data_to_use</code> <em>workflow</em>
 is provided through <code>require_data_DT</code></p></li>
 <li><p>3. if multiple filepaths are found to be matching then select the first
 one. This function is only intended to find the first level subdirectories
 and files.</p></li>
-</ul></div>
+</ul><p><strong>Example reader implementation:</strong></p><div class="sourceCode"><pre><code><span></span>
+<span>  <span class="va">foo</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x_dir</span>,</span>
+<span>                  <span class="va">data_to_use</span>,</span>
+<span>                  <span class="va">cores</span> <span class="op">=</span> <span class="cn">NA</span>,</span>
+<span>                  <span class="va">verbose</span> <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="va">dir_items</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
+<span>      data1 <span class="op">=</span> <span class="st">"regex_pattern1"</span>,</span>
+<span>      data2 <span class="op">=</span> <span class="st">"regex_pattern2"</span>,</span>
+<span>      data3 <span class="op">=</span> <span class="st">"regex_pattern3"</span></span>
+<span>    <span class="op">)</span></span>
+<span></span>
+<span>    <span class="co"># DT of info to check directory for. Has 3 cols</span></span>
+<span>    <span class="va">require_data_DT</span> <span class="op">&lt;-</span> <span class="fu">data.table</span><span class="fu">::</span><span class="fu"><a href="https://rdatatable.gitlab.io/data.table/reference/data.table.html" class="external-link">data.table</a></span><span class="op">(</span></span>
+<span>      workflow <span class="op">=</span> <span class="st">"a"</span>, <span class="co"># data_to_use is matched against this</span></span>
+<span>      item <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
+<span>        <span class="st">"data1"</span>,</span>
+<span>        <span class="st">"data2"</span>,</span>
+<span>        <span class="st">"data3"</span></span>
+<span>      <span class="op">)</span>,</span>
+<span>      needed <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
+<span>        <span class="cn">FALSE</span>, <span class="co"># data1 optional for this workflow (if missing: warn)</span></span>
+<span>        <span class="cn">TRUE</span>,  <span class="co"># data2 vital for this workflow (if missing: error)</span></span>
+<span>        <span class="cn">TRUE</span>   <span class="co"># data3 vital for this workflow (if missing: error)</span></span>
+<span>      <span class="op">)</span></span>
+<span>    <span class="op">)</span></span>
+<span></span>
+<span>    <span class="fu"><a href="../reference/read_data_folder.html">.read_data_folder</a></span><span class="op">(</span></span>
+<span>      spat_method <span class="op">=</span> <span class="st">"x_method"</span>,</span>
+<span>      data_dir <span class="op">=</span> <span class="va">x_dir</span>,</span>
+<span>      dir_items <span class="op">=</span> <span class="va">dir_items</span>,</span>
+<span>      data_to_use <span class="op">=</span> <span class="va">data_to_use</span>,</span>
+<span>      require_data_DT <span class="op">=</span> <span class="va">require_data_DT</span>,</span>
+<span>      cores <span class="op">=</span> <span class="va">cores</span>,</span>
+<span>      verbose <span class="op">=</span> <span class="va">verbose</span></span>
+<span>    <span class="op">)</span></span>
+<span>  <span class="op">}</span></span></code></pre></div>
+
+    </div>
     <div id="functions">
     <h2>Functions</h2>
     

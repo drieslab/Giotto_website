@@ -23,7 +23,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Giotto</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.5</span>
       </span>
     </div>
 
@@ -290,13 +290,14 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">.visium_spot_poly</span><span class="op">(</span>spatLocsObj <span class="op">=</span> <span class="cn">NULL</span>, <span class="va">json_scalefactors</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">.visium_spot_poly</span><span class="op">(</span>spatlocs <span class="op">=</span> <span class="cn">NULL</span>, <span class="va">json_scalefactors</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>spatLocsObj</dt>
-<dd><p>spatial locations object containing centroid locations of visium spots</p></dd>
+    <dl><dt>spatlocs</dt>
+<dd><p>spatial locations data.table or <code>spatLocsObj</code> containing
+centroid locations of visium spots</p></dd>
 
 
 <dt>json_scalefactors</dt>

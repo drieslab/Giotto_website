@@ -39,7 +39,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Giotto</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.5</span>
       </span>
     </div>
 
@@ -395,13 +395,8 @@
 <div class="section level2">
 <h2 id="dataset-explanation">Dataset Explanation<a class="anchor" aria-label="anchor" href="#dataset-explanation"></a>
 </h2>
-<p>Several fields - containing 100’s of cells - in the mouse cortex and
-subventricular zone were imaged for seqFISH+. The coordinates of the
-cells within each field are independent of each other, so in order to
-visualize and process all cells together imaging fields will be stitched
-together by providing x and y-offset values specific to each field.</p>
-<p>These offset values are known or estimates based on the original raw
-image:</p>
+<p>Several fields - containing 100’s of cells - in the mouse cortex and subventricular zone were imaged for seqFISH+. The coordinates of the cells within each field are independent of each other, so in order to visualize and process all cells together imaging fields will be stitched together by providing x and y-offset values specific to each field.</p>
+<p>These offset values are known or estimates based on the original raw image:</p>
 <p><img src="images/seqfish_cortex/cortex_svz_location_fields.png"></p>
 </div>
 <div class="section level2">
@@ -560,7 +555,7 @@ image:</p>
 <p>The following step requires the installation of {ggdendro}.</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># install.packages('ggdendro')</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/andrie/ggdendro" class="external-link">ggdendro</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://andrie.github.io/ggdendro/" class="external-link">ggdendro</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/showClusterDendrogram.html" class="external-link">showClusterDendrogram</a></span><span class="op">(</span><span class="va">SS_seqfish</span>, h <span class="op">=</span> <span class="fl">0.5</span>, rotate <span class="op">=</span> <span class="cn">T</span>, cluster_column <span class="op">=</span> <span class="st">'sub_leiden_clus_select'</span><span class="op">)</span></span></code></pre></div>
 <p><img src="images/seqfish_cortex/12-showClusterDendrogram.png"></p>
 </div>

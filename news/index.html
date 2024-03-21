@@ -23,7 +23,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Giotto</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.5</span>
       </span>
     </div>
 
@@ -285,6 +285,59 @@
     </div>
 
     <div class="section level2">
+<h2 class="page-header" data-toc-text="4.0.5" id="giotto-405-20240312">Giotto 4.0.5 (2024/03/12)<a class="anchor" aria-label="anchor" href="#giotto-405-20240312"></a></h2>
+<div class="section level3">
+<h3 id="bug-fixes-4-0-5">Bug fixes<a class="anchor" aria-label="anchor" href="#bug-fixes-4-0-5"></a></h3>
+<ul><li>Fix Error “cannot coerce class ‘structure(“spatLocsObj”, package = “Giotto”)’ to a data.frame” in <code><a href="../reference/spatialDE.html">spatialDE()</a></code>
+</li>
+</ul></div>
+<div class="section level3">
+<h3 id="enhancements-4-0-5">Enhancements<a class="anchor" aria-label="anchor" href="#enhancements-4-0-5"></a></h3>
+<ul><li>
+<code><a href="../reference/readPolygonVizgenParquet.html">readPolygonVizgenParquet()</a></code> now has <code>calc_centroids = TRUE</code> by default</li>
+</ul></div>
+</div>
+    <div class="section level2">
+<h2 class="page-header" data-toc-text="4.0.4" id="giotto-404-20240228">Giotto 4.0.4 (2024/02/28)<a class="anchor" aria-label="anchor" href="#giotto-404-20240228"></a></h2>
+<div class="section level3">
+<h3 id="breaking-changes-4-0-4">Breaking changes<a class="anchor" aria-label="anchor" href="#breaking-changes-4-0-4"></a></h3>
+<ul><li>Remove <code>do_manual_adj</code> and image adjustment params from <code><a href="../reference/createGiottoVisiumObject.html">createGiottoVisiumObject()</a></code>
+</li>
+<li>
+<code><a href="../reference/createGiottoVisiumObject.html">createGiottoVisiumObject()</a></code> now creates <code>giottoLargeImage</code> for spatial images.</li>
+<li>
+<code><a href="../reference/exprCellCellcom.html">exprCellCellcom()</a></code> deprecated <code>gene_set_*</code> params removed</li>
+</ul></div>
+<div class="section level3">
+<h3 id="bug-fixes-4-0-4">Bug fixes<a class="anchor" aria-label="anchor" href="#bug-fixes-4-0-4"></a></h3>
+<ul><li>Fix metadata appending/sorting issues introduced by <em>GiottoClass v0.1.3</em> (2024/01/12). Affected functions: <code><a href="../reference/addHMRF.html">addHMRF()</a></code>, <code><a href="../reference/addFeatsPerc.html">addFeatsPerc()</a></code>, <code><a href="../reference/doScrubletDetect.html">doScrubletDetect()</a></code>
+</li>
+<li>
+<code><a href="../reference/findNetworkNeighbors.html">findNetworkNeighbors()</a></code> now has default <code>spatial_network_name</code> value of <code>NULL</code>
+</li>
+<li>
+<code><a href="../reference/get10Xmatrix.html">get10Xmatrix()</a></code> now obeys <code>split_by_type = FALSE</code>
+</li>
+</ul></div>
+<div class="section level3">
+<h3 id="changes-4-0-4">Changes<a class="anchor" aria-label="anchor" href="#changes-4-0-4"></a></h3>
+<ul><li>Deprecate <code>set.seed</code> in favor of <code>seed</code> param for <code><a href="../reference/binSpect.html">binSpect()</a></code>
+</li>
+<li>
+<code><a href="../reference/binSpect.html">binSpect()</a></code> now sets a seed by default for reproducibility</li>
+<li>pkgdown files moved to separate <a href="https://github.com/drieslab/Giotto_website" class="external-link">repo</a>
+</li>
+</ul></div>
+<div class="section level3">
+<h3 id="enhancements-4-0-4">Enhancements<a class="anchor" aria-label="anchor" href="#enhancements-4-0-4"></a></h3>
+<ul><li>Use <code><a href="https://rdrr.io/pkg/gtools/man/mixedsort.html" class="external-link">mixedsort()</a></code> for unique clusters metadata info</li>
+<li>Remove unnecessary matrix densification and expose <code>seed</code> param in <code><a href="../reference/doScrubletDetect.html">doScrubletDetect()</a></code>
+</li>
+<li>Remove unnecessary matrix densification in <code><a href="../reference/makeSignMatrixRank.html">makeSignMatrixRank()</a></code>
+</li>
+</ul></div>
+</div>
+    <div class="section level2">
 <h2 class="page-header" data-toc-text="4.0.3" id="giotto-403-20240220">Giotto 4.0.3 (2024/02/20)<a class="anchor" aria-label="anchor" href="#giotto-403-20240220"></a></h2>
 <div class="section level3">
 <h3 id="bug-fixes-4-0-3">Bug fixes<a class="anchor" aria-label="anchor" href="#bug-fixes-4-0-3"></a></h3>
@@ -306,8 +359,8 @@
     <div class="section level2">
 <h2 class="page-header" data-toc-text="4.0.1" id="giotto-401-20231216">Giotto 4.0.1 (2023/12/16)<a class="anchor" aria-label="anchor" href="#giotto-401-20231216"></a></h2>
 <div class="section level3">
-<h3 id="breaking-changes-4-0-1">Breaking Changes<a class="anchor" aria-label="anchor" href="#breaking-changes-4-0-1"></a></h3>
-<ul><li>Remove <code>cell_ids</code> param for <code>calculateHVF</code> in favor of simpler <code>random_subset</code>
+<h3 id="breaking-changes-4-0-1">Breaking changes<a class="anchor" aria-label="anchor" href="#breaking-changes-4-0-1"></a></h3>
+<ul><li>Remove <code>cell_ids</code> param for <code><a href="../reference/calculateHVF.html">calculateHVF()</a></code> in favor of simpler <code>random_subset</code>
 </li>
 <li>Move <em>GiottoUtils</em>, <em>GiottoClass</em>, and <em>GiottoVisuals</em> to imports</li>
 </ul></div>
@@ -329,7 +382,7 @@
     <div class="section level2">
 <h2 class="page-header" data-toc-text="4.0.0" id="giotto-400-20231129">Giotto 4.0.0 (2023/11/29)<a class="anchor" aria-label="anchor" href="#giotto-400-20231129"></a></h2>
 <div class="section level3">
-<h3 id="breaking-changes-4-0-0">Breaking Changes<a class="anchor" aria-label="anchor" href="#breaking-changes-4-0-0"></a></h3>
+<h3 id="breaking-changes-4-0-0">Breaking changes<a class="anchor" aria-label="anchor" href="#breaking-changes-4-0-0"></a></h3>
 <ul><li>Update to modular package organization with the main packages being <code>GiottoUtils</code>, <code>GiottoClass</code>, <code>GiottoVisuals</code>, and <code>Giotto</code> as the analytical umbrella package.</li>
 </ul></div>
 <div class="section level3">
@@ -355,7 +408,7 @@
     <div class="section level2">
 <h2 class="page-header" data-toc-text="3.3.1" id="giotto-331-20230802">Giotto 3.3.1 (2023/08/02)<a class="anchor" aria-label="anchor" href="#giotto-331-20230802"></a></h2>
 <div class="section level3">
-<h3 id="breaking-changes-3-3-1">Breaking Changes<a class="anchor" aria-label="anchor" href="#breaking-changes-3-3-1"></a></h3>
+<h3 id="breaking-changes-3-3-1">Breaking changes<a class="anchor" aria-label="anchor" href="#breaking-changes-3-3-1"></a></h3>
 <ul><li>Change <code><a href="https://drieslab.github.io/GiottoClass/reference/checkGiottoEnvironment.html" class="external-link">checkGiottoEnvironment()</a></code>. Downgrade from error to message and return FALSE when a provided directory does not exist</li>
 </ul></div>
 <div class="section level3">
@@ -418,7 +471,7 @@
     <div class="section level2">
 <h2 class="page-header" data-toc-text="3.3.0" id="giotto-330-20230418">Giotto 3.3.0 (2023/04/18)<a class="anchor" aria-label="anchor" href="#giotto-330-20230418"></a></h2>
 <div class="section level3">
-<h3 id="breaking-changes-3-3-0">Breaking Changes<a class="anchor" aria-label="anchor" href="#breaking-changes-3-3-0"></a></h3>
+<h3 id="breaking-changes-3-3-0">Breaking changes<a class="anchor" aria-label="anchor" href="#breaking-changes-3-3-0"></a></h3>
 <ul><li>Set Suite as default branch</li>
 <li>Removed all deprecated accessors from <code>accessors.R</code>
 </li>
@@ -485,7 +538,7 @@
     <div class="section level2">
 <h2 class="page-header" data-toc-text="3.2.0" id="giotto-320-20230202">Giotto 3.2.0 (2023/02/02)<a class="anchor" aria-label="anchor" href="#giotto-320-20230202"></a></h2>
 <div class="section level3">
-<h3 id="breaking-changes-3-2-0">Breaking Changes<a class="anchor" aria-label="anchor" href="#breaking-changes-3-2-0"></a></h3>
+<h3 id="breaking-changes-3-2-0">Breaking changes<a class="anchor" aria-label="anchor" href="#breaking-changes-3-2-0"></a></h3>
 <ul><li>Removed support for deprecated nesting in <code>@nn_network</code> slot</li>
 <li>
 <code><a href="https://drieslab.github.io/GiottoClass/reference/createSpatialNetwork.html" class="external-link">createSpatialNetwork()</a></code> will now output a <code>spatialNetworkObj</code> by default when <code>return_gobject = FALSE</code>. It is possible to change this back to the data.table output by setting <code>output = 'data.table'</code>
@@ -581,7 +634,7 @@
     <div class="section level2">
 <h2 class="page-header" data-toc-text="3.0.0" id="giotto-300-20221118">Giotto 3.0.0 (2022/11/18)<a class="anchor" aria-label="anchor" href="#giotto-300-20221118"></a></h2>
 <div class="section level3">
-<h3 id="breaking-changes-3-0-0">Breaking Changes<a class="anchor" aria-label="anchor" href="#breaking-changes-3-0-0"></a></h3>
+<h3 id="breaking-changes-3-0-0">Breaking changes<a class="anchor" aria-label="anchor" href="#breaking-changes-3-0-0"></a></h3>
 <ul><li>S4 subobjects framework will require giotto objects to be remade</li>
 </ul></div>
 <div class="section level3">
@@ -604,7 +657,7 @@
     <div class="section level2">
 <h2 class="page-header" data-toc-text="2.1.0" id="giotto-210-20221109">Giotto 2.1.0 (2022/11/09)<a class="anchor" aria-label="anchor" href="#giotto-210-20221109"></a></h2>
 <div class="section level3">
-<h3 id="breaking-changes-2-1-0">Breaking Changes<a class="anchor" aria-label="anchor" href="#breaking-changes-2-1-0"></a></h3>
+<h3 id="breaking-changes-2-1-0">Breaking changes<a class="anchor" aria-label="anchor" href="#breaking-changes-2-1-0"></a></h3>
 <ul><li>Update of python version to <strong>3.10.2</strong> <a href="https://giottosuite.readthedocs.io/en/latest/additionalinformation.html#giotto*suite*2*1*0*2202*11*09" class="external-link">details</a>
 </li>
 </ul></div>
@@ -649,7 +702,7 @@
 </li>
 </ul></div>
 <div class="section level3">
-<h3 id="breaking-changes-2-0-0-998">Breaking Changes<a class="anchor" aria-label="anchor" href="#breaking-changes-2-0-0-998"></a></h3>
+<h3 id="breaking-changes-2-0-0-998">Breaking changes<a class="anchor" aria-label="anchor" href="#breaking-changes-2-0-0-998"></a></h3>
 <ul><li>ICF output internal object structure names have changed to use feats instead of genes</li>
 </ul></div>
 </div>

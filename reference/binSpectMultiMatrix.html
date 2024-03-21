@@ -23,7 +23,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Giotto</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.5</span>
       </span>
     </div>
 
@@ -313,7 +313,8 @@
 <span>  cores <span class="op">=</span> <span class="cn">NA</span>,</span>
 <span>  verbose <span class="op">=</span> <span class="cn">T</span>,</span>
 <span>  knn_params <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  set.seed <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  set.seed <span class="op">=</span> <span class="fu">deprecated</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  seed <span class="op">=</span> <span class="fl">1234</span>,</span>
 <span>  summarize <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"adj.p.value"</span>, <span class="st">"p.value"</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
@@ -409,7 +410,12 @@
 
 
 <dt>set.seed</dt>
-<dd><p>set a seed before kmeans binarization</p></dd>
+<dd><p>deprecated</p></dd>
+
+
+<dt>seed</dt>
+<dd><p>sets value as seed before kmeans binarization. If NULL, no seed
+is set.</p></dd>
 
 
 <dt>summarize</dt>
