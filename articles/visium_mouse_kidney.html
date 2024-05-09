@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Visium Mouse Kidney • Giotto</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
@@ -305,6 +305,9 @@
     <li>
       <a href="../articles/interoperability_spatialexperiment.html">SpatialExperiment</a>
     </li>
+    <li>
+      <a href="../articles/interoperability_seurat.html">Seurat</a>
+    </li>
     <li class="divider">
     </li>
 <li class="dropdown-header">Try Giotto in the Cloud</li>
@@ -371,11 +374,15 @@
 
     
     
-<p>Warning: This tutorial was written with Giotto version 2.0.0.9046.This is an older version and results could be slightly different</p>
+<p>Warning: This tutorial was written with Giotto version
+2.0.0.9046.This is an older version and results could be slightly
+different</p>
 <div class="section level2">
 <h2 id="dataset-explanation">Dataset explanation<a class="anchor" aria-label="anchor" href="#dataset-explanation"></a>
 </h2>
-<p><a href="https://www.10xgenomics.com/spatial-transcriptomics/" class="external-link">10X genomics</a> recently launched a new platform to obtain spatial expression data using a Visium Spatial Gene Expression slide.</p>
+<p><a href="https://www.10xgenomics.com/spatial-transcriptomics/" class="external-link">10X
+genomics</a> recently launched a new platform to obtain spatial
+expression data using a Visium Spatial Gene Expression slide.</p>
 <p>The Visium kidney data to run this tutorial can be found <a href="https://support.10xgenomics.com/spatial-gene-expression/datasets/1.0.0/V1_Mouse_Kidney" class="external-link">here</a></p>
 <p>Visium technology:</p>
 <p><img src="images/general_figs/visium_technology.png"></p>
@@ -588,7 +595,10 @@
 <div class="section level2">
 <h2 id="cell-type-annotation">7. cell-type annotation<a class="anchor" aria-label="anchor" href="#cell-type-annotation"></a>
 </h2>
-<p>Visium spatial transcriptomics does not provide single-cell resolution, making cell type annotation a harder problem. Giotto provides 3 ways to calculate enrichment of specific cell-type signature gene list:</p>
+<p>Visium spatial transcriptomics does not provide single-cell
+resolution, making cell type annotation a harder problem. Giotto
+provides 3 ways to calculate enrichment of specific cell-type signature
+gene list:</p>
 <ul>
 <li>PAGE</li>
 <li>rank</li>
@@ -800,7 +810,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
 </div>
 
       </footer>
