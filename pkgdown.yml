@@ -23,6 +23,7 @@ articles:
   object_creation: object_creation.html
   osmfish_mouse_ss_cortex: osmfish_mouse_ss_cortex.html
   presentations: presentations.html
+  resolve_biosciences_human_lung: resolve_biosciences_human_lung.html
   resolve_biosciences: resolve_biosciences.html
   saving_object: saving_object.html
   saving_plots: saving_plots.html
@@ -46,7 +47,7 @@ articles:
   visualizations: visualizations.html
   vizgen_mouse_brain: vizgen_mouse_brain.html
   xenium_breast_cancer: xenium_breast_cancer.html
-last_built: 2024-05-10T22:38Z
+last_built: 2024-05-17T22:52Z
 urls:
   reference: https://drieslab.github.io/Giotto_website/reference
   article: https://drieslab.github.io/Giotto_website/articles

@@ -23,7 +23,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Giotto</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.6</span>
       </span>
     </div>
 
@@ -158,6 +158,9 @@
       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Resolve Bioscience</a>
       <ul class="dropdown-menu" role="menu"><li>
           <a href="../articles/resolve_biosciences.html">Resolve Bioscience Breast Cancer Subcellular</a>
+        </li>
+        <li>
+          <a href="../articles/resolve_biosciences_human_lung.html">Resolve Bioscience Human lung</a>
         </li>
       </ul></li>
     <li class="divider">
@@ -407,15 +410,37 @@
 
 <dt>...</dt>
 <dd><p>Arguments passed on to <code><a href="https://jlmelville.github.io/uwot/reference/umap.html" class="external-link">uwot::umap</a></code></p><dl><dt><code>metric</code></dt>
-<dd><p>Type of distance metric to use to find nearest neighbors. One
-  of:</p><ul><li><p><code>"euclidean"</code> (the default)</p></li>
+<dd><p>Type of distance metric to use to find nearest neighbors. For
+ <code>nn_method = "annoy"</code> this can be one of:</p><ul><li><p><code>"euclidean"</code> (the default)</p></li>
 <li><p><code>"cosine"</code></p></li>
 <li><p><code>"manhattan"</code></p></li>
 <li><p><code>"hamming"</code></p></li>
 <li><p><code>"correlation"</code> (a distance based on the Pearson correlation)</p></li>
 <li><p><code>"categorical"</code> (see below)</p></li>
-</ul><p>Only applies if <code>nn_method = "annoy"</code> (for <code>nn_method = "fnn"</code>, the
-distance metric is always "euclidean").</p>
+</ul><p>For <code>nn_method = "hnsw"</code> this can be one of:</p><ul><li><p><code>"euclidean"</code></p></li>
+<li><p><code>"cosine"</code></p></li>
+<li><p><code>"correlation"</code></p></li>
+</ul><p>If <a href="https://cran.r-project.org/package=rnndescent" class="external-link">rnndescent</a> is
+installed and <code>nn_method = "nndescent"</code> is specified then many more
+metrics are avaiable, including:</p><ul><li><p><code>"braycurtis"</code></p></li>
+<li><p><code>"canberra"</code></p></li>
+<li><p><code>"chebyshev"</code></p></li>
+<li><p><code>"dice"</code></p></li>
+<li><p><code>"hamming"</code></p></li>
+<li><p><code>"hellinger"</code></p></li>
+<li><p><code>"jaccard"</code></p></li>
+<li><p><code>"jensenshannon"</code></p></li>
+<li><p><code>"kulsinski"</code></p></li>
+<li><p><code>"rogerstanimoto"</code></p></li>
+<li><p><code>"russellrao"</code></p></li>
+<li><p><code>"sokalmichener"</code></p></li>
+<li><p><code>"sokalsneath"</code></p></li>
+<li><p><code>"spearmanr"</code></p></li>
+<li><p><code>"symmetrickl"</code></p></li>
+<li><p><code>"tsss"</code></p></li>
+<li><p><code>"yule"</code></p></li>
+</ul><p>For more details see the package documentation of <code>rnndescent</code>.
+For <code>nn_method = "fnn"</code>, the distance metric is always "euclidean".</p>
 <p>If <code>X</code> is a data frame or matrix, then multiple metrics can be
 specified, by passing a list to this argument, where the name of each item in
 the list is one of the metric names above. The value of each list item should
@@ -542,6 +567,21 @@ these values are set automatically as determined by <code>min_dist</code> and
     <a href="https://cran.r-project.org/package=FNN" class="external-link">FNN</a> package.</p></li>
 <li><p><code>"annoy"</code> Use approximate nearest neighbors via the
     <a href="https://cran.r-project.org/package=RcppAnnoy" class="external-link">RcppAnnoy</a> package.</p></li>
+<li><p><code>"hnsw"</code> Use approximate nearest neighbors with the
+    Hierarchical Navigable Small World (HNSW) method (Malkov and Yashunin,
+    2018) via the
+    <a href="https://cran.r-project.org/package=RcppHNSW" class="external-link">RcppHNSW</a> package.
+    <code>RcppHNSW</code> is not a dependency of this package: this option is
+    only available if you have installed <code>RcppHNSW</code> yourself. Also,
+    HNSW only supports the following arguments for <code>metric</code> and
+    <code>target_metric</code>: <code>"euclidean"</code>, <code>"cosine"</code> and
+    <code>"correlation"</code>.</p></li>
+<li><p><code>"nndescent"</code> Use approximate nearest neighbors with the
+    Nearest Neighbor Descent method (Dong et al., 2011) via the
+    <a href="https://cran.r-project.org/package=rnndescent" class="external-link">rnndescent</a>
+    package. <code>rnndescent</code> is not a dependency of this package: this
+    option is only available if you have installed <code>rnndescent</code>
+    yourself.</p></li>
 </ul><p>By default, if <code>X</code> has less than 4,096 vertices, the exact nearest
 neighbors are found. Otherwise, approximate nearest neighbors are used.
 You may also pass pre-calculated nearest neighbor data to this argument. It
@@ -781,6 +821,69 @@ approximation to the densMAP method (Narayan and co-workers, 2021). The
 larger the value of <code>dens_scale</code>, the greater the range of output
 densities that will be used to map the input densities. This option is
 ignored if using multiple <code>metric</code> blocks.</p></dd>
+
+    <dt><code>nn_args</code></dt>
+<dd><p>A list containing additional arguments to pass to the nearest
+neighbor method. For <code>nn_method = "annoy"</code>, you can specify
+<code>"n_trees"</code> and <code>"search_k"</code>, and these will override the
+<code>n_trees</code> and <code>search_k</code> parameters.
+For <code>nn_method = "hnsw"</code>, you may specify the following arguments:</p><ul><li><p><code>M</code> The maximum number of neighbors to keep for each vertex.
+Reasonable values are <code>2</code> to <code>100</code>. Higher values give better
+recall at the cost of more memory. Default value is <code>16</code>.</p></li>
+<li><p><code>ef_construction</code> A positive integer specifying the size of
+the dynamic list used during index construction. A higher value will
+provide better results at the cost of a longer time to build the index.
+Default is <code>200</code>.</p></li>
+<li><p><code>ef</code> A positive integer specifying the size of the dynamic
+list used during search. This cannot be smaller than <code>n_neighbors</code>
+and cannot be higher than the number of items in the index. Default is
+<code>10</code>.</p></li>
+</ul><p>For <code>nn_method = "nndescent"</code>, you may specify the following
+arguments:</p><ul><li><p><code>n_trees</code> The number of trees to use in a random projection
+forest to initialize the search. A larger number will give more accurate
+results at the cost of a longer computation time. The default of
+<code>NULL</code> means that the number is chosen based on the number of
+observations in <code>X</code>.</p></li>
+<li><p><code>max_candidates</code> The number of potential neighbors to explore
+per iteration. By default, this is set to <code>n_neighbors</code> or <code>60</code>,
+whichever is smaller. A larger number will give more accurate results at
+the cost of a longer computation time.</p></li>
+<li><p><code>n_iters</code> The number of iterations to run the search. A larger
+number will give more accurate results at the cost of a longer computation
+time. By default, this will be chosen based on the number of observations
+in <code>X</code>. You may also need to modify the convergence criterion
+<code>delta</code>.</p></li>
+<li><p><code>delta</code> The minimum relative change in the neighbor graph
+allowed before early stopping. Should be a value between 0 and 1. The
+smaller the value, the smaller the amount of progress between iterations is
+allowed. Default value of <code>0.001</code> means that at least 0.1<!-- % of the -->
+neighbor graph must be updated at each iteration.</p></li>
+<li><p><code>init</code> How to initialize the nearest neighbor descent. By
+default this is set to <code>"tree"</code> and uses a random project forest.
+If you set this to <code>"rand"</code>, then a random selection is used. Usually
+this is less accurate than using RP trees, but for high-dimensional cases,
+there may be little difference in the quality of the initialization and
+random initialization will be a lot faster. If you set this to
+<code>"rand"</code>, then the <code>n_trees</code> parameter is ignored.</p></li>
+<li><p><code>pruning_degree_multiplier</code> The maximum number of edges per node
+to retain in the search graph, relative to <code>n_neighbors</code>. A larger
+value will give more accurate results at the cost of a longer computation
+time. Default is <code>1.5</code>. This parameter only affects neighbor search
+when transforming new data with <code><a href="https://jlmelville.github.io/uwot/reference/umap_transform.html" class="external-link">umap_transform</a></code>.</p></li>
+<li><p><code>epsilon</code> Controls the degree of the back-tracking when
+traversing the search graph. Setting this to <code>0.0</code> will do a greedy
+search with no back-tracking. A larger value will give more accurate
+results at the cost of a longer computation time. Default is <code>0.1</code>.
+This parameter only affects neighbor search when transforming new data with
+<code><a href="https://jlmelville.github.io/uwot/reference/umap_transform.html" class="external-link">umap_transform</a></code>.</p></li>
+<li><p><code>max_search_fraction</code> Specifies the maximum fraction of the
+search graph to traverse. By default, this is set to <code>1.0</code>, so the
+entire graph (i.e. all items in <code>X</code>) may be visited. You may want to
+set this to a smaller value if you have a very large dataset (in
+conjunction with <code>epsilon</code>) to avoid an inefficient exhaustive search
+of the data in <code>X</code>. This parameter only affects neighbor search when
+transforming new data with <code><a href="https://jlmelville.github.io/uwot/reference/umap_transform.html" class="external-link">umap_transform</a></code>.</p></li>
+</ul></dd>
 
   
 </dl></dd>

@@ -39,7 +39,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Giotto</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.6</span>
       </span>
     </div>
 
@@ -212,6 +212,9 @@
       <ul class="dropdown-menu" role="menu">
 <li>
           <a href="../articles/resolve_biosciences.html">Resolve Bioscience Breast Cancer Subcellular</a>
+        </li>
+        <li>
+          <a href="../articles/resolve_biosciences_human_lung.html">Resolve Bioscience Human lung</a>
         </li>
       </ul>
 </li>
@@ -393,12 +396,12 @@ it where you need it.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Ensure Giotto Suite is installed</span></span>
 <span><span class="kw">if</span><span class="op">(</span><span class="op">!</span><span class="st">"Giotto"</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/installed.packages.html" class="external-link">installed.packages</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pkg_install.html" class="external-link">pkg_install</a></span><span class="op">(</span><span class="st">"drieslab/Giotto"</span><span class="op">)</span></span>
+<span>  <span class="fu">pak</span><span class="fu">::</span><span class="fu">pkg_install</span><span class="op">(</span><span class="st">"drieslab/Giotto"</span><span class="op">)</span></span>
 <span><span class="op">}</span></span>
 <span></span>
 <span><span class="co"># Ensure Giotto Data is installed</span></span>
 <span><span class="kw">if</span><span class="op">(</span><span class="op">!</span><span class="st">"GiottoData"</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/installed.packages.html" class="external-link">installed.packages</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pkg_install.html" class="external-link">pkg_install</a></span><span class="op">(</span><span class="st">"drieslab/GiottoData"</span><span class="op">)</span></span>
+<span>  <span class="fu">pak</span><span class="fu">::</span><span class="fu">pkg_install</span><span class="op">(</span><span class="st">"drieslab/GiottoData"</span><span class="op">)</span></span>
 <span><span class="op">}</span></span>
 <span></span>
 <span><span class="co"># Ensure the Python environment for Giotto has been installed</span></span>
@@ -488,7 +491,7 @@ first.</p>
 <p>Commonly used spatial transformations are coordinate translations,
 flips, and rotations. <em>Giotto</em> extends generics from
 <em>terra</em> through the use of <code><a href="https://drieslab.github.io/GiottoClass/reference/spatShift.html" class="external-link">spatShift()</a></code>
-(<code><a href="https://rdatatable.gitlab.io/data.table/reference/shift.html" class="external-link">shift()</a></code> in <em>terra</em>), <code><a href="https://rspatial.github.io/terra/reference/flip.html" class="external-link">flip()</a></code>, and
+(<code><a href="https://rdrr.io/pkg/IRanges/man/intra-range-methods.html" class="external-link">shift()</a></code> in <em>terra</em>), <code><a href="https://rspatial.github.io/terra/reference/flip.html" class="external-link">flip()</a></code>, and
 <code><a href="https://rspatial.github.io/terra/reference/spin.html" class="external-link">spin()</a></code> respectively.</p>
 <div class="section level3">
 <h3 id="coordinate-translation">6.1 coordinate translation<a class="anchor" aria-label="anchor" href="#coordinate-translation"></a>

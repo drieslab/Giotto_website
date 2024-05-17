@@ -23,7 +23,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Giotto</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.6</span>
       </span>
     </div>
 
@@ -158,6 +158,9 @@
       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Resolve Bioscience</a>
       <ul class="dropdown-menu" role="menu"><li>
           <a href="../articles/resolve_biosciences.html">Resolve Bioscience Breast Cancer Subcellular</a>
+        </li>
+        <li>
+          <a href="../articles/resolve_biosciences_human_lung.html">Resolve Bioscience Human lung</a>
         </li>
       </ul></li>
     <li class="divider">
@@ -434,8 +437,8 @@ Both methods are identicial except for how binarization is performed.</p><ul><li
 <li><p>3. contingency table: A contingency table is calculated based on all edges of neighboring cells and the binarized expression (0-0, 0-1, 1-0 or 1-1)</p></li>
 <li><p>4. For each gene an odds-ratio (OR) and fisher.test (optional) is calculated</p></li>
 </ul><p>Three different kmeans algorithmes have been implemented:</p><ul><li><p>1. kmeans: default, see <code><a href="https://rdrr.io/r/stats/kmeans.html" class="external-link">kmeans</a></code></p></li>
-<li><p>2. kmeans_arma: from ClusterR, see <code>KMeans_arma</code></p></li>
-<li><p>3. kmeans_arma_subst: from ClusterR, see <code>KMeans_arma</code>,
+<li><p>2. kmeans_arma: from ClusterR, see <code><a href="https://rdrr.io/pkg/ClusterR/man/KMeans_arma.html" class="external-link">KMeans_arma</a></code></p></li>
+<li><p>3. kmeans_arma_subst: from ClusterR, see <code><a href="https://rdrr.io/pkg/ClusterR/man/KMeans_arma.html" class="external-link">KMeans_arma</a></code>,
    but random subsetting the vector for each gene to increase speed. Change extreme_nr and sample_nr for control.</p></li>
 </ul><p>Other statistics are provided (optional):</p><ul><li><p>Number of cells with high expression (binary = 1)</p></li>
 <li><p>Average expression of each gene within high expressing cells</p></li>

@@ -23,7 +23,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Giotto</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.6</span>
       </span>
     </div>
 
@@ -158,6 +158,9 @@
       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Resolve Bioscience</a>
       <ul class="dropdown-menu" role="menu"><li>
           <a href="../articles/resolve_biosciences.html">Resolve Bioscience Breast Cancer Subcellular</a>
+        </li>
+        <li>
+          <a href="../articles/resolve_biosciences_human_lung.html">Resolve Bioscience Human lung</a>
         </li>
       </ul></li>
     <li class="divider">
@@ -338,13 +341,12 @@ information to split</p></dd>
 <span class="r-in"><span><span class="va">g</span> <span class="op">=</span> <span class="fu">GiottoData</span><span class="fu">::</span><span class="fu"><a href="https://drieslab.github.io/GiottoData/reference/loadGiottoMini.html" class="external-link">loadGiottoMini</a></span><span class="op">(</span><span class="st">'vizgen'</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 1. read Giotto object</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 2. read Giotto feature information</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/home/runner/work/_temp/Library/GiottoData//Mini_datasets/Vizgen/VizgenObject//Features/rna_feature_spatVector.shp"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "rna"</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/GiottoData//Mini_datasets/Vizgen/VizgenObject//Features/rna_feature_spatVector.shp</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> rna</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3. read Giotto spatial information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3.1 read Giotto spatial shape information</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "aggregate_spatInfo_spatVector.shp" "z0_spatInfo_spatVector.shp"       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [3] "z1_spatInfo_spatVector.shp"       </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> aggregate_spatInfo_spatVector.shp z0_spatInfo_spatVector.shp</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  z1_spatInfo_spatVector.shp</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> aggregate</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> z0</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> z1</span>
@@ -355,46 +357,30 @@ information to split</p></dd>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> z1</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3.3 read Giotto spatial overlap information</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "rna_aggregate_spatInfo_spatVectorOverlaps.shp"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2] "rna_z0_spatInfo_spatVectorOverlaps.shp"       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [3] "rna_z1_spatInfo_spatVectorOverlaps.shp"       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "poly_ID"      "feat_ID"      "feat_ID_uniq" "stack"       </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> rna_aggregate_spatInfo_spatVectorOverlaps.shp</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  rna_z0_spatInfo_spatVectorOverlaps.shp rna_z1_spatInfo_spatVectorOverlaps.shp</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> poly_ID feat_ID feat_ID_uniq stack</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> aggregate and rna</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "poly_ID"      "feat_ID"      "feat_ID_uniq"</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> poly_ID feat_ID feat_ID_uniq</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> z0 and rna</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "poly_ID"      "feat_ID"      "feat_ID_uniq"</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> poly_ID feat_ID feat_ID_uniq</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> z1 and rna</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path or giotto environment was specified, will check if a</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  default python path is available</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> A default python path was found: /usr/bin/python3 and will be used</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  If this is not the correct python path, either</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. use installGiottoEnvironment() to install a local miniconda python</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  environment along with required modules</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. provide an existing python path to python_path to use your own python path</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  which has all modules installed</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Set options("giotto.use_conda" = FALSE) if python functionalities are not</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  needed</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in .make_numeric_version(x, strict, .standard_regexps()$valid_numeric_version):</span> invalid non-character version specification 'x' (type: double)</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path was provided,</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  but a giotto python environment was found and</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  will be used</span>
 <span class="r-in"><span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/activeSpatUnit-generic.html" class="external-link">activeSpatUnit</a></span><span class="op">(</span><span class="va">g</span><span class="op">)</span> <span class="op">=</span> <span class="st">'aggregate'</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'g' not found</span>
 <span class="r-in"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatPlot.html" class="external-link">spatPlot2D</a></span><span class="op">(</span><span class="va">g</span>, cell_color <span class="op">=</span> <span class="st">'leiden_clus'</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'g' not found</span>
+<span class="r-plt img"><img src="spatialSplitCluster-1.png" alt="" width="700" height="433"></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">g</span> <span class="op">=</span> <span class="fu">spatialSplitCluster</span><span class="op">(</span><span class="va">g</span>,</span></span>
 <span class="r-in"><span>                        cluster_col <span class="op">=</span> <span class="st">'leiden_clus'</span>,</span></span>
 <span class="r-in"><span>                        split_clus_name <span class="op">=</span> <span class="st">'new'</span><span class="op">)</span></span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>restarting interrupted promise evaluation</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>restarting interrupted promise evaluation</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'g' not found</span>
 <span class="r-in"><span><span class="co"># don't show legend since there are too many categories generated</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatPlot.html" class="external-link">spatPlot2D</a></span><span class="op">(</span><span class="va">g</span>, cell_color <span class="op">=</span> <span class="st">'new'</span>, show_legend <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'g' not found</span>
+<span class="r-plt img"><img src="spatialSplitCluster-2.png" alt="" width="700" height="433"></span>
 </code></pre></div>
     </div>
   </div>

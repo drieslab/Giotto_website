@@ -82,6 +82,9 @@
     <loc>https://drieslab.github.io/Giotto_website/articles/resolve_biosciences.html</loc>
   </url>
   <url>
+    <loc>https://drieslab.github.io/Giotto_website/articles/resolve_biosciences_human_lung.html</loc>
+  </url>
+  <url>
     <loc>https://drieslab.github.io/Giotto_website/articles/saving_object.html</loc>
   </url>
   <url>
@@ -776,6 +779,9 @@
   </url>
   <url>
     <loc>https://drieslab.github.io/Giotto_website/reference/insertCrossSectionSpatPlot3D.html</loc>
+  </url>
+  <url>
+    <loc>https://drieslab.github.io/Giotto_website/reference/interpolateFeature.html</loc>
   </url>
   <url>
     <loc>https://drieslab.github.io/Giotto_website/reference/jackstrawPlot.html</loc>
