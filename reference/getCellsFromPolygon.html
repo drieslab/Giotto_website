@@ -23,7 +23,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Giotto</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.8</span>
       </span>
     </div>
 
@@ -251,6 +251,9 @@
     <li>
       <a href="../articles/singularity.html">Singularity</a>
     </li>
+    <li>
+      <a href="../articles/nemo_slideseq.html">NeMO Slide-seq on Terra.bio</a>
+    </li>
   </ul></li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -324,38 +327,96 @@
 
 
 <dt>polygons</dt>
-<dd><p>character. A vector with polygon names to extract cells from. If NULL, cells from all polygons are retrieved</p></dd>
+<dd><p>character. A vector with polygon names to extract cells
+from. If NULL, cells from all polygons are retrieved</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
     
 
-<p>A terra 'SpatVector' with cell ID, x y coordinates, and polygon ID where each cell is located in.</p>
+<p>A terra 'SpatVector' with cell ID, x y coordinates, and polygon ID
+where each cell is located in.</p>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
-<span class="r-in"><span><span class="co">## Plot interactive polygons</span></span></span>
-<span class="r-in"><span><span class="va">my_spatPlot</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatPlot.html" class="external-link">spatPlot2D</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">my_giotto_object</span>,</span></span>
-<span class="r-in"><span>                          show_image <span class="op">=</span> <span class="cn">TRUE</span>,</span></span>
-<span class="r-in"><span>                          point_alpha <span class="op">=</span> <span class="fl">0.75</span>,</span></span>
-<span class="r-in"><span>                          save_plot <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">my_polygon_coords</span> <span class="op">&lt;-</span> <span class="fu"><a href="plotInteractivePolygons.html">plotInteractivePolygons</a></span><span class="op">(</span><span class="va">my_spatPlot</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co">## Plot interactive polygons</span></span></span>
+<span class="r-in"><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu">GiottoData</span><span class="fu">::</span><span class="fu"><a href="https://drieslab.github.io/GiottoData/reference/loadGiottoMini.html" class="external-link">loadGiottoMini</a></span><span class="op">(</span><span class="st">"visium"</span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. read Giotto object</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. read Giotto feature information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 3. read Giotto spatial information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 3.1 read Giotto spatial shape information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> cell_spatInfo_spatVector.shp</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> cell</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 3.2 read Giotto spatial centroid information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> cell</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 3.3 read Giotto spatial overlap information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> No overlaps were found, overlap loading will be</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path was provided,</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  but a giotto python environment was found and</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  will be used</span>
+<span class="r-in"><span><span class="va">my_polygon_coords</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>poly_ID <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="st">"polygon1"</span>, <span class="fl">3</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>sdimx <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">5477</span>, <span class="fl">5959</span>, <span class="fl">4720</span><span class="op">)</span>, sdimy <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">4125</span>, <span class="op">-</span><span class="fl">2808</span>, <span class="op">-</span><span class="fl">5202</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Add polygon coordinates to Giotto object</span></span></span>
-<span class="r-in"><span><span class="va">my_giotto_polygons</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/createGiottoPolygon.html" class="external-link">createGiottoPolygonsFromDfr</a></span><span class="op">(</span><span class="va">my_polygon_coords</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">my_giotto_object</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/addGiottoPolygons.html" class="external-link">addGiottoPolygons</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">my_giotto_object</span>,</span></span>
-<span class="r-in"><span>                                      gpolygons <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="va">my_giotto_polygons</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">my_giotto_polygons</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/createGiottoPolygon.html" class="external-link">createGiottoPolygonsFromDfr</a></span><span class="op">(</span><span class="va">my_polygon_coords</span>,</span></span>
+<span class="r-in"><span>name <span class="op">=</span> <span class="st">"selections"</span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>   Selecting col "poly_ID" as poly_ID column</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>   Selecting cols "sdimx" and "sdimy" as x and y respectively</span>
+<span class="r-in"><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/addGiottoPolygons.html" class="external-link">addGiottoPolygons</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    gobject <span class="op">=</span> <span class="va">g</span>,</span></span>
+<span class="r-in"><span>    gpolygons <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="va">my_giotto_polygons</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co">## Get cells located within polygons area</span></span></span>
-<span class="r-in"><span><span class="fu">getCellsFromPolygon</span><span class="op">(</span><span class="va">my_giotto_object</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="co">## Add polygon IDs to cell metadata</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="addPolygonCells.html">addPolygonCells</a></span><span class="op">(</span><span class="va">g</span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> These column names were already used: in_tissue nr_feats perc_feats total_expr</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  leiden_clus custom_leiden</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  and will be overwritten</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> An object of class giotto </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &gt;Active spat_unit:  cell </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &gt;Active feat_type:  rna </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [SUBCELLULAR INFO]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> polygons      : cell selections </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [AGGREGATE INFO]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> expression -----------------------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell][rna] raw normalized scaled</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> spatial locations ----------------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell] raw</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> spatial networks -----------------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell] Delaunay_network spatial_network</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> spatial enrichments --------------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell][rna] cluster_metagene</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> dim reduction --------------------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell][rna] pca custom_pca umap custom_umap tsne</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> nearest neighbor networks --------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell][rna] sNN.pca custom_NN</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> attached images ------------------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> images      : alignment image </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Use objHistory() to see steps and params used</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Get only cells from polygon 1</span></span></span>
-<span class="r-in"><span><span class="fu">getCellsFromPolygon</span><span class="op">(</span><span class="va">my_giotto_object</span>, polygons <span class="op">=</span> <span class="st">"polygon 1"</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-in"><span><span class="fu">getCellsFromPolygon</span><span class="op">(</span><span class="va">g</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  class       : SpatVector </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  geometry    : points </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  dimensions  : 17, 4  (geometries, attributes)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  extent      : 4720, 5959, -5202, -2808  (xmin, xmax, ymin, ymax)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  coord. ref. :  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  names       : sdimx sdimy            cell_ID  poly_ID</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  type        : &lt;int&gt; &lt;int&gt;              &lt;chr&gt;    &lt;chr&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  values      :  5477 -4125 AAAGGGATGTAGCAAG-1 polygon1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                 5959 -2808 AAATGGCATGTCTTGT-1 polygon1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                 4720 -5202 AAATGGTCAATGTGCC-1 polygon1</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

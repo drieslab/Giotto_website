@@ -23,7 +23,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Giotto</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.8</span>
       </span>
     </div>
 
@@ -251,6 +251,9 @@
     <li>
       <a href="../articles/singularity.html">Singularity</a>
     </li>
+    <li>
+      <a href="../articles/nemo_slideseq.html">NeMO Slide-seq on Terra.bio</a>
+    </li>
   </ul></li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -318,7 +321,8 @@
 
 
 <dt>alt_spat_unit</dt>
-<dd><p>alternaitve spatial unit which represents resized polygon data</p></dd>
+<dd><p>alternaitve spatial unit which represents resized 
+polygon data</p></dd>
 
 
 <dt>feat_type</dt>
@@ -326,7 +330,8 @@
 
 
 <dt>clus_name</dt>
-<dd><p>name of cluster column in cell_metadata for given spat_unit and alt_spat_unit, i.e. "kmeans"</p></dd>
+<dd><p>name of cluster column in cell_metadata for given spat_unit 
+and alt_spat_unit, i.e. "kmeans"</p></dd>
 
 
 <dt>return_plot</dt>
@@ -348,12 +353,13 @@
     <p>Compares cell metadata from spat_unit-feat_type pairs as provided.</p>
 <p>New columns, resize_switch and cluster_interaction, will be created within
 cell_metadata for spat_unit-feat_type.</p>
-<p>These new columns will describe if a given cell switched cluster number when resized.
+<p>These new columns will describe if a given cell switched cluster number when 
+resized.
 If the same amount of clusters exist for spat_unit-feat_type and
 alt_spat_unit-feat_type, then clusters are determined to be
 corresponding based on <!-- % overlap in cell_IDs in each cluster. --></p>
-<p>Otherwise, multiple clusters from the spatial unit feature type pair are condensed
-to align with the smaller number of clusters and ensure overlap.</p>
+<p>Otherwise, multiple clusters from the spatial unit feature type pair are 
+condensed to align with the smaller number of clusters and ensure overlap.</p>
     </div>
 
   </div>

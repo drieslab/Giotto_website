@@ -24,7 +24,7 @@ interacted spots (observed)"><!-- mathjax --><script src="https://cdnjs.cloudfla
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Giotto</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.8</span>
       </span>
     </div>
 
@@ -252,6 +252,9 @@ interacted spots (observed)"><!-- mathjax --><script src="https://cdnjs.cloudfla
     <li>
       <a href="../articles/singularity.html">Singularity</a>
     </li>
+    <li>
+      <a href="../articles/nemo_slideseq.html">NeMO Slide-seq on Terra.bio</a>
+    </li>
   </ul></li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -333,9 +336,470 @@ interacted spots (observed)</p>
     <h2>Value</h2>
     
 
-<p>matrix that rownames are cell-cell interaction pairs and colnames are cell_IDs</p>
+<p>matrix that rownames are cell-cell interaction pairs and colnames
+are cell_IDs</p>
     </div>
 
+    <div id="ref-examples">
+    <h2>Examples</h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu">GiottoData</span><span class="fu">::</span><span class="fu"><a href="https://drieslab.github.io/GiottoData/reference/loadGiottoMini.html" class="external-link">loadGiottoMini</a></span><span class="op">(</span><span class="st">"visium"</span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. read Giotto object</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. read Giotto feature information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 3. read Giotto spatial information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 3.1 read Giotto spatial shape information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> cell_spatInfo_spatVector.shp</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> cell</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 3.2 read Giotto spatial centroid information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> cell</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 3.3 read Giotto spatial overlap information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> No overlaps were found, overlap loading will be</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path was provided,</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  but a giotto python environment was found and</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  will be used</span>
+<span class="r-in"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="findMarkers_one_vs_all.html">findMarkers_one_vs_all</a></span><span class="op">(</span><span class="va">g</span>,</span></span>
+<span class="r-in"><span>    cluster_column <span class="op">=</span> <span class="st">"leiden_clus"</span>, min_feats <span class="op">=</span> <span class="fl">20</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> using 'Scran' to detect marker feats. If used in published </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>       research, please cite: Lun ATL, McCarthy DJ, Marioni JC (2016).</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>       'A step-by-step workflow for low-level analysis of single-cell RNA-seq </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>       data with Bioconductor.'</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>       F1000Res., 5, 2122. doi: 10.12688/f1000research.9501.2. </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> start with cluster  1start with cluster  2start with cluster  3start with cluster  4start with cluster  5start with cluster  6start with cluster  7start with cluster  8</span>
+<span class="r-in"><span><span class="va">sign_gene</span> <span class="op">&lt;-</span> <span class="va">x</span><span class="op">$</span><span class="va">feats</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">sign_matrix</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">sign_gene</span><span class="op">)</span><span class="op">*</span><span class="fl">8</span>, mean  <span class="op">=</span> <span class="fl">10</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>nrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">sign_gene</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/row-plus-colnames-generic.html" class="external-link">rownames</a></span><span class="op">(</span><span class="va">sign_matrix</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="va">sign_gene</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/row-plus-colnames-generic.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">sign_matrix</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"celltype_"</span>,<span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">x</span><span class="op">$</span><span class="va">cluster</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu"><a href="runDWLSDeconv.html">runDWLSDeconv</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">g</span>, sign_matrix <span class="op">=</span> <span class="va">sign_matrix</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu">cellProximityEnrichmentEachSpot</span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">g</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        AAAGGGATGTAGCAAG-1 AAATGGCATGTCTTGT-1 AAATGGTCAATGTGCC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          2.1971115           0.000000          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        AAATTAACGGGTAGCT-1 AACAACTGGTAGTTGC-1 AACAGGAAATCGAATA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           0.000000          3.8574459       0.000000e+00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        AACAGGATGGGCCGCG-1 AACCATGGGATCGCTA-1 AACCCAGAGACGGAGA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         0.00000000       0.000000e+00          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        AACCGAGCTTGGTCAT-1 AACCGTTGTGTTTGCT-1 AACGATAGAAGGGCCG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          0.0000000       0.0000000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        AACGATATGTCAACTG-1 AACGCGGTCTCCAGCC-1 AACGTCAGACTAGTGG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          6.4609855        0.123181802          8.5232608</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        AACTCGATGGCGCAGT-1 AACTGATATTAGGCCT-1 AACTGGGTCCCGACGT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          0.0000000          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        AACTTGCCCGTATGCA-1 AAGAGATGAATCGGTA-1 AAGCTCGTGCCAAGTC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000         7.65414115       1.034366e+00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        AAGGAGCGGTTGGTGC-1 AAGGCGCGTAAAGCTT-1 AAGGCTGTGCTCATCG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          5.7311269                  8          3.9365307</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        AAGTAGAAGACCGGGT-1 AAGTAGTGACGCGAGG-1 AATCCAAGGGCCTGAG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       8.755280e+00          8.7297569          3.7867312</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        AATGACTGTCAGCCGG-1 AATGCAACCGGGTACC-1 AATGGTTCTCACAAGC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       9.017867e+00        0.000000000          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        AATTTGGTTCCAAAGA-1 ACAACAGCATGAGCTA-1 ACAACGGTCCCTGCGA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000                  0         6.82727112</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        ACAAGGACAAGAGGTT-1 ACACAAAGACGGGTGG-1 ACACACTTTCTACACG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         4.51749356          3.5473095           0.000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        ACACCCAGCATGCAGC-1 ACACCCGAGAAATCCG-1 ACACCTTAAGTAGGGC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       7.794275e+00          0.0000000       9.109115e+00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        ACACGAGACTCCTTCT-1 ACACGGGAACTTAGGG-1 ACATAATAAGGCGGTG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           1.849493           0.000000          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        ACCAAGAACGCGTGTC-1 ACCACAAGTTTCTATC-1 ACCCTTCATCTGCGAA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       7.792239e+00         6.92625527          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        ACCGACTGAGTCCCAC-1 ACCTAATCGACTTCCT-1 ACGATCATACATAGAG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          1.6386947          0.0000000         2.51214359</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        ACGCATTCGTGAGTAC-1 ACGCCAGATGATTTCT-1 ACGCGGGCCAAGGACA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          4.8657541          0.0000000          3.8657541</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        ACGGAATTTAGCAAAT-1 ACGTAGATTGCTGATG-1 ACGTGCGCCTCGTGCA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000       0.000000e+00         5.90357991</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        ACGTTTAGTTGTGATC-1 ACTACCAGCTCTCTGG-1 ACTATTCGTCCGTGGT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          9.5232608          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        ACTCAATAAAGGCACG-1 ACTGCCGTCGTAACTC-1 ACTGTAGCACTTTGGA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           0.000000          0.0000000           0.000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        ACTGTCCAGGATTATA-1 ACTGTCTTCTTTAGAA-1 ACTGTGCTAGTAGATC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000           3.281513          5.8225089</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        ACTTAGTACGACAAGA-1 ACTTCGCCATACGCAC-1 ACTTGGGACCCGGTGG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         0.00000000       0.000000e+00          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        ACTTTCCTATAGCTTC-1 AGAACGTGGTACATTC-1 AGACCATGGGATACAA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          1.8477660           0.000000           7.827271</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        AGACCCGCCCTCCTCG-1 AGACTAGCCTTCCAGA-1 AGAGCGGGCTAATCAT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         0.00000000           4.648001           4.000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        AGAGCGTACAAGCTCG-1 AGATAACTTCAGGGCC-1 AGATACGACTTCATAT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         9.43340965       0.000000e+00           0.000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        AGATCTCAGGTGTGAT-1 AGATGACTCGCCCACG-1 AGCACCAGTACTCACG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000            7.19299           0.000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        AGCACTTAAGGACGCC-1 AGCATCGTCGATAATT-1 AGCCCTAAGCGAAGTT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000       3.316866e+00           0.000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        AGCGACATCCCATTCA-1 AGCGACCAACGATATT-1 AGCGGGAAGGGTCCAT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         0.00000000         0.00000000          2.1715842</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        AGCTATTTAATCCAAC-1 AGGACATCGCACGTCG-1 AGGCCACCCGTTATGA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000       6.829808e+00           5.542807</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        AGGCCCATTGTACAGG-1 AGGCTATGGTTAGCTT-1 AGGGCGTGATCGGCTA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       0.000000e+00         6.94732669       1.000000e+01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        AGGGCTGCAGTTACAG-1 AGGGTTTAGTTCGGGA-1 AGGTAACCTCCTATTC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          3.5658162         0.00000000          3.1776281</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        AGGTACGATATTGCCA-1 AGGTAGGTACAAAGCT-1 AGGTTGAGGCACGCTT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         0.00000000          4.9618149          7.2883617</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        AGTAATGTCTTGCCGC-1 AGTAGGTAACATACAT-1 AGTATAATACTAGGCA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         2.69353404          0.0000000            9.01519</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        AGTCAGCCACCGCCTG-1 AGTCGGCCCAAACGAC-1 AGTCTTCTCCTCAAAT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          7.8406733        1.919881041</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        AGTTCCTACAGAATTA-1 AGTTTCGCAGGTCGGA-1 ATAAAGGCTCGGTCGT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          0.0000000       3.027029e+00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        ATAACGGAGTCCAACG-1 ATAATAGTGTAGGGAC-1 ATACCACGGGCAACTT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000         0.00000000       5.231956e+00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        ATACTAGCATGACCCT-1 ATAGACGAAGAGAAAG-1 ATAGAGTACTGGGACA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          7.7376881          0.0000000       9.316981e+00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        ATAGGGATATCCTTGA-1 ATAGGTTGGGCAGATG-1 ATATCTTAGGGCCTTC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           0.000000          0.0000000          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        ATATTCCCACAGGTCA-1 ATATTGCTGTCAAAGT-1 ATATTTAACCCTCAAG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1                  0         5.91691989           0.000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        ATCAATCTGGGCTGCA-1 ATCACTTCATCCTCGC-1 ATCCAACGCAGTCATA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          6.0000000          8.3174125</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        ATCGACTCTTTCCGTT-1 ATCGCACGCCGGGAGA-1 ATCTCCCTGCAATCTA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          5.5719405          0.0000000          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        ATCTGGTTAAGACTGT-1 ATCTGTAATTGTACCC-1 ATCTTGACCTGCAACG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          5.1639119        3.000000000       8.369802e+00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        ATGAAGCCAAGGAGCC-1 ATGACGCCGGCTCTAA-1 ATGAGGAGTGTTAATC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       8.017867e+00         0.00000000        10.27751902</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        ATGATCGGGAATAGAC-1 ATGCACTACCGCATTG-1 ATGCATGATCCAGGAT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       0.000000e+00          7.3698024           0.000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        ATGCCGGTCTTGCATA-1 ATGCGACAGTCCCATT-1 ATGCTCAGTGTTGCAT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           0.000000       1.077168e-01         7.35565774</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        ATGGATTGACCAAACG-1 ATGTGCATCCGACGCA-1 ATGTTACGAGCAATAC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          1.7381250         0.35063502</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        ATTAATACTACGCGGG-1 ATTAATTCGGTCACTC-1 ATTACTAGCCTCTTGC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          5.0247476          0.0000000       1.010948e+01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        ATTAGATTGATAGCGG-1 ATTATGCCATAGGGAG-1 ATTCCTCCGCCAGTGC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       8.487793e+00         5.36668554          6.5232608</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        ATTCTCGTCTCTTTAG-1 ATTGAAGATCTTAGTG-1 ATTGCTGCTCCTCCAT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           0.000000         0.61294278          0.4337443</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        ATTGGGAATATCTTGG-1 ATTTAACTCGTATTAC-1 ATTTACAGTTTACTGG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         0.08687054       2.460599e+00          5.3928660</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        ATTTGTTCCAGGGCTC-1 CAAACGGTCGCACTTT-1 CAAACTATTGAGCTTC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       4.8270301611           0.000000         0.58256664</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CAAATTGTCAGCAAGC-1 CAACGACCCGTTTACA-1 CAACGGTTCTTGATAC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           0.000000       3.902348e+00          7.7306455</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CAACTCCTTGATCCCG-1 CAAGCAACGTCGGAGT-1 CAAGCACCAAATGCCT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       9.623557e+00          0.0000000        1.825815622</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CAATAAACCTTGGCCC-1 CAATTAAGGGTGATGA-1 CACACAGGGATAGATT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          2.8865118          0.0000000         9.27460175</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CACAGCACCCACGGCA-1 CACAGCTAGGGAGTGA-1 CACCATCGGAGGAGAC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          7.7496976          2.9651326          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CACCCACACGTCACCC-1 CACCGCCAGAAGGTTT-1 CACCTAATCAGTTTAC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       9.623557e+00          3.0818854         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CACCTCGATGGTGGAC-1 CACGAAAGTTAGTCCC-1 CACGCACAGCGCAGCT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         0.00000000          0.0000000          6.4152406</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CACGCAGCGAGGCTTT-1 CACTAAAGTTGCCTAT-1 CACTCAGCTCTTGAGG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           0.000000           2.010734        0.083847992</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CACTGTCCAAGTGAGA-1 CACTTAATCAGACGGA-1 CACTTCGCCACAGGCT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          5.2914603        0.021468390         5.82727112</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CAGAGCATGAGCTTGC-1 CAGATACTAACATAGT-1 CAGCTCACTGAGACAT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          8.3698024          4.7056028</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CAGCTCGTGCTTGTGT-1 CAGCTTAGTAGGTAGC-1 CAGTGTCCGCAGAATG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          5.3267466         4.90367570           4.829808</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CAGTTCAAATTGACAC-1 CATACAAAGCCGAACC-1 CATAGTAGCATAGTAG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       0.000000e+00           1.015030       8.378837e+00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CATCATCTACCCGGAC-1 CATCGCCCGCGGCCAA-1 CATGAACCGACATTTG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000                  0          1.6135055</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CATGATGCACAATTCT-1 CATGCGTTAGACAGAA-1 CATGCTGGCTCCAATT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          6.0000000          0.0000000                  0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CATGGCAGGAAGATCG-1 CATGGTCTAGATACCG-1 CATTACGTCGGCCCGT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1        0.000000000           0.000000          3.5705932</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CATTATGCTTGTTGTG-1 CCAAACAGAACCCTCG-1 CCAACGATGCACTGAT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         5.02736747       8.000000e+00          5.7526897</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CCAAGACTTCTGCGAA-1 CCAAGCGTAACTCGTA-1 CCAAGGAACAGAGAGG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          4.4235904       0.000000e+00       4.724355e+00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CCAATAGTGCCGTCGA-1 CCAATTGAATGTTAAT-1 CCACGAGAAGAGAATC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          0.0000000          2.1926549</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CCAGGGACGTGGCCTC-1 CCATAAACAACCCGAC-1 CCATAGGTTGGCGTGG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          8.6450077         1.14258870         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CCATCCATACCAAGTC-1 CCATGCCTGTTTAGTA-1 CCATGCTCTGCAGGAA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          3.5903689          4.0000000           0.000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CCATTAGCGATAATCC-1 CCATTCCCTGCCCACA-1 CCCGACCATAGTCCGC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           0.000000         0.04856623           5.419924</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CCCGCCATGCTCCCGT-1 CCCGTCAGCGTCTGAC-1 CCCTCATTCTGGAATT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       5.570118e+00       0.000000e+00       7.000000e+00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CCCTGAAATGAGTTGA-1 CCGAAAGTGGTGAGCA-1 CCGCCGGTCAACACAC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          2.8223074          0.0000000       0.000000e+00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CCGGAATGGTTTCAGT-1 CCGGCGCATATTGGAT-1 CCGGGACCCGCAGAGA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          10.477046         0.00000000       0.000000e+00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CCGGGCGGTCTCGTCA-1 CCGTACCCAAGCGCCA-1 CCGTGCCCATGACGGC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1                  2           0.000000           0.000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CCTACGGCTCAGTCGA-1 CCTACTGCTTACACTT-1 CCTAGTTAGTCGCATG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          8.3761346         0.76045446</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CCTATGGGTTACCGTC-1 CCTCACCAATCTTGAC-1 CCTCCGACAATTCAAG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           3.181639          8.0000000           6.502199</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CCTCGAAGTGGACGGG-1 CCTCGCCAGCAAATTA-1 CCTCTAATCTGCCAAG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          0.9507391          4.1428479</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CCTCTCTCCCATCTAG-1 CCTCTGGCCTAGACGG-1 CCTGAATATTTACATA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000        0.000000000          4.7239148</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CCTGCTATTTGAGAAG-1 CCTGGCTAGACCCGCC-1 CCTGTCACCCGGGCTC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          8.6450077          0.0000000          2.7402546</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CCTTCTTGATCCAGTG-1 CGAACGCCCAGTGCCG-1 CGAAGTTGCTCTGTGT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          5.1275878       0.000000e+00           7.502199</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CGAGAGATGTGAACCT-1 CGAGCGTTGATCAGCC-1 CGAGCTGGGCTTTAGG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           0.000000         0.00000000           0.000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CGAGGCTAAATATGGC-1 CGCAAACACGAGTTAC-1 CGCAATTACTTTCGGT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           1.738595          0.0000000          4.8272711</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CGCAATTAGGGTAATA-1 CGCAATTCTACAATAA-1 CGCATTAGCTAATAGG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           5.735741         9.65414115          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CGCGCCCGACTTAATA-1 CGCGTTCATGAAATAC-1 CGCTATACCGCCCACT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          8.6450077         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CGCTATTCAATGTATG-1 CGCTCGACATAATGAT-1 CGCTCTCCGTAGATTA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         5.91691989           6.773147            6.51434</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CGCTGTGACGCCGCAC-1 CGCTTCCACTGAAATC-1 CGCTTTCATACCGGTG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          9.3169813       9.354203e+00       0.000000e+00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CGGAGTTTGAGAGACA-1 CGGCACTCAAGAAAGT-1 CGGCCACGCACAAAGT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         3.88133618         4.11254470         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CGGGATCAATGTAAGA-1 CGGGCAGCTAAACCGC-1 CGGTGTACTTGATCCC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          1.9605241          3.6360559         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CGTACCTGATAGGCCT-1 CGTAGCGAATTGTCAG-1 CGTATTAAGAGATCTA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          5.7819249          0.0000000           2.516433</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CGTCAGTGCGCACAAG-1 CGTCTGGAAGGGCCCG-1 CGTGTCCCATTCGCGA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         0.00000000         3.61138946           4.587314</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CGTTGTTTCAATTCCC-1 CGTTTAAGCGGAGCAC-1 CGTTTCGCTCATTACA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           0.000000                  3          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CTAATTCGCACGCGCT-1 CTAATTTCAACAACAC-1 CTACGCACGGAGTACC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         5.48533045         0.00000000         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CTACTGCCACCTGACC-1 CTAGCATAGTATAATG-1 CTAGTGAAGGACAGGA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1        1.463498619          2.2135297           4.012142</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CTAGTTGGGCCCGGTA-1 CTATCGGGTCTCAACA-1 CTATGTCACTAGCCCA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           0.000000       0.000000e+00           0.000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CTATGTCTATTGAAAC-1 CTCAGGACTCACCTGT-1 CTCATGGCTCACAATC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           0.000000          2.1168783          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CTCATTTGATGGGCGG-1 CTCCGGCCTAATATGC-1 CTCCTAAGTTATGTCT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          6.2578428         5.33068950          4.8225089</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CTCGAGGTCGAACAGT-1 CTCGCACCTATATAGT-1 CTCGGTCCGTAGCCTG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          8.2014494          0.0000000       9.487793e+00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CTCTCACAATCGATGA-1 CTCTGCGAAGCAAGCA-1 CTCTGGACGCCTGGTG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           0.000000           0.000000         2.94783483</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CTCTGTTTGAGGATTC-1 CTGAAAGAGATCCGAC-1 CTGCACCTGGAACCGC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       9.304813e-01         3.40146371       2.376748e+00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CTGGAAATGGATGCTT-1 CTGTATGGTGTAGAAA-1 CTGTTCACTGCCTGTG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       7.975128e+00          6.3556577          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CTGTTCATCTCACGGG-1 CTTAACTTCGAAGTAC-1 CTTACACGGTATTCCA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          2.0000000       4.700389e+00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CTTACACTGGGAAATA-1 CTTATGTTGACTACCA-1 CTTCATAGCTCAAGAA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       5.659550e+00          3.9393873           5.000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CTTCTTACGTCGTATA-1 CTTGTACTTGTTGACT-1 CTTGTTTATGTAGCCA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          4.6862213         5.36668554         2.73941353</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        CTTTAACTTTCAAAGG-1 CTTTGGCTTTAGTAAA-1 GAAACAGCCATGCAGT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           6.002276           0.000000          4.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GAAACTCTAATGAAGG-1 GAAAGTGACTAACTGC-1 GAAATCGCGCGCAACT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000        11.65414115         4.47584088</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GAAATGGCGGTGTTAG-1 GAAATTCACATCGCTG-1 GAACACACATCAACCA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          3.5151622       2.959013e+00       0.000000e+00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GAACGACCGAATGATA-1 GAAGAACGGTGCAGGT-1 GAAGCGTGAGGAATTT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          0.0000000          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GAAGCTTGCTGACCGC-1 GAAGTGCTGGATAGCT-1 GAATCGACATGGTCAC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         0.00000000          0.0000000          6.1619362</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GAATCGCCGGACACGG-1 GAATGTTGGGTAATCT-1 GAATTATAGTGAAAGG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          5.7571773       1.969196e+00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GAATTTCTCGCTGCAG-1 GACAACGCAGCTTACG-1 GACACAAGGGAAGAAA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           5.000000           7.339734       1.204146e-16</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GACCAGAGCCCTGTAG-1 GACGCCTGTTGCAGGG-1 GACGTGTAGGGATTAT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       2.276911e+00           3.822509          6.6852650</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GACTAAGATCATGCAC-1 GACTAAGTAGGCTCAC-1 GAGACTGATGGGTAGA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       4.673167e+00        0.472843547        9.00000e+00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GAGATCTGCTTGGCAT-1 GAGATCTGTCACTCCG-1 GAGCATCATCCCTGGG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.4337443           4.020574          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GAGCGAGGGAGTACCG-1 GAGCTCTCGGACCTAA-1 GAGGAATGGAGAGGTT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       4.000000e+00         4.00000000           9.697778</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GAGGCTATCAAAGTCG-1 GAGGGCATCGCGTATC-1 GAGGTACATCCATCTT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1        4.587329246           0.000000           0.000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GAGTACGGGTATACAA-1 GATAAATCGGTGGATG-1 GATATCTCATGCAATA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1                  8           0.000000                  0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GATCATTCCAAACATT-1 GATCCCTTTATACTGC-1 GATCGACACTATCTGA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       7.673448e+00          0.0000000          6.5801423</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GATCGGTGGCCATAAC-1 GATGCTACAAGCGCCT-1 GATGGCGCACACATTA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           0.000000       6.792239e+00       3.211500e-02</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GATGTTTGTGCGAGAT-1 GATTCCCTTGTCGCAG-1 GATTCCGCGTTTCCGT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         0.00000000           0.000000          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GCAAATATTACGCTTT-1 GCAAGTGCACAGAGAA-1 GCACTAGTCGCGCTAT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000       5.539162e+00           5.819414</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GCAGGACTATAGAATA-1 GCATCCCTAACTTTGA-1 GCCCACCAAGGCTGTC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           5.502199        8.00000e+00          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GCCCAGTTGGTATGCC-1 GCCCGCGCGTTTGACA-1 GCCGAAATTCCTACGT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1                  0           6.730646          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GCCTAGCGATCTGACC-1 GCCTATTCCGATATAG-1 GCCTTCAGCCCTACCG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          6.1094828         9.13118717       0.000000e+00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GCGAAGCCATACCCGT-1 GCGAGTTCTGCAAAGA-1 GCGCTAATTGAATAGA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          7.5917775          2.4828234       0.000000e+00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GCGGGAACCAGGCCCT-1 GCGGTCCCTAGACGCA-1 GCGTCGAAATGTCGGT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       1.100000e+01           5.819414            5.29219</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GCTAATACCGAATGCC-1 GCTAGTTTCATTGAGG-1 GCTCTAAACCCTGACG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           6.773147                 10          3.5473095</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GCTCTATGTTACGTGC-1 GCTCTCGGGTACCGAA-1 GCTGCTCTCCGGACAC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          7.0528211         0.00000000        1.950222584</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GCTGGCATATTCACCT-1 GCTTGATGATAATCAG-1 GGAGAAGTCATTGGCA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           4.666638          0.0000000          6.5411275</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GGAGTGCCGCCCTGGA-1 GGATTCAGTACGGTGG-1 GGCAATAGTCAATGAG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       8.487793e+00           6.000000           2.015095</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GGCACTCCACTGGGCA-1 GGCATACAGGTAGCGG-1 GGCGGAGTAATATTAG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          0.0000000           1.334567</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GGCGGTAGGATCATTG-1 GGCGTCCTATCCGCTG-1 GGCTATTAAGTTGTAT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           0.000000          0.0000000           0.000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GGCTCGTGCCACCAGC-1 GGCTCTGCTCCAACGC-1 GGCTGGCTAGCTTAAA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           0.000000          3.3218460           4.822509</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GGGACTGCATAGATAG-1 GGGAGAACTCACAGTA-1 GGGAGTTAATGAGGCG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          4.5212881         0.00000000                  0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GGGCGATATGTGTGAA-1 GGGCGGTCCTATTGTC-1 GGGCGTACATTTATAT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1        7.00000e+00          0.0000000          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GGGCTGCCTAGGGCGA-1 GGGCTGGTTAGTCGCG-1 GGGTATGTATGCACTT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       0.000000e+00          1.5970082         6.94147938</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GGGTCACCGTGACGGT-1 GGGTGTTTCAGCTATG-1 GGTAACTATGTATCTG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          0.0000000         0.10111808</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GGTAGTGCTCGCACCA-1 GGTATTGCCGAGTTTA-1 GGTCGGTAATTAGACA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       0.000000e+00       4.834408e+00         0.03497003</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GGTGAGATGCAGATAA-1 GGTGCGGATAAGTGGC-1 GGTTAGGCTTGGAGAA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1                  7       8.170323e+00          5.3529725</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GGTTTACAATCTCAAT-1 GGTTTGAGTGCTGGAA-1 GTAAGCGGGCAGTCAG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          2.1497476          0.0000000          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GTAAGTAGGGTATACC-1 GTACGAGATTGCGACA-1 GTACTAAGATTTGGAG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          2.5266376           7.459790           6.000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GTACTGAGGTCGTAAC-1 GTACTGCATGAAGCGT-1 GTACTTGGGCACTTCT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          0.0000000                  7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GTATAGGACTCAGTAG-1 GTATCAGCTTGGGTTC-1 GTCAAAGTTTACATAG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         8.33068950          0.0000000          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GTCACTCTCCAAATCT-1 GTCAGAATAGTCTATG-1 GTCATGCACCTCCGTT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          4.4604876         2.81651793           5.201449</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GTCATGGACATGACTA-1 GTCCCAACGTAAAGTA-1 GTCCGGCTGAATTGCG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       1.349725e-16       2.034366e+00       8.000000e+00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GTCGGATATCTCAGAC-1 GTGAAACGTGCTCCAC-1 GTGCAACAAATGTGGC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           4.012142         0.00000000           0.000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GTGCACGAAAGTGACT-1 GTGCGGGTCTCCAAAT-1 GTGCTCAAGTACTGTC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           0.000000         8.90709913        0.000000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GTGGACGTGCTGAGAC-1 GTGGGCTTAGACACAC-1 GTTCACAGGAGTCTAG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1        9.00000e+00           6.534493           0.000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GTTCCAGTCTGACCAT-1 GTTCTTCCCTCGATGT-1 GTTGCACGGAGTTTCG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1        5.000000000       3.664381e+00       8.585854e+00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GTTGTCGTGTTAGTTG-1 GTTTCCTGGAGGGTGA-1 GTTTGACCAAATCCTA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       0.000000e+00         10.4392831        8.69832e+00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GTTTGGCCGCTCAGCG-1 TAAATGAATCCGTTTC-1 TAACAAAGGGAGAAGC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000         9.78363475          2.3502251</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TAACGCTTTGAGAGCG-1 TAACTATCGAAGGTCC-1 TAACTCCATGGAGGCT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         9.65414115                  8         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TAAGGAACTTGTGGGA-1 TAAGGCAACATAAGAT-1 TAATACACAGTAGTAT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1        7.00000e+00          0.0000000          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TACAAGTCTCGTGCAT-1 TACCAGCTAGGTTTAA-1 TACCTCACGCTTGTAC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1        0.000000000          1.0000000         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TACGAACACGACTTCA-1 TACGAGAACTTCACGT-1 TACGATGTTGATCATC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000           0.000000          6.2697593</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TACGTGCACTATGCTG-1 TAGAGCTACGAAGAAC-1 TAGAGTCTAAGCGAAC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          0.0000000       9.975128e+00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TAGCTAAGTCCGGGAG-1 TAGGGTGTTTCAAGAG-1 TAGGTGAGCCCTACTC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       7.975128e+00          3.3467448          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TAGGTTCGAGTTCGTC-1 TAGTGCCCTCCAGAGT-1 TAGTTTATTCTTGCTT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       4.657475e-01          0.0000000                  0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TATAAATCCACAAGCT-1 TATAAGTGAGGATAGC-1 TATACACGCAAAGTAT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         5.01613501                  5          8.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TATCCATATCATGCGA-1 TATCGATGATTAAACG-1 TATGCTCCCTACTTAC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1                  8       7.240533e+00          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TATGGATGTGCTACGC-1 TATGGCCCGGCCTCGC-1 TATGGGTACGTATCGT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          3.6450077          0.0000000           0.000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TATTCAATTCTAATCC-1 TATTTAGTCTAGATCG-1 TATTTGTTACCCTTTA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       0.000000e+00         4.83226727       9.585854e+00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TCAAACAACCGCGTCG-1 TCAAACTTAGATTGTT-1 TCAACACATTGGGTAA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          1.9723611           0.000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TCAACCATGTTCGGGC-1 TCACAGGTTATTGGGC-1 TCACGCATTGTAGATC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          8.4392831       2.110097e+00        0.000000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TCACGGTCATCGCACA-1 TCAGCAAATGCATCTC-1 TCAGGGTGTAACGTAA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          8.5411275           0.000000       0.000000e+00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TCAGGTTCTTTGAGAA-1 TCAGTACTGACCCGCG-1 TCATCCCAGAGGGTGG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           0.000000           7.277519        0.864534810</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TCCAGGCGAGTACGGT-1 TCCCAGCTTTAGTCTG-1 TCCCAGGCTTAGCTAA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          4.7438565           3.564234          2.8245404</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TCCCGCGTACTCCTGG-1 TCCCGGGTGTGCTGCT-1 TCCCGTCAGTCCCGCA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          1.3346100          3.9008589          6.5311843</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TCCCTGGCTCGCTGGA-1 TCCGATAATTGCCATA-1 TCCGATGACTGAGCTC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         0.00000000         5.49576139          2.1161741</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TCCGATGGTGCGACAT-1 TCCGATTACATTGCCG-1 TCCTCTACGAGATGGC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000                  5           9.697778</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TCCTTTCTTACGCTTA-1 TCGAAATTTAGGACCA-1 TCGCATCCCTAAGTGT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          5.8572815          0.0000000          4.1168783</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TCGCCGGTCGATCCGT-1 TCGCGTCCAGAAGGTC-1 TCGCTCGATATATTCC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         0.00000000         0.00000000           0.000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TCGCTGGGCGGATTGT-1 TCGCTGTGCGTAAATC-1 TCGGAATGCGCTCTGA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          3.5311602       9.730646e+00         3.50715991</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TCGGAGTACATGAGTA-1 TCGTATAGTGCAATTA-1 TCGTCCGCTGGCGTCT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1                  0                  0                  6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TCTACCGTCCACAAGC-1 TCTAGCATCTTCGATG-1 TCTAGTTATCAGAAGA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          1.4733344          7.5411275          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TCTATCGGTCGCAACA-1 TCTATTACGCTGGCGA-1 TCTCTAATAGCTGGTA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       5.024748e+00        0.000000000       0.000000e+00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TCTGAACCGGTCGGCT-1 TCTTACAGAGGTACCG-1 TCTTACGGCATCCGAC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1                  4          8.5578966        11.65414115</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TCTTCGATACCAATAA-1 TCTTGATGCGTAGCGA-1 TCTTGGTAACACCAAA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         0.97598846         0.59160206          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TGAAACTTATGCAAGC-1 TGACCCACGTTAGACA-1 TGAGAATGCTTTACCG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          0.0000000          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TGATCTCCGGCGCCAG-1 TGATTCGTCTATCACT-1 TGCATGGATCGGATCT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          6.0000000          0.0000000        1.186693325</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TGCCACCTGGCGAAAC-1 TGCCTGATCAAACGAT-1 TGCGCAAAGCATTTGG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           0.000000          5.9052476           0.000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TGCGCGATTAACGGAG-1 TGCGGAGTAAAGGTGC-1 TGCGGCATAGTTCAAC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000           0.000000           0.000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TGCTGGTTGGACAATT-1 TGGCCAAACTGAAGTA-1 TGGCCGTATATTGACC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           0.000000       2.164844e+00           6.277519</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TGGCTTTGGGTAGACA-1 TGGGCACGTTCTATGG-1 TGGGCCACAAGAGCGC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       7.487793e+00          0.0000000         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TGGTTCGTAGCAAAGG-1 TGTAGTGATCTATAAT-1 TGTCCCGACATAGCAC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          6.2767320          7.2697593                  0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TGTCCTAAGTCACCGC-1 TGTGACTACGCCAGTC-1 TGTGTCGCGAGTTGCA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          5.7297569          5.2923357           7.317413</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TGTTTCGGTACTTCTC-1 TTAACCAACCCTCCCT-1 TTAAGCGCCTGACCCA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         5.90709913           7.907099           3.284506</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TTAATCAGTACGTCAG-1 TTATATTTGGCAATCC-1 TTATCTGTATCATAAC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000           0.000000          6.2849976</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TTATGACAAACTGGAT-1 TTCAAAGTCTCTAGCC-1 TTCAACGACCCGACCG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         7.02549518       0.000000e+00       9.487793e+00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TTCAAGCCGAGCTGAG-1 TTCGACGGGAAGGGCG-1 TTCTACTTGCGAGGGC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         0.00000000       1.010912e+01         2.96887430</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TTCTTAGTGGCTCAGA-1 TTCTTGTAACCTAATG-1 TTGCACGGAGCAGCAC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         4.33554267           0.000000          7.9955308</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TTGCTGAAGGAACCAC-1 TTGCTGATCATGTTCG-1 TTGTTCAGTGTGCTAC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         6.34969391          0.0000000          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TCCTTCAGTGGTCGAA-1 TGCGGTGAAATTTCAT-1 TTGAAGAATTCCCAGG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       0.0000000000          0.0000000         0.05475544</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TTGTAATCCGTACTCG-1 TGGAGTGATGCGATGA-1 TTCGTACTCCAGAACG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       0.000000e+00           5.951793         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        GTAGACGTCGTTACAT-1 TATCCTGCATGGGAAT-1 TGCAGGATCGGCAAAG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          1.2562876          2.7284008          4.6930528</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TTGGCTCGCATGAGAC-1 TGGAAGGATAAAGATG-1 TTGAATATGGACTTTC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1                  0        0.000000000          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TTGATCTAACTTTGTC-1 TAATATTGAAATTCGC-1 TTACCATTGATTACCC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000       8.792239e+00          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TGGAAGACGAACACCA-1 GTCGTCAATTATAAGG-1 TTCTAGGCCAATTGTG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       7.143741e+00          0.0000000         0.13856151</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TCCCAAAGACGAAGGA-1 TTCTTAGTGAACGGTG-1 TTACATCGTGGCCTGG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         2.03819781           8.000000          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TGGGAAATGCCTTTCC-1 TCCACAATGGTTTACG-1 TTACAACTACGCATCC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         8.43340965         4.47634796       5.277966e+00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TCTATCATGCAGTTAC-1 TTCGCACTCGCGTGCT-1 TTGGGACACTGCCCGC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       9.354203e+00       6.165098e+00           0.000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TGATCGGTTTGACCCT-1 TTCATGGCGCAACAGG-1 TATTCGTGCCAGAATA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       7.975128e+00          3.1926549          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TCATCACTCGAGCTCG-1 TTGTGGCCCTGACAGT-1 TTGTATCACACAGAAT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000         0.00000000          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TTAATTTCAGACGCGG-1 TTATCCAATCGAACTC-1 TTAGCAACATGGATGT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         0.00000000         0.00000000         5.91691989</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TGTTCTTCCATTGACT-1 TGATTTCCTCCTGACG-1 TTGGGCGGCGGTTGCC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           0.000000         7.00000000           0.000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TTGTCGTTCAGTTACC-1 TTCCTCGAGGGTGTCT-1 TTGATTATGCAGATGA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          2.3705927       6.934051e+00         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TTGCTCCCATACCGGA-1 TTATTAGGGAAGCATC-1 TTGGATTGGGTACCAC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          6.6709127          0.0000000        0.000000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        TGTCTACAGTTTCTGT-1 TTAATGTAGACCAGGT-1 TGCAAGAATGACGTAA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          2.2067982            6.80145</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [ reached getOption("max.print") -- omitted 63 rows ]</span>
+</code></pre></div>
+    </div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>

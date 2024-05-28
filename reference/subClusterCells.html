@@ -23,7 +23,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Giotto</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.8</span>
       </span>
     </div>
 
@@ -251,6 +251,9 @@
     <li>
       <a href="../articles/singularity.html">Singularity</a>
     </li>
+    <li>
+      <a href="../articles/nemo_slideseq.html">NeMO Slide-seq on Terra.bio</a>
+    </li>
   </ul></li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -302,13 +305,13 @@
 <span>  cluster_method <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"leiden"</span>, <span class="st">"louvain_community"</span>, <span class="st">"louvain_multinet"</span><span class="op">)</span>,</span>
 <span>  cluster_column <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  selected_clusters <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  hvg_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>reverse_log_scale <span class="op">=</span> <span class="cn">T</span>, difference_in_cov <span class="op">=</span> <span class="fl">1</span>, expression_values <span class="op">=</span></span>
+<span>  hvg_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>reverse_log_scale <span class="op">=</span> <span class="cn">TRUE</span>, difference_in_cov <span class="op">=</span> <span class="fl">1</span>, expression_values <span class="op">=</span></span>
 <span>    <span class="st">"normalized"</span><span class="op">)</span>,</span>
 <span>  hvg_min_perc_cells <span class="op">=</span> <span class="fl">5</span>,</span>
 <span>  hvg_mean_expr_det <span class="op">=</span> <span class="fl">1</span>,</span>
 <span>  use_all_genes_as_hvg <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>  min_nr_of_hvg <span class="op">=</span> <span class="fl">5</span>,</span>
-<span>  pca_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>expression_values <span class="op">=</span> <span class="st">"normalized"</span>, scale_unit <span class="op">=</span> <span class="cn">T</span><span class="op">)</span>,</span>
+<span>  pca_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>expression_values <span class="op">=</span> <span class="st">"normalized"</span>, scale_unit <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
 <span>  nn_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>dimensions_to_use <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">20</span><span class="op">)</span>,</span>
 <span>  k_neighbors <span class="op">=</span> <span class="fl">10</span>,</span>
 <span>  resolution <span class="op">=</span> <span class="fl">1</span>,</span>
@@ -319,7 +322,7 @@
 <span>  nn_network_to_use <span class="op">=</span> <span class="st">"sNN"</span>,</span>
 <span>  network_name <span class="op">=</span> <span class="st">"sNN.pca"</span>,</span>
 <span>  return_gobject <span class="op">=</span> <span class="cn">TRUE</span>,</span>
-<span>  verbose <span class="op">=</span> <span class="cn">T</span></span>
+<span>  verbose <span class="op">=</span> <span class="cn">TRUE</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -354,15 +357,18 @@
 
 
 <dt>hvg_mean_expr_det</dt>
-<dd><p>threshold for mean expression level in cells with detection</p></dd>
+<dd><p>threshold for mean expression level in cells with
+detection</p></dd>
 
 
 <dt>use_all_genes_as_hvg</dt>
-<dd><p>forces all genes to be HVG and to be used as input for PCA</p></dd>
+<dd><p>forces all genes to be HVG and to be used as
+input for PCA</p></dd>
 
 
 <dt>min_nr_of_hvg</dt>
-<dd><p>minimum number of HVG, or all genes will be used as input for PCA</p></dd>
+<dd><p>minimum number of HVG, or all genes will be used as
+input for PCA</p></dd>
 
 
 <dt>pca_param</dt>
@@ -430,10 +436,196 @@ The systematic steps are:</p><ul><li><p>1. subset Giotto object</p></li>
 </ul></div>
     <div id="see-also">
     <h2>See also</h2>
-    <div class="dont-index"><p><code><a href="dot-doLouvainCluster_multinet.html">.doLouvainCluster_multinet</a></code>, <code><a href="dot-doLouvainCluster_community.html">.doLouvainCluster_community</a></code>
+    <div class="dont-index"><p><code><a href="dot-doLouvainCluster_multinet.html">.doLouvainCluster_multinet</a></code>,
+<code><a href="dot-doLouvainCluster_community.html">.doLouvainCluster_community</a></code>
 and  @seealso <code><a href="doLeidenCluster.html">doLeidenCluster</a></code></p></div>
     </div>
 
+    <div id="ref-examples">
+    <h2>Examples</h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu">GiottoData</span><span class="fu">::</span><span class="fu"><a href="https://drieslab.github.io/GiottoData/reference/loadGiottoMini.html" class="external-link">loadGiottoMini</a></span><span class="op">(</span><span class="st">"visium"</span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. read Giotto object</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. read Giotto feature information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 3. read Giotto spatial information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 3.1 read Giotto spatial shape information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> cell_spatInfo_spatVector.shp</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> cell</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 3.2 read Giotto spatial centroid information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> cell</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 3.3 read Giotto spatial overlap information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> No overlaps were found, overlap loading will be</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path was provided,</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  but a giotto python environment was found and</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  will be used</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu">subClusterCells</span><span class="op">(</span><span class="va">g</span>, cluster_column <span class="op">=</span> <span class="st">"leiden_clus"</span><span class="op">)</span></span></span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>hvg_param is deprecated, use hvf_param in the future</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>hvg_min_perc_cells is deprecated, use hvf_min_perc_cells in </span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 the future</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>hvg_mean_expr_det is deprecated, use hvf_mean_expr_det in the </span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 future</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>use_all_genes_as_hvg is deprecated, use use_all_feats_as_hvf </span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 in the future</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>min_nr_of_hvg is deprecated, use min_nr_of_hvf in the future</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> start with cluster:  1</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> feat statistics has already been applied once, will be </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>                     overwritten</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> cells statistics has already been applied once, will be </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>                     overwritten</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> hvf  has already been used, will be overwritten43 highly variable feats have been selected</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> a custom vector of genes will be used to subset the matrix</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>ncp &gt;= minimum dimension of x, will be set to </span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 minimum dimension of x - 1</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>You're computing too large a percentage of total singular values, use a standard svd instead.</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>did not converge--results might be invalid!; try increasing work or maxit</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> pca  has already been used, will be overwritten</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> &gt; pca already exists and will be replaced with</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  new dimension reduction object</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> &gt; " sNN.pca " already exists and will be replaced with</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  new nearest neighbor network</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> start with cluster:  2</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> feat statistics has already been applied once, will be </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>                     overwritten</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> cells statistics has already been applied once, will be </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>                     overwritten</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> hvf  has already been used, will be overwritten40 highly variable feats have been selected</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> a custom vector of genes will be used to subset the matrix</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>ncp &gt;= minimum dimension of x, will be set to </span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 minimum dimension of x - 1</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>You're computing too large a percentage of total singular values, use a standard svd instead.</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>did not converge--results might be invalid!; try increasing work or maxit</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> pca  has already been used, will be overwritten</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> &gt; pca already exists and will be replaced with</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  new dimension reduction object</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> &gt; " sNN.pca " already exists and will be replaced with</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  new nearest neighbor network</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> start with cluster:  3</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> feat statistics has already been applied once, will be </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>                     overwritten</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> cells statistics has already been applied once, will be </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>                     overwritten</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> hvf  has already been used, will be overwritten44 highly variable feats have been selected</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> a custom vector of genes will be used to subset the matrix</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>ncp &gt;= minimum dimension of x, will be set to </span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 minimum dimension of x - 1</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>You're computing too large a percentage of total singular values, use a standard svd instead.</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>did not converge--results might be invalid!; try increasing work or maxit</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> pca  has already been used, will be overwritten</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> &gt; pca already exists and will be replaced with</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  new dimension reduction object</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> &gt; " sNN.pca " already exists and will be replaced with</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  new nearest neighbor network</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> start with cluster:  4</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> feat statistics has already been applied once, will be </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>                     overwritten</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> cells statistics has already been applied once, will be </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>                     overwritten</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> hvf  has already been used, will be overwritten48 highly variable feats have been selected</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> a custom vector of genes will be used to subset the matrix</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>ncp &gt;= minimum dimension of x, will be set to </span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 minimum dimension of x - 1</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>You're computing too large a percentage of total singular values, use a standard svd instead.</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>did not converge--results might be invalid!; try increasing work or maxit</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> pca  has already been used, will be overwritten</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> &gt; pca already exists and will be replaced with</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  new dimension reduction object</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> &gt; " sNN.pca " already exists and will be replaced with</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  new nearest neighbor network</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> start with cluster:  5</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> feat statistics has already been applied once, will be </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>                     overwritten</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> cells statistics has already been applied once, will be </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>                     overwritten</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> hvf  has already been used, will be overwritten37 highly variable feats have been selected</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> a custom vector of genes will be used to subset the matrix</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>ncp &gt;= minimum dimension of x, will be set to </span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 minimum dimension of x - 1</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>You're computing too large a percentage of total singular values, use a standard svd instead.</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>did not converge--results might be invalid!; try increasing work or maxit</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> pca  has already been used, will be overwritten</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> &gt; pca already exists and will be replaced with</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  new dimension reduction object</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> &gt; " sNN.pca " already exists and will be replaced with</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  new nearest neighbor network</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> start with cluster:  6</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> feat statistics has already been applied once, will be </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>                     overwritten</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> cells statistics has already been applied once, will be </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>                     overwritten</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> hvf  has already been used, will be overwritten40 highly variable feats have been selected</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> a custom vector of genes will be used to subset the matrix</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>ncp &gt;= minimum dimension of x, will be set to </span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 minimum dimension of x - 1</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>You're computing too large a percentage of total singular values, use a standard svd instead.</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>did not converge--results might be invalid!; try increasing work or maxit</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> pca  has already been used, will be overwritten</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> &gt; pca already exists and will be replaced with</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  new dimension reduction object</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> &gt; " sNN.pca " already exists and will be replaced with</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  new nearest neighbor network</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> start with cluster:  7</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> feat statistics has already been applied once, will be </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>                     overwritten</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> cells statistics has already been applied once, will be </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>                     overwritten</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> hvf  has already been used, will be overwritten43 highly variable feats have been selected</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> a custom vector of genes will be used to subset the matrix</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>ncp &gt;= minimum dimension of x, will be set to </span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 minimum dimension of x - 1</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>You're computing too large a percentage of total singular values, use a standard svd instead.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> pca  has already been used, will be overwritten</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> &gt; pca already exists and will be replaced with</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  new dimension reduction object</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> &gt; " sNN.pca " already exists and will be replaced with</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  new nearest neighbor network</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> start with cluster:  8</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> feat statistics has already been applied once, will be </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>                     overwritten</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> cells statistics has already been applied once, will be </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>                     overwritten</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> hvf  has already been used, will be overwritten36 highly variable feats have been selected</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> a custom vector of genes will be used to subset the matrix</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>ncp &gt;= minimum dimension of x, will be set to </span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 minimum dimension of x - 1</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>You're computing too large a percentage of total singular values, use a standard svd instead.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> pca  has already been used, will be overwritten</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> &gt; pca already exists and will be replaced with</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  new dimension reduction object</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> k is higher than total number of cells.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  Adjusted to (total number of cells - 1)</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> &gt; " sNN.pca " already exists and will be replaced with</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  new nearest neighbor network</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> An object of class giotto </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &gt;Active spat_unit:  cell </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &gt;Active feat_type:  rna </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [SUBCELLULAR INFO]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> polygons      : cell </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [AGGREGATE INFO]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> expression -----------------------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell][rna] raw normalized scaled</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> spatial locations ----------------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell] raw</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> spatial networks -----------------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell] Delaunay_network spatial_network</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> spatial enrichments --------------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell][rna] cluster_metagene</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> dim reduction --------------------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell][rna] pca custom_pca umap custom_umap tsne</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> nearest neighbor networks --------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell][rna] sNN.pca custom_NN</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> attached images ------------------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> images      : alignment image </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Use objHistory() to see steps and params used</span>
+</code></pre></div>
+    </div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>

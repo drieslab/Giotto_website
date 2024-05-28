@@ -23,7 +23,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Giotto</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.8</span>
       </span>
     </div>
 
@@ -251,6 +251,9 @@
     <li>
       <a href="../articles/singularity.html">Singularity</a>
     </li>
+    <li>
+      <a href="../articles/nemo_slideseq.html">NeMO Slide-seq on Terra.bio</a>
+    </li>
   </ul></li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -330,7 +333,8 @@
 
 
 <dt>min_int_cells_expr</dt>
-<dd><p>minimum expression level for interacting neighbor cell type</p></dd>
+<dd><p>minimum expression level for interacting neighbor
+cell type</p></dd>
 
 
 <dt>min_fdr</dt>
@@ -364,6 +368,262 @@
 <p>icfObject that contains the filtered differential feature scores</p>
     </div>
 
+    <div id="ref-examples">
+    <h2>Examples</h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu">GiottoData</span><span class="fu">::</span><span class="fu"><a href="https://drieslab.github.io/GiottoData/reference/loadGiottoMini.html" class="external-link">loadGiottoMini</a></span><span class="op">(</span><span class="st">"visium"</span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. read Giotto object</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. read Giotto feature information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 3. read Giotto spatial information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 3.1 read Giotto spatial shape information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> cell_spatInfo_spatVector.shp</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> cell</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 3.2 read Giotto spatial centroid information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> cell</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 3.3 read Giotto spatial overlap information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> No overlaps were found, overlap loading will be</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path was provided,</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  but a giotto python environment was found and</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  will be used</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">g_icf</span> <span class="op">&lt;-</span> <span class="fu"><a href="findInteractionChangedFeats.html">findInteractionChangedFeats</a></span><span class="op">(</span><span class="va">g</span>, cluster_column <span class="op">=</span> <span class="st">"leiden_clus"</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu">filterICF</span><span class="op">(</span><span class="va">g_icf</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ICFscores</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             feats        sel      other    log2fc       diff p.value p.adj</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            &lt;char&gt;      &lt;num&gt;      &lt;num&gt;     &lt;num&gt;      &lt;num&gt;   &lt;num&gt; &lt;num&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  1:        Fibcd1 1.46542630 0.20147156  2.376462  1.2639547       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  2:        Nkx2-2 1.26468983 0.25397388  1.946858  1.0107159       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  3:         Nxph4 1.60365207 0.12490321  2.921255  1.4787489       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  4:          Nexn 1.18276190 0.09867380  2.690780  1.0840881       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  5:          Rcn3 1.45925966 0.20393545  2.359024  1.2553242       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  6:        Nt5dc2 2.35690536 0.48581653  2.068321  1.8710888       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  7:         Kcng2 2.73791806 0.60235406  2.014563  2.1355640       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  8:          Zic1 1.95054979 0.46931828  1.848703  1.4812315       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  9:        Cacng4 1.56537228 0.35081287  1.885244  1.2145594       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10:        Adra1b 1.42153557 0.19856793  2.349397  1.2229676       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11:        Gm2115 2.20644488 0.57171045  1.779759  1.6347344       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12:       Ccdc153 2.18719654 0.17509425  3.055582  2.0121023       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13:       Tmem212 1.10010096 0.04769021  3.022510  1.0524108       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14: 1110017D15Rik 1.27112403 0.21548819  2.119701  1.0556358       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15:       Ranbp3l 1.12512058 0.03544060  3.177192  1.0896800       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16:         C1ql2 1.35364315 0.14822807  2.549935  1.2054151       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17:       Bhlhe22 2.85145646 0.52809756  2.232366  2.3233589       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18:         Kcng2 1.88619000 0.40154994  1.985538  1.4846401       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19:         Myo5b 1.75596631 0.37544569  1.964818  1.3805206       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20:        Suclg2 1.57178270 0.40938688  1.714554  1.1623958       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21:        Shisa8 0.20541300 1.00716808 -1.858041 -0.8017551       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22:       Fam234a 0.12484039 1.07724198 -2.388438 -0.9524016       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23:       Lrrc10b 0.23792880 1.46068625 -2.207389 -1.2227575       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24:       Ccdc153 0.08083048 2.02408746 -3.554133 -1.9432570       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25:       Cfap126 0.08389875 2.57847584 -3.864429 -2.4945771       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26:         Cd24a 0.26632534 1.54723652 -2.168850 -1.2809112       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27:         Fgfr2 0.54774570 2.33250300 -1.908942 -1.7847573       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28:        Arpc1b 0.40870632 2.05507523 -2.082833 -1.6463689       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29:        Mpped1 0.00000000 1.95192465 -4.358906 -1.9519247       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30:        Necab2 1.05430115 4.19609894 -1.896008 -3.1417978       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31:         Myo5b 0.63753987 2.93824546 -2.042445 -2.3007056       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32:         Prdm8 0.53630451 2.57072425 -2.069442 -2.0344197       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 33:          Rprm 0.45713884 1.63109982 -1.635580 -1.1739610       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 34:          Rgs3 0.00000000 1.58212645 -4.072214 -1.5821264       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 35:         Prox1 0.61471525 3.06528016 -2.146893 -2.4505649       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 36:        Dock10 0.47671289 2.54480465 -2.197236 -2.0680918       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 37:       Zcchc12 0.37047637 2.82290165 -2.635207 -2.4524253       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 38:         Gpr62 0.31789417 1.45108754 -1.892071 -1.1331934       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 39:         Myo1d 0.19086997 1.02684539 -1.953843 -0.8359754       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 40: 1700047M11Rik 0.30506869 1.47983461 -1.963535 -1.1747659       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 41:         Pde8a 0.33921603 1.61500909 -1.965214 -1.2757931       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 42:         Thbs4 0.24402225 1.46559294 -2.186135 -1.2215707       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 43:        Pdlim2 0.62946251 3.49230631 -2.300005 -2.8628438       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 44:        Adssl1 0.28704181 1.80805381 -2.301541 -1.5210120       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 45:       Plekhg3 0.21600943 1.47047213 -2.313159 -1.2544627       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 46:           Ick 0.18145793 1.35424222 -2.369276 -1.1727843       0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      perm_sel perm_other  perm_log2fc     perm_diff cell_type int_cell_type</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         &lt;num&gt;      &lt;num&gt;        &lt;num&gt;         &lt;num&gt;    &lt;char&gt;        &lt;char&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  1: 0.8905766  0.8846263  0.013418545  0.0059503309         1             3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  2: 0.5111245  0.5163761 -0.061345704 -0.0052516146         1             2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  3: 0.6986640  0.7050237 -0.027577227 -0.0063596996         2             1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  4: 0.8715561  0.8840981  0.028027969 -0.0125420044         4             5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  5: 0.3301563  0.3284689 -0.264496307  0.0016873885         1             4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  6: 0.6613055  0.6728312 -0.197997207 -0.0115257324         1             4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  7: 0.8133846  0.8146188 -0.146268473 -0.0012342174         1             4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  8: 0.6199908  0.6160711 -0.187893881  0.0039196744         1             4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  9: 0.8579351  0.8601676 -0.029792945 -0.0022325086         7             1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10: 0.3048951  0.3126772 -0.343030234 -0.0077820951         1             7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11: 0.7171154  0.7239047 -0.191921817 -0.0067893598         1             7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12: 0.3948222  0.4024850 -0.254237518 -0.0076628330         1             8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13: 0.1626198  0.1666244 -0.318454046 -0.0040045900         1             8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14: 0.3356289  0.3341704 -0.216769246  0.0014585306         1             8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15: 0.2636246  0.2601787 -0.220779388  0.0034459345         6             4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16: 0.4786092  0.4853971 -0.080866950 -0.0067878537         1             6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17: 1.1828093  1.1710625 -0.011467272  0.0117468024         1             6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18: 0.8147354  0.8144040 -0.031353733  0.0003313527         1             6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19: 0.7592757  0.7594916 -0.038836469 -0.0002159635         1             6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20: 0.7261008  0.7352460 -0.055807309 -0.0091451400         1             6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21: 0.5739842  0.5691559  0.016551269  0.0048283501         1             3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22: 0.8407679  0.8274998 -0.033097549  0.0132680726         6             3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23: 1.1431386  1.1454793 -0.031013231 -0.0023406139         1             2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24: 0.1265554  0.1188804  0.752136446  0.0076750661         2             2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25: 0.1422757  0.1461024  0.745895170 -0.0038266364         2             2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26: 0.6332015  0.6213109  0.096407993  0.0118906354         4             5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27: 2.1502274  2.1557587 -0.040875639 -0.0055312511         1             4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28: 1.8951631  1.8911278 -0.039347314  0.0040353021         1             4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29: 1.7508176  1.7588198 -0.067162972 -0.0080021398         1             4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30: 1.2216914  1.2039988  0.254243546  0.0176925582         1             1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31: 0.7583045  0.7795783  0.399953887 -0.0212738353         1             1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32: 0.6459748  0.6103670  0.504639256  0.0356078382         1             1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 33: 1.1382744  1.1406823 -0.015284088 -0.0024079005         7             1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 34: 1.4147366  1.4375548 -0.091144568 -0.0228182589         1             7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 35: 2.5496230  2.5605216 -0.040642091 -0.0108986150         6             4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 36: 2.1201157  2.1160909 -0.034698782  0.0040247920         6             4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 37: 2.3934562  2.3917748 -0.035367801  0.0016813947         4             6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 38: 1.1411212  1.1338808 -0.009725362  0.0072404281         1             6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 39: 0.7948532  0.7941179 -0.024307706  0.0007352992         1             6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 40: 1.1612607  1.1499258 -0.004967047  0.0113348737         1             6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 41: 1.2710685  1.2559467  0.001187109  0.0151217622         1             6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 42: 1.1220412  1.1272737 -0.026367045 -0.0052324905         1             6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 43: 2.7021760  2.6936461 -0.002954807  0.0085298781         1             6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 44: 1.3930137  1.3818995 -0.004109653  0.0111141837         1             6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 45: 1.1221856  1.1213033 -0.017395440  0.0008823088         1             6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 46: 1.0305528  1.0270681 -0.016424260  0.0034847300         1             6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     nr_select int_nr_select nr_other int_nr_other unif_int spec_int type_int</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         &lt;int&gt;         &lt;int&gt;    &lt;int&gt;        &lt;int&gt;   &lt;char&gt;   &lt;char&gt;   &lt;char&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  1:        82            77       69           19     1--3     1--3   hetero</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  2:        39            50      112           78     1--2     1--2   hetero</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  3:        50            39       78          112     1--2     2--1   hetero</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  4:        53            60       21            7     4--5     4--5   hetero</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  5:        15            17      136           57     1--4     1--4   hetero</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  6:        15            17      136           57     1--4     1--4   hetero</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  7:        15            17      136           57     1--4     1--4   hetero</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  8:        15            17      136           57     1--4     1--4   hetero</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  9:        18            14       25          137     1--7     7--1   hetero</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10:        14            18      137           25     1--7     1--7   hetero</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11:        14            18      137           25     1--7     1--7   hetero</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12:        17             7      134            0     1--8     1--8   hetero</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13:        17             7      134            0     1--8     1--8   hetero</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14:        17             7      134            0     1--8     1--8   hetero</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15:        12            13       46           61     4--6     6--4   hetero</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16:        42            42      109           16     1--6     1--6   hetero</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17:        42            42      109           16     1--6     1--6   hetero</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18:        42            42      109           16     1--6     1--6   hetero</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19:        42            42      109           16     1--6     1--6   hetero</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20:        42            42      109           16     1--6     1--6   hetero</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21:        82            77       69           19     1--3     1--3   hetero</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22:        15            25       43           71     3--6     6--3   hetero</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23:        39            50      112           78     1--2     1--2   hetero</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24:       125           125        3            3     2--2     2--2     homo</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25:       125           125        3            3     2--2     2--2     homo</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26:        53            60       21            7     4--5     4--5   hetero</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27:        15            17      136           57     1--4     1--4   hetero</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28:        15            17      136           57     1--4     1--4   hetero</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29:        15            17      136           57     1--4     1--4   hetero</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30:       143           143        8            8     1--1     1--1     homo</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31:       143           143        8            8     1--1     1--1     homo</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32:       143           143        8            8     1--1     1--1     homo</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 33:        18            14       25          137     1--7     7--1   hetero</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 34:        14            18      137           25     1--7     1--7   hetero</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 35:        12            13       46           61     4--6     6--4   hetero</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 36:        12            13       46           61     4--6     6--4   hetero</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 37:        13            12       61           46     4--6     4--6   hetero</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 38:        42            42      109           16     1--6     1--6   hetero</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 39:        42            42      109           16     1--6     1--6   hetero</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 40:        42            42      109           16     1--6     1--6   hetero</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 41:        42            42      109           16     1--6     1--6   hetero</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 42:        42            42      109           16     1--6     1--6   hetero</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 43:        42            42      109           16     1--6     1--6   hetero</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 44:        42            42      109           16     1--6     1--6   hetero</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 45:        42            42      109           16     1--6     1--6   hetero</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 46:        42            42      109           16     1--6     1--6   hetero</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       zscores</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         &lt;num&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  1:  2.761322</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  2:  2.269772</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  3:  2.182777</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  4:  2.307694</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  5:  2.741371</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  6:  2.408750</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  7:  2.347239</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  8:  2.157464</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  9:  2.883923</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10:  2.730355</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11:  2.078578</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12:  3.538369</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13:  3.500528</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14:  2.467538</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15:  3.162846</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16:  2.959810</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17:  2.596449</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18:  2.314030</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19:  2.290321</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20:  2.003970</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21: -2.083778</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22: -2.389684</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23: -2.483501</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24: -2.882068</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25: -3.124771</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26: -2.051660</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27: -2.142019</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28: -2.340984</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29: -4.945257</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30: -2.127219</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31: -2.294773</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32: -2.325662</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 33: -2.462357</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 34: -4.617226</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 35: -2.148708</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 36: -2.198932</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 37: -2.470007</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 38: -2.122714</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 39: -2.193395</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 40: -2.204484</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 41: -2.206404</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 42: -2.459182</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 43: -2.589471</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 44: -2.591228</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 45: -2.604522</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 46: -2.668731</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [ reached getOption("max.print") -- omitted 5 rows ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $Giotto_info</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $Giotto_info$values</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "normalized"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $Giotto_info$cluster</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "leiden_clus"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $Giotto_info$`spatial network`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Delaunay_network"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $test_info</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $test_info$test</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "permutation"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $test_info$p.adj</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "bonferroni"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $test_info$`min cells`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $test_info$`min interacting cells`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $test_info$`exclude selected cells`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $test_info$perm</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"class")</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "icfObject" "list"     </span>
+</code></pre></div>
+    </div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>

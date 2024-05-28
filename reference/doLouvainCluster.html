@@ -23,7 +23,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Giotto</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.8</span>
       </span>
     </div>
 
@@ -251,6 +251,9 @@
     <li>
       <a href="../articles/singularity.html">Singularity</a>
     </li>
+    <li>
+      <a href="../articles/nemo_slideseq.html">NeMO Slide-seq on Terra.bio</a>
+    </li>
   </ul></li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -340,7 +343,8 @@
 
 
 <dt>nn_network_to_use</dt>
-<dd><p>type of NN network to use (kNN vs sNN), default to "sNN"</p></dd>
+<dd><p>type of NN network to use (kNN vs sNN), default to
+"sNN"</p></dd>
 
 
 <dt>network_name</dt>
@@ -360,16 +364,19 @@
 
 
 <dt>gamma</dt>
-<dd><p>[multinet] Resolution parameter for modularity in the generalized louvain method, default = 1</p></dd>
+<dd><p>[multinet] Resolution parameter for modularity in the
+generalized louvain method, default = 1</p></dd>
 
 
 <dt>omega</dt>
-<dd><p>[multinet] Inter-layer weight parameter in the generalized louvain method, default = 1</p></dd>
+<dd><p>[multinet] Inter-layer weight parameter in the generalized
+louvain method, default = 1</p></dd>
 
 
 <dt>louv_random</dt>
-<dd><p>[community] Will randomize the node evaluation order and the community evaluation
-order to get different partitions at each call (default = FALSE)</p></dd>
+<dd><p>[community] Will randomize the node evaluation order and
+the community evaluation order to get different partitions at each call
+(default = FALSE)</p></dd>
 
 
 <dt>return_gobject</dt>
@@ -385,7 +392,8 @@ order to get different partitions at each call (default = FALSE)</p></dd>
 
 
 <dt>...</dt>
-<dd><p>arguments passed to <code><a href="dot-doLouvainCluster_community.html">.doLouvainCluster_community</a></code> or <code><a href="dot-doLouvainCluster_multinet.html">.doLouvainCluster_multinet</a></code></p></dd>
+<dd><p>arguments passed to <code><a href="dot-doLouvainCluster_community.html">.doLouvainCluster_community</a></code> or
+<code><a href="dot-doLouvainCluster_multinet.html">.doLouvainCluster_multinet</a></code></p></dd>
 
 </dl></div>
     <div id="value">
@@ -396,13 +404,64 @@ order to get different partitions at each call (default = FALSE)</p></dd>
     </div>
     <div id="details">
     <h2>Details</h2>
-    <p>Louvain clustering using the community or multinet implementation of the louvain clustering algorithm.</p>
+    <p>Louvain clustering using the community or multinet implementation
+of the louvain clustering algorithm.</p>
     </div>
     <div id="see-also">
     <h2>See also</h2>
-    <div class="dont-index"><p><code><a href="dot-doLouvainCluster_community.html">.doLouvainCluster_community</a></code> and <code><a href="dot-doLouvainCluster_multinet.html">.doLouvainCluster_multinet</a></code></p></div>
+    <div class="dont-index"><p><code><a href="dot-doLouvainCluster_community.html">.doLouvainCluster_community</a></code> and
+<code><a href="dot-doLouvainCluster_multinet.html">.doLouvainCluster_multinet</a></code></p></div>
     </div>
 
+    <div id="ref-examples">
+    <h2>Examples</h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu">GiottoData</span><span class="fu">::</span><span class="fu"><a href="https://drieslab.github.io/GiottoData/reference/loadGiottoMini.html" class="external-link">loadGiottoMini</a></span><span class="op">(</span><span class="st">"visium"</span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. read Giotto object</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. read Giotto feature information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 3. read Giotto spatial information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 3.1 read Giotto spatial shape information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> cell_spatInfo_spatVector.shp</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> cell</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 3.2 read Giotto spatial centroid information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> cell</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 3.3 read Giotto spatial overlap information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> No overlaps were found, overlap loading will be</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path was provided,</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  but a giotto python environment was found and</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  will be used</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu">doLouvainCluster</span><span class="op">(</span><span class="va">g</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> An object of class giotto </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &gt;Active spat_unit:  cell </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &gt;Active feat_type:  rna </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [SUBCELLULAR INFO]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> polygons      : cell </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [AGGREGATE INFO]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> expression -----------------------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell][rna] raw normalized scaled</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> spatial locations ----------------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell] raw</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> spatial networks -----------------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell] Delaunay_network spatial_network</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> spatial enrichments --------------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell][rna] cluster_metagene</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> dim reduction --------------------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell][rna] pca custom_pca umap custom_umap tsne</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> nearest neighbor networks --------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell][rna] sNN.pca custom_NN</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> attached images ------------------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> images      : alignment image </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Use objHistory() to see steps and params used</span>
+</code></pre></div>
+    </div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>

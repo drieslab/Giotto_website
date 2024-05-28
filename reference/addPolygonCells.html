@@ -23,7 +23,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Giotto</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.8</span>
       </span>
     </div>
 
@@ -251,6 +251,9 @@
     <li>
       <a href="../articles/singularity.html">Singularity</a>
     </li>
+    <li>
+      <a href="../articles/nemo_slideseq.html">NeMO Slide-seq on Terra.bio</a>
+    </li>
   </ul></li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -330,11 +333,13 @@
 
 
 <dt>polygons</dt>
-<dd><p>polygon names to plot (e.g. 'polygon_1'). If NULL, plots all available polygons</p></dd>
+<dd><p>polygon names to plot (e.g. 'polygon_1'). If NULL, plots
+all available polygons</p></dd>
 
 
 <dt>na.label</dt>
-<dd><p>polygon label for cells located outside of polygons area. Default = "no_polygon"</p></dd>
+<dd><p>polygon label for cells located outside of polygons area.
+Default = "no_polygon"</p></dd>
 
 </dl></div>
     <div id="value">
@@ -342,26 +347,85 @@
     
 
 <p>A Giotto object with a modified cell_metadata slot that includes the
-polygon name where each cell is located or no_polygon label if the cell is not located
-within a polygon area</p>
+polygon name where each cell is located or no_polygon label if the cell is
+not located within a polygon area</p>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
-<span class="r-in"><span><span class="co">## Plot interactive polygons</span></span></span>
-<span class="r-in"><span><span class="va">my_polygon_coords</span> <span class="op">&lt;-</span> <span class="fu"><a href="plotInteractivePolygons.html">plotInteractivePolygons</a></span><span class="op">(</span><span class="va">my_spatPlot</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co">## Plot interactive polygons</span></span></span>
+<span class="r-in"><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu">GiottoData</span><span class="fu">::</span><span class="fu"><a href="https://drieslab.github.io/GiottoData/reference/loadGiottoMini.html" class="external-link">loadGiottoMini</a></span><span class="op">(</span><span class="st">"visium"</span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. read Giotto object</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. read Giotto feature information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 3. read Giotto spatial information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 3.1 read Giotto spatial shape information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> cell_spatInfo_spatVector.shp</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> cell</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 3.2 read Giotto spatial centroid information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> cell</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 3.3 read Giotto spatial overlap information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> No overlaps were found, overlap loading will be</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path was provided,</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  but a giotto python environment was found and</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  will be used</span>
+<span class="r-in"><span><span class="va">my_polygon_coords</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    poly_ID <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="st">"polygon1"</span>, <span class="fl">3</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>    sdimx <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">5477</span>, <span class="fl">5959</span>, <span class="fl">4720</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>    sdimy <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">4125</span>, <span class="op">-</span><span class="fl">2808</span>, <span class="op">-</span><span class="fl">5202</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Add polygon coordinates to Giotto object</span></span></span>
-<span class="r-in"><span><span class="va">my_giotto_polygons</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/createGiottoPolygon.html" class="external-link">createGiottoPolygonsFromDfr</a></span><span class="op">(</span><span class="va">my_polygon_coords</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">my_giotto_object</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/addGiottoPolygons.html" class="external-link">addGiottoPolygons</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">my_giotto_object</span>,</span></span>
-<span class="r-in"><span>                                      gpolygons <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="va">my_giotto_polygons</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">my_giotto_polygons</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/createGiottoPolygon.html" class="external-link">createGiottoPolygon</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="va">my_polygon_coords</span>,</span></span>
+<span class="r-in"><span>    name <span class="op">=</span> <span class="st">"selections"</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>   Selecting col "poly_ID" as poly_ID column</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>   Selecting cols "sdimx" and "sdimy" as x and y respectively</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/addGiottoPolygons.html" class="external-link">addGiottoPolygons</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    gobject <span class="op">=</span> <span class="va">g</span>,</span></span>
+<span class="r-in"><span>    gpolygons <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="va">my_giotto_polygons</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Add polygon IDs to cell metadata</span></span></span>
-<span class="r-in"><span><span class="va">my_giotto_object</span> <span class="op">&lt;-</span> <span class="fu">addPolygonCells</span><span class="op">(</span><span class="va">my_giotto_object</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="op">}</span></span></span>
-<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu">addPolygonCells</span><span class="op">(</span><span class="va">g</span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> These column names were already used: in_tissue nr_feats perc_feats total_expr</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  leiden_clus custom_leiden</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  and will be overwritten</span>
+<span class="r-in"><span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/pDataDT.html" class="external-link">pDataDT</a></span><span class="op">(</span><span class="va">g</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                 cell_ID in_tissue nr_feats perc_feats total_expr leiden_clus</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                  &lt;char&gt;     &lt;int&gt;    &lt;int&gt;      &lt;num&gt;      &lt;num&gt;       &lt;num&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   1: AACTCGATGGCGCAGT-1         1      265   41.79811  1057.9308           2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   2: GGCTGGCTAGCTTAAA-1         1      279   44.00631  1064.7493           2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   3: GACGCCTGTTGCAGGG-1         1      219   34.54259   964.9294           2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   4: GAGGGCATCGCGTATC-1         1      294   46.37224  1142.7664           2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   5: TCAACACATTGGGTAA-1         1      261   41.16719  1063.3517           2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  ---                                                                        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 620: GGTAGTGCTCGCACCA-1         1      179   28.23344   768.4749           1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 621: AAGCTCGTGCCAAGTC-1         1      195   30.75710   756.0675           1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 622: TATTCAATTCTAATCC-1         1      247   38.95899   921.8264           1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 623: TTCAAAGTCTCTAGCC-1         1      384   60.56782   916.5929           1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 624: TTGAATATGGACTTTC-1         1      380   59.93691   912.3051           1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      custom_leiden selections</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              &lt;num&gt;     &lt;char&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   1:             4 no_polygon</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   2:             3 no_polygon</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   3:             3 no_polygon</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   4:             3 no_polygon</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   5:             3 no_polygon</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  ---                         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 620:             4 no_polygon</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 621:             4 no_polygon</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 622:             4 no_polygon</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 623:             7 no_polygon</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 624:             4 no_polygon</span>
 </code></pre></div>
     </div>
   </div>

@@ -23,7 +23,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Giotto</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.8</span>
       </span>
     </div>
 
@@ -251,6 +251,9 @@
     <li>
       <a href="../articles/singularity.html">Singularity</a>
     </li>
+    <li>
+      <a href="../articles/nemo_slideseq.html">NeMO Slide-seq on Terra.bio</a>
+    </li>
   </ul></li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -301,10 +304,10 @@
 <span>  <span class="va">spatCorObject</span>,</span>
 <span>  use_clus_name <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  show_cluster_annot <span class="op">=</span> <span class="cn">TRUE</span>,</span>
-<span>  show_row_dend <span class="op">=</span> <span class="cn">T</span>,</span>
-<span>  show_column_dend <span class="op">=</span> <span class="cn">F</span>,</span>
-<span>  show_row_names <span class="op">=</span> <span class="cn">F</span>,</span>
-<span>  show_column_names <span class="op">=</span> <span class="cn">F</span>,</span>
+<span>  show_row_dend <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  show_column_dend <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  show_row_names <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  show_column_names <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>  show_plot <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  return_plot <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  save_plot <span class="op">=</span> <span class="cn">NULL</span>,</span>
@@ -325,7 +328,8 @@
 
 
 <dt>use_clus_name</dt>
-<dd><p>name of clusters to visualize (from clusterSpatialCorFeats())</p></dd>
+<dd><p>name of clusters to visualize
+(from clusterSpatialCorFeats())</p></dd>
 
 
 <dt>show_cluster_annot</dt>
@@ -361,15 +365,18 @@
 
 
 <dt>save_param</dt>
-<dd><p>list of saving parameters, see <code><a href="https://drieslab.github.io/GiottoVisuals/reference/showSaveParameters.html" class="external-link">showSaveParameters</a></code></p></dd>
+<dd><p>list of saving parameters, see
+<code><a href="https://drieslab.github.io/GiottoVisuals/reference/showSaveParameters.html" class="external-link">showSaveParameters</a></code></p></dd>
 
 
 <dt>default_save_name</dt>
-<dd><p>default save name for saving, don't change, change save_name in save_param</p></dd>
+<dd><p>default save name for saving, don't change,
+change save_name in save_param</p></dd>
 
 
 <dt>...</dt>
-<dd><p>additional parameters to the <code><a href="https://rdrr.io/pkg/ComplexHeatmap/man/Heatmap.html" class="external-link">Heatmap</a></code> function from ComplexHeatmap</p></dd>
+<dd><p>additional parameters to the
+<code><a href="https://rdrr.io/pkg/ComplexHeatmap/man/Heatmap.html" class="external-link">Heatmap</a></code> function from ComplexHeatmap</p></dd>
 
 </dl></div>
     <div id="value">

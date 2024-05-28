@@ -23,7 +23,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Giotto</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.8</span>
       </span>
     </div>
 
@@ -251,6 +251,9 @@
     <li>
       <a href="../articles/singularity.html">Singularity</a>
     </li>
+    <li>
+      <a href="../articles/nemo_slideseq.html">NeMO Slide-seq on Terra.bio</a>
+    </li>
   </ul></li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -330,15 +333,16 @@
     <h2>Value</h2>
     
 
-<p>matrix with smoothened gene expression values based on kNN spatial network</p>
+<p>matrix with smoothened gene expression values based on kNN
+spatial network</p>
     </div>
     <div id="details">
     <h2>Details</h2>
-    <p>This function will smoothen the gene expression values per cell according to
-its neighbors in the selected spatial network. <br>
-b is a smoothening factor that defaults to 1 - 1/k, where k is the median number of
-k-neighbors in the selected spatial network. Setting b = 0 means no smoothing and b = 1
-means no contribution from its own expression.</p>
+    <p>This function will smoothen the gene expression values per cell
+according to its neighbors in the selected spatial network. <br>
+b is a smoothening factor that defaults to 1 - 1/k, where k is the median
+number of k-neighbors in the selected spatial network. Setting b = 0 means
+no smoothing and b = 1 means no contribution from its own expression.</p>
     </div>
 
   </div>

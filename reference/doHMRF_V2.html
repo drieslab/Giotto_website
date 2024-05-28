@@ -23,7 +23,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Giotto</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.8</span>
       </span>
     </div>
 
@@ -251,6 +251,9 @@
     <li>
       <a href="../articles/singularity.html">Singularity</a>
     </li>
+    <li>
+      <a href="../articles/nemo_slideseq.html">NeMO Slide-seq on Terra.bio</a>
+    </li>
   </ul></li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -302,26 +305,128 @@
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>HMRF_init_obj</dt>
-<dd><p>initialization object list returned from initHMRF() function</p></dd>
+<dd><p>initialization object list returned from initHMRF()
+function</p></dd>
 
 
 <dt>betas</dt>
-<dd><p>beta value of the HMRF model, controlling the smoothness of clustering. NULL value of beta will provide default values based on feature numbers, otherwise, a vector of three values: initial beta, beta increment, and number of betas</p></dd>
+<dd><p>beta value of the HMRF model, controlling the smoothness of
+clustering. NULL value of beta will provide default values based on feature
+numbers, otherwise, a vector of three values: initial beta, beta increment,
+and number of betas</p></dd>
 
 </dl></div>
+    <div id="value">
+    <h2>Value</h2>
+    
+
+<p>HMRF model</p>
+    </div>
     <div id="details">
     <h2>Details</h2>
-    <p>This function will run a HMRF model after initialization of HMRF. Of note is the beta parameter, the smoothing parameter.
-If the users are interested in selecting results from different smoothness, we recommend running a range of betas,
-hence betas specify what this range is. For example, betas=c(0,10,5) will run for the following betas: 0, 10, 20, 30, 40.
-betas=c(0,5,2) will run for betas: 0, 5, 10. Setting the beta can use the following guideline:
+    <p>This function will run a HMRF model after initialization of HMRF. Of note
+is the beta parameter, the smoothing parameter.
+If the users are interested in selecting results from different smoothness,
+we recommend running a range of betas,
+hence betas specify what this range is. For example, betas=c(0,10,5) will
+run for the following betas: 0, 10, 20, 30, 40.
+betas=c(0,5,2) will run for betas: 0, 5, 10. Setting the beta can use the
+following guideline:
 If number of features N is 10&lt;N&lt;50, set betas=c(0, 1, 20)
 For 50&lt;N&lt;100, set betas=c(0, 2, 25)
 For 100&lt;N&lt;500, set betas=c(0, 5, 20)
-If user didn't specify the number or sequence of beta, the function will provide a default value based on the number of features.
-Returns a list of results for betas, spat_unit and feat_type. Result for each beta is a list with probability(normalized or non-normalized), class, and model log-likelihood value.</p>
+If user didn't specify the number or sequence of beta, the function will
+provide a default value based on the number of features.
+Returns a list of results for betas, spat_unit and feat_type. Result for
+each beta is a list with probability(normalized or non-normalized), class,
+and model log-likelihood value.</p>
     </div>
 
+    <div id="ref-examples">
+    <h2>Examples</h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu">GiottoData</span><span class="fu">::</span><span class="fu"><a href="https://drieslab.github.io/GiottoData/reference/loadGiottoMini.html" class="external-link">loadGiottoMini</a></span><span class="op">(</span><span class="st">"visium"</span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. read Giotto object</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. read Giotto feature information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 3. read Giotto spatial information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 3.1 read Giotto spatial shape information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> cell_spatInfo_spatVector.shp</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> cell</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 3.2 read Giotto spatial centroid information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> cell</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 3.3 read Giotto spatial overlap information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> No overlaps were found, overlap loading will be</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path was provided,</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  but a giotto python environment was found and</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  will be used</span>
+<span class="r-in"><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu"><a href="binSpect.html">binSpect</a></span><span class="op">(</span><span class="va">g</span>, return_gobject <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> This is the single parameter version of binSpect</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. matrix binarization complete</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. spatial enrichment test completed</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 3. (optional) average expression of high</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  expressing cells calculated</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 4. (optional) number of high expressing cells</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  calculated</span>
+<span class="r-in"><span><span class="va">HMRF_init_obj</span> <span class="op">&lt;-</span> <span class="fu"><a href="initHMRF_V2.html">initHMRF_V2</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">g</span>, cl.method <span class="op">=</span> <span class="st">"km"</span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> If used in published research, please cite:</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  Q Zhu, S Shah, R Dries, L Cai, GC Yuan.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  'Identification of spatially associated subpopulations by combining</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  scRNAseq and sequential fluorescence in situ hybridization data'</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  Nature biotechnology 36 (12), 1183-1190. 2018</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Choosing spatial genes from the results of binSpectKept 530 top spatial genes for next step</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Computing spatial coexpression modules...</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Sampling spatial genes from coexpression </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>                                 modules...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Sampled 458 genes.Will use 458spatial genes for initialization of HMRF.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Parsing neighborhood graph...</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Kmeans initialization...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Warning, need to add dampening factor to diagonal entries"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.620704</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Warning, need to add dampening factor to diagonal entries"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.8318027</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Warning, need to add dampening factor to diagonal entries"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.7544696</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Warning, need to add dampening factor to diagonal entries"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.8733928</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Warning, need to add dampening factor to diagonal entries"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.8733928</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Warning, need to add dampening factor to diagonal entries"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.6843261</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Warning, need to add dampening factor to diagonal entries"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.7185425</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Warning, need to add dampening factor to diagonal entries"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.8318027</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Warning, need to add dampening factor to diagonal entries"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.7185425</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Warning, need to add dampening factor to diagonal entries"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.9629156</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Done</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu">doHMRF_V2</span><span class="op">(</span>HMRF_init_obj <span class="op">=</span> <span class="va">HMRF_init_obj</span>, betas <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">5</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> If used in published research, please cite:</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     Q Zhu, S Shah, R Dries, L Cai, GC Yuan.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     'Identification of spatially associated subpopulations by combining </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     scRNAseq and sequential fluorescence in situ hybridization data'</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     Nature biotechnology 36 (12), 1183-1190. 2018</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Please find more explanation and instruction of the HMRF function </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     on </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  https://bitbucket.org/qzhudfci/smfishhmrf-r/src/master/TRANSITION.md</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Doing beta=0.000"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Iteration 1: relative error of mean = 2e-16; covariance = 0.08</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Iteration 2: relative error of mean = 0; covariance = 0</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in names(tc.hmrfem$class) &lt;- rownames(y):</span> attempt to set an attribute on NULL</span>
+</code></pre></div>
+    </div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>

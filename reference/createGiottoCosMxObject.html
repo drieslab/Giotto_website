@@ -24,7 +24,7 @@ object."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mat
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Giotto</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.8</span>
       </span>
     </div>
 
@@ -252,6 +252,9 @@ object."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mat
     <li>
       <a href="../articles/singularity.html">Singularity</a>
     </li>
+    <li>
+      <a href="../articles/nemo_slideseq.html">NeMO Slide-seq on Terra.bio</a>
+    </li>
   </ul></li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -319,12 +322,14 @@ object.</p>
 
 <dt>data_to_use</dt>
 <dd><p>which type(s) of expression data to build the gobject with
-Default is <code>'all'</code> information available. <code>'subcellular'</code> loads the transcript
-coordinates only. <code>'aggregate'</code> loads the provided aggregated expression matrix.</p></dd>
+Default is <code>'all'</code> information available. <code>'subcellular'</code> loads 
+the transcript coordinates only. <code>'aggregate'</code> loads the provided 
+aggregated expression matrix.</p></dd>
 
 
 <dt>remove_background_polygon</dt>
-<dd><p>try to remove background polygon (default: FALSE)</p></dd>
+<dd><p>try to remove background polygon 
+(default: FALSE)</p></dd>
 
 
 <dt>background_algo</dt>
@@ -361,9 +366,10 @@ provided</p></dd>
     </div>
     <div id="details">
     <h2>Details</h2>
-    <p>[<strong>Expected Directory</strong>] This function generates a giotto object when given a
-link to a cosmx output directory. It expects the following items within the directory
-where the <strong>bolded</strong> portions are what this function matches against:</p><ul><li><p><strong>CellComposite</strong> (folder of images)</p></li>
+    <p>[<strong>Expected Directory</strong>] This function generates a giotto object when 
+given a link to a cosmx output directory. It expects the following items 
+within the directory where the <strong>bolded</strong> portions are what this 
+function matches against:</p><ul><li><p><strong>CellComposite</strong> (folder of images)</p></li>
 <li><p><strong>CellLabels</strong> (folder of images)</p></li>
 <li><p><strong>CellOverlay</strong> (folder of images)</p></li>
 <li><p><strong>CompartmentLabels</strong> (folder of images)</p></li>
@@ -371,16 +377,22 @@ where the <strong>bolded</strong> portions are what this function matches agains
 <li><p>experimentname_<strong>fov_positions_file</strong>.csv (file)</p></li>
 <li><p>experimentname_<strong>metadata_file</strong>.csv (file)</p></li>
 <li><p>experimentname_<strong>tx_file</strong>.csv (file)</p></li>
-</ul><p>[<strong>Workflows</strong>] Workflow to use is accessed through the data_to_use param</p><ul><li><p>'all' - loads and requires subcellular information from tx_file and fov_positions_file
-  and also the existing aggregated information (expression, spatial locations, and metadata)
+</ul><p>[<strong>Workflows</strong>] Workflow to use is accessed through the data_to_use param</p><ul><li><p>'all' - loads and requires subcellular information from tx_file and 
+  fov_positions_file
+  and also the existing aggregated information 
+  (expression, spatial locations, and metadata)
   from exprMat_file and metadata_file.</p></li>
-<li><p>'subcellular' - loads and requires subcellular information from tx_file and
+<li><p>'subcellular' - loads and requires subcellular information from 
+  tx_file and
   fov_positions_file only.</p></li>
-<li><p>'aggregate' - loads and requires the existing aggregate information (expression,
-  spatial locations, and metadata) from exprMat_file and metadata_file.</p></li>
-</ul><p>[<strong>Images</strong>] Images in the default CellComposite, CellLabels, CompartmentLabels, and CellOverlay
-folders will be loaded as giotto largeImage objects in all workflows as long as they are available.
-Additionally, CellComposite images will be converted to giotto image objects, making plotting with
+<li><p>'aggregate' - loads and requires the existing aggregate information 
+  (expression, spatial locations, and metadata) from exprMat_file and 
+  metadata_file.</p></li>
+</ul><p>[<strong>Images</strong>] Images in the default CellComposite, CellLabels, 
+CompartmentLabels, and CellOverlay
+folders will be loaded as giotto largeImage objects in all workflows as 
+long as they are available. Additionally, CellComposite images will be 
+converted to giotto image objects, making plotting with
 these image objects more responsive when accessing them from a server.
 <code><a href="https://drieslab.github.io/GiottoClass/reference/showGiottoImageNames.html" class="external-link">showGiottoImageNames</a></code> can be used to see the available images.</p>
     </div>

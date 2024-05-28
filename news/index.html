@@ -23,7 +23,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Giotto</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.8</span>
       </span>
     </div>
 
@@ -251,6 +251,9 @@
     <li>
       <a href="../articles/singularity.html">Singularity</a>
     </li>
+    <li>
+      <a href="../articles/nemo_slideseq.html">NeMO Slide-seq on Terra.bio</a>
+    </li>
   </ul></li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -291,10 +294,40 @@
     </div>
 
     <div class="section level2">
+<h2 class="page-header" data-toc-text="4.0.8" id="giotto-408-20240522">Giotto 4.0.8 (2024/05/22)<a class="anchor" aria-label="anchor" href="#giotto-408-20240522"></a></h2>
+<div class="section level3">
+<h3 id="breaking-changes-4-0-8">Breaking changes<a class="anchor" aria-label="anchor" href="#breaking-changes-4-0-8"></a></h3>
+<ul><li>
+<code><a href="https://rdrr.io/pkg/Giotto/man/crossSectionGenePlot.html" class="external-link">crossSectionGenePlot()</a></code> removed. Use <code><a href="../reference/crossSectionFeatPlot.html">crossSectionFeatPlot()</a></code> instead</li>
+<li>
+<code><a href="https://rdrr.io/pkg/Giotto/man/crossSectionGenePlot3D.html" class="external-link">crossSectionGenePlot3D()</a></code> removed. Use <code><a href="../reference/crossSectionFeatPlot3D.html">crossSectionFeatPlot3D()</a></code> instead</li>
+<li>
+<code><a href="https://rdrr.io/pkg/Giotto/man/insertCrossSectionGenePlot3D.html" class="external-link">insertCrossSectionGenePlot3D()</a></code> removed Use <code><a href="../reference/insertCrossSectionFeatPlot3D.html">insertCrossSectionFeatPlot3D()</a></code> instead</li>
+</ul></div>
+<div class="section level3">
+<h3 id="bug-fixes-4-0-8">Bug fixes<a class="anchor" aria-label="anchor" href="#bug-fixes-4-0-8"></a></h3>
+<ul><li>
+<code><a href="../reference/binSpect.html">binSpect()</a></code> param passing error introduced in <em>v4.0.6</em>
+</li>
+<li>updated <code><a href="../reference/viewHMRFresults3D.html">viewHMRFresults3D()</a></code> and <code><a href="../reference/viewHMRFresults2D.html">viewHMRFresults2D()</a></code>
+</li>
+<li>updated <code>createCrossSections()</code>, <code><a href="../reference/insertCrossSectionSpatPlot3D.html">insertCrossSectionSpatPlot3D()</a></code>, <code><a href="../reference/crossSectionPlot.html">crossSectionPlot()</a></code>, <code><a href="../reference/crossSectionFeatPlot3D.html">crossSectionFeatPlot3D()</a></code>, <code><a href="../reference/insertCrossSectionFeatPlot3D.html">insertCrossSectionFeatPlot3D()</a></code>, <code><a href="../reference/crossSectionPlot3D.html">crossSectionPlot3D()</a></code>, <code><a href="../reference/crossSectionFeatPlot.html">crossSectionFeatPlot()</a></code>
+</li>
+</ul></div>
+<div class="section level3">
+<h3 id="changes-4-0-8">Changes<a class="anchor" aria-label="anchor" href="#changes-4-0-8"></a></h3>
+<ul><li>GiottoVisuals (&gt;= 0.2.2), GiottoClass (&gt;= 0.3.1), GiottoUtils (&gt;= 0.1.8) are now required.</li>
+</ul></div>
+</div>
+    <div class="section level2">
 <h2 class="page-header" data-toc-text="4.0.6" id="giotto-406-20240513">Giotto 4.0.6 (2024/05/13)<a class="anchor" aria-label="anchor" href="#giotto-406-20240513"></a></h2>
 <div class="section level3">
 <h3 id="enhancements-4-0-6">Enhancements<a class="anchor" aria-label="anchor" href="#enhancements-4-0-6"></a></h3>
 <ul><li>New <code><a href="../reference/interpolateFeature.html">interpolateFeature()</a></code> for kriging interpolation of values</li>
+</ul></div>
+<div class="section level3">
+<h3 id="changes-4-0-6">Changes<a class="anchor" aria-label="anchor" href="#changes-4-0-6"></a></h3>
+<ul><li>GiottoVisuals (&gt;= 0.2.0) and GiottoClass (&gt;= 0.3.0) are now required.</li>
 </ul></div>
 </div>
     <div class="section level2">
@@ -343,7 +376,7 @@
 </ul></div>
 <div class="section level3">
 <h3 id="enhancements-4-0-4">Enhancements<a class="anchor" aria-label="anchor" href="#enhancements-4-0-4"></a></h3>
-<ul><li>Use <code><a href="https://rdrr.io/pkg/gtools/man/mixedsort.html" class="external-link">mixedsort()</a></code> for unique clusters metadata info</li>
+<ul><li>Use <code>mixedsort()</code> for unique clusters metadata info</li>
 <li>Remove unnecessary matrix densification and expose <code>seed</code> param in <code><a href="../reference/doScrubletDetect.html">doScrubletDetect()</a></code>
 </li>
 <li>Remove unnecessary matrix densification in <code><a href="../reference/makeSignMatrixRank.html">makeSignMatrixRank()</a></code>
@@ -545,7 +578,7 @@
 <li>Organize new and refactored <code>read</code> functions in <code>data_input.R</code> for ingesting data and converting to list of Giotto native S4 subobjects</li>
 <li>Organize dummy documentation in <code>dd.R</code> for inheriting commonly used documentation</li>
 <li>Moved <code>create_featureNetwork_object()</code>, <code>create_giotto_points_object()</code>, <code>create_giotto_polygon_object()</code> to classes.R</li>
-<li>Moved <code><a href="https://drieslab.github.io/GiottoUtils/reference/depth.html" class="external-link">depth()</a></code> from giotto.R to utilities.R</li>
+<li>Moved <code><a href="https://rdrr.io/r/grid/depth.html" class="external-link">depth()</a></code> from giotto.R to utilities.R</li>
 </ul></div>
 </div>
     <div class="section level2">
@@ -576,11 +609,11 @@
 <li>Add <code><a href="https://rdrr.io/r/base/plot.html" class="external-link">plot()</a></code> method for <code>spatialNetworkObj</code>
 </li>
 <li>New <code>set_row_order_dt()</code> internal for setting <code>data.table</code> to a specific row order by reference</li>
-<li>New <code><a href="https://drieslab.github.io/GiottoUtils/reference/fread_colmatch.html" class="external-link">fread_colmatch()</a></code> internal for fread loading a subset of rows based on matches in a specified column</li>
+<li>New <code>fread_colmatch()</code> internal for fread loading a subset of rows based on matches in a specified column</li>
 <li>Add missing <code><a href="https://drieslab.github.io/GiottoClass/reference/create_nn_net_obj.html" class="external-link">create_nn_net_obj()</a></code> internal constructor function for S4 <code>nnNetObj</code>
 </li>
 <li>Add <code>id_col</code>, <code>x_col</code>, <code>y_col</code> params to <code><a href="https://drieslab.github.io/GiottoClass/reference/polyStamp.html" class="external-link">polyStamp()</a></code> to make stamp location input more flexible</li>
-<li>Add <code>optional</code> and <code>custom_msg</code> params to <code><a href="https://drieslab.github.io/GiottoUtils/reference/package_check.html" class="external-link">package_check()</a></code>
+<li>Add <code>optional</code> and <code>custom_msg</code> params to <code>package_check()</code>
 </li>
 <li>New <code><a href="https://rspatial.github.io/terra/reference/wrap.html" class="external-link">wrap()</a></code> and <code><a href="https://rspatial.github.io/terra/reference/vect.html" class="external-link">vect()</a></code> generics for <code>giotto</code>, <code>giottoPoints</code>, and <code>giottoPolygons</code>
 </li>

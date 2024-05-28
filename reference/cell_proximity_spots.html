@@ -24,7 +24,7 @@ external spots"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/l
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Giotto</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.8</span>
       </span>
     </div>
 
@@ -252,6 +252,9 @@ external spots"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/l
     <li>
       <a href="../articles/singularity.html">Singularity</a>
     </li>
+    <li>
+      <a href="../articles/nemo_slideseq.html">NeMO Slide-seq on Terra.bio</a>
+    </li>
   </ul></li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -312,8 +315,8 @@ external spots</p>
 
 
 <dt>dwls_values</dt>
-<dd><p>data.table of cell type enrichment in each spot and multiply
-by cell number in each spot</p></dd>
+<dd><p>data.table of cell type enrichment in each spot and
+multiply by cell number in each spot</p></dd>
 
 
 <dt>pairs</dt>
@@ -335,8 +338,10 @@ unified_int, type_int, V1, external, internal.</p>
     <div id="functions">
     <h2>Functions</h2>
     
-<ul><li><p><code>.cell_proximity_spots_internal()</code>: Compute cell-cell interactions observed value inner each spot</p></li>
-<li><p><code>.cell_proximity_spots_external()</code>: Compute cell-cell interactions observed value for interacted spots</p></li>
+<ul><li><p><code>.cell_proximity_spots_internal()</code>: Compute cell-cell interactions observed
+value inner each spot</p></li>
+<li><p><code>.cell_proximity_spots_external()</code>: Compute cell-cell interactions observed
+value for interacted spots</p></li>
 <li><p><code>.cell_proximity_spots()</code>: Wrapper function</p></li>
 </ul></div>
 

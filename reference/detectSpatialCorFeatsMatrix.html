@@ -23,7 +23,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Giotto</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.8</span>
       </span>
     </div>
 
@@ -251,6 +251,9 @@
     <li>
       <a href="../articles/singularity.html">Singularity</a>
     </li>
+    <li>
+      <a href="../articles/nemo_slideseq.html">NeMO Slide-seq on Terra.bio</a>
+    </li>
   </ul></li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -336,7 +339,8 @@
 
 
 <dt>network_smoothing</dt>
-<dd><p>smoothing factor beteen 0 and 1 (default: automatic)</p></dd>
+<dd><p>smoothing factor beteen 0 and 1
+(has automatic default, see details)</p></dd>
 
 
 <dt>min_cells_per_grid</dt>
@@ -351,24 +355,256 @@
     <h2>Value</h2>
     
 
-<p>returns a spatial correlation object: "spatCorObject"</p>
+<p>returns a spatial correlation object: <code>spatCorObject</code></p>
+
+
     </div>
     <div id="details">
     <h2>Details</h2>
-    <p>For method = network, it expects a fully connected spatial network. You can make sure to create a
-fully connected network by setting minimal_k &gt; 0 in the <code><a href="https://drieslab.github.io/GiottoClass/reference/createSpatialNetwork.html" class="external-link">createSpatialNetwork</a></code> function.</p><ul><li><p>1. grid-averaging: average gene expression values within a predefined spatial grid</p></li>
-<li><p>2. network-averaging: smoothens the gene expression matrix by averaging the expression within one cell
- by using the neighbours within the predefined spatial network. b is a smoothening factor
- that defaults to 1 - 1/k, where k is the median number of  k-neighbors in the
- selected spatial network. Setting b = 0 means no smoothing and b = 1 means no contribution
- from its own expression.</p></li>
-</ul><p>The spatCorObject can be further explored with showSpatialCorGenes()</p>
+    <p>For <code>method = network</code>, it expects a fully connected spatial network.
+You can make sure to create a
+fully connected network by setting minimal_k &gt; 0 in the
+<code><a href="https://drieslab.github.io/GiottoClass/reference/createSpatialNetwork.html" class="external-link">createSpatialNetwork</a></code> function.</p><ol><li><p><strong>grid-averaging:</strong> average gene expression values within a predefined
+spatial grid</p></li>
+<li><p><strong>network-averaging:</strong> smoothens the gene expression matrix by
+averaging the expression within one cell by using the neighbours within
+the predefined spatial network. \(b\) is a smoothening factor passed by
+<code>network_smoothing</code> param that defaults to \(1 - 1/k\), where \(k\)
+is the median number of k-neighbors in the selected spatial network.
+Setting \(b = 0\) means no smoothing and \(b = 1\) means no
+contribution from its own expression.</p></li>
+</ol><p>The <code>spatCorObject</code> can be further explored with <code><a href="showSpatialCorGenes.html">showSpatialCorGenes()</a></code></p>
     </div>
     <div id="see-also">
     <h2>See also</h2>
     <div class="dont-index"><p><code><a href="showSpatialCorFeats.html">showSpatialCorFeats</a></code></p></div>
     </div>
 
+    <div id="ref-examples">
+    <h2>Examples</h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu">GiottoData</span><span class="fu">::</span><span class="fu"><a href="https://drieslab.github.io/GiottoData/reference/loadGiottoMini.html" class="external-link">loadGiottoMini</a></span><span class="op">(</span><span class="st">"visium"</span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. read Giotto object</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. read Giotto feature information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 3. read Giotto spatial information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 3.1 read Giotto spatial shape information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> cell_spatInfo_spatVector.shp</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> cell</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 3.2 read Giotto spatial centroid information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> cell</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 3.3 read Giotto spatial overlap information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> No overlaps were found, overlap loading will be</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path was provided,</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  but a giotto python environment was found and</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  will be used</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu">detectSpatialCorFeatsMatrix</span><span class="op">(</span>expression_matrix <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/getExpression.html" class="external-link">getExpression</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span><span class="va">g</span>, output <span class="op">=</span> <span class="st">"matrix"</span><span class="op">)</span>, method <span class="op">=</span> <span class="st">"network"</span>,</span></span>
+<span class="r-in"><span>spatial_network <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/getSpatialNetwork.html" class="external-link">getSpatialNetwork</a></span><span class="op">(</span><span class="va">g</span>, output <span class="op">=</span> <span class="st">"networkDT"</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $cor_DT</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>               feat_ID      variable   spat_cor    expr_cor     cordiff spatrank</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                &lt;char&gt;        &lt;fctr&gt;      &lt;num&gt;       &lt;num&gt;       &lt;num&gt;    &lt;int&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      1: 1110017D15Rik 1110017D15Rik  1.0000000  1.00000000  0.00000000        1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      2: 1110017D15Rik       Dynlrb2  0.9071450  0.84973343  0.05741162        2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      3: 1110017D15Rik       Ccdc153  0.9054963  0.84504575  0.06045057        3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      4: 1110017D15Rik       Tmem212  0.9024137  0.81451232  0.08790135        4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      5: 1110017D15Rik       Cfap126  0.8814460  0.77851057  0.10293547        5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     ---                                                                        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 401952:         Zmat4         Thbs4 -0.1808436 -0.08644981 -0.09439376      630</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 401953:         Zmat4           Mal -0.1814648 -0.10522798 -0.07623678      631</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 401954:         Zmat4          Fa2h -0.1874828 -0.08735847 -0.10012430      632</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 401955:         Zmat4          Gfap -0.1943739 -0.13487620 -0.05949770      633</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 401956:         Zmat4         Ninj2 -0.2061581 -0.11224072 -0.09391739      634</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         exprrank rankdiff</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            &lt;int&gt;    &lt;int&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      1:        1        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      2:        2        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      3:        3        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      4:        4        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      5:        8       -3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     ---                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 401952:      620       10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 401953:      632       -1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 401954:      622       10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 401955:      634       -1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 401956:      633        1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $feat_order</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [1] "Gna12"         "Ccnd2"         "Btbd17"        "Sox9"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [5] "Sez6"          "Serpinf1"      "S100a6"        "Col1a1"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [9] "Vwf"           "Esam"          "Npas1"         "Tiam1"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [13] "Bcam"          "Hmgn2"         "Rab3b"         "Inmt"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [17] "Ddr1"          "Homer3"        "Cp"            "Calb2"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [21] "Man1a"         "Efnb3"         "Hlf"           "Gstm7"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [25] "Cavin1"        "Sst"           "Hapln2"        "Hspb1"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [29] "Ndrg1"         "Nid1"          "Kit"           "Pvalb"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [33] "Tmbim1"        "Crip1"         "Tek"           "Elovl1"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [37] "Cyba"          "Itih3"         "Cnp"           "Hap1"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [41] "Clic1"         "Stx1a"         "Arpp19"        "Dio2"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [45] "Id3"           "Crlf1"         "Ttc9b"         "Carhsp1"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [49] "Cabp7"         "Fam163b"       "Rarres2"       "Syn2"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [53] "Ick"           "Prox1"         "Adssl1"        "Vipr2"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [57] "Gltp"          "Amotl1"        "Bcas1"         "Aldh1a2"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [61] "Tppp3"         "Sirt2"         "Lpl"           "Cers2"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [65] "Qdpr"          "Stk32c"        "Lbp"           "Hsd11b1"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [69] "Vtn"           "Stac2"         "Plxdc1"        "Igfbp4"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [73] "Dbndd2"        "Pltp"          "Slc12a4"       "Cadps2"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [77] "Erbb3"         "Pmp22"         "Kcnab3"        "Myh11"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [81] "Plod1"         "Etnppl"        "Arhgef25"      "Rcn3"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [85] "Vip"           "Utrn"          "Grm1"          "Reep3"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [89] "Fabp7"         "Dcn"           "Slc17a8"       "Dusp6"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [93] "Kitl"          "Ccn2"          "Timp3"         "Ascl1"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [97] "Unc5b"         "Vsir"          "Gamt"          "Ptprb"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [101] "Csrp2"         "Adarb1"        "Rnf130"        "Nefh"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [105] "Aebp1"         "Sept4"         "Gria1"         "Sypl"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [109] "Arsg"          "Cacng4"        "Rab37"         "Itgb4"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [113] "Aspa"          "Cygb"          "Rflnb"         "Doc2b"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [117] "Gfap"          "Npas3"         "Serpina3n"     "Clmn"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [121] "Prkch"         "Fbln5"         "Akr1c18"       "Gng4"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [125] "Sema4d"        "Cxcl14"        "Hexb"          "Iqgap2"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [129] "Crhbp"         "Rab3c"         "Thbs4"         "Serinc5"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [133] "Erbin"         "Prkcd"         "Pdlim2"        "Ednrb"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [137] "Cpne6"         "Sema5a"        "Matn2"         "Nptxr"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [141] "Enpp2"         "Efcab6"        "Ppp1r1a"       "Litaf"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [145] "Il1rap"        "Apod"          "Cpox"          "Grik1"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [149] "Clic6"         "Nr4a1"         "Igfbp6"        "Sncg"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [153] "Gzma"          "Grm2"          "Prph"          "Rsph1"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [157] "Sox8"          "Fam234a"       "Lims2"         "Aqp4"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [161] "Slc12a2"       "Cd74"          "Pdgfrb"        "Csf1r"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [165] "Cbln2"         "Frmd8"         "Gldc"          "Tcf7l2"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [169] "Bhlhe22"       "Kcnip2"        "Alas2"         "Gdf11"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [173] "Baiap2"        "Ifitm3"        "Phkg1"         "Nptx1"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [177] "Pde8a"         "Itih5"         "Homer2"        "Fam20c"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [181] "Cplx2"         "Myo5b"         "Snca"          "Col3a1"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [185] "Ecrg4"         "Map4k4"        "2010300C02Rik" "Ogfrl1"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [189] "Fn1"           "Efhd1"         "Ngef"          "Bok"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [193] "Tmem163"       "Lct"           "Cfh"           "Ptpn4"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [197] "Tnni1"         "Csrp1"         "Nfasc"         "Syt2"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [201] "Atp2b4"        "Rgs16"         "Ncf2"          "Cnih3"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [205] "Tmem63a"       "Cfap126"       "Meig1"         "Ccdc3"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [209] "Rgs5"          "Enkur"         "Myoc"          "Vim"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [213] "Prkcq"         "Gad2"          "Lcn2"          "Nr4a2"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [217] "Ermn"          "Fibcd1"        "Gsn"           "Grb14"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [221] "Notch1"        "Ube2l6"        "Gatm"          "Cd82"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [225] "Mdk"           "Lamp5"         "Itpka"         "Chgb"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [229] "Mal"           "Pdyn"          "Nkx2-2"        "Edn3"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [233] "Car2"          "Col9a3"        "Chrna4"        "Gss"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [237] "Slc7a11"       "Tm4sf1"        "Kcnab1"        "Shox2"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [241] "Serpini1"      "Tspan2"        "S100a11"       "Vcam1"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [245] "Lef1"          "Npy2r"         "F3"            "Calb1"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [249] "Epha7"         "Slc44a1"       "1110017D15Rik" "Tpm2"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [253] "Slc6a9"        "Laptm5"        "Sema3c"        "Hpca"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [257] "Padi2"         "Slc4a2"        "Gabrd"         "Rgs12"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [261] "Slc30a3"       "Emilin1"       "1700001C02Rik" "Gabra4"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [265] "Pdgfra"        "Epha5"         "Tesc"          "Pitpnm2"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [269] "Mmp17"         "Cit"           "Foxp2"         "Arpc1b"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [273] "Col1a2"        "Eln"           "Pcolce"        "Tsc22d4"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [277] "Cald1"         "Ccdc136"       "Npy"           "Slc13a4"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [281] "Gkn3"          "Slc6a13"       "Mgp"           "Lmo3"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [285] "Slco1c1"       "Cpne9"         "Itpr2"         "Slc6a11"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [289] "Vamp1"         "Cd9"           "Pglyrp1"       "Slc17a6"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [293] "Sipa1l3"       "Sh3gl3"        "Plekhb1"       "Nupr1"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [297] "Dkk3"          "Cox6a2"        "Dkkl1"         "Fgfr2"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [301] "Crym"          "Slc38a5"       "Flna"          "Bgn"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [305] "Col4a1"        "Plat"          "Nr3c2"         "Cbln1"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [309] "Gab1"          "Pllp"          "Necab2"        "Dbndd1"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [313] "Agt"           "Cryab"         "Tagln"         "Mcam"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [317] "Olfm2"         "Icam5"         "Anxa2"         "Rora"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [321] "Calml4"        "Htr3a"         "Paqr5"         "Rasgrf1"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [325] "Zic1"          "Mobp"          "Hhatl"         "Trf"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [329] "Cpne4"         "Cdhr4"         "Cd59a"         "Gng11"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [333] "Chrm1"         "Prr5l"         "Ugt8a"         "Rims3"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [337] "Sgpp2"         "Camkv"         "Sox10"         "Micall1"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [341] "Tie1"          "Fa2h"          "Ucp2"          "Vav3"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [345] "Ccp110"        "Gria2"         "Rasl10a"       "Foxj1"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [349] "Trim59"        "Dynlrb2"       "Gjc1"          "Neurod1"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [353] "Ttyh2"         "Cpne7"         "Nrip3"         "Tbr1"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [357] "Lcat"          "Tmem98"        "Myo1d"         "Prdm8"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [361] "Tgfbi"         "Kcnc2"         "Thrsp"         "Isg15"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [365] "Acta2"         "H2-Q4"         "Dock4"         "Myrf"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [369] "Lmo1"          "Igfbp7"        "P2ry12"        "Pcdh8"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [373] "Lgi4"          "Fxyd1"         "Fxyd7"         "Mag"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [377] "Zcchc12"       "Anln"          "Wnt4"          "C1ql2"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [381] "Unc93b1"       "Tspan15"       "Ppp1r14a"      "Clic4"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [385] "Galnt6"        "Ccn3"          "Rims2"         "Zmat4"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [389] "Cldn11"        "Ccdc33"        "Slc32a1"       "Tgm2"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [393] "Vstm2l"        "Neurod6"       "Crygn"         "Enpp6"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [397] "Neurod2"       "Satb2"         "Pcp4l1"        "Txnip"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [401] "Egr1"          "Otud7b"        "Car14"         "Rgs4"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [405] "Dock10"        "Lpar1"         "Trps1"         "Ptpn3"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [409] "Lefty1"        "Zfhx3"         "St6galnac5"    "Ak5"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [413] "Hrh3"          "Nexn"          "Adgrl4"        "Rlbp1"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [417] "Igfbp2"        "Wfs1"          "Cplx3"         "Orai2"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [421] "Olig2"         "Gpr37"         "Plcb4"         "Nxph4"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [425] "Ndufa4l2"      "Cacng5"        "Plekhg1"       "Cmtm5"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [429] "Gpr161"        "Rfx3"          "Igsf21"        "Ramp3"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [433] "Arhgap12"      "Nkx6-2"        "Ninj2"         "Cldn5"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [437] "Htr2c"         "Hspb8"         "Fmod"          "Prelp"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [441] "Mpped1"        "Rapgef5"       "Vwa1"          "Stab1"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [445] "Arl15"         "Reln"          "Mustn1"        "Pbxip1"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [449] "Dnali1"        "Id1"           "Lrrtm3"        "Tmem212"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [453] "Epop"          "Gjc2"          "1190005I06Rik" "Ctla2a"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [457] "Cnr1"          "Gpr4"          "Sowaha"        "Tent5c"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [461] "Serpinb1a"     "S1pr5"         "Penk"          "Cdc42ep2"     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [465] "Slitrk6"       "Hpcal4"        "Olig1"         "Rprml"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [469] "Stxbp6"        "Hs3st2"        "Rbp1"          "Ppm1e"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [473] "Sox18"         "Kctd4"         "Nxph3"         "Vat1l"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [477] "Cd24a"         "Odf3b"         "Gjb1"          "Selplg"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [481] "Bcl11b"        "Lhfp"          "Ranbp3l"       "Msx1"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [485] "Zdhhc22"       "Phldb1"        "Ctxn1"         "Tprn"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [489] "Vstm2a"        "Ndnf"          "Pdp1"          "Scn3b"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [493] "Cdc42ep1"      "Gal3st1"       "Rasd1"         "Spink8"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [497] "Opalin"        "Gja4"          "Synpo2"        "Pcdh20"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [501] "Adra1b"        "Fam131a"       "Tmem125"       "Mb21d2"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [505] "Lingo3"        "Ncald"         "Siglech"       "Rgs14"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [509] "Gm14964"       "Gpr17"         "Cx3cr1"        "Ezr"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [513] "Adarb2"        "Cpne8"         "Plekhg3"       "Lamb2"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [517] "Creb5"         "Cntn2"         "Aldh1a1"       "Phgdh"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [521] "Tnfaip6"       "Camk2d"        "Shisa6"        "Cthrc1"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [525] "Tmem119"       "Hmgb2"         "Tmem158"       "Dsp"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [529] "Lrtm2"         "Gabra5"        "Tns1"          "Nell1"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [533] "Slain1"        "Prr18"         "S100a8"        "S100a9"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [537] "Col8a2"        "Synpr"         "Sertm1"        "Adgrf5"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [541] "Capg"          "Gjc3"          "Fcer1g"        "Pde1a"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [545] "Tafa1"         "Ddn"           "Hopx"          "Ptk2b"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [549] "Rgs3"          "Kcng2"         "Ntng1"         "H2-Q7"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [553] "Ifitm2"        "Plaat3"        "Plekhh1"       "Myl4"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [557] "H2-K1"         "Dpp6"          "Tmem91"        "Cyp2d22"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [561] "Ttr"           "Suclg2"        "Patj"          "Btbd3"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [565] "Unc13c"        "Syt9"          "Shisal1"       "Grm4"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [569] "Sox11"         "Slc22a8"       "Slc24a3"       "Klk8"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [573] "Ipcef1"        "Tnnt1"         "Hhip"          "Spag8"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [577] "Fxyd6"         "Ppp1r3c"       "Cbln4"         "Nnat"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [581] "Myl9"          "Vxn"           "Lgals1"        "Gpr88"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [585] "Ctxn3"         "Lyz2"          "Tmem100"       "Wfdc17"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [589] "Ahnak"         "Hba-a2"        "Hba-a1"        "Ccdc153"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [593] "Ccnd1"         "Serpinh1"      "Gad1"          "Arhgef10"     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [597] "2410004P03Rik" "Nt5dc2"        "Cebpd"         "Sod3"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [601] "H2-D1"         "C4b"           "Tmem88b"       "Hbb-bt"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [605] "Rhog"          "Rprm"          "Ly6a"          "Mog"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [609] "Trbc2"         "Igkc"          "Smim1"         "Hs3st4"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [613] "Evi2a"         "Prkcg"         "Ly6c1"         "Gbp4"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [617] "Wipf3"         "BC039966"      "Gm13889"       "Plcxd2"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [621] "Mia"           "Pou3f1"        "Lrrc10b"       "Apol11b"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [625] "Gpr62"         "Shisa8"        "Gm2115"        "Kctd12"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [629] "1700047M11Rik" "Lhfpl3"        "C030029H02Rik" "Gm19935"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [633] "9630013A20Rik" "2900040C04Rik"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $cor_hclust</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> list()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $cor_clusters</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> list()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"class")</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "list"          "spatCorObject"</span>
+</code></pre></div>
+    </div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>

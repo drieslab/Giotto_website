@@ -23,7 +23,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Giotto</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.8</span>
       </span>
     </div>
 
@@ -251,6 +251,9 @@
     <li>
       <a href="../articles/singularity.html">Singularity</a>
     </li>
+    <li>
+      <a href="../articles/nemo_slideseq.html">NeMO Slide-seq on Terra.bio</a>
+    </li>
   </ul></li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -333,16 +336,16 @@
 <span>  sdimy <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  cell_color <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  cell_color_code <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  color_as_factor <span class="op">=</span> <span class="cn">T</span>,</span>
-<span>  show_other_cells <span class="op">=</span> <span class="cn">F</span>,</span>
-<span>  show_network <span class="op">=</span> <span class="cn">F</span>,</span>
-<span>  show_other_network <span class="op">=</span> <span class="cn">F</span>,</span>
+<span>  color_as_factor <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  show_other_cells <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  show_network <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  show_other_network <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>  network_color <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  spatial_network_name <span class="op">=</span> <span class="st">"Delaunay_network"</span>,</span>
-<span>  show_grid <span class="op">=</span> <span class="cn">F</span>,</span>
+<span>  show_grid <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>  grid_color <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  spatial_grid_name <span class="op">=</span> <span class="st">"spatial_grid"</span>,</span>
-<span>  show_legend <span class="op">=</span> <span class="cn">T</span>,</span>
+<span>  show_legend <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  point_size_select <span class="op">=</span> <span class="fl">2</span>,</span>
 <span>  point_size_other <span class="op">=</span> <span class="fl">1</span>,</span>
 <span>  point_alpha_other <span class="op">=</span> <span class="fl">0.3</span>,</span>
@@ -362,16 +365,16 @@
 <span>  sdimz <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  cell_color <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  cell_color_code <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  color_as_factor <span class="op">=</span> <span class="cn">T</span>,</span>
-<span>  show_other_cells <span class="op">=</span> <span class="cn">F</span>,</span>
-<span>  show_network <span class="op">=</span> <span class="cn">F</span>,</span>
-<span>  show_other_network <span class="op">=</span> <span class="cn">F</span>,</span>
+<span>  color_as_factor <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  show_other_cells <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  show_network <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  show_other_network <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>  network_color <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  spatial_network_name <span class="op">=</span> <span class="st">"Delaunay_network"</span>,</span>
-<span>  show_grid <span class="op">=</span> <span class="cn">F</span>,</span>
+<span>  show_grid <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>  grid_color <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  spatial_grid_name <span class="op">=</span> <span class="st">"spatial_grid"</span>,</span>
-<span>  show_legend <span class="op">=</span> <span class="cn">T</span>,</span>
+<span>  show_legend <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  point_size_select <span class="op">=</span> <span class="fl">2</span>,</span>
 <span>  point_size_other <span class="op">=</span> <span class="fl">1</span>,</span>
 <span>  point_alpha_other <span class="op">=</span> <span class="fl">0.5</span>,</span>
@@ -384,12 +387,21 @@
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
+    <div id="value">
+    <h2>Value</h2>
+    
+
+<p>cell proximity plot</p>
+    </div>
     <div id="functions">
     <h2>Functions</h2>
     
-<ul><li><p><code>.cellProximityVisPlot_2D_ggplot()</code>: Visualize 2D cell-cell interactions according to spatial coordinates in ggplot mode</p></li>
-<li><p><code>.cellProximityVisPlot_2D_plotly()</code>: Visualize 2D cell-cell interactions according to spatial coordinates in plotly mode</p></li>
-<li><p><code>.cellProximityVisPlot_3D_plotly()</code>: Visualize 3D cell-cell interactions according to spatial coordinates in plotly mode</p></li>
+<ul><li><p><code>.cellProximityVisPlot_2D_ggplot()</code>: Visualize 2D cell-cell 
+interactions according to spatial coordinates in ggplot mode</p></li>
+<li><p><code>.cellProximityVisPlot_2D_plotly()</code>: Visualize 2D cell-cell 
+interactions according to spatial coordinates in plotly mode</p></li>
+<li><p><code>.cellProximityVisPlot_3D_plotly()</code>: Visualize 3D cell-cell 
+interactions according to spatial coordinates in plotly mode</p></li>
 </ul></div>
     <div id="see-also">
     <h2>See also</h2>

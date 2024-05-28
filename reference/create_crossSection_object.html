@@ -23,7 +23,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Giotto</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.8</span>
       </span>
     </div>
 
@@ -251,6 +251,9 @@
     <li>
       <a href="../articles/singularity.html">Singularity</a>
     </li>
+    <li>
+      <a href="../articles/nemo_slideseq.html">NeMO Slide-seq on Terra.bio</a>
+    </li>
   </ul></li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -325,7 +328,9 @@
 
 
 <dt>thickness_unit</dt>
-<dd><p>unit of the virtual section thickness. If "cell", average size of the observed cells is used as length unit. If "natural", the unit of cell location coordinates is used.(default = cell)</p></dd>
+<dd><p>unit of the virtual section thickness. If "cell",
+average size of the observed cells is used as length unit. If "natural",
+the unit of cell location coordinates is used.(default = cell)</p></dd>
 
 
 <dt>slice_thickness</dt>
@@ -333,19 +338,24 @@
 
 
 <dt>cell_distance_estimate_method</dt>
-<dd><p>method to estimate average distance between neighobring cells. (default = mean)</p></dd>
+<dd><p>method to estimate average distance
+between neighboring cells. (default = mean)</p></dd>
 
 
 <dt>extend_ratio</dt>
-<dd><p>deciding the span of the cross section meshgrid, as a ratio of extension compared to the borders of the virtual tissue section. (default = 0.2)</p></dd>
+<dd><p>deciding the span of the cross section meshgrid, as a
+ratio of extension compared to the borders of the virtual tissue section.
+(default = 0.2)</p></dd>
 
 
 <dt>plane_equation</dt>
-<dd><p>a numerical vector of length 4, in the form of c(A,B,C,D), which defines plane Ax+By+Cz=D.</p></dd>
+<dd><p>a numerical vector of length 4, in the form of
+c(A,B,C,D), which defines plane Ax+By+Cz=D.</p></dd>
 
 
 <dt>mesh_grid_n</dt>
-<dd><p>number of meshgrid lines to generate along both directions for the cross section plane.</p></dd>
+<dd><p>number of meshgrid lines to generate along both
+directions for the cross section plane.</p></dd>
 
 
 <dt>mesh_obj</dt>
@@ -357,11 +367,13 @@
 
 
 <dt>cell_subset_spatial_locations</dt>
-<dd><p>locations of cells selected by the cross section</p></dd>
+<dd><p>locations of cells selected by the
+cross section</p></dd>
 
 
 <dt>cell_subset_projection_locations</dt>
-<dd><p>3D projection coordinates of selected cells onto the cross section plane</p></dd>
+<dd><p>3D projection coordinates of
+selected cells onto the cross section plane</p></dd>
 
 
 <dt>cell_subset_projection_PCA</dt>
@@ -369,9 +381,16 @@
 
 
 <dt>cell_subset_projection_coords</dt>
-<dd><p>2D PCA coordinates of selected cells in the cross section plane</p></dd>
+<dd><p>2D PCA coordinates of selected cells
+in the cross section plane</p></dd>
 
 </dl></div>
+    <div id="value">
+    <h2>Value</h2>
+    
+
+<p>crossSection object</p>
+    </div>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

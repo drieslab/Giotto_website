@@ -23,7 +23,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Giotto</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.8</span>
       </span>
     </div>
 
@@ -251,6 +251,9 @@
     <li>
       <a href="../articles/singularity.html">Singularity</a>
     </li>
+    <li>
+      <a href="../articles/nemo_slideseq.html">NeMO Slide-seq on Terra.bio</a>
+    </li>
   </ul></li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -322,14 +325,17 @@ These files can be in one of the following formats: (i) scATAC tabix files,
 <dt>genome</dt>
 <dd><p>A string indicating the default genome to be used for all ArchR
 functions. Currently supported values include "hg19","hg38","mm9", and "mm10".
-This value is stored as a global environment variable, not part of the ArchRProject.
+This value is stored as a global environment variable, not part of the 
+ArchRProject.
 This can be overwritten on a per-function basis using the given function's
 geneAnnotationand genomeAnnotation parameter. For something other than one of
-the currently supported, see createGeneAnnnotation() and createGenomeAnnnotation()</p></dd>
+the currently supported, see createGeneAnnnotation() and 
+createGenomeAnnnotation()</p></dd>
 
 
 <dt>createArrowFiles_params</dt>
-<dd><p>list of parameters passed to `ArchR::createArrowFiles`</p></dd>
+<dd><p>list of parameters passed to 
+`ArchR::createArrowFiles`</p></dd>
 
 
 <dt>ArchRProject_params</dt>
@@ -337,7 +343,8 @@ the currently supported, see createGeneAnnnotation() and createGenomeAnnnotation
 
 
 <dt>addIterativeLSI_params</dt>
-<dd><p>list of parameters passed to `ArchR::addIterativeLSI`</p></dd>
+<dd><p>list of parameters passed to 
+`ArchR::addIterativeLSI`</p></dd>
 
 
 <dt>threads</dt>
@@ -356,7 +363,8 @@ the currently supported, see createGeneAnnnotation() and createGenomeAnnnotation
     <h2>Value</h2>
     
 
-<p>An ArchR project with GeneScoreMatrix, TileMatrix, and TileMatrix-based LSI</p>
+<p>An ArchR project with GeneScoreMatrix, TileMatrix, and 
+TileMatrix-based LSI</p>
     </div>
 
   </div>

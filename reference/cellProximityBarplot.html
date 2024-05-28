@@ -23,7 +23,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Giotto</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.8</span>
       </span>
     </div>
 
@@ -251,6 +251,9 @@
     <li>
       <a href="../articles/singularity.html">Singularity</a>
     </li>
+    <li>
+      <a href="../articles/nemo_slideseq.html">NeMO Slide-seq on Terra.bio</a>
+    </li>
   </ul></li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -361,7 +364,11 @@
     <div id="details">
     <h2>Details</h2>
     <p>This function creates a barplot that shows the  spatial proximity
- enrichment or depletion of cell type pairs.</p>
+ enrichment or depletion of cell type pairs.
+ @examples
+ g &lt;- GiottoData::loadGiottoMini("visium")</p> 
+<p>cellProximityBarplot(gobject = g, 
+ CPscore = cellProximityEnrichment(g, cluster_column = "leiden_clus"))</p>
     </div>
 
   </div>

@@ -23,7 +23,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Giotto</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.8</span>
       </span>
     </div>
 
@@ -251,6 +251,9 @@
     <li>
       <a href="../articles/singularity.html">Singularity</a>
     </li>
+    <li>
+      <a href="../articles/nemo_slideseq.html">NeMO Slide-seq on Terra.bio</a>
+    </li>
   </ul></li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -346,7 +349,8 @@
 
 
 <dt>reverse_log_scale</dt>
-<dd><p>reverse log-scale of expression values (default = FALSE)</p></dd>
+<dd><p>reverse log-scale of expression values
+(default = FALSE)</p></dd>
 
 
 <dt>logbase</dt>
@@ -358,7 +362,8 @@
 
 
 <dt>nr_expression_groups</dt>
-<dd><p>(cov_groups) number of expression groups for cov_groups</p></dd>
+<dd><p>(cov_groups) number of expression groups for
+cov_groups</p></dd>
 
 
 <dt>zscore_threshold</dt>
@@ -370,20 +375,23 @@
 
 
 <dt>difference_in_cov</dt>
-<dd><p>(cov_loess) minimum difference in coefficient of variance required</p></dd>
+<dd><p>(cov_loess) minimum difference in coefficient of
+variance required</p></dd>
 
 
 <dt>var_threshold</dt>
-<dd><p>(var_p_resid) variance threshold for features for var_p_resid method</p></dd>
+<dd><p>(var_p_resid) variance threshold for features for
+var_p_resid method</p></dd>
 
 
 <dt>var_number</dt>
-<dd><p>(var_p_resid) number of top variance features for var_p_resid method</p></dd>
+<dd><p>(var_p_resid) number of top variance features for
+var_p_resid method</p></dd>
 
 
 <dt>random_subset</dt>
-<dd><p>random subset to perform HVF detection on. Passing <code>NULL</code>
-runs HVF on all cells.</p></dd>
+<dd><p>random subset to perform HVF detection on.
+Passing <code>NULL</code> runs HVF on all cells.</p></dd>
 
 
 <dt>set_seed</dt>
@@ -407,11 +415,13 @@ runs HVF on all cells.</p></dd>
 
 
 <dt>save_param</dt>
-<dd><p>list of saving parameters from <code><a href="https://drieslab.github.io/GiottoVisuals/reference/plot_save.html" class="external-link">GiottoVisuals::all_plots_save_function()</a></code></p></dd>
+<dd><p>list of saving parameters from
+<code><a href="https://drieslab.github.io/GiottoVisuals/reference/plot_save.html" class="external-link">GiottoVisuals::all_plots_save_function()</a></code></p></dd>
 
 
 <dt>default_save_name</dt>
-<dd><p>default save name for saving, don't change, change save_name in save_param</p></dd>
+<dd><p>default save name for saving, don't change, change
+save_name in save_param</p></dd>
 
 
 <dt>return_gobject</dt>
@@ -422,20 +432,74 @@ runs HVF on all cells.</p></dd>
     <h2>Value</h2>
     
 
-<p>giotto object highly variable features appended to feature metadata (<code><a href="https://drieslab.github.io/GiottoClass/reference/fDataDT.html" class="external-link">fDataDT()</a></code>)</p>
+<p>giotto object highly variable features appended to feature metadata
+(<code><a href="https://drieslab.github.io/GiottoClass/reference/fDataDT.html" class="external-link">fDataDT()</a></code>)</p>
     </div>
     <div id="details">
     <h2>Details</h2>
     <p>Currently we provide 2 ways to calculate highly variable genes:</p>
 <p><strong>1. high coeff of variance (COV) within groups: </strong> <br>
-First genes are binned (<em>nr_expression_groups</em>) into average expression groups and
-the COV for each feature is converted into a z-score within each bin. Features with a z-score
-higher than the threshold (<em>zscore_threshold</em>) are considered highly variable.  <br></p>
+First genes are binned (<em>nr_expression_groups</em>) into average expression
+groups and the COV for each feature is converted into a z-score within each
+bin. Features with a z-score higher than the threshold
+(<em>zscore_threshold</em>) are considered highly variable.  <br></p>
 <p><strong>2. high COV based on loess regression prediction: </strong> <br>
-A predicted COV is calculated for each feature using loess regression (COV~log(mean expression))
-Features that show a higher than predicted COV (<em>difference_in_cov</em>) are considered highly variable. <br></p>
+A predicted COV is calculated for each feature using loess regression
+(COV~log(mean expression))
+Features that show a higher than predicted COV (<em>difference_in_cov</em>)
+are considered highly variable. <br></p>
     </div>
 
+    <div id="ref-examples">
+    <h2>Examples</h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu">GiottoData</span><span class="fu">::</span><span class="fu"><a href="https://drieslab.github.io/GiottoData/reference/loadGiottoMini.html" class="external-link">loadGiottoMini</a></span><span class="op">(</span><span class="st">"visium"</span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. read Giotto object</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. read Giotto feature information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 3. read Giotto spatial information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 3.1 read Giotto spatial shape information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> cell_spatInfo_spatVector.shp</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> cell</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 3.2 read Giotto spatial centroid information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> cell</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 3.3 read Giotto spatial overlap information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> No overlaps were found, overlap loading will be</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path was provided,</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  but a giotto python environment was found and</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  will be used</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu">calculateHVF</span><span class="op">(</span><span class="va">g</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> hvf  has already been used, will be overwritten</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> An object of class giotto </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &gt;Active spat_unit:  cell </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &gt;Active feat_type:  rna </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [SUBCELLULAR INFO]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> polygons      : cell </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [AGGREGATE INFO]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> expression -----------------------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell][rna] raw normalized scaled</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> spatial locations ----------------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell] raw</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> spatial networks -----------------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell] Delaunay_network spatial_network</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> spatial enrichments --------------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell][rna] cluster_metagene</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> dim reduction --------------------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell][rna] pca custom_pca umap custom_umap tsne</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> nearest neighbor networks --------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell][rna] sNN.pca custom_NN</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> attached images ------------------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> images      : alignment image </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Use objHistory() to see steps and params used</span>
+</code></pre></div>
+    </div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>

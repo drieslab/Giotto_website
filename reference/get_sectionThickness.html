@@ -23,7 +23,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Giotto</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.8</span>
       </span>
     </div>
 
@@ -251,6 +251,9 @@
     <li>
       <a href="../articles/singularity.html">Singularity</a>
     </li>
+    <li>
+      <a href="../articles/nemo_slideseq.html">NeMO Slide-seq on Terra.bio</a>
+    </li>
   </ul></li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -298,6 +301,7 @@
     <div id="ref-usage">
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">get_sectionThickness</span><span class="op">(</span></span>
 <span>  <span class="va">gobject</span>,</span>
+<span>  spat_unit <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  thickness_unit <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"cell"</span>, <span class="st">"natural"</span><span class="op">)</span>,</span>
 <span>  slice_thickness <span class="op">=</span> <span class="fl">2</span>,</span>
 <span>  spatial_network_name <span class="op">=</span> <span class="st">"Delaunay_network"</span>,</span>
@@ -310,6 +314,10 @@
     <h2>Arguments</h2>
     <dl><dt>gobject</dt>
 <dd><p>gobject</p></dd>
+
+
+<dt>spat_unit</dt>
+<dd><p>spatial unit</p></dd>
 
 
 <dt>thickness_unit</dt>
@@ -328,6 +336,12 @@
 <dd><p>plane_equation</p></dd>
 
 </dl></div>
+    <div id="value">
+    <h2>Value</h2>
+    
+
+<p>numeric</p>
+    </div>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
