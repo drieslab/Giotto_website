@@ -446,10 +446,9 @@ viewHMRFresults</p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path was provided,</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  but a giotto python environment was found and</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  will be used</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> a giotto python environment was found</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/Users/yuanlab/Library/r-miniconda/envs/giotto_env/bin/pythonw"</span>
 <span class="r-in"><span><span class="va">spat_genes</span> <span class="op">&lt;-</span> <span class="fu"><a href="binSpect.html">binSpect</a></span><span class="op">(</span><span class="va">g</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> This is the single parameter version of binSpect</span>
@@ -466,17 +465,9 @@ viewHMRFresults</p>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">doHMRF</span><span class="op">(</span><span class="va">g</span>, spatial_genes <span class="op">=</span> <span class="va">spat_genes</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq_len</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span><span class="op">]</span><span class="op">$</span><span class="va">feats</span>,</span></span>
 <span class="r-in"><span>output_folder <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>this matrix will be converted to a dense and memory intensive </span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>this matrix will be converted to a dense and memory intensive</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span>                 base matrix ...</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> expression_matrix.txt already exists at this location, will be </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>                 overwritten</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> spatial_genes.txt already exists at this location, will be </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>                 overwritten</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> spatial_network.txt already exists at this location, will be </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>                 overwritten</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> spatial_cell_locations.txt already exists at this location, </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>                 will be overwritten</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/yuanlab/Library/r-miniconda/envs/giotto_env/bin/pythonw /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/Giotto/python/reader2.py -l \"/var/folders/wl/055wx0m919n1wvp5t1tl_r2c0000gp/T//RtmpNRFeMS/spatial_cell_locations.txt\" -g \"/var/folders/wl/055wx0m919n1wvp5t1tl_r2c0000gp/T//RtmpNRFeMS/spatial_genes.txt\" -n \"/var/folders/wl/055wx0m919n1wvp5t1tl_r2c0000gp/T//RtmpNRFeMS/spatial_network.txt\" -e \"/var/folders/wl/055wx0m919n1wvp5t1tl_r2c0000gp/T//RtmpNRFeMS/expression_matrix.txt\" -o \"/var/folders/wl/055wx0m919n1wvp5t1tl_r2c0000gp/T//RtmpNRFeMS/result.spatial.zscore\" -a test -k 10 -b 0 2 50 -t 1e-10 -z none -s 100 -i 100"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/yuanlab/Library/r-miniconda/envs/giotto_env/bin/pythonw /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/Giotto/python/reader2.py -l \"/var/folders/wl/055wx0m919n1wvp5t1tl_r2c0000gp/T//RtmpRCiCyr/spatial_cell_locations.txt\" -g \"/var/folders/wl/055wx0m919n1wvp5t1tl_r2c0000gp/T//RtmpRCiCyr/spatial_genes.txt\" -n \"/var/folders/wl/055wx0m919n1wvp5t1tl_r2c0000gp/T//RtmpRCiCyr/spatial_network.txt\" -e \"/var/folders/wl/055wx0m919n1wvp5t1tl_r2c0000gp/T//RtmpRCiCyr/expression_matrix.txt\" -o \"/var/folders/wl/055wx0m919n1wvp5t1tl_r2c0000gp/T//RtmpRCiCyr/result.spatial.zscore\" -a test -k 10 -b 0 2 50 -t 1e-10 -z none -s 100 -i 100"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $name</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "test"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
@@ -484,7 +475,7 @@ viewHMRFresults</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "rna"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $output_data</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "\"/var/folders/wl/055wx0m919n1wvp5t1tl_r2c0000gp/T//RtmpNRFeMS/result.spatial.zscore\""</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "\"/var/folders/wl/055wx0m919n1wvp5t1tl_r2c0000gp/T//RtmpRCiCyr/result.spatial.zscore\""</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $k</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 10</span>

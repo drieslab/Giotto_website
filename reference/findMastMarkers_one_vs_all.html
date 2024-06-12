@@ -404,15 +404,14 @@ based on the MAST package.</p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path was provided,</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  but a giotto python environment was found and</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  will be used</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> a giotto python environment was found</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/Users/yuanlab/Library/r-miniconda/envs/giotto_env/bin/pythonw"</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">findMastMarkers_one_vs_all</span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">g</span>, cluster_column <span class="op">=</span> <span class="st">"leiden_clus"</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> using 'MAST' to detect marker feats. If used in published </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> using 'MAST' to detect marker feats. If used in published</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>         research, please cite: McDavid A, Finak G, Yajima M (2020).</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>         MAST: Model-based Analysis of Single Cell Transcriptomics. </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>         MAST: Model-based Analysis of Single Cell Transcriptomics.</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>         R package version 1.14.0, https://github.com/RGLab/MAST/.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> start with cluster  1</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
@@ -477,28 +476,19 @@ based on the MAST package.</p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Refitting on reduced model...</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Done!</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> start with cluster  8</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Done!</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Combining coefficients and standard errors</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Calculating log-fold changes</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Calculating likelihood ratio tests</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Refitting on reduced model...</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Done!</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        feats   Pr(&gt;Chisq)      coef     ci.hi     ci.lo          fdr</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       &lt;char&gt;        &lt;num&gt;     &lt;num&gt;     &lt;num&gt;     &lt;num&gt;        &lt;num&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   1:   Prkcg 8.003055e-30 -2.145899 -1.775707 -2.516091 5.073937e-27</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   2: Rasgrf1 1.058796e-24 -1.816345 -1.461035 -2.171656 3.356384e-22</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   3:    Pdp1 1.125302e-23 -2.050876 -1.695572 -2.406180 2.378138e-21</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   4:    Dpp6 2.596854e-22 -1.855310 -1.504712 -2.205909 4.116014e-20</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   5:  Ogfrl1 3.505731e-21 -1.677829 -1.319987 -2.035671 4.445267e-19</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  ---                                                                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 522:    Capg 1.124341e-05  1.818826  2.799185  0.838467 1.827775e-04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 523:    Sncg 2.899421e-05  2.319043  3.437025  1.201062 4.595582e-04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 524:   Crip1 3.080624e-05  2.901910  3.947415  1.856405 4.763697e-04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 525:   Ccdc3 3.212154e-05  1.846589  2.603556  1.089623 4.848823e-04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 526:   Hmgb2 3.460797e-05  2.487470  3.391425  1.583515 5.102664e-04</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        feats   Pr(&gt;Chisq)      coef     ci.hi      ci.lo          fdr</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       &lt;char&gt;        &lt;num&gt;     &lt;num&gt;     &lt;num&gt;      &lt;num&gt;        &lt;num&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   1:     Ddn 4.742563e-48  2.324786  2.602948  2.0466234 3.006785e-45</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   2:     Ttr 1.925765e-43  1.861501  2.100066  1.6229359 6.104676e-41</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   3: Slc44a1 2.947434e-32 -1.697366 -1.349228 -2.0455033 6.228911e-30</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   4:  Homer2 6.109638e-32  1.200966  1.575925  0.8260079 9.683776e-30</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   5:   Cabp7 5.238447e-31  2.052926  2.440745  1.6651062 6.642351e-29</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  ---                                                                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 578:    Lcn2 7.557048e-05  1.064874  1.919267  0.2104803 6.654400e-04</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 579:    Tns1 8.107545e-05  1.741728  2.519053  0.9644019 7.041348e-04</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 580:   H2-K1 8.580490e-05  2.170945  2.894463  1.4474264 7.351393e-04</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 581:    Rcn3 8.825585e-05  1.535251  2.364823  0.7056788 7.460561e-04</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 582:    Bcam 1.258118e-04  1.997774  2.980463  1.0150846 9.847488e-04</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>          cluster ranking</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           &lt;char&gt;   &lt;int&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   1: 1_vs_others       1</span>
@@ -507,11 +497,11 @@ based on the MAST package.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   4: 1_vs_others       4</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   5: 1_vs_others       5</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  ---                    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 522: 8_vs_others      39</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 523: 8_vs_others      40</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 524: 8_vs_others      41</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 525: 8_vs_others      42</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 526: 8_vs_others      43</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 578: 7_vs_others      71</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 579: 7_vs_others      73</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 580: 7_vs_others      74</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 581: 7_vs_others      75</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 582: 7_vs_others      81</span>
 </code></pre></div>
     </div>
   </div>

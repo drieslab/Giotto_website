@@ -372,51 +372,42 @@ clusters into bigger clusters.</p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path was provided,</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  but a giotto python environment was found and</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  will be used</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> a giotto python environment was found</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/Users/yuanlab/Library/r-miniconda/envs/giotto_env/bin/pythonw"</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">getClusterSimilarity</span><span class="op">(</span><span class="va">g</span>, cluster_column <span class="op">=</span> <span class="st">"leiden_clus"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Key: &lt;group2&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     group2 group1     value unified_group group1_size group2_size</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     &lt;char&gt; &lt;char&gt;     &lt;num&gt;        &lt;char&gt;       &lt;int&gt;       &lt;int&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1:      1      1 1.0000000          1--1         151         151</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  2:      1      2 0.8111763          1--2         128         151</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3:      1      3 0.8615634          1--3          96         151</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  4:      1      4 0.8177214          1--4          74         151</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  5:      1      5 0.5901907          1--5          67         151</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  6:      1      6 0.7161284          1--6          58         151</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  7:      1      7 0.6051648          1--7          43         151</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  8:      1      8 0.7516498          1--8           7         151</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  9:      2      2 1.0000000          2--2         128         128</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10:      2      3 0.8534683          2--3          96         128</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11:      2      4 0.6298744          2--4          74         128</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12:      2      5 0.5298349          2--5          67         128</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13:      2      6 0.7838851          2--6          58         128</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14:      2      7 0.7375771          2--7          43         128</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15:      2      8 0.5606876          2--8           7         128</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16:      3      3 1.0000000          3--3          96          96</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17:      3      4 0.6353359          3--4          74          96</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18:      3      5 0.4927754          3--5          67          96</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19:      3      6 0.8767171          3--6          58          96</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20:      3      7 0.8687105          3--7          43          96</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21:      3      8 0.5470441          3--8           7          96</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22:      4      4 1.0000000          4--4          74          74</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23:      4      5 0.8780805          4--5          67          74</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24:      4      6 0.5233928          4--6          58          74</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25:      4      7 0.3506467          4--7          43          74</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26:      4      8 0.6091600          4--8           7          74</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27:      5      5 1.0000000          5--5          67          67</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28:      5      6 0.4559489          5--6          58          67</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29:      5      7 0.3070326          5--7          43          67</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30:      5      8 0.3605484          5--8           7          67</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31:      6      6 1.0000000          6--6          58          58</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32:      6      7 0.8432062          6--7          43          58</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 33:      6      8 0.4026130          6--8           7          58</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 34:      7      7 1.0000000          7--7          43          43</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 35:      7      8 0.3013021          7--8           7          43</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 36:      8      8 1.0000000          8--8           7           7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  1:      1      1 1.0000000          1--1         162         162</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  2:      1      2 0.8422383          1--2         122         162</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  3:      1      3 0.8669756          1--3         108         162</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  4:      1      4 0.5442705          1--4          93         162</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  5:      1      5 0.6824345          1--5          84         162</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  6:      1      6 0.7264226          1--6          45         162</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  7:      1      7 0.5972392          1--7          10         162</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  8:      2      2 1.0000000          2--2         122         122</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  9:      2      3 0.7978084          2--3         108         122</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10:      2      4 0.5336978          2--4          93         122</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11:      2      5 0.6414036          2--5          84         122</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12:      2      6 0.6556486          2--6          45         122</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13:      2      7 0.4073051          2--7          10         122</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14:      3      3 1.0000000          3--3         108         108</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15:      3      4 0.4044085          3--4          93         108</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16:      3      5 0.4514877          3--5          84         108</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17:      3      6 0.4897613          3--6          45         108</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18:      3      7 0.3378678          3--7          10         108</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19:      4      4 1.0000000          4--4          93          93</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20:      4      5 0.5806246          4--5          84          93</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21:      4      6 0.7913727          4--6          45          93</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22:      4      7 0.4013357          4--7          10          93</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23:      5      5 1.0000000          5--5          84          84</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24:      5      6 0.8740586          5--6          45          84</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25:      5      7 0.5595658          5--7          10          84</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26:      6      6 1.0000000          6--6          45          45</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27:      6      7 0.6808065          6--7          10          45</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28:      7      7 1.0000000          7--7          10          10</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     group2 group1     value unified_group group1_size group2_size</span>
 </code></pre></div>
     </div>

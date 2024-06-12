@@ -455,10 +455,9 @@ section plane (see method).</p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3. read Giotto spatial information</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path was provided,</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  but a giotto python environment was found and</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  will be used</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> a giotto python environment was found</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/Users/yuanlab/Library/r-miniconda/envs/giotto_env/bin/pythonw"</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu">createCrossSection</span><span class="op">(</span></span></span>
 <span class="r-in"><span>    gobject <span class="op">=</span> <span class="va">g</span>,</span></span>
@@ -468,10 +467,9 @@ section plane (see method).</p>
 <span class="r-in"><span>    name <span class="op">=</span> <span class="st">"new_cs"</span>,</span></span>
 <span class="r-in"><span>    return_gobject <span class="op">=</span> <span class="cn">TRUE</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in gobject@spatial_network[["thickness_unit"]][[spatial_network_name]]@networkDT:</span> no applicable method for `@` applied to an object of class "NULL"</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu"><a href="crossSectionPlot.html">crossSectionPlot</a></span><span class="op">(</span><span class="va">g</span>, name <span class="op">=</span> <span class="st">"new_cs"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in read_crossSection(gobject, name = name, spatial_network_name = spatial_network_name):</span> Delaunay_network has not been created.</span>
+<span class="r-plt img"><img src="createCrossSection-1.png" alt="" width="700" height="433"></span>
 </code></pre></div>
     </div>
   </div>

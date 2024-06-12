@@ -444,38 +444,37 @@ it is recommend to provide names for both groups to <em>group_1_name</em> and
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path was provided,</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  but a giotto python environment was found and</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  will be used</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> a giotto python environment was found</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/Users/yuanlab/Library/r-miniconda/envs/giotto_env/bin/pythonw"</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">findGiniMarkers</span><span class="op">(</span><span class="va">g</span>, cluster_column <span class="op">=</span> <span class="st">"leiden_clus"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>               feats cluster expression expression_gini detection detection_gini</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              &lt;char&gt;  &lt;char&gt;      &lt;num&gt;           &lt;num&gt;     &lt;num&gt;          &lt;num&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    1: 1700001C02Rik       2  0.1803989      0.44884761 0.0546875    0.380216472</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    2:         Crygn       2  0.1604868      0.47269447 0.0546875    0.429912372</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    3:        Mustn1       2  0.2550445      0.38682356 0.0937500    0.389320687</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    4:        Ccdc33       2  0.1491296      0.54325707 0.0468750    0.483041252</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    5:         Odf3b       2  0.1855937      0.34524480 0.0703125    0.366683556</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   ---                                                                          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3982:          Ngef       5  2.5421599      0.04052548 0.6417910    0.030121744</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3983:          Chgb       5  4.6218517      0.02970958 0.8656716    0.029415603</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3984:          Apod       5  4.6848957      0.02809576 0.9253731    0.012387359</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3985:          Mobp       5  6.4262032      0.01278243 0.9850746    0.003813677</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3986:           Ddn       5  4.7020073      0.01347302 0.8507463    0.017656944</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       expression_rank detection_rank   comb_score comb_rank</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                 &lt;num&gt;          &lt;num&gt;        &lt;num&gt;     &lt;int&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    1:       1.0000000      1.0000000 1.706593e-01         1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    2:       0.8714286      0.8714286 1.543207e-01         2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    3:       1.0000000      1.0000000 1.505984e-01         3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    4:       0.7428571      0.7428571 1.448106e-01         4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    5:       1.0000000      1.0000000 1.265956e-01         5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   ---                                                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3982:       0.1000000      0.1000000 1.220698e-05       630</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3983:       0.1000000      0.1000000 8.739253e-06       631</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3984:       0.2285714      0.1000000 7.955022e-06       632</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3985:       0.4857143      0.2285714 5.412028e-06       633</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3986:       0.1000000      0.1000000 2.378925e-06       634</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>               feats cluster expression expression_gini  detection</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              &lt;char&gt;  &lt;char&gt;      &lt;num&gt;           &lt;num&gt;      &lt;num&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    1:        Mustn1       2  0.2675877      0.48429164 0.09836066</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    2:          Inmt       2  0.1386324      0.45249410 0.04918033</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    3: 1700001C02Rik       2  0.1892710      0.42740432 0.05737705</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    4:          Nid1       2  0.2155386      0.42306445 0.07377049</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    5:       Slc13a4       2  0.3299290      0.34576465 0.11475410</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ---                                                            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3467:        Hbb-bt       4  5.3661664      0.01907350 0.96774194</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3468:       Plekhb1       4  5.0305237      0.01466618 0.97849462</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3469:        Hba-a2       4  5.9526050      0.01088350 1.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3470:        Hba-a1       4  6.4266566      0.01066553 1.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3471:          Mobp       4  6.1045819      0.01621459 0.97849462</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       detection_gini expression_rank detection_rank   comb_score comb_rank</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                &lt;num&gt;           &lt;num&gt;          &lt;num&gt;        &lt;num&gt;     &lt;int&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    1:    0.480512956            1.00           1.00 2.327084e-01         1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    2:    0.462963624            1.00           1.00 2.094883e-01         2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    3:    0.395271870            1.00           0.85 1.435998e-01         3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    4:    0.396825403            0.85           0.85 1.212953e-01         4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    5:    0.324223187            1.00           1.00 1.121049e-01         5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ---                                                                     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3467:    0.008635794            0.10           0.25 4.117870e-06       630</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3468:    0.006564403            0.10           0.40 3.850988e-06       631</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3469:    0.003836637            0.10           0.85 3.549264e-06       632</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3470:    0.003688736            0.10           0.70 2.753962e-06       633</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3471:    0.003879016            0.10           0.10 6.289666e-07       634</span>
 </code></pre></div>
     </div>
   </div>

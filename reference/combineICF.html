@@ -395,115 +395,26 @@
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path was provided,</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  but a giotto python environment was found and</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  will be used</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> a giotto python environment was found</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/Users/yuanlab/Library/r-miniconda/envs/giotto_env/bin/pythonw"</span>
 <span class="r-in"><span><span class="va">g_icf</span> <span class="op">&lt;-</span> <span class="fu"><a href="findInteractionChangedFeats.html">findInteractionChangedFeats</a></span><span class="op">(</span><span class="va">g</span>, cluster_column <span class="op">=</span> <span class="st">"leiden_clus"</span>,</span></span>
 <span class="r-in"><span>selected_feats <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Gna12"</span>, <span class="st">"Ccnd2"</span>, <span class="st">"Btbd17"</span><span class="op">)</span>, nr_permutations <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">combineICF</span><span class="op">(</span><span class="va">g_icf</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $combICFscores</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    unif_int feats_1     sel_1   other_1   log2fc_1     diff_1 p.value_1 p.adj_1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      &lt;char&gt;  &lt;char&gt;     &lt;num&gt;     &lt;num&gt;      &lt;num&gt;      &lt;num&gt;     &lt;num&gt;   &lt;num&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1:     1--8  Btbd17 0.6494645 1.0548547 -0.6237794 -0.4053902         0       0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2:     1--8  Btbd17 0.6494645 1.0548547 -0.6237794 -0.4053902         0       0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3:     1--8  Btbd17 0.6494645 1.0548547 -0.6237794 -0.4053902         0       0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4:     2--2   Ccnd2 2.2600769 0.0000000  4.5607620  2.2600769         0       0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5:     6--6   Gna12 2.6050021 0.6900437  1.7756254  1.9149584         0       0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6:     2--3   Ccnd2 0.8411952 2.2742823 -1.3349257 -1.4330872         0       0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7:     1--1   Ccnd2 1.9997150 3.1266790 -0.6198566 -1.1269640         0       0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8:     1--2   Ccnd2 2.7416470 1.8218611  0.5642233  0.9197859         0       0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9:     1--3   Gna12 2.8246058 4.1767141 -0.5482606 -1.3521083         0       0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    perm_sel_1 perm_other_1 perm_log2fc_1 perm_diff_1 cell_type_1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         &lt;num&gt;        &lt;num&gt;         &lt;num&gt;       &lt;num&gt;      &lt;char&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1:   1.348607    0.9661575    0.40422778  0.38244971           1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2:   1.348607    0.9661575    0.40422778  0.38244971           1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3:   1.348607    0.9661575    0.40422778  0.38244971           1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4:   2.214037    1.9183222    0.30386613  0.29571505           2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5:   2.442892    2.8785254   -0.18678983 -0.43563303           6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6:   2.076119    2.2135484   -0.11758706 -0.13742927           2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7:   2.064157    1.9747809    0.18941897  0.08937598           1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8:   1.946537    2.0987296   -0.11664550 -0.15219224           1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9:   3.462202    3.4189908    0.01826102  0.04321139           1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    int_cell_type_1 nr_select_1 nr_other_1 feats_2    sel_2   other_2   log2fc_2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>             &lt;char&gt;       &lt;int&gt;      &lt;int&gt;  &lt;char&gt;    &lt;num&gt;     &lt;num&gt;      &lt;num&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1:               8          17        134   Gna12       NA        NA         NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2:               8          17        134  Btbd17       NA        NA         NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3:               8          17        134   Ccnd2       NA        NA         NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4:               2         125          3   Ccnd2 2.260077 0.0000000  4.5607620</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5:               6          54          4   Gna12 2.605002 0.6900437  1.7756254</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6:               3           6        122   Gna12 4.044887 2.5227653  0.6602439</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7:               1         143          8   Ccnd2 1.999715 3.1266790 -0.6198566</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8:               2          39        112   Ccnd2 1.702257 2.5307278 -0.5456573</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9:               3          82         69   Gna12 2.830802 1.9153010  0.5403000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        diff_2 p.value_2 p.adj_2 perm_sel_2 perm_other_2 perm_log2fc_2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         &lt;num&gt;     &lt;num&gt;   &lt;num&gt;      &lt;num&gt;        &lt;num&gt;         &lt;num&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1:         NA        NA      NA         NA           NA            NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2:         NA        NA      NA         NA           NA            NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3:         NA        NA      NA         NA           NA            NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4:  2.2600769         0       0   2.214037     1.918322    0.30386613</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5:  1.9149584         0       0   2.442892     2.878525   -0.18678983</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6:  1.5221213         0       0   2.684928     2.646398   -0.02454352</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7: -1.1269640         0       0   2.064157     1.974781    0.18941897</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8: -0.8284709         0       0   2.137879     2.251483   -0.07428129</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9:  0.9155006         0       0   2.678270     2.533455    0.08370498</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    perm_diff_2 cell_type_2 int_cell_type_2 nr_select_2 nr_other_2 type_int</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>          &lt;num&gt;      &lt;char&gt;          &lt;char&gt;       &lt;int&gt;      &lt;int&gt;   &lt;char&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1:          NA           8               1          NA         NA   hetero</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2:          NA           8               1          NA         NA   hetero</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3:          NA           8               1          NA         NA   hetero</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4:  0.29571505           2               2         125          3     homo</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5: -0.43563303           6               6          54          4     homo</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6:  0.03852965           3               2           8         88   hetero</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7:  0.08937598           1               1         143          8     homo</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8: -0.11360452           2               1          50         78   hetero</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9:  0.14481502           3               1          77         19   hetero</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       feat1_feat2 unif_feat_feat comb_logfc direction</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>            &lt;char&gt;         &lt;char&gt;      &lt;num&gt;    &lt;char&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1:  Btbd17--Gna12  Btbd17--Gna12         NA      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2: Btbd17--Btbd17 Btbd17--Btbd17         NA      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3:  Btbd17--Ccnd2  Btbd17--Ccnd2         NA      &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4:   Ccnd2--Ccnd2   Ccnd2--Ccnd2   9.121524   both_up</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5:   Gna12--Gna12   Gna12--Gna12   3.551251   both_up</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6:   Ccnd2--Gna12   Ccnd2--Gna12   1.995170     mixed</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7:   Ccnd2--Ccnd2   Ccnd2--Ccnd2   1.239713 both_down</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8:   Ccnd2--Ccnd2   Ccnd2--Ccnd2   1.109881     mixed</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9:   Gna12--Gna12   Gna12--Gna12   1.088561     mixed</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $Giotto_info</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $Giotto_info$values</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "normalized"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $Giotto_info$cluster</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "leiden_clus"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $Giotto_info$`spatial network`</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Delaunay_network"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $test_info</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $test_info$test</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "permutation"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $test_info$p.adj</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "bonferroni"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $test_info$`min cells`</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $test_info$`min interacting cells`</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $test_info$`exclude selected cells`</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $test_info$perm</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"class")</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "list"          "combIcfObject"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> An object of class combIcfObject </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  -dimensions : 7, 36 (icf pairs, attributes)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;giotto info&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  -values          : normalized</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  -cluster         : leiden_clus</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  -spatial network : Delaunay_network</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;test info&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  -test                   : permutation</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  -p.adj                  : bonferroni</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  -min cells              : 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  -min interacting cells  : 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  -exclude selected cells : TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  -perm                   : 10</span>
 </code></pre></div>
     </div>
   </div>

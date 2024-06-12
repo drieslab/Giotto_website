@@ -351,10 +351,9 @@ appended cell meta data column will be named with ‘hmrf1 k=8 b=0.00’</p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path was provided,</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  but a giotto python environment was found and</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  will be used</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> a giotto python environment was found</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/Users/yuanlab/Library/r-miniconda/envs/giotto_env/bin/pythonw"</span>
 <span class="r-in"><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu"><a href="binSpect.html">binSpect</a></span><span class="op">(</span><span class="va">g</span>, return_gobject <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> This is the single parameter version of binSpect</span>
@@ -376,7 +375,7 @@ appended cell meta data column will be named with ‘hmrf1 k=8 b=0.00’</p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  Nature biotechnology 36 (12), 1183-1190. 2018</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Choosing spatial genes from the results of binSpectKept 530 top spatial genes for next step</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Computing spatial coexpression modules...</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Sampling spatial genes from coexpression </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Sampling spatial genes from coexpression</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>                                 modules...</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Sampled 458 genes.Will use 458spatial genes for initialization of HMRF.</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Parsing neighborhood graph...</span>
@@ -405,19 +404,46 @@ appended cell meta data column will be named with ‘hmrf1 k=8 b=0.00’</p>
 <span class="r-in"><span><span class="va">HMRFoutput</span> <span class="op">&lt;-</span> <span class="fu"><a href="doHMRF_V2.html">doHMRF_V2</a></span><span class="op">(</span>HMRF_init_obj <span class="op">=</span> <span class="va">HMRF_init_obj</span>, betas <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">5</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> If used in published research, please cite:</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     Q Zhu, S Shah, R Dries, L Cai, GC Yuan.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     'Identification of spatially associated subpopulations by combining </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     'Identification of spatially associated subpopulations by combining</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     scRNAseq and sequential fluorescence in situ hybridization data'</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     Nature biotechnology 36 (12), 1183-1190. 2018</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Please find more explanation and instruction of the HMRF function </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Please find more explanation and instruction of the HMRF function</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     on </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  https://bitbucket.org/qzhudfci/smfishhmrf-r/src/master/TRANSITION.md</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Doing beta=0.000"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Iteration 1: relative error of mean = 2e-16; covariance = 0.08</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Iteration 2: relative error of mean = 0; covariance = 0</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in names(tc.hmrfem$class) &lt;- rownames(y):</span> attempt to set an attribute on NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Doing beta=5.000"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Iteration 1: relative error of mean = 2e-16; covariance = 0.08</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Iteration 2: relative error of mean = 0; covariance = 0</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">addHMRF_V2</span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">g</span>, HMRFoutput <span class="op">=</span> <span class="va">HMRFoutput</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'HMRFoutput' not found</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> These column names were already used: V1 V2 V3 V4 V5 V6 V7 V8 V9 V10</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  and will be overwritten</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> An object of class giotto </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &gt;Active spat_unit:  cell </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &gt;Active feat_type:  rna </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [SUBCELLULAR INFO]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> polygons      : cell </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [AGGREGATE INFO]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> expression -----------------------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell][rna] raw normalized scaled</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> spatial locations ----------------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell] raw</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> spatial networks -----------------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell] Delaunay_network spatial_network</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> spatial enrichments --------------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell][rna] cluster_metagene DWLS</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> dim reduction --------------------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell][rna] pca custom_pca umap custom_umap tsne</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> nearest neighbor networks --------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell][rna] sNN.pca custom_NN</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> attached images ------------------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> images      : alignment image </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Use objHistory() to see steps and params used</span>
 </code></pre></div>
     </div>
   </div>

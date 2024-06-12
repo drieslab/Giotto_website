@@ -405,10 +405,9 @@ MAST might take a long time to run and finish</p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path was provided,</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  but a giotto python environment was found and</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  will be used</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> a giotto python environment was found</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/Users/yuanlab/Library/r-miniconda/envs/giotto_env/bin/pythonw"</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">findMastMarkers</span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">g</span>, cluster_column <span class="op">=</span> <span class="st">"leiden_clus"</span>, group_1 <span class="op">=</span> <span class="fl">1</span>,</span></span>
 <span class="r-in"><span>group_2 <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></span>
@@ -420,19 +419,19 @@ MAST might take a long time to run and finish</p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Refitting on reduced model...</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Done!</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        feats   Pr(&gt;Chisq)          coef       ci.hi      ci.lo          fdr</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       &lt;char&gt;        &lt;num&gt;         &lt;num&gt;       &lt;num&gt;      &lt;num&gt;        &lt;num&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   1:     Vxn 1.054458e-55 -3.4458019397 -3.08472305 -3.8068808 6.685262e-53</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   2:   Ctxn1 2.076560e-53 -2.8369006583 -2.50262665 -3.1711747 6.582694e-51</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   3:   Stx1a 1.795887e-52 -3.9134656719 -3.57066630 -4.2562650 3.795308e-50</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   4:    Ngef 1.932609e-49 -3.4120374683 -3.05454583 -3.7695291 3.063185e-47</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   5:   Ttc9b 3.497635e-48 -2.7775460029 -2.43659721 -3.1184948 4.435001e-46</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  ---                                                                       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 630:   Anxa2 9.594809e-01  0.0333681932  0.27536997 -0.2086336 9.655728e-01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 631:  Wfdc17 9.611576e-01 -0.0171507670  0.09533824 -0.1296398 9.657273e-01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 632:   Meig1 9.775833e-01  0.0132496314  0.20623866 -0.1797394 9.806769e-01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 633: S100a11 9.879670e-01 -0.0007165332  0.25445117 -0.2558842 9.895277e-01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 634: Slc13a4 9.927919e-01 -0.0058429565  0.14512731 -0.1568132 9.927919e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       feats   Pr(&gt;Chisq)        coef       ci.hi       ci.lo          fdr</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      &lt;char&gt;        &lt;num&gt;       &lt;num&gt;       &lt;num&gt;       &lt;num&gt;        &lt;num&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   1:   Ngef 1.170809e-47 -3.17935559 -2.81749191 -3.54121926 7.422931e-45</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   2:  Stx1a 2.473466e-47 -3.57440320 -3.21470773 -3.93409866 7.840886e-45</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   3:    Vxn 2.428690e-44 -3.00428396 -2.62105486 -3.38751306 5.132631e-42</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   4:  Ctxn1 1.476857e-42 -2.26430040 -1.93779955 -2.59080125 2.340818e-40</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   5: Ipcef1 3.128372e-42 -3.33270551 -3.00405158 -3.66135944 3.966775e-40</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  ---                                                                     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 630:  Crygn 6.826049e-01  0.06206105  0.19336752 -0.06924542 6.869389e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 631: Ccdc33 7.369411e-01  0.02151578  0.09180185 -0.04877029 7.404448e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 632:  Spag8 7.395403e-01  0.03818362  0.12594115 -0.04957391 7.418806e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 633: Wfdc17 7.996854e-01  0.04504413  0.18887329 -0.09878504 8.009487e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 634:   Gzma 8.557595e-01  0.04069799  0.18248078 -0.10108480 8.557595e-01</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>      cluster</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       &lt;char&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   1:  1_vs_2</span>

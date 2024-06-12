@@ -399,49 +399,31 @@ expression data</p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path was provided,</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  but a giotto python environment was found and</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  will be used</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> a giotto python environment was found</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/Users/yuanlab/Library/r-miniconda/envs/giotto_env/bin/pythonw"</span>
 <span class="r-in"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="findMarkers_one_vs_all.html">findMarkers_one_vs_all</a></span><span class="op">(</span><span class="va">g</span>, </span></span>
 <span class="r-in"><span>cluster_column <span class="op">=</span> <span class="st">"leiden_clus"</span>, min_feats <span class="op">=</span> <span class="fl">20</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> using 'Scran' to detect marker feats. If used in published </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> using 'Scran' to detect marker feats. If used in published</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>       research, please cite: Lun ATL, McCarthy DJ, Marioni JC (2016).</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>       'A step-by-step workflow for low-level analysis of single-cell RNA-seq </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>       'A step-by-step workflow for low-level analysis of single-cell RNA-seq</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>       data with Bioconductor.'</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>       F1000Res., 5, 2122. doi: 10.12688/f1000research.9501.2. </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> start with cluster  1start with cluster  2start with cluster  3start with cluster  4start with cluster  5start with cluster  6start with cluster  7start with cluster  8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> start with cluster  1start with cluster  2start with cluster  3start with cluster  4start with cluster  5start with cluster  6start with cluster  7</span>
 <span class="r-in"><span><span class="va">sign_gene</span> <span class="op">&lt;-</span> <span class="va">x</span><span class="op">$</span><span class="va">feats</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">sign_matrix</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">sign_gene</span><span class="op">)</span><span class="op">*</span><span class="fl">8</span>, mean  <span class="op">=</span> <span class="fl">10</span><span class="op">)</span>, </span></span>
 <span class="r-in"><span>nrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">sign_gene</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/row-plus-colnames-generic.html" class="external-link">rownames</a></span><span class="op">(</span><span class="va">sign_matrix</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="va">sign_gene</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/row-plus-colnames-generic.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">sign_matrix</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"celltype_"</span>,<span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">x</span><span class="op">$</span><span class="va">cluster</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="va">sign_matrix</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="va">sign_gene</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">sign_matrix</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"celltype_"</span>,<span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">x</span><span class="op">$</span><span class="va">cluster</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in dimnames(x) &lt;- dn:</span> length of 'dimnames' [2] not equal to array extent</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">runSpatialDeconv</span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">g</span>, sign_matrix <span class="op">=</span> <span class="va">sign_matrix</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> An object of class giotto </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &gt;Active spat_unit:  cell </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &gt;Active feat_type:  rna </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [SUBCELLULAR INFO]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> polygons      : cell </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [AGGREGATE INFO]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> expression -----------------------</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell][rna] raw normalized scaled</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> spatial locations ----------------</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell] raw</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> spatial networks -----------------</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell] Delaunay_network spatial_network</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> spatial enrichments --------------</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell][rna] cluster_metagene DWLS</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> dim reduction --------------------</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell][rna] pca custom_pca umap custom_umap tsne</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> nearest neighbor networks --------</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell][rna] sNN.pca custom_NN</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> attached images ------------------</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> images      : alignment image </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Use objHistory() to see steps and params used</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>no non-missing arguments to min; returning Inf</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>no non-missing arguments to max; returning -Inf</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>no non-missing arguments to max; returning -Inf</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>NaNs produced</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in seq_len(ceiling(log2(max(wsScaledMinusInf)))):</span> argument must be coercible to non-negative integer</span>
 </code></pre></div>
     </div>
   </div>

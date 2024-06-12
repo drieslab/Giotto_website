@@ -361,446 +361,659 @@ are cell_IDs</p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path was provided,</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  but a giotto python environment was found and</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  will be used</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> a giotto python environment was found</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/Users/yuanlab/Library/r-miniconda/envs/giotto_env/bin/pythonw"</span>
 <span class="r-in"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="findMarkers_one_vs_all.html">findMarkers_one_vs_all</a></span><span class="op">(</span><span class="va">g</span>,</span></span>
 <span class="r-in"><span>    cluster_column <span class="op">=</span> <span class="st">"leiden_clus"</span>, min_feats <span class="op">=</span> <span class="fl">20</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> using 'Scran' to detect marker feats. If used in published </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> using 'Scran' to detect marker feats. If used in published</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>       research, please cite: Lun ATL, McCarthy DJ, Marioni JC (2016).</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>       'A step-by-step workflow for low-level analysis of single-cell RNA-seq </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>       'A step-by-step workflow for low-level analysis of single-cell RNA-seq</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>       data with Bioconductor.'</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>       F1000Res., 5, 2122. doi: 10.12688/f1000research.9501.2. </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> start with cluster  1start with cluster  2start with cluster  3start with cluster  4start with cluster  5start with cluster  6start with cluster  7start with cluster  8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> start with cluster  1start with cluster  2start with cluster  3start with cluster  4start with cluster  5start with cluster  6start with cluster  7</span>
 <span class="r-in"><span><span class="va">sign_gene</span> <span class="op">&lt;-</span> <span class="va">x</span><span class="op">$</span><span class="va">feats</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">sign_matrix</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">sign_gene</span><span class="op">)</span><span class="op">*</span><span class="fl">8</span>, mean  <span class="op">=</span> <span class="fl">10</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>nrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">sign_gene</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/row-plus-colnames-generic.html" class="external-link">rownames</a></span><span class="op">(</span><span class="va">sign_matrix</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="va">sign_gene</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/row-plus-colnames-generic.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">sign_matrix</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"celltype_"</span>,<span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">x</span><span class="op">$</span><span class="va">cluster</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="va">sign_matrix</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="va">sign_gene</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">sign_matrix</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"celltype_"</span>,<span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">x</span><span class="op">$</span><span class="va">cluster</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in dimnames(x) &lt;- dn:</span> length of 'dimnames' [2] not equal to array extent</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu"><a href="runDWLSDeconv.html">runDWLSDeconv</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">g</span>, sign_matrix <span class="op">=</span> <span class="va">sign_matrix</span><span class="op">)</span></span></span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>no non-missing arguments to min; returning Inf</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>no non-missing arguments to max; returning -Inf</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>no non-missing arguments to max; returning -Inf</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>NaNs produced</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in seq_len(ceiling(log2(max(wsScaledMinusInf)))):</span> argument must be coercible to non-negative integer</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">cellProximityEnrichmentEachSpot</span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">g</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        AAAGGGATGTAGCAAG-1 AAATGGCATGTCTTGT-1 AAATGGTCAATGTGCC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          2.1971115           0.000000          0.0000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        AAATTAACGGGTAGCT-1 AACAACTGGTAGTTGC-1 AACAGGAAATCGAATA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           0.000000          3.8574459       0.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        AACAGGATGGGCCGCG-1 AACCATGGGATCGCTA-1 AACCCAGAGACGGAGA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         0.00000000       0.000000e+00          0.0000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        AACCGAGCTTGGTCAT-1 AACCGTTGTGTTTGCT-1 AACGATAGAAGGGCCG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          0.0000000       0.0000000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        AACGATATGTCAACTG-1 AACGCGGTCTCCAGCC-1 AACGTCAGACTAGTGG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          6.4609855        0.123181802          8.5232608</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        AACTCGATGGCGCAGT-1 AACTGATATTAGGCCT-1 AACTGGGTCCCGACGT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          0.0000000          0.0000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        AACTTGCCCGTATGCA-1 AAGAGATGAATCGGTA-1 AAGCTCGTGCCAAGTC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000         7.65414115       1.034366e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        AAGGAGCGGTTGGTGC-1 AAGGCGCGTAAAGCTT-1 AAGGCTGTGCTCATCG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          5.7311269                  8          3.9365307</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        AAGTAGAAGACCGGGT-1 AAGTAGTGACGCGAGG-1 AATCCAAGGGCCTGAG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       8.755280e+00          8.7297569          3.7867312</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        AATGACTGTCAGCCGG-1 AATGCAACCGGGTACC-1 AATGGTTCTCACAAGC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       9.017867e+00        0.000000000          0.0000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        AATTTGGTTCCAAAGA-1 ACAACAGCATGAGCTA-1 ACAACGGTCCCTGCGA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000                  0         6.82727112</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        ACAAGGACAAGAGGTT-1 ACACAAAGACGGGTGG-1 ACACACTTTCTACACG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         4.51749356          3.5473095           0.000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        ACACCCAGCATGCAGC-1 ACACCCGAGAAATCCG-1 ACACCTTAAGTAGGGC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       7.794275e+00          0.0000000       9.109115e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        ACACGAGACTCCTTCT-1 ACACGGGAACTTAGGG-1 ACATAATAAGGCGGTG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           1.849493           0.000000          0.0000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        ACCAAGAACGCGTGTC-1 ACCACAAGTTTCTATC-1 ACCCTTCATCTGCGAA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       7.792239e+00         6.92625527          0.0000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        ACCGACTGAGTCCCAC-1 ACCTAATCGACTTCCT-1 ACGATCATACATAGAG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          1.6386947          0.0000000         2.51214359</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        ACGCATTCGTGAGTAC-1 ACGCCAGATGATTTCT-1 ACGCGGGCCAAGGACA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          4.8657541          0.0000000          3.8657541</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        ACGGAATTTAGCAAAT-1 ACGTAGATTGCTGATG-1 ACGTGCGCCTCGTGCA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000       0.000000e+00         5.90357991</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        ACGTTTAGTTGTGATC-1 ACTACCAGCTCTCTGG-1 ACTATTCGTCCGTGGT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          9.5232608          0.0000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        ACTCAATAAAGGCACG-1 ACTGCCGTCGTAACTC-1 ACTGTAGCACTTTGGA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           0.000000          0.0000000           0.000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        ACTGTCCAGGATTATA-1 ACTGTCTTCTTTAGAA-1 ACTGTGCTAGTAGATC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000           3.281513          5.8225089</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        ACTTAGTACGACAAGA-1 ACTTCGCCATACGCAC-1 ACTTGGGACCCGGTGG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         0.00000000       0.000000e+00          0.0000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        ACTTTCCTATAGCTTC-1 AGAACGTGGTACATTC-1 AGACCATGGGATACAA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          1.8477660           0.000000           7.827271</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        AGACCCGCCCTCCTCG-1 AGACTAGCCTTCCAGA-1 AGAGCGGGCTAATCAT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         0.00000000           4.648001           4.000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        AGAGCGTACAAGCTCG-1 AGATAACTTCAGGGCC-1 AGATACGACTTCATAT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         9.43340965       0.000000e+00           0.000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        AGATCTCAGGTGTGAT-1 AGATGACTCGCCCACG-1 AGCACCAGTACTCACG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000            7.19299           0.000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        AGCACTTAAGGACGCC-1 AGCATCGTCGATAATT-1 AGCCCTAAGCGAAGTT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000       3.316866e+00           0.000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        AGCGACATCCCATTCA-1 AGCGACCAACGATATT-1 AGCGGGAAGGGTCCAT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         0.00000000         0.00000000          2.1715842</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        AGCTATTTAATCCAAC-1 AGGACATCGCACGTCG-1 AGGCCACCCGTTATGA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000       6.829808e+00           5.542807</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        AGGCCCATTGTACAGG-1 AGGCTATGGTTAGCTT-1 AGGGCGTGATCGGCTA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       0.000000e+00         6.94732669       1.000000e+01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        AGGGCTGCAGTTACAG-1 AGGGTTTAGTTCGGGA-1 AGGTAACCTCCTATTC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          3.5658162         0.00000000          3.1776281</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        AGGTACGATATTGCCA-1 AGGTAGGTACAAAGCT-1 AGGTTGAGGCACGCTT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         0.00000000          4.9618149          7.2883617</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        AGTAATGTCTTGCCGC-1 AGTAGGTAACATACAT-1 AGTATAATACTAGGCA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         2.69353404          0.0000000            9.01519</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        AGTCAGCCACCGCCTG-1 AGTCGGCCCAAACGAC-1 AGTCTTCTCCTCAAAT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          7.8406733        1.919881041</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        AGTTCCTACAGAATTA-1 AGTTTCGCAGGTCGGA-1 ATAAAGGCTCGGTCGT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          0.0000000       3.027029e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        ATAACGGAGTCCAACG-1 ATAATAGTGTAGGGAC-1 ATACCACGGGCAACTT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000         0.00000000       5.231956e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        ATACTAGCATGACCCT-1 ATAGACGAAGAGAAAG-1 ATAGAGTACTGGGACA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          7.7376881          0.0000000       9.316981e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        ATAGGGATATCCTTGA-1 ATAGGTTGGGCAGATG-1 ATATCTTAGGGCCTTC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           0.000000          0.0000000          0.0000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        ATATTCCCACAGGTCA-1 ATATTGCTGTCAAAGT-1 ATATTTAACCCTCAAG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1                  0         5.91691989           0.000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        ATCAATCTGGGCTGCA-1 ATCACTTCATCCTCGC-1 ATCCAACGCAGTCATA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          6.0000000          8.3174125</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        ATCGACTCTTTCCGTT-1 ATCGCACGCCGGGAGA-1 ATCTCCCTGCAATCTA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          5.5719405          0.0000000          0.0000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        ATCTGGTTAAGACTGT-1 ATCTGTAATTGTACCC-1 ATCTTGACCTGCAACG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          5.1639119        3.000000000       8.369802e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        ATGAAGCCAAGGAGCC-1 ATGACGCCGGCTCTAA-1 ATGAGGAGTGTTAATC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       8.017867e+00         0.00000000        10.27751902</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        ATGATCGGGAATAGAC-1 ATGCACTACCGCATTG-1 ATGCATGATCCAGGAT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       0.000000e+00          7.3698024           0.000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        ATGCCGGTCTTGCATA-1 ATGCGACAGTCCCATT-1 ATGCTCAGTGTTGCAT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           0.000000       1.077168e-01         7.35565774</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        ATGGATTGACCAAACG-1 ATGTGCATCCGACGCA-1 ATGTTACGAGCAATAC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          1.7381250         0.35063502</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        ATTAATACTACGCGGG-1 ATTAATTCGGTCACTC-1 ATTACTAGCCTCTTGC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          5.0247476          0.0000000       1.010948e+01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        ATTAGATTGATAGCGG-1 ATTATGCCATAGGGAG-1 ATTCCTCCGCCAGTGC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       8.487793e+00         5.36668554          6.5232608</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        ATTCTCGTCTCTTTAG-1 ATTGAAGATCTTAGTG-1 ATTGCTGCTCCTCCAT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           0.000000         0.61294278          0.4337443</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        ATTGGGAATATCTTGG-1 ATTTAACTCGTATTAC-1 ATTTACAGTTTACTGG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         0.08687054       2.460599e+00          5.3928660</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        ATTTGTTCCAGGGCTC-1 CAAACGGTCGCACTTT-1 CAAACTATTGAGCTTC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       4.8270301611           0.000000         0.58256664</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CAAATTGTCAGCAAGC-1 CAACGACCCGTTTACA-1 CAACGGTTCTTGATAC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           0.000000       3.902348e+00          7.7306455</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CAACTCCTTGATCCCG-1 CAAGCAACGTCGGAGT-1 CAAGCACCAAATGCCT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       9.623557e+00          0.0000000        1.825815622</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CAATAAACCTTGGCCC-1 CAATTAAGGGTGATGA-1 CACACAGGGATAGATT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          2.8865118          0.0000000         9.27460175</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CACAGCACCCACGGCA-1 CACAGCTAGGGAGTGA-1 CACCATCGGAGGAGAC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          7.7496976          2.9651326          0.0000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CACCCACACGTCACCC-1 CACCGCCAGAAGGTTT-1 CACCTAATCAGTTTAC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       9.623557e+00          3.0818854         0.00000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CACCTCGATGGTGGAC-1 CACGAAAGTTAGTCCC-1 CACGCACAGCGCAGCT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         0.00000000          0.0000000          6.4152406</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CACGCAGCGAGGCTTT-1 CACTAAAGTTGCCTAT-1 CACTCAGCTCTTGAGG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           0.000000           2.010734        0.083847992</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CACTGTCCAAGTGAGA-1 CACTTAATCAGACGGA-1 CACTTCGCCACAGGCT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          5.2914603        0.021468390         5.82727112</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CAGAGCATGAGCTTGC-1 CAGATACTAACATAGT-1 CAGCTCACTGAGACAT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          8.3698024          4.7056028</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CAGCTCGTGCTTGTGT-1 CAGCTTAGTAGGTAGC-1 CAGTGTCCGCAGAATG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          5.3267466         4.90367570           4.829808</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CAGTTCAAATTGACAC-1 CATACAAAGCCGAACC-1 CATAGTAGCATAGTAG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       0.000000e+00           1.015030       8.378837e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CATCATCTACCCGGAC-1 CATCGCCCGCGGCCAA-1 CATGAACCGACATTTG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000                  0          1.6135055</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CATGATGCACAATTCT-1 CATGCGTTAGACAGAA-1 CATGCTGGCTCCAATT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          6.0000000          0.0000000                  0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CATGGCAGGAAGATCG-1 CATGGTCTAGATACCG-1 CATTACGTCGGCCCGT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1        0.000000000           0.000000          3.5705932</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CATTATGCTTGTTGTG-1 CCAAACAGAACCCTCG-1 CCAACGATGCACTGAT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         5.02736747       8.000000e+00          5.7526897</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CCAAGACTTCTGCGAA-1 CCAAGCGTAACTCGTA-1 CCAAGGAACAGAGAGG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          4.4235904       0.000000e+00       4.724355e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CCAATAGTGCCGTCGA-1 CCAATTGAATGTTAAT-1 CCACGAGAAGAGAATC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          0.0000000          2.1926549</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CCAGGGACGTGGCCTC-1 CCATAAACAACCCGAC-1 CCATAGGTTGGCGTGG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          8.6450077         1.14258870         0.00000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CCATCCATACCAAGTC-1 CCATGCCTGTTTAGTA-1 CCATGCTCTGCAGGAA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          3.5903689          4.0000000           0.000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CCATTAGCGATAATCC-1 CCATTCCCTGCCCACA-1 CCCGACCATAGTCCGC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           0.000000         0.04856623           5.419924</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CCCGCCATGCTCCCGT-1 CCCGTCAGCGTCTGAC-1 CCCTCATTCTGGAATT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       5.570118e+00       0.000000e+00       7.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CCCTGAAATGAGTTGA-1 CCGAAAGTGGTGAGCA-1 CCGCCGGTCAACACAC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          2.8223074          0.0000000       0.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CCGGAATGGTTTCAGT-1 CCGGCGCATATTGGAT-1 CCGGGACCCGCAGAGA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          10.477046         0.00000000       0.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CCGGGCGGTCTCGTCA-1 CCGTACCCAAGCGCCA-1 CCGTGCCCATGACGGC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1                  2           0.000000           0.000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CCTACGGCTCAGTCGA-1 CCTACTGCTTACACTT-1 CCTAGTTAGTCGCATG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          8.3761346         0.76045446</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CCTATGGGTTACCGTC-1 CCTCACCAATCTTGAC-1 CCTCCGACAATTCAAG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           3.181639          8.0000000           6.502199</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CCTCGAAGTGGACGGG-1 CCTCGCCAGCAAATTA-1 CCTCTAATCTGCCAAG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          0.9507391          4.1428479</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CCTCTCTCCCATCTAG-1 CCTCTGGCCTAGACGG-1 CCTGAATATTTACATA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000        0.000000000          4.7239148</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CCTGCTATTTGAGAAG-1 CCTGGCTAGACCCGCC-1 CCTGTCACCCGGGCTC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          8.6450077          0.0000000          2.7402546</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CCTTCTTGATCCAGTG-1 CGAACGCCCAGTGCCG-1 CGAAGTTGCTCTGTGT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          5.1275878       0.000000e+00           7.502199</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CGAGAGATGTGAACCT-1 CGAGCGTTGATCAGCC-1 CGAGCTGGGCTTTAGG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           0.000000         0.00000000           0.000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CGAGGCTAAATATGGC-1 CGCAAACACGAGTTAC-1 CGCAATTACTTTCGGT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           1.738595          0.0000000          4.8272711</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CGCAATTAGGGTAATA-1 CGCAATTCTACAATAA-1 CGCATTAGCTAATAGG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           5.735741         9.65414115          0.0000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CGCGCCCGACTTAATA-1 CGCGTTCATGAAATAC-1 CGCTATACCGCCCACT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          8.6450077         0.00000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CGCTATTCAATGTATG-1 CGCTCGACATAATGAT-1 CGCTCTCCGTAGATTA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         5.91691989           6.773147            6.51434</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CGCTGTGACGCCGCAC-1 CGCTTCCACTGAAATC-1 CGCTTTCATACCGGTG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          9.3169813       9.354203e+00       0.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CGGAGTTTGAGAGACA-1 CGGCACTCAAGAAAGT-1 CGGCCACGCACAAAGT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         3.88133618         4.11254470         0.00000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CGGGATCAATGTAAGA-1 CGGGCAGCTAAACCGC-1 CGGTGTACTTGATCCC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          1.9605241          3.6360559         0.00000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CGTACCTGATAGGCCT-1 CGTAGCGAATTGTCAG-1 CGTATTAAGAGATCTA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          5.7819249          0.0000000           2.516433</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CGTCAGTGCGCACAAG-1 CGTCTGGAAGGGCCCG-1 CGTGTCCCATTCGCGA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         0.00000000         3.61138946           4.587314</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CGTTGTTTCAATTCCC-1 CGTTTAAGCGGAGCAC-1 CGTTTCGCTCATTACA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           0.000000                  3          0.0000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CTAATTCGCACGCGCT-1 CTAATTTCAACAACAC-1 CTACGCACGGAGTACC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         5.48533045         0.00000000         0.00000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CTACTGCCACCTGACC-1 CTAGCATAGTATAATG-1 CTAGTGAAGGACAGGA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1        1.463498619          2.2135297           4.012142</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CTAGTTGGGCCCGGTA-1 CTATCGGGTCTCAACA-1 CTATGTCACTAGCCCA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           0.000000       0.000000e+00           0.000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CTATGTCTATTGAAAC-1 CTCAGGACTCACCTGT-1 CTCATGGCTCACAATC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           0.000000          2.1168783          0.0000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CTCATTTGATGGGCGG-1 CTCCGGCCTAATATGC-1 CTCCTAAGTTATGTCT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          6.2578428         5.33068950          4.8225089</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CTCGAGGTCGAACAGT-1 CTCGCACCTATATAGT-1 CTCGGTCCGTAGCCTG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          8.2014494          0.0000000       9.487793e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CTCTCACAATCGATGA-1 CTCTGCGAAGCAAGCA-1 CTCTGGACGCCTGGTG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           0.000000           0.000000         2.94783483</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CTCTGTTTGAGGATTC-1 CTGAAAGAGATCCGAC-1 CTGCACCTGGAACCGC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       9.304813e-01         3.40146371       2.376748e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CTGGAAATGGATGCTT-1 CTGTATGGTGTAGAAA-1 CTGTTCACTGCCTGTG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       7.975128e+00          6.3556577          0.0000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CTGTTCATCTCACGGG-1 CTTAACTTCGAAGTAC-1 CTTACACGGTATTCCA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          2.0000000       4.700389e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CTTACACTGGGAAATA-1 CTTATGTTGACTACCA-1 CTTCATAGCTCAAGAA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       5.659550e+00          3.9393873           5.000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CTTCTTACGTCGTATA-1 CTTGTACTTGTTGACT-1 CTTGTTTATGTAGCCA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          4.6862213         5.36668554         2.73941353</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        CTTTAACTTTCAAAGG-1 CTTTGGCTTTAGTAAA-1 GAAACAGCCATGCAGT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           6.002276           0.000000          4.0000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GAAACTCTAATGAAGG-1 GAAAGTGACTAACTGC-1 GAAATCGCGCGCAACT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000        11.65414115         4.47584088</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GAAATGGCGGTGTTAG-1 GAAATTCACATCGCTG-1 GAACACACATCAACCA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          3.5151622       2.959013e+00       0.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GAACGACCGAATGATA-1 GAAGAACGGTGCAGGT-1 GAAGCGTGAGGAATTT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          0.0000000          0.0000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GAAGCTTGCTGACCGC-1 GAAGTGCTGGATAGCT-1 GAATCGACATGGTCAC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         0.00000000          0.0000000          6.1619362</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GAATCGCCGGACACGG-1 GAATGTTGGGTAATCT-1 GAATTATAGTGAAAGG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          5.7571773       1.969196e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GAATTTCTCGCTGCAG-1 GACAACGCAGCTTACG-1 GACACAAGGGAAGAAA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           5.000000           7.339734       1.204146e-16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GACCAGAGCCCTGTAG-1 GACGCCTGTTGCAGGG-1 GACGTGTAGGGATTAT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       2.276911e+00           3.822509          6.6852650</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GACTAAGATCATGCAC-1 GACTAAGTAGGCTCAC-1 GAGACTGATGGGTAGA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       4.673167e+00        0.472843547        9.00000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GAGATCTGCTTGGCAT-1 GAGATCTGTCACTCCG-1 GAGCATCATCCCTGGG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.4337443           4.020574          0.0000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GAGCGAGGGAGTACCG-1 GAGCTCTCGGACCTAA-1 GAGGAATGGAGAGGTT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       4.000000e+00         4.00000000           9.697778</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GAGGCTATCAAAGTCG-1 GAGGGCATCGCGTATC-1 GAGGTACATCCATCTT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1        4.587329246           0.000000           0.000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GAGTACGGGTATACAA-1 GATAAATCGGTGGATG-1 GATATCTCATGCAATA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1                  8           0.000000                  0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GATCATTCCAAACATT-1 GATCCCTTTATACTGC-1 GATCGACACTATCTGA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       7.673448e+00          0.0000000          6.5801423</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GATCGGTGGCCATAAC-1 GATGCTACAAGCGCCT-1 GATGGCGCACACATTA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           0.000000       6.792239e+00       3.211500e-02</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GATGTTTGTGCGAGAT-1 GATTCCCTTGTCGCAG-1 GATTCCGCGTTTCCGT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         0.00000000           0.000000          0.0000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GCAAATATTACGCTTT-1 GCAAGTGCACAGAGAA-1 GCACTAGTCGCGCTAT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000       5.539162e+00           5.819414</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GCAGGACTATAGAATA-1 GCATCCCTAACTTTGA-1 GCCCACCAAGGCTGTC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           5.502199        8.00000e+00          0.0000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GCCCAGTTGGTATGCC-1 GCCCGCGCGTTTGACA-1 GCCGAAATTCCTACGT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1                  0           6.730646          0.0000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GCCTAGCGATCTGACC-1 GCCTATTCCGATATAG-1 GCCTTCAGCCCTACCG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          6.1094828         9.13118717       0.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GCGAAGCCATACCCGT-1 GCGAGTTCTGCAAAGA-1 GCGCTAATTGAATAGA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          7.5917775          2.4828234       0.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GCGGGAACCAGGCCCT-1 GCGGTCCCTAGACGCA-1 GCGTCGAAATGTCGGT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       1.100000e+01           5.819414            5.29219</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GCTAATACCGAATGCC-1 GCTAGTTTCATTGAGG-1 GCTCTAAACCCTGACG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           6.773147                 10          3.5473095</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GCTCTATGTTACGTGC-1 GCTCTCGGGTACCGAA-1 GCTGCTCTCCGGACAC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          7.0528211         0.00000000        1.950222584</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GCTGGCATATTCACCT-1 GCTTGATGATAATCAG-1 GGAGAAGTCATTGGCA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           4.666638          0.0000000          6.5411275</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GGAGTGCCGCCCTGGA-1 GGATTCAGTACGGTGG-1 GGCAATAGTCAATGAG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       8.487793e+00           6.000000           2.015095</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GGCACTCCACTGGGCA-1 GGCATACAGGTAGCGG-1 GGCGGAGTAATATTAG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          0.0000000           1.334567</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GGCGGTAGGATCATTG-1 GGCGTCCTATCCGCTG-1 GGCTATTAAGTTGTAT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           0.000000          0.0000000           0.000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GGCTCGTGCCACCAGC-1 GGCTCTGCTCCAACGC-1 GGCTGGCTAGCTTAAA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           0.000000          3.3218460           4.822509</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GGGACTGCATAGATAG-1 GGGAGAACTCACAGTA-1 GGGAGTTAATGAGGCG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          4.5212881         0.00000000                  0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GGGCGATATGTGTGAA-1 GGGCGGTCCTATTGTC-1 GGGCGTACATTTATAT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1        7.00000e+00          0.0000000          0.0000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GGGCTGCCTAGGGCGA-1 GGGCTGGTTAGTCGCG-1 GGGTATGTATGCACTT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       0.000000e+00          1.5970082         6.94147938</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GGGTCACCGTGACGGT-1 GGGTGTTTCAGCTATG-1 GGTAACTATGTATCTG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          0.0000000         0.10111808</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GGTAGTGCTCGCACCA-1 GGTATTGCCGAGTTTA-1 GGTCGGTAATTAGACA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       0.000000e+00       4.834408e+00         0.03497003</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GGTGAGATGCAGATAA-1 GGTGCGGATAAGTGGC-1 GGTTAGGCTTGGAGAA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1                  7       8.170323e+00          5.3529725</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GGTTTACAATCTCAAT-1 GGTTTGAGTGCTGGAA-1 GTAAGCGGGCAGTCAG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          2.1497476          0.0000000          0.0000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GTAAGTAGGGTATACC-1 GTACGAGATTGCGACA-1 GTACTAAGATTTGGAG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          2.5266376           7.459790           6.000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GTACTGAGGTCGTAAC-1 GTACTGCATGAAGCGT-1 GTACTTGGGCACTTCT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          0.0000000                  7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GTATAGGACTCAGTAG-1 GTATCAGCTTGGGTTC-1 GTCAAAGTTTACATAG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         8.33068950          0.0000000          0.0000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GTCACTCTCCAAATCT-1 GTCAGAATAGTCTATG-1 GTCATGCACCTCCGTT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          4.4604876         2.81651793           5.201449</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GTCATGGACATGACTA-1 GTCCCAACGTAAAGTA-1 GTCCGGCTGAATTGCG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       1.349725e-16       2.034366e+00       8.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GTCGGATATCTCAGAC-1 GTGAAACGTGCTCCAC-1 GTGCAACAAATGTGGC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           4.012142         0.00000000           0.000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GTGCACGAAAGTGACT-1 GTGCGGGTCTCCAAAT-1 GTGCTCAAGTACTGTC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           0.000000         8.90709913        0.000000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GTGGACGTGCTGAGAC-1 GTGGGCTTAGACACAC-1 GTTCACAGGAGTCTAG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1        9.00000e+00           6.534493           0.000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GTTCCAGTCTGACCAT-1 GTTCTTCCCTCGATGT-1 GTTGCACGGAGTTTCG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1        5.000000000       3.664381e+00       8.585854e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GTTGTCGTGTTAGTTG-1 GTTTCCTGGAGGGTGA-1 GTTTGACCAAATCCTA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       0.000000e+00         10.4392831        8.69832e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GTTTGGCCGCTCAGCG-1 TAAATGAATCCGTTTC-1 TAACAAAGGGAGAAGC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000         9.78363475          2.3502251</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TAACGCTTTGAGAGCG-1 TAACTATCGAAGGTCC-1 TAACTCCATGGAGGCT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         9.65414115                  8         0.00000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TAAGGAACTTGTGGGA-1 TAAGGCAACATAAGAT-1 TAATACACAGTAGTAT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1        7.00000e+00          0.0000000          0.0000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TACAAGTCTCGTGCAT-1 TACCAGCTAGGTTTAA-1 TACCTCACGCTTGTAC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1        0.000000000          1.0000000         0.00000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TACGAACACGACTTCA-1 TACGAGAACTTCACGT-1 TACGATGTTGATCATC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000           0.000000          6.2697593</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TACGTGCACTATGCTG-1 TAGAGCTACGAAGAAC-1 TAGAGTCTAAGCGAAC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          0.0000000       9.975128e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TAGCTAAGTCCGGGAG-1 TAGGGTGTTTCAAGAG-1 TAGGTGAGCCCTACTC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       7.975128e+00          3.3467448          0.0000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TAGGTTCGAGTTCGTC-1 TAGTGCCCTCCAGAGT-1 TAGTTTATTCTTGCTT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       4.657475e-01          0.0000000                  0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TATAAATCCACAAGCT-1 TATAAGTGAGGATAGC-1 TATACACGCAAAGTAT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         5.01613501                  5          8.0000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TATCCATATCATGCGA-1 TATCGATGATTAAACG-1 TATGCTCCCTACTTAC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1                  8       7.240533e+00          0.0000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TATGGATGTGCTACGC-1 TATGGCCCGGCCTCGC-1 TATGGGTACGTATCGT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          3.6450077          0.0000000           0.000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TATTCAATTCTAATCC-1 TATTTAGTCTAGATCG-1 TATTTGTTACCCTTTA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       0.000000e+00         4.83226727       9.585854e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TCAAACAACCGCGTCG-1 TCAAACTTAGATTGTT-1 TCAACACATTGGGTAA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          1.9723611           0.000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TCAACCATGTTCGGGC-1 TCACAGGTTATTGGGC-1 TCACGCATTGTAGATC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          8.4392831       2.110097e+00        0.000000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TCACGGTCATCGCACA-1 TCAGCAAATGCATCTC-1 TCAGGGTGTAACGTAA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          8.5411275           0.000000       0.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TCAGGTTCTTTGAGAA-1 TCAGTACTGACCCGCG-1 TCATCCCAGAGGGTGG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           0.000000           7.277519        0.864534810</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TCCAGGCGAGTACGGT-1 TCCCAGCTTTAGTCTG-1 TCCCAGGCTTAGCTAA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          4.7438565           3.564234          2.8245404</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TCCCGCGTACTCCTGG-1 TCCCGGGTGTGCTGCT-1 TCCCGTCAGTCCCGCA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          1.3346100          3.9008589          6.5311843</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TCCCTGGCTCGCTGGA-1 TCCGATAATTGCCATA-1 TCCGATGACTGAGCTC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         0.00000000         5.49576139          2.1161741</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TCCGATGGTGCGACAT-1 TCCGATTACATTGCCG-1 TCCTCTACGAGATGGC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000                  5           9.697778</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TCCTTTCTTACGCTTA-1 TCGAAATTTAGGACCA-1 TCGCATCCCTAAGTGT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          5.8572815          0.0000000          4.1168783</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TCGCCGGTCGATCCGT-1 TCGCGTCCAGAAGGTC-1 TCGCTCGATATATTCC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         0.00000000         0.00000000           0.000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TCGCTGGGCGGATTGT-1 TCGCTGTGCGTAAATC-1 TCGGAATGCGCTCTGA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          3.5311602       9.730646e+00         3.50715991</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TCGGAGTACATGAGTA-1 TCGTATAGTGCAATTA-1 TCGTCCGCTGGCGTCT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1                  0                  0                  6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TCTACCGTCCACAAGC-1 TCTAGCATCTTCGATG-1 TCTAGTTATCAGAAGA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          1.4733344          7.5411275          0.0000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TCTATCGGTCGCAACA-1 TCTATTACGCTGGCGA-1 TCTCTAATAGCTGGTA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       5.024748e+00        0.000000000       0.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TCTGAACCGGTCGGCT-1 TCTTACAGAGGTACCG-1 TCTTACGGCATCCGAC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1                  4          8.5578966        11.65414115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TCTTCGATACCAATAA-1 TCTTGATGCGTAGCGA-1 TCTTGGTAACACCAAA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         0.97598846         0.59160206          0.0000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TGAAACTTATGCAAGC-1 TGACCCACGTTAGACA-1 TGAGAATGCTTTACCG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          0.0000000          0.0000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TGATCTCCGGCGCCAG-1 TGATTCGTCTATCACT-1 TGCATGGATCGGATCT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          6.0000000          0.0000000        1.186693325</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TGCCACCTGGCGAAAC-1 TGCCTGATCAAACGAT-1 TGCGCAAAGCATTTGG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           0.000000          5.9052476           0.000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TGCGCGATTAACGGAG-1 TGCGGAGTAAAGGTGC-1 TGCGGCATAGTTCAAC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000           0.000000           0.000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TGCTGGTTGGACAATT-1 TGGCCAAACTGAAGTA-1 TGGCCGTATATTGACC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           0.000000       2.164844e+00           6.277519</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TGGCTTTGGGTAGACA-1 TGGGCACGTTCTATGG-1 TGGGCCACAAGAGCGC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       7.487793e+00          0.0000000         0.00000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TGGTTCGTAGCAAAGG-1 TGTAGTGATCTATAAT-1 TGTCCCGACATAGCAC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          6.2767320          7.2697593                  0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TGTCCTAAGTCACCGC-1 TGTGACTACGCCAGTC-1 TGTGTCGCGAGTTGCA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          5.7297569          5.2923357           7.317413</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TGTTTCGGTACTTCTC-1 TTAACCAACCCTCCCT-1 TTAAGCGCCTGACCCA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         5.90709913           7.907099           3.284506</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TTAATCAGTACGTCAG-1 TTATATTTGGCAATCC-1 TTATCTGTATCATAAC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000           0.000000          6.2849976</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TTATGACAAACTGGAT-1 TTCAAAGTCTCTAGCC-1 TTCAACGACCCGACCG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         7.02549518       0.000000e+00       9.487793e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TTCAAGCCGAGCTGAG-1 TTCGACGGGAAGGGCG-1 TTCTACTTGCGAGGGC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         0.00000000       1.010912e+01         2.96887430</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TTCTTAGTGGCTCAGA-1 TTCTTGTAACCTAATG-1 TTGCACGGAGCAGCAC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         4.33554267           0.000000          7.9955308</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TTGCTGAAGGAACCAC-1 TTGCTGATCATGTTCG-1 TTGTTCAGTGTGCTAC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         6.34969391          0.0000000          0.0000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TCCTTCAGTGGTCGAA-1 TGCGGTGAAATTTCAT-1 TTGAAGAATTCCCAGG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       0.0000000000          0.0000000         0.05475544</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TTGTAATCCGTACTCG-1 TGGAGTGATGCGATGA-1 TTCGTACTCCAGAACG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       0.000000e+00           5.951793         0.00000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        GTAGACGTCGTTACAT-1 TATCCTGCATGGGAAT-1 TGCAGGATCGGCAAAG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          1.2562876          2.7284008          4.6930528</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TTGGCTCGCATGAGAC-1 TGGAAGGATAAAGATG-1 TTGAATATGGACTTTC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1                  0        0.000000000          0.0000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TTGATCTAACTTTGTC-1 TAATATTGAAATTCGC-1 TTACCATTGATTACCC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000       8.792239e+00          0.0000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TGGAAGACGAACACCA-1 GTCGTCAATTATAAGG-1 TTCTAGGCCAATTGTG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       7.143741e+00          0.0000000         0.13856151</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TCCCAAAGACGAAGGA-1 TTCTTAGTGAACGGTG-1 TTACATCGTGGCCTGG-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         2.03819781           8.000000          0.0000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TGGGAAATGCCTTTCC-1 TCCACAATGGTTTACG-1 TTACAACTACGCATCC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         8.43340965         4.47634796       5.277966e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TCTATCATGCAGTTAC-1 TTCGCACTCGCGTGCT-1 TTGGGACACTGCCCGC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       9.354203e+00       6.165098e+00           0.000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TGATCGGTTTGACCCT-1 TTCATGGCGCAACAGG-1 TATTCGTGCCAGAATA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1       7.975128e+00          3.1926549          0.0000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TCATCACTCGAGCTCG-1 TTGTGGCCCTGACAGT-1 TTGTATCACACAGAAT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000         0.00000000          0.0000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TTAATTTCAGACGCGG-1 TTATCCAATCGAACTC-1 TTAGCAACATGGATGT-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1         0.00000000         0.00000000         5.91691989</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TGTTCTTCCATTGACT-1 TGATTTCCTCCTGACG-1 TTGGGCGGCGGTTGCC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1           0.000000         7.00000000           0.000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TTGTCGTTCAGTTACC-1 TTCCTCGAGGGTGTCT-1 TTGATTATGCAGATGA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          2.3705927       6.934051e+00         0.00000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TTGCTCCCATACCGGA-1 TTATTAGGGAAGCATC-1 TTGGATTGGGTACCAC-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          6.6709127          0.0000000        0.000000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        TGTCTACAGTTTCTGT-1 TTAATGTAGACCAGGT-1 TGCAAGAATGACGTAA-1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> celltype_1--celltype_1          0.0000000          2.2067982            6.80145</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [ reached getOption("max.print") -- omitted 63 rows ]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                AAAGGGATGTAGCAAG-1 AAATGGCATGTCTTGT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.028354493         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                AAATGGTCAATGTGCC-1 AAATTAACGGGTAGCT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 1.90291417          1.0583682</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                AACAACTGGTAGTTGC-1 AACAGGAAATCGAATA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.909119015        0.002890674</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                AACAGGATGGGCCGCG-1 AACCATGGGATCGCTA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  1.2183748        0.000000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                AACCCAGAGACGGAGA-1 AACCGAGCTTGGTCAT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.025991452         0.03656417</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                AACCGTTGTGTTTGCT-1 AACGATAGAAGGGCCG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.004935948        0.025989523</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                AACGATATGTCAACTG-1 AACGCGGTCTCCAGCC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.01326750          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                AACGTCAGACTAGTGG-1 AACTCGATGGCGCAGT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.012521946        0.000000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                AACTGATATTAGGCCT-1 AACTGGGTCCCGACGT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.000000000         0.03968170</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                AACTTGCCCGTATGCA-1 AAGAGATGAATCGGTA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  1.3040822          0.8423244</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                AAGCTCGTGCCAAGTC-1 AAGGAGCGGTTGGTGC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.02843695         0.23106069</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                AAGGCGCGTAAAGCTT-1 AAGGCTGTGCTCATCG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  0.0000000         0.59088544</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                AAGTAGAAGACCGGGT-1 AAGTAGTGACGCGAGG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.022019361         1.12849756</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                AATCCAAGGGCCTGAG-1 AATGACTGTCAGCCGG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.005204672         0.19946112</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                AATGCAACCGGGTACC-1 AATGGTTCTCACAAGC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.43564308         0.10149838</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                AATTTGGTTCCAAAGA-1 ACAACAGCATGAGCTA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.006954804        0.011111925</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                ACAACGGTCCCTGCGA-1 ACAAGGACAAGAGGTT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.045696678         0.42180305</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                ACACAAAGACGGGTGG-1 ACACACTTTCTACACG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.458771360        0.003386472</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                ACACCCAGCATGCAGC-1 ACACCCGAGAAATCCG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.08550595          0.1227534</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                ACACCTTAAGTAGGGC-1 ACACGAGACTCCTTCT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.003254924       0.0109656079</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                ACACGGGAACTTAGGG-1 ACATAATAAGGCGGTG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.02994801          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                ACCAAGAACGCGTGTC-1 ACCACAAGTTTCTATC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.00000000          0.7468899</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                ACCCTTCATCTGCGAA-1 ACCGACTGAGTCCCAC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.00000000         0.01097877</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                ACCTAATCGACTTCCT-1 ACGATCATACATAGAG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.888933202       0.1524833846</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                ACGCATTCGTGAGTAC-1 ACGCCAGATGATTTCT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.44635055         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                ACGCGGGCCAAGGACA-1 ACGGAATTTAGCAAAT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.34356955         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                ACGTAGATTGCTGATG-1 ACGTGCGCCTCGTGCA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.014870329         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                ACGTTTAGTTGTGATC-1 ACTACCAGCTCTCTGG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.003064147         0.01818961</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                ACTATTCGTCCGTGGT-1 ACTCAATAAAGGCACG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.009832128        0.007441600</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                ACTGCCGTCGTAACTC-1 ACTGTAGCACTTTGGA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.00000000          0.3633717</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                ACTGTCCAGGATTATA-1 ACTGTCTTCTTTAGAA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  1.3951496        0.004936036</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                ACTGTGCTAGTAGATC-1 ACTTAGTACGACAAGA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.00000000        0.019065651</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                ACTTCGCCATACGCAC-1 ACTTGGGACCCGGTGG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.00000000          0.4773723</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                ACTTTCCTATAGCTTC-1 AGAACGTGGTACATTC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.05366292         0.06414983</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                AGACCATGGGATACAA-1 AGACCCGCCCTCCTCG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  0.0000000         0.19535152</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                AGACTAGCCTTCCAGA-1 AGAGCGGGCTAATCAT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.28169589         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                AGAGCGTACAAGCTCG-1 AGATAACTTCAGGGCC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.04633325          0.9063003</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                AGATACGACTTCATAT-1 AGATCTCAGGTGTGAT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.000000000         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                AGATGACTCGCCCACG-1 AGCACCAGTACTCACG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.109493404         0.03207485</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                AGCACTTAAGGACGCC-1 AGCATCGTCGATAATT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                1.824575864         0.79425148</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                AGCCCTAAGCGAAGTT-1 AGCGACATCCCATTCA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.000000000        0.011951461</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                AGCGACCAACGATATT-1 AGCGGGAAGGGTCCAT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.22560067        0.000000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                AGCTATTTAATCCAAC-1 AGGACATCGCACGTCG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.00000000        0.000000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                AGGCCACCCGTTATGA-1 AGGCCCATTGTACAGG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.38993920        0.022111207</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                AGGCTATGGTTAGCTT-1 AGGGCGTGATCGGCTA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.87724592         0.01079373</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                AGGGCTGCAGTTACAG-1 AGGGTTTAGTTCGGGA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.18644471         0.15964442</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                AGGTAACCTCCTATTC-1 AGGTACGATATTGCCA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.01727976         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                AGGTAGGTACAAAGCT-1 AGGTTGAGGCACGCTT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.154608567          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                AGTAATGTCTTGCCGC-1 AGTAGGTAACATACAT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.00000000        0.000000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                AGTATAATACTAGGCA-1 AGTCAGCCACCGCCTG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.05957284        0.032734619</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                AGTCGGCCCAAACGAC-1 AGTCTTCTCCTCAAAT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.017504786         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                AGTTCCTACAGAATTA-1 AGTTTCGCAGGTCGGA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  0.8815562       0.0000000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                ATAAAGGCTCGGTCGT-1 ATAACGGAGTCCAACG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.209460979        0.000668964</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                ATAATAGTGTAGGGAC-1 ATACCACGGGCAACTT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.000000000         0.30061086</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                ATACTAGCATGACCCT-1 ATAGACGAAGAGAAAG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  0.0000000         0.76633961</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                ATAGAGTACTGGGACA-1 ATAGGGATATCCTTGA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.000000000         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                ATAGGTTGGGCAGATG-1 ATATCTTAGGGCCTTC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.043731742         0.49489465</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                ATATTCCCACAGGTCA-1 ATATTGCTGTCAAAGT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.014369163        0.017034135</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                ATATTTAACCCTCAAG-1 ATCAATCTGGGCTGCA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  0.4110631         0.08970294</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                ATCACTTCATCCTCGC-1 ATCCAACGCAGTCATA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.03882136        0.026848389</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                ATCGACTCTTTCCGTT-1 ATCGCACGCCGGGAGA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.024056914         0.39137927</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                ATCTCCCTGCAATCTA-1 ATCTGGTTAAGACTGT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.00000000         0.01741230</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                ATCTGTAATTGTACCC-1 ATCTTGACCTGCAACG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes               0.0023015016          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                ATGAAGCCAAGGAGCC-1 ATGACGCCGGCTCTAA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.385545739        0.026737757</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                ATGAGGAGTGTTAATC-1 ATGATCGGGAATAGAC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.00000000         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                ATGCACTACCGCATTG-1 ATGCATGATCCAGGAT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.109198083        0.053939945</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                ATGCCGGTCTTGCATA-1 ATGCGACAGTCCCATT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.01172759          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                ATGCTCAGTGTTGCAT-1 ATGGATTGACCAAACG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.00000000        0.128760666</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                ATGTGCATCCGACGCA-1 ATGTTACGAGCAATAC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.36005693         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                ATTAATACTACGCGGG-1 ATTAATTCGGTCACTC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.014913530         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                ATTACTAGCCTCTTGC-1 ATTAGATTGATAGCGG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.02744329        0.021212828</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                ATTATGCCATAGGGAG-1 ATTCCTCCGCCAGTGC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.239605427        0.116240022</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                ATTCTCGTCTCTTTAG-1 ATTGAAGATCTTAGTG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.005988157          0.8404533</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                ATTGCTGCTCCTCCAT-1 ATTGGGAATATCTTGG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  1.1259254         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                ATTTAACTCGTATTAC-1 ATTTACAGTTTACTGG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.00000000         0.69299968</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                ATTTGTTCCAGGGCTC-1 CAAACGGTCGCACTTT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.016311998         0.41026834</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CAAACTATTGAGCTTC-1 CAAATTGTCAGCAAGC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.04265248       4.305827e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CAACGACCCGTTTACA-1 CAACGGTTCTTGATAC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.068396861        0.006176916</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CAACTCCTTGATCCCG-1 CAAGCAACGTCGGAGT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.01492914        1.508057775</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CAAGCACCAAATGCCT-1 CAATAAACCTTGGCCC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.000000000         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CAATTAAGGGTGATGA-1 CACACAGGGATAGATT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.000000000          0.2960938</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CACAGCACCCACGGCA-1 CACAGCTAGGGAGTGA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.02466797          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CACCATCGGAGGAGAC-1 CACCCACACGTCACCC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.000000000         0.01858706</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CACCGCCAGAAGGTTT-1 CACCTAATCAGTTTAC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.217154408        0.005712614</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CACCTCGATGGTGGAC-1 CACGAAAGTTAGTCCC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.000000000         0.69235961</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CACGCACAGCGCAGCT-1 CACGCAGCGAGGCTTT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.03952254          0.4119887</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CACTAAAGTTGCCTAT-1 CACTCAGCTCTTGAGG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.635592109         0.02268792</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CACTGTCCAAGTGAGA-1 CACTTAATCAGACGGA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.04401961         1.27821810</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CACTTCGCCACAGGCT-1 CAGAGCATGAGCTTGC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                   0.000000         0.02072775</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CAGATACTAACATAGT-1 CAGCTCACTGAGACAT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                   0.000000         0.49082370</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CAGCTCGTGCTTGTGT-1 CAGCTTAGTAGGTAGC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.03751751         0.92324361</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CAGTGTCCGCAGAATG-1 CAGTTCAAATTGACAC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.025053676          0.1766387</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CATACAAAGCCGAACC-1 CATAGTAGCATAGTAG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes               0.0076072477        0.078832860</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CATCATCTACCCGGAC-1 CATCGCCCGCGGCCAA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.00000000          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CATGAACCGACATTTG-1 CATGATGCACAATTCT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.002810517        0.012958044</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CATGCGTTAGACAGAA-1 CATGCTGGCTCCAATT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.001924012       0.0037013200</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CATGGCAGGAAGATCG-1 CATGGTCTAGATACCG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.020547731        0.068146721</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CATTACGTCGGCCCGT-1 CATTATGCTTGTTGTG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.032435349         0.01963553</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CCAAACAGAACCCTCG-1 CCAACGATGCACTGAT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.31825860         0.87953763</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CCAAGACTTCTGCGAA-1 CCAAGCGTAACTCGTA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.033143200        0.036406670</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CCAAGGAACAGAGAGG-1 CCAATAGTGCCGTCGA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes               1.299472e-20         1.34548731</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CCAATTGAATGTTAAT-1 CCACGAGAAGAGAATC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.16619181        0.003152971</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CCAGGGACGTGGCCTC-1 CCATAAACAACCCGAC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                   0.000000         0.06122415</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CCATAGGTTGGCGTGG-1 CCATCCATACCAAGTC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.00000000        0.002302121</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CCATGCCTGTTTAGTA-1 CCATGCTCTGCAGGAA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  0.1554530         0.65849108</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CCATTAGCGATAATCC-1 CCATTCCCTGCCCACA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.740192364         1.09062729</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CCCGACCATAGTCCGC-1 CCCGCCATGCTCCCGT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.013947119         0.06204181</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CCCGTCAGCGTCTGAC-1 CCCTCATTCTGGAATT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.22224387         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CCCTGAAATGAGTTGA-1 CCGAAAGTGGTGAGCA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.59003258         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CCGCCGGTCAACACAC-1 CCGGAATGGTTTCAGT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.01044998         0.11801950</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CCGGCGCATATTGGAT-1 CCGGGACCCGCAGAGA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.00000000        0.048192988</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CCGGGCGGTCTCGTCA-1 CCGTACCCAAGCGCCA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.00000000         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CCGTGCCCATGACGGC-1 CCTACGGCTCAGTCGA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.007963036        0.020893569</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CCTACTGCTTACACTT-1 CCTAGTTAGTCGCATG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.02689893         0.01608129</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CCTATGGGTTACCGTC-1 CCTCACCAATCTTGAC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  0.0000000          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CCTCCGACAATTCAAG-1 CCTCGAAGTGGACGGG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                1.071436616        0.008524478</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CCTCGCCAGCAAATTA-1 CCTCTAATCTGCCAAG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.009564782         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CCTCTCTCCCATCTAG-1 CCTCTGGCCTAGACGG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 1.54215688          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CCTGAATATTTACATA-1 CCTGCTATTTGAGAAG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.05355769        0.003214580</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CCTGGCTAGACCCGCC-1 CCTGTCACCCGGGCTC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.208570322         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CCTTCTTGATCCAGTG-1 CGAACGCCCAGTGCCG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.00000000        0.006446434</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CGAAGTTGCTCTGTGT-1 CGAGAGATGTGAACCT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 1.83619956          0.1496884</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CGAGCGTTGATCAGCC-1 CGAGCTGGGCTTTAGG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.003003784       0.0003865545</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CGAGGCTAAATATGGC-1 CGCAAACACGAGTTAC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes               0.0124418193         0.28011021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CGCAATTACTTTCGGT-1 CGCAATTAGGGTAATA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  0.2786325         0.48936126</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CGCAATTCTACAATAA-1 CGCATTAGCTAATAGG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  0.6476108        0.000000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CGCGCCCGACTTAATA-1 CGCGTTCATGAAATAC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.009254943          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CGCTATACCGCCCACT-1 CGCTATTCAATGTATG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.007309984        0.000000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CGCTCGACATAATGAT-1 CGCTCTCCGTAGATTA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.789129730         1.05333037</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CGCTGTGACGCCGCAC-1 CGCTTCCACTGAAATC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.01018313         0.04817813</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CGCTTTCATACCGGTG-1 CGGAGTTTGAGAGACA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes               0.0050874046        1.430347903</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CGGCACTCAAGAAAGT-1 CGGCCACGCACAAAGT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.000000000         0.61126366</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CGGGATCAATGTAAGA-1 CGGGCAGCTAAACCGC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.097368980          0.6615771</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CGGTGTACTTGATCCC-1 CGTACCTGATAGGCCT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.017484771         0.01302117</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CGTAGCGAATTGTCAG-1 CGTATTAAGAGATCTA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.01771099          1.3330799</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CGTCAGTGCGCACAAG-1 CGTCTGGAAGGGCCCG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.00000000        0.007175122</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CGTGTCCCATTCGCGA-1 CGTTGTTTCAATTCCC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.430285248         0.22612762</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CGTTTAAGCGGAGCAC-1 CGTTTCGCTCATTACA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.00000000        0.605787397</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CTAATTCGCACGCGCT-1 CTAATTTCAACAACAC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  0.4486229         0.02750054</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CTACGCACGGAGTACC-1 CTACTGCCACCTGACC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  0.8721320         0.10901622</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CTAGCATAGTATAATG-1 CTAGTGAAGGACAGGA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.00000000          1.0782686</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CTAGTTGGGCCCGGTA-1 CTATCGGGTCTCAACA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  0.0000000        0.037688244</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CTATGTCACTAGCCCA-1 CTATGTCTATTGAAAC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.000000000         0.01728460</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CTCAGGACTCACCTGT-1 CTCATGGCTCACAATC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes               0.0045636283        0.000000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CTCATTTGATGGGCGG-1 CTCCGGCCTAATATGC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.000000000         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CTCCTAAGTTATGTCT-1 CTCGAGGTCGAACAGT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.00000000          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CTCGCACCTATATAGT-1 CTCGGTCCGTAGCCTG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.00000000        0.004648463</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CTCTCACAATCGATGA-1 CTCTGCGAAGCAAGCA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.013254195        0.006561564</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CTCTGGACGCCTGGTG-1 CTCTGTTTGAGGATTC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.13795814         0.02165285</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CTGAAAGAGATCCGAC-1 CTGCACCTGGAACCGC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.022068498        0.016472580</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CTGGAAATGGATGCTT-1 CTGTATGGTGTAGAAA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  0.2268849       0.0089669223</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CTGTTCACTGCCTGTG-1 CTGTTCATCTCACGGG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.225272058         0.38528269</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CTTAACTTCGAAGTAC-1 CTTACACGGTATTCCA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes               0.0044481342          0.7021817</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CTTACACTGGGAAATA-1 CTTATGTTGACTACCA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes               0.0090638758        0.000000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CTTCATAGCTCAAGAA-1 CTTCTTACGTCGTATA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  0.1465719        0.000000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CTTGTACTTGTTGACT-1 CTTGTTTATGTAGCCA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.221157768         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                CTTTAACTTTCAAAGG-1 CTTTGGCTTTAGTAAA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.01718749        0.453295265</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GAAACAGCCATGCAGT-1 GAAACTCTAATGAAGG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.000000000         0.02382876</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GAAAGTGACTAACTGC-1 GAAATCGCGCGCAACT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.18975673       0.0034228852</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GAAATGGCGGTGTTAG-1 GAAATTCACATCGCTG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  0.6369252         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GAACACACATCAACCA-1 GAACGACCGAATGATA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.55811516         0.05013677</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GAAGAACGGTGCAGGT-1 GAAGCGTGAGGAATTT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.00000000          0.8141839</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GAAGCTTGCTGACCGC-1 GAAGTGCTGGATAGCT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.56579331        0.009961648</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GAATCGACATGGTCAC-1 GAATCGCCGGACACGG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.06295619        0.004166610</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GAATGTTGGGTAATCT-1 GAATTATAGTGAAAGG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.06700087        0.011869939</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GAATTTCTCGCTGCAG-1 GACAACGCAGCTTACG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  1.1201020        0.133221841</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GACACAAGGGAAGAAA-1 GACCAGAGCCCTGTAG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.02652919          0.6767846</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GACGCCTGTTGCAGGG-1 GACGTGTAGGGATTAT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes               8.751516e-08          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GACTAAGATCATGCAC-1 GACTAAGTAGGCTCAC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.49026322          0.3478196</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GAGACTGATGGGTAGA-1 GAGATCTGCTTGGCAT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  0.0000000          1.9388961</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GAGATCTGTCACTCCG-1 GAGCATCATCCCTGGG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.04728653         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GAGCGAGGGAGTACCG-1 GAGCTCTCGGACCTAA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.00000000        0.009103423</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GAGGAATGGAGAGGTT-1 GAGGCTATCAAAGTCG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.60962356        0.451979528</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GAGGGCATCGCGTATC-1 GAGGTACATCCATCTT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  0.0000000       0.0079004957</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GAGTACGGGTATACAA-1 GATAAATCGGTGGATG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.004856511         0.01835733</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GATATCTCATGCAATA-1 GATCATTCCAAACATT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.006759259          0.1913266</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GATCCCTTTATACTGC-1 GATCGACACTATCTGA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.08670420         0.05065370</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GATCGGTGGCCATAAC-1 GATGCTACAAGCGCCT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.000000000          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GATGGCGCACACATTA-1 GATGTTTGTGCGAGAT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.00000000        0.012073211</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GATTCCCTTGTCGCAG-1 GATTCCGCGTTTCCGT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.00000000         0.01297217</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GCAAATATTACGCTTT-1 GCAAGTGCACAGAGAA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 1.38079609        0.017564313</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GCACTAGTCGCGCTAT-1 GCAGGACTATAGAATA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  0.0000000         1.19720609</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GCATCCCTAACTTTGA-1 GCCCACCAAGGCTGTC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  0.0000000        0.005780387</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GCCCAGTTGGTATGCC-1 GCCCGCGCGTTTGACA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.417927866        0.488901787</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GCCGAAATTCCTACGT-1 GCCTAGCGATCTGACC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.98025395        0.577500200</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GCCTATTCCGATATAG-1 GCCTTCAGCCCTACCG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.03220501        0.038934766</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GCGAAGCCATACCCGT-1 GCGAGTTCTGCAAAGA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes               0.0131168503         0.19338087</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GCGCTAATTGAATAGA-1 GCGGGAACCAGGCCCT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.00000000        0.016476795</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GCGGTCCCTAGACGCA-1 GCGTCGAAATGTCGGT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  0.0000000         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GCTAATACCGAATGCC-1 GCTAGTTTCATTGAGG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.53501601         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GCTCTAAACCCTGACG-1 GCTCTATGTTACGTGC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.30775849         0.07018423</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GCTCTCGGGTACCGAA-1 GCTGCTCTCCGGACAC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.47244041         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GCTGGCATATTCACCT-1 GCTTGATGATAATCAG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  0.7275877         0.73022543</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GGAGAAGTCATTGGCA-1 GGAGTGCCGCCCTGGA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes               0.0375698024        0.028737831</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GGATTCAGTACGGTGG-1 GGCAATAGTCAATGAG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.000000000          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GGCACTCCACTGGGCA-1 GGCATACAGGTAGCGG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 1.06042016         0.74461676</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GGCGGAGTAATATTAG-1 GGCGGTAGGATCATTG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  0.5013054         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GGCGTCCTATCCGCTG-1 GGCTATTAAGTTGTAT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                1.436302323         2.34551871</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GGCTCGTGCCACCAGC-1 GGCTCTGCTCCAACGC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.338729868         0.02151952</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GGCTGGCTAGCTTAAA-1 GGGACTGCATAGATAG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes               8.751516e-08         0.08244272</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GGGAGAACTCACAGTA-1 GGGAGTTAATGAGGCG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.000000000        0.000000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GGGCGATATGTGTGAA-1 GGGCGGTCCTATTGTC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.00000000       0.0171071779</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GGGCGTACATTTATAT-1 GGGCTGCCTAGGGCGA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.047485645        0.012001039</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GGGCTGGTTAGTCGCG-1 GGGTATGTATGCACTT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  1.3361364          0.8367998</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GGGTCACCGTGACGGT-1 GGGTGTTTCAGCTATG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.48151045        0.000000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GGTAACTATGTATCTG-1 GGTAGTGCTCGCACCA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  0.0000000        0.034081710</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GGTATTGCCGAGTTTA-1 GGTCGGTAATTAGACA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  1.1400018        0.004355686</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GGTGAGATGCAGATAA-1 GGTGCGGATAAGTGGC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes               0.0000000000        0.011838220</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GGTTAGGCTTGGAGAA-1 GGTTTACAATCTCAAT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.54255025         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GGTTTGAGTGCTGGAA-1 GTAAGCGGGCAGTCAG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  0.0000000        0.045480687</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GTAAGTAGGGTATACC-1 GTACGAGATTGCGACA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.037561693       0.0376383003</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GTACTAAGATTTGGAG-1 GTACTGAGGTCGTAAC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.00000000        0.005498948</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GTACTGCATGAAGCGT-1 GTACTTGGGCACTTCT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.00000000         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GTATAGGACTCAGTAG-1 GTATCAGCTTGGGTTC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  0.0000000         0.07228634</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GTCAAAGTTTACATAG-1 GTCACTCTCCAAATCT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.000000000         0.08124132</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GTCAGAATAGTCTATG-1 GTCATGCACCTCCGTT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.50233481         0.08010428</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GTCATGGACATGACTA-1 GTCCCAACGTAAAGTA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.184925844         0.06419386</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GTCCGGCTGAATTGCG-1 GTCGGATATCTCAGAC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.07295266          0.7507454</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GTGAAACGTGCTCCAC-1 GTGCAACAAATGTGGC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.000000000        0.001668546</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GTGCACGAAAGTGACT-1 GTGCGGGTCTCCAAAT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.00000000        0.049909989</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GTGCTCAAGTACTGTC-1 GTGGACGTGCTGAGAC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  0.7785229         0.01644500</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GTGGGCTTAGACACAC-1 GTTCACAGGAGTCTAG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.35682704          0.9395887</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GTTCCAGTCTGACCAT-1 GTTCTTCCCTCGATGT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.00000000        0.051041443</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GTTGCACGGAGTTTCG-1 GTTGTCGTGTTAGTTG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.00000000        0.010691843</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GTTTCCTGGAGGGTGA-1 GTTTGACCAAATCCTA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.00000000         0.02816690</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GTTTGGCCGCTCAGCG-1 TAAATGAATCCGTTTC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.00000000         0.02729048</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TAACAAAGGGAGAAGC-1 TAACGCTTTGAGAGCG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  0.2676820          0.8199758</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TAACTATCGAAGGTCC-1 TAACTCCATGGAGGCT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.06927563        0.009185039</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TAAGGAACTTGTGGGA-1 TAAGGCAACATAAGAT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  0.0000000         0.02100970</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TAATACACAGTAGTAT-1 TACAAGTCTCGTGCAT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.070187509        1.087159983</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TACCAGCTAGGTTTAA-1 TACCTCACGCTTGTAC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.000000000        0.032087073</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TACGAACACGACTTCA-1 TACGAGAACTTCACGT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  1.6588469         1.81336448</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TACGATGTTGATCATC-1 TACGTGCACTATGCTG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.81355472         0.09544945</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TAGAGCTACGAAGAAC-1 TAGAGTCTAAGCGAAC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.003614811         0.08283557</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TAGCTAAGTCCGGGAG-1 TAGGGTGTTTCAAGAG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  0.0000000         0.48368718</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TAGGTGAGCCCTACTC-1 TAGGTTCGAGTTCGTC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  1.2288895       0.0022455752</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TAGTGCCCTCCAGAGT-1 TAGTTTATTCTTGCTT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  1.2751088         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TATAAATCCACAAGCT-1 TATAAGTGAGGATAGC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.254482846       0.6590518671</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TATACACGCAAAGTAT-1 TATCCATATCATGCGA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.05213384         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TATCGATGATTAAACG-1 TATGCTCCCTACTTAC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.429608195        0.280196219</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TATGGATGTGCTACGC-1 TATGGCCCGGCCTCGC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.04564743         0.96971729</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TATGGGTACGTATCGT-1 TATTCAATTCTAATCC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  0.3010224        0.021014724</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TATTTAGTCTAGATCG-1 TATTTGTTACCCTTTA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.03721373          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TCAAACAACCGCGTCG-1 TCAAACTTAGATTGTT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.057879186          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TCAACACATTGGGTAA-1 TCAACCATGTTCGGGC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.000000000          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TCACAGGTTATTGGGC-1 TCACGCATTGTAGATC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  0.3420926        1.207457348</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TCACGGTCATCGCACA-1 TCAGCAAATGCATCTC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.101237277          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TCAGGGTGTAACGTAA-1 TCAGGTTCTTTGAGAA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.05465357         0.50745272</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TCAGTACTGACCCGCG-1 TCATCCCAGAGGGTGG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.060562822         0.00829113</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TCCAGGCGAGTACGGT-1 TCCCAGCTTTAGTCTG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  0.8725725          1.3111351</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TCCCAGGCTTAGCTAA-1 TCCCGCGTACTCCTGG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                1.069967241          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TCCCGGGTGTGCTGCT-1 TCCCGTCAGTCCCGCA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.40264105         0.01134571</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TCCCTGGCTCGCTGGA-1 TCCGATAATTGCCATA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.624320291        0.008143577</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TCCGATGACTGAGCTC-1 TCCGATGGTGCGACAT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.007205162          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TCCGATTACATTGCCG-1 TCCTCTACGAGATGGC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  0.7396666         0.11081208</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TCCTTTCTTACGCTTA-1 TCGAAATTTAGGACCA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes               0.0071648770          0.4641908</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TCGCATCCCTAAGTGT-1 TCGCCGGTCGATCCGT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes               0.0000000000        0.016320037</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TCGCGTCCAGAAGGTC-1 TCGCTCGATATATTCC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.212854208        0.044063970</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TCGCTGGGCGGATTGT-1 TCGCTGTGCGTAAATC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.07131076        0.009450263</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TCGGAATGCGCTCTGA-1 TCGGAGTACATGAGTA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  1.3101024         0.04690707</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TCGTATAGTGCAATTA-1 TCGTCCGCTGGCGTCT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.00000000       0.2621918011</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TCTACCGTCCACAAGC-1 TCTAGCATCTTCGATG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.00000000         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TCTAGTTATCAGAAGA-1 TCTATCGGTCGCAACA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  0.7384454          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TCTATTACGCTGGCGA-1 TCTCTAATAGCTGGTA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes               5.528371e-21        0.125505142</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TCTGAACCGGTCGGCT-1 TCTTACAGAGGTACCG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.241061919        0.014406095</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TCTTACGGCATCCGAC-1 TCTTCGATACCAATAA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.17271643        0.000000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TCTTGATGCGTAGCGA-1 TCTTGGTAACACCAAA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.000000000        0.022466091</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TGAAACTTATGCAAGC-1 TGACCCACGTTAGACA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.02237459        1.007109564</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TGAGAATGCTTTACCG-1 TGATCTCCGGCGCCAG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.00000000          0.2184026</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TGATTCGTCTATCACT-1 TGCATGGATCGGATCT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.530487097         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TGCCACCTGGCGAAAC-1 TGCCTGATCAAACGAT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.000000000         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TGCGCAAAGCATTTGG-1 TGCGCGATTAACGGAG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.00000000        0.547166694</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TGCGGAGTAAAGGTGC-1 TGCGGCATAGTTCAAC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.01544119         0.00397014</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TGCTGGTTGGACAATT-1 TGGCCAAACTGAAGTA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.668359561         0.04826017</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TGGCCGTATATTGACC-1 TGGCTTTGGGTAGACA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.168959410        0.029205124</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TGGGCACGTTCTATGG-1 TGGGCCACAAGAGCGC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.03093417        0.000000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TGGTTCGTAGCAAAGG-1 TGTAGTGATCTATAAT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.59061767        0.504786748</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TGTCCCGACATAGCAC-1 TGTCCTAAGTCACCGC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.01522810        0.476932026</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TGTGACTACGCCAGTC-1 TGTGTCGCGAGTTGCA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.009274210        0.027750384</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TGTTTCGGTACTTCTC-1 TTAACCAACCCTCCCT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.00000000         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TTAAGCGCCTGACCCA-1 TTAATCAGTACGTCAG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.250520555        0.000000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TTATATTTGGCAATCC-1 TTATCTGTATCATAAC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.109310625        0.115234554</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TTATGACAAACTGGAT-1 TTCAAAGTCTCTAGCC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.11661972        0.043570708</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TTCAACGACCCGACCG-1 TTCAAGCCGAGCTGAG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.167447645         0.02775036</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TTCGACGGGAAGGGCG-1 TTCTACTTGCGAGGGC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  0.0000000         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TTCTTAGTGGCTCAGA-1 TTCTTGTAACCTAATG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.027289447         0.74844192</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TTGCACGGAGCAGCAC-1 TTGCTGAAGGAACCAC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.024420928          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TTGCTGATCATGTTCG-1 TTGTTCAGTGTGCTAC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  1.0696675        0.062399788</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TCCTTCAGTGGTCGAA-1 TGCGGTGAAATTTCAT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.003253058       0.0050632943</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TTGAAGAATTCCCAGG-1 TTGTAATCCGTACTCG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                  0.8663063          0.8067295</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TGGAGTGATGCGATGA-1 TTCGTACTCCAGAACG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.48295622          1.5761640</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GTAGACGTCGTTACAT-1 TATCCTGCATGGGAAT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.01761387         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TGCAGGATCGGCAAAG-1 TTGGCTCGCATGAGAC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.000000000        0.121120888</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TGGAAGGATAAAGATG-1 TTGAATATGGACTTTC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.05876085        0.022262652</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TTGATCTAACTTTGTC-1 TAATATTGAAATTCGC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.61084537         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TTACCATTGATTACCC-1 TGGAAGACGAACACCA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.73121309        0.006558807</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                GTCGTCAATTATAAGG-1 TTCTAGGCCAATTGTG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.003008829         0.36809894</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TCCCAAAGACGAAGGA-1 TTCTTAGTGAACGGTG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.35611173         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TTACATCGTGGCCTGG-1 TGGGAAATGCCTTTCC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes               0.0361340653          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TCCACAATGGTTTACG-1 TTACAACTACGCATCC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.43412660        0.176565319</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TCTATCATGCAGTTAC-1 TTCGCACTCGCGTGCT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.02338797         0.01725365</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TTGGGACACTGCCCGC-1 TGATCGGTTTGACCCT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.00000000           0.000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TTCATGGCGCAACAGG-1 TATTCGTGCCAGAATA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.003573564         0.10574782</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TCATCACTCGAGCTCG-1 TTGTGGCCCTGACAGT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.00000000         0.02522893</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TTGTATCACACAGAAT-1 TTAATTTCAGACGCGG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.04258455        0.000000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TTATCCAATCGAACTC-1 TTAGCAACATGGATGT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.011880410       2.368396e-21</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TGTTCTTCCATTGACT-1 TGATTTCCTCCTGACG-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.67168980        0.026787307</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TTGGGCGGCGGTTGCC-1 TTGTCGTTCAGTTACC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.022604372         0.06890995</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TTCCTCGAGGGTGTCT-1 TTGATTATGCAGATGA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.39008798         0.46270805</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TTGCTCCCATACCGGA-1 TTATTAGGGAAGCATC-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes               0.0002049505         0.00000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TTGGATTGGGTACCAC-1 TGTCTACAGTTTCTGT-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                0.021740316          0.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                TTAATGTAGACCAGGT-1 TGCAAGAATGACGTAA-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Astrocytes--Astrocytes                 0.00000000           0.000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [ reached getOption("max.print") -- omitted 15 rows ]</span>
 </code></pre></div>
     </div>
   </div>

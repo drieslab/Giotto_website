@@ -392,107 +392,90 @@ each node (cell) in the spatial network.</p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path was provided,</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  but a giotto python environment was found and</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  will be used</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> a giotto python environment was found</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/Users/yuanlab/Library/r-miniconda/envs/giotto_env/bin/pythonw"</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">cellProximityEnrichment</span><span class="op">(</span><span class="va">g</span>, cluster_column <span class="op">=</span> <span class="st">"leiden_clus"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $raw_sim_table</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Index: &lt;unified_int&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        unified_int type_int    round    V1     orig</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             &lt;char&gt;   &lt;char&gt;   &lt;char&gt; &lt;num&gt;   &lt;char&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     1:        3--3     homo original   128 original</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     2:        1--3   hetero original   168 original</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     3:        3--6   hetero original    32 original</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     4:        1--2   hetero original    83 original</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     5:        2--2     homo original   297 original</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     1:        1--5   hetero original    91 original</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     2:        1--1     homo original   305 original</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     3:        1--3   hetero original   208 original</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     4:        2--2     homo original   287 original</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     5:        4--4     homo original   220 original</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    ---                                             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 46022:        5--8   hetero   sim927     0 original</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 46023:        5--8   hetero   sim930     0 original</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 46024:        6--8   hetero   sim950     0 original</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 46025:        7--8   hetero   sim961     0 original</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 46026:        4--8   hetero   sim963     0 original</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32020:        3--7   hetero   sim999     0 original</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32021:        2--3   hetero  sim1000     0 original</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32022:        2--4   hetero  sim1000     0 original</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32023:        2--7   hetero  sim1000     0 original</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32024:        3--7   hetero  sim1000     0 original</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $enrichm_res</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     unified_int type_int original simulations     enrichm p_higher_orig</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>          &lt;fctr&gt;   &lt;char&gt;    &lt;num&gt;       &lt;num&gt;       &lt;num&gt;         &lt;num&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1:        7--7     homo       65       9.094  2.70896803         0.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  2:        6--6     homo      105      16.878  2.56780701         0.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3:        5--5     homo      121      20.678  2.49257758         0.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  4:        4--4     homo      107      23.059  2.16638273         0.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  5:        2--2     homo      297      67.846  2.11386759         0.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  6:        8--8     homo        3       0.168  1.77595973         0.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  7:        4--5   hetero      137      43.688  1.62670888         0.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  8:        3--3     homo      128      45.954  1.45805109         0.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  9:        1--8   hetero       23       8.470  1.34159808         0.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10:        3--7   hetero       99      40.568  1.26645476         0.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11:        1--1     homo      224     102.937  1.11421568         0.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12:        1--3   hetero      168     137.952  0.28243665         0.001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13:        1--6   hetero       80      83.394 -0.05921853         0.692</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14:        2--8   hetero        5       6.623 -0.34539638         0.808</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15:        7--8   hetero        0       2.571 -1.83632813         1.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16:        3--6   hetero       32      55.818 -0.78388202         1.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17:        4--6   hetero       20      39.911 -0.96209947         1.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18:        1--2   hetero       83     167.024 -1.00020608         1.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19:        6--8   hetero        0       3.350 -2.12101540         1.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20:        3--8   hetero        1       5.798 -1.76511036         0.997</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21:        5--8   hetero        0       3.711 -2.23603333         1.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22:        4--8   hetero        0       4.141 -2.36204901         1.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23:        1--7   hetero       20      61.010 -1.56211156         1.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24:        1--4   hetero       29      98.163 -1.72483942         1.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25:        6--7   hetero        3      24.975 -2.69905184         1.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26:        3--4   hetero        6      65.457 -3.24699434         1.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27:        2--3   hetero        9     111.922 -3.49725468         1.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28:        1--5   hetero        3      92.113 -4.54091070         1.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29:        2--7   hetero        1      49.632 -4.66197757         1.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30:        5--7   hetero        0      27.183 -4.81675329         1.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31:        4--7   hetero        0      28.873 -4.90077022         1.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32:        2--6   hetero        1      67.441 -5.09678893         1.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 33:        5--6   hetero        0      37.355 -5.26134276         1.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 34:        3--5   hetero        0      61.577 -5.96756059         1.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 35:        2--5   hetero        0      75.017 -6.24825019         1.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 36:        2--4   hetero        0      79.649 -6.33358474         1.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     unified_int type_int original simulations     enrichm p_higher_orig</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     p_lower_orig p.adj_higher p.adj_lower     PI_value int_ranking</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>            &lt;num&gt;        &lt;num&gt;       &lt;num&gt;        &lt;num&gt;       &lt;int&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1:        1.000        0.000       1.000   8.12690410           1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  2:        1.000        0.000       1.000   7.70342102           2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3:        1.000        0.000       1.000   7.47773275           3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  4:        1.000        0.000       1.000   6.49914819           4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  5:        1.000        0.000       1.000   6.34160277           5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  6:        1.000        0.000       1.000   5.32787918           6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  7:        1.000        0.000       1.000   4.88012665           7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  8:        1.000        0.000       1.000   4.37415328           8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  9:        1.000        0.000       1.000   4.02479423           9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10:        1.000        0.000       1.000   3.79936428          10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11:        1.000        0.000       1.000   3.34264703          11</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12:        0.999        0.001       0.999   0.76228804          12</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13:        0.359        0.692       0.359  -0.02627511          13</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14:        0.336        0.808       0.336  -0.16315492          14</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15:        0.062        1.000       0.062  -2.20480473          15</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16:        0.000        1.000       0.000  -2.35164607          16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17:        0.000        1.000       0.000  -2.88629842          17</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18:        0.000        1.000       0.000  -3.00061825          18</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19:        0.031        1.000       0.031  -3.17059992          19</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20:        0.013        0.997       0.013  -3.27228861          20</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21:        0.020        1.000       0.020  -3.75157358          21</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22:        0.011        1.000       0.011  -4.53706804          22</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23:        0.000        1.000       0.000  -4.68633468          23</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24:        0.000        1.000       0.000  -5.17451825          24</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25:        0.000        1.000       0.000  -8.09715553          25</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26:        0.000        1.000       0.000  -9.74098302          26</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27:        0.000        1.000       0.000 -10.49176404          27</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28:        0.000        1.000       0.000 -13.62273210          28</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29:        0.000        1.000       0.000 -13.98593270          29</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30:        0.000        1.000       0.000 -14.45025986          30</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31:        0.000        1.000       0.000 -14.70231067          31</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32:        0.000        1.000       0.000 -15.29036680          32</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 33:        0.000        1.000       0.000 -15.78402827          33</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 34:        0.000        1.000       0.000 -17.90268177          34</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 35:        0.000        1.000       0.000 -18.74475056          35</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 36:        0.000        1.000       0.000 -19.00075422          36</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     p_lower_orig p.adj_higher p.adj_lower     PI_value int_ranking</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     unified_int type_int original simulations    enrichm p_higher_orig</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          &lt;fctr&gt;   &lt;char&gt;    &lt;num&gt;       &lt;num&gt;      &lt;num&gt;         &lt;num&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  1:        7--7     homo       10       0.400  2.9740048         0.000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  2:        4--4     homo      220      39.441  2.4501558         0.000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  3:        2--2     homo      287      60.358  2.2307454         0.000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  4:        6--6     homo       37       7.949  2.0862010         0.000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  5:        5--5     homo      124      30.389  1.9935971         0.000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  6:        3--3     homo      204      58.244  1.7908830         0.000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  7:        6--7   hetero       12       3.678  1.4745479         0.000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  8:        1--1     homo      305     130.037  1.2235574         0.000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  9:        4--6   hetero       72      35.104  1.0157378         0.000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10:        1--3   hetero      208     174.354  0.2532326         0.001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11:        1--7   hetero       20      14.927  0.3989148         0.085</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12:        5--6   hetero       39      30.993  0.3222437         0.064</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13:        2--5   hetero       73      85.352 -0.2227043         0.942</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14:        1--5   hetero       91     126.419 -0.4698747         1.000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15:        5--7   hetero        2       7.263 -1.4617032         0.997</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16:        1--6   hetero       26      64.350 -1.2752278         1.000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17:        4--7   hetero        1       8.329 -2.2217224         1.000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18:        3--6   hetero       10      42.879 -1.9960271         1.000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19:        3--4   hetero        9      95.910 -3.2766455         1.000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20:        3--5   hetero        7      83.958 -3.4086779         1.000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21:        3--7   hetero        0       9.895 -3.4455943         1.000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22:        2--6   hetero        3      43.098 -3.4626413         1.000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23:        2--7   hetero        0      10.108 -3.4735272         1.000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24:        4--5   hetero        4      69.237 -3.8122312         1.000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25:        1--4   hetero        3     143.602 -5.1759437         1.000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26:        1--2   hetero        3     177.274 -5.4779525         1.000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27:        2--4   hetero        0      97.936 -6.6284237         1.000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28:        2--3   hetero        0     118.516 -6.9010600         1.000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     unified_int type_int original simulations    enrichm p_higher_orig</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     p_lower_orig p.adj_higher p.adj_lower    PI_value int_ranking</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            &lt;num&gt;        &lt;num&gt;       &lt;num&gt;       &lt;num&gt;       &lt;int&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  1:        1.000        0.000       1.000   8.9220144           1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  2:        1.000        0.000       1.000   7.3504674           2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  3:        1.000        0.000       1.000   6.6922363           3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  4:        1.000        0.000       1.000   6.2586031           4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  5:        1.000        0.000       1.000   5.9807914           5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  6:        1.000        0.000       1.000   5.3726489           6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  7:        1.000        0.000       1.000   4.4236436           7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  8:        1.000        0.000       1.000   3.6706723           8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  9:        1.000        0.000       1.000   3.0472133           9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10:        1.000        0.001       1.000   0.6834672          10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11:        0.952        0.085       0.952   0.4250443          11</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12:        0.951        0.064       0.951   0.3825312          12</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13:        0.083        0.942       0.083  -0.2395677          13</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14:        0.000        1.000       0.000  -1.4096240          14</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15:        0.016        0.997       0.016  -2.5865584          15</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16:        0.000        1.000       0.000  -3.8256835          16</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17:        0.003        1.000       0.003  -5.3275571          17</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18:        0.000        1.000       0.000  -5.9880814          18</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19:        0.000        1.000       0.000  -9.8299366          19</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20:        0.000        1.000       0.000 -10.2260337          20</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21:        0.000        1.000       0.000 -10.3367829          21</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22:        0.000        1.000       0.000 -10.3879240          22</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23:        0.000        1.000       0.000 -10.4205815          23</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24:        0.000        1.000       0.000 -11.4366937          24</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25:        0.000        1.000       0.000 -15.5278311          25</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26:        0.000        1.000       0.000 -16.4338575          26</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27:        0.000        1.000       0.000 -19.8852710          27</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28:        0.000        1.000       0.000 -20.7031799          28</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     p_lower_orig p.adj_higher p.adj_lower    PI_value int_ranking</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 </code></pre></div>
     </div>
