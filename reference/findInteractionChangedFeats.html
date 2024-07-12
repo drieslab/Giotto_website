@@ -11,7 +11,7 @@ cell types."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
 
   gtag('config', 'G-2V1K0KPLJC');
 </script></head><body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -33,7 +33,7 @@ cell types."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
       <ul class="nav navbar-nav"><li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Get started
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -61,7 +61,7 @@ cell types."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Examples
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li class="dropdown-submenu">
@@ -189,7 +189,7 @@ cell types."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tutorials
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -263,7 +263,7 @@ cell types."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -282,20 +282,20 @@ cell types."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/drieslab/Giotto/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>findInteractionChangedFeats</h1>
-    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/HEAD/R/spatial_interaction.R" class="external-link"><code>R/spatial_interaction.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/suite/R/spatial_interaction.R" class="external-link"><code>R/spatial_interaction.R</code></a></small>
     <div class="hidden name"><code>findInteractionChangedFeats.Rd</code></div>
     </div>
 
@@ -331,83 +331,83 @@ cell types.</p>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>gobject</dt>
+
+
+<dl><dt id="arg-gobject">gobject<a class="anchor" aria-label="anchor" href="#arg-gobject"></a></dt>
 <dd><p>giotto object</p></dd>
 
 
-<dt>feat_type</dt>
+<dt id="arg-feat-type">feat_type<a class="anchor" aria-label="anchor" href="#arg-feat-type"></a></dt>
 <dd><p>feature type</p></dd>
 
 
-<dt>spat_unit</dt>
+<dt id="arg-spat-unit">spat_unit<a class="anchor" aria-label="anchor" href="#arg-spat-unit"></a></dt>
 <dd><p>spatial unit</p></dd>
 
 
-<dt>expression_values</dt>
+<dt id="arg-expression-values">expression_values<a class="anchor" aria-label="anchor" href="#arg-expression-values"></a></dt>
 <dd><p>expression values to use</p></dd>
 
 
-<dt>selected_feats</dt>
+<dt id="arg-selected-feats">selected_feats<a class="anchor" aria-label="anchor" href="#arg-selected-feats"></a></dt>
 <dd><p>subset of selected features (optional)</p></dd>
 
 
-<dt>cluster_column</dt>
+<dt id="arg-cluster-column">cluster_column<a class="anchor" aria-label="anchor" href="#arg-cluster-column"></a></dt>
 <dd><p>name of column to use for cell types</p></dd>
 
 
-<dt>spatial_network_name</dt>
+<dt id="arg-spatial-network-name">spatial_network_name<a class="anchor" aria-label="anchor" href="#arg-spatial-network-name"></a></dt>
 <dd><p>name of spatial network to use</p></dd>
 
 
-<dt>minimum_unique_cells</dt>
+<dt id="arg-minimum-unique-cells">minimum_unique_cells<a class="anchor" aria-label="anchor" href="#arg-minimum-unique-cells"></a></dt>
 <dd><p>minimum number of target cells required</p></dd>
 
 
-<dt>minimum_unique_int_cells</dt>
+<dt id="arg-minimum-unique-int-cells">minimum_unique_int_cells<a class="anchor" aria-label="anchor" href="#arg-minimum-unique-int-cells"></a></dt>
 <dd><p>minimum number of interacting cells required</p></dd>
 
 
-<dt>diff_test</dt>
+<dt id="arg-diff-test">diff_test<a class="anchor" aria-label="anchor" href="#arg-diff-test"></a></dt>
 <dd><p>which differential expression test</p></dd>
 
 
-<dt>mean_method</dt>
+<dt id="arg-mean-method">mean_method<a class="anchor" aria-label="anchor" href="#arg-mean-method"></a></dt>
 <dd><p>method to use to calculate the mean</p></dd>
 
 
-<dt>offset</dt>
+<dt id="arg-offset">offset<a class="anchor" aria-label="anchor" href="#arg-offset"></a></dt>
 <dd><p>offset value to use when calculating log2 ratio</p></dd>
 
 
-<dt>adjust_method</dt>
+<dt id="arg-adjust-method">adjust_method<a class="anchor" aria-label="anchor" href="#arg-adjust-method"></a></dt>
 <dd><p>which method to adjust p-values</p></dd>
 
 
-<dt>nr_permutations</dt>
+<dt id="arg-nr-permutations">nr_permutations<a class="anchor" aria-label="anchor" href="#arg-nr-permutations"></a></dt>
 <dd><p>number of permutations if diff_test = permutation</p></dd>
 
 
-<dt>exclude_selected_cells_from_test</dt>
+<dt id="arg-exclude-selected-cells-from-test">exclude_selected_cells_from_test<a class="anchor" aria-label="anchor" href="#arg-exclude-selected-cells-from-test"></a></dt>
 <dd><p>exclude interacting cells other cells</p></dd>
 
 
-<dt>do_parallel</dt>
+<dt id="arg-do-parallel">do_parallel<a class="anchor" aria-label="anchor" href="#arg-do-parallel"></a></dt>
 <dd><p>run calculations in parallel with mclapply</p></dd>
 
 
-<dt>set_seed</dt>
+<dt id="arg-set-seed">set_seed<a class="anchor" aria-label="anchor" href="#arg-set-seed"></a></dt>
 <dd><p>set a seed for reproducibility</p></dd>
 
 
-<dt>seed_number</dt>
+<dt id="arg-seed-number">seed_number<a class="anchor" aria-label="anchor" href="#arg-seed-number"></a></dt>
 <dd><p>seed number</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
-<p>icfObject that contains the Interaction Changed differential
+    <p>icfObject that contains the Interaction Changed differential
 feature scores</p>
     </div>
     <div id="details">
@@ -449,25 +449,28 @@ other cell types. The results data.table in the icfObject contains
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> a giotto python environment was found</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/Users/yuanlab/Library/r-miniconda/envs/giotto_env/bin/pythonw"</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path or giotto</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  environment was specified, will check if a</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  default python path is available</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> A default python path was found: /usr/bin/python3 and will be used</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  If this is not the correct python path, either</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. use installGiottoEnvironment() to install</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  a local miniconda python environment along with required modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. provide an existing python path to</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python_path to use your own python path which has all modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  installed</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Set options("giotto.use_conda" = FALSE) if</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python functionalities are not needed</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>This giotto object was created in a newer version of</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 GiottoClass (v0.3.2)</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">findInteractionChangedFeats</span><span class="op">(</span><span class="va">g</span>, cluster_column <span class="op">=</span> <span class="st">"leiden_clus"</span>,</span></span>
 <span class="r-in"><span>selected_feats <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Gna12"</span>, <span class="st">"Ccnd2"</span>, <span class="st">"Btbd17"</span><span class="op">)</span>, nr_permutations <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> An object of class icfObject </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  -dimensions : 117, 20 (icfs, attributes)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;giotto info&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  -values          : normalized</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  -cluster         : leiden_clus</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  -spatial network : Delaunay_network</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;test info&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  -test                   : permutation</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  -p.adj                  : bonferroni</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  -min cells              : 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  -min interacting cells  : 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  -exclude selected cells : TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  -perm                   : 10</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in loadNamespace(x):</span> there is no package called ‘future.apply’</span>
 </code></pre></div>
     </div>
   </div>
@@ -482,15 +485,15 @@ other cell types. The results data.table in the icfObject contains
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer></div>
 
-  
 
 
-  
+
+
 
   </body></html>
 

@@ -9,7 +9,7 @@
 
   gtag('config', 'G-2V1K0KPLJC');
 </script></head><body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -31,7 +31,7 @@
       <ul class="nav navbar-nav"><li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Get started
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -59,7 +59,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Examples
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li class="dropdown-submenu">
@@ -187,7 +187,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tutorials
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -261,7 +261,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -280,20 +280,20 @@
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/drieslab/Giotto/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Compare gene expression between polygon areas</h1>
-    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/HEAD/R/interactivity.R" class="external-link"><code>R/interactivity.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/suite/R/interactivity.R" class="external-link"><code>R/interactivity.R</code></a></small>
     <div class="hidden name"><code>comparePolygonExpression.Rd</code></div>
     </div>
 
@@ -316,45 +316,45 @@
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>gobject</dt>
+
+
+<dl><dt id="arg-gobject">gobject<a class="anchor" aria-label="anchor" href="#arg-gobject"></a></dt>
 <dd><p>A Giotto object</p></dd>
 
 
-<dt>polygon_name</dt>
+<dt id="arg-polygon-name">polygon_name<a class="anchor" aria-label="anchor" href="#arg-polygon-name"></a></dt>
 <dd><p>name of polygon selections</p></dd>
 
 
-<dt>spat_unit</dt>
+<dt id="arg-spat-unit">spat_unit<a class="anchor" aria-label="anchor" href="#arg-spat-unit"></a></dt>
 <dd><p>spatial unit (e.g. "cell")</p></dd>
 
 
-<dt>feat_type</dt>
+<dt id="arg-feat-type">feat_type<a class="anchor" aria-label="anchor" href="#arg-feat-type"></a></dt>
 <dd><p>feature type (e.g. "rna", "dna", "protein")</p></dd>
 
 
-<dt>selected_feats</dt>
+<dt id="arg-selected-feats">selected_feats<a class="anchor" aria-label="anchor" href="#arg-selected-feats"></a></dt>
 <dd><p>vector of selected features to plot</p></dd>
 
 
-<dt>expression_values</dt>
+<dt id="arg-expression-values">expression_values<a class="anchor" aria-label="anchor" href="#arg-expression-values"></a></dt>
 <dd><p>gene expression values to use
 ("normalized", "scaled", "custom")</p></dd>
 
 
-<dt>method</dt>
+<dt id="arg-method">method<a class="anchor" aria-label="anchor" href="#arg-method"></a></dt>
 <dd><p>method to use to detect differentially expressed feats
 ("scran", "gini", "mast")</p></dd>
 
 
-<dt>...</dt>
+<dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
 <dd><p>Arguments passed to <a href="https://rdrr.io/pkg/ComplexHeatmap/man/Heatmap.html" class="external-link">Heatmap</a></p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
-<p>A ComplexHeatmap::Heatmap object</p>
+    <p>A ComplexHeatmap::Heatmap object</p>
     </div>
 
     <div id="ref-examples">
@@ -376,9 +376,24 @@
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> a giotto python environment was found</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/Users/yuanlab/Library/r-miniconda/envs/giotto_env/bin/pythonw"</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path or giotto</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  environment was specified, will check if a</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  default python path is available</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> A default python path was found: /usr/bin/python3 and will be used</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  If this is not the correct python path, either</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. use installGiottoEnvironment() to install</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  a local miniconda python environment along with required modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. provide an existing python path to</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python_path to use your own python path which has all modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  installed</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Set options("giotto.use_conda" = FALSE) if</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python functionalities are not needed</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>This giotto object was created in a newer version of</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 GiottoClass (v0.3.2)</span>
 <span class="r-in"><span><span class="va">my_polygon_coords</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>poly_ID <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="st">"polygon1"</span>, <span class="fl">3</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>sdimx <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">5477</span>, <span class="fl">5959</span>, <span class="fl">4720</span><span class="op">)</span>, sdimy <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">4125</span>, <span class="op">-</span><span class="fl">2808</span>, <span class="op">-</span><span class="fl">5202</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
@@ -421,15 +436,15 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer></div>
 
-  
 
 
-  
+
+
 
   </body></html>
 

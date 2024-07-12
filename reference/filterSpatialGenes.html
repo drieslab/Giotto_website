@@ -9,7 +9,7 @@
 
   gtag('config', 'G-2V1K0KPLJC');
 </script></head><body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -31,7 +31,7 @@
       <ul class="nav navbar-nav"><li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Get started
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -59,7 +59,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Examples
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li class="dropdown-submenu">
@@ -187,7 +187,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tutorials
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -261,7 +261,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -280,20 +280,20 @@
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/drieslab/Giotto/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>filterSpatialGenes</h1>
-    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/HEAD/R/python_hmrf.R" class="external-link"><code>R/python_hmrf.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/suite/R/python_hmrf.R" class="external-link"><code>R/python_hmrf.R</code></a></small>
     <div class="hidden name"><code>filterSpatialGenes.Rd</code></div>
     </div>
 
@@ -315,39 +315,39 @@
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>gobject</dt>
+
+
+<dl><dt id="arg-gobject">gobject<a class="anchor" aria-label="anchor" href="#arg-gobject"></a></dt>
 <dd><p>Giotto object</p></dd>
 
 
-<dt>spat_unit</dt>
+<dt id="arg-spat-unit">spat_unit<a class="anchor" aria-label="anchor" href="#arg-spat-unit"></a></dt>
 <dd><p>spatial unit</p></dd>
 
 
-<dt>feat_type</dt>
+<dt id="arg-feat-type">feat_type<a class="anchor" aria-label="anchor" href="#arg-feat-type"></a></dt>
 <dd><p>feature type</p></dd>
 
 
-<dt>spatial_genes</dt>
+<dt id="arg-spatial-genes">spatial_genes<a class="anchor" aria-label="anchor" href="#arg-spatial-genes"></a></dt>
 <dd><p>input gene list</p></dd>
 
 
-<dt>max</dt>
+<dt id="arg-max">max<a class="anchor" aria-label="anchor" href="#arg-max"></a></dt>
 <dd><p>max number of genes selected from spatial test</p></dd>
 
 
-<dt>name</dt>
+<dt id="arg-name">name<a class="anchor" aria-label="anchor" href="#arg-name"></a></dt>
 <dd><p>name of spatial gene test for the filtering</p></dd>
 
 
-<dt>method</dt>
+<dt id="arg-method">method<a class="anchor" aria-label="anchor" href="#arg-method"></a></dt>
 <dd><p>method of spatial gene selection</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
-<p>list</p>
+    <p>list</p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -374,9 +374,24 @@ also controls the total size of the gene set with given max number.</p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> a giotto python environment was found</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/Users/yuanlab/Library/r-miniconda/envs/giotto_env/bin/pythonw"</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path or giotto</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  environment was specified, will check if a</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  default python path is available</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> A default python path was found: /usr/bin/python3 and will be used</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  If this is not the correct python path, either</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. use installGiottoEnvironment() to install</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  a local miniconda python environment along with required modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. provide an existing python path to</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python_path to use your own python path which has all modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  installed</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Set options("giotto.use_conda" = FALSE) if</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python functionalities are not needed</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>This giotto object was created in a newer version of</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 GiottoClass (v0.3.2)</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">filterSpatialGenes</span><span class="op">(</span><span class="va">g</span>, spatial_genes <span class="op">=</span> <span class="st">"Gm19935"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $genes</span>
@@ -399,15 +414,15 @@ also controls the total size of the gene set with given max number.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer></div>
 
-  
 
 
-  
+
+
 
   </body></html>
 

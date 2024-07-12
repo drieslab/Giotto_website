@@ -9,7 +9,7 @@
 
   gtag('config', 'G-2V1K0KPLJC');
 </script></head><body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -31,7 +31,7 @@
       <ul class="nav navbar-nav"><li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Get started
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -59,7 +59,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Examples
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li class="dropdown-submenu">
@@ -187,7 +187,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tutorials
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -261,7 +261,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -280,20 +280,20 @@
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/drieslab/Giotto/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>clusterCells</h1>
-    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/HEAD/R/clustering.R" class="external-link"><code>R/clustering.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/suite/R/clustering.R" class="external-link"><code>R/clustering.R</code></a></small>
     <div class="hidden name"><code>clusterCells.Rd</code></div>
     </div>
 
@@ -350,167 +350,167 @@
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>gobject</dt>
+
+
+<dl><dt id="arg-gobject">gobject<a class="anchor" aria-label="anchor" href="#arg-gobject"></a></dt>
 <dd><p>giotto object</p></dd>
 
 
-<dt>cluster_method</dt>
+<dt id="arg-cluster-method">cluster_method<a class="anchor" aria-label="anchor" href="#arg-cluster-method"></a></dt>
 <dd><p>community cluster method to use</p></dd>
 
 
-<dt>name</dt>
+<dt id="arg-name">name<a class="anchor" aria-label="anchor" href="#arg-name"></a></dt>
 <dd><p>name for new clustering result</p></dd>
 
 
-<dt>nn_network_to_use</dt>
+<dt id="arg-nn-network-to-use">nn_network_to_use<a class="anchor" aria-label="anchor" href="#arg-nn-network-to-use"></a></dt>
 <dd><p>type of NN network to use (kNN vs sNN)</p></dd>
 
 
-<dt>network_name</dt>
+<dt id="arg-network-name">network_name<a class="anchor" aria-label="anchor" href="#arg-network-name"></a></dt>
 <dd><p>name of NN network to use</p></dd>
 
 
-<dt>pyth_leid_resolution</dt>
+<dt id="arg-pyth-leid-resolution">pyth_leid_resolution<a class="anchor" aria-label="anchor" href="#arg-pyth-leid-resolution"></a></dt>
 <dd><p>resolution for leiden</p></dd>
 
 
-<dt>pyth_leid_weight_col</dt>
+<dt id="arg-pyth-leid-weight-col">pyth_leid_weight_col<a class="anchor" aria-label="anchor" href="#arg-pyth-leid-weight-col"></a></dt>
 <dd><p>column to use for weights</p></dd>
 
 
-<dt>pyth_leid_part_type</dt>
+<dt id="arg-pyth-leid-part-type">pyth_leid_part_type<a class="anchor" aria-label="anchor" href="#arg-pyth-leid-part-type"></a></dt>
 <dd><p>partition type to use</p></dd>
 
 
-<dt>pyth_leid_init_memb</dt>
+<dt id="arg-pyth-leid-init-memb">pyth_leid_init_memb<a class="anchor" aria-label="anchor" href="#arg-pyth-leid-init-memb"></a></dt>
 <dd><p>initial membership</p></dd>
 
 
-<dt>pyth_leid_iterations</dt>
+<dt id="arg-pyth-leid-iterations">pyth_leid_iterations<a class="anchor" aria-label="anchor" href="#arg-pyth-leid-iterations"></a></dt>
 <dd><p>number of iterations</p></dd>
 
 
-<dt>pyth_louv_resolution</dt>
+<dt id="arg-pyth-louv-resolution">pyth_louv_resolution<a class="anchor" aria-label="anchor" href="#arg-pyth-louv-resolution"></a></dt>
 <dd><p>resolution for louvain</p></dd>
 
 
-<dt>pyth_louv_weight_col</dt>
+<dt id="arg-pyth-louv-weight-col">pyth_louv_weight_col<a class="anchor" aria-label="anchor" href="#arg-pyth-louv-weight-col"></a></dt>
 <dd><p>python louvain param: weight column</p></dd>
 
 
-<dt>python_louv_random</dt>
+<dt id="arg-python-louv-random">python_louv_random<a class="anchor" aria-label="anchor" href="#arg-python-louv-random"></a></dt>
 <dd><p>python louvain param: random</p></dd>
 
 
-<dt>python_path</dt>
+<dt id="arg-python-path">python_path<a class="anchor" aria-label="anchor" href="#arg-python-path"></a></dt>
 <dd><p>specify specific path to python if required</p></dd>
 
 
-<dt>louvain_gamma</dt>
+<dt id="arg-louvain-gamma">louvain_gamma<a class="anchor" aria-label="anchor" href="#arg-louvain-gamma"></a></dt>
 <dd><p>louvain param: gamma or resolution</p></dd>
 
 
-<dt>louvain_omega</dt>
+<dt id="arg-louvain-omega">louvain_omega<a class="anchor" aria-label="anchor" href="#arg-louvain-omega"></a></dt>
 <dd><p>louvain param: omega</p></dd>
 
 
-<dt>walk_steps</dt>
+<dt id="arg-walk-steps">walk_steps<a class="anchor" aria-label="anchor" href="#arg-walk-steps"></a></dt>
 <dd><p>randomwalk: number of steps</p></dd>
 
 
-<dt>walk_clusters</dt>
+<dt id="arg-walk-clusters">walk_clusters<a class="anchor" aria-label="anchor" href="#arg-walk-clusters"></a></dt>
 <dd><p>randomwalk: number of clusters</p></dd>
 
 
-<dt>walk_weights</dt>
+<dt id="arg-walk-weights">walk_weights<a class="anchor" aria-label="anchor" href="#arg-walk-weights"></a></dt>
 <dd><p>randomwalk: weight column</p></dd>
 
 
-<dt>sNNclust_k</dt>
+<dt id="arg-snnclust-k">sNNclust_k<a class="anchor" aria-label="anchor" href="#arg-snnclust-k"></a></dt>
 <dd><p>SNNclust: k neighbors to use</p></dd>
 
 
-<dt>sNNclust_eps</dt>
+<dt id="arg-snnclust-eps">sNNclust_eps<a class="anchor" aria-label="anchor" href="#arg-snnclust-eps"></a></dt>
 <dd><p>SNNclust: epsilon</p></dd>
 
 
-<dt>sNNclust_minPts</dt>
+<dt id="arg-snnclust-minpts">sNNclust_minPts<a class="anchor" aria-label="anchor" href="#arg-snnclust-minpts"></a></dt>
 <dd><p>SNNclust: min points</p></dd>
 
 
-<dt>borderPoints</dt>
+<dt id="arg-borderpoints">borderPoints<a class="anchor" aria-label="anchor" href="#arg-borderpoints"></a></dt>
 <dd><p>SNNclust: border points</p></dd>
 
 
-<dt>expression_values</dt>
+<dt id="arg-expression-values">expression_values<a class="anchor" aria-label="anchor" href="#arg-expression-values"></a></dt>
 <dd><p>expression values to use</p></dd>
 
 
-<dt>feats_to_use</dt>
+<dt id="arg-feats-to-use">feats_to_use<a class="anchor" aria-label="anchor" href="#arg-feats-to-use"></a></dt>
 <dd><p>features to use in clustering,</p></dd>
 
 
-<dt>dim_reduction_to_use</dt>
+<dt id="arg-dim-reduction-to-use">dim_reduction_to_use<a class="anchor" aria-label="anchor" href="#arg-dim-reduction-to-use"></a></dt>
 <dd><p>dimension reduction to use</p></dd>
 
 
-<dt>dim_reduction_name</dt>
+<dt id="arg-dim-reduction-name">dim_reduction_name<a class="anchor" aria-label="anchor" href="#arg-dim-reduction-name"></a></dt>
 <dd><p>name of reduction 'pca',</p></dd>
 
 
-<dt>dimensions_to_use</dt>
+<dt id="arg-dimensions-to-use">dimensions_to_use<a class="anchor" aria-label="anchor" href="#arg-dimensions-to-use"></a></dt>
 <dd><p>dimensions to use</p></dd>
 
 
-<dt>distance_method</dt>
+<dt id="arg-distance-method">distance_method<a class="anchor" aria-label="anchor" href="#arg-distance-method"></a></dt>
 <dd><p>distance method</p></dd>
 
 
-<dt>km_centers</dt>
+<dt id="arg-km-centers">km_centers<a class="anchor" aria-label="anchor" href="#arg-km-centers"></a></dt>
 <dd><p>kmeans centers</p></dd>
 
 
-<dt>km_iter_max</dt>
+<dt id="arg-km-iter-max">km_iter_max<a class="anchor" aria-label="anchor" href="#arg-km-iter-max"></a></dt>
 <dd><p>kmeans iterations</p></dd>
 
 
-<dt>km_nstart</dt>
+<dt id="arg-km-nstart">km_nstart<a class="anchor" aria-label="anchor" href="#arg-km-nstart"></a></dt>
 <dd><p>kmeans random starting points</p></dd>
 
 
-<dt>km_algorithm</dt>
+<dt id="arg-km-algorithm">km_algorithm<a class="anchor" aria-label="anchor" href="#arg-km-algorithm"></a></dt>
 <dd><p>kmeans algorithm</p></dd>
 
 
-<dt>hc_agglomeration_method</dt>
+<dt id="arg-hc-agglomeration-method">hc_agglomeration_method<a class="anchor" aria-label="anchor" href="#arg-hc-agglomeration-method"></a></dt>
 <dd><p>hierarchical clustering method</p></dd>
 
 
-<dt>hc_k</dt>
+<dt id="arg-hc-k">hc_k<a class="anchor" aria-label="anchor" href="#arg-hc-k"></a></dt>
 <dd><p>hierachical number of clusters</p></dd>
 
 
-<dt>hc_h</dt>
+<dt id="arg-hc-h">hc_h<a class="anchor" aria-label="anchor" href="#arg-hc-h"></a></dt>
 <dd><p>hierarchical tree cutoff</p></dd>
 
 
-<dt>return_gobject</dt>
+<dt id="arg-return-gobject">return_gobject<a class="anchor" aria-label="anchor" href="#arg-return-gobject"></a></dt>
 <dd><p>boolean: return giotto object (default = TRUE)</p></dd>
 
 
-<dt>set_seed</dt>
+<dt id="arg-set-seed">set_seed<a class="anchor" aria-label="anchor" href="#arg-set-seed"></a></dt>
 <dd><p>set seed</p></dd>
 
 
-<dt>seed_number</dt>
+<dt id="arg-seed-number">seed_number<a class="anchor" aria-label="anchor" href="#arg-seed-number"></a></dt>
 <dd><p>number for seed</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
-<p>giotto object with new clusters appended to cell metadata</p>
+    <p>giotto object with new clusters appended to cell metadata</p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -544,34 +544,28 @@
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> a giotto python environment was found</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/Users/yuanlab/Library/r-miniconda/envs/giotto_env/bin/pythonw"</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path or giotto</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  environment was specified, will check if a</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  default python path is available</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> A default python path was found: /usr/bin/python3 and will be used</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  If this is not the correct python path, either</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. use installGiottoEnvironment() to install</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  a local miniconda python environment along with required modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. provide an existing python path to</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python_path to use your own python path which has all modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  installed</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Set options("giotto.use_conda" = FALSE) if</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python functionalities are not needed</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>This giotto object was created in a newer version of</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 GiottoClass (v0.3.2)</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">clusterCells</span><span class="op">(</span><span class="va">g</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> An object of class giotto </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &gt;Active spat_unit:  cell </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &gt;Active feat_type:  rna </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [SUBCELLULAR INFO]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> polygons      : cell </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [AGGREGATE INFO]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> expression -----------------------</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell][rna] raw normalized scaled</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> spatial locations ----------------</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell] raw</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> spatial networks -----------------</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell] Delaunay_network spatial_network</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> spatial enrichments --------------</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell][rna] cluster_metagene DWLS</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> dim reduction --------------------</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell][rna] pca custom_pca umap custom_umap tsne</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> nearest neighbor networks --------</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell][rna] sNN.pca custom_NN</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> attached images ------------------</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> images      : alignment image </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Use objHistory() to see steps and params used</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in py_run_file_impl(file, local, convert):</span> ModuleNotFoundError: No module named 'igraph'</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> Run `reticulate::py_last_error()` for details.</span>
 </code></pre></div>
     </div>
   </div>
@@ -586,15 +580,15 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer></div>
 
-  
 
 
-  
+
+
 
   </body></html>
 

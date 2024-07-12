@@ -9,7 +9,7 @@
 
   gtag('config', 'G-2V1K0KPLJC');
 </script></head><body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -31,7 +31,7 @@
       <ul class="nav navbar-nav"><li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Get started
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -59,7 +59,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Examples
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li class="dropdown-submenu">
@@ -187,7 +187,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tutorials
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -261,7 +261,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -280,20 +280,20 @@
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/drieslab/Giotto/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>showPolygonSizeInfluence</h1>
-    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/HEAD/R/poly_influence.R" class="external-link"><code>R/poly_influence.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/suite/R/poly_influence.R" class="external-link"><code>R/poly_influence.R</code></a></small>
     <div class="hidden name"><code>showPolygonSizeInfluence.Rd</code></div>
     </div>
 
@@ -315,53 +315,53 @@
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>gobject</dt>
+
+
+<dl><dt id="arg-gobject">gobject<a class="anchor" aria-label="anchor" href="#arg-gobject"></a></dt>
 <dd><p>giotto object</p></dd>
 
 
-<dt>spat_unit</dt>
+<dt id="arg-spat-unit">spat_unit<a class="anchor" aria-label="anchor" href="#arg-spat-unit"></a></dt>
 <dd><p>spatial unit</p></dd>
 
 
-<dt>alt_spat_unit</dt>
-<dd><p>alternaitve spatial unit which represents resized 
+<dt id="arg-alt-spat-unit">alt_spat_unit<a class="anchor" aria-label="anchor" href="#arg-alt-spat-unit"></a></dt>
+<dd><p>alternaitve spatial unit which represents resized
 polygon data</p></dd>
 
 
-<dt>feat_type</dt>
+<dt id="arg-feat-type">feat_type<a class="anchor" aria-label="anchor" href="#arg-feat-type"></a></dt>
 <dd><p>feature type</p></dd>
 
 
-<dt>clus_name</dt>
-<dd><p>name of cluster column in cell_metadata for given spat_unit 
+<dt id="arg-clus-name">clus_name<a class="anchor" aria-label="anchor" href="#arg-clus-name"></a></dt>
+<dd><p>name of cluster column in cell_metadata for given spat_unit
 and alt_spat_unit, i.e. "kmeans"</p></dd>
 
 
-<dt>return_plot</dt>
+<dt id="arg-return-plot">return_plot<a class="anchor" aria-label="anchor" href="#arg-return-plot"></a></dt>
 <dd><p>logical. whether to return the plot object</p></dd>
 
 
-<dt>verbose</dt>
+<dt id="arg-verbose">verbose<a class="anchor" aria-label="anchor" href="#arg-verbose"></a></dt>
 <dd><p>be verbose</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
-<p>giotto object with altered cell_metadata</p>
+    <p>giotto object with altered cell_metadata</p>
     </div>
     <div id="details">
     <h2>Details</h2>
     <p>Compares cell metadata from spat_unit-feat_type pairs as provided.</p>
 <p>New columns, resize_switch and cluster_interaction, will be created within
 cell_metadata for spat_unit-feat_type.</p>
-<p>These new columns will describe if a given cell switched cluster number when 
+<p>These new columns will describe if a given cell switched cluster number when
 resized.
 If the same amount of clusters exist for spat_unit-feat_type and
 alt_spat_unit-feat_type, then clusters are determined to be
 corresponding based on <!-- % overlap in cell_IDs in each cluster. --></p>
-<p>Otherwise, multiple clusters from the spatial unit feature type pair are 
+<p>Otherwise, multiple clusters from the spatial unit feature type pair are
 condensed to align with the smaller number of clusters and ensure overlap.</p>
     </div>
 
@@ -377,15 +377,15 @@ condensed to align with the smaller number of clusters and ensure overlap.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer></div>
 
-  
 
 
-  
+
+
 
   </body></html>
 

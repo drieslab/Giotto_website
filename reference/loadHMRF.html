@@ -9,7 +9,7 @@
 
   gtag('config', 'G-2V1K0KPLJC');
 </script></head><body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -31,7 +31,7 @@
       <ul class="nav navbar-nav"><li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Get started
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -59,7 +59,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Examples
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li class="dropdown-submenu">
@@ -187,7 +187,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tutorials
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -261,7 +261,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -280,20 +280,20 @@
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/drieslab/Giotto/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>loadHMRF</h1>
-    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/HEAD/R/python_hmrf.R" class="external-link"><code>R/python_hmrf.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/suite/R/python_hmrf.R" class="external-link"><code>R/python_hmrf.R</code></a></small>
     <div class="hidden name"><code>loadHMRF.Rd</code></div>
     </div>
 
@@ -313,31 +313,31 @@
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>name_used</dt>
+
+
+<dl><dt id="arg-name-used">name_used<a class="anchor" aria-label="anchor" href="#arg-name-used"></a></dt>
 <dd><p>name of HMRF that was run</p></dd>
 
 
-<dt>output_folder_used</dt>
+<dt id="arg-output-folder-used">output_folder_used<a class="anchor" aria-label="anchor" href="#arg-output-folder-used"></a></dt>
 <dd><p>output folder that was used</p></dd>
 
 
-<dt>k_used</dt>
+<dt id="arg-k-used">k_used<a class="anchor" aria-label="anchor" href="#arg-k-used"></a></dt>
 <dd><p>number of HMRF domains that was tested</p></dd>
 
 
-<dt>betas_used</dt>
+<dt id="arg-betas-used">betas_used<a class="anchor" aria-label="anchor" href="#arg-betas-used"></a></dt>
 <dd><p>betas that were tested</p></dd>
 
 
-<dt>python_path_used</dt>
+<dt id="arg-python-path-used">python_path_used<a class="anchor" aria-label="anchor" href="#arg-python-path-used"></a></dt>
 <dd><p>python path that was used</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
-<p>reloads a previous ran HMRF from doHRMF</p>
+    <p>reloads a previous ran HMRF from doHRMF</p>
     </div>
 
     <div id="ref-examples">
@@ -358,63 +358,34 @@
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> a giotto python environment was found</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/Users/yuanlab/Library/r-miniconda/envs/giotto_env/bin/pythonw"</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path or giotto</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  environment was specified, will check if a</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  default python path is available</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> A default python path was found: /usr/bin/python3 and will be used</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  If this is not the correct python path, either</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. use installGiottoEnvironment() to install</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  a local miniconda python environment along with required modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. provide an existing python path to</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python_path to use your own python path which has all modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  installed</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Set options("giotto.use_conda" = FALSE) if</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python functionalities are not needed</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>This giotto object was created in a newer version of</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 GiottoClass (v0.3.2)</span>
 <span class="r-in"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="doHMRF.html">doHMRF</a></span><span class="op">(</span><span class="va">g</span>, spatial_genes <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Gna12"</span>, <span class="st">"Ccnd2"</span><span class="op">)</span>, output_folder <span class="op">=</span> <span class="va">x</span>,</span></span>
 <span class="r-in"><span>betas <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">2</span>, <span class="fl">50</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>this matrix will be converted to a dense and memory intensive</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 base matrix ...</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> expression_matrix.txt already exists at this location, will be</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>                 overwritten</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> spatial_genes.txt already exists at this location, will be</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>                 overwritten</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> spatial_network.txt already exists at this location, will be</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>                 overwritten</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> spatial_cell_locations.txt already exists at this location,</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>                 will be overwritten</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/yuanlab/Library/r-miniconda/envs/giotto_env/bin/pythonw /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/Giotto/python/reader2.py -l \"/var/folders/wl/055wx0m919n1wvp5t1tl_r2c0000gp/T//RtmpRCiCyr/spatial_cell_locations.txt\" -g \"/var/folders/wl/055wx0m919n1wvp5t1tl_r2c0000gp/T//RtmpRCiCyr/spatial_genes.txt\" -n \"/var/folders/wl/055wx0m919n1wvp5t1tl_r2c0000gp/T//RtmpRCiCyr/spatial_network.txt\" -e \"/var/folders/wl/055wx0m919n1wvp5t1tl_r2c0000gp/T//RtmpRCiCyr/expression_matrix.txt\" -o \"/var/folders/wl/055wx0m919n1wvp5t1tl_r2c0000gp/T//RtmpRCiCyr/result.spatial.zscore\" -a test -k 10 -b 0 2 50 -t 1e-10 -z none -s 100 -i 100"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $name</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "test"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $feat_type</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "rna"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $output_data</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "\"/var/folders/wl/055wx0m919n1wvp5t1tl_r2c0000gp/T//RtmpRCiCyr/result.spatial.zscore\""</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $k</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $betas</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  0  2 50</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $python_path</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/yuanlab/Library/r-miniconda/envs/giotto_env/bin/pythonw"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"class")</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "list"       "HMRFoutput"</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> package smfishHmrf is not yet installed </span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> To install: </span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> remotes::install_bitbucket(repo = 'qzhudfci/smfishhmrf-r', ref='master')see http://spatial.rc.fas.harvard.edu/install.html for more information</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">loadHMRF</span><span class="op">(</span>output_folder_used <span class="op">=</span> <span class="va">x</span>, betas_used <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">2</span>, <span class="fl">50</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>python_path_used <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $name</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "test"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $output_data</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/var/folders/wl/055wx0m919n1wvp5t1tl_r2c0000gp/T//RtmpRCiCyr/result.spatial.zscore"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $k</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $betas</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  0  2 50</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $python_path</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"class")</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "list"       "HMRFoutput"</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in loadHMRF(output_folder_used = x, betas_used = c(0, 2, 50), python_path_used = NULL):</span> doHMRF was not run in this output directory</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
@@ -430,15 +401,15 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer></div>
 
-  
 
 
-  
+
+
 
   </body></html>
 

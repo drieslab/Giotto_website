@@ -9,7 +9,7 @@
 
   gtag('config', 'G-2V1K0KPLJC');
 </script></head><body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -31,7 +31,7 @@
       <ul class="nav navbar-nav"><li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Get started
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -59,7 +59,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Examples
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li class="dropdown-submenu">
@@ -187,7 +187,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tutorials
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -261,7 +261,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -280,20 +280,20 @@
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/drieslab/Giotto/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>spatialAEH</h1>
-    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/HEAD/R/spatial_genes.R" class="external-link"><code>R/spatial_genes.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/suite/R/spatial_genes.R" class="external-link"><code>R/spatial_genes.R</code></a></small>
     <div class="hidden name"><code>spatialAEH.Rd</code></div>
     </div>
 
@@ -319,55 +319,55 @@
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>gobject</dt>
+
+
+<dl><dt id="arg-gobject">gobject<a class="anchor" aria-label="anchor" href="#arg-gobject"></a></dt>
 <dd><p>Giotto object</p></dd>
 
 
-<dt>feat_type</dt>
+<dt id="arg-feat-type">feat_type<a class="anchor" aria-label="anchor" href="#arg-feat-type"></a></dt>
 <dd><p>feature type</p></dd>
 
 
-<dt>spat_unit</dt>
+<dt id="arg-spat-unit">spat_unit<a class="anchor" aria-label="anchor" href="#arg-spat-unit"></a></dt>
 <dd><p>spatial unit</p></dd>
 
 
-<dt>spat_loc_name</dt>
+<dt id="arg-spat-loc-name">spat_loc_name<a class="anchor" aria-label="anchor" href="#arg-spat-loc-name"></a></dt>
 <dd><p>name for spatial locations</p></dd>
 
 
-<dt>SpatialDE_results</dt>
+<dt id="arg-spatialde-results">SpatialDE_results<a class="anchor" aria-label="anchor" href="#arg-spatialde-results"></a></dt>
 <dd><p>results of <code><a href="spatialDE.html">spatialDE</a></code> function</p></dd>
 
 
-<dt>name_pattern</dt>
+<dt id="arg-name-pattern">name_pattern<a class="anchor" aria-label="anchor" href="#arg-name-pattern"></a></dt>
 <dd><p>name for the computed spatial patterns</p></dd>
 
 
-<dt>expression_values</dt>
+<dt id="arg-expression-values">expression_values<a class="anchor" aria-label="anchor" href="#arg-expression-values"></a></dt>
 <dd><p>gene expression values to use</p></dd>
 
 
-<dt>pattern_num</dt>
+<dt id="arg-pattern-num">pattern_num<a class="anchor" aria-label="anchor" href="#arg-pattern-num"></a></dt>
 <dd><p>number of spatial patterns to look for</p></dd>
 
 
-<dt>l</dt>
+<dt id="arg-l">l<a class="anchor" aria-label="anchor" href="#arg-l"></a></dt>
 <dd><p>lengthscale</p></dd>
 
 
-<dt>python_path</dt>
+<dt id="arg-python-path">python_path<a class="anchor" aria-label="anchor" href="#arg-python-path"></a></dt>
 <dd><p>specify specific path to python if required</p></dd>
 
 
-<dt>return_gobject</dt>
+<dt id="arg-return-gobject">return_gobject<a class="anchor" aria-label="anchor" href="#arg-return-gobject"></a></dt>
 <dd><p>show plot</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
-<p>An updated giotto object</p>
+    <p>An updated giotto object</p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -393,13 +393,28 @@ implemented in the ...</p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> a giotto python environment was found</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/Users/yuanlab/Library/r-miniconda/envs/giotto_env/bin/pythonw"</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path or giotto</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  environment was specified, will check if a</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  default python path is available</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> A default python path was found: /usr/bin/python3 and will be used</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  If this is not the correct python path, either</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. use installGiottoEnvironment() to install</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  a local miniconda python environment along with required modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. provide an existing python path to</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python_path to use your own python path which has all modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  installed</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Set options("giotto.use_conda" = FALSE) if</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python functionalities are not needed</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>This giotto object was created in a newer version of</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 GiottoClass (v0.3.2)</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">spatialAEH</span><span class="op">(</span><span class="va">g</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in py_call_impl(callable, call_args$unnamed, call_args$named):</span> KeyError: 'pval'</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span style="color: #555555;">Run `reticulate::py_last_error()` for details.</span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in py_run_file_impl(file, local, convert):</span> ModuleNotFoundError: No module named 'pandas'</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> Run `reticulate::py_last_error()` for details.</span>
 </code></pre></div>
     </div>
   </div>
@@ -414,15 +429,15 @@ implemented in the ...</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer></div>
 
-  
 
 
-  
+
+
 
   </body></html>
 

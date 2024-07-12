@@ -12,7 +12,7 @@ from the cell metadata (pDataDT)."><!-- mathjax --><script src="https://cdnjs.cl
 
   gtag('config', 'G-2V1K0KPLJC');
 </script></head><body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -34,7 +34,7 @@ from the cell metadata (pDataDT)."><!-- mathjax --><script src="https://cdnjs.cl
       <ul class="nav navbar-nav"><li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Get started
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -62,7 +62,7 @@ from the cell metadata (pDataDT)."><!-- mathjax --><script src="https://cdnjs.cl
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Examples
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li class="dropdown-submenu">
@@ -190,7 +190,7 @@ from the cell metadata (pDataDT)."><!-- mathjax --><script src="https://cdnjs.cl
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tutorials
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -264,7 +264,7 @@ from the cell metadata (pDataDT)."><!-- mathjax --><script src="https://cdnjs.cl
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -283,20 +283,20 @@ from the cell metadata (pDataDT)."><!-- mathjax --><script src="https://cdnjs.cl
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/drieslab/Giotto/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>makeSignMatrixDWLS</h1>
-    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/HEAD/R/spatial_enrichment.R" class="external-link"><code>R/spatial_enrichment.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/suite/R/spatial_enrichment.R" class="external-link"><code>R/spatial_enrichment.R</code></a></small>
     <div class="hidden name"><code>makeSignMatrixDWLS.Rd</code></div>
     </div>
 
@@ -323,47 +323,47 @@ from the cell metadata (<code><a href="https://drieslab.github.io/GiottoClass/re
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>gobject</dt>
+
+
+<dl><dt id="arg-gobject">gobject<a class="anchor" aria-label="anchor" href="#arg-gobject"></a></dt>
 <dd><p>Giotto object of single cell</p></dd>
 
 
-<dt>spat_unit</dt>
+<dt id="arg-spat-unit">spat_unit<a class="anchor" aria-label="anchor" href="#arg-spat-unit"></a></dt>
 <dd><p>spatial unit</p></dd>
 
 
-<dt>feat_type</dt>
+<dt id="arg-feat-type">feat_type<a class="anchor" aria-label="anchor" href="#arg-feat-type"></a></dt>
 <dd><p>feature type to use</p></dd>
 
 
-<dt>expression_values</dt>
+<dt id="arg-expression-values">expression_values<a class="anchor" aria-label="anchor" href="#arg-expression-values"></a></dt>
 <dd><p>expression values to use</p></dd>
 
 
-<dt>reverse_log</dt>
+<dt id="arg-reverse-log">reverse_log<a class="anchor" aria-label="anchor" href="#arg-reverse-log"></a></dt>
 <dd><p>reverse a log-normalized expression matrix</p></dd>
 
 
-<dt>log_base</dt>
+<dt id="arg-log-base">log_base<a class="anchor" aria-label="anchor" href="#arg-log-base"></a></dt>
 <dd><p>the logarithm base (default = 2)</p></dd>
 
 
-<dt>sign_gene</dt>
+<dt id="arg-sign-gene">sign_gene<a class="anchor" aria-label="anchor" href="#arg-sign-gene"></a></dt>
 <dd><p>all of DE genes (signature)</p></dd>
 
 
-<dt>cell_type_vector</dt>
+<dt id="arg-cell-type-vector">cell_type_vector<a class="anchor" aria-label="anchor" href="#arg-cell-type-vector"></a></dt>
 <dd><p>vector with cell types (length = ncol(matrix))</p></dd>
 
 
-<dt>cell_type</dt>
+<dt id="arg-cell-type">cell_type<a class="anchor" aria-label="anchor" href="#arg-cell-type"></a></dt>
 <dd><p>deprecated, use <code>cell_type_vector</code></p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
-<p>matrix</p>
+    <p>matrix</p>
     </div>
     <div id="see-also">
     <h2>See also</h2>
@@ -388,9 +388,24 @@ from the cell metadata (<code><a href="https://drieslab.github.io/GiottoClass/re
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> a giotto python environment was found</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/Users/yuanlab/Library/r-miniconda/envs/giotto_env/bin/pythonw"</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path or giotto</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  environment was specified, will check if a</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  default python path is available</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> A default python path was found: /usr/bin/python3 and will be used</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  If this is not the correct python path, either</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. use installGiottoEnvironment() to install</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  a local miniconda python environment along with required modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. provide an existing python path to</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python_path to use your own python path which has all modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  installed</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Set options("giotto.use_conda" = FALSE) if</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python functionalities are not needed</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>This giotto object was created in a newer version of</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 GiottoClass (v0.3.2)</span>
 <span class="r-in"><span><span class="va">sign_gene</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Bcl11b"</span>, <span class="st">"Lmo1"</span>, <span class="st">"F3"</span>, <span class="st">"Cnih3"</span>, <span class="st">"Ppp1r3c"</span>, <span class="st">"Rims2"</span>, <span class="st">"Gfap"</span>,</span></span>
 <span class="r-in"><span><span class="st">"Gjc3"</span>, <span class="st">"Chrna4"</span>, <span class="st">"Prkcd"</span>, <span class="st">"Prr18"</span>, <span class="st">"Grb14"</span>, <span class="st">"Tprn"</span>, <span class="st">"Clic1"</span>, <span class="st">"Olig2"</span>,</span></span>
 <span class="r-in"><span><span class="st">"Hrh3"</span>, <span class="st">"Tmbim1"</span>, <span class="st">"Carhsp1"</span>, <span class="st">"Tmem88b"</span>, <span class="st">"Ugt8a"</span>, <span class="st">"Arpp19"</span>, <span class="st">"Lamp5"</span>,</span></span>
@@ -443,15 +458,15 @@ from the cell metadata (<code><a href="https://drieslab.github.io/GiottoClass/re
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer></div>
 
-  
 
 
-  
+
+
 
   </body></html>
 

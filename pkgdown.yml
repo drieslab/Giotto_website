@@ -1,5 +1,5 @@
 pandoc: 3.1.11
-pkgdown: 2.0.9
+pkgdown: 2.1.0
 pkgdown_sha: ~
 articles:
   bento: bento.html
@@ -49,8 +49,7 @@ articles:
   visualizations: visualizations.html
   vizgen_mouse_brain: vizgen_mouse_brain.html
   xenium_breast_cancer: xenium_breast_cancer.html
-last_built: 2024-06-12T18:05Z
+last_built: 2024-07-12T16:01Z
 urls:
   reference: https://drieslab.github.io/Giotto_website/reference
   article: https://drieslab.github.io/Giotto_website/articles
-

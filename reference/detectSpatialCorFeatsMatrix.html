@@ -9,7 +9,7 @@
 
   gtag('config', 'G-2V1K0KPLJC');
 </script></head><body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -31,7 +31,7 @@
       <ul class="nav navbar-nav"><li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Get started
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -59,7 +59,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Examples
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li class="dropdown-submenu">
@@ -187,7 +187,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tutorials
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -261,7 +261,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -280,20 +280,20 @@
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/drieslab/Giotto/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>detectSpatialCorFeatsMatrix</h1>
-    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/HEAD/R/spatial_genes.R" class="external-link"><code>R/spatial_genes.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/suite/R/spatial_genes.R" class="external-link"><code>R/spatial_genes.R</code></a></small>
     <div class="hidden name"><code>detectSpatialCorFeatsMatrix.Rd</code></div>
     </div>
 
@@ -317,50 +317,48 @@
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>expression_matrix</dt>
+
+
+<dl><dt id="arg-expression-matrix">expression_matrix<a class="anchor" aria-label="anchor" href="#arg-expression-matrix"></a></dt>
 <dd><p>provided expression matrix</p></dd>
 
 
-<dt>method</dt>
+<dt id="arg-method">method<a class="anchor" aria-label="anchor" href="#arg-method"></a></dt>
 <dd><p>method to use for spatial averaging</p></dd>
 
 
-<dt>spatial_network</dt>
+<dt id="arg-spatial-network">spatial_network<a class="anchor" aria-label="anchor" href="#arg-spatial-network"></a></dt>
 <dd><p>provided spatial network</p></dd>
 
 
-<dt>spatial_grid</dt>
+<dt id="arg-spatial-grid">spatial_grid<a class="anchor" aria-label="anchor" href="#arg-spatial-grid"></a></dt>
 <dd><p>provided spatial grid</p></dd>
 
 
-<dt>spatial_locs</dt>
+<dt id="arg-spatial-locs">spatial_locs<a class="anchor" aria-label="anchor" href="#arg-spatial-locs"></a></dt>
 <dd><p>provided spatial locations</p></dd>
 
 
-<dt>subset_feats</dt>
+<dt id="arg-subset-feats">subset_feats<a class="anchor" aria-label="anchor" href="#arg-subset-feats"></a></dt>
 <dd><p>subset of features to use</p></dd>
 
 
-<dt>network_smoothing</dt>
+<dt id="arg-network-smoothing">network_smoothing<a class="anchor" aria-label="anchor" href="#arg-network-smoothing"></a></dt>
 <dd><p>smoothing factor beteen 0 and 1
 (has automatic default, see details)</p></dd>
 
 
-<dt>min_cells_per_grid</dt>
+<dt id="arg-min-cells-per-grid">min_cells_per_grid<a class="anchor" aria-label="anchor" href="#arg-min-cells-per-grid"></a></dt>
 <dd><p>minimum number of cells to consider a grid</p></dd>
 
 
-<dt>cor_method</dt>
+<dt id="arg-cor-method">cor_method<a class="anchor" aria-label="anchor" href="#arg-cor-method"></a></dt>
 <dd><p>correlation method</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
-<p>returns a spatial correlation object: <code>spatCorObject</code></p>
-
-
+    <p>returns a spatial correlation object: <code>spatCorObject</code></p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -401,9 +399,24 @@ contribution from its own expression.</p></li>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> a giotto python environment was found</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/Users/yuanlab/Library/r-miniconda/envs/giotto_env/bin/pythonw"</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path or giotto</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  environment was specified, will check if a</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  default python path is available</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> A default python path was found: /usr/bin/python3 and will be used</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  If this is not the correct python path, either</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. use installGiottoEnvironment() to install</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  a local miniconda python environment along with required modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. provide an existing python path to</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python_path to use your own python path which has all modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  installed</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Set options("giotto.use_conda" = FALSE) if</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python functionalities are not needed</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>This giotto object was created in a newer version of</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 GiottoClass (v0.3.2)</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">detectSpatialCorFeatsMatrix</span><span class="op">(</span>expression_matrix <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/getExpression.html" class="external-link">getExpression</a></span><span class="op">(</span></span></span>
 <span class="r-in"><span><span class="va">g</span>, output <span class="op">=</span> <span class="st">"matrix"</span><span class="op">)</span>, method <span class="op">=</span> <span class="st">"network"</span>,</span></span>
@@ -619,15 +632,15 @@ contribution from its own expression.</p></li>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer></div>
 
-  
 
 
-  
+
+
 
   </body></html>
 

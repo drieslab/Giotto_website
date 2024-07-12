@@ -9,7 +9,7 @@
 
   gtag('config', 'G-2V1K0KPLJC');
 </script></head><body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -31,7 +31,7 @@
       <ul class="nav navbar-nav"><li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Get started
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -59,7 +59,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Examples
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li class="dropdown-submenu">
@@ -187,7 +187,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tutorials
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -261,7 +261,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -280,20 +280,20 @@
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/drieslab/Giotto/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>doHMRF</h1>
-    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/HEAD/R/python_hmrf.R" class="external-link"><code>R/python_hmrf.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/suite/R/python_hmrf.R" class="external-link"><code>R/python_hmrf.R</code></a></small>
     <div class="hidden name"><code>doHMRF.Rd</code></div>
     </div>
 
@@ -329,98 +329,98 @@
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>gobject</dt>
+
+
+<dl><dt id="arg-gobject">gobject<a class="anchor" aria-label="anchor" href="#arg-gobject"></a></dt>
 <dd><p>giotto object</p></dd>
 
 
-<dt>spat_unit</dt>
+<dt id="arg-spat-unit">spat_unit<a class="anchor" aria-label="anchor" href="#arg-spat-unit"></a></dt>
 <dd><p>spatial unit</p></dd>
 
 
-<dt>feat_type</dt>
+<dt id="arg-feat-type">feat_type<a class="anchor" aria-label="anchor" href="#arg-feat-type"></a></dt>
 <dd><p>feature type</p></dd>
 
 
-<dt>expression_values</dt>
+<dt id="arg-expression-values">expression_values<a class="anchor" aria-label="anchor" href="#arg-expression-values"></a></dt>
 <dd><p>expression values to use</p></dd>
 
 
-<dt>spatial_network_name</dt>
+<dt id="arg-spatial-network-name">spatial_network_name<a class="anchor" aria-label="anchor" href="#arg-spatial-network-name"></a></dt>
 <dd><p>name of spatial network to use for HMRF</p></dd>
 
 
-<dt>spat_loc_name</dt>
+<dt id="arg-spat-loc-name">spat_loc_name<a class="anchor" aria-label="anchor" href="#arg-spat-loc-name"></a></dt>
 <dd><p>name of spatial locations</p></dd>
 
 
-<dt>spatial_genes</dt>
+<dt id="arg-spatial-genes">spatial_genes<a class="anchor" aria-label="anchor" href="#arg-spatial-genes"></a></dt>
 <dd><p>spatial genes to use for HMRF</p></dd>
 
 
-<dt>spatial_dimensions</dt>
+<dt id="arg-spatial-dimensions">spatial_dimensions<a class="anchor" aria-label="anchor" href="#arg-spatial-dimensions"></a></dt>
 <dd><p>select spatial dimensions to use, default is all
 possible dimensions</p></dd>
 
 
-<dt>dim_reduction_to_use</dt>
+<dt id="arg-dim-reduction-to-use">dim_reduction_to_use<a class="anchor" aria-label="anchor" href="#arg-dim-reduction-to-use"></a></dt>
 <dd><p>use another dimension reduction set as input</p></dd>
 
 
-<dt>dim_reduction_name</dt>
+<dt id="arg-dim-reduction-name">dim_reduction_name<a class="anchor" aria-label="anchor" href="#arg-dim-reduction-name"></a></dt>
 <dd><p>name of dimension reduction set to use</p></dd>
 
 
-<dt>dimensions_to_use</dt>
+<dt id="arg-dimensions-to-use">dimensions_to_use<a class="anchor" aria-label="anchor" href="#arg-dimensions-to-use"></a></dt>
 <dd><p>number of dimensions to use as input</p></dd>
 
 
-<dt>seed</dt>
+<dt id="arg-seed">seed<a class="anchor" aria-label="anchor" href="#arg-seed"></a></dt>
 <dd><p>seed to fix random number generator
 (for creating initialization of HMRF) (-1 if no fixing)</p></dd>
 
 
-<dt>name</dt>
+<dt id="arg-name">name<a class="anchor" aria-label="anchor" href="#arg-name"></a></dt>
 <dd><p>name of HMRF run</p></dd>
 
 
-<dt>k</dt>
+<dt id="arg-k">k<a class="anchor" aria-label="anchor" href="#arg-k"></a></dt>
 <dd><p>number of HMRF domains</p></dd>
 
 
-<dt>betas</dt>
+<dt id="arg-betas">betas<a class="anchor" aria-label="anchor" href="#arg-betas"></a></dt>
 <dd><p>betas to test for. three numbers: start_beta, beta_increment,
 num_betas e.g. c(0, 2.0, 50)</p></dd>
 
 
-<dt>tolerance</dt>
+<dt id="arg-tolerance">tolerance<a class="anchor" aria-label="anchor" href="#arg-tolerance"></a></dt>
 <dd><p>tolerance</p></dd>
 
 
-<dt>zscore</dt>
+<dt id="arg-zscore">zscore<a class="anchor" aria-label="anchor" href="#arg-zscore"></a></dt>
 <dd><p>zscore</p></dd>
 
 
-<dt>numinit</dt>
+<dt id="arg-numinit">numinit<a class="anchor" aria-label="anchor" href="#arg-numinit"></a></dt>
 <dd><p>number of initializations</p></dd>
 
 
-<dt>python_path</dt>
+<dt id="arg-python-path">python_path<a class="anchor" aria-label="anchor" href="#arg-python-path"></a></dt>
 <dd><p>python path to use</p></dd>
 
 
-<dt>output_folder</dt>
+<dt id="arg-output-folder">output_folder<a class="anchor" aria-label="anchor" href="#arg-output-folder"></a></dt>
 <dd><p>output folder to save results</p></dd>
 
 
-<dt>overwrite_output</dt>
+<dt id="arg-overwrite-output">overwrite_output<a class="anchor" aria-label="anchor" href="#arg-overwrite-output"></a></dt>
 <dd><p>overwrite output folder</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
-<p>Creates a directory with results that can be viewed with
+    <p>Creates a directory with results that can be viewed with
 viewHMRFresults</p>
     </div>
     <div id="details">
@@ -446,9 +446,24 @@ viewHMRFresults</p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> a giotto python environment was found</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/Users/yuanlab/Library/r-miniconda/envs/giotto_env/bin/pythonw"</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path or giotto</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  environment was specified, will check if a</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  default python path is available</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> A default python path was found: /usr/bin/python3 and will be used</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  If this is not the correct python path, either</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. use installGiottoEnvironment() to install</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  a local miniconda python environment along with required modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. provide an existing python path to</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python_path to use your own python path which has all modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  installed</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Set options("giotto.use_conda" = FALSE) if</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python functionalities are not needed</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>This giotto object was created in a newer version of</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 GiottoClass (v0.3.2)</span>
 <span class="r-in"><span><span class="va">spat_genes</span> <span class="op">&lt;-</span> <span class="fu"><a href="binSpect.html">binSpect</a></span><span class="op">(</span><span class="va">g</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> This is the single parameter version of binSpect</span>
@@ -465,37 +480,9 @@ viewHMRFresults</p>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">doHMRF</span><span class="op">(</span><span class="va">g</span>, spatial_genes <span class="op">=</span> <span class="va">spat_genes</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq_len</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span><span class="op">]</span><span class="op">$</span><span class="va">feats</span>,</span></span>
 <span class="r-in"><span>output_folder <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>this matrix will be converted to a dense and memory intensive</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 base matrix ...</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> expression_matrix.txt already exists at this location, will be</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>                 overwritten</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> spatial_genes.txt already exists at this location, will be</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>                 overwritten</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> spatial_network.txt already exists at this location, will be</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>                 overwritten</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> spatial_cell_locations.txt already exists at this location,</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>                 will be overwritten</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/yuanlab/Library/r-miniconda/envs/giotto_env/bin/pythonw /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/Giotto/python/reader2.py -l \"/var/folders/wl/055wx0m919n1wvp5t1tl_r2c0000gp/T//RtmpRCiCyr/spatial_cell_locations.txt\" -g \"/var/folders/wl/055wx0m919n1wvp5t1tl_r2c0000gp/T//RtmpRCiCyr/spatial_genes.txt\" -n \"/var/folders/wl/055wx0m919n1wvp5t1tl_r2c0000gp/T//RtmpRCiCyr/spatial_network.txt\" -e \"/var/folders/wl/055wx0m919n1wvp5t1tl_r2c0000gp/T//RtmpRCiCyr/expression_matrix.txt\" -o \"/var/folders/wl/055wx0m919n1wvp5t1tl_r2c0000gp/T//RtmpRCiCyr/result.spatial.zscore\" -a test -k 10 -b 0 2 50 -t 1e-10 -z none -s 100 -i 100"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $name</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "test"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $feat_type</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "rna"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $output_data</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "\"/var/folders/wl/055wx0m919n1wvp5t1tl_r2c0000gp/T//RtmpRCiCyr/result.spatial.zscore\""</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $k</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $betas</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  0  2 50</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $python_path</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/yuanlab/Library/r-miniconda/envs/giotto_env/bin/pythonw"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"class")</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "list"       "HMRFoutput"</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> package smfishHmrf is not yet installed </span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> To install: </span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> remotes::install_bitbucket(repo = 'qzhudfci/smfishhmrf-r', ref='master')see http://spatial.rc.fas.harvard.edu/install.html for more information</span>
 </code></pre></div>
     </div>
   </div>
@@ -510,15 +497,15 @@ viewHMRFresults</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer></div>
 
-  
 
 
-  
+
+
 
   </body></html>
 

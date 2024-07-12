@@ -9,7 +9,7 @@
 
   gtag('config', 'G-2V1K0KPLJC');
 </script></head><body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -31,7 +31,7 @@
       <ul class="nav navbar-nav"><li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Get started
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -59,7 +59,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Examples
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li class="dropdown-submenu">
@@ -187,7 +187,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tutorials
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -261,7 +261,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -280,20 +280,20 @@
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/drieslab/Giotto/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Spatial feature interpolation</h1>
-    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/HEAD/R/kriging.R" class="external-link"><code>R/kriging.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/suite/R/kriging.R" class="external-link"><code>R/kriging.R</code></a></small>
     <div class="hidden name"><code>interpolateFeature.Rd</code></div>
     </div>
 
@@ -302,7 +302,7 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="co"># S4 method for giotto,missing</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="co"># S4 method for class 'giotto,missing'</span></span>
 <span><span class="fu">interpolateFeature</span><span class="op">(</span></span>
 <span>  <span class="va">x</span>,</span>
 <span>  spat_unit <span class="op">=</span> <span class="cn">NULL</span>,</span>
@@ -319,7 +319,7 @@
 <span>  <span class="va">...</span></span>
 <span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># S4 method for spatLocsObj,data.frame</span></span>
+<span><span class="co"># S4 method for class 'spatLocsObj,data.frame'</span></span>
 <span><span class="fu">interpolateFeature</span><span class="op">(</span></span>
 <span>  <span class="va">x</span>,</span>
 <span>  <span class="va">y</span>,</span>
@@ -335,95 +335,93 @@
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>x</dt>
+
+
+<dl><dt id="arg-x">x<a class="anchor" aria-label="anchor" href="#arg-x"></a></dt>
 <dd><p>object containing coordinates to use interpolation with</p></dd>
 
 
-<dt>spat_unit</dt>
+<dt id="arg-spat-unit">spat_unit<a class="anchor" aria-label="anchor" href="#arg-spat-unit"></a></dt>
 <dd><p>(optional) spatial unit to use</p></dd>
 
 
-<dt>feat_type</dt>
+<dt id="arg-feat-type">feat_type<a class="anchor" aria-label="anchor" href="#arg-feat-type"></a></dt>
 <dd><p>(optional) feature type to use</p></dd>
 
 
-<dt>feats</dt>
+<dt id="arg-feats">feats<a class="anchor" aria-label="anchor" href="#arg-feats"></a></dt>
 <dd><p>character vector. Features to interpolate from the `giotto`
 object</p></dd>
 
 
-<dt>spatvalues_params</dt>
+<dt id="arg-spatvalues-params">spatvalues_params<a class="anchor" aria-label="anchor" href="#arg-spatvalues-params"></a></dt>
 <dd><p>list. Additional list of parameters to pass to
 [spatValues()] to help with data retrieval from `giotto` object</p></dd>
 
 
-<dt>spat_loc_name</dt>
+<dt id="arg-spat-loc-name">spat_loc_name<a class="anchor" aria-label="anchor" href="#arg-spat-loc-name"></a></dt>
 <dd><p>character. Name of spatial locations to use. Values to
 be interpolated are spatially mapped to these locations by cell_ID.</p></dd>
 
 
-<dt>ext</dt>
+<dt id="arg-ext">ext<a class="anchor" aria-label="anchor" href="#arg-ext"></a></dt>
 <dd><p>`SpatExtent`. (optional) extent across which to apply the
 interpolation. If not provided, will default to the extent of the spatLocsObj
 expanded by the value of `buffer`. It can be helpful to set this as the
 extent of any polygons that will be used in aggregation.</p></dd>
 
 
-<dt>buffer</dt>
+<dt id="arg-buffer">buffer<a class="anchor" aria-label="anchor" href="#arg-buffer"></a></dt>
 <dd><p>numeric. (optional) default buffer to expand derived extent by
 if `ext` is not provided.</p></dd>
 
 
-<dt>name_fmt</dt>
+<dt id="arg-name-fmt">name_fmt<a class="anchor" aria-label="anchor" href="#arg-name-fmt"></a></dt>
 <dd><p>character. sprintf fmt to apply to `feats` when naming the
 resulting interpolation `giottoLargeImage` objects. Default is no change.</p></dd>
 
 
-<dt>savedir</dt>
+<dt id="arg-savedir">savedir<a class="anchor" aria-label="anchor" href="#arg-savedir"></a></dt>
 <dd><p>character. Output directory. Default is a new `interp_rasters`
 folder in working directory.</p></dd>
 
 
-<dt>overwrite</dt>
+<dt id="arg-overwrite">overwrite<a class="anchor" aria-label="anchor" href="#arg-overwrite"></a></dt>
 <dd><p>logical. Whether raster outputs should be overwritten if
 the same `filename` is provided.</p></dd>
 
 
-<dt>verbose</dt>
+<dt id="arg-verbose">verbose<a class="anchor" aria-label="anchor" href="#arg-verbose"></a></dt>
 <dd><p>be verbose</p></dd>
 
 
-<dt>...</dt>
+<dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
 <dd><p>additional params to pass downstream methods</p></dd>
 
 
-<dt>y</dt>
+<dt id="arg-y">y<a class="anchor" aria-label="anchor" href="#arg-y"></a></dt>
 <dd><p>data.frame-like. Values for interpolation. Must also have a
 `cell_ID` column and that matches with `x`.</p></dd>
 
 
-<dt>rastersize</dt>
+<dt id="arg-rastersize">rastersize<a class="anchor" aria-label="anchor" href="#arg-rastersize"></a></dt>
 <dd><p>numeric. Length of major axis in px of interpolation
 raster to create.</p></dd>
 
 
-<dt>name</dt>
+<dt id="arg-name">name<a class="anchor" aria-label="anchor" href="#arg-name"></a></dt>
 <dd><p>name of interpolation `giottoLargeImage` to generate</p></dd>
 
 
-<dt>filename</dt>
+<dt id="arg-filename">filename<a class="anchor" aria-label="anchor" href="#arg-filename"></a></dt>
 <dd><p>character. Output filename. Default is \[`name`\].tif within
 the working directory.</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
-<p>`giotto` method returns a `giotto` object with newly made appended
+    <p>`giotto` method returns a `giotto` object with newly made appended
 feature interpolation rasters as `giottoLargeImages`<br></p>
-
-
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -443,15 +441,15 @@ raster that is written to disk as GeoTIFF.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer></div>
 
-  
 
 
-  
+
+
 
   </body></html>
 

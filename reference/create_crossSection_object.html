@@ -9,7 +9,7 @@
 
   gtag('config', 'G-2V1K0KPLJC');
 </script></head><body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -31,7 +31,7 @@
       <ul class="nav navbar-nav"><li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Get started
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -59,7 +59,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Examples
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li class="dropdown-submenu">
@@ -187,7 +187,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tutorials
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -261,7 +261,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -280,20 +280,20 @@
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/drieslab/Giotto/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>create_crossSection_object</h1>
-    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/HEAD/R/cross_section.R" class="external-link"><code>R/cross_section.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/suite/R/cross_section.R" class="external-link"><code>R/cross_section.R</code></a></small>
     <div class="hidden name"><code>create_crossSection_object.Rd</code></div>
     </div>
 
@@ -322,77 +322,77 @@
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>name</dt>
+
+
+<dl><dt id="arg-name">name<a class="anchor" aria-label="anchor" href="#arg-name"></a></dt>
 <dd><p>name of cross section object. (default = cross_section)</p></dd>
 
 
-<dt>method</dt>
+<dt id="arg-method">method<a class="anchor" aria-label="anchor" href="#arg-method"></a></dt>
 <dd><p>method to define the cross section plane.</p></dd>
 
 
-<dt>thickness_unit</dt>
+<dt id="arg-thickness-unit">thickness_unit<a class="anchor" aria-label="anchor" href="#arg-thickness-unit"></a></dt>
 <dd><p>unit of the virtual section thickness. If "cell",
 average size of the observed cells is used as length unit. If "natural",
 the unit of cell location coordinates is used.(default = cell)</p></dd>
 
 
-<dt>slice_thickness</dt>
+<dt id="arg-slice-thickness">slice_thickness<a class="anchor" aria-label="anchor" href="#arg-slice-thickness"></a></dt>
 <dd><p>thickness of slice</p></dd>
 
 
-<dt>cell_distance_estimate_method</dt>
+<dt id="arg-cell-distance-estimate-method">cell_distance_estimate_method<a class="anchor" aria-label="anchor" href="#arg-cell-distance-estimate-method"></a></dt>
 <dd><p>method to estimate average distance
 between neighboring cells. (default = mean)</p></dd>
 
 
-<dt>extend_ratio</dt>
+<dt id="arg-extend-ratio">extend_ratio<a class="anchor" aria-label="anchor" href="#arg-extend-ratio"></a></dt>
 <dd><p>deciding the span of the cross section meshgrid, as a
 ratio of extension compared to the borders of the virtual tissue section.
 (default = 0.2)</p></dd>
 
 
-<dt>plane_equation</dt>
+<dt id="arg-plane-equation">plane_equation<a class="anchor" aria-label="anchor" href="#arg-plane-equation"></a></dt>
 <dd><p>a numerical vector of length 4, in the form of
 c(A,B,C,D), which defines plane Ax+By+Cz=D.</p></dd>
 
 
-<dt>mesh_grid_n</dt>
+<dt id="arg-mesh-grid-n">mesh_grid_n<a class="anchor" aria-label="anchor" href="#arg-mesh-grid-n"></a></dt>
 <dd><p>number of meshgrid lines to generate along both
 directions for the cross section plane.</p></dd>
 
 
-<dt>mesh_obj</dt>
+<dt id="arg-mesh-obj">mesh_obj<a class="anchor" aria-label="anchor" href="#arg-mesh-obj"></a></dt>
 <dd><p>object that stores the cross section meshgrid information.</p></dd>
 
 
-<dt>cell_subset</dt>
+<dt id="arg-cell-subset">cell_subset<a class="anchor" aria-label="anchor" href="#arg-cell-subset"></a></dt>
 <dd><p>cells selected by the cross section</p></dd>
 
 
-<dt>cell_subset_spatial_locations</dt>
+<dt id="arg-cell-subset-spatial-locations">cell_subset_spatial_locations<a class="anchor" aria-label="anchor" href="#arg-cell-subset-spatial-locations"></a></dt>
 <dd><p>locations of cells selected by the
 cross section</p></dd>
 
 
-<dt>cell_subset_projection_locations</dt>
+<dt id="arg-cell-subset-projection-locations">cell_subset_projection_locations<a class="anchor" aria-label="anchor" href="#arg-cell-subset-projection-locations"></a></dt>
 <dd><p>3D projection coordinates of
 selected cells onto the cross section plane</p></dd>
 
 
-<dt>cell_subset_projection_PCA</dt>
+<dt id="arg-cell-subset-projection-pca">cell_subset_projection_PCA<a class="anchor" aria-label="anchor" href="#arg-cell-subset-projection-pca"></a></dt>
 <dd><p>pca of projection coordinates</p></dd>
 
 
-<dt>cell_subset_projection_coords</dt>
+<dt id="arg-cell-subset-projection-coords">cell_subset_projection_coords<a class="anchor" aria-label="anchor" href="#arg-cell-subset-projection-coords"></a></dt>
 <dd><p>2D PCA coordinates of selected cells
 in the cross section plane</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
-<p>crossSection object</p>
+    <p>crossSection object</p>
     </div>
 
   </div>
@@ -407,15 +407,15 @@ in the cross section plane</p></dd>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer></div>
 
-  
 
 
-  
+
+
 
   </body></html>
 

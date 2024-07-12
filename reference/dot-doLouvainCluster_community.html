@@ -10,7 +10,7 @@ from the community module in Python"><!-- mathjax --><script src="https://cdnjs.
 
   gtag('config', 'G-2V1K0KPLJC');
 </script></head><body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -32,7 +32,7 @@ from the community module in Python"><!-- mathjax --><script src="https://cdnjs.
       <ul class="nav navbar-nav"><li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Get started
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -60,7 +60,7 @@ from the community module in Python"><!-- mathjax --><script src="https://cdnjs.
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Examples
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li class="dropdown-submenu">
@@ -188,7 +188,7 @@ from the community module in Python"><!-- mathjax --><script src="https://cdnjs.
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tutorials
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -262,7 +262,7 @@ from the community module in Python"><!-- mathjax --><script src="https://cdnjs.
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -281,20 +281,20 @@ from the community module in Python"><!-- mathjax --><script src="https://cdnjs.
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/drieslab/Giotto/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>doLouvainCluster community</h1>
-    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/HEAD/R/clustering.R" class="external-link"><code>R/clustering.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/suite/R/clustering.R" class="external-link"><code>R/clustering.R</code></a></small>
     <div class="hidden name"><code>dot-doLouvainCluster_community.Rd</code></div>
     </div>
 
@@ -324,70 +324,70 @@ from the community module in Python</p>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>gobject</dt>
+
+
+<dl><dt id="arg-gobject">gobject<a class="anchor" aria-label="anchor" href="#arg-gobject"></a></dt>
 <dd><p>giotto object</p></dd>
 
 
-<dt>spat_unit</dt>
+<dt id="arg-spat-unit">spat_unit<a class="anchor" aria-label="anchor" href="#arg-spat-unit"></a></dt>
 <dd><p>spatial unit (e.g. "cell")</p></dd>
 
 
-<dt>feat_type</dt>
+<dt id="arg-feat-type">feat_type<a class="anchor" aria-label="anchor" href="#arg-feat-type"></a></dt>
 <dd><p>feature type (e.g. "rna", "dna", "protein")</p></dd>
 
 
-<dt>name</dt>
+<dt id="arg-name">name<a class="anchor" aria-label="anchor" href="#arg-name"></a></dt>
 <dd><p>name for cluster, default to "louvain_clus"</p></dd>
 
 
-<dt>nn_network_to_use</dt>
+<dt id="arg-nn-network-to-use">nn_network_to_use<a class="anchor" aria-label="anchor" href="#arg-nn-network-to-use"></a></dt>
 <dd><p>type of NN network to use (kNN vs sNN), default to
 "sNN"</p></dd>
 
 
-<dt>network_name</dt>
+<dt id="arg-network-name">network_name<a class="anchor" aria-label="anchor" href="#arg-network-name"></a></dt>
 <dd><p>name of NN network to use, default to "sNN.pca"</p></dd>
 
 
-<dt>python_path</dt>
+<dt id="arg-python-path">python_path<a class="anchor" aria-label="anchor" href="#arg-python-path"></a></dt>
 <dd><p>specify specific path to python if required</p></dd>
 
 
-<dt>resolution</dt>
+<dt id="arg-resolution">resolution<a class="anchor" aria-label="anchor" href="#arg-resolution"></a></dt>
 <dd><p>resolution, default = 1</p></dd>
 
 
-<dt>weight_col</dt>
+<dt id="arg-weight-col">weight_col<a class="anchor" aria-label="anchor" href="#arg-weight-col"></a></dt>
 <dd><p>weight column to use for edges</p></dd>
 
 
-<dt>louv_random</dt>
+<dt id="arg-louv-random">louv_random<a class="anchor" aria-label="anchor" href="#arg-louv-random"></a></dt>
 <dd><p>Will randomize the node evaluation order and the
 community evaluation order to get different partitions at each call
 (default = FALSE)</p></dd>
 
 
-<dt>return_gobject</dt>
+<dt id="arg-return-gobject">return_gobject<a class="anchor" aria-label="anchor" href="#arg-return-gobject"></a></dt>
 <dd><p>logical. return giotto object (default = TRUE)</p></dd>
 
 
-<dt>set_seed</dt>
+<dt id="arg-set-seed">set_seed<a class="anchor" aria-label="anchor" href="#arg-set-seed"></a></dt>
 <dd><p>set seed (default = FALSE)</p></dd>
 
 
-<dt>seed_number</dt>
+<dt id="arg-seed-number">seed_number<a class="anchor" aria-label="anchor" href="#arg-seed-number"></a></dt>
 <dd><p>number for seed</p></dd>
 
 
-<dt>...</dt>
+<dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
 <dd><p>additional params to pass</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
-<p>giotto object with new clusters appended to cell metadata</p>
+    <p>giotto object with new clusters appended to cell metadata</p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -411,15 +411,15 @@ page for more information.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer></div>
 
-  
 
 
-  
+
+
 
   </body></html>
 

@@ -9,7 +9,7 @@
 
   gtag('config', 'G-2V1K0KPLJC');
 </script></head><body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -31,7 +31,7 @@
       <ul class="nav navbar-nav"><li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Get started
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -59,7 +59,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Examples
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li class="dropdown-submenu">
@@ -187,7 +187,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tutorials
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -261,7 +261,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -280,20 +280,20 @@
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/drieslab/Giotto/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>doHMRF_V2</h1>
-    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/HEAD/R/python_hmrf.R" class="external-link"><code>R/python_hmrf.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/suite/R/python_hmrf.R" class="external-link"><code>R/python_hmrf.R</code></a></small>
     <div class="hidden name"><code>doHMRF_V2.Rd</code></div>
     </div>
 
@@ -307,12 +307,14 @@
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>HMRF_init_obj</dt>
+
+
+<dl><dt id="arg-hmrf-init-obj">HMRF_init_obj<a class="anchor" aria-label="anchor" href="#arg-hmrf-init-obj"></a></dt>
 <dd><p>initialization object list returned from initHMRF()
 function</p></dd>
 
 
-<dt>betas</dt>
+<dt id="arg-betas">betas<a class="anchor" aria-label="anchor" href="#arg-betas"></a></dt>
 <dd><p>beta value of the HMRF model, controlling the smoothness of
 clustering. NULL value of beta will provide default values based on feature
 numbers, otherwise, a vector of three values: initial beta, beta increment,
@@ -321,9 +323,7 @@ and number of betas</p></dd>
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
-<p>HMRF model</p>
+    <p>HMRF model</p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -363,9 +363,24 @@ and model log-likelihood value.</p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> a giotto python environment was found</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/Users/yuanlab/Library/r-miniconda/envs/giotto_env/bin/pythonw"</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path or giotto</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  environment was specified, will check if a</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  default python path is available</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> A default python path was found: /usr/bin/python3 and will be used</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  If this is not the correct python path, either</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. use installGiottoEnvironment() to install</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  a local miniconda python environment along with required modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. provide an existing python path to</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python_path to use your own python path which has all modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  installed</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Set options("giotto.use_conda" = FALSE) if</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python functionalities are not needed</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>This giotto object was created in a newer version of</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 GiottoClass (v0.3.2)</span>
 <span class="r-in"><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu"><a href="binSpect.html">binSpect</a></span><span class="op">(</span><span class="va">g</span>, return_gobject <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> This is the single parameter version of binSpect</span>
@@ -385,34 +400,12 @@ and model log-likelihood value.</p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  'Identification of spatially associated subpopulations by combining</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  scRNAseq and sequential fluorescence in situ hybridization data'</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  Nature biotechnology 36 (12), 1183-1190. 2018</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Choosing spatial genes from the results of binSpectKept 530 top spatial genes for next step</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Computing spatial coexpression modules...</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Sampling spatial genes from coexpression</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>                                 modules...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Sampled 458 genes.Will use 458spatial genes for initialization of HMRF.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Parsing neighborhood graph...</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Kmeans initialization...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Warning, need to add dampening factor to diagonal entries"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.620704</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Warning, need to add dampening factor to diagonal entries"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.8318027</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Warning, need to add dampening factor to diagonal entries"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.7544696</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Warning, need to add dampening factor to diagonal entries"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.8733928</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Warning, need to add dampening factor to diagonal entries"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.8733928</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Warning, need to add dampening factor to diagonal entries"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.6843261</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Warning, need to add dampening factor to diagonal entries"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.7185425</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Warning, need to add dampening factor to diagonal entries"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.8318027</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Warning, need to add dampening factor to diagonal entries"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.7185425</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Warning, need to add dampening factor to diagonal entries"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.9629156</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Done</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> packages 'tidygraph', 'ggraph', 'smfishHmrf', 'graphcoloring' are not yet installed</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-err co"><span class="r-pr">#&gt;</span>  To install:</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> install.packages(c("tidygraph", "ggraph"))</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> devtools::install_bitbucket("qzhudfci/smfishHmrf-r")</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> devtools::install_bitbucket("qzhudfci/graphcoloring")</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">doHMRF_V2</span><span class="op">(</span>HMRF_init_obj <span class="op">=</span> <span class="va">HMRF_init_obj</span>, betas <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">5</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> If used in published research, please cite:</span>
@@ -423,1248 +416,7 @@ and model log-likelihood value.</p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Please find more explanation and instruction of the HMRF function</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     on </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  https://bitbucket.org/qzhudfci/smfishhmrf-r/src/master/TRANSITION.md</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Doing beta=0.000"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Iteration 1: relative error of mean = 2e-16; covariance = 0.08</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Iteration 2: relative error of mean = 0; covariance = 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Doing beta=5.000"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Iteration 1: relative error of mean = 2e-16; covariance = 0.08</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Iteration 2: relative error of mean = 0; covariance = 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $`k=10 b=0.00`</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $`k=10 b=0.00`$prob</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                             [,1]          [,2]          [,3]          [,4]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAAGGGATGTAGCAAG-1  1.000000e+00 4.642096e-103 4.642096e-103 4.642096e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAATGGCATGTCTTGT-1 9.550646e-107 9.550646e-107 9.550646e-107 9.550646e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAATGGTCAATGTGCC-1 1.101307e-104 1.101307e-104 7.480419e-103 1.101307e-104</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAATTAACGGGTAGCT-1 1.107845e-104 1.107845e-104 1.107845e-104 1.107845e-104</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACAACTGGTAGTTGC-1 2.042832e-108 2.042832e-108  4.630680e-76 2.042832e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACAGGAAATCGAATA-1 6.857491e-107 6.857491e-107 6.857491e-107 6.857491e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACAGGATGGGCCGCG-1 2.277508e-108 2.277508e-108  2.431308e-96 2.277508e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCATGGGATCGCTA-1  3.422255e-91 8.000219e-108  1.000000e+00 8.000219e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCCAGAGACGGAGA-1  1.000000e+00 7.430732e-103 7.430732e-103 7.430732e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCGAGCTTGGTCAT-1  1.000000e+00 5.086668e-103  1.251547e-95 5.086668e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCGTTGTGTTTGCT-1 4.784857e-101 1.410647e-106 1.410647e-106 1.410647e-106</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGATAGAAGGGCCG-1 2.301911e-100 1.381802e-107  1.000000e+00 1.381802e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGATATGTCAACTG-1 4.571390e-101 4.900202e-107  1.000000e+00 4.900202e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGCGGTCTCCAGCC-1  1.031224e-64  2.221111e-73 5.227097e-115  1.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGTCAGACTAGTGG-1  6.786413e-80  1.106269e-71 1.251562e-115 5.813959e-101</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTCGATGGCGCAGT-1 3.847360e-117 3.847360e-117 3.609199e-101 3.847360e-117</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTGATATTAGGCCT-1 9.084418e-107 9.084418e-107 9.084418e-107 9.084418e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTGGGTCCCGACGT-1 4.256597e-104 2.346727e-106  1.000000e+00 2.346727e-106</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTTGCCCGTATGCA-1 1.313249e-108 1.313249e-108  5.319394e-82 1.313249e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGAGATGAATCGGTA-1  1.144912e-93 2.662676e-110  3.431398e-94 2.662676e-110</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGCTCGTGCCAAGTC-1  4.288860e-92 1.893179e-107  1.000000e+00 1.893179e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGGAGCGGTTGGTGC-1 8.952234e-105 8.952234e-105  4.070054e-66 8.952234e-105</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGGCGCGTAAAGCTT-1  2.625333e-92  3.832171e-87 4.693185e-116  1.082336e-98</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGGCTGTGCTCATCG-1 2.247096e-105 2.247096e-105 2.247096e-105 2.247096e-105</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGTAGAAGACCGGGT-1  1.000000e+00 5.072580e-103 5.072580e-103 1.082532e-102</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGTAGTGACGCGAGG-1 1.266628e-104 1.266628e-104 1.266628e-104 1.266628e-104</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATCCAAGGGCCTGAG-1 2.646053e-117 2.646053e-117 1.331324e-103 2.646053e-117</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATGACTGTCAGCCGG-1 1.058060e-105 3.322540e-108 3.322540e-108 3.322540e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATGCAACCGGGTACC-1  1.744135e-98 4.716042e-108 2.195687e-104 4.716042e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATGGTTCTCACAAGC-1  1.000000e+00 1.926237e-103 1.926237e-103  3.096096e-91</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATTTGGTTCCAAAGA-1 1.036317e-106 1.036317e-106 1.036317e-106 1.036317e-106</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACAACAGCATGAGCTA-1  1.000000e+00  1.085541e-94 3.961530e-100 1.613724e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACAACGGTCCCTGCGA-1  4.486236e-87 6.310025e-100 2.511451e-114  1.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACAAGGACAAGAGGTT-1 9.629317e-104 9.629317e-104 9.629317e-104 9.629317e-104</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACAAAGACGGGTGG-1  2.545603e-96 1.393853e-108  1.068535e-97 1.393853e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACACTTTCTACACG-1 7.714277e-107 7.714277e-107 7.714277e-107 7.714277e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACCCAGCATGCAGC-1 5.066172e-108 5.066172e-108 5.066172e-108 5.066172e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACCCGAGAAATCCG-1  1.000000e+00 3.364069e-103 3.364069e-103  1.648352e-99</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACCTTAAGTAGGGC-1  1.669785e-95  5.824460e-86 1.987762e-115 1.987762e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACGAGACTCCTTCT-1  1.000000e+00  4.693997e-85 2.743097e-103 2.743097e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACGGGAACTTAGGG-1  1.000000e+00  2.137556e-96 6.255294e-103 6.255294e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACATAATAAGGCGGTG-1  1.987835e-81  6.248760e-97 1.600462e-114  1.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCAAGAACGCGTGTC-1  4.517122e-56  3.160016e-79 2.773386e-115  1.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCACAAGTTTCTATC-1 2.232488e-104 2.232488e-104 2.232488e-104 2.232488e-104</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCCTTCATCTGCGAA-1 5.090948e-107 5.090948e-107 5.090948e-107 5.090948e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCGACTGAGTCCCAC-1  1.000000e+00  2.834957e-82 3.318523e-103 3.318523e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCTAATCGACTTCCT-1 5.051165e-105 5.051165e-105 5.051165e-105 5.051165e-105</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGATCATACATAGAG-1  1.000000e+00 6.571071e-102 8.692621e-103 8.692621e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGCATTCGTGAGTAC-1 3.446281e-107 3.446281e-107  1.000000e+00 3.446281e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGCCAGATGATTTCT-1 9.835752e-107 9.835752e-107 9.835752e-107 9.835752e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGCGGGCCAAGGACA-1 9.899283e-108 1.158549e-111  6.135211e-66 1.158549e-111</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGGAATTTAGCAAAT-1  2.068296e-88 1.695340e-109  1.000000e+00 1.695340e-109</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGTAGATTGCTGATG-1  1.000000e+00  5.413795e-95 4.149666e-103 4.149666e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGTGCGCCTCGTGCA-1 2.285229e-110 3.055532e-117  4.498130e-90 3.055532e-117</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGTTTAGTTGTGATC-1 7.814359e-106 1.539801e-106 1.539801e-106 1.539801e-106</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTACCAGCTCTCTGG-1  4.028645e-87  3.204615e-82 2.654118e-115 8.809175e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTATTCGTCCGTGGT-1 2.609728e-107 1.405489e-107 1.405489e-107 1.405489e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTCAATAAAGGCACG-1  2.591784e-98  1.000000e+00 1.533646e-117 5.069213e-110</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGCCGTCGTAACTC-1 2.369352e-106 2.369352e-106 2.369352e-106 2.369352e-106</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTAGCACTTTGGA-1 2.714078e-108 2.714078e-108 2.714078e-108 2.714078e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTCCAGGATTATA-1 5.350544e-105 5.350544e-105  3.452921e-96 5.350544e-105</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTCTTCTTTAGAA-1  1.000000e+00  9.127780e-93 2.197463e-103 2.197463e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTGCTAGTAGATC-1 2.751839e-117 2.751839e-117  1.206056e-84 2.751839e-117</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTAGTACGACAAGA-1 6.841107e-105 7.945840e-107  1.000000e+00 7.945840e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTCGCCATACGCAC-1 4.343587e-118 4.343587e-118  3.804968e-71 4.343587e-118</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTGGGACCCGGTGG-1 1.459907e-104 1.459907e-104 1.459907e-104 1.459907e-104</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTTCCTATAGCTTC-1  1.000000e+00 7.830017e-103 7.830017e-103 7.830017e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGAACGTGGTACATTC-1 5.178355e-108 5.178355e-108 1.251362e-105 5.178355e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGACCATGGGATACAA-1  5.629238e-58  2.356201e-71 2.590061e-115  1.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGACCCGCCCTCCTCG-1  1.000000e+00 4.789824e-103 4.789824e-103 4.789824e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGACTAGCCTTCCAGA-1 5.369808e-105 5.369808e-105  1.045693e-60 5.369808e-105</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGAGCGGGCTAATCAT-1 3.785048e-107 3.785048e-107 5.495715e-106 3.785048e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGAGCGTACAAGCTCG-1  1.000000e+00 4.428797e-103 4.428797e-103  1.530683e-99</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATAACTTCAGGGCC-1 1.704969e-105 1.704969e-105  3.628274e-98 1.704969e-105</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATACGACTTCATAT-1  9.913142e-86 3.184354e-107  1.000000e+00 3.184354e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATCTCAGGTGTGAT-1  4.615781e-96 1.077204e-108  1.000000e+00 1.077204e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATGACTCGCCCACG-1  1.000000e+00 6.998881e-103 6.998881e-103 6.998881e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCACCAGTACTCACG-1  1.000000e+00 7.144117e-101 3.857819e-103 3.857819e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCACTTAAGGACGCC-1 7.829018e-105 7.829018e-105  1.912723e-92 7.829018e-105</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCATCGTCGATAATT-1  3.869138e-98 2.720408e-108  1.719027e-90 2.720408e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCCCTAAGCGAAGTT-1 8.866720e-105 3.011287e-106 3.011287e-106 3.011287e-106</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCGACATCCCATTCA-1  7.433452e-98 5.138142e-107  1.000000e+00 5.138142e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCGACCAACGATATT-1 3.877621e-108 3.877621e-108 3.877621e-108 3.877621e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCGGGAAGGGTCCAT-1 3.092117e-117 3.092117e-117 4.434721e-110 3.092117e-117</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCTATTTAATCCAAC-1 1.285130e-106 1.285130e-106 1.285130e-106 1.285130e-106</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGACATCGCACGTCG-1  1.000283e-69  5.893302e-84 4.519584e-115  1.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGCCACCCGTTATGA-1 7.978195e-107 7.978195e-107  1.000000e+00 7.978195e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGCCCATTGTACAGG-1  7.791663e-92 9.930684e-109  1.000000e+00 9.930684e-109</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGCTATGGTTAGCTT-1 2.841408e-108 2.841408e-108 2.841408e-108 2.841408e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGGCGTGATCGGCTA-1  2.937791e-69  4.318228e-86 1.010390e-114  1.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGGCTGCAGTTACAG-1 1.085748e-107 1.085748e-107  1.000000e+00 1.085748e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGGTTTAGTTCGGGA-1 3.484806e-108 3.484806e-108  1.242040e-97 3.484806e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTAACCTCCTATTC-1 3.343082e-117 3.343082e-117 1.419500e-102 3.343082e-117</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTACGATATTGCCA-1 2.586632e-107 2.586632e-107 2.586632e-107 2.586632e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTAGGTACAAAGCT-1 3.228486e-106 3.228486e-106 1.364384e-105 3.228486e-106</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTTGAGGCACGCTT-1 2.195243e-117 2.195243e-117  4.441729e-88 2.195243e-117</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTAATGTCTTGCCGC-1 4.159393e-102 5.944677e-108  1.000000e+00 5.944677e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTAGGTAACATACAT-1 1.239195e-107 1.239195e-107 1.239195e-107 1.239195e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTATAATACTAGGCA-1 4.388873e-101  4.281001e-99 3.625065e-115 2.768662e-104</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTCAGCCACCGCCTG-1  8.444910e-96 1.407606e-107  1.000000e+00 1.407606e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                             [,5]          [,6]          [,7]          [,8]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAAGGGATGTAGCAAG-1 4.642096e-103 4.642096e-103 4.642096e-103 4.642096e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAATGGCATGTCTTGT-1 9.550646e-107  1.000000e+00 9.550646e-107 2.797945e-106</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAATGGTCAATGTGCC-1 1.101307e-104 1.101307e-104  1.000000e+00 1.101307e-104</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAATTAACGGGTAGCT-1 1.107845e-104 1.107845e-104  1.000000e+00 1.107845e-104</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACAACTGGTAGTTGC-1 2.042832e-108 2.042832e-108  8.102702e-80 2.042832e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACAGGAAATCGAATA-1 6.857491e-107  1.000000e+00 6.857491e-107  7.731784e-89</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACAGGATGGGCCGCG-1 2.277508e-108 2.277508e-108  3.780782e-80 2.277508e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCATGGGATCGCTA-1 8.000219e-108 8.000219e-108  8.812770e-84  6.003636e-63</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCCAGAGACGGAGA-1 7.430732e-103 7.430732e-103 7.430732e-103 7.430732e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCGAGCTTGGTCAT-1 5.086668e-103 5.086668e-103 5.086668e-103 5.086668e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCGTTGTGTTTGCT-1 1.410647e-106  1.000000e+00 1.410647e-106 1.410647e-106</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGATAGAAGGGCCG-1 1.381802e-107 1.381802e-107  4.487718e-94  5.265803e-72</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGATATGTCAACTG-1 4.900202e-107 4.900202e-107 4.900202e-107  1.200397e-68</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGCGGTCTCCAGCC-1  2.723360e-94 1.931742e-103 5.227097e-115 5.227097e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGTCAGACTAGTGG-1  1.000000e+00 4.280336e-107 1.251562e-115 1.251562e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTCGATGGCGCAGT-1 3.847360e-117 3.847360e-117 3.847360e-117  1.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTGATATTAGGCCT-1 9.084418e-107  1.000000e+00 9.084418e-107 1.631650e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTGGGTCCCGACGT-1 2.346727e-106 2.346727e-106 2.346727e-106 4.707029e-101</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTTGCCCGTATGCA-1 1.313249e-108 1.313249e-108  1.830824e-71 1.313249e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGAGATGAATCGGTA-1 2.662676e-110 2.662676e-110  4.260618e-81 2.662676e-110</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGCTCGTGCCAAGTC-1 1.893179e-107 1.893179e-107  8.094554e-92  6.469139e-87</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGGAGCGGTTGGTGC-1 8.952234e-105 8.952234e-105  1.000000e+00 8.952234e-105</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGGCGCGTAAAGCTT-1  1.000000e+00 4.693185e-116 4.693185e-116 4.693185e-116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGGCTGTGCTCATCG-1 2.247096e-105 2.247096e-105  1.000000e+00 2.247096e-105</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGTAGAAGACCGGGT-1 5.072580e-103 5.072580e-103 5.072580e-103 5.072580e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGTAGTGACGCGAGG-1 1.266628e-104 1.266628e-104  1.000000e+00 1.266628e-104</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATCCAAGGGCCTGAG-1 2.646053e-117  3.434297e-79 2.646053e-117  1.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATGACTGTCAGCCGG-1  1.002697e-98 3.322540e-108 3.322540e-108 3.322540e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATGCAACCGGGTACC-1 4.716042e-108 4.716042e-108 4.716042e-108 4.716042e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATGGTTCTCACAAGC-1 1.926237e-103 1.926237e-103 1.926237e-103 1.926237e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATTTGGTTCCAAAGA-1 1.036317e-106  1.000000e+00 1.036317e-106 1.036317e-106</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACAACAGCATGAGCTA-1 1.613724e-103  3.780379e-96 1.613724e-103 1.613724e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACAACGGTCCCTGCGA-1  2.412511e-96 2.511451e-114 2.511451e-114 2.511451e-114</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACAAGGACAAGAGGTT-1 9.629317e-104 9.629317e-104  1.000000e+00 9.629317e-104</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACAAAGACGGGTGG-1 1.393853e-108 1.393853e-108 4.060844e-101 1.393853e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACACTTTCTACACG-1 7.714277e-107  1.000000e+00 7.714277e-107  2.467276e-88</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACCCAGCATGCAGC-1 1.221781e-100 5.066172e-108 5.066172e-108 5.066172e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACCCGAGAAATCCG-1 3.364069e-103 3.364069e-103 3.364069e-103 3.364069e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACCTTAAGTAGGGC-1  1.000000e+00 1.987762e-115 1.987762e-115 1.987762e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACGAGACTCCTTCT-1 2.743097e-103 2.743097e-103 2.743097e-103 2.743097e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACGGGAACTTAGGG-1 6.255294e-103 6.255294e-103 6.255294e-103 6.255294e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACATAATAAGGCGGTG-1 1.027849e-108 3.948570e-105 1.600462e-114 1.600462e-114</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCAAGAACGCGTGTC-1  1.378672e-99 2.773386e-115 2.773386e-115 2.773386e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCACAAGTTTCTATC-1 2.232488e-104 2.232488e-104  1.000000e+00 2.232488e-104</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCCTTCATCTGCGAA-1 5.090948e-107  1.000000e+00 5.090948e-107 5.606204e-101</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCGACTGAGTCCCAC-1 3.318523e-103 3.318523e-103 3.318523e-103 3.318523e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCTAATCGACTTCCT-1 5.051165e-105 5.051165e-105  1.000000e+00 5.051165e-105</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGATCATACATAGAG-1 8.692621e-103 8.692621e-103 8.692621e-103 8.692621e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGCATTCGTGAGTAC-1 3.446281e-107 3.446281e-107  3.814593e-67 3.446281e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGCCAGATGATTTCT-1 9.835752e-107  1.000000e+00 9.835752e-107  1.734196e-77</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGCGGGCCAAGGACA-1 1.158549e-111 1.158549e-111  1.567238e-51 8.894578e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGGAATTTAGCAAAT-1 1.695340e-109 1.695340e-109  3.075948e-64  1.723286e-50</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGTAGATTGCTGATG-1 4.149666e-103 4.149666e-103 4.149666e-103 4.149666e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGTGCGCCTCGTGCA-1 3.055532e-117 2.152317e-116 3.055532e-117  1.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGTTTAGTTGTGATC-1 1.539801e-106  1.000000e+00 1.539801e-106 2.060705e-104</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTACCAGCTCTCTGG-1  1.000000e+00 3.972484e-113 2.654118e-115 2.654118e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTATTCGTCCGTGGT-1 1.405489e-107  1.000000e+00 1.405489e-107 1.405489e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTCAATAAAGGCACG-1 6.312597e-109 3.656963e-116 1.533646e-117 1.533646e-117</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGCCGTCGTAACTC-1 2.369352e-106  1.000000e+00 2.369352e-106  1.361835e-86</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTAGCACTTTGGA-1 2.714078e-108 2.714078e-108 2.714078e-108 2.714078e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTCCAGGATTATA-1 5.350544e-105 5.350544e-105  1.000000e+00 5.350544e-105</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTCTTCTTTAGAA-1 6.215718e-100 2.197463e-103 2.197463e-103 2.197463e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTGCTAGTAGATC-1 2.751839e-117 8.353350e-108 2.751839e-117  1.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTAGTACGACAAGA-1 7.945840e-107 7.945840e-107 7.785242e-104  1.756706e-78</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTCGCCATACGCAC-1 4.343587e-118 4.343587e-118 4.343587e-118 1.582004e-114</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTGGGACCCGGTGG-1 1.459907e-104 1.459907e-104  1.000000e+00 1.459907e-104</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTTCCTATAGCTTC-1 7.830017e-103 7.830017e-103 7.830017e-103 7.830017e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGAACGTGGTACATTC-1 5.178355e-108 5.178355e-108 5.178355e-108 5.178355e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGACCATGGGATACAA-1  4.649602e-91 2.590061e-115 2.590061e-115 2.590061e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGACCCGCCCTCCTCG-1 1.685805e-101 4.789824e-103 4.789824e-103 4.789824e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGACTAGCCTTCCAGA-1 5.369808e-105 5.369808e-105  1.000000e+00 5.369808e-105</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGAGCGGGCTAATCAT-1 3.785048e-107  1.000000e+00 3.785048e-107  1.532397e-66</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGAGCGTACAAGCTCG-1 4.428797e-103 4.428797e-103 4.428797e-103 4.428797e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATAACTTCAGGGCC-1 1.704969e-105 1.704969e-105  1.000000e+00 1.704969e-105</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATACGACTTCATAT-1 3.184354e-107 3.184354e-107  4.261105e-96  1.008701e-80</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATCTCAGGTGTGAT-1 1.077204e-108 1.077204e-108  1.106180e-76  2.002716e-62</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATGACTCGCCCACG-1 6.998881e-103 6.998881e-103 6.998881e-103 6.998881e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCACCAGTACTCACG-1 1.196903e-101 3.857819e-103 3.857819e-103 3.857819e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCACTTAAGGACGCC-1 7.829018e-105 7.829018e-105  1.000000e+00 7.829018e-105</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCATCGTCGATAATT-1 2.720408e-108 2.720408e-108 2.720408e-108 2.720408e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCCCTAAGCGAAGTT-1 3.011287e-106  1.000000e+00 3.011287e-106  9.558496e-95</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCGACATCCCATTCA-1 5.138142e-107 5.138142e-107 5.138142e-107  1.106676e-74</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCGACCAACGATATT-1  2.114743e-98 3.877621e-108 3.877621e-108 3.877621e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCGGGAAGGGTCCAT-1 3.092117e-117  3.129656e-96 3.092117e-117  1.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCTATTTAATCCAAC-1 1.285130e-106  1.000000e+00 1.285130e-106 1.172918e-104</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGACATCGCACGTCG-1  2.709736e-92 4.519584e-115 4.519584e-115 4.519584e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGCCACCCGTTATGA-1 7.978195e-107 7.978195e-107  5.120870e-72 5.699478e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGCCCATTGTACAGG-1 9.930684e-109 9.930684e-109  4.898008e-93  5.076524e-54</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGCTATGGTTAGCTT-1 2.841408e-108 2.841408e-108 2.841408e-108 2.841408e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGGCGTGATCGGCTA-1  2.817599e-94 8.956256e-113 1.010390e-114 1.010390e-114</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGGCTGCAGTTACAG-1 1.085748e-107 1.085748e-107  5.182010e-72  1.192549e-82</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGGTTTAGTTCGGGA-1 3.484806e-108 3.484806e-108 3.961942e-106 3.484806e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTAACCTCCTATTC-1 3.343082e-117  8.243071e-98 3.343082e-117  1.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTACGATATTGCCA-1 2.586632e-107  1.000000e+00 2.586632e-107 2.586632e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTAGGTACAAAGCT-1 3.228486e-106 3.228486e-106  1.000000e+00 3.228486e-106</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTTGAGGCACGCTT-1 2.195243e-117  5.845884e-99 2.195243e-117  1.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTAATGTCTTGCCGC-1 5.944677e-108 5.944677e-108  2.348874e-91  2.493927e-57</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTAGGTAACATACAT-1 1.239195e-107  1.000000e+00 1.239195e-107  3.032426e-66</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTATAATACTAGGCA-1  1.000000e+00 3.625065e-115 3.625065e-115 3.625065e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTCAGCCACCGCCTG-1 1.407606e-107 1.407606e-107  3.038010e-94  8.993896e-80</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                             [,9]         [,10]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAAGGGATGTAGCAAG-1 4.642096e-103 4.642096e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAATGGCATGTCTTGT-1 9.550646e-107 9.550646e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAATGGTCAATGTGCC-1 7.413386e-102 1.101307e-104</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAATTAACGGGTAGCT-1 1.107845e-104 1.107845e-104</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACAACTGGTAGTTGC-1  1.000000e+00 2.042832e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACAGGAAATCGAATA-1 6.857491e-107 6.857491e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACAGGATGGGCCGCG-1  1.000000e+00 2.277508e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCATGGGATCGCTA-1  4.318744e-85  4.938113e-96</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCCAGAGACGGAGA-1 7.430732e-103 7.430732e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCGAGCTTGGTCAT-1 5.086668e-103 5.086668e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCGTTGTGTTTGCT-1 1.410647e-106 1.410647e-106</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGATAGAAGGGCCG-1  6.038811e-90 1.510881e-104</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGATATGTCAACTG-1  8.001168e-89  5.456530e-79</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGCGGTCTCCAGCC-1 5.227097e-115 5.227097e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGTCAGACTAGTGG-1  2.178689e-88 1.251562e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTCGATGGCGCAGT-1 2.938797e-116 3.847360e-117</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTGATATTAGGCCT-1 9.084418e-107 9.084418e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTGGGTCCCGACGT-1 5.190118e-102 2.346727e-106</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTTGCCCGTATGCA-1  1.000000e+00 1.313249e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGAGATGAATCGGTA-1  1.000000e+00 2.662676e-110</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGCTCGTGCCAAGTC-1  1.564081e-76  6.321937e-83</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGGAGCGGTTGGTGC-1  1.279693e-79 8.952234e-105</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGGCGCGTAAAGCTT-1 1.625695e-100 4.693185e-116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGGCTGTGCTCATCG-1 2.064573e-103 2.247096e-105</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGTAGAAGACCGGGT-1 1.491427e-101 5.072580e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGTAGTGACGCGAGG-1 1.266628e-104 1.266628e-104</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATCCAAGGGCCTGAG-1 2.646053e-117 2.646053e-117</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATGACTGTCAGCCGG-1  1.000000e+00 3.322540e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATGCAACCGGGTACC-1  1.000000e+00 4.716042e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATGGTTCTCACAAGC-1 1.926237e-103 1.926237e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATTTGGTTCCAAAGA-1 1.036317e-106 1.036317e-106</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACAACAGCATGAGCTA-1  1.660805e-97 1.613724e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACAACGGTCCCTGCGA-1 1.267072e-100 2.511451e-114</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACAAGGACAAGAGGTT-1  2.141533e-91 9.629317e-104</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACAAAGACGGGTGG-1  1.000000e+00 1.393853e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACACTTTCTACACG-1 7.714277e-107 7.714277e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACCCAGCATGCAGC-1  1.000000e+00 5.066172e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACCCGAGAAATCCG-1 5.285275e-100 3.364069e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACCTTAAGTAGGGC-1  7.904001e-98 1.987762e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACGAGACTCCTTCT-1  1.720800e-96 2.743097e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACGGGAACTTAGGG-1 2.132878e-100 6.255294e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACATAATAAGGCGGTG-1 1.600462e-114 1.600462e-114</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCAAGAACGCGTGTC-1 3.622283e-110 2.773386e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCACAAGTTTCTATC-1 8.909833e-103 2.232488e-104</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCCTTCATCTGCGAA-1 5.090948e-107 5.090948e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCGACTGAGTCCCAC-1  1.317893e-97 3.318523e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCTAATCGACTTCCT-1  9.447695e-89 5.051165e-105</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGATCATACATAGAG-1 8.692621e-103 8.692621e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGCATTCGTGAGTAC-1  7.706964e-66 3.446281e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGCCAGATGATTTCT-1 9.835752e-107 9.835752e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGCGGGCCAAGGACA-1  1.000000e+00 1.158549e-111</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGGAATTTAGCAAAT-1  1.009530e-80  1.537384e-92</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGTAGATTGCTGATG-1 4.149666e-103 4.149666e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGTGCGCCTCGTGCA-1 1.313994e-103 3.055532e-117</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGTTTAGTTGTGATC-1 1.539801e-106 1.539801e-106</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTACCAGCTCTCTGG-1 3.839336e-102 2.654118e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTATTCGTCCGTGGT-1 1.405489e-107 1.405489e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTCAATAAAGGCACG-1 1.533646e-117 1.533646e-117</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGCCGTCGTAACTC-1 2.369352e-106 2.369352e-106</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTAGCACTTTGGA-1  1.000000e+00 2.714078e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTCCAGGATTATA-1  1.630342e-97 5.350544e-105</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTCTTCTTTAGAA-1  4.315628e-85 2.197463e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTGCTAGTAGATC-1 8.151440e-101 2.751839e-117</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTAGTACGACAAGA-1  9.537796e-93 1.096153e-106</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTCGCCATACGCAC-1 3.105405e-103  1.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTGGGACCCGGTGG-1 3.604928e-100 1.459907e-104</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTTCCTATAGCTTC-1 7.830017e-103 7.830017e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGAACGTGGTACATTC-1  1.000000e+00 5.178355e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGACCATGGGATACAA-1 3.055542e-113 2.590061e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGACCCGCCCTCCTCG-1  1.782506e-92 4.789824e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGACTAGCCTTCCAGA-1  8.438537e-80 5.369808e-105</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGAGCGGGCTAATCAT-1 3.785048e-107 3.785048e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGAGCGTACAAGCTCG-1  1.168759e-95 4.428797e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATAACTTCAGGGCC-1 4.394575e-104 1.704969e-105</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATACGACTTCATAT-1  3.546119e-92 3.184354e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATCTCAGGTGTGAT-1  1.324012e-85  1.932380e-76</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATGACTCGCCCACG-1 1.194492e-100 6.998881e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCACCAGTACTCACG-1 3.857819e-103 3.857819e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCACTTAAGGACGCC-1  6.070214e-85 7.829018e-105</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCATCGTCGATAATT-1  1.000000e+00 2.720408e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCCCTAAGCGAAGTT-1 3.011287e-106 3.011287e-106</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCGACATCCCATTCA-1  6.367585e-92 5.138142e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCGACCAACGATATT-1  1.000000e+00 3.877621e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCGGGAAGGGTCCAT-1 3.092117e-117 3.092117e-117</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCTATTTAATCCAAC-1 1.285130e-106 1.285130e-106</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGACATCGCACGTCG-1 2.263638e-114 4.519584e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGCCACCCGTTATGA-1  1.130390e-80 7.978195e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGCCCATTGTACAGG-1  1.394114e-79  7.449309e-93</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGCTATGGTTAGCTT-1  1.000000e+00 2.841408e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGGCGTGATCGGCTA-1 1.069503e-106 1.010390e-114</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGGCTGCAGTTACAG-1  1.231874e-75 1.085748e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGGTTTAGTTCGGGA-1  1.000000e+00 3.484806e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTAACCTCCTATTC-1 3.343082e-117 3.343082e-117</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTACGATATTGCCA-1 2.586632e-107 2.586632e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTAGGTACAAAGCT-1  8.631460e-92 3.228486e-106</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTTGAGGCACGCTT-1 2.195243e-117 2.195243e-117</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTAATGTCTTGCCGC-1  2.384036e-94 2.692541e-106</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTAGGTAACATACAT-1 1.239195e-107 1.239195e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTATAATACTAGGCA-1 5.095952e-106 3.625065e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTCAGCCACCGCCTG-1  1.294973e-86 1.407606e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [ reached getOption("max.print") -- omitted 524 rows ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $`k=10 b=0.00`$unnormprob</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                             [,1]          [,2]          [,3]          [,4]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAAGGGATGTAGCAAG-1 2.123971e-202 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAATGGCATGTCTTGT-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAATGGTCAATGTGCC-1 9.859677e-305 9.859677e-305 6.696996e-303 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAATTAACGGGTAGCT-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACAACTGGTAGTTGC-1 9.859677e-305 9.859677e-305 2.234986e-272 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACAGGAAATCGAATA-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACAGGATGGGCCGCG-1 9.859677e-305 9.859677e-305 1.052550e-292 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCATGGGATCGCTA-1 4.217675e-288 9.859677e-305 1.232426e-197 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCCAGAGACGGAGA-1 1.326878e-202 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCGAGCTTGGTCAT-1 1.938337e-202 9.859677e-305 2.425920e-297 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCGTTGTGTTTGCT-1 3.344362e-299 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGATAGAAGGGCCG-1 1.642501e-297 9.859677e-305 7.135378e-198 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGATATGTCAACTG-1 9.198075e-299 9.859677e-305 2.012096e-198 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGCGGTCTCCAGCC-1 1.945160e-254 4.189597e-263 9.859677e-305 1.886262e-190</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGTCAGACTAGTGG-1 5.346268e-269 8.715078e-261 9.859677e-305 4.580178e-290</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTCGATGGCGCAGT-1 9.859677e-305 9.859677e-305 9.249339e-289 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTGATATTAGGCCT-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTGGGTCCCGACGT-1 1.788392e-302 9.859677e-305 4.201458e-199 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTTGCCCGTATGCA-1 9.859677e-305 9.859677e-305 3.993722e-278 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGAGATGAATCGGTA-1 4.239518e-288 9.859677e-305 1.270619e-288 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGCTCGTGCCAAGTC-1 2.233638e-289 9.859677e-305 5.208000e-198 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGGAGCGGTTGGTGC-1 9.859677e-305 9.859677e-305 4.482614e-266 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGGCGCGTAAAGCTT-1 5.515430e-281 8.050816e-276 9.859677e-305 2.273826e-287</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGGCTGTGCTCATCG-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGTAGAAGACCGGGT-1 1.943720e-202 9.859677e-305 9.859677e-305 2.104139e-304</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGTAGTGACGCGAGG-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATCCAAGGGCCTGAG-1 9.859677e-305 9.859677e-305 4.960755e-291 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATGACTGTCAGCCGG-1 3.139807e-302 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATGCAACCGGGTACC-1 3.646407e-295 9.859677e-305 4.590452e-301 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATGGTTCTCACAAGC-1 5.118621e-202 9.859677e-305 9.859677e-305 1.584774e-292</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATTTGGTTCCAAAGA-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACAACAGCATGAGCTA-1 6.109890e-202 6.632534e-296 2.420451e-301 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACAACGGTCCCTGCGA-1 1.761246e-277 2.477245e-290 9.859677e-305 3.925888e-191</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACAAGGACAAGAGGTT-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACAAAGACGGGTGG-1 1.800679e-292 9.859677e-305 7.558480e-294 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACACTTTCTACACG-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACCCAGCATGCAGC-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACCCGAGAAATCCG-1 2.930878e-202 9.859677e-305 9.859677e-305 4.831118e-301</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACCTTAAGTAGGGC-1 8.282449e-285 2.889042e-275 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACGAGACTCCTTCT-1 3.594360e-202 1.687191e-286 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACGGGAACTTAGGG-1 1.576213e-202 3.369243e-298 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACATAATAAGGCGGTG-1 1.224610e-271 3.849561e-287 9.859677e-305 6.160520e-191</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCAAGAACGCGTGTC-1 1.605884e-245 1.123419e-268 9.859677e-305 3.555104e-190</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCACAAGTTTCTATC-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCCTTCATCTGCGAA-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCGACTGAGTCCCAC-1 2.971104e-202 8.422952e-284 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCTAATCGACTTCCT-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGATCATACATAGAG-1 1.134258e-202 7.453291e-304 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGCATTCGTGAGTAC-1 9.859677e-305 9.859677e-305 2.860961e-198 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGCCAGATGATTTCT-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGCGGGCCAAGGACA-1 8.424654e-301 9.859677e-305 5.221291e-259 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGGAATTTAGCAAAT-1 1.202870e-283 9.859677e-305 5.815753e-196 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGTAGATTGCTGATG-1 2.376017e-202 1.286327e-296 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGTGCGCCTCGTGCA-1 7.374040e-298 9.859677e-305 1.451469e-277 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGTTTAGTTGTGATC-1 5.003700e-304 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTACCAGCTCTCTGG-1 1.496585e-276 1.190470e-271 9.859677e-305 3.272486e-304</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTATTCGTCCGTGGT-1 1.830756e-304 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTCAATAAAGGCACG-1 1.666235e-285 6.428914e-188 9.859677e-305 3.258953e-297</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGCCGTCGTAACTC-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTAGCACTTTGGA-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTCCAGGATTATA-1 9.859677e-305 9.859677e-305 6.362845e-296 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTCTTCTTTAGAA-1 4.486845e-202 4.095494e-294 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTGCTAGTAGATC-1 9.859677e-305 9.859677e-305 4.321229e-272 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTAGTACGACAAGA-1 8.488857e-303 9.859677e-305 1.240860e-198 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTCGCCATACGCAC-1 9.859677e-305 9.859677e-305 8.637042e-258 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTGGGACCCGGTGG-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTTCCTATAGCTTC-1 1.259215e-202 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGAACGTGGTACATTC-1 9.859677e-305 9.859677e-305 2.382614e-302 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGACCATGGGATACAA-1 2.142902e-247 8.969435e-261 9.859677e-305 3.806736e-190</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGACCCGCCCTCCTCG-1 2.058463e-202 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGACTAGCCTTCCAGA-1 9.859677e-305 9.859677e-305 1.920031e-260 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGAGCGGGCTAATCAT-1 9.859677e-305 9.859677e-305 1.431579e-303 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGAGCGTACAAGCTCG-1 2.226265e-202 9.859677e-305 9.859677e-305 3.407706e-301</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATAACTTCAGGGCC-1 9.859677e-305 9.859677e-305 2.098197e-297 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATACGACTTCATAT-1 3.069395e-283 9.859677e-305 3.096288e-198 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATCTCAGGTGTGAT-1 4.224836e-292 9.859677e-305 9.153025e-197 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATGACTCGCCCACG-1 1.408750e-202 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCACCAGTACTCACG-1 2.555765e-202 1.825868e-302 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCACTTAAGGACGCC-1 9.859677e-305 9.859677e-305 2.408838e-292 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCATCGTCGATAATT-1 1.402306e-294 9.859677e-305 6.230336e-287 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCCCTAAGCGAAGTT-1 2.903177e-303 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCGACATCCCATTCA-1 1.426419e-295 9.859677e-305 1.918919e-198 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCGACCAACGATATT-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCGGGAAGGGTCCAT-1 9.859677e-305 9.859677e-305 1.414077e-297 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCTATTTAATCCAAC-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGACATCGCACGTCG-1 2.182163e-259 1.285651e-273 9.859677e-305 2.181545e-190</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGCCACCCGTTATGA-1 9.859677e-305 9.859677e-305 1.235828e-198 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGCCCATTGTACAGG-1 7.735950e-288 9.859677e-305 9.928497e-197 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGCTATGGTTAGCTT-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGGCGTGATCGGCTA-1 2.866780e-259 4.213850e-276 9.859677e-305 9.758285e-191</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGGCTGCAGTTACAG-1 9.859677e-305 9.859677e-305 9.081000e-198 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGGTTTAGTTCGGGA-1 9.859677e-305 9.859677e-305 3.514144e-294 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTAACCTCCTATTC-1 9.859677e-305 9.859677e-305 4.186499e-290 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTACGATATTGCCA-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTAGGTACAAAGCT-1 9.859677e-305 9.859677e-305 4.166777e-304 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTTGAGGCACGCTT-1 9.859677e-305 9.859677e-305 1.994950e-275 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTAATGTCTTGCCGC-1 6.898654e-299 9.859677e-305 1.658572e-197 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTAGGTAACATACAT-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTATAATACTAGGCA-1 1.193713e-290 1.164373e-288 9.859677e-305 7.530379e-294</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTCAGCCACCGCCTG-1 5.915297e-293 9.859677e-305 7.004570e-198 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                             [,5]          [,6]          [,7]          [,8]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAAGGGATGTAGCAAG-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAATGGCATGTCTTGT-1 9.859677e-305 1.032357e-198 9.859677e-305 2.888478e-304</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAATGGTCAATGTGCC-1 9.859677e-305 9.859677e-305 8.952701e-201 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAATTAACGGGTAGCT-1 9.859677e-305 9.859677e-305 8.899868e-201 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACAACTGGTAGTTGC-1 9.859677e-305 9.859677e-305 3.910748e-276 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACAGGAAATCGAATA-1 9.859677e-305 1.437796e-198 9.859677e-305 1.111673e-286</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACAGGATGGGCCGCG-1 9.859677e-305 9.859677e-305 1.636758e-276 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCATGGGATCGCTA-1 9.859677e-305 9.859677e-305 1.086108e-280 7.399036e-260</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCCAGAGACGGAGA-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCGAGCTTGGTCAT-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCGTTGTGTTTGCT-1 9.859677e-305 6.989471e-199 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGATAGAAGGGCCG-1 9.859677e-305 9.859677e-305 3.202156e-291 3.757350e-269</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGATATGTCAACTG-1 9.859677e-305 9.859677e-305 9.859677e-305 2.415314e-266</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGCGGTCTCCAGCC-1 5.136970e-284 3.643772e-293 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGTCAGACTAGTGG-1 7.877899e-190 3.372006e-296 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTCGATGGCGCAGT-1 9.859677e-305 9.859677e-305 9.859677e-305 2.562712e-188</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTGATATTAGGCCT-1 9.859677e-305 1.085339e-198 9.859677e-305 1.770894e-301</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTGGGTCCCGACGT-1 9.859677e-305 9.859677e-305 9.859677e-305 1.977639e-299</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTTGCCCGTATGCA-1 9.859677e-305 9.859677e-305 1.374555e-267 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGAGATGAATCGGTA-1 9.859677e-305 9.859677e-305 1.577672e-275 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGCTCGTGCCAAGTC-1 9.859677e-305 9.859677e-305 4.215644e-289 3.369128e-284</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGGAGCGGTTGGTGC-1 9.859677e-305 9.859677e-305 1.101365e-200 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGGCGCGTAAAGCTT-1 2.100850e-189 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGGCTGTGCTCATCG-1 9.859677e-305 9.859677e-305 4.387741e-200 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGTAGAAGACCGGGT-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGTAGTGACGCGAGG-1 9.859677e-305 9.859677e-305 7.784194e-201 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATCCAAGGGCCTGAG-1 9.859677e-305 1.279682e-266 9.859677e-305 3.726182e-188</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATGACTGTCAGCCGG-1 2.975515e-295 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATGCAACCGGGTACC-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATGGTTCTCACAAGC-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATTTGGTTCCAAAGA-1 9.859677e-305 9.514149e-199 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACAACAGCATGAGCTA-1 9.859677e-305 2.309770e-297 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACAACGGTCCCTGCGA-1 9.471248e-287 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACAAGGACAAGAGGTT-1 9.859677e-305 9.859677e-305 1.023923e-201 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACAAAGACGGGTGG-1 9.859677e-305 9.859677e-305 2.872513e-297 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACACTTTCTACACG-1 9.859677e-305 1.278108e-198 9.859677e-305 3.153444e-286</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACCCAGCATGCAGC-1 2.377805e-297 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACCCGAGAAATCCG-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACCTTAAGTAGGGC-1 4.960189e-190 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACGAGACTCCTTCT-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACGGGAACTTAGGG-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACATAATAAGGCGGTG-1 6.332084e-299 2.432524e-295 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCAAGAACGCGTGTC-1 4.901322e-289 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCACAAGTTTCTATC-1 9.859677e-305 9.859677e-305 4.416452e-201 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCCTTCATCTGCGAA-1 9.859677e-305 1.936707e-198 9.859677e-305 1.085758e-298</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCGACTGAGTCCCAC-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCTAATCGACTTCCT-1 9.859677e-305 9.859677e-305 1.951961e-200 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGATCATACATAGAG-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGCATTCGTGAGTAC-1 9.859677e-305 9.859677e-305 1.091340e-264 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGCCAGATGATTTCT-1 9.859677e-305 1.002432e-198 9.859677e-305 1.738414e-275</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGCGGGCCAAGGACA-1 9.859677e-305 9.859677e-305 1.333777e-244 7.569614e-300</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGGAATTTAGCAAAT-1 9.859677e-305 9.859677e-305 1.788896e-259 1.002221e-245</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGTAGATTGCTGATG-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGTGCGCCTCGTGCA-1 9.859677e-305 6.945157e-304 9.859677e-305 3.226828e-188</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGTTTAGTTGTGATC-1 9.859677e-305 6.403213e-199 9.859677e-305 1.319513e-302</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTACCAGCTCTCTGG-1 3.714860e-190 1.475722e-302 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTATTCGTCCGTGGT-1 9.859677e-305 7.015120e-198 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTCAATAAAGGCACG-1 4.058314e-296 2.351030e-303 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGCCGTCGTAACTC-1 9.859677e-305 4.161340e-199 9.859677e-305 5.667059e-285</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTAGCACTTTGGA-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTCCAGGATTATA-1 9.859677e-305 9.859677e-305 1.842743e-200 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTCTTCTTTAGAA-1 2.788896e-301 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTGCTAGTAGATC-1 9.859677e-305 2.992957e-295 9.859677e-305 3.582942e-188</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTAGTACGACAAGA-1 9.859677e-305 9.859677e-305 9.660396e-302 2.179826e-276</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTCGCCATACGCAC-1 9.859677e-305 9.859677e-305 9.859677e-305 3.591053e-301</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTGGGACCCGGTGG-1 9.859677e-305 9.859677e-305 6.753634e-201 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTTCCTATAGCTTC-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGAACGTGGTACATTC-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGACCATGGGATACAA-1 1.769981e-280 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGACCCGCCCTCCTCG-1 3.470168e-303 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGACTAGCCTTCCAGA-1 9.859677e-305 9.859677e-305 1.836132e-200 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGAGCGGGCTAATCAT-1 9.859677e-305 2.604901e-198 9.859677e-305 3.991743e-264</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGAGCGTACAAGCTCG-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATAACTTCAGGGCC-1 9.859677e-305 9.859677e-305 5.782907e-200 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATACGACTTCATAT-1 9.859677e-305 9.859677e-305 1.319361e-293 3.123229e-278</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATCTCAGGTGTGAT-1 9.859677e-305 9.859677e-305 1.012489e-272 1.833091e-258</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATGACTCGCCCACG-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCACCAGTACTCACG-1 3.059002e-303 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCACTTAAGGACGCC-1 9.859677e-305 9.859677e-305 1.259376e-200 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCATCGTCGATAATT-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCCCTAAGCGAAGTT-1 9.859677e-305 3.274240e-199 9.859677e-305 3.129681e-293</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCGACATCCCATTCA-1 9.859677e-305 9.859677e-305 9.859677e-305 2.123620e-272</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCGACCAACGATATT-1 5.377184e-295 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCGGGAAGGGTCCAT-1 9.859677e-305 9.979375e-284 9.859677e-305 3.188649e-188</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCTATTTAATCCAAC-1 9.859677e-305 7.672125e-199 9.859677e-305 8.998770e-303</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGACATCGCACGTCG-1 5.911412e-282 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGCCACCCGTTATGA-1 9.859677e-305 9.859677e-305 6.328515e-270 7.043575e-301</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGCCCATTGTACAGG-1 9.859677e-305 9.859677e-305 4.862985e-289 5.040225e-250</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGCTATGGTTAGCTT-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGGCGTGATCGGCTA-1 2.749494e-284 8.739770e-303 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGGCTGCAGTTACAG-1 9.859677e-305 9.859677e-305 4.705783e-269 1.082954e-279</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGGTTTAGTTCGGGA-1 9.859677e-305 9.859677e-305 1.120965e-302 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTAACCTCCTATTC-1 9.859677e-305 2.431110e-285 9.859677e-305 2.949278e-188</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTACGATATTGCCA-1 9.859677e-305 3.811781e-198 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTAGGTACAAAGCT-1 9.859677e-305 9.859677e-305 3.053963e-199 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTTGAGGCACGCTT-1 9.859677e-305 2.625610e-286 9.859677e-305 4.491382e-188</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTAATGTCTTGCCGC-1 9.859677e-305 9.859677e-305 3.895777e-288 4.136358e-254</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTAGGTAACATACAT-1 9.859677e-305 7.956520e-198 9.859677e-305 2.412756e-263</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTATAATACTAGGCA-1 2.719862e-190 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTCAGCCACCGCCTG-1 9.859677e-305 9.859677e-305 2.127995e-291 6.299838e-277</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                             [,9]         [,10]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAAGGGATGTAGCAAG-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAATGGCATGTCTTGT-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAATGGTCAATGTGCC-1 6.636983e-302 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAATTAACGGGTAGCT-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACAACTGGTAGTTGC-1 4.826473e-197 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACAGGAAATCGAATA-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACAGGATGGGCCGCG-1 4.329151e-197 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCATGGGATCGCTA-1 5.322531e-282 6.085858e-293</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCCAGAGACGGAGA-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCGAGCTTGGTCAT-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCGTTGTGTTTGCT-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGATAGAAGGGCCG-1 4.308920e-287 1.078070e-301</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGATATGTCAACTG-1 1.609912e-286 1.097906e-276</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGCGGTCTCCAGCC-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGTCAGACTAGTGG-1 1.716349e-277 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTCGATGGCGCAGT-1 7.531291e-304 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTGATATTAGGCCT-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTGGGTCCCGACGT-1 2.180606e-300 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTTGCCCGTATGCA-1 7.507850e-197 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGAGATGAATCGGTA-1 3.702920e-195 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGCTCGTGCCAAGTC-1 8.145737e-274 3.292465e-280</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGGAGCGGTTGGTGC-1 1.409409e-279 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGGCGCGTAAAGCTT-1 3.415341e-289 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGGCTGTGCTCATCG-1 9.058809e-303 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGTAGAAGACCGGGT-1 2.898917e-303 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGTAGTGACGCGAGG-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATCCAAGGGCCTGAG-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATGACTGTCAGCCGG-1 2.967512e-197 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATGCAACCGGGTACC-1 2.090668e-197 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATGGTTCTCACAAGC-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATTTGGTTCCAAAGA-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACAACAGCATGAGCTA-1 1.014733e-298 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACAACGGTCCCTGCGA-1 4.974381e-291 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACAAGGACAAGAGGTT-1 2.192765e-292 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACAAAGACGGGTGG-1 7.073684e-197 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACACTTTCTACACG-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACCCAGCATGCAGC-1 1.946179e-197 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACCCGAGAAATCCG-1 1.549050e-301 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACCTTAAGTAGGGC-1 3.920534e-287 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACGAGACTCCTTCT-1 6.185174e-298 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACGGGAACTTAGGG-1 3.361869e-302 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACATAATAAGGCGGTG-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCAAGAACGCGTGTC-1 1.287759e-299 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCACAAGTTTCTATC-1 3.934985e-303 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCCTTCATCTGCGAA-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCGACTGAGTCCCAC-1 3.915596e-299 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCTAATCGACTTCCT-1 1.844153e-288 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGATCATACATAGAG-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGCATTCGTGAGTAC-1 2.204933e-263 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGCCAGATGATTTCT-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGCGGGCCAAGGACA-1 8.510369e-194 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGGAATTTAGCAAAT-1 5.871176e-276 8.941047e-288</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGTAGATTGCTGATG-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGTGCGCCTCGTGCA-1 4.240032e-291 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGTTTAGTTGTGATC-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTACCAGCTCTCTGG-1 1.426260e-291 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTATTCGTCCGTGGT-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTCAATAAAGGCACG-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGCCGTCGTAACTC-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTAGCACTTTGGA-1 3.632790e-197 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTCCAGGATTATA-1 3.004300e-297 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTCTTCTTTAGAA-1 1.936355e-286 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTGCTAGTAGATC-1 2.920613e-288 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTAGTACGACAAGA-1 1.183507e-290 1.360173e-304</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTCGCCATACGCAC-1 7.049079e-290 2.269939e-187</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTGGGACCCGGTGG-1 2.434636e-300 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTTCCTATAGCTTC-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGAACGTGGTACATTC-1 1.904017e-197 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGACCATGGGATACAA-1 1.163164e-302 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGACCCGCCCTCCTCG-1 3.669223e-294 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGACTAGCCTTCCAGA-1 1.549427e-279 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGAGCGGGCTAATCAT-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGAGCGTACAAGCTCG-1 2.601967e-297 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATAACTTCAGGGCC-1 2.541342e-303 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATACGACTTCATAT-1 1.097981e-289 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATCTCAGGTGTGAT-1 1.211872e-281 1.768713e-272</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATGACTCGCCCACG-1 1.682741e-302 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCACCAGTACTCACG-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCACTTAAGGACGCC-1 7.644682e-285 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCATCGTCGATAATT-1 3.624338e-197 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCCCTAAGCGAAGTT-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCGACATCCCATTCA-1 1.221888e-289 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCGACCAACGATATT-1 2.542713e-197 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCGGGAAGGGTCCAT-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCTATTTAATCCAAC-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGACATCGCACGTCG-1 4.938228e-304 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGCCACCCGTTATGA-1 1.396967e-278 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGCCCATTGTACAGG-1 1.384146e-275 7.396044e-289</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGCTATGGTTAGCTT-1 3.469997e-197 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGGCGTGATCGGCTA-1 1.043652e-296 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGGCTGCAGTTACAG-1 1.118665e-272 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGGTTTAGTTCGGGA-1 2.829333e-197 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTAACCTCCTATTC-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTACGATATTGCCA-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTAGGTACAAAGCT-1 2.636016e-290 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTTGAGGCACGCTT-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTAATGTCTTGCCGC-1 3.954096e-291 4.465773e-303</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTAGGTAACATACAT-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTATAATACTAGGCA-1 1.386029e-295 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTCAGCCACCGCCTG-1 9.070726e-284 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [ reached getOption("max.print") -- omitted 524 rows ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $`k=10 b=5.00`</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $`k=10 b=5.00`$prob</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                             [,1]          [,2]          [,3]          [,4]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAAGGGATGTAGCAAG-1  1.000000e+00 4.343898e-116 4.343898e-116 4.343898e-116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAATGGCATGTCTTGT-1 8.937135e-120 8.937135e-120 8.937135e-120 8.937135e-120</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAATGGTCAATGTGCC-1 1.030562e-117 1.030562e-117 6.999894e-116 1.030562e-117</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAATTAACGGGTAGCT-1 1.036680e-117 1.036680e-117 1.036680e-117 1.036680e-117</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACAACTGGTAGTTGC-1 6.249072e-115 6.249072e-115  2.102326e-80 6.249072e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACAGGAAATCGAATA-1 6.416982e-120 6.416982e-120 6.416982e-120 6.416982e-120</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACAGGATGGGCCGCG-1 6.966950e-115 6.966950e-115 7.437428e-103 6.966950e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCATGGGATCGCTA-1 4.752808e-102 1.111066e-118  1.000000e+00 1.111066e-118</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCCAGAGACGGAGA-1  1.000000e+00 3.373547e-107 7.430732e-103 7.430732e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCGAGCTTGGTCAT-1  1.000000e+00 3.427370e-105 5.682014e-100 2.309344e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCGTTGTGTTTGCT-1 4.477489e-114 1.320030e-119 1.320030e-119 1.320030e-119</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGATAGAAGGGCCG-1 1.551016e-102 6.273370e-112  1.000000e+00 6.273370e-112</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGATATGTCAACTG-1 2.075408e-105 2.224688e-111  1.000000e+00 2.224688e-111</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGCGGTCTCCAGCC-1  2.271423e-60  1.008383e-77 2.373098e-119  1.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGTCAGACTAGTGG-1  6.350470e-93  1.035205e-84 1.171164e-128 5.440484e-114</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTCGATGGCGCAGT-1 1.746699e-121 1.746699e-121 1.638574e-105 1.746699e-121</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTGATATTAGGCCT-1 1.261639e-117 1.261639e-117 1.261639e-117 1.261639e-117</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTGGGTCCCGACGT-1 2.868073e-106 7.178693e-113  1.000000e+00 7.178693e-113</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTTGCCCGTATGCA-1 4.017259e-115 4.017259e-115  1.627215e-88 4.017259e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGAGATGAATCGGTA-1 3.502313e-100 8.145189e-117 1.049672e-100 8.145189e-117</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGCTCGTGCCAAGTC-1  1.311972e-98 5.791278e-114  1.000000e+00 5.791278e-114</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGGAGCGGTTGGTGC-1 2.738509e-111 4.064308e-109  1.847802e-70 2.738509e-111</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGGCGCGTAAAGCTT-1 5.411214e-101  5.322098e-98 6.517869e-127 1.503143e-109</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGGCTGTGCTCATCG-1 2.102748e-118 2.102748e-118 2.102748e-118 2.102748e-118</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGTAGAAGACCGGGT-1  1.000000e+00 4.746729e-116 4.746729e-116 1.012992e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGTAGTGACGCGAGG-1 1.185263e-117 1.185263e-117 1.185263e-117 1.185263e-117</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATCCAAGGGCCTGAG-1 1.201306e-121 1.201306e-121 1.331324e-103 1.201306e-121</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATGACTGTCAGCCGG-1 3.236631e-112 1.016373e-114 1.016373e-114 1.016373e-114</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATGCAACCGGGTACC-1  1.744135e-98 1.442648e-114 6.716658e-111 1.442648e-114</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATGGTTCTCACAAGC-1  1.000000e+00 3.970270e-112 3.970270e-112  1.405625e-95</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATTTGGTTCCAAAGA-1 2.136009e-115 2.136009e-115 2.136009e-115 2.136009e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACAACAGCATGAGCTA-1  1.000000e+00 3.320694e-101 2.669258e-102 4.936419e-110</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACAACGGTCCCTGCGA-1  4.486236e-87 1.930251e-106 7.682588e-121  1.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACAAGGACAAGAGGTT-1 1.984750e-112 1.984750e-112 4.371703e-108 1.984750e-112</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACAAAGACGGGTGG-1 1.155702e-100 2.872946e-117 2.202415e-106 2.872946e-117</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACACTTTCTACACG-1 7.218730e-120 7.218730e-120 7.218730e-120 7.218730e-120</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACCCAGCATGCAGC-1 1.549754e-114 1.549754e-114 1.549754e-114 1.549754e-114</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACCCGAGAAATCCG-1  1.000000e+00 6.933864e-112 6.933864e-112 3.397507e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACCTTAAGTAGGGC-1 1.562522e-108  5.450310e-99 1.860073e-128 1.860073e-128</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACGAGACTCCTTCT-1  1.000000e+00  2.131071e-89 5.653944e-112 5.653944e-112</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACGGGAACTTAGGG-1  1.000000e+00  3.172414e-94 2.839899e-107 2.839899e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACATAATAAGGCGGTG-1  1.987835e-81 1.911510e-103 4.895850e-121  1.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCAAGAACGCGTGTC-1  4.517122e-56  9.666562e-86 8.483852e-122  1.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCACAAGTTTCTATC-1 3.100467e-115 3.100467e-115 4.601501e-113 3.100467e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCCTTCATCTGCGAA-1 4.763917e-120 4.763917e-120 4.763917e-120 4.763917e-120</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCGACTGAGTCCCAC-1  1.000000e+00  1.287068e-86 6.839985e-112 6.839985e-112</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCTAATCGACTTCCT-1 7.015030e-116 7.015030e-116 1.041123e-113 7.015030e-116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGATCATACATAGAG-1  1.000000e+00 6.148960e-115 8.134227e-116 8.134227e-116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGCATTCGTGAGTAC-1 2.322086e-109 2.322086e-109  1.000000e+00 2.322086e-109</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGCCAGATGATTTCT-1 9.203926e-120 9.203926e-120 9.203926e-120 9.203926e-120</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGCGGGCCAAGGACA-1 6.670084e-110 7.806240e-114  1.351370e-61 7.806240e-114</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGGAATTTAGCAAAT-1  6.326966e-95 5.186083e-116  1.000000e+00 5.186083e-116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGTAGATTGCTGATG-1  1.000000e+00  3.647786e-97 4.149666e-103 1.883945e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGTGCGCCTCGTGCA-1 1.037492e-114 1.387209e-121  6.675817e-88 1.387209e-121</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGTTTAGTTGTGATC-1 7.312382e-119 1.440888e-119 1.440888e-119 1.440888e-119</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTACCAGCTCTCTGG-1 3.769854e-100  2.998758e-95 2.483623e-128 8.243294e-128</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTATTCGTCCGTGGT-1 2.442085e-120 1.315204e-120 1.315204e-120 1.315204e-120</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTCAATAAAGGCACG-1  2.591784e-98  1.000000e+00 4.691458e-124 1.550684e-116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGCCGTCGTAACTC-1 2.217150e-119 2.217150e-119 2.217150e-119 2.217150e-119</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTAGCACTTTGGA-1 8.302429e-115 8.302429e-115 1.232190e-112 8.302429e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTCCAGGATTATA-1 5.006837e-118 5.006837e-118 3.231113e-109 5.006837e-118</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTCTTCTTTAGAA-1  1.000000e+00  2.010527e-88 9.976467e-108 9.976467e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTGCTAGTAGATC-1 1.249333e-121 1.249333e-121  1.789946e-82 1.249333e-121</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTAGTACGACAAGA-1 1.410057e-113 1.637760e-115  1.000000e+00 1.637760e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTCGCCATACGCAC-1 1.971986e-122 1.971986e-122  3.804968e-71 1.971986e-122</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTGGGACCCGGTGG-1 2.027511e-115 2.027511e-115 3.009092e-113 2.027511e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTTCCTATAGCTTC-1  1.000000e+00 7.327034e-116 7.327034e-116 7.327034e-116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGAACGTGGTACATTC-1 1.692813e-101 5.178355e-108 1.857185e-103 5.178355e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGACCATGGGATACAA-1  3.792950e-60  7.207674e-78 7.923056e-122  1.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGACCCGCCCTCCTCG-1  1.000000e+00 4.789824e-103 3.227358e-105 3.227358e-105</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGACTAGCCTTCCAGA-1 1.642637e-111 1.642637e-111  4.747439e-65 1.642637e-111</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGAGCGGGCTAATCAT-1 1.157855e-113 1.157855e-113 1.681152e-112 1.157855e-113</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGAGCGTACAAGCTCG-1  1.000000e+00 2.010671e-107 2.010671e-107 1.031366e-101</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATAACTTCAGGGCC-1 1.595446e-118 1.595446e-118 3.395202e-111 1.595446e-118</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATACGACTTCATAT-1  6.679423e-88 9.741012e-114  1.000000e+00 1.445694e-111</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATCTCAGGTGTGAT-1  3.110089e-98 7.258145e-111  1.000000e+00 7.258145e-111</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATGACTCGCCCACG-1  1.000000e+00 9.720007e-114 9.720007e-114 9.720007e-114</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCACCAGTACTCACG-1  1.000000e+00 6.685195e-114 3.610001e-116 3.610001e-116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCACTTAAGGACGCC-1 7.326100e-118 7.326100e-118 1.789854e-105 7.326100e-118</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCATCGTCGATAATT-1 1.756586e-102 5.607178e-117  3.543179e-99 5.607178e-117</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCCCTAAGCGAAGTT-1 8.297143e-118 2.817849e-119 2.817849e-119 2.817849e-119</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCGACATCCCATTCA-1 5.008621e-100 1.571770e-113  1.000000e+00 1.571770e-113</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCGACCAACGATATT-1 1.760437e-112 1.186173e-114 1.186173e-114 1.186173e-114</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCGGGAAGGGTCCAT-1 1.403819e-121 1.403819e-121 4.434721e-110 1.403819e-121</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCTATTTAATCCAAC-1 1.202576e-119 1.202576e-119 1.202576e-119 1.202576e-119</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGACATCGCACGTCG-1  4.541279e-74  1.214700e-92 9.315557e-124  1.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGCCACCCGTTATGA-1 5.375665e-109 5.375665e-109  1.000000e+00 5.375665e-109</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGCCCATTGTACAGG-1  5.249981e-94 4.508524e-113  1.000000e+00 4.508524e-113</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGCTATGGTTAGCTT-1 2.658882e-121 2.658882e-121 2.658882e-121 2.658882e-121</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGGCGTGATCGGCTA-1  1.333755e-73  8.900531e-95 2.082570e-123  1.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGGCTGCAGTTACAG-1 2.237893e-116 2.237893e-116  1.000000e+00 2.237893e-116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGGTTTAGTTCGGGA-1 1.066010e-114 1.582099e-112 8.368798e-100 1.066010e-114</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTAACCTCCTATTC-1 1.517757e-121 1.517757e-121 1.419500e-102 1.517757e-121</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTACGATATTGCCA-1 7.912568e-114 7.912568e-114 7.912568e-114 7.912568e-114</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTAGGTACAAAGCT-1 6.654406e-115 6.654406e-115 2.812204e-114 6.654406e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTTGAGGCACGCTT-1 9.966390e-122 9.966390e-122  4.441729e-88 9.966390e-122</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTAATGTCTTGCCGC-1 1.272368e-108 1.818491e-114  1.000000e+00 1.818491e-114</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTAGGTAACATACAT-1 3.790725e-114 3.790725e-114 5.625935e-112 3.790725e-114</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTATAATACTAGGCA-1 1.992545e-105 1.309568e-105 1.108916e-121 8.469401e-111</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTCAGCCACCGCCTG-1 1.172824e-106 1.954876e-118  1.000000e+00 1.954876e-118</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                             [,5]          [,6]          [,7]          [,8]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAAGGGATGTAGCAAG-1 4.343898e-116 4.343898e-116 4.343898e-116 4.343898e-116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAATGGCATGTCTTGT-1 8.937135e-120  1.000000e+00 8.937135e-120 2.618211e-119</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAATGGTCAATGTGCC-1 1.030562e-117 1.030562e-117  1.000000e+00 1.030562e-117</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAATTAACGGGTAGCT-1 1.036680e-117 1.036680e-117  1.000000e+00 1.036680e-117</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACAACTGGTAGTTGC-1 6.249072e-115 6.249072e-115  5.459558e-82 6.249072e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACAGGAAATCGAATA-1 6.416982e-120  1.000000e+00 6.416982e-120 7.235112e-102</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACAGGATGGGCCGCG-1 6.966950e-115 6.966950e-115  3.780782e-80 6.966950e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCATGGGATCGCTA-1 1.111066e-118 1.111066e-118  1.223913e-94  1.237442e-71</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCCAGAGACGGAGA-1 3.373547e-107 3.373547e-107 3.373547e-107 3.373547e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCGAGCTTGGTCAT-1 2.309344e-107 2.309344e-107 2.309344e-107 2.309344e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCGTTGTGTTTGCT-1 1.320030e-119  1.000000e+00 1.320030e-119 1.320030e-119</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGATAGAAGGGCCG-1 6.273370e-112 6.273370e-112  2.037421e-98  5.265803e-72</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGATATGTCAACTG-1 2.224688e-111 2.224688e-111 2.224688e-111  8.088212e-71</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGCGGTCTCCAGCC-1  1.236403e-98 8.770095e-108 2.373098e-119 2.373098e-119</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGTCAGACTAGTGG-1  1.000000e+00 4.005378e-120 1.171164e-128 1.171164e-128</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTCGATGGCGCAGT-1 1.746699e-121 1.746699e-121 1.746699e-121  1.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTGATATTAGGCCT-1 1.261639e-117  1.000000e+00 1.261639e-117 3.363081e-112</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTGGGTCCCGACGT-1 7.178693e-113 7.178693e-113 7.178693e-113 1.439891e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTTGCCCGTATGCA-1 4.017259e-115 4.017259e-115  5.600534e-78 4.017259e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGAGATGAATCGGTA-1 8.145189e-117 8.145189e-117  1.303333e-87 8.145189e-117</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGCTCGTGCCAAGTC-1 5.791278e-114 5.791278e-114  2.476143e-98  1.978925e-93</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGGAGCGGTTGGTGC-1 4.064308e-109 2.738509e-111  1.000000e+00 2.738509e-111</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGGCGCGTAAAGCTT-1  1.000000e+00 6.517869e-127 6.517869e-127 6.517869e-127</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGGCTGTGCTCATCG-1 2.102748e-118 2.102748e-118  1.000000e+00 2.102748e-118</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGTAGAAGACCGGGT-1 4.746729e-116 4.746729e-116 4.746729e-116 4.746729e-116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGTAGTGACGCGAGG-1 1.185263e-117 1.185263e-117  1.000000e+00 1.185263e-117</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATCCAAGGGCCTGAG-1 1.201306e-121  3.434297e-79 1.201306e-121  1.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATGACTGTCAGCCGG-1  1.002697e-98 1.016373e-114 1.016373e-114 1.016373e-114</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATGCAACCGGGTACC-1 1.442648e-114 1.442648e-114 1.442648e-114 1.442648e-114</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATGGTTCTCACAAGC-1 3.970270e-112 3.970270e-112 3.970270e-112 3.970270e-112</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATTTGGTTCCAAAGA-1 2.136009e-115  1.000000e+00 2.136009e-115 2.136009e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACAACAGCATGAGCTA-1 4.936419e-110 1.156427e-102 4.936419e-110 4.936419e-110</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACAACGGTCCCTGCGA-1 7.379927e-103 7.682588e-121 7.682588e-121 7.682588e-121</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACAAGGACAAGAGGTT-1 1.984750e-112 1.984750e-112  1.000000e+00 1.984750e-112</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACAAAGACGGGTGG-1 2.872946e-117 2.872946e-117 8.370024e-110 2.872946e-117</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACACTTTCTACACG-1 7.218730e-120  1.000000e+00 7.218730e-120 2.308783e-101</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACCCAGCATGCAGC-1 1.221781e-100 1.549754e-114 1.549754e-114 1.549754e-114</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACCCGAGAAATCCG-1 6.933864e-112 6.933864e-112 6.933864e-112 6.933864e-112</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACCTTAAGTAGGGC-1  1.000000e+00 1.860073e-128 1.860073e-128 1.860073e-128</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACGAGACTCCTTCT-1 5.653944e-112 5.653944e-112 5.653944e-112 5.653944e-112</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACGGGAACTTAGGG-1 2.839899e-107 2.839899e-107 2.839899e-107 2.839899e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACATAATAAGGCGGTG-1 3.144214e-115 1.207877e-111 4.895850e-121 4.895850e-121</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCAAGAACGCGTGTC-1 4.217389e-106 8.483852e-122 8.483852e-122 8.483852e-122</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCACAAGTTTCTATC-1 3.100467e-115 3.100467e-115  1.000000e+00 3.100467e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCCTTCATCTGCGAA-1 4.763917e-120  1.000000e+00 4.763917e-120 5.246074e-114</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCGACTGAGTCCCAC-1 6.839985e-112 6.839985e-112 6.839985e-112 6.839985e-112</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCTAATCGACTTCCT-1 7.015030e-116 7.015030e-116  1.000000e+00 7.015030e-116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGATCATACATAGAG-1 8.134227e-116 8.134227e-116 8.134227e-116 8.134227e-116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGCATTCGTGAGTAC-1 2.322086e-109 2.322086e-109  5.661358e-65 2.322086e-109</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGCCAGATGATTTCT-1 9.203926e-120  1.000000e+00 9.203926e-120  1.622795e-90</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGCGGGCCAAGGACA-1 7.806240e-114 7.806240e-114  2.325987e-49 5.993120e-109</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGGAATTTAGCAAAT-1 5.186083e-116 5.186083e-116  9.409397e-71  5.271572e-57</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGTAGATTGCTGATG-1 1.883945e-107 1.883945e-107 1.883945e-107 1.883945e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGTGCGCCTCGTGCA-1 1.387209e-121 1.450220e-118 1.387209e-121  1.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGTTTAGTTGTGATC-1 1.440888e-119  1.000000e+00 1.440888e-119 1.928330e-117</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTACCAGCTCTCTGG-1  1.000000e+00 3.717300e-126 2.483623e-128 2.483623e-128</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTATTCGTCCGTGGT-1 1.315204e-120  1.000000e+00 1.315204e-120 1.315204e-120</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTCAATAAAGGCACG-1 1.931038e-115 1.118674e-122 4.691458e-124 4.691458e-124</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGCCGTCGTAACTC-1 2.217150e-119  1.000000e+00 2.217150e-119  1.274354e-99</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTAGCACTTTGGA-1 1.828732e-110 8.302429e-115 8.302429e-115 8.302429e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTCCAGGATTATA-1 5.006837e-118 5.006837e-118  1.000000e+00 5.006837e-118</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTCTTCTTTAGAA-1 2.821931e-104 9.976467e-108 9.976467e-108 9.976467e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTGCTAGTAGATC-1 1.249333e-121 5.628443e-110 1.249333e-121  1.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTAGTACGACAAGA-1 1.637760e-115 1.637760e-115 1.604658e-112  7.975433e-83</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTCGCCATACGCAC-1 1.971986e-122 1.971986e-122 1.971986e-122 7.182289e-119</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTGGGACCCGGTGG-1 2.027511e-115 2.027511e-115  1.000000e+00 2.027511e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTTCCTATAGCTTC-1 7.327034e-116 7.327034e-116 7.327034e-116 7.327034e-116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGAACGTGGTACATTC-1 5.178355e-108 5.178355e-108 5.178355e-108 5.178355e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGACCATGGGATACAA-1  1.422324e-97 7.923056e-122 7.923056e-122 7.923056e-122</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGACCCGCCCTCCTCG-1 1.685805e-101 3.227358e-105 3.227358e-105 3.227358e-105</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGACTAGCCTTCCAGA-1 2.437889e-109 1.642637e-111  1.000000e+00 1.642637e-111</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGAGCGGGCTAATCAT-1 1.157855e-113  1.000000e+00 1.157855e-113  1.532397e-66</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGAGCGTACAAGCTCG-1 2.010671e-107 2.010671e-107 2.010671e-107 2.010671e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATAACTTCAGGGCC-1 1.595446e-118 1.595446e-118  1.000000e+00 1.595446e-118</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATACGACTTCATAT-1 9.741012e-114 9.741012e-114 1.303482e-102  3.085640e-87</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATCTCAGGTGTGAT-1 7.258145e-111 7.258145e-111  7.453382e-79  1.349419e-64</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATGACTCGCCCACG-1 9.720007e-114 9.720007e-114 9.720007e-114 9.720007e-114</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCACCAGTACTCACG-1 1.120017e-114 3.610001e-116 3.610001e-116 3.610001e-116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCACTTAAGGACGCC-1 7.326100e-118 7.326100e-118  1.000000e+00 7.326100e-118</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCATCGTCGATAATT-1 5.607178e-117 5.607178e-117 5.607178e-117 5.607178e-117</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCCCTAAGCGAAGTT-1 2.817849e-119  1.000000e+00 2.817849e-119 8.944481e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCGACATCCCATTCA-1 1.571770e-113 2.332713e-111 1.571770e-113  3.385346e-81</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCGACCAACGATATT-1 1.424903e-100 1.186173e-114 1.186173e-114 1.186173e-114</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCGGGAAGGGTCCAT-1 1.403819e-121  3.129656e-96 1.403819e-121  1.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCTATTTAATCCAAC-1 1.202576e-119  1.000000e+00 1.202576e-119 1.097572e-117</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGACATCGCACGTCG-1 5.585182e-101 9.315557e-124 9.315557e-124 9.315557e-124</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGCCACCCGTTATGA-1 5.375665e-109 5.375665e-109  7.600045e-70 3.840278e-105</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGCCCATTGTACAGG-1 4.508524e-113 4.508524e-113  2.223692e-97  7.534229e-52</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGCTATGGTTAGCTT-1 2.658882e-121 2.658882e-121 2.658882e-121 2.658882e-121</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGGCGTGATCGGCTA-1 5.807505e-103 1.846022e-121 2.082570e-123 2.082570e-123</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGGCTGCAGTTACAG-1 2.237893e-116 2.237893e-116  1.068092e-80  2.458027e-91</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGGTTTAGTTCGGGA-1 1.066010e-114 1.066010e-114 1.211967e-112 1.066010e-114</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTAACCTCCTATTC-1 1.517757e-121  8.243071e-98 1.517757e-121  1.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTACGATATTGCCA-1 7.912568e-114  1.000000e+00 7.912568e-114 7.912568e-114</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTAGGTACAAAGCT-1 6.654406e-115 6.654406e-115  1.000000e+00 6.654406e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTTGAGGCACGCTT-1 9.966390e-122  5.845884e-99 9.966390e-122  1.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTAATGTCTTGCCGC-1 1.818491e-114 2.698879e-112  7.185260e-98  1.680395e-59</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTAGGTAACATACAT-1 3.790725e-114  1.000000e+00 3.790725e-114  2.043233e-68</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTATAATACTAGGCA-1  1.000000e+00 1.108916e-121 1.108916e-121 1.108916e-121</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTCAGCCACCGCCTG-1 1.954876e-118 1.954876e-118 4.219171e-105  1.249067e-90</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                             [,9]         [,10]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAAGGGATGTAGCAAG-1 4.343898e-116 4.343898e-116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAATGGCATGTCTTGT-1 8.937135e-120 8.937135e-120</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAATGGTCAATGTGCC-1 6.937167e-115 1.030562e-117</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAATTAACGGGTAGCT-1 1.036680e-117 1.036680e-117</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACAACTGGTAGTTGC-1  1.000000e+00 6.249072e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACAGGAAATCGAATA-1 6.416982e-120 6.416982e-120</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACAGGATGGGCCGCG-1  1.000000e+00 6.966950e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCATGGGATCGCTA-1  5.997847e-96 6.858024e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCCAGAGACGGAGA-1 3.373547e-107 3.373547e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCGAGCTTGGTCAT-1 3.427370e-105 5.086668e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCGTTGTGTTTGCT-1 1.320030e-119 1.320030e-119</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGATAGAAGGGCCG-1  4.068919e-92 6.859388e-109</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGATATGTCAACTG-1  3.632525e-93  2.477261e-83</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGCGGTCTCCAGCC-1 2.373098e-119 2.373098e-119</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGTCAGACTAGTGG-1 2.038735e-101 1.171164e-128</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTCGATGGCGCAGT-1 1.334212e-120 1.746699e-121</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTGATATTAGGCCT-1 1.261639e-117 1.261639e-117</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTGGGTCCCGACGT-1 2.356310e-106 7.178693e-113</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTTGCCCGTATGCA-1  1.000000e+00 4.017259e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGAGATGAATCGGTA-1  1.000000e+00 8.145189e-117</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGCTCGTGCCAAGTC-1  4.784561e-83  2.870155e-87</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGGAGCGGTTGGTGC-1  3.914611e-86 2.738509e-111</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGGCGCGTAAAGCTT-1 2.257756e-111 6.517869e-127</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGGCTGTGCTCATCG-1 1.931949e-116 2.102748e-118</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGTAGAAGACCGGGT-1 1.395621e-114 4.746729e-116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGTAGTGACGCGAGG-1 1.185263e-117 1.185263e-117</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATCCAAGGGCCTGAG-1 1.201306e-121 1.201306e-121</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATGACTGTCAGCCGG-1  1.000000e+00 1.016373e-114</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATGCAACCGGGTACC-1  1.000000e+00 1.442648e-114</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATGGTTCTCACAAGC-1 3.970270e-112 3.970270e-112</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATTTGGTTCCAAAGA-1 2.136009e-115 2.136009e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACAACAGCATGAGCTA-1 7.540042e-102 4.936419e-110</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACAACGGTCCCTGCGA-1 3.876001e-107 7.682588e-121</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACAAGGACAAGAGGTT-1 4.414029e-100 1.984750e-112</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACAAAGACGGGTGG-1  1.000000e+00 2.872946e-117</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACACTTTCTACACG-1 7.218730e-120 7.218730e-120</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACCCAGCATGCAGC-1  1.000000e+00 1.549754e-114</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACCCGAGAAATCCG-1 2.399511e-104 6.933864e-112</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACCTTAAGTAGGGC-1 7.396266e-111 1.860073e-128</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACGAGACTCCTTCT-1 3.546833e-105 5.653944e-112</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACGGGAACTTAGGG-1 1.437122e-102 2.839899e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACATAATAAGGCGGTG-1 4.895850e-121 4.895850e-121</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCAAGAACGCGTGTC-1 1.108065e-116 8.483852e-122</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCACAAGTTTCTATC-1 1.237393e-113 3.100467e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCCTTCATCTGCGAA-1 4.763917e-120 4.763917e-120</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCGACTGAGTCCCAC-1 2.716379e-106 6.839985e-112</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCTAATCGACTTCCT-1  1.312091e-99 7.015030e-116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGATCATACATAGAG-1 8.134227e-116 8.134227e-116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGCATTCGTGAGTAC-1  1.697572e-61 2.322086e-109</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGCCAGATGATTTCT-1 9.203926e-120 9.203926e-120</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGCGGGCCAAGGACA-1  1.000000e+00 7.806240e-114</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGGAATTTAGCAAAT-1  3.088175e-87  4.702894e-99</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGTAGATTGCTGATG-1 2.796023e-105 1.883945e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGTGCGCCTCGTGCA-1 5.965523e-108 1.387209e-121</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGTTTAGTTGTGATC-1 1.440888e-119 1.440888e-119</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTACCAGCTCTCTGG-1 3.592706e-115 2.483623e-128</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTATTCGTCCGTGGT-1 1.315204e-120 1.315204e-120</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTCAATAAAGGCACG-1 4.691458e-124 4.691458e-124</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGCCGTCGTAACTC-1 2.217150e-119 2.217150e-119</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTAGCACTTTGGA-1  1.000000e+00 8.302429e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTCCAGGATTATA-1 1.525612e-110 5.006837e-118</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTCTTCTTTAGAA-1  1.959292e-89 9.976467e-108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTGCTAGTAGATC-1 3.700748e-105 1.249333e-121</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTAGTACGACAAGA-1 1.965886e-101 2.259340e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTCGCCATACGCAC-1 2.092406e-105  1.000000e+00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTGGGACCCGGTGG-1 5.006503e-111 2.027511e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTTCCTATAGCTTC-1 7.327034e-116 7.327034e-116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGAACGTGGTACATTC-1  1.000000e+00 1.140609e-103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGACCATGGGATACAA-1 9.346974e-120 7.923056e-122</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGACCCGCCCTCCTCG-1  3.926231e-88 3.227358e-105</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGACTAGCCTTCCAGA-1  3.831090e-84 1.642637e-111</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGAGCGGGCTAATCAT-1 1.157855e-113 1.157855e-113</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGAGCGTACAAGCTCG-1  1.168759e-95 2.010671e-107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATAACTTCAGGGCC-1 4.112278e-117 1.595446e-118</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATACGACTTCATAT-1  1.084766e-98 9.741012e-114</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATCTCAGGTGTGAT-1  1.965008e-83  2.867907e-74</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATGACTCGCCCACG-1 2.462032e-109 9.720007e-114</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCACCAGTACTCACG-1 3.610001e-116 3.610001e-116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCACTTAAGGACGCC-1  5.680278e-98 7.326100e-118</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCATCGTCGATAATT-1  1.000000e+00 5.607178e-117</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCCCTAAGCGAAGTT-1 2.817849e-119 2.817849e-119</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCGACATCCCATTCA-1  1.947859e-98 1.571770e-113</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCGACCAACGATATT-1  1.000000e+00 1.186173e-114</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCGGGAAGGGTCCAT-1 1.403819e-121 1.403819e-121</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCTATTTAATCCAAC-1 1.202576e-119 1.202576e-119</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGACATCGCACGTCG-1 4.665705e-123 9.315557e-124</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGCCACCCGTTATGA-1  2.489849e-76 5.375665e-109</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGCCCATTGTACAGG-1  6.329268e-84  3.381981e-97</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGCTATGGTTAGCTT-1  1.000000e+00 2.658882e-121</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGGCGTGATCGGCTA-1 2.204410e-115 2.082570e-123</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGGCTGCAGTTACAG-1  2.539081e-84 2.237893e-116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGGTTTAGTTCGGGA-1  1.000000e+00 1.066010e-114</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTAACCTCCTATTC-1 1.517757e-121 1.517757e-121</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTACGATATTGCCA-1 7.912568e-114 7.912568e-114</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTAGGTACAAAGCT-1 1.779076e-100 6.654406e-115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTTGAGGCACGCTT-1 9.966390e-122 9.966390e-122</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTAATGTCTTGCCGC-1 7.292821e-101 8.236545e-113</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTAGGTAACATACAT-1 3.790725e-114 3.790725e-114</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTATAATACTAGGCA-1 3.433625e-108 1.108916e-121</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTCAGCCACCGCCTG-1  1.798451e-97 1.954876e-118</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [ reached getOption("max.print") -- omitted 524 rows ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $`k=10 b=5.00`$unnormprob</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                             [,1]          [,2]          [,3]          [,4]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAAGGGATGTAGCAAG-1 2.269776e-189 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAATGGCATGTCTTGT-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAATGGTCAATGTGCC-1 9.859677e-305 9.859677e-305 6.696996e-303 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAATTAACGGGTAGCT-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACAACTGGTAGTTGC-1 9.859677e-305 9.859677e-305 3.317013e-270 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACAGGAAATCGAATA-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACAGGATGGGCCGCG-1 9.859677e-305 9.859677e-305 1.052550e-292 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCATGGGATCGCTA-1 4.217675e-288 9.859677e-305 8.874070e-187 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCCAGAGACGGAGA-1 2.922644e-198 9.859677e-305 2.171738e-300 2.171738e-300</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCGAGCTTGGTCAT-1 4.269472e-198 1.463306e-302 2.425920e-297 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCGTTGTGTTTGCT-1 3.344362e-299 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGATAGAAGGGCCG-1 2.437687e-295 9.859677e-305 1.571672e-193 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGATATGTCAACTG-1 9.198075e-299 9.859677e-305 4.431936e-194 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGCGGTCTCCAGCC-1 9.437239e-246 4.189597e-263 9.859677e-305 4.154769e-186</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGTCAGACTAGTGG-1 5.346268e-269 8.715078e-261 9.859677e-305 4.580178e-290</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTCGATGGCGCAGT-1 9.859677e-305 9.859677e-305 9.249339e-289 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTGATATTAGGCCT-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTGGGTCCCGACGT-1 3.939194e-298 9.859677e-305 1.373464e-192 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTTGCCCGTATGCA-1 9.859677e-305 9.859677e-305 3.993722e-278 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGAGATGAATCGGTA-1 4.239518e-288 9.859677e-305 1.270619e-288 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGCTCGTGCCAAGTC-1 2.233638e-289 9.859677e-305 1.702504e-191 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGGAGCGGTTGGTGC-1 9.859677e-305 1.463306e-302 6.652789e-264 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGGCGCGTAAAGCTT-1 8.185623e-279 8.050816e-276 9.859677e-305 2.273826e-287</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGGCTGTGCTCATCG-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGTAGAAGACCGGGT-1 2.077152e-189 9.859677e-305 9.859677e-305 2.104139e-304</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGTAGTGACGCGAGG-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATCCAAGGGCCTGAG-1 9.859677e-305 9.859677e-305 1.092679e-286 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATGACTGTCAGCCGG-1 3.139807e-302 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATGCAACCGGGTACC-1 1.192017e-288 9.859677e-305 4.590452e-301 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATGGTTCTCACAAGC-1 2.483377e-193 9.859677e-305 9.859677e-305 3.490697e-288</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATTTGGTTCCAAAGA-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACAACAGCATGAGCTA-1 1.997334e-195 6.632534e-296 5.331398e-297 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACAACGGTCCCTGCGA-1 5.757544e-271 2.477245e-290 9.859677e-305 1.283380e-184</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACAAGGACAAGAGGTT-1 9.859677e-305 9.859677e-305 2.171738e-300 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACAAAGACGGGTGG-1 3.966260e-288 9.859677e-305 7.558480e-294 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACACTTTCTACACG-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACCCAGCATGCAGC-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACCCGAGAAATCCG-1 1.421960e-193 9.859677e-305 9.859677e-305 4.831118e-301</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACCTTAAGTAGGGC-1 8.282449e-285 2.889042e-275 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACGAGACTCCTTCT-1 1.743858e-193 3.716286e-282 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACGGGAACTTAGGG-1 3.471840e-198 1.101412e-291 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACATAATAAGGCGGTG-1 4.003270e-265 3.849561e-287 9.859677e-305 2.013885e-184</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCAAGAACGCGTGTC-1 5.249663e-239 1.123419e-268 9.859677e-305 1.162170e-183</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCACAAGTTTCTATC-1 9.859677e-305 9.859677e-305 1.463306e-302 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCCTTCATCTGCGAA-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCGACTGAGTCCCAC-1 1.441476e-193 1.855279e-279 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCTAATCGACTTCCT-1 9.859677e-305 9.859677e-305 1.463306e-302 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGATCATACATAGAG-1 1.212122e-189 7.453291e-304 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGCATTCGTGAGTAC-1 9.859677e-305 9.859677e-305 4.246043e-196 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGCCAGATGATTTCT-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGCGGGCCAAGGACA-1 8.424654e-301 9.859677e-305 1.706849e-252 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGGAATTTAGCAAAT-1 1.202870e-283 9.859677e-305 1.901180e-189 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGTAGATTGCTGATG-1 5.233526e-198 1.909078e-294 2.171738e-300 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGTGCGCCTCGTGCA-1 7.374040e-298 9.859677e-305 4.744878e-271 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGTTTAGTTGTGATC-1 5.003700e-304 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTACCAGCTCTCTGG-1 1.496585e-276 1.190470e-271 9.859677e-305 3.272486e-304</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTATTCGTCCGTGGT-1 1.830756e-304 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTCAATAAAGGCACG-1 5.446953e-279 2.101623e-181 9.859677e-305 3.258953e-297</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGCCGTCGTAACTC-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTAGCACTTTGGA-1 9.859677e-305 9.859677e-305 1.463306e-302 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTCCAGGATTATA-1 9.859677e-305 9.859677e-305 6.362845e-296 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTCTTCTTTAGAA-1 9.882934e-198 1.986991e-285 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTGCTAGTAGATC-1 9.859677e-305 9.859677e-305 1.412617e-265 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTAGTACGACAAGA-1 8.488857e-303 9.859677e-305 6.020222e-190 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTCGCCATACGCAC-1 9.859677e-305 9.859677e-305 1.902435e-253 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTGGGACCCGGTGG-1 9.859677e-305 9.859677e-305 1.463306e-302 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTTCCTATAGCTTC-1 1.345657e-189 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGAACGTGGTACATTC-1 3.223145e-298 9.859677e-305 3.536112e-300 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGACCATGGGATACAA-1 4.720056e-243 8.969435e-261 9.859677e-305 1.244429e-183</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGACCCGCCCTCCTCG-1 3.055030e-200 1.463306e-302 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGACTAGCCTTCCAGA-1 9.859677e-305 9.859677e-305 2.849578e-258 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGAGCGGGCTAATCAT-1 9.859677e-305 9.859677e-305 1.431579e-303 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGAGCGTACAAGCTCG-1 4.903675e-198 9.859677e-305 9.859677e-305 5.057484e-299</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATAACTTCAGGGCC-1 9.859677e-305 9.859677e-305 2.098197e-297 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATACGACTTCATAT-1 6.760792e-279 9.859677e-305 1.012182e-191 1.463306e-302</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATCTCAGGTGTGAT-1 4.224836e-292 9.859677e-305 1.358429e-194 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATGACTCGCCCACG-1 1.014369e-191 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCACCAGTACTCACG-1 2.731211e-189 1.825868e-302 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCACTTAAGGACGCC-1 9.859677e-305 9.859677e-305 2.408838e-292 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCATCGTCGATAATT-1 3.088785e-290 9.859677e-305 6.230336e-287 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCCCTAAGCGAAGTT-1 2.903177e-303 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCGACATCCCATTCA-1 3.141897e-291 9.859677e-305 6.272978e-192 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCGACCAACGATATT-1 1.463306e-302 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCGGGAAGGGTCCAT-1 9.859677e-305 9.859677e-305 3.114712e-293 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCTATTTAATCCAAC-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGACATCGCACGTCG-1 4.806534e-255 1.285651e-273 9.859677e-305 1.058410e-181</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGCCACCCGTTATGA-1 9.859677e-305 9.859677e-305 1.834131e-196 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGCCCATTGTACAGG-1 1.148117e-285 9.859677e-305 2.186897e-192 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGCTATGGTTAGCTT-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGGCGTGATCGGCTA-1 6.314504e-255 4.213850e-276 9.859677e-305 4.734380e-182</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGGCTGCAGTTACAG-1 9.859677e-305 9.859677e-305 4.405785e-189 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGGTTTAGTTCGGGA-1 9.859677e-305 1.463306e-302 7.740418e-290 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTAACCTCCTATTC-1 9.859677e-305 9.859677e-305 9.221378e-286 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTACGATATTGCCA-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTAGGTACAAAGCT-1 9.859677e-305 9.859677e-305 4.166777e-304 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTTGAGGCACGCTT-1 9.859677e-305 9.859677e-305 4.394170e-271 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTAATGTCTTGCCGC-1 6.898654e-299 9.859677e-305 5.421901e-191 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTAGGTAACATACAT-1 9.859677e-305 9.859677e-305 1.463306e-302 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTATAATACTAGGCA-1 1.771627e-288 1.164373e-288 9.859677e-305 7.530379e-294</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTCAGCCACCGCCTG-1 5.915297e-293 9.859677e-305 5.043633e-187 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                             [,5]          [,6]          [,7]          [,8]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAAGGGATGTAGCAAG-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAATGGCATGTCTTGT-1 9.859677e-305 1.103226e-185 9.859677e-305 2.888478e-304</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAATGGTCAATGTGCC-1 9.859677e-305 9.859677e-305 9.567281e-188 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAATTAACGGGTAGCT-1 9.859677e-305 9.859677e-305 9.510822e-188 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACAACTGGTAGTTGC-1 9.859677e-305 9.859677e-305 8.613995e-272 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACAGGAAATCGAATA-1 9.859677e-305 1.536497e-185 9.859677e-305 1.111673e-286</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACAGGATGGGCCGCG-1 9.859677e-305 9.859677e-305 5.350589e-270 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCATGGGATCGCTA-1 9.859677e-305 9.859677e-305 1.086108e-280 1.098114e-257</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCCAGAGACGGAGA-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCGAGCTTGGTCAT-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCGTTGTGTTTGCT-1 9.859677e-305 7.469280e-186 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGATAGAAGGGCCG-1 9.859677e-305 9.859677e-305 3.202156e-291 8.276113e-265</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGATATGTCAACTG-1 9.859677e-305 9.859677e-305 9.859677e-305 3.584644e-264</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGCGGTCTCCAGCC-1 5.136970e-284 3.643772e-293 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGTCAGACTAGTGG-1 8.418697e-177 3.372006e-296 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTCGATGGCGCAGT-1 9.859677e-305 9.859677e-305 9.859677e-305 5.644749e-184</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTGATATTAGGCCT-1 9.859677e-305 7.814975e-188 9.859677e-305 2.628239e-299</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTGGGTCCCGACGT-1 9.859677e-305 9.859677e-305 9.859677e-305 1.977639e-299</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTTGCCCGTATGCA-1 9.859677e-305 9.859677e-305 1.374555e-267 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGAGATGAATCGGTA-1 9.859677e-305 9.859677e-305 1.577672e-275 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGCTCGTGCCAAGTC-1 9.859677e-305 9.859677e-305 4.215644e-289 3.369128e-284</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGGAGCGGTTGGTGC-1 1.463306e-302 9.859677e-305 3.600381e-194 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGGCGCGTAAAGCTT-1 1.512715e-178 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGGCTGTGCTCATCG-1 9.859677e-305 9.859677e-305 4.688948e-187 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGTAGAAGACCGGGT-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGTAGTGACGCGAGG-1 9.859677e-305 9.859677e-305 8.318559e-188 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATCCAAGGGCCTGAG-1 9.859677e-305 2.818686e-262 9.859677e-305 8.207462e-184</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATGACTGTCAGCCGG-1 9.727009e-289 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATGCAACCGGGTACC-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATGGTTCTCACAAGC-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATTTGGTTCCAAAGA-1 9.859677e-305 4.615934e-190 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACAACAGCATGAGCTA-1 9.859677e-305 2.309770e-297 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACAACGGTCCCTGCGA-1 9.471248e-287 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACAAGGACAAGAGGTT-1 9.859677e-305 9.859677e-305 4.967717e-193 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACAAAGACGGGTGG-1 9.859677e-305 9.859677e-305 2.872513e-297 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACACTTTCTACACG-1 9.859677e-305 1.365846e-185 9.859677e-305 3.153444e-286</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACCCAGCATGCAGC-1 7.773085e-291 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACCCGAGAAATCCG-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACCTTAAGTAGGGC-1 5.300694e-177 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACGAGACTCCTTCT-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACGGGAACTTAGGG-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACATAATAAGGCGGTG-1 6.332084e-299 2.432524e-295 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCAAGAACGCGTGTC-1 4.901322e-289 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCACAAGTTTCTATC-1 9.859677e-305 9.859677e-305 3.180062e-190 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCCTTCATCTGCGAA-1 9.859677e-305 2.069657e-185 9.859677e-305 1.085758e-298</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCGACTGAGTCCCAC-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCTAATCGACTTCCT-1 9.859677e-305 9.859677e-305 1.405507e-189 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGATCATACATAGAG-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGCATTCGTGAGTAC-1 9.859677e-305 9.859677e-305 2.403837e-260 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGCCAGATGATTTCT-1 9.859677e-305 1.071247e-185 9.859677e-305 1.738414e-275</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGCGGGCCAAGGACA-1 9.859677e-305 9.859677e-305 2.937839e-240 7.569614e-300</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGGAATTTAGCAAAT-1 9.859677e-305 9.859677e-305 1.788896e-259 1.002221e-245</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGTAGATTGCTGATG-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGTGCGCCTCGTGCA-1 9.859677e-305 1.030753e-301 9.859677e-305 7.107562e-184</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGTTTAGTTGTGATC-1 9.859677e-305 6.842777e-186 9.859677e-305 1.319513e-302</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTACCAGCTCTCTGG-1 3.969876e-177 1.475722e-302 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTATTCGTCCGTGGT-1 9.859677e-305 7.496691e-185 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTCAATAAAGGCACG-1 4.058314e-296 2.351030e-303 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGCCGTCGTAACTC-1 9.859677e-305 4.447005e-186 9.859677e-305 5.667059e-285</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTAGCACTTTGGA-1 2.171738e-300 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTCCAGGATTATA-1 9.859677e-305 9.859677e-305 1.969242e-187 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTCTTCTTTAGAA-1 2.788896e-301 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTGCTAGTAGATC-1 9.859677e-305 4.441941e-293 9.859677e-305 7.891954e-184</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTAGTACGACAAGA-1 9.859677e-305 9.859677e-305 9.660396e-302 4.801387e-272</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTCGCCATACGCAC-1 9.859677e-305 9.859677e-305 9.859677e-305 3.591053e-301</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTGGGACCCGGTGG-1 9.859677e-305 9.859677e-305 4.862947e-190 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTTCCTATAGCTTC-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGAACGTGGTACATTC-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGACCATGGGATACAA-1 1.769981e-280 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGACCCGCCCTCCTCG-1 5.150186e-301 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGACTAGCCTTCCAGA-1 1.463306e-302 9.859677e-305 6.002348e-194 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGAGCGGGCTAATCAT-1 9.859677e-305 8.515467e-192 9.859677e-305 1.304908e-257</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGAGCGTACAAGCTCG-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATAACTTCAGGGCC-1 9.859677e-305 9.859677e-305 6.179889e-187 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATACGACTTCATAT-1 9.859677e-305 9.859677e-305 1.319361e-293 3.123229e-278</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATCTCAGGTGTGAT-1 9.859677e-305 9.859677e-305 1.012489e-272 1.833091e-258</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATGACTCGCCCACG-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCACCAGTACTCACG-1 3.059002e-303 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCACTTAAGGACGCC-1 9.859677e-305 9.859677e-305 1.345829e-187 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCATCGTCGATAATT-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCCCTAAGCGAAGTT-1 9.859677e-305 3.499009e-186 9.859677e-305 3.129681e-293</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCGACATCCCATTCA-1 9.859677e-305 1.463306e-302 9.859677e-305 2.123620e-272</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCGACCAACGATATT-1 1.184404e-290 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCGGGAAGGGTCCAT-1 9.859677e-305 2.198104e-279 9.859677e-305 7.023468e-184</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCTATTTAATCCAAC-1 9.859677e-305 8.198797e-186 9.859677e-305 8.998770e-303</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGACATCGCACGTCG-1 5.911412e-282 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGCCACCCGTTATGA-1 9.859677e-305 9.859677e-305 1.393948e-265 7.043575e-301</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGCCCATTGTACAGG-1 9.859677e-305 9.859677e-305 4.862985e-289 1.647658e-243</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGCTATGGTTAGCTT-1 9.859677e-305 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGGCGTGATCGGCTA-1 2.749494e-284 8.739770e-303 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGGCTGCAGTTACAG-1 9.859677e-305 9.859677e-305 4.705783e-269 1.082954e-279</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGGTTTAGTTCGGGA-1 9.859677e-305 9.859677e-305 1.120965e-302 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTAACCTCCTATTC-1 9.859677e-305 5.354877e-281 9.859677e-305 6.496216e-184</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTACGATATTGCCA-1 9.859677e-305 1.246078e-191 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTAGGTACAAAGCT-1 9.859677e-305 9.859677e-305 1.481676e-190 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTTGAGGCACGCTT-1 9.859677e-305 5.783290e-282 9.859677e-305 9.892927e-184</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTAATGTCTTGCCGC-1 9.859677e-305 1.463306e-302 3.895777e-288 9.110936e-250</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTAGGTAACATACAT-1 9.859677e-305 2.601000e-191 9.859677e-305 5.314448e-259</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTATAATACTAGGCA-1 8.891276e-184 9.859677e-305 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTCAGCCACCGCCTG-1 9.859677e-305 9.859677e-305 2.127995e-291 6.299838e-277</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                             [,9]         [,10]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAAGGGATGTAGCAAG-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAATGGCATGTCTTGT-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAATGGTCAATGTGCC-1 6.636983e-302 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAATTAACGGGTAGCT-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACAACTGGTAGTTGC-1 1.577783e-190 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACAGGAAATCGAATA-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACAGGATGGGCCGCG-1 1.415207e-190 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCATGGGATCGCTA-1 5.322531e-282 6.085858e-293</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCCAGAGACGGAGA-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCGAGCTTGGTCAT-1 1.463306e-302 2.171738e-300</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACCGTTGTGTTTGCT-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGATAGAAGGGCCG-1 6.395004e-285 1.078070e-301</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGATATGTCAACTG-1 1.609912e-286 1.097906e-276</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGCGGTCTCCAGCC-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACGTCAGACTAGTGG-1 1.716349e-277 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTCGATGGCGCAGT-1 7.531291e-304 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTGATATTAGGCCT-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTGGGTCCCGACGT-1 3.236306e-298 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AACTTGCCCGTATGCA-1 2.454329e-190 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGAGATGAATCGGTA-1 1.210491e-188 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGCTCGTGCCAAGTC-1 8.145737e-274 4.886451e-278</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGGAGCGGTTGGTGC-1 1.409409e-279 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGGCGCGTAAAGCTT-1 3.415341e-289 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGGCTGTGCTCATCG-1 9.058809e-303 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGTAGAAGACCGGGT-1 2.898917e-303 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AAGTAGTGACGCGAGG-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATCCAAGGGCCTGAG-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATGACTGTCAGCCGG-1 9.700849e-191 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATGCAACCGGGTACC-1 6.834428e-191 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATGGTTCTCACAAGC-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AATTTGGTTCCAAAGA-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACAACAGCATGAGCTA-1 1.505998e-296 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACAACGGTCCCTGCGA-1 4.974381e-291 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACAAGGACAAGAGGTT-1 2.192765e-292 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACAAAGACGGGTGG-1 3.431905e-188 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACACTTTCTACACG-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACCCAGCATGCAGC-1 6.362092e-191 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACCCGAGAAATCCG-1 3.412009e-297 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACCTTAAGTAGGGC-1 3.920534e-287 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACGAGACTCCTTCT-1 6.185174e-298 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACACGGGAACTTAGGG-1 4.989457e-300 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACATAATAAGGCGGTG-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCAAGAACGCGTGTC-1 1.287759e-299 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCACAAGTTTCTATC-1 3.934985e-303 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCCTTCATCTGCGAA-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCGACTGAGTCCCAC-1 3.915596e-299 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACCTAATCGACTTCCT-1 1.844153e-288 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGATCATACATAGAG-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGCATTCGTGAGTAC-1 7.207963e-257 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGCCAGATGATTTCT-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGCGGGCCAAGGACA-1 1.263051e-191 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGGAATTTAGCAAAT-1 5.871176e-276 8.941047e-288</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGTAGATTGCTGATG-1 1.463306e-302 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGTGCGCCTCGTGCA-1 4.240032e-291 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACGTTTAGTTGTGATC-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTACCAGCTCTCTGG-1 1.426260e-291 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTATTCGTCCGTGGT-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTCAATAAAGGCACG-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGCCGTCGTAACTC-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTAGCACTTTGGA-1 1.187565e-190 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTCCAGGATTATA-1 3.004300e-297 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTCTTCTTTAGAA-1 1.936355e-286 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTGTGCTAGTAGATC-1 2.920613e-288 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTAGTACGACAAGA-1 1.183507e-290 1.360173e-304</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTCGCCATACGCAC-1 1.046176e-287 4.999872e-183</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTGGGACCCGGTGG-1 2.434636e-300 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ACTTTCCTATAGCTTC-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGAACGTGGTACATTC-1 1.904017e-197 2.171738e-300</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGACCATGGGATACAA-1 1.163164e-302 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGACCCGCCCTCCTCG-1 1.199475e-287 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGACTAGCCTTCCAGA-1 2.299553e-277 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGAGCGGGCTAATCAT-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGAGCGTACAAGCTCG-1 5.731214e-293 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATAACTTCAGGGCC-1 2.541342e-303 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATACGACTTCATAT-1 1.097981e-289 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATCTCAGGTGTGAT-1 2.669325e-277 3.895849e-268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGATGACTCGCCCACG-1 2.497409e-300 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCACCAGTACTCACG-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCACTTAAGGACGCC-1 7.644682e-285 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCATCGTCGATAATT-1 1.758403e-188 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCCCTAAGCGAAGTT-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCGACATCCCATTCA-1 1.221888e-289 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCGACCAACGATATT-1 8.312172e-191 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCGGGAAGGGTCCAT-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGCTATTTAATCCAAC-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGACATCGCACGTCG-1 4.938228e-304 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGCCACCCGTTATGA-1 4.566711e-272 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGCCCATTGTACAGG-1 1.384146e-275 7.396044e-289</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGCTATGGTTAGCTT-1 3.708204e-184 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGGCGTGATCGGCTA-1 1.043652e-296 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGGCTGCAGTTACAG-1 1.118665e-272 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGGTTTAGTTCGGGA-1 9.249139e-191 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTAACCTCCTATTC-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTACGATATTGCCA-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTAGGTACAAAGCT-1 2.636016e-290 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGGTTGAGGCACGCTT-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTAATGTCTTGCCGC-1 3.954096e-291 4.465773e-303</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTAGGTAACATACAT-1 9.859677e-305 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTATAATACTAGGCA-1 3.052931e-291 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> AGTCAGCCACCGCCTG-1 9.070726e-284 9.859677e-305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [ reached getOption("max.print") -- omitted 524 rows ]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $spat_unit</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "cell"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $feat_type</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "rna"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"class")</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "list"       "HMRFoutput"</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'HMRF_init_obj' not found</span>
 </code></pre></div>
     </div>
   </div>
@@ -1679,15 +431,15 @@ and model log-likelihood value.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer></div>
 
-  
 
 
-  
+
+
 
   </body></html>
 

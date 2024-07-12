@@ -9,7 +9,7 @@
 
   gtag('config', 'G-2V1K0KPLJC');
 </script></head><body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -31,7 +31,7 @@
       <ul class="nav navbar-nav"><li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Get started
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -59,7 +59,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Examples
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li class="dropdown-submenu">
@@ -187,7 +187,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tutorials
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -261,7 +261,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -280,20 +280,20 @@
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/drieslab/Giotto/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Run UMAP dimension reduction</h1>
-    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/HEAD/R/dimension_reduction.R" class="external-link"><code>R/dimension_reduction.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/suite/R/dimension_reduction.R" class="external-link"><code>R/dimension_reduction.R</code></a></small>
     <div class="hidden name"><code>runUMAPprojection.Rd</code></div>
     </div>
 
@@ -331,107 +331,107 @@
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>gobject</dt>
+
+
+<dl><dt id="arg-gobject">gobject<a class="anchor" aria-label="anchor" href="#arg-gobject"></a></dt>
 <dd><p>giotto object</p></dd>
 
 
-<dt>feat_type</dt>
+<dt id="arg-feat-type">feat_type<a class="anchor" aria-label="anchor" href="#arg-feat-type"></a></dt>
 <dd><p>feature type</p></dd>
 
 
-<dt>spat_unit</dt>
+<dt id="arg-spat-unit">spat_unit<a class="anchor" aria-label="anchor" href="#arg-spat-unit"></a></dt>
 <dd><p>spatial unit</p></dd>
 
 
-<dt>expression_values</dt>
+<dt id="arg-expression-values">expression_values<a class="anchor" aria-label="anchor" href="#arg-expression-values"></a></dt>
 <dd><p>expression values to use</p></dd>
 
 
-<dt>reduction</dt>
+<dt id="arg-reduction">reduction<a class="anchor" aria-label="anchor" href="#arg-reduction"></a></dt>
 <dd><p>'cells' or 'feats'</p></dd>
 
 
-<dt>dim_reduction_to_use</dt>
+<dt id="arg-dim-reduction-to-use">dim_reduction_to_use<a class="anchor" aria-label="anchor" href="#arg-dim-reduction-to-use"></a></dt>
 <dd><p>use another dimension reduction set as input</p></dd>
 
 
-<dt>dim_reduction_name</dt>
+<dt id="arg-dim-reduction-name">dim_reduction_name<a class="anchor" aria-label="anchor" href="#arg-dim-reduction-name"></a></dt>
 <dd><p>name of dimension reduction set to use</p></dd>
 
 
-<dt>dimensions_to_use</dt>
+<dt id="arg-dimensions-to-use">dimensions_to_use<a class="anchor" aria-label="anchor" href="#arg-dimensions-to-use"></a></dt>
 <dd><p>number of dimensions to use as input</p></dd>
 
 
-<dt>random_subset</dt>
+<dt id="arg-random-subset">random_subset<a class="anchor" aria-label="anchor" href="#arg-random-subset"></a></dt>
 <dd><p>random subset to perform UMAP on</p></dd>
 
 
-<dt>name</dt>
+<dt id="arg-name">name<a class="anchor" aria-label="anchor" href="#arg-name"></a></dt>
 <dd><p>arbitrary name for UMAP run</p></dd>
 
 
-<dt>feats_to_use</dt>
+<dt id="arg-feats-to-use">feats_to_use<a class="anchor" aria-label="anchor" href="#arg-feats-to-use"></a></dt>
 <dd><p>if dim_reduction_to_use = NULL, which features to use</p></dd>
 
 
-<dt>return_gobject</dt>
+<dt id="arg-return-gobject">return_gobject<a class="anchor" aria-label="anchor" href="#arg-return-gobject"></a></dt>
 <dd><p>boolean: return giotto object (default = TRUE)</p></dd>
 
 
-<dt>n_neighbors</dt>
+<dt id="arg-n-neighbors">n_neighbors<a class="anchor" aria-label="anchor" href="#arg-n-neighbors"></a></dt>
 <dd><p>UMAP param: number of neighbors</p></dd>
 
 
-<dt>n_components</dt>
+<dt id="arg-n-components">n_components<a class="anchor" aria-label="anchor" href="#arg-n-components"></a></dt>
 <dd><p>UMAP param: number of components</p></dd>
 
 
-<dt>n_epochs</dt>
+<dt id="arg-n-epochs">n_epochs<a class="anchor" aria-label="anchor" href="#arg-n-epochs"></a></dt>
 <dd><p>UMAP param: number of epochs</p></dd>
 
 
-<dt>min_dist</dt>
+<dt id="arg-min-dist">min_dist<a class="anchor" aria-label="anchor" href="#arg-min-dist"></a></dt>
 <dd><p>UMAP param: minimum distance</p></dd>
 
 
-<dt>n_threads</dt>
+<dt id="arg-n-threads">n_threads<a class="anchor" aria-label="anchor" href="#arg-n-threads"></a></dt>
 <dd><p>UMAP param: threads/cores to use</p></dd>
 
 
-<dt>spread</dt>
+<dt id="arg-spread">spread<a class="anchor" aria-label="anchor" href="#arg-spread"></a></dt>
 <dd><p>UMAP param: spread</p></dd>
 
 
-<dt>set_seed</dt>
+<dt id="arg-set-seed">set_seed<a class="anchor" aria-label="anchor" href="#arg-set-seed"></a></dt>
 <dd><p>use of seed</p></dd>
 
 
-<dt>seed_number</dt>
+<dt id="arg-seed-number">seed_number<a class="anchor" aria-label="anchor" href="#arg-seed-number"></a></dt>
 <dd><p>seed number to use</p></dd>
 
 
-<dt>verbose</dt>
+<dt id="arg-verbose">verbose<a class="anchor" aria-label="anchor" href="#arg-verbose"></a></dt>
 <dd><p>verbosity of function</p></dd>
 
 
-<dt>toplevel_params</dt>
+<dt id="arg-toplevel-params">toplevel_params<a class="anchor" aria-label="anchor" href="#arg-toplevel-params"></a></dt>
 <dd><p>parameters to extract</p></dd>
 
 
-<dt>...</dt>
+<dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
 <dd><p>additional UMAP parameters</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
-<p>giotto object with updated UMAP dimension reduction</p>
+    <p>giotto object with updated UMAP dimension reduction</p>
     </div>
     <div id="details">
     <h2>Details</h2>
-    <p>See <code><a href="https://jlmelville.github.io/uwot/reference/umap.html" class="external-link">umap</a></code> for more information about these and 
+    <p>See <code><a href="https://jlmelville.github.io/uwot/reference/umap.html" class="external-link">umap</a></code> for more information about these and
 other parameters.</p><ul><li><p>Input for UMAP dimension reduction can be another dimension reduction (default = 'pca')</p></li>
 <li><p>To use gene expression as input set dim_reduction_to_use = NULL</p></li>
 <li><p>If dim_reduction_to_use = NULL, feats_to_use can be used to select a column name of
@@ -457,9 +457,24 @@ other parameters.</p><ul><li><p>Input for UMAP dimension reduction can be anothe
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> a giotto python environment was found</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/Users/yuanlab/Library/r-miniconda/envs/giotto_env/bin/pythonw"</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path or giotto</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  environment was specified, will check if a</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  default python path is available</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> A default python path was found: /usr/bin/python3 and will be used</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  If this is not the correct python path, either</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. use installGiottoEnvironment() to install</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  a local miniconda python environment along with required modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. provide an existing python path to</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python_path to use your own python path which has all modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  installed</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Set options("giotto.use_conda" = FALSE) if</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python functionalities are not needed</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>This giotto object was created in a newer version of</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 GiottoClass (v0.3.2)</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">runUMAPprojection</span><span class="op">(</span><span class="va">g</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> An object of class giotto </span>
@@ -499,15 +514,15 @@ other parameters.</p><ul><li><p>Input for UMAP dimension reduction can be anothe
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer></div>
 
-  
 
 
-  
+
+
 
   </body></html>
 

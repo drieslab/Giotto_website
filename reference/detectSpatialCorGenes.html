@@ -9,7 +9,7 @@
 
   gtag('config', 'G-2V1K0KPLJC');
 </script></head><body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -31,7 +31,7 @@
       <ul class="nav navbar-nav"><li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Get started
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -59,7 +59,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Examples
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li class="dropdown-submenu">
@@ -187,7 +187,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tutorials
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -261,7 +261,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -280,20 +280,20 @@
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/drieslab/Giotto/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>detectSpatialCorGenes</h1>
-    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/HEAD/R/spatial_genes.R" class="external-link"><code>R/spatial_genes.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/suite/R/spatial_genes.R" class="external-link"><code>R/spatial_genes.R</code></a></small>
     <div class="hidden name"><code>detectSpatialCorGenes.Rd</code></div>
     </div>
 
@@ -320,60 +320,60 @@
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>gobject</dt>
+
+
+<dl><dt id="arg-gobject">gobject<a class="anchor" aria-label="anchor" href="#arg-gobject"></a></dt>
 <dd><p>giotto object</p></dd>
 
 
-<dt>feat_type</dt>
+<dt id="arg-feat-type">feat_type<a class="anchor" aria-label="anchor" href="#arg-feat-type"></a></dt>
 <dd><p>feature type</p></dd>
 
 
-<dt>spat_unit</dt>
+<dt id="arg-spat-unit">spat_unit<a class="anchor" aria-label="anchor" href="#arg-spat-unit"></a></dt>
 <dd><p>spatial unit</p></dd>
 
 
-<dt>method</dt>
+<dt id="arg-method">method<a class="anchor" aria-label="anchor" href="#arg-method"></a></dt>
 <dd><p>method to use for spatial averaging</p></dd>
 
 
-<dt>expression_values</dt>
+<dt id="arg-expression-values">expression_values<a class="anchor" aria-label="anchor" href="#arg-expression-values"></a></dt>
 <dd><p>gene expression values to use</p></dd>
 
 
-<dt>subset_feats</dt>
+<dt id="arg-subset-feats">subset_feats<a class="anchor" aria-label="anchor" href="#arg-subset-feats"></a></dt>
 <dd><p>subset of feats to use</p></dd>
 
 
-<dt>subset_genes</dt>
+<dt id="arg-subset-genes">subset_genes<a class="anchor" aria-label="anchor" href="#arg-subset-genes"></a></dt>
 <dd><p>deprecated, use <code>subset_feats</code></p></dd>
 
 
-<dt>spatial_network_name</dt>
+<dt id="arg-spatial-network-name">spatial_network_name<a class="anchor" aria-label="anchor" href="#arg-spatial-network-name"></a></dt>
 <dd><p>name of spatial network to use</p></dd>
 
 
-<dt>network_smoothing</dt>
+<dt id="arg-network-smoothing">network_smoothing<a class="anchor" aria-label="anchor" href="#arg-network-smoothing"></a></dt>
 <dd><p>smoothing factor beteen 0 and 1
 (default: automatic)</p></dd>
 
 
-<dt>spatial_grid_name</dt>
+<dt id="arg-spatial-grid-name">spatial_grid_name<a class="anchor" aria-label="anchor" href="#arg-spatial-grid-name"></a></dt>
 <dd><p>name of spatial grid to use</p></dd>
 
 
-<dt>min_cells_per_grid</dt>
+<dt id="arg-min-cells-per-grid">min_cells_per_grid<a class="anchor" aria-label="anchor" href="#arg-min-cells-per-grid"></a></dt>
 <dd><p>minimum number of cells to consider a grid</p></dd>
 
 
-<dt>cor_method</dt>
+<dt id="arg-cor-method">cor_method<a class="anchor" aria-label="anchor" href="#arg-cor-method"></a></dt>
 <dd><p>correlation method</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
-<p>returns a spatial correlation object: "spatCorObject"</p>
+    <p>returns a spatial correlation object: "spatCorObject"</p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -408,15 +408,15 @@ fully connected network by setting minimal_k &gt; 0 in the
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer></div>
 
-  
 
 
-  
+
+
 
   </body></html>
 

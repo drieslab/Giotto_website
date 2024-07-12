@@ -9,7 +9,7 @@
 
   gtag('config', 'G-2V1K0KPLJC');
 </script></head><body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -31,7 +31,7 @@
       <ul class="nav navbar-nav"><li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Get started
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -59,7 +59,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Examples
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li class="dropdown-submenu">
@@ -187,7 +187,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tutorials
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -261,7 +261,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -280,20 +280,20 @@
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/drieslab/Giotto/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>plotCellTypesFromEnrichment</h1>
-    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/HEAD/R/spatial_enrichment_visuals.R" class="external-link"><code>R/spatial_enrichment_visuals.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/suite/R/spatial_enrichment_visuals.R" class="external-link"><code>R/spatial_enrichment_visuals.R</code></a></small>
     <div class="hidden name"><code>plotCellTypesFromEnrichment.Rd</code></div>
     </div>
 
@@ -318,62 +318,62 @@
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>gobject</dt>
+
+
+<dl><dt id="arg-gobject">gobject<a class="anchor" aria-label="anchor" href="#arg-gobject"></a></dt>
 <dd><p>Giotto Object</p></dd>
 
 
-<dt>spat_unit</dt>
+<dt id="arg-spat-unit">spat_unit<a class="anchor" aria-label="anchor" href="#arg-spat-unit"></a></dt>
 <dd><p>spatial unit in which the enrichment information is stored</p></dd>
 
 
-<dt>feat_type</dt>
-<dd><p>feature type for which the enrichment information was 
+<dt id="arg-feat-type">feat_type<a class="anchor" aria-label="anchor" href="#arg-feat-type"></a></dt>
+<dd><p>feature type for which the enrichment information was
 calculated</p></dd>
 
 
-<dt>enrichment_name</dt>
+<dt id="arg-enrichment-name">enrichment_name<a class="anchor" aria-label="anchor" href="#arg-enrichment-name"></a></dt>
 <dd><p>name of the spatial enrichment
 i.e. output from GiottoClass::list_spatial_enrichment_names()
 Default value is "PAGE_Z_score"</p></dd>
 
 
-<dt>title</dt>
+<dt id="arg-title">title<a class="anchor" aria-label="anchor" href="#arg-title"></a></dt>
 <dd><p>Title of the generated plot.
 Default `paste0(spat_unit,"cell types (maximum", enrichment_name, ")")`</p></dd>
 
 
-<dt>save_param</dt>
+<dt id="arg-save-param">save_param<a class="anchor" aria-label="anchor" href="#arg-save-param"></a></dt>
 <dd><p>list of saving parameters, see <code><a href="https://drieslab.github.io/GiottoVisuals/reference/showSaveParameters.html" class="external-link">showSaveParameters</a></code></p></dd>
 
 
-<dt>default_save_name</dt>
+<dt id="arg-default-save-name">default_save_name<a class="anchor" aria-label="anchor" href="#arg-default-save-name"></a></dt>
 <dd><p>default save name for saving, don't change, change save_name in save_param</p></dd>
 
 
-<dt>save_plot</dt>
+<dt id="arg-save-plot">save_plot<a class="anchor" aria-label="anchor" href="#arg-save-plot"></a></dt>
 <dd><p>logical. save the plot</p></dd>
 
 
-<dt>show_plot</dt>
+<dt id="arg-show-plot">show_plot<a class="anchor" aria-label="anchor" href="#arg-show-plot"></a></dt>
 <dd><p>logical. show plot</p></dd>
 
 
-<dt>return_plot</dt>
+<dt id="arg-return-plot">return_plot<a class="anchor" aria-label="anchor" href="#arg-return-plot"></a></dt>
 <dd><p>logical. return ggplot object</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
-<p>plot</p>
+    <p>plot</p>
     </div>
     <div id="details">
     <h2>Details</h2>
     <p>This function generates a bar plot of cell types vs the frequency
 of that cell type in the data. These cell type results are
 based on the provided `enrichment_name`, and will be determined
-by the maximum value of the z-score or p-value for a given cell or 
+by the maximum value of the z-score or p-value for a given cell or
 annotation.</p>
     </div>
 
@@ -389,15 +389,15 @@ annotation.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer></div>
 
-  
 
 
-  
+
+
 
   </body></html>
 

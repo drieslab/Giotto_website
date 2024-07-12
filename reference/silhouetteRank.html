@@ -17,7 +17,7 @@ silhouetteRankTest"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aj
 
   gtag('config', 'G-2V1K0KPLJC');
 </script></head><body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -39,7 +39,7 @@ silhouetteRankTest"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aj
       <ul class="nav navbar-nav"><li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Get started
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -67,7 +67,7 @@ silhouetteRankTest"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aj
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Examples
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li class="dropdown-submenu">
@@ -195,7 +195,7 @@ silhouetteRankTest"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aj
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tutorials
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -269,7 +269,7 @@ silhouetteRankTest"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aj
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -288,20 +288,20 @@ silhouetteRankTest"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aj
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/drieslab/Giotto/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>silhouetteRank</h1>
-    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/HEAD/R/spatial_genes.R" class="external-link"><code>R/spatial_genes.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/suite/R/spatial_genes.R" class="external-link"><code>R/spatial_genes.R</code></a></small>
     <div class="hidden name"><code>silhouetteRank.Rd</code></div>
     </div>
 
@@ -331,39 +331,39 @@ New multi aggregator implementation can be found at
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>gobject</dt>
+
+
+<dl><dt id="arg-gobject">gobject<a class="anchor" aria-label="anchor" href="#arg-gobject"></a></dt>
 <dd><p>giotto object</p></dd>
 
 
-<dt>expression_values</dt>
+<dt id="arg-expression-values">expression_values<a class="anchor" aria-label="anchor" href="#arg-expression-values"></a></dt>
 <dd><p>expression values to use</p></dd>
 
 
-<dt>metric</dt>
+<dt id="arg-metric">metric<a class="anchor" aria-label="anchor" href="#arg-metric"></a></dt>
 <dd><p>distance metric to use</p></dd>
 
 
-<dt>subset_genes</dt>
+<dt id="arg-subset-genes">subset_genes<a class="anchor" aria-label="anchor" href="#arg-subset-genes"></a></dt>
 <dd><p>only run on this subset of genes</p></dd>
 
 
-<dt>rbp_p</dt>
+<dt id="arg-rbp-p">rbp_p<a class="anchor" aria-label="anchor" href="#arg-rbp-p"></a></dt>
 <dd><p>fractional binarization threshold</p></dd>
 
 
-<dt>examine_top</dt>
+<dt id="arg-examine-top">examine_top<a class="anchor" aria-label="anchor" href="#arg-examine-top"></a></dt>
 <dd><p>top fraction to evaluate with silhouette</p></dd>
 
 
-<dt>python_path</dt>
+<dt id="arg-python-path">python_path<a class="anchor" aria-label="anchor" href="#arg-python-path"></a></dt>
 <dd><p>specify specific path to python if required</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
-<p>data.table with spatial scores</p>
+    <p>data.table with spatial scores</p>
     </div>
 
     <div id="ref-examples">
@@ -384,24 +384,28 @@ New multi aggregator implementation can be found at
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> a giotto python environment was found</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/Users/yuanlab/Library/r-miniconda/envs/giotto_env/bin/pythonw"</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path or giotto</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  environment was specified, will check if a</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  default python path is available</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> A default python path was found: /usr/bin/python3 and will be used</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  If this is not the correct python path, either</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. use installGiottoEnvironment() to install</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  a local miniconda python environment along with required modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. provide an existing python path to</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python_path to use your own python path which has all modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  installed</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Set options("giotto.use_conda" = FALSE) if</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python functionalities are not needed</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>This giotto object was created in a newer version of</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 GiottoClass (v0.3.2)</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">silhouetteRank</span><span class="op">(</span><span class="va">g</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       genes       scores</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      &lt;char&gt;        &lt;num&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   1:    Ddn  0.057049717</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   2:  Prkcd  0.056842129</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   3:   Zic1  0.050903782</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   4: Tcf7l2  0.050646315</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   5:    Ttr  0.049383013</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  ---                    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 630:    Dcn -0.001557160</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 631:   Gkn3 -0.001581680</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 632:  Enpp6 -0.001592054</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 633:  Npas1 -0.001733937</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 634:   Gja4 -0.001836833</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in py_run_file_impl(file, local, convert):</span> ModuleNotFoundError: No module named 'scipy'</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> Run `reticulate::py_last_error()` for details.</span>
 </code></pre></div>
     </div>
   </div>
@@ -416,15 +420,15 @@ New multi aggregator implementation can be found at
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer></div>
 
-  
 
 
-  
+
+
 
   </body></html>
 

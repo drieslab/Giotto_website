@@ -10,7 +10,7 @@ giotto object"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/li
 
   gtag('config', 'G-2V1K0KPLJC');
 </script></head><body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -32,7 +32,7 @@ giotto object"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/li
       <ul class="nav navbar-nav"><li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Get started
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -60,7 +60,7 @@ giotto object"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/li
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Examples
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li class="dropdown-submenu">
@@ -188,7 +188,7 @@ giotto object"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/li
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tutorials
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -262,7 +262,7 @@ giotto object"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/li
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -281,20 +281,20 @@ giotto object"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/li
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/drieslab/Giotto/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Projection of cluster labels</h1>
-    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/HEAD/R/clustering.R" class="external-link"><code>R/clustering.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/suite/R/clustering.R" class="external-link"><code>R/clustering.R</code></a></small>
     <div class="hidden name"><code>doClusterProjection.Rd</code></div>
     </div>
 
@@ -324,68 +324,68 @@ giotto object</p>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>target_gobject</dt>
+
+
+<dl><dt id="arg-target-gobject">target_gobject<a class="anchor" aria-label="anchor" href="#arg-target-gobject"></a></dt>
 <dd><p>target giotto object</p></dd>
 
 
-<dt>target_cluster_label_name</dt>
+<dt id="arg-target-cluster-label-name">target_cluster_label_name<a class="anchor" aria-label="anchor" href="#arg-target-cluster-label-name"></a></dt>
 <dd><p>name for predicted clusters</p></dd>
 
 
-<dt>spat_unit</dt>
+<dt id="arg-spat-unit">spat_unit<a class="anchor" aria-label="anchor" href="#arg-spat-unit"></a></dt>
 <dd><p>spatial unit</p></dd>
 
 
-<dt>feat_type</dt>
+<dt id="arg-feat-type">feat_type<a class="anchor" aria-label="anchor" href="#arg-feat-type"></a></dt>
 <dd><p>feature type</p></dd>
 
 
-<dt>source_gobject</dt>
+<dt id="arg-source-gobject">source_gobject<a class="anchor" aria-label="anchor" href="#arg-source-gobject"></a></dt>
 <dd><p>source giotto object with annotation data</p></dd>
 
 
-<dt>source_cluster_labels</dt>
+<dt id="arg-source-cluster-labels">source_cluster_labels<a class="anchor" aria-label="anchor" href="#arg-source-cluster-labels"></a></dt>
 <dd><p>annotation/labels to use to train KNN classifier</p></dd>
 
 
-<dt>reduction</dt>
+<dt id="arg-reduction">reduction<a class="anchor" aria-label="anchor" href="#arg-reduction"></a></dt>
 <dd><p>reduction on cells or features (default = cells)</p></dd>
 
 
-<dt>reduction_method</dt>
+<dt id="arg-reduction-method">reduction_method<a class="anchor" aria-label="anchor" href="#arg-reduction-method"></a></dt>
 <dd><p>shared reduction method (default = pca space)</p></dd>
 
 
-<dt>reduction_name</dt>
+<dt id="arg-reduction-name">reduction_name<a class="anchor" aria-label="anchor" href="#arg-reduction-name"></a></dt>
 <dd><p>name of shared reduction space (default name = 'pca')</p></dd>
 
 
-<dt>dimensions_to_use</dt>
+<dt id="arg-dimensions-to-use">dimensions_to_use<a class="anchor" aria-label="anchor" href="#arg-dimensions-to-use"></a></dt>
 <dd><p>dimensions to use in shared reduction space
 (default = 1:10)</p></dd>
 
 
-<dt>knn_k</dt>
+<dt id="arg-knn-k">knn_k<a class="anchor" aria-label="anchor" href="#arg-knn-k"></a></dt>
 <dd><p>number of k-neighbors to train a KNN classifier</p></dd>
 
 
-<dt>prob</dt>
+<dt id="arg-prob">prob<a class="anchor" aria-label="anchor" href="#arg-prob"></a></dt>
 <dd><p>output probabilities together with label predictions</p></dd>
 
 
-<dt>algorithm</dt>
+<dt id="arg-algorithm">algorithm<a class="anchor" aria-label="anchor" href="#arg-algorithm"></a></dt>
 <dd><p>nearest neighbor search algorithm</p></dd>
 
 
-<dt>return_gobject</dt>
+<dt id="arg-return-gobject">return_gobject<a class="anchor" aria-label="anchor" href="#arg-return-gobject"></a></dt>
 <dd><p>return giotto object</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
-<p>giotto object (default) or data.table with cell metadata</p>
+    <p>giotto object (default) or data.table with cell metadata</p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -422,9 +422,24 @@ Giotto object.</p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> a giotto python environment was found</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/Users/yuanlab/Library/r-miniconda/envs/giotto_env/bin/pythonw"</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path or giotto</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  environment was specified, will check if a</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  default python path is available</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> A default python path was found: /usr/bin/python3 and will be used</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  If this is not the correct python path, either</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. use installGiottoEnvironment() to install</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  a local miniconda python environment along with required modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. provide an existing python path to</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python_path to use your own python path which has all modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  installed</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Set options("giotto.use_conda" = FALSE) if</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python functionalities are not needed</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>This giotto object was created in a newer version of</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 GiottoClass (v0.3.2)</span>
 <span class="r-in"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/pDataDT.html" class="external-link">pDataDT</a></span><span class="op">(</span><span class="va">g</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">g_small</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/subsetGiotto.html" class="external-link">subsetGiotto</a></span><span class="op">(</span><span class="va">g</span>, cell_ids <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="va">x</span><span class="op">$</span><span class="va">cell_ID</span>,<span class="fl">300</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">doClusterProjection</span><span class="op">(</span>target_gobject <span class="op">=</span> <span class="va">g</span>, source_gobject <span class="op">=</span> <span class="va">g_small</span>,</span></span>
@@ -443,15 +458,15 @@ Giotto object.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer></div>
 
-  
 
 
-  
+
+
 
   </body></html>
 

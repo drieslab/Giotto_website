@@ -3,7 +3,7 @@
 spatialAutoCorGlobal will return values as a data.table instead of
 appending information to the gobject.
 spatialAutoCorLocal will append the results as a spatial enrichment
-object by default. 
+object by default.
 If providing external data using either the node_values and/or
 weight_matrix params, the order of values provided should be the
 same as the ordering of the columns and rows of the weight matrix."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -16,7 +16,7 @@ same as the ordering of the columns and rows of the weight matrix."><!-- mathjax
 
   gtag('config', 'G-2V1K0KPLJC');
 </script></head><body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -38,7 +38,7 @@ same as the ordering of the columns and rows of the weight matrix."><!-- mathjax
       <ul class="nav navbar-nav"><li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Get started
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -66,7 +66,7 @@ same as the ordering of the columns and rows of the weight matrix."><!-- mathjax
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Examples
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li class="dropdown-submenu">
@@ -194,7 +194,7 @@ same as the ordering of the columns and rows of the weight matrix."><!-- mathjax
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tutorials
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -268,7 +268,7 @@ same as the ordering of the columns and rows of the weight matrix."><!-- mathjax
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -287,20 +287,20 @@ same as the ordering of the columns and rows of the weight matrix."><!-- mathjax
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/drieslab/Giotto/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Spatial autocorrelation</h1>
-    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/HEAD/R/spatial_enrichment.R" class="external-link"><code>R/spatial_enrichment.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/suite/R/spatial_enrichment.R" class="external-link"><code>R/spatial_enrichment.R</code></a></small>
     <div class="hidden name"><code>spatialAutoCor.Rd</code></div>
     </div>
 
@@ -361,100 +361,100 @@ same as the ordering of the columns and rows of the weight matrix.</p>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>gobject</dt>
+
+
+<dl><dt id="arg-gobject">gobject<a class="anchor" aria-label="anchor" href="#arg-gobject"></a></dt>
 <dd><p>giotto object</p></dd>
 
 
-<dt>spat_unit</dt>
+<dt id="arg-spat-unit">spat_unit<a class="anchor" aria-label="anchor" href="#arg-spat-unit"></a></dt>
 <dd><p>spatial unit</p></dd>
 
 
-<dt>feat_type</dt>
+<dt id="arg-feat-type">feat_type<a class="anchor" aria-label="anchor" href="#arg-feat-type"></a></dt>
 <dd><p>feature type</p></dd>
 
 
-<dt>feats</dt>
+<dt id="arg-feats">feats<a class="anchor" aria-label="anchor" href="#arg-feats"></a></dt>
 <dd><p>features (expression) on which to run autocorrelation.
 (leaving as NULL means that all features will be tested)</p></dd>
 
 
-<dt>method</dt>
+<dt id="arg-method">method<a class="anchor" aria-label="anchor" href="#arg-method"></a></dt>
 <dd><p>method of autocorrelation. See details (default = 'moran')</p></dd>
 
 
-<dt>data_to_use</dt>
+<dt id="arg-data-to-use">data_to_use<a class="anchor" aria-label="anchor" href="#arg-data-to-use"></a></dt>
 <dd><p>if using data from gobject, whether to test using
 expression ('expression') or cell metadata ('cell_meta')</p></dd>
 
 
-<dt>expression_values</dt>
+<dt id="arg-expression-values">expression_values<a class="anchor" aria-label="anchor" href="#arg-expression-values"></a></dt>
 <dd><p>name of expression information to use</p></dd>
 
 
-<dt>meta_cols</dt>
+<dt id="arg-meta-cols">meta_cols<a class="anchor" aria-label="anchor" href="#arg-meta-cols"></a></dt>
 <dd><p>columns in cell metadata to test</p></dd>
 
 
-<dt>spatial_network_to_use</dt>
+<dt id="arg-spatial-network-to-use">spatial_network_to_use<a class="anchor" aria-label="anchor" href="#arg-spatial-network-to-use"></a></dt>
 <dd><p>spatial network to use</p></dd>
 
 
-<dt>wm_method</dt>
+<dt id="arg-wm-method">wm_method<a class="anchor" aria-label="anchor" href="#arg-wm-method"></a></dt>
 <dd><p>type of weight matrix to generate from spatial network
 if no weight matrix is found attached to the spatial network</p></dd>
 
 
-<dt>wm_name</dt>
+<dt id="arg-wm-name">wm_name<a class="anchor" aria-label="anchor" href="#arg-wm-name"></a></dt>
 <dd><p>name of attached weight matrix to use</p></dd>
 
 
-<dt>node_values</dt>
+<dt id="arg-node-values">node_values<a class="anchor" aria-label="anchor" href="#arg-node-values"></a></dt>
 <dd><p>alternative method of directly supplying a set of node
 values</p></dd>
 
 
-<dt>weight_matrix</dt>
+<dt id="arg-weight-matrix">weight_matrix<a class="anchor" aria-label="anchor" href="#arg-weight-matrix"></a></dt>
 <dd><p>alternative method of directly supplying a spatial
 weight matrix</p></dd>
 
 
-<dt>test_method</dt>
+<dt id="arg-test-method">test_method<a class="anchor" aria-label="anchor" href="#arg-test-method"></a></dt>
 <dd><p>method to test values for significance (default is no
 testing)</p></dd>
 
 
-<dt>mc_nsim</dt>
+<dt id="arg-mc-nsim">mc_nsim<a class="anchor" aria-label="anchor" href="#arg-mc-nsim"></a></dt>
 <dd><p>when <code>test_method = 'monte_carlo'</code> this is number of
 simulations to perform</p></dd>
 
 
-<dt>cor_name</dt>
+<dt id="arg-cor-name">cor_name<a class="anchor" aria-label="anchor" href="#arg-cor-name"></a></dt>
 <dd><p>name to assign the results in global autocorrelation output</p></dd>
 
 
-<dt>return_gobject</dt>
+<dt id="arg-return-gobject">return_gobject<a class="anchor" aria-label="anchor" href="#arg-return-gobject"></a></dt>
 <dd><p>(default = FALSE) whether to return results appended to</p></dd>
 
 
-<dt>verbose</dt>
+<dt id="arg-verbose">verbose<a class="anchor" aria-label="anchor" href="#arg-verbose"></a></dt>
 <dd><p>be verbose</p></dd>
 
 
-<dt>enrich_name</dt>
+<dt id="arg-enrich-name">enrich_name<a class="anchor" aria-label="anchor" href="#arg-enrich-name"></a></dt>
 <dd><p>name to assign local autocorrelation spatial enrichment
 results</p></dd>
 
 
-<dt>output</dt>
+<dt id="arg-output">output<a class="anchor" aria-label="anchor" href="#arg-output"></a></dt>
 <dd><p>'spatEnrObj' or 'data.table'
 metadata in the giotto object or as a data.table</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
-<p>spatial autocorrelation</p>
+    <p>spatial autocorrelation</p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -467,7 +467,7 @@ metadata in the giotto object or as a data.table</p></dd>
 </ul></div>
     <div id="functions">
     <h2>Functions</h2>
-    
+
 <ul><li><p><code>spatialAutoCorGlobal()</code>: Global autocorrelation (single value returned)</p></li>
 <li><p><code>spatialAutoCorLocal()</code>: Local autocorrelation
 (values generated for each spatial ID)</p></li>
@@ -485,15 +485,15 @@ metadata in the giotto object or as a data.table</p></dd>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer></div>
 
-  
 
 
-  
+
+
 
   </body></html>
 

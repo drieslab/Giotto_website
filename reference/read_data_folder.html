@@ -13,7 +13,7 @@ reader functions should be built using it as a base."><!-- mathjax --><script sr
 
   gtag('config', 'G-2V1K0KPLJC');
 </script></head><body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -35,7 +35,7 @@ reader functions should be built using it as a base."><!-- mathjax --><script sr
       <ul class="nav navbar-nav"><li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Get started
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -63,7 +63,7 @@ reader functions should be built using it as a base."><!-- mathjax --><script sr
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Examples
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li class="dropdown-submenu">
@@ -191,7 +191,7 @@ reader functions should be built using it as a base."><!-- mathjax --><script sr
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tutorials
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -265,7 +265,7 @@ reader functions should be built using it as a base."><!-- mathjax --><script sr
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -284,20 +284,20 @@ reader functions should be built using it as a base."><!-- mathjax --><script sr
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/drieslab/Giotto/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Read a structured folder of exported data</h1>
-    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/HEAD/R/convenience.R" class="external-link"><code>R/convenience.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/suite/R/convenience.R" class="external-link"><code>R/convenience.R</code></a></small>
     <div class="hidden name"><code>read_data_folder.Rd</code></div>
     </div>
 
@@ -326,48 +326,48 @@ reader functions should be built using it as a base.</p>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>spat_method</dt>
+
+
+<dl><dt id="arg-spat-method">spat_method<a class="anchor" aria-label="anchor" href="#arg-spat-method"></a></dt>
 <dd><p>spatial method for which the data is being read</p></dd>
 
 
-<dt>data_dir</dt>
+<dt id="arg-data-dir">data_dir<a class="anchor" aria-label="anchor" href="#arg-data-dir"></a></dt>
 <dd><p>exported data directory to read from</p></dd>
 
 
-<dt>dir_items</dt>
+<dt id="arg-dir-items">dir_items<a class="anchor" aria-label="anchor" href="#arg-dir-items"></a></dt>
 <dd><p>named list of directory items to expect and keywords to
 match</p></dd>
 
 
-<dt>data_to_use</dt>
+<dt id="arg-data-to-use">data_to_use<a class="anchor" aria-label="anchor" href="#arg-data-to-use"></a></dt>
 <dd><p>character. Which type(s) of expression data to build the
 gobject with. Values should match with a <em>workflow</em> item in require_data_DT
 (see details)</p></dd>
 
 
-<dt>require_data_DT</dt>
+<dt id="arg-require-data-dt">require_data_DT<a class="anchor" aria-label="anchor" href="#arg-require-data-dt"></a></dt>
 <dd><p>data.table detailing if expected data items are
 required or optional for each <code>data_to_use</code> <em>workflow</em></p></dd>
 
 
-<dt>cores</dt>
+<dt id="arg-cores">cores<a class="anchor" aria-label="anchor" href="#arg-cores"></a></dt>
 <dd><p>cores to use</p></dd>
 
 
-<dt>verbose</dt>
+<dt id="arg-verbose">verbose<a class="anchor" aria-label="anchor" href="#arg-verbose"></a></dt>
 <dd><p>be verbose</p></dd>
 
 
-<dt>toplevel</dt>
+<dt id="arg-toplevel">toplevel<a class="anchor" aria-label="anchor" href="#arg-toplevel"></a></dt>
 <dd><p>stackframes back where the user-facing function was called.
 default is one stackframe above <code>.read_data_folder</code>.</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
-<p>data.table</p>
+    <p>data.table</p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -419,7 +419,7 @@ subdirectories and files.</p></li>
     </div>
     <div id="functions">
     <h2>Functions</h2>
-    
+
 <ul><li><p><code>.read_data_folder()</code>: Should not be used directly</p></li>
 <li><p><code>.read_merscope_folder()</code>: Read a structured MERSCOPE folder</p></li>
 </ul></div>
@@ -436,15 +436,15 @@ subdirectories and files.</p></li>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer></div>
 
-  
 
 
-  
+
+
 
   </body></html>
 

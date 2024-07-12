@@ -9,7 +9,7 @@
 
   gtag('config', 'G-2V1K0KPLJC');
 </script></head><body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -31,7 +31,7 @@
       <ul class="nav navbar-nav"><li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Get started
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -59,7 +59,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Examples
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li class="dropdown-submenu">
@@ -187,7 +187,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tutorials
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -261,7 +261,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -280,20 +280,20 @@
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/drieslab/Giotto/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>cellProximityNetwork</h1>
-    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/HEAD/R/spatial_interaction_visuals.R" class="external-link"><code>R/spatial_interaction_visuals.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/suite/R/spatial_interaction_visuals.R" class="external-link"><code>R/spatial_interaction_visuals.R</code></a></small>
     <div class="hidden name"><code>cellProximityNetwork.Rd</code></div>
     </div>
 
@@ -328,93 +328,93 @@
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>gobject</dt>
+
+
+<dl><dt id="arg-gobject">gobject<a class="anchor" aria-label="anchor" href="#arg-gobject"></a></dt>
 <dd><p>giotto object</p></dd>
 
 
-<dt>CPscore</dt>
+<dt id="arg-cpscore">CPscore<a class="anchor" aria-label="anchor" href="#arg-cpscore"></a></dt>
 <dd><p>CPscore, output from cellProximityEnrichment()</p></dd>
 
 
-<dt>remove_self_edges</dt>
+<dt id="arg-remove-self-edges">remove_self_edges<a class="anchor" aria-label="anchor" href="#arg-remove-self-edges"></a></dt>
 <dd><p>remove enrichment/depletion edges with itself</p></dd>
 
 
-<dt>self_loop_strength</dt>
+<dt id="arg-self-loop-strength">self_loop_strength<a class="anchor" aria-label="anchor" href="#arg-self-loop-strength"></a></dt>
 <dd><p>size of self-loops</p></dd>
 
 
-<dt>color_depletion</dt>
+<dt id="arg-color-depletion">color_depletion<a class="anchor" aria-label="anchor" href="#arg-color-depletion"></a></dt>
 <dd><p>color for depleted cell-cell interactions</p></dd>
 
 
-<dt>color_enrichment</dt>
+<dt id="arg-color-enrichment">color_enrichment<a class="anchor" aria-label="anchor" href="#arg-color-enrichment"></a></dt>
 <dd><p>color for enriched cell-cell interactions</p></dd>
 
 
-<dt>rescale_edge_weights</dt>
+<dt id="arg-rescale-edge-weights">rescale_edge_weights<a class="anchor" aria-label="anchor" href="#arg-rescale-edge-weights"></a></dt>
 <dd><p>rescale edge weights (boolean)</p></dd>
 
 
-<dt>edge_weight_range_depletion</dt>
-<dd><p>numerical vector of length 2 to rescale 
+<dt id="arg-edge-weight-range-depletion">edge_weight_range_depletion<a class="anchor" aria-label="anchor" href="#arg-edge-weight-range-depletion"></a></dt>
+<dd><p>numerical vector of length 2 to rescale
 depleted edge weights</p></dd>
 
 
-<dt>edge_weight_range_enrichment</dt>
-<dd><p>numerical vector of length 2 to rescale 
+<dt id="arg-edge-weight-range-enrichment">edge_weight_range_enrichment<a class="anchor" aria-label="anchor" href="#arg-edge-weight-range-enrichment"></a></dt>
+<dd><p>numerical vector of length 2 to rescale
 enriched edge weights</p></dd>
 
 
-<dt>layout</dt>
+<dt id="arg-layout">layout<a class="anchor" aria-label="anchor" href="#arg-layout"></a></dt>
 <dd><p>layout algorithm to use to draw nodes and edges</p></dd>
 
 
-<dt>only_show_enrichment_edges</dt>
+<dt id="arg-only-show-enrichment-edges">only_show_enrichment_edges<a class="anchor" aria-label="anchor" href="#arg-only-show-enrichment-edges"></a></dt>
 <dd><p>show only the enriched pairwise scores</p></dd>
 
 
-<dt>edge_width_range</dt>
+<dt id="arg-edge-width-range">edge_width_range<a class="anchor" aria-label="anchor" href="#arg-edge-width-range"></a></dt>
 <dd><p>range of edge width</p></dd>
 
 
-<dt>node_size</dt>
+<dt id="arg-node-size">node_size<a class="anchor" aria-label="anchor" href="#arg-node-size"></a></dt>
 <dd><p>size of nodes</p></dd>
 
 
-<dt>node_color_code</dt>
+<dt id="arg-node-color-code">node_color_code<a class="anchor" aria-label="anchor" href="#arg-node-color-code"></a></dt>
 <dd><p>color code for the nodes (e.g. cell labels)</p></dd>
 
 
-<dt>node_text_size</dt>
+<dt id="arg-node-text-size">node_text_size<a class="anchor" aria-label="anchor" href="#arg-node-text-size"></a></dt>
 <dd><p>size of node labels</p></dd>
 
 
-<dt>show_plot</dt>
+<dt id="arg-show-plot">show_plot<a class="anchor" aria-label="anchor" href="#arg-show-plot"></a></dt>
 <dd><p>logical. show plot</p></dd>
 
 
-<dt>return_plot</dt>
+<dt id="arg-return-plot">return_plot<a class="anchor" aria-label="anchor" href="#arg-return-plot"></a></dt>
 <dd><p>logical. return ggplot object</p></dd>
 
 
-<dt>save_plot</dt>
+<dt id="arg-save-plot">save_plot<a class="anchor" aria-label="anchor" href="#arg-save-plot"></a></dt>
 <dd><p>logical. save the plot</p></dd>
 
 
-<dt>save_param</dt>
+<dt id="arg-save-param">save_param<a class="anchor" aria-label="anchor" href="#arg-save-param"></a></dt>
 <dd><p>list of saving parameters, see <code><a href="https://drieslab.github.io/GiottoVisuals/reference/showSaveParameters.html" class="external-link">showSaveParameters</a></code></p></dd>
 
 
-<dt>default_save_name</dt>
+<dt id="arg-default-save-name">default_save_name<a class="anchor" aria-label="anchor" href="#arg-default-save-name"></a></dt>
 <dd><p>default save name for saving, don't change, change save_name in save_param</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
-<p>igraph plot</p>
+    <p>igraph plot</p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -440,14 +440,29 @@ enriched edge weights</p></dd>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> a giotto python environment was found</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/Users/yuanlab/Library/r-miniconda/envs/giotto_env/bin/pythonw"</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path or giotto</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  environment was specified, will check if a</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  default python path is available</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> A default python path was found: /usr/bin/python3 and will be used</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  If this is not the correct python path, either</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. use installGiottoEnvironment() to install</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  a local miniconda python environment along with required modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. provide an existing python path to</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python_path to use your own python path which has all modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  installed</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Set options("giotto.use_conda" = FALSE) if</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python functionalities are not needed</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>This giotto object was created in a newer version of</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 GiottoClass (v0.3.2)</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="cellProximityEnrichment.html">cellProximityEnrichment</a></span><span class="op">(</span><span class="va">g</span>, cluster_column <span class="op">=</span> <span class="st">"leiden_clus"</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">cellProximityNetwork</span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">g</span>, CPscore <span class="op">=</span> <span class="va">x</span><span class="op">)</span></span></span>
-<span class="r-plt img"><img src="cellProximityNetwork-1.png" alt="" width="700" height="433"></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in loadNamespace(x):</span> there is no package called ‘ggraph’</span>
 </code></pre></div>
     </div>
   </div>
@@ -462,15 +477,15 @@ enriched edge weights</p></dd>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer></div>
 
-  
 
 
-  
+
+
 
   </body></html>
 

@@ -10,7 +10,7 @@ object and add the smoothed polygons to the object"><!-- mathjax --><script src=
 
   gtag('config', 'G-2V1K0KPLJC');
 </script></head><body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -32,7 +32,7 @@ object and add the smoothed polygons to the object"><!-- mathjax --><script src=
       <ul class="nav navbar-nav"><li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Get started
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -60,7 +60,7 @@ object and add the smoothed polygons to the object"><!-- mathjax --><script src=
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Examples
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li class="dropdown-submenu">
@@ -188,7 +188,7 @@ object and add the smoothed polygons to the object"><!-- mathjax --><script src=
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tutorials
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -262,7 +262,7 @@ object and add the smoothed polygons to the object"><!-- mathjax --><script src=
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -281,20 +281,20 @@ object and add the smoothed polygons to the object"><!-- mathjax --><script src=
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/drieslab/Giotto/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>readPolygonFilesVizgen</h1>
-    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/HEAD/R/general_help.R" class="external-link"><code>R/general_help.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/suite/R/general_help.R" class="external-link"><code>R/general_help.R</code></a></small>
     <div class="hidden name"><code>readPolygonFilesVizgen.Rd</code></div>
     </div>
 
@@ -328,60 +328,60 @@ object and add the smoothed polygons to the object</p>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>gobject</dt>
+
+
+<dl><dt id="arg-gobject">gobject<a class="anchor" aria-label="anchor" href="#arg-gobject"></a></dt>
 <dd><p>giotto object</p></dd>
 
 
-<dt>boundaries_path</dt>
+<dt id="arg-boundaries-path">boundaries_path<a class="anchor" aria-label="anchor" href="#arg-boundaries-path"></a></dt>
 <dd><p>path to the cell_boundaries folder</p></dd>
 
 
-<dt>fovs</dt>
+<dt id="arg-fovs">fovs<a class="anchor" aria-label="anchor" href="#arg-fovs"></a></dt>
 <dd><p>selected fovs, if NULL select all fovs within Giotto object</p></dd>
 
 
-<dt>polygon_feat_types</dt>
+<dt id="arg-polygon-feat-types">polygon_feat_types<a class="anchor" aria-label="anchor" href="#arg-polygon-feat-types"></a></dt>
 <dd><p>a vector containing the polygon feature types</p></dd>
 
 
-<dt>flip_x_axis</dt>
+<dt id="arg-flip-x-axis">flip_x_axis<a class="anchor" aria-label="anchor" href="#arg-flip-x-axis"></a></dt>
 <dd><p>flip x axis of polygon coordinates (multiply by -1)</p></dd>
 
 
-<dt>flip_y_axis</dt>
+<dt id="arg-flip-y-axis">flip_y_axis<a class="anchor" aria-label="anchor" href="#arg-flip-y-axis"></a></dt>
 <dd><p>flip y axis of polygon coordinates (multiply by -1)</p></dd>
 
 
-<dt>smooth_polygons</dt>
+<dt id="arg-smooth-polygons">smooth_polygons<a class="anchor" aria-label="anchor" href="#arg-smooth-polygons"></a></dt>
 <dd><p>smooth polygons (default = TRUE)</p></dd>
 
 
-<dt>smooth_vertices</dt>
+<dt id="arg-smooth-vertices">smooth_vertices<a class="anchor" aria-label="anchor" href="#arg-smooth-vertices"></a></dt>
 <dd><p>number of vertices for smoothing</p></dd>
 
 
-<dt>set_neg_to_zero</dt>
+<dt id="arg-set-neg-to-zero">set_neg_to_zero<a class="anchor" aria-label="anchor" href="#arg-set-neg-to-zero"></a></dt>
 <dd><p>set negative values to zero when smoothing</p></dd>
 
 
-<dt>return_gobject</dt>
+<dt id="arg-return-gobject">return_gobject<a class="anchor" aria-label="anchor" href="#arg-return-gobject"></a></dt>
 <dd><p>return giotto object</p></dd>
 
 
-<dt>verbose</dt>
+<dt id="arg-verbose">verbose<a class="anchor" aria-label="anchor" href="#arg-verbose"></a></dt>
 <dd><p>be verbose</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
-<p>giotto object or cell polygons list</p>
+    <p>giotto object or cell polygons list</p>
     </div>
     <div id="functions">
     <h2>Functions</h2>
-    
-<ul><li><p><code>.h5_read_vizgen()</code>: (internal) Optimized .hdf5 reading for 
+
+<ul><li><p><code>.h5_read_vizgen()</code>: (internal) Optimized .hdf5 reading for
 vizgen merscope output. Returns a data.table of xyz coords and cell_id</p></li>
 </ul></div>
     <div id="see-also">
@@ -401,15 +401,15 @@ vizgen merscope output. Returns a data.table of xyz coords and cell_id</p></li>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer></div>
 
-  
 
 
-  
+
+
 
   </body></html>
 

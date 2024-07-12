@@ -9,7 +9,7 @@
 
   gtag('config', 'G-2V1K0KPLJC');
 </script></head><body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -31,7 +31,7 @@
       <ul class="nav navbar-nav"><li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Get started
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -59,7 +59,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Examples
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li class="dropdown-submenu">
@@ -187,7 +187,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tutorials
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -261,7 +261,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -280,20 +280,20 @@
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/drieslab/Giotto/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>createCrossSection</h1>
-    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/HEAD/R/cross_section.R" class="external-link"><code>R/cross_section.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/suite/R/cross_section.R" class="external-link"><code>R/cross_section.R</code></a></small>
     <div class="hidden name"><code>createCrossSection.Rd</code></div>
     </div>
 
@@ -329,49 +329,51 @@
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>gobject</dt>
+
+
+<dl><dt id="arg-gobject">gobject<a class="anchor" aria-label="anchor" href="#arg-gobject"></a></dt>
 <dd><p>giotto object</p></dd>
 
 
-<dt>spat_unit</dt>
+<dt id="arg-spat-unit">spat_unit<a class="anchor" aria-label="anchor" href="#arg-spat-unit"></a></dt>
 <dd><p>spatial unit</p></dd>
 
 
-<dt>spat_loc_name</dt>
+<dt id="arg-spat-loc-name">spat_loc_name<a class="anchor" aria-label="anchor" href="#arg-spat-loc-name"></a></dt>
 <dd><p>name of spatial locations</p></dd>
 
 
-<dt>name</dt>
+<dt id="arg-name">name<a class="anchor" aria-label="anchor" href="#arg-name"></a></dt>
 <dd><p>name of cress section object. (default = cross_sectino)</p></dd>
 
 
-<dt>spatial_network_name</dt>
+<dt id="arg-spatial-network-name">spatial_network_name<a class="anchor" aria-label="anchor" href="#arg-spatial-network-name"></a></dt>
 <dd><p>name of spatial network object.
 (default = Delaunay_network)</p></dd>
 
 
-<dt>thickness_unit</dt>
+<dt id="arg-thickness-unit">thickness_unit<a class="anchor" aria-label="anchor" href="#arg-thickness-unit"></a></dt>
 <dd><p>unit of the virtual section thickness. If "cell",
 average size of the observed cells is used as length unit. If "natural",
 the unit of cell location coordinates is used. (default = cell)</p></dd>
 
 
-<dt>slice_thickness</dt>
+<dt id="arg-slice-thickness">slice_thickness<a class="anchor" aria-label="anchor" href="#arg-slice-thickness"></a></dt>
 <dd><p>thickness of slice. default = 2</p></dd>
 
 
-<dt>cell_distance_estimate_method</dt>
+<dt id="arg-cell-distance-estimate-method">cell_distance_estimate_method<a class="anchor" aria-label="anchor" href="#arg-cell-distance-estimate-method"></a></dt>
 <dd><p>method to estimate average distance
 between neighobring cells. (default = mean)</p></dd>
 
 
-<dt>extend_ratio</dt>
+<dt id="arg-extend-ratio">extend_ratio<a class="anchor" aria-label="anchor" href="#arg-extend-ratio"></a></dt>
 <dd><p>deciding the span of the cross section meshgrid, as a
 ratio of extension compared to the borders of the vitural tissue section.
 (default = 0.2)</p></dd>
 
 
-<dt>method</dt>
+<dt id="arg-method">method<a class="anchor" aria-label="anchor" href="#arg-method"></a></dt>
 <dd><p>method to define the cross section plane.
 If equation, the plane is defined by a four element numerical vector
 (equation) in the form of c(A,B,C,D), corresponding to a plane with
@@ -387,58 +389,56 @@ one point (point1) in the plane and the coordinates of two vectors
 (default = equation)</p></dd>
 
 
-<dt>equation</dt>
+<dt id="arg-equation">equation<a class="anchor" aria-label="anchor" href="#arg-equation"></a></dt>
 <dd><p>equation required by method "equation".equations needs to be
 a numerical vector of length 4, in the form of c(A,B,C,D), which defines
 plane Ax+By+Cz=D.</p></dd>
 
 
-<dt>point1</dt>
+<dt id="arg-point-">point1<a class="anchor" aria-label="anchor" href="#arg-point-"></a></dt>
 <dd><p>coordinates of the first point required by method
 "3 points","point and norm vector", and "point and two plane vectors".</p></dd>
 
 
-<dt>point2</dt>
+<dt id="arg-point-">point2<a class="anchor" aria-label="anchor" href="#arg-point-"></a></dt>
 <dd><p>coordinates of the second point required by method "3 points"</p></dd>
 
 
-<dt>point3</dt>
+<dt id="arg-point-">point3<a class="anchor" aria-label="anchor" href="#arg-point-"></a></dt>
 <dd><p>coordinates of the third point required by method "3 points"</p></dd>
 
 
-<dt>normVector</dt>
+<dt id="arg-normvector">normVector<a class="anchor" aria-label="anchor" href="#arg-normvector"></a></dt>
 <dd><p>coordinates of the norm vector required by method
 "point and norm vector"</p></dd>
 
 
-<dt>planeVector1</dt>
+<dt id="arg-planevector-">planeVector1<a class="anchor" aria-label="anchor" href="#arg-planevector-"></a></dt>
 <dd><p>coordinates of the first plane vector required by
 method "point and two plane vectors"</p></dd>
 
 
-<dt>planeVector2</dt>
+<dt id="arg-planevector-">planeVector2<a class="anchor" aria-label="anchor" href="#arg-planevector-"></a></dt>
 <dd><p>coordinates of the second plane vector required by
 method "point and two plane vectors"</p></dd>
 
 
-<dt>mesh_grid_n</dt>
+<dt id="arg-mesh-grid-n">mesh_grid_n<a class="anchor" aria-label="anchor" href="#arg-mesh-grid-n"></a></dt>
 <dd><p>numer of meshgrid lines to generate along both directions
 for the cross section plane.</p></dd>
 
 
-<dt>return_gobject</dt>
+<dt id="arg-return-gobject">return_gobject<a class="anchor" aria-label="anchor" href="#arg-return-gobject"></a></dt>
 <dd><p>boolean: return giotto object (default = TRUE)</p></dd>
 
 
-<dt>verbose</dt>
+<dt id="arg-verbose">verbose<a class="anchor" aria-label="anchor" href="#arg-verbose"></a></dt>
 <dd><p>be verbose</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
-<p>giotto object with updated spatial network slot</p>
+    <p>giotto object with updated spatial network slot</p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -455,9 +455,24 @@ section plane (see method).</p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3. read Giotto spatial information</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> a giotto python environment was found</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/Users/yuanlab/Library/r-miniconda/envs/giotto_env/bin/pythonw"</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path or giotto</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  environment was specified, will check if a</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  default python path is available</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> A default python path was found: /usr/bin/python3 and will be used</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  If this is not the correct python path, either</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. use installGiottoEnvironment() to install</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  a local miniconda python environment along with required modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. provide an existing python path to</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python_path to use your own python path which has all modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  installed</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Set options("giotto.use_conda" = FALSE) if</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python functionalities are not needed</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>This giotto object was created in a newer version of</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 GiottoClass (v0.3.2)</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu">createCrossSection</span><span class="op">(</span></span></span>
 <span class="r-in"><span>    gobject <span class="op">=</span> <span class="va">g</span>,</span></span>
@@ -484,15 +499,15 @@ section plane (see method).</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer></div>
 
-  
 
 
-  
+
+
 
   </body></html>
 

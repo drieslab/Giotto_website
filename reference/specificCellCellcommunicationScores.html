@@ -10,7 +10,7 @@ expression of interacting cells"><!-- mathjax --><script src="https://cdnjs.clou
 
   gtag('config', 'G-2V1K0KPLJC');
 </script></head><body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -32,7 +32,7 @@ expression of interacting cells"><!-- mathjax --><script src="https://cdnjs.clou
       <ul class="nav navbar-nav"><li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Get started
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -60,7 +60,7 @@ expression of interacting cells"><!-- mathjax --><script src="https://cdnjs.clou
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Examples
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li class="dropdown-submenu">
@@ -188,7 +188,7 @@ expression of interacting cells"><!-- mathjax --><script src="https://cdnjs.clou
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tutorials
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -262,7 +262,7 @@ expression of interacting cells"><!-- mathjax --><script src="https://cdnjs.clou
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -281,20 +281,20 @@ expression of interacting cells"><!-- mathjax --><script src="https://cdnjs.clou
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/drieslab/Giotto/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>specificCellCellcommunicationScores</h1>
-    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/HEAD/R/spatial_interaction.R" class="external-link"><code>R/spatial_interaction.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/suite/R/spatial_interaction.R" class="external-link"><code>R/spatial_interaction.R</code></a></small>
     <div class="hidden name"><code>specificCellCellcommunicationScores.Rd</code></div>
     </div>
 
@@ -331,94 +331,94 @@ expression of interacting cells</p>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>gobject</dt>
+
+
+<dl><dt id="arg-gobject">gobject<a class="anchor" aria-label="anchor" href="#arg-gobject"></a></dt>
 <dd><p>giotto object to use</p></dd>
 
 
-<dt>feat_type</dt>
+<dt id="arg-feat-type">feat_type<a class="anchor" aria-label="anchor" href="#arg-feat-type"></a></dt>
 <dd><p>feature type</p></dd>
 
 
-<dt>spat_unit</dt>
+<dt id="arg-spat-unit">spat_unit<a class="anchor" aria-label="anchor" href="#arg-spat-unit"></a></dt>
 <dd><p>spatial unit</p></dd>
 
 
-<dt>spatial_network_name</dt>
+<dt id="arg-spatial-network-name">spatial_network_name<a class="anchor" aria-label="anchor" href="#arg-spatial-network-name"></a></dt>
 <dd><p>spatial network to use for identifying
 interacting cells</p></dd>
 
 
-<dt>cluster_column</dt>
+<dt id="arg-cluster-column">cluster_column<a class="anchor" aria-label="anchor" href="#arg-cluster-column"></a></dt>
 <dd><p>cluster column with cell type information</p></dd>
 
 
-<dt>random_iter</dt>
+<dt id="arg-random-iter">random_iter<a class="anchor" aria-label="anchor" href="#arg-random-iter"></a></dt>
 <dd><p>number of iterations</p></dd>
 
 
-<dt>cell_type_1</dt>
+<dt id="arg-cell-type-">cell_type_1<a class="anchor" aria-label="anchor" href="#arg-cell-type-"></a></dt>
 <dd><p>first cell type</p></dd>
 
 
-<dt>cell_type_2</dt>
+<dt id="arg-cell-type-">cell_type_2<a class="anchor" aria-label="anchor" href="#arg-cell-type-"></a></dt>
 <dd><p>second cell type</p></dd>
 
 
-<dt>feat_set_1</dt>
+<dt id="arg-feat-set-">feat_set_1<a class="anchor" aria-label="anchor" href="#arg-feat-set-"></a></dt>
 <dd><p>first specific gene set from gene pairs</p></dd>
 
 
-<dt>feat_set_2</dt>
+<dt id="arg-feat-set-">feat_set_2<a class="anchor" aria-label="anchor" href="#arg-feat-set-"></a></dt>
 <dd><p>second specific gene set from gene pairs</p></dd>
 
 
-<dt>gene_set_1</dt>
+<dt id="arg-gene-set-">gene_set_1<a class="anchor" aria-label="anchor" href="#arg-gene-set-"></a></dt>
 <dd><p>deprecated, use feat_set_1</p></dd>
 
 
-<dt>gene_set_2</dt>
+<dt id="arg-gene-set-">gene_set_2<a class="anchor" aria-label="anchor" href="#arg-gene-set-"></a></dt>
 <dd><p>deprecated, use feat_set_2</p></dd>
 
 
-<dt>log2FC_addendum</dt>
+<dt id="arg-log-fc-addendum">log2FC_addendum<a class="anchor" aria-label="anchor" href="#arg-log-fc-addendum"></a></dt>
 <dd><p>addendum to add when calculating log2FC</p></dd>
 
 
-<dt>min_observations</dt>
+<dt id="arg-min-observations">min_observations<a class="anchor" aria-label="anchor" href="#arg-min-observations"></a></dt>
 <dd><p>minimum number of interactions needed to be
 considered</p></dd>
 
 
-<dt>detailed</dt>
+<dt id="arg-detailed">detailed<a class="anchor" aria-label="anchor" href="#arg-detailed"></a></dt>
 <dd><p>provide more detailed information
 (random variance and z-score)</p></dd>
 
 
-<dt>adjust_method</dt>
+<dt id="arg-adjust-method">adjust_method<a class="anchor" aria-label="anchor" href="#arg-adjust-method"></a></dt>
 <dd><p>which method to adjust p-values</p></dd>
 
 
-<dt>adjust_target</dt>
+<dt id="arg-adjust-target">adjust_target<a class="anchor" aria-label="anchor" href="#arg-adjust-target"></a></dt>
 <dd><p>adjust multiple hypotheses at the cell or feature level</p></dd>
 
 
-<dt>set_seed</dt>
+<dt id="arg-set-seed">set_seed<a class="anchor" aria-label="anchor" href="#arg-set-seed"></a></dt>
 <dd><p>set a seed for reproducibility</p></dd>
 
 
-<dt>seed_number</dt>
+<dt id="arg-seed-number">seed_number<a class="anchor" aria-label="anchor" href="#arg-seed-number"></a></dt>
 <dd><p>seed number</p></dd>
 
 
-<dt>verbose</dt>
+<dt id="arg-verbose">verbose<a class="anchor" aria-label="anchor" href="#arg-verbose"></a></dt>
 <dd><p>verbose</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
-<p>Cell-Cell communication scores for feature pairs based on spatial 
+    <p>Cell-Cell communication scores for feature pairs based on spatial
 interaction</p>
     </div>
     <div id="details">
@@ -466,12 +466,27 @@ proximity to each other.</p><ul><li><p>LR_comb:Pair of ligand and receptor</p></
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> a giotto python environment was found</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/Users/yuanlab/Library/r-miniconda/envs/giotto_env/bin/pythonw"</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path or giotto</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  environment was specified, will check if a</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  default python path is available</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> A default python path was found: /usr/bin/python3 and will be used</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  If this is not the correct python path, either</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. use installGiottoEnvironment() to install</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  a local miniconda python environment along with required modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. provide an existing python path to</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python_path to use your own python path which has all modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  installed</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Set options("giotto.use_conda" = FALSE) if</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python functionalities are not needed</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>This giotto object was created in a newer version of</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 GiottoClass (v0.3.2)</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">specificCellCellcommunicationScores</span><span class="op">(</span><span class="va">g</span>, cluster_column <span class="op">=</span> <span class="st">"leiden_clus"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in specificCellCellcommunicationScores(g, cluster_column = "leiden_clus"):</span> `cell_type_1` and `cell_type_2` in `cluster_column` must be given</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
 </code></pre></div>
     </div>
   </div>
@@ -486,15 +501,15 @@ proximity to each other.</p><ul><li><p>LR_comb:Pair of ligand and receptor</p></
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer></div>
 
-  
 
 
-  
+
+
 
   </body></html>
 

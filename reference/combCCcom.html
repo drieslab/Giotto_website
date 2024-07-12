@@ -10,7 +10,7 @@ data.tables"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
 
   gtag('config', 'G-2V1K0KPLJC');
 </script></head><body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -32,7 +32,7 @@ data.tables"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
       <ul class="nav navbar-nav"><li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Get started
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -60,7 +60,7 @@ data.tables"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Examples
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li class="dropdown-submenu">
@@ -188,7 +188,7 @@ data.tables"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tutorials
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -262,7 +262,7 @@ data.tables"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -281,20 +281,20 @@ data.tables"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/drieslab/Giotto/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>combCCcom</h1>
-    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/HEAD/R/spatial_interaction.R" class="external-link"><code>R/spatial_interaction.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/suite/R/spatial_interaction.R" class="external-link"><code>R/spatial_interaction.R</code></a></small>
     <div class="hidden name"><code>combCCcom.Rd</code></div>
     </div>
 
@@ -318,44 +318,44 @@ data.tables</p>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>spatialCC</dt>
+
+
+<dl><dt id="arg-spatialcc">spatialCC<a class="anchor" aria-label="anchor" href="#arg-spatialcc"></a></dt>
 <dd><p>spatial cell-cell communication scores</p></dd>
 
 
-<dt>exprCC</dt>
+<dt id="arg-exprcc">exprCC<a class="anchor" aria-label="anchor" href="#arg-exprcc"></a></dt>
 <dd><p>expression cell-cell communication scores</p></dd>
 
 
-<dt>min_lig_nr</dt>
+<dt id="arg-min-lig-nr">min_lig_nr<a class="anchor" aria-label="anchor" href="#arg-min-lig-nr"></a></dt>
 <dd><p>minimum number of ligand cells</p></dd>
 
 
-<dt>min_rec_nr</dt>
+<dt id="arg-min-rec-nr">min_rec_nr<a class="anchor" aria-label="anchor" href="#arg-min-rec-nr"></a></dt>
 <dd><p>minimum number of receptor cells</p></dd>
 
 
-<dt>min_padj_value</dt>
+<dt id="arg-min-padj-value">min_padj_value<a class="anchor" aria-label="anchor" href="#arg-min-padj-value"></a></dt>
 <dd><p>minimum adjusted p-value</p></dd>
 
 
-<dt>min_log2fc</dt>
+<dt id="arg-min-log-fc">min_log2fc<a class="anchor" aria-label="anchor" href="#arg-min-log-fc"></a></dt>
 <dd><p>minimum log2 fold-change</p></dd>
 
 
-<dt>min_av_diff</dt>
+<dt id="arg-min-av-diff">min_av_diff<a class="anchor" aria-label="anchor" href="#arg-min-av-diff"></a></dt>
 <dd><p>minimum average expression difference</p></dd>
 
 
-<dt>detailed</dt>
+<dt id="arg-detailed">detailed<a class="anchor" aria-label="anchor" href="#arg-detailed"></a></dt>
 <dd><p>detailed option used with <code><a href="spatCellCellcom.html">spatCellCellcom</a></code>
 (default = FALSE)</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
-<p>combined data.table with spatial and expression communication data</p>
+    <p>combined data.table with spatial and expression communication data</p>
     </div>
 
     <div id="ref-examples">
@@ -376,234 +376,35 @@ data.tables</p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> a giotto python environment was found</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/Users/yuanlab/Library/r-miniconda/envs/giotto_env/bin/pythonw"</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path or giotto</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  environment was specified, will check if a</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  default python path is available</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> A default python path was found: /usr/bin/python3 and will be used</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  If this is not the correct python path, either</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. use installGiottoEnvironment() to install</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  a local miniconda python environment along with required modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. provide an existing python path to</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python_path to use your own python path which has all modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  installed</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Set options("giotto.use_conda" = FALSE) if</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python functionalities are not needed</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>This giotto object was created in a newer version of</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 GiottoClass (v0.3.2)</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">exprCC</span> <span class="op">&lt;-</span> <span class="fu"><a href="exprCellCellcom.html">exprCellCellcom</a></span><span class="op">(</span><span class="va">g</span>, cluster_column <span class="op">=</span> <span class="st">"leiden_clus"</span>,</span></span>
 <span class="r-in"><span>feat_set_1 <span class="op">=</span> <span class="st">"Gm19935"</span>, feat_set_2 <span class="op">=</span> <span class="st">"9630013A20Rik"</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> simulation  1simulation  2simulation  3simulation  4simulation  5simulation  6simulation  7simulation  8simulation  9simulation  10simulation  11simulation  12simulation  13simulation  14simulation  15simulation  16simulation  17simulation  18simulation  19simulation  20simulation  21simulation  22simulation  23simulation  24simulation  25simulation  26simulation  27simulation  28simulation  29simulation  30simulation  31simulation  32simulation  33simulation  34simulation  35simulation  36simulation  37simulation  38simulation  39simulation  40simulation  41simulation  42simulation  43simulation  44simulation  45simulation  46simulation  47simulation  48simulation  49simulation  50simulation  51simulation  52simulation  53simulation  54simulation  55simulation  56simulation  57simulation  58simulation  59simulation  60simulation  61simulation  62simulation  63simulation  64simulation  65simulation  66simulation  67simulation  68simulation  69simulation  70simulation  71simulation  72simulation  73simulation  74simulation  75simulation  76simulation  77simulation  78simulation  79simulation  80simulation  81simulation  82simulation  83simulation  84simulation  85simulation  86simulation  87simulation  88simulation  89simulation  90simulation  91simulation  92simulation  93simulation  94simulation  95simulation  96simulation  97simulation  98simulation  99simulation  100simulation  101simulation  102simulation  103simulation  104simulation  105simulation  106simulation  107simulation  108simulation  109simulation  110simulation  111simulation  112simulation  113simulation  114simulation  115simulation  116simulation  117simulation  118simulation  119simulation  120simulation  121simulation  122simulation  123simulation  124simulation  125simulation  126simulation  127simulation  128simulation  129simulation  130simulation  131simulation  132simulation  133simulation  134simulation  135simulation  136simulation  137simulation  138simulation  139simulation  140simulation  141simulation  142simulation  143simulation  144simulation  145simulation  146simulation  147simulation  148simulation  149simulation  150simulation  151simulation  152simulation  153simulation  154simulation  155simulation  156simulation  157simulation  158simulation  159simulation  160simulation  161simulation  162simulation  163simulation  164simulation  165simulation  166simulation  167simulation  168simulation  169simulation  170simulation  171simulation  172simulation  173simulation  174simulation  175simulation  176simulation  177simulation  178simulation  179simulation  180simulation  181simulation  182simulation  183simulation  184simulation  185simulation  186simulation  187simulation  188simulation  189simulation  190simulation  191simulation  192simulation  193simulation  194simulation  195simulation  196simulation  197simulation  198simulation  199simulation  200simulation  201simulation  202simulation  203simulation  204simulation  205simulation  206simulation  207simulation  208simulation  209simulation  210simulation  211simulation  212simulation  213simulation  214simulation  215simulation  216simulation  217simulation  218simulation  219simulation  220simulation  221simulation  222simulation  223simulation  224simulation  225simulation  226simulation  227simulation  228simulation  229simulation  230simulation  231simulation  232simulation  233simulation  234simulation  235simulation  236simulation  237simulation  238simulation  239simulation  240simulation  241simulation  242simulation  243simulation  244simulation  245simulation  246simulation  247simulation  248simulation  249simulation  250simulation  251simulation  252simulation  253simulation  254simulation  255simulation  256simulation  257simulation  258simulation  259simulation  260simulation  261simulation  262simulation  263simulation  264simulation  265simulation  266simulation  267simulation  268simulation  269simulation  270simulation  271simulation  272simulation  273simulation  274simulation  275simulation  276simulation  277simulation  278simulation  279simulation  280simulation  281simulation  282simulation  283simulation  284simulation  285simulation  286simulation  287simulation  288simulation  289simulation  290simulation  291simulation  292simulation  293simulation  294simulation  295simulation  296simulation  297simulation  298simulation  299simulation  300simulation  301simulation  302simulation  303simulation  304simulation  305simulation  306simulation  307simulation  308simulation  309simulation  310simulation  311simulation  312simulation  313simulation  314simulation  315simulation  316simulation  317simulation  318simulation  319simulation  320simulation  321simulation  322simulation  323simulation  324simulation  325simulation  326simulation  327simulation  328simulation  329simulation  330simulation  331simulation  332simulation  333simulation  334simulation  335simulation  336simulation  337simulation  338simulation  339simulation  340simulation  341simulation  342simulation  343simulation  344simulation  345simulation  346simulation  347simulation  348simulation  349simulation  350simulation  351simulation  352simulation  353simulation  354simulation  355simulation  356simulation  357simulation  358simulation  359simulation  360simulation  361simulation  362simulation  363simulation  364simulation  365simulation  366simulation  367simulation  368simulation  369simulation  370simulation  371simulation  372simulation  373simulation  374simulation  375simulation  376simulation  377simulation  378simulation  379simulation  380simulation  381simulation  382simulation  383simulation  384simulation  385simulation  386simulation  387simulation  388simulation  389simulation  390simulation  391simulation  392simulation  393simulation  394simulation  395simulation  396simulation  397simulation  398simulation  399simulation  400simulation  401simulation  402simulation  403simulation  404simulation  405simulation  406simulation  407simulation  408simulation  409simulation  410simulation  411simulation  412simulation  413simulation  414simulation  415simulation  416simulation  417simulation  418simulation  419simulation  420simulation  421simulation  422simulation  423simulation  424simulation  425simulation  426simulation  427simulation  428simulation  429simulation  430simulation  431simulation  432simulation  433simulation  434simulation  435simulation  436simulation  437simulation  438simulation  439simulation  440simulation  441simulation  442simulation  443simulation  444simulation  445simulation  446simulation  447simulation  448simulation  449simulation  450simulation  451simulation  452simulation  453simulation  454simulation  455simulation  456simulation  457simulation  458simulation  459simulation  460simulation  461simulation  462simulation  463simulation  464simulation  465simulation  466simulation  467simulation  468simulation  469simulation  470simulation  471simulation  472simulation  473simulation  474simulation  475simulation  476simulation  477simulation  478simulation  479simulation  480simulation  481simulation  482simulation  483simulation  484simulation  485simulation  486simulation  487simulation  488simulation  489simulation  490simulation  491simulation  492simulation  493simulation  494simulation  495simulation  496simulation  497simulation  498simulation  499simulation  500simulation  501simulation  502simulation  503simulation  504simulation  505simulation  506simulation  507simulation  508simulation  509simulation  510simulation  511simulation  512simulation  513simulation  514simulation  515simulation  516simulation  517simulation  518simulation  519simulation  520simulation  521simulation  522simulation  523simulation  524simulation  525simulation  526simulation  527simulation  528simulation  529simulation  530simulation  531simulation  532simulation  533simulation  534simulation  535simulation  536simulation  537simulation  538simulation  539simulation  540simulation  541simulation  542simulation  543simulation  544simulation  545simulation  546simulation  547simulation  548simulation  549simulation  550simulation  551simulation  552simulation  553simulation  554simulation  555simulation  556simulation  557simulation  558simulation  559simulation  560simulation  561simulation  562simulation  563simulation  564simulation  565simulation  566simulation  567simulation  568simulation  569simulation  570simulation  571simulation  572simulation  573simulation  574simulation  575simulation  576simulation  577simulation  578simulation  579simulation  580simulation  581simulation  582simulation  583simulation  584simulation  585simulation  586simulation  587simulation  588simulation  589simulation  590simulation  591simulation  592simulation  593simulation  594simulation  595simulation  596simulation  597simulation  598simulation  599simulation  600simulation  601simulation  602simulation  603simulation  604simulation  605simulation  606simulation  607simulation  608simulation  609simulation  610simulation  611simulation  612simulation  613simulation  614simulation  615simulation  616simulation  617simulation  618simulation  619simulation  620simulation  621simulation  622simulation  623simulation  624simulation  625simulation  626simulation  627simulation  628simulation  629simulation  630simulation  631simulation  632simulation  633simulation  634simulation  635simulation  636simulation  637simulation  638simulation  639simulation  640simulation  641simulation  642simulation  643simulation  644simulation  645simulation  646simulation  647simulation  648simulation  649simulation  650simulation  651simulation  652simulation  653simulation  654simulation  655simulation  656simulation  657simulation  658simulation  659simulation  660simulation  661simulation  662simulation  663simulation  664simulation  665simulation  666simulation  667simulation  668simulation  669simulation  670simulation  671simulation  672simulation  673simulation  674simulation  675simulation  676simulation  677simulation  678simulation  679simulation  680simulation  681simulation  682simulation  683simulation  684simulation  685simulation  686simulation  687simulation  688simulation  689simulation  690simulation  691simulation  692simulation  693simulation  694simulation  695simulation  696simulation  697simulation  698simulation  699simulation  700simulation  701simulation  702simulation  703simulation  704simulation  705simulation  706simulation  707simulation  708simulation  709simulation  710simulation  711simulation  712simulation  713simulation  714simulation  715simulation  716simulation  717simulation  718simulation  719simulation  720simulation  721simulation  722simulation  723simulation  724simulation  725simulation  726simulation  727simulation  728simulation  729simulation  730simulation  731simulation  732simulation  733simulation  734simulation  735simulation  736simulation  737simulation  738simulation  739simulation  740simulation  741simulation  742simulation  743simulation  744simulation  745simulation  746simulation  747simulation  748simulation  749simulation  750simulation  751simulation  752simulation  753simulation  754simulation  755simulation  756simulation  757simulation  758simulation  759simulation  760simulation  761simulation  762simulation  763simulation  764simulation  765simulation  766simulation  767simulation  768simulation  769simulation  770simulation  771simulation  772simulation  773simulation  774simulation  775simulation  776simulation  777simulation  778simulation  779simulation  780simulation  781simulation  782simulation  783simulation  784simulation  785simulation  786simulation  787simulation  788simulation  789simulation  790simulation  791simulation  792simulation  793simulation  794simulation  795simulation  796simulation  797simulation  798simulation  799simulation  800simulation  801simulation  802simulation  803simulation  804simulation  805simulation  806simulation  807simulation  808simulation  809simulation  810simulation  811simulation  812simulation  813simulation  814simulation  815simulation  816simulation  817simulation  818simulation  819simulation  820simulation  821simulation  822simulation  823simulation  824simulation  825simulation  826simulation  827simulation  828simulation  829simulation  830simulation  831simulation  832simulation  833simulation  834simulation  835simulation  836simulation  837simulation  838simulation  839simulation  840simulation  841simulation  842simulation  843simulation  844simulation  845simulation  846simulation  847simulation  848simulation  849simulation  850simulation  851simulation  852simulation  853simulation  854simulation  855simulation  856simulation  857simulation  858simulation  859simulation  860simulation  861simulation  862simulation  863simulation  864simulation  865simulation  866simulation  867simulation  868simulation  869simulation  870simulation  871simulation  872simulation  873simulation  874simulation  875simulation  876simulation  877simulation  878simulation  879simulation  880simulation  881simulation  882simulation  883simulation  884simulation  885simulation  886simulation  887simulation  888simulation  889simulation  890simulation  891simulation  892simulation  893simulation  894simulation  895simulation  896simulation  897simulation  898simulation  899simulation  900simulation  901simulation  902simulation  903simulation  904simulation  905simulation  906simulation  907simulation  908simulation  909simulation  910simulation  911simulation  912simulation  913simulation  914simulation  915simulation  916simulation  917simulation  918simulation  919simulation  920simulation  921simulation  922simulation  923simulation  924simulation  925simulation  926simulation  927simulation  928simulation  929simulation  930simulation  931simulation  932simulation  933simulation  934simulation  935simulation  936simulation  937simulation  938simulation  939simulation  940simulation  941simulation  942simulation  943simulation  944simulation  945simulation  946simulation  947simulation  948simulation  949simulation  950simulation  951simulation  952simulation  953simulation  954simulation  955simulation  956simulation  957simulation  958simulation  959simulation  960simulation  961simulation  962simulation  963simulation  964simulation  965simulation  966simulation  967simulation  968simulation  969simulation  970simulation  971simulation  972simulation  973simulation  974simulation  975simulation  976simulation  977simulation  978simulation  979simulation  980simulation  981simulation  982simulation  983simulation  984simulation  985simulation  986simulation  987simulation  988simulation  989simulation  990simulation  991simulation  992simulation  993simulation  994simulation  995simulation  996simulation  997simulation  998simulation  999simulation  1000</span>
 <span class="r-in"><span><span class="va">spatialCC</span> <span class="op">&lt;-</span> <span class="fu"><a href="spatCellCellcom.html">spatCellCellcom</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">g</span>, cluster_column <span class="op">=</span> <span class="st">"leiden_clus"</span>,</span></span>
 <span class="r-in"><span>feat_set_1 <span class="op">=</span> <span class="st">"Gm19935"</span>, feat_set_2 <span class="op">=</span> <span class="st">"9630013A20Rik"</span>, verbose <span class="op">=</span> <span class="st">"a lot"</span>,</span></span>
 <span class="r-in"><span>random_iter <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 &lt;- Inf returned</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 &lt;- Inf returned</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>no adjusted p.values that are not zero; returning Inf</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>no adjusted p.values that are not zero; returning Inf</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in loadNamespace(x):</span> there is no package called ‘future.apply’</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">combCCcom</span><span class="op">(</span>spatialCC <span class="op">=</span> <span class="va">spatialCC</span>, exprCC <span class="op">=</span> <span class="va">exprCC</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Key: &lt;LR_comb, LR_cell_comb, lig_cell_type, rec_cell_type, ligand, receptor&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                   LR_comb LR_cell_comb lig_cell_type rec_cell_type  ligand</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                    &lt;char&gt;       &lt;char&gt;        &lt;fctr&gt;        &lt;fctr&gt;  &lt;char&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1: Gm19935-9630013A20Rik         1--1             1             1 Gm19935</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  2: Gm19935-9630013A20Rik         1--3             1             3 Gm19935</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3: Gm19935-9630013A20Rik         1--5             1             5 Gm19935</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  4: Gm19935-9630013A20Rik         1--6             1             6 Gm19935</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  5: Gm19935-9630013A20Rik         1--7             1             7 Gm19935</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  6: Gm19935-9630013A20Rik         2--2             2             2 Gm19935</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  7: Gm19935-9630013A20Rik         2--5             2             5 Gm19935</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  8: Gm19935-9630013A20Rik         3--1             3             1 Gm19935</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  9: Gm19935-9630013A20Rik         3--3             3             3 Gm19935</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10: Gm19935-9630013A20Rik         3--4             3             4 Gm19935</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11: Gm19935-9630013A20Rik         3--5             3             5 Gm19935</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12: Gm19935-9630013A20Rik         3--6             3             6 Gm19935</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13: Gm19935-9630013A20Rik         4--3             4             3 Gm19935</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14: Gm19935-9630013A20Rik         4--4             4             4 Gm19935</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15: Gm19935-9630013A20Rik         4--6             4             6 Gm19935</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16: Gm19935-9630013A20Rik         5--1             5             1 Gm19935</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17: Gm19935-9630013A20Rik         5--2             5             2 Gm19935</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18: Gm19935-9630013A20Rik         5--3             5             3 Gm19935</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19: Gm19935-9630013A20Rik         5--5             5             5 Gm19935</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20: Gm19935-9630013A20Rik         5--6             5             6 Gm19935</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21: Gm19935-9630013A20Rik         6--1             6             1 Gm19935</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22: Gm19935-9630013A20Rik         6--3             6             3 Gm19935</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23: Gm19935-9630013A20Rik         6--4             6             4 Gm19935</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24: Gm19935-9630013A20Rik         6--5             6             5 Gm19935</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25: Gm19935-9630013A20Rik         6--6             6             6 Gm19935</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26: Gm19935-9630013A20Rik         6--7             6             7 Gm19935</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27: Gm19935-9630013A20Rik         7--1             7             1 Gm19935</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28: Gm19935-9630013A20Rik         7--6             7             6 Gm19935</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29: Gm19935-9630013A20Rik         7--7             7             7 Gm19935</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                   LR_comb LR_cell_comb lig_cell_type rec_cell_type  ligand</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>          receptor lig_expr_spat rec_expr_spat LR_expr_spat lig_nr_spat</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>            &lt;char&gt;         &lt;num&gt;         &lt;num&gt;        &lt;num&gt;       &lt;int&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1: 9630013A20Rik    0.30914232    0.17530545    0.4844478         161</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  2: 9630013A20Rik    0.20683620    0.09032721    0.2971634         102</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3: 9630013A20Rik    0.17850483    0.11224192    0.2907468          41</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  4: 9630013A20Rik    1.26325380    0.32184532    1.5850991          17</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  5: 9630013A20Rik    0.55560407    0.00000000    0.5556041          14</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  6: 9630013A20Rik    0.11342034    0.23907794    0.3524983         121</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  7: 9630013A20Rik    0.06646316    0.60181006    0.6682732          38</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  8: 9630013A20Rik    0.29380142    0.12413060    0.4179320          89</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  9: 9630013A20Rik    0.21449815    0.07000002    0.2844982         108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10: 9630013A20Rik    0.33661638    0.00000000    0.3366164           6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11: 9630013A20Rik    0.67646973    0.00000000    0.6764697           5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12: 9630013A20Rik    0.00000000    0.00000000    0.0000000           9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13: 9630013A20Rik    0.00000000    0.00000000    0.0000000           6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14: 9630013A20Rik    0.09396233    0.10048837    0.1944507          93</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15: 9630013A20Rik    0.14061468    0.00000000    0.1406147          26</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16: 9630013A20Rik    0.13598163    0.31893557    0.4549172          57</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17: 9630013A20Rik    0.11024392    0.73487022    0.8451141          34</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18: 9630013A20Rik    0.00000000    0.00000000    0.0000000           6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19: 9630013A20Rik    0.14614174    0.95582749    1.1019692          76</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20: 9630013A20Rik    1.78685038    0.98253548    2.7693859          23</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21: 9630013A20Rik    1.39370283    0.22070242    1.6144053          15</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22: 9630013A20Rik    0.59885919    0.17685852    0.7757177           4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23: 9630013A20Rik    0.27008393    0.13080439    0.4008883          47</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24: 9630013A20Rik    1.25341386    0.86184960    2.1152635          16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25: 9630013A20Rik    1.34521521    0.20155242    1.5467676          37</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26: 9630013A20Rik    0.60686608    0.00000000    0.6068661           9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27: 9630013A20Rik    0.40437296    0.45406594    0.8584389           8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28: 9630013A20Rik    0.00000000    0.00000000    0.0000000           5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29: 9630013A20Rik    0.60289491    0.38773430    0.9906292           8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>          receptor lig_expr_spat rec_expr_spat LR_expr_spat lig_nr_spat</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     rec_nr_spat rand_expr_spat av_diff_spat   log2fc_spat pvalue_spat</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           &lt;int&gt;          &lt;num&gt;        &lt;num&gt;         &lt;num&gt;       &lt;num&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1:         161      0.4844478   0.00000000  0.000000e+00         1.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  2:          89      0.3646706  -0.06750721 -2.264757e-01         0.2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3:          57      0.6479728  -0.35722602 -9.367519e-01         0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  4:          15      0.8177809   0.76731822  8.766118e-01         0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  5:           8      0.9235238  -0.36791974 -6.426480e-01         0.2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  6:         121      0.3467125   0.00578580  1.856575e-02         0.7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  7:          34      0.5744252   0.09384803  1.879610e-01         0.4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  8:         102      0.4373695  -0.01943749 -5.315170e-02         0.4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  9:         108      0.2844982   0.00000000  0.000000e+00         1.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10:           6      0.3119815   0.02463484  8.378658e-02         0.8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11:           6      0.4740738   0.20239588  4.356933e-01         0.3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12:           4      0.5237612  -0.52376116 -2.640994e+00         0.2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13:           6      0.1706255  -0.17062548 -1.436298e+00         0.6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14:          93      0.1944507   0.00000000 -3.203427e-16         1.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15:          47      0.5544684  -0.41385376 -1.443599e+00         0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16:          41      0.6904034  -0.23548624 -5.103167e-01         0.4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17:          38      0.5955208   0.24959330  4.423948e-01         0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18:           5      0.3260308  -0.32603077 -2.090958e+00         0.5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19:          76      0.9785259   0.12344334  1.563391e-01         0.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20:          16      1.2538033   1.51558255  1.083724e+00         0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21:          17      1.1145144   0.49989085  4.973286e-01         0.2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22:           9      0.9073401  -0.13162236 -2.020130e-01         0.6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23:          26      0.8144591  -0.41357082 -8.684297e-01         0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24:          23      1.0979788   1.01728464  8.868759e-01         0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25:          37      1.4609677   0.08579996  7.719634e-02         0.8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26:           5      1.4236741  -0.81680803 -1.108046e+00         0.2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27:          14      0.6622601   0.19617876  3.304030e-01         0.4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28:           9      1.5946353  -1.59463534 -4.082903e+00         0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29:           8      1.2206012  -0.22997195 -2.760341e-01         0.3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     rec_nr_spat rand_expr_spat av_diff_spat   log2fc_spat pvalue_spat</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     p.adj_spat      PI_spat  lig_expr   rec_expr    LR_expr lig_nr rec_nr</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>          &lt;num&gt;        &lt;num&gt;     &lt;num&gt;      &lt;num&gt;      &lt;num&gt;  &lt;int&gt;  &lt;int&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1:        1.0  0.000000000 0.2326362 0.28874834 0.52138455    122    122</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  2:        0.2 -0.158299738 0.2326362 0.26833691 0.50097313    122    162</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3:        0.0 -0.372771048 0.2326362 0.29575033 0.52838655    122     45</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  4:        0.0  0.612725328 0.2326362 0.09952757 0.33216378    122     10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  5:        0.2 -0.449191643 0.2326362 0.00000000 0.23263621    122     93</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  6:        0.7  0.002875871 0.3574502 0.17597264 0.53342280     84     84</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  7:        0.4  0.074797218 0.3574502 0.29575033 0.65320049     84     45</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  8:        0.4 -0.021151189 0.2197897 0.28874834 0.50853808    162    122</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  9:        1.0  0.000000000 0.2197897 0.26833691 0.48812665    162    162</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10:        0.8  0.008119758 0.2197897 0.33023852 0.55002826    162    108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11:        0.3  0.227814790 0.2197897 0.29575033 0.51554007    162     45</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12:        0.2 -1.845975399 0.2197897 0.09952757 0.31931730    162     10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13:        0.6 -0.318640847 0.2495580 0.26833691 0.51789492    108    162</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14:        1.0  0.000000000 0.2495580 0.33023852 0.57979653    108    108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15:        0.0          Inf 0.2495580 0.09952757 0.34908558    108     10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16:        0.4 -0.203075434 0.2922187 0.28874834 0.58096700     45    122</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17:        0.0  0.176046606 0.2922187 0.17597264 0.46819130     45     84</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18:        0.5 -0.629440967 0.2922187 0.26833691 0.56055557     45    162</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19:        0.1  0.156339149 0.2922187 0.29575033 0.58796899     45     45</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20:        0.0         -Inf 0.2922187 0.09952757 0.39174622     45     10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21:        0.2  0.347617756 0.4293181 0.28874834 0.71806642     10    122</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22:        0.6 -0.044816333 0.4293181 0.26833691 0.69765500     10    162</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23:        0.0          Inf 0.4293181 0.33023852 0.75955660     10    108</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24:        0.0         -Inf 0.4293181 0.29575033 0.72506842     10     45</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25:        0.8  0.007481098 0.4293181 0.09952757 0.52884565     10     10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26:        0.2 -0.774490595 0.4293181 0.00000000 0.42931808     10     93</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27:        0.4  0.131480586 0.0000000 0.28874834 0.28874834     93    122</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28:        0.0 -2.853826696 0.0000000 0.09952757 0.09952757     93     10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29:        0.3 -0.144332371 0.0000000 0.00000000 0.00000000     93     93</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     p.adj_spat      PI_spat  lig_expr   rec_expr    LR_expr lig_nr rec_nr</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     rand_expr      av_diff       log2fc pvalue p.adj            PI LR_expr_rnk</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         &lt;num&gt;        &lt;num&gt;        &lt;num&gt;  &lt;num&gt; &lt;num&gt;         &lt;num&gt;       &lt;num&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1: 0.5269339 -0.005549370 -0.012827017  0.948 0.948 -2.974799e-04          14</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  2: 0.5286287 -0.027655565 -0.064907641  0.792 0.792 -6.573510e-03          18</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3: 0.5294794 -0.001092878 -0.002506928  0.960 0.960 -4.444474e-05          13</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  4: 0.5241812 -0.192017458 -0.530386832  0.166 0.166 -4.136444e-01          24</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  5: 0.5236398 -0.291003563 -0.906767711  0.214 0.214 -6.071592e-01          27</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  6: 0.5265199  0.006902916  0.015808501  0.926 0.926  5.278303e-04          11</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  7: 0.5281028  0.125097683  0.262033221  0.304 0.304  1.355043e-01           5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  8: 0.5259388 -0.017400749 -0.040674131  0.888 0.888 -2.098258e-03          17</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  9: 0.5276336 -0.039506944 -0.093795710  0.784 0.784 -9.912700e-03          19</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10: 0.5269931  0.023035131  0.052052807  0.814 0.814  4.652251e-03          10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11: 0.5284843 -0.012944257 -0.030023992  0.944 0.944 -7.514406e-04          16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12: 0.5231861 -0.203868837 -0.571620783  0.148 0.148 -4.742956e-01          25</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13: 0.5287990 -0.010904098 -0.025237452  0.950 0.950 -5.621994e-04          15</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14: 0.5281585  0.051637977  0.113974244  0.676 0.676  1.938170e-02           8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15: 0.5243516 -0.175265991 -0.475368241  0.286 0.286 -2.584263e-01          23</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16: 0.5318943  0.049072652  0.107901525  0.644 0.644  2.062151e-02           7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17: 0.5328569 -0.064665622 -0.155502627  0.658 0.658 -2.826635e-02          20</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18: 0.5335891  0.026966457  0.060132389  0.810 0.810  5.503014e-03           9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19: 0.5344398  0.053529145  0.116860156  0.696 0.696  1.839271e-02           6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20: 0.5291417 -0.137395436 -0.355470921  0.380 0.380 -1.493747e-01          22</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21: 0.5237300  0.194336461  0.391296425  0.192 0.192  2.804417e-01           3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22: 0.5254247  0.172230266  0.350928616  0.270 0.270  1.995507e-01           4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23: 0.5247843  0.234772341  0.460234536  0.150 0.150  3.791913e-01           1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24: 0.5262755  0.198792953  0.397716399  0.236 0.236  2.494032e-01           2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25: 0.5209773  0.007868373  0.018165474  0.942 0.942  4.713776e-04          12</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26: 0.5204358 -0.091117732 -0.229147029  0.894 0.894 -1.115086e-02          21</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27: 0.5362206 -0.247472274 -0.710690600  0.522 0.522 -2.006489e-01          26</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28: 0.5334679 -0.433940362 -1.666683505  0.082 0.082 -1.810329e+00          28</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29: 0.5329265 -0.532926467 -2.662037898  0.166 0.166 -2.076102e+00          29</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     rand_expr      av_diff       log2fc pvalue p.adj            PI LR_expr_rnk</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     LR_spat_rnk exprPI_rnk spatPI_rnk</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           &lt;num&gt;      &lt;num&gt;      &lt;num&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1:        15.0         14       14.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  2:        21.0         18       19.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3:        22.0         13       22.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  4:         4.0         25        3.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  5:        14.0         27       23.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  6:        19.0         11       12.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  7:        12.0          5        9.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  8:        17.0         17       16.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  9:        23.0         19       14.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10:        20.0         10       10.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11:        11.0         16        5.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12:        27.5         26       26.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13:        27.5         15       21.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14:        24.0          7       14.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15:        25.0         24        1.5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16:        16.0          6       20.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17:         9.0         21        6.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18:        27.5          9       24.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19:         6.0          8        7.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20:         1.0         22       28.5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21:         3.0          2        4.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22:        10.0          4       17.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23:        18.0          1        1.5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24:         2.0          3       28.5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25:         5.0         12       11.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26:        13.0         20       25.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27:         8.0         23        8.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28:        27.5         28       27.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29:         7.0         29       18.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     LR_spat_rnk exprPI_rnk spatPI_rnk</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'spatialCC' not found</span>
 </code></pre></div>
     </div>
   </div>
@@ -618,15 +419,15 @@ data.tables</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer></div>
 
-  
 
 
-  
+
+
 
   </body></html>
 

@@ -10,7 +10,7 @@ MAST package."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/li
 
   gtag('config', 'G-2V1K0KPLJC');
 </script></head><body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -32,7 +32,7 @@ MAST package."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/li
       <ul class="nav navbar-nav"><li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Get started
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -60,7 +60,7 @@ MAST package."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/li
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Examples
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li class="dropdown-submenu">
@@ -188,7 +188,7 @@ MAST package."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/li
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tutorials
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -262,7 +262,7 @@ MAST package."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/li
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -281,20 +281,20 @@ MAST package."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/li
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/drieslab/Giotto/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>findMastMarkers</h1>
-    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/HEAD/R/differential_expression.R" class="external-link"><code>R/differential_expression.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/suite/R/differential_expression.R" class="external-link"><code>R/differential_expression.R</code></a></small>
     <div class="hidden name"><code>findMastMarkers.Rd</code></div>
     </div>
 
@@ -322,66 +322,66 @@ MAST package.</p>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>gobject</dt>
+
+
+<dl><dt id="arg-gobject">gobject<a class="anchor" aria-label="anchor" href="#arg-gobject"></a></dt>
 <dd><p>giotto object</p></dd>
 
 
-<dt>feat_type</dt>
+<dt id="arg-feat-type">feat_type<a class="anchor" aria-label="anchor" href="#arg-feat-type"></a></dt>
 <dd><p>feature type</p></dd>
 
 
-<dt>spat_unit</dt>
+<dt id="arg-spat-unit">spat_unit<a class="anchor" aria-label="anchor" href="#arg-spat-unit"></a></dt>
 <dd><p>spatial unit</p></dd>
 
 
-<dt>expression_values</dt>
+<dt id="arg-expression-values">expression_values<a class="anchor" aria-label="anchor" href="#arg-expression-values"></a></dt>
 <dd><p>feat expression values to use</p></dd>
 
 
-<dt>cluster_column</dt>
+<dt id="arg-cluster-column">cluster_column<a class="anchor" aria-label="anchor" href="#arg-cluster-column"></a></dt>
 <dd><p>clusters to use</p></dd>
 
 
-<dt>group_1</dt>
+<dt id="arg-group-">group_1<a class="anchor" aria-label="anchor" href="#arg-group-"></a></dt>
 <dd><p>group 1 cluster IDs from cluster_column for pairwise
 comparison</p></dd>
 
 
-<dt>group_1_name</dt>
+<dt id="arg-group-name">group_1_name<a class="anchor" aria-label="anchor" href="#arg-group-name"></a></dt>
 <dd><p>custom name for group_1 clusters</p></dd>
 
 
-<dt>group_2</dt>
+<dt id="arg-group-">group_2<a class="anchor" aria-label="anchor" href="#arg-group-"></a></dt>
 <dd><p>group 2 cluster IDs from cluster_column for pairwise
 comparison</p></dd>
 
 
-<dt>group_2_name</dt>
+<dt id="arg-group-name">group_2_name<a class="anchor" aria-label="anchor" href="#arg-group-name"></a></dt>
 <dd><p>custom name for group_2 clusters</p></dd>
 
 
-<dt>adjust_columns</dt>
+<dt id="arg-adjust-columns">adjust_columns<a class="anchor" aria-label="anchor" href="#arg-adjust-columns"></a></dt>
 <dd><p>column in pDataDT to adjust for (e.g. detection rate)</p></dd>
 
 
-<dt>verbose</dt>
+<dt id="arg-verbose">verbose<a class="anchor" aria-label="anchor" href="#arg-verbose"></a></dt>
 <dd><p>be verbose</p></dd>
 
 
-<dt>...</dt>
+<dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
 <dd><p>additional parameters for the zlm function in MAST</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
-<p>data.table with marker feats</p>
+    <p>data.table with marker feats</p>
     </div>
     <div id="details">
     <h2>Details</h2>
     <p>This is a minimal convenience wrapper around the
-<code><a href="https://rdrr.io/pkg/MAST/man/zlm.html" class="external-link">zlm</a></code>
+<code>zlm</code>
 from the MAST package to detect differentially expressed feats. Caution:
 with large datasets
 MAST might take a long time to run and finish</p>
@@ -405,46 +405,32 @@ MAST might take a long time to run and finish</p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> a giotto python environment was found</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/Users/yuanlab/Library/r-miniconda/envs/giotto_env/bin/pythonw"</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path or giotto</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  environment was specified, will check if a</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  default python path is available</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> A default python path was found: /usr/bin/python3 and will be used</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  If this is not the correct python path, either</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. use installGiottoEnvironment() to install</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  a local miniconda python environment along with required modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. provide an existing python path to</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python_path to use your own python path which has all modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  installed</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Set options("giotto.use_conda" = FALSE) if</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python functionalities are not needed</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>This giotto object was created in a newer version of</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 GiottoClass (v0.3.2)</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">findMastMarkers</span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">g</span>, cluster_column <span class="op">=</span> <span class="st">"leiden_clus"</span>, group_1 <span class="op">=</span> <span class="fl">1</span>,</span></span>
 <span class="r-in"><span>group_2 <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Done!</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Combining coefficients and standard errors</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Calculating log-fold changes</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Calculating likelihood ratio tests</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Refitting on reduced model...</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Done!</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       feats   Pr(&gt;Chisq)        coef       ci.hi       ci.lo          fdr</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      &lt;char&gt;        &lt;num&gt;       &lt;num&gt;       &lt;num&gt;       &lt;num&gt;        &lt;num&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   1:   Ngef 1.170809e-47 -3.17935559 -2.81749191 -3.54121926 7.422931e-45</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   2:  Stx1a 2.473466e-47 -3.57440320 -3.21470773 -3.93409866 7.840886e-45</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   3:    Vxn 2.428690e-44 -3.00428396 -2.62105486 -3.38751306 5.132631e-42</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   4:  Ctxn1 1.476857e-42 -2.26430040 -1.93779955 -2.59080125 2.340818e-40</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   5: Ipcef1 3.128372e-42 -3.33270551 -3.00405158 -3.66135944 3.966775e-40</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  ---                                                                     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 630:  Crygn 6.826049e-01  0.06206105  0.19336752 -0.06924542 6.869389e-01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 631: Ccdc33 7.369411e-01  0.02151578  0.09180185 -0.04877029 7.404448e-01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 632:  Spag8 7.395403e-01  0.03818362  0.12594115 -0.04957391 7.418806e-01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 633: Wfdc17 7.996854e-01  0.04504413  0.18887329 -0.09878504 8.009487e-01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 634:   Gzma 8.557595e-01  0.04069799  0.18248078 -0.10108480 8.557595e-01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      cluster</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       &lt;char&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   1:  1_vs_2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   2:  1_vs_2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   3:  1_vs_2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   4:  1_vs_2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   5:  1_vs_2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  ---        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 630:  1_vs_2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 631:  1_vs_2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 632:  1_vs_2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 633:  1_vs_2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 634:  1_vs_2</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> package 'MAST' is not yet installed</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-err co"><span class="r-pr">#&gt;</span>  To install:</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> if(!requireNamespace('BiocManager', quietly = TRUE)) install.packages('BiocManager');</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> BiocManager::install(c("MAST"))</span>
 </code></pre></div>
     </div>
   </div>
@@ -459,15 +445,15 @@ MAST might take a long time to run and finish</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer></div>
 
-  
 
 
-  
+
+
 
   </body></html>
 

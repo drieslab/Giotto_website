@@ -10,7 +10,7 @@ section according to spatial coordinates"><!-- mathjax --><script src="https://c
 
   gtag('config', 'G-2V1K0KPLJC');
 </script></head><body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -32,7 +32,7 @@ section according to spatial coordinates"><!-- mathjax --><script src="https://c
       <ul class="nav navbar-nav"><li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Get started
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -60,7 +60,7 @@ section according to spatial coordinates"><!-- mathjax --><script src="https://c
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Examples
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li class="dropdown-submenu">
@@ -188,7 +188,7 @@ section according to spatial coordinates"><!-- mathjax --><script src="https://c
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tutorials
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -262,7 +262,7 @@ section according to spatial coordinates"><!-- mathjax --><script src="https://c
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -281,20 +281,20 @@ section according to spatial coordinates"><!-- mathjax --><script src="https://c
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/drieslab/Giotto/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>crossSectionFeatPlot3D</h1>
-    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/HEAD/R/cross_section.R" class="external-link"><code>R/cross_section.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/suite/R/cross_section.R" class="external-link"><code>R/cross_section.R</code></a></small>
     <div class="hidden name"><code>crossSectionFeatPlot3D.Rd</code></div>
     </div>
 
@@ -312,7 +312,7 @@ section according to spatial coordinates</p>
 <span>  name <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  spatial_network_name <span class="op">=</span> <span class="st">"Delaunay_network"</span>,</span>
 <span>  show_other_cells <span class="op">=</span> <span class="cn">TRUE</span>,</span>
-<span>  other_cell_color <span class="op">=</span> <span class="fu"><a href="https://scales.r-lib.org/reference/alpha.html" class="external-link">alpha</a></span><span class="op">(</span><span class="st">"lightgrey"</span>, <span class="fl">0</span><span class="op">)</span>,</span>
+<span>  other_cell_color <span class="op">=</span> <span class="fu">alpha</span><span class="op">(</span><span class="st">"lightgrey"</span>, <span class="fl">0</span><span class="op">)</span>,</span>
 <span>  default_save_name <span class="op">=</span> <span class="st">"crossSectionGenePlot3D"</span>,</span>
 <span>  <span class="va">...</span></span>
 <span><span class="op">)</span></span></code></pre></div>
@@ -320,49 +320,49 @@ section according to spatial coordinates</p>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>gobject</dt>
+
+
+<dl><dt id="arg-gobject">gobject<a class="anchor" aria-label="anchor" href="#arg-gobject"></a></dt>
 <dd><p>giotto object</p></dd>
 
 
-<dt>spat_unit</dt>
+<dt id="arg-spat-unit">spat_unit<a class="anchor" aria-label="anchor" href="#arg-spat-unit"></a></dt>
 <dd><p>spatial unit</p></dd>
 
 
-<dt>feat_type</dt>
+<dt id="arg-feat-type">feat_type<a class="anchor" aria-label="anchor" href="#arg-feat-type"></a></dt>
 <dd><p>feature type</p></dd>
 
 
-<dt>crossSection_obj</dt>
+<dt id="arg-crosssection-obj">crossSection_obj<a class="anchor" aria-label="anchor" href="#arg-crosssection-obj"></a></dt>
 <dd><p>cross section object as alternative input. default = NULL.</p></dd>
 
 
-<dt>name</dt>
+<dt id="arg-name">name<a class="anchor" aria-label="anchor" href="#arg-name"></a></dt>
 <dd><p>name of virtual cross section to use</p></dd>
 
 
-<dt>spatial_network_name</dt>
+<dt id="arg-spatial-network-name">spatial_network_name<a class="anchor" aria-label="anchor" href="#arg-spatial-network-name"></a></dt>
 <dd><p>name of spatial network to use</p></dd>
 
 
-<dt>other_cell_color</dt>
+<dt id="arg-other-cell-color">other_cell_color<a class="anchor" aria-label="anchor" href="#arg-other-cell-color"></a></dt>
 <dd><p>color of cells outside the cross section.
 default = transparent.</p></dd>
 
 
-<dt>default_save_name</dt>
+<dt id="arg-default-save-name">default_save_name<a class="anchor" aria-label="anchor" href="#arg-default-save-name"></a></dt>
 <dd><p>default save name for saving, don't change, change
 save_name in save_param</p></dd>
 
 
-<dt>...</dt>
+<dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
 <dd><p>parameters for spatGenePlot3D</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
-<p>ggplot</p>
+    <p>ggplot</p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -381,15 +381,15 @@ save_name in save_param</p></dd>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer></div>
 
-  
 
 
-  
+
+
 
   </body></html>
 

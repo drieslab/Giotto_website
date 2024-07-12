@@ -9,7 +9,7 @@
 
   gtag('config', 'G-2V1K0KPLJC');
 </script></head><body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -31,7 +31,7 @@
       <ul class="nav navbar-nav"><li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Get started
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -59,7 +59,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Examples
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li class="dropdown-submenu">
@@ -187,7 +187,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tutorials
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -261,7 +261,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -280,20 +280,20 @@
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/drieslab/Giotto/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>calculateHVF</h1>
-    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/HEAD/R/variable_genes.R" class="external-link"><code>R/variable_genes.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/suite/R/variable_genes.R" class="external-link"><code>R/variable_genes.R</code></a></small>
     <div class="hidden name"><code>calculateHVF.Rd</code></div>
     </div>
 
@@ -331,111 +331,111 @@
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>gobject</dt>
+
+
+<dl><dt id="arg-gobject">gobject<a class="anchor" aria-label="anchor" href="#arg-gobject"></a></dt>
 <dd><p>giotto object</p></dd>
 
 
-<dt>spat_unit</dt>
+<dt id="arg-spat-unit">spat_unit<a class="anchor" aria-label="anchor" href="#arg-spat-unit"></a></dt>
 <dd><p>spatial unit</p></dd>
 
 
-<dt>feat_type</dt>
+<dt id="arg-feat-type">feat_type<a class="anchor" aria-label="anchor" href="#arg-feat-type"></a></dt>
 <dd><p>feature type</p></dd>
 
 
-<dt>expression_values</dt>
+<dt id="arg-expression-values">expression_values<a class="anchor" aria-label="anchor" href="#arg-expression-values"></a></dt>
 <dd><p>expression values to use</p></dd>
 
 
-<dt>method</dt>
+<dt id="arg-method">method<a class="anchor" aria-label="anchor" href="#arg-method"></a></dt>
 <dd><p>method to calculate highly variable features</p></dd>
 
 
-<dt>reverse_log_scale</dt>
+<dt id="arg-reverse-log-scale">reverse_log_scale<a class="anchor" aria-label="anchor" href="#arg-reverse-log-scale"></a></dt>
 <dd><p>reverse log-scale of expression values
 (default = FALSE)</p></dd>
 
 
-<dt>logbase</dt>
+<dt id="arg-logbase">logbase<a class="anchor" aria-label="anchor" href="#arg-logbase"></a></dt>
 <dd><p>if <code>reverse_log_scale</code> is TRUE, which log base was used?</p></dd>
 
 
-<dt>expression_threshold</dt>
+<dt id="arg-expression-threshold">expression_threshold<a class="anchor" aria-label="anchor" href="#arg-expression-threshold"></a></dt>
 <dd><p>expression threshold to consider a gene detected</p></dd>
 
 
-<dt>nr_expression_groups</dt>
+<dt id="arg-nr-expression-groups">nr_expression_groups<a class="anchor" aria-label="anchor" href="#arg-nr-expression-groups"></a></dt>
 <dd><p>(cov_groups) number of expression groups for
 cov_groups</p></dd>
 
 
-<dt>zscore_threshold</dt>
+<dt id="arg-zscore-threshold">zscore_threshold<a class="anchor" aria-label="anchor" href="#arg-zscore-threshold"></a></dt>
 <dd><p>(cov_groups) zscore to select hvg for cov_groups</p></dd>
 
 
-<dt>HVFname</dt>
+<dt id="arg-hvfname">HVFname<a class="anchor" aria-label="anchor" href="#arg-hvfname"></a></dt>
 <dd><p>name for highly variable features in cell metadata</p></dd>
 
 
-<dt>difference_in_cov</dt>
+<dt id="arg-difference-in-cov">difference_in_cov<a class="anchor" aria-label="anchor" href="#arg-difference-in-cov"></a></dt>
 <dd><p>(cov_loess) minimum difference in coefficient of
 variance required</p></dd>
 
 
-<dt>var_threshold</dt>
+<dt id="arg-var-threshold">var_threshold<a class="anchor" aria-label="anchor" href="#arg-var-threshold"></a></dt>
 <dd><p>(var_p_resid) variance threshold for features for
 var_p_resid method</p></dd>
 
 
-<dt>var_number</dt>
+<dt id="arg-var-number">var_number<a class="anchor" aria-label="anchor" href="#arg-var-number"></a></dt>
 <dd><p>(var_p_resid) number of top variance features for
 var_p_resid method</p></dd>
 
 
-<dt>random_subset</dt>
+<dt id="arg-random-subset">random_subset<a class="anchor" aria-label="anchor" href="#arg-random-subset"></a></dt>
 <dd><p>random subset to perform HVF detection on.
 Passing <code>NULL</code> runs HVF on all cells.</p></dd>
 
 
-<dt>set_seed</dt>
+<dt id="arg-set-seed">set_seed<a class="anchor" aria-label="anchor" href="#arg-set-seed"></a></dt>
 <dd><p>logical. whether to set a seed when random_subset is used</p></dd>
 
 
-<dt>seed_number</dt>
+<dt id="arg-seed-number">seed_number<a class="anchor" aria-label="anchor" href="#arg-seed-number"></a></dt>
 <dd><p>seed number to use when random_subset is used</p></dd>
 
 
-<dt>show_plot</dt>
+<dt id="arg-show-plot">show_plot<a class="anchor" aria-label="anchor" href="#arg-show-plot"></a></dt>
 <dd><p>show plot</p></dd>
 
 
-<dt>return_plot</dt>
+<dt id="arg-return-plot">return_plot<a class="anchor" aria-label="anchor" href="#arg-return-plot"></a></dt>
 <dd><p>return ggplot object (overridden by <code>return_gobject</code>)</p></dd>
 
 
-<dt>save_plot</dt>
+<dt id="arg-save-plot">save_plot<a class="anchor" aria-label="anchor" href="#arg-save-plot"></a></dt>
 <dd><p>logical. directly save the plot</p></dd>
 
 
-<dt>save_param</dt>
+<dt id="arg-save-param">save_param<a class="anchor" aria-label="anchor" href="#arg-save-param"></a></dt>
 <dd><p>list of saving parameters from
 <code><a href="https://drieslab.github.io/GiottoVisuals/reference/plot_save.html" class="external-link">GiottoVisuals::all_plots_save_function()</a></code></p></dd>
 
 
-<dt>default_save_name</dt>
+<dt id="arg-default-save-name">default_save_name<a class="anchor" aria-label="anchor" href="#arg-default-save-name"></a></dt>
 <dd><p>default save name for saving, don't change, change
 save_name in save_param</p></dd>
 
 
-<dt>return_gobject</dt>
+<dt id="arg-return-gobject">return_gobject<a class="anchor" aria-label="anchor" href="#arg-return-gobject"></a></dt>
 <dd><p>boolean: return giotto object (default = TRUE)</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
-<p>giotto object highly variable features appended to feature metadata
+    <p>giotto object highly variable features appended to feature metadata
 (<code><a href="https://drieslab.github.io/GiottoClass/reference/fDataDT.html" class="external-link">fDataDT()</a></code>)</p>
     </div>
     <div id="details">
@@ -471,12 +471,27 @@ are considered highly variable. <br></p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> a giotto python environment was found</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/Users/yuanlab/Library/r-miniconda/envs/giotto_env/bin/pythonw"</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path or giotto</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  environment was specified, will check if a</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  default python path is available</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> A default python path was found: /usr/bin/python3 and will be used</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  If this is not the correct python path, either</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. use installGiottoEnvironment() to install</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  a local miniconda python environment along with required modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. provide an existing python path to</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python_path to use your own python path which has all modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  installed</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Set options("giotto.use_conda" = FALSE) if</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python functionalities are not needed</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>This giotto object was created in a newer version of</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 GiottoClass (v0.3.2)</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">calculateHVF</span><span class="op">(</span><span class="va">g</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> hvf has already been used, will be overwritten</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> hvf  has already been used, will be overwritten</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> An object of class giotto </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> &gt;Active spat_unit:  cell </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> &gt;Active feat_type:  rna </span>
@@ -514,15 +529,15 @@ are considered highly variable. <br></p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer></div>
 
-  
 
 
-  
+
+
 
   </body></html>
 

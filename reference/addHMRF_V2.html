@@ -9,7 +9,7 @@
 
   gtag('config', 'G-2V1K0KPLJC');
 </script></head><body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -31,7 +31,7 @@
       <ul class="nav navbar-nav"><li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Get started
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -59,7 +59,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Examples
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li class="dropdown-submenu">
@@ -187,7 +187,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tutorials
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -261,7 +261,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -280,20 +280,20 @@
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/drieslab/Giotto/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>addHMRF_V2</h1>
-    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/HEAD/R/python_hmrf.R" class="external-link"><code>R/python_hmrf.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/suite/R/python_hmrf.R" class="external-link"><code>R/python_hmrf.R</code></a></small>
     <div class="hidden name"><code>addHMRF_V2.Rd</code></div>
     </div>
 
@@ -307,23 +307,23 @@
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>gobject</dt>
+
+
+<dl><dt id="arg-gobject">gobject<a class="anchor" aria-label="anchor" href="#arg-gobject"></a></dt>
 <dd><p>giotto object</p></dd>
 
 
-<dt>HMRFoutput</dt>
+<dt id="arg-hmrfoutput">HMRFoutput<a class="anchor" aria-label="anchor" href="#arg-hmrfoutput"></a></dt>
 <dd><p>result object from HMRF model</p></dd>
 
 
-<dt>name</dt>
+<dt id="arg-name">name<a class="anchor" aria-label="anchor" href="#arg-name"></a></dt>
 <dd><p>name of HMRF models</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
-<p>giotto object</p>
+    <p>giotto object</p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -351,9 +351,24 @@ appended cell meta data column will be named with ‘hmrf1 k=8 b=0.00’</p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> a giotto python environment was found</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/Users/yuanlab/Library/r-miniconda/envs/giotto_env/bin/pythonw"</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path or giotto</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  environment was specified, will check if a</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  default python path is available</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> A default python path was found: /usr/bin/python3 and will be used</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  If this is not the correct python path, either</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. use installGiottoEnvironment() to install</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  a local miniconda python environment along with required modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. provide an existing python path to</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python_path to use your own python path which has all modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  installed</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Set options("giotto.use_conda" = FALSE) if</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python functionalities are not needed</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>This giotto object was created in a newer version of</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 GiottoClass (v0.3.2)</span>
 <span class="r-in"><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu"><a href="binSpect.html">binSpect</a></span><span class="op">(</span><span class="va">g</span>, return_gobject <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> This is the single parameter version of binSpect</span>
@@ -373,34 +388,12 @@ appended cell meta data column will be named with ‘hmrf1 k=8 b=0.00’</p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  'Identification of spatially associated subpopulations by combining</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  scRNAseq and sequential fluorescence in situ hybridization data'</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  Nature biotechnology 36 (12), 1183-1190. 2018</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Choosing spatial genes from the results of binSpectKept 530 top spatial genes for next step</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Computing spatial coexpression modules...</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Sampling spatial genes from coexpression</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>                                 modules...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Sampled 458 genes.Will use 458spatial genes for initialization of HMRF.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Parsing neighborhood graph...</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Kmeans initialization...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Warning, need to add dampening factor to diagonal entries"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.620704</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Warning, need to add dampening factor to diagonal entries"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.8318027</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Warning, need to add dampening factor to diagonal entries"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.7544696</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Warning, need to add dampening factor to diagonal entries"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.8733928</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Warning, need to add dampening factor to diagonal entries"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.8733928</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Warning, need to add dampening factor to diagonal entries"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.6843261</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Warning, need to add dampening factor to diagonal entries"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.7185425</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Warning, need to add dampening factor to diagonal entries"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.8318027</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Warning, need to add dampening factor to diagonal entries"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.7185425</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Warning, need to add dampening factor to diagonal entries"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.9629156</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Done</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> packages 'tidygraph', 'ggraph', 'smfishHmrf', 'graphcoloring' are not yet installed</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-err co"><span class="r-pr">#&gt;</span>  To install:</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> install.packages(c("tidygraph", "ggraph"))</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> devtools::install_bitbucket("qzhudfci/smfishHmrf-r")</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> devtools::install_bitbucket("qzhudfci/graphcoloring")</span>
 <span class="r-in"><span><span class="va">HMRFoutput</span> <span class="op">&lt;-</span> <span class="fu"><a href="doHMRF_V2.html">doHMRF_V2</a></span><span class="op">(</span>HMRF_init_obj <span class="op">=</span> <span class="va">HMRF_init_obj</span>, betas <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">5</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> If used in published research, please cite:</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     Q Zhu, S Shah, R Dries, L Cai, GC Yuan.</span>
@@ -410,40 +403,10 @@ appended cell meta data column will be named with ‘hmrf1 k=8 b=0.00’</p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Please find more explanation and instruction of the HMRF function</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     on </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  https://bitbucket.org/qzhudfci/smfishhmrf-r/src/master/TRANSITION.md</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Doing beta=0.000"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Iteration 1: relative error of mean = 2e-16; covariance = 0.08</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Iteration 2: relative error of mean = 0; covariance = 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Doing beta=5.000"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Iteration 1: relative error of mean = 2e-16; covariance = 0.08</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Iteration 2: relative error of mean = 0; covariance = 0</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'HMRF_init_obj' not found</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">addHMRF_V2</span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">g</span>, HMRFoutput <span class="op">=</span> <span class="va">HMRFoutput</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> These column names were already used: V1 V2 V3 V4 V5 V6 V7 V8 V9 V10</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  and will be overwritten</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> An object of class giotto </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &gt;Active spat_unit:  cell </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &gt;Active feat_type:  rna </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [SUBCELLULAR INFO]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> polygons      : cell </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [AGGREGATE INFO]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> expression -----------------------</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell][rna] raw normalized scaled</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> spatial locations ----------------</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell] raw</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> spatial networks -----------------</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell] Delaunay_network spatial_network</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> spatial enrichments --------------</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell][rna] cluster_metagene DWLS</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> dim reduction --------------------</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell][rna] pca custom_pca umap custom_umap tsne</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> nearest neighbor networks --------</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell][rna] sNN.pca custom_NN</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> attached images ------------------</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> images      : alignment image </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Use objHistory() to see steps and params used</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'HMRFoutput' not found</span>
 </code></pre></div>
     </div>
   </div>
@@ -458,15 +421,15 @@ appended cell meta data column will be named with ‘hmrf1 k=8 b=0.00’</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer></div>
 
-  
 
 
-  
+
+
 
   </body></html>
 

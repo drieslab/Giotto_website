@@ -10,7 +10,7 @@ expression matrix"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aja
 
   gtag('config', 'G-2V1K0KPLJC');
 </script></head><body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -32,7 +32,7 @@ expression matrix"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aja
       <ul class="nav navbar-nav"><li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Get started
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -60,7 +60,7 @@ expression matrix"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aja
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Examples
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li class="dropdown-submenu">
@@ -188,7 +188,7 @@ expression matrix"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aja
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tutorials
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -262,7 +262,7 @@ expression matrix"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aja
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -281,20 +281,20 @@ expression matrix"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aja
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/drieslab/Giotto/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>binSpectMultiMatrix</h1>
-    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/HEAD/R/spatial_genes.R" class="external-link"><code>R/spatial_genes.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/suite/R/spatial_genes.R" class="external-link"><code>R/spatial_genes.R</code></a></small>
     <div class="hidden name"><code>binSpectMultiMatrix.Rd</code></div>
     </div>
 
@@ -335,116 +335,116 @@ expression matrix</p>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>expression_matrix</dt>
+
+
+<dl><dt id="arg-expression-matrix">expression_matrix<a class="anchor" aria-label="anchor" href="#arg-expression-matrix"></a></dt>
 <dd><p>expression matrix</p></dd>
 
 
-<dt>spatial_networks</dt>
+<dt id="arg-spatial-networks">spatial_networks<a class="anchor" aria-label="anchor" href="#arg-spatial-networks"></a></dt>
 <dd><p>list of spatial networks in data.table format</p></dd>
 
 
-<dt>bin_method</dt>
+<dt id="arg-bin-method">bin_method<a class="anchor" aria-label="anchor" href="#arg-bin-method"></a></dt>
 <dd><p>method to binarize gene expression</p></dd>
 
 
-<dt>subset_feats</dt>
+<dt id="arg-subset-feats">subset_feats<a class="anchor" aria-label="anchor" href="#arg-subset-feats"></a></dt>
 <dd><p>only select a subset of features to test</p></dd>
 
 
-<dt>kmeans_algo</dt>
+<dt id="arg-kmeans-algo">kmeans_algo<a class="anchor" aria-label="anchor" href="#arg-kmeans-algo"></a></dt>
 <dd><p>kmeans algorithm to use
 (kmeans, kmeans_arma, kmeans_arma_subset)</p></dd>
 
 
-<dt>nstart</dt>
+<dt id="arg-nstart">nstart<a class="anchor" aria-label="anchor" href="#arg-nstart"></a></dt>
 <dd><p>kmeans: nstart parameter</p></dd>
 
 
-<dt>iter_max</dt>
+<dt id="arg-iter-max">iter_max<a class="anchor" aria-label="anchor" href="#arg-iter-max"></a></dt>
 <dd><p>kmeans: iter.max parameter</p></dd>
 
 
-<dt>extreme_nr</dt>
+<dt id="arg-extreme-nr">extreme_nr<a class="anchor" aria-label="anchor" href="#arg-extreme-nr"></a></dt>
 <dd><p>number of top and bottom cells (see details)</p></dd>
 
 
-<dt>sample_nr</dt>
+<dt id="arg-sample-nr">sample_nr<a class="anchor" aria-label="anchor" href="#arg-sample-nr"></a></dt>
 <dd><p>total number of cells to sample (see details)</p></dd>
 
 
-<dt>percentage_rank</dt>
+<dt id="arg-percentage-rank">percentage_rank<a class="anchor" aria-label="anchor" href="#arg-percentage-rank"></a></dt>
 <dd><p>vector of percentages of top cells for binarization</p></dd>
 
 
-<dt>do_fisher_test</dt>
+<dt id="arg-do-fisher-test">do_fisher_test<a class="anchor" aria-label="anchor" href="#arg-do-fisher-test"></a></dt>
 <dd><p>perform fisher test</p></dd>
 
 
-<dt>adjust_method</dt>
+<dt id="arg-adjust-method">adjust_method<a class="anchor" aria-label="anchor" href="#arg-adjust-method"></a></dt>
 <dd><p>p-value adjusted method to use
 (see <code><a href="https://rdrr.io/r/stats/p.adjust.html" class="external-link">p.adjust</a></code>)</p></dd>
 
 
-<dt>calc_hub</dt>
+<dt id="arg-calc-hub">calc_hub<a class="anchor" aria-label="anchor" href="#arg-calc-hub"></a></dt>
 <dd><p>calculate the number of hub cells</p></dd>
 
 
-<dt>hub_min_int</dt>
+<dt id="arg-hub-min-int">hub_min_int<a class="anchor" aria-label="anchor" href="#arg-hub-min-int"></a></dt>
 <dd><p>minimum number of cell-cell interactions for a hub cell</p></dd>
 
 
-<dt>get_av_expr</dt>
+<dt id="arg-get-av-expr">get_av_expr<a class="anchor" aria-label="anchor" href="#arg-get-av-expr"></a></dt>
 <dd><p>calculate the average expression per gene of the high
 expressing cells</p></dd>
 
 
-<dt>get_high_expr</dt>
+<dt id="arg-get-high-expr">get_high_expr<a class="anchor" aria-label="anchor" href="#arg-get-high-expr"></a></dt>
 <dd><p>calculate the number of high expressing cells  per gene</p></dd>
 
 
-<dt>implementation</dt>
+<dt id="arg-implementation">implementation<a class="anchor" aria-label="anchor" href="#arg-implementation"></a></dt>
 <dd><p>enrichment implementation (data.table, simple, matrix)</p></dd>
 
 
-<dt>group_size</dt>
+<dt id="arg-group-size">group_size<a class="anchor" aria-label="anchor" href="#arg-group-size"></a></dt>
 <dd><p>number of genes to process together with data.table
 implementation (default = automatic)</p></dd>
 
 
-<dt>do_parallel</dt>
+<dt id="arg-do-parallel">do_parallel<a class="anchor" aria-label="anchor" href="#arg-do-parallel"></a></dt>
 <dd><p>run calculations in parallel with mclapply</p></dd>
 
 
-<dt>cores</dt>
+<dt id="arg-cores">cores<a class="anchor" aria-label="anchor" href="#arg-cores"></a></dt>
 <dd><p>number of cores to use if do_parallel = TRUE</p></dd>
 
 
-<dt>verbose</dt>
+<dt id="arg-verbose">verbose<a class="anchor" aria-label="anchor" href="#arg-verbose"></a></dt>
 <dd><p>be verbose</p></dd>
 
 
-<dt>knn_params</dt>
+<dt id="arg-knn-params">knn_params<a class="anchor" aria-label="anchor" href="#arg-knn-params"></a></dt>
 <dd><p>list of parameters to create spatial kNN network</p></dd>
 
 
-<dt>set.seed</dt>
+<dt id="arg-set-seed">set.seed<a class="anchor" aria-label="anchor" href="#arg-set-seed"></a></dt>
 <dd><p>deprecated</p></dd>
 
 
-<dt>seed</dt>
+<dt id="arg-seed">seed<a class="anchor" aria-label="anchor" href="#arg-seed"></a></dt>
 <dd><p>sets value as seed before kmeans binarization. If NULL, no seed
 is set.</p></dd>
 
 
-<dt>summarize</dt>
+<dt id="arg-summarize">summarize<a class="anchor" aria-label="anchor" href="#arg-summarize"></a></dt>
 <dd><p>summarize the p-values or adjusted p-values</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
-<p>data.table with results</p>
+    <p>data.table with results</p>
     </div>
 
   </div>
@@ -459,15 +459,15 @@ is set.</p></dd>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer></div>
 
-  
 
 
-  
+
+
 
   </body></html>
 

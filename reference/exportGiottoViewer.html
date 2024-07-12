@@ -9,7 +9,7 @@
 
   gtag('config', 'G-2V1K0KPLJC');
 </script></head><body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -31,7 +31,7 @@
       <ul class="nav navbar-nav"><li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Get started
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -59,7 +59,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Examples
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li class="dropdown-submenu">
@@ -187,7 +187,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tutorials
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -261,7 +261,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -280,20 +280,20 @@
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/drieslab/Giotto/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>exportGiottoViewer</h1>
-    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/HEAD/R/giotto_viewer.R" class="external-link"><code>R/giotto_viewer.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/suite/R/giotto_viewer.R" class="external-link"><code>R/giotto_viewer.R</code></a></small>
     <div class="hidden name"><code>exportGiottoViewer.Rd</code></div>
     </div>
 
@@ -324,75 +324,75 @@
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>gobject</dt>
+
+
+<dl><dt id="arg-gobject">gobject<a class="anchor" aria-label="anchor" href="#arg-gobject"></a></dt>
 <dd><p>giotto object</p></dd>
 
 
-<dt>spat_unit</dt>
+<dt id="arg-spat-unit">spat_unit<a class="anchor" aria-label="anchor" href="#arg-spat-unit"></a></dt>
 <dd><p>spatial unit</p></dd>
 
 
-<dt>feat_type</dt>
+<dt id="arg-feat-type">feat_type<a class="anchor" aria-label="anchor" href="#arg-feat-type"></a></dt>
 <dd><p>feature types</p></dd>
 
 
-<dt>spat_loc_name</dt>
+<dt id="arg-spat-loc-name">spat_loc_name<a class="anchor" aria-label="anchor" href="#arg-spat-loc-name"></a></dt>
 <dd><p>name of spatial locations to export</p></dd>
 
 
-<dt>output_directory</dt>
+<dt id="arg-output-directory">output_directory<a class="anchor" aria-label="anchor" href="#arg-output-directory"></a></dt>
 <dd><p>directory where to save the files</p></dd>
 
 
-<dt>spat_enr_names</dt>
+<dt id="arg-spat-enr-names">spat_enr_names<a class="anchor" aria-label="anchor" href="#arg-spat-enr-names"></a></dt>
 <dd><p>spatial enrichment results to include for annotations</p></dd>
 
 
-<dt>factor_annotations</dt>
+<dt id="arg-factor-annotations">factor_annotations<a class="anchor" aria-label="anchor" href="#arg-factor-annotations"></a></dt>
 <dd><p>giotto cell annotations to view as factor</p></dd>
 
 
-<dt>numeric_annotations</dt>
+<dt id="arg-numeric-annotations">numeric_annotations<a class="anchor" aria-label="anchor" href="#arg-numeric-annotations"></a></dt>
 <dd><p>giotto cell annotations to view as numeric</p></dd>
 
 
-<dt>dim_reductions</dt>
+<dt id="arg-dim-reductions">dim_reductions<a class="anchor" aria-label="anchor" href="#arg-dim-reductions"></a></dt>
 <dd><p>high level dimension reductions to view</p></dd>
 
 
-<dt>dim_reduction_names</dt>
+<dt id="arg-dim-reduction-names">dim_reduction_names<a class="anchor" aria-label="anchor" href="#arg-dim-reduction-names"></a></dt>
 <dd><p>specific dimension reduction names</p></dd>
 
 
-<dt>expression_values</dt>
+<dt id="arg-expression-values">expression_values<a class="anchor" aria-label="anchor" href="#arg-expression-values"></a></dt>
 <dd><p>expression values to use in Viewer</p></dd>
 
 
-<dt>dim_red_rounding</dt>
+<dt id="arg-dim-red-rounding">dim_red_rounding<a class="anchor" aria-label="anchor" href="#arg-dim-red-rounding"></a></dt>
 <dd><p>numerical indicating how to round the coordinates</p></dd>
 
 
-<dt>dim_red_rescale</dt>
+<dt id="arg-dim-red-rescale">dim_red_rescale<a class="anchor" aria-label="anchor" href="#arg-dim-red-rescale"></a></dt>
 <dd><p>numericals to rescale the coordinates</p></dd>
 
 
-<dt>expression_rounding</dt>
+<dt id="arg-expression-rounding">expression_rounding<a class="anchor" aria-label="anchor" href="#arg-expression-rounding"></a></dt>
 <dd><p>numerical indicating how to round the expression data</p></dd>
 
 
-<dt>overwrite_dir</dt>
+<dt id="arg-overwrite-dir">overwrite_dir<a class="anchor" aria-label="anchor" href="#arg-overwrite-dir"></a></dt>
 <dd><p>overwrite files in the directory if it already existed</p></dd>
 
 
-<dt>verbose</dt>
+<dt id="arg-verbose">verbose<a class="anchor" aria-label="anchor" href="#arg-verbose"></a></dt>
 <dd><p>be verbose</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
-<p>writes the necessary output to use in Giotto Viewer</p>
+    <p>writes the necessary output to use in Giotto Viewer</p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -414,15 +414,15 @@ and add the gene signature names (.e.g cell types) to the numeric annotations pa
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer></div>
 
-  
 
 
-  
+
+
 
   </body></html>
 

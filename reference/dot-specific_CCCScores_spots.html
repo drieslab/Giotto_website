@@ -10,7 +10,7 @@ expression of interacting cells at spots resolution"><!-- mathjax --><script src
 
   gtag('config', 'G-2V1K0KPLJC');
 </script></head><body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -32,7 +32,7 @@ expression of interacting cells at spots resolution"><!-- mathjax --><script src
       <ul class="nav navbar-nav"><li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Get started
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -60,7 +60,7 @@ expression of interacting cells at spots resolution"><!-- mathjax --><script src
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Examples
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li class="dropdown-submenu">
@@ -188,7 +188,7 @@ expression of interacting cells at spots resolution"><!-- mathjax --><script src
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tutorials
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -262,7 +262,7 @@ expression of interacting cells at spots resolution"><!-- mathjax --><script src
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -281,20 +281,20 @@ expression of interacting cells at spots resolution"><!-- mathjax --><script src
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/drieslab/Giotto/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Specific cell-cell communication scores for spot data</h1>
-    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/HEAD/R/spatial_interaction_spot.R" class="external-link"><code>R/spatial_interaction_spot.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/suite/R/spatial_interaction_spot.R" class="external-link"><code>R/spatial_interaction_spot.R</code></a></small>
     <div class="hidden name"><code>dot-specific_CCCScores_spots.Rd</code></div>
     </div>
 
@@ -329,85 +329,85 @@ expression of interacting cells at spots resolution</p>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>gobject</dt>
+
+
+<dl><dt id="arg-gobject">gobject<a class="anchor" aria-label="anchor" href="#arg-gobject"></a></dt>
 <dd><p>giotto object to use</p></dd>
 
 
-<dt>spat_unit</dt>
+<dt id="arg-spat-unit">spat_unit<a class="anchor" aria-label="anchor" href="#arg-spat-unit"></a></dt>
 <dd><p>spatial unit (e.g. 'cell')</p></dd>
 
 
-<dt>feat_type</dt>
+<dt id="arg-feat-type">feat_type<a class="anchor" aria-label="anchor" href="#arg-feat-type"></a></dt>
 <dd><p>feature type (e.g. 'rna')</p></dd>
 
 
-<dt>expr_residual</dt>
+<dt id="arg-expr-residual">expr_residual<a class="anchor" aria-label="anchor" href="#arg-expr-residual"></a></dt>
 <dd><p>spatial network to use for identifying interacting cells</p></dd>
 
 
-<dt>dwls_values</dt>
+<dt id="arg-dwls-values">dwls_values<a class="anchor" aria-label="anchor" href="#arg-dwls-values"></a></dt>
 <dd><p>dwls matrix</p></dd>
 
 
-<dt>proximityMat</dt>
+<dt id="arg-proximitymat">proximityMat<a class="anchor" aria-label="anchor" href="#arg-proximitymat"></a></dt>
 <dd><p>cell cell communication score matrix</p></dd>
 
 
-<dt>random_iter</dt>
+<dt id="arg-random-iter">random_iter<a class="anchor" aria-label="anchor" href="#arg-random-iter"></a></dt>
 <dd><p>number of iterations</p></dd>
 
 
-<dt>cell_type_1</dt>
+<dt id="arg-cell-type-">cell_type_1<a class="anchor" aria-label="anchor" href="#arg-cell-type-"></a></dt>
 <dd><p>first cell type</p></dd>
 
 
-<dt>cell_type_2</dt>
+<dt id="arg-cell-type-">cell_type_2<a class="anchor" aria-label="anchor" href="#arg-cell-type-"></a></dt>
 <dd><p>second cell type</p></dd>
 
 
-<dt>feature_set_1</dt>
+<dt id="arg-feature-set-">feature_set_1<a class="anchor" aria-label="anchor" href="#arg-feature-set-"></a></dt>
 <dd><p>first specific feature set from feature pairs</p></dd>
 
 
-<dt>feature_set_2</dt>
+<dt id="arg-feature-set-">feature_set_2<a class="anchor" aria-label="anchor" href="#arg-feature-set-"></a></dt>
 <dd><p>second specific feature set from feature pairs</p></dd>
 
 
-<dt>min_observations</dt>
+<dt id="arg-min-observations">min_observations<a class="anchor" aria-label="anchor" href="#arg-min-observations"></a></dt>
 <dd><p>minimum number of interactions needed to be
 considered</p></dd>
 
 
-<dt>detailed</dt>
+<dt id="arg-detailed">detailed<a class="anchor" aria-label="anchor" href="#arg-detailed"></a></dt>
 <dd><p>provide more detailed information
 (random variance and z-score)</p></dd>
 
 
-<dt>adjust_method</dt>
+<dt id="arg-adjust-method">adjust_method<a class="anchor" aria-label="anchor" href="#arg-adjust-method"></a></dt>
 <dd><p>which method to adjust p-values</p></dd>
 
 
-<dt>adjust_target</dt>
+<dt id="arg-adjust-target">adjust_target<a class="anchor" aria-label="anchor" href="#arg-adjust-target"></a></dt>
 <dd><p>adjust multiple hypotheses at the cell or feature level</p></dd>
 
 
-<dt>set_seed</dt>
+<dt id="arg-set-seed">set_seed<a class="anchor" aria-label="anchor" href="#arg-set-seed"></a></dt>
 <dd><p>set a seed for reproducibility</p></dd>
 
 
-<dt>seed_number</dt>
+<dt id="arg-seed-number">seed_number<a class="anchor" aria-label="anchor" href="#arg-seed-number"></a></dt>
 <dd><p>seed number</p></dd>
 
 
-<dt>verbose</dt>
+<dt id="arg-verbose">verbose<a class="anchor" aria-label="anchor" href="#arg-verbose"></a></dt>
 <dd><p>verbose</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
-<p>Cell-Cell communication scores for feature pairs based on spatial
+    <p>Cell-Cell communication scores for feature pairs based on spatial
 interaction</p>
     </div>
     <div id="details">
@@ -448,15 +448,15 @@ values in cells that are spatially in proximity to each other.</p><ul><li><p>LR_
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer></div>
 
-  
 
 
-  
+
+
 
   </body></html>
 

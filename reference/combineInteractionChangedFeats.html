@@ -9,7 +9,7 @@
 
   gtag('config', 'G-2V1K0KPLJC');
 </script></head><body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -31,7 +31,7 @@
       <ul class="nav navbar-nav"><li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Get started
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -59,7 +59,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Examples
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li class="dropdown-submenu">
@@ -187,7 +187,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tutorials
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -261,7 +261,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -280,20 +280,20 @@
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/drieslab/Giotto/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>combineInteractionChangedFeats</h1>
-    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/HEAD/R/spatial_interaction.R" class="external-link"><code>R/spatial_interaction.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/suite/R/spatial_interaction.R" class="external-link"><code>R/spatial_interaction.R</code></a></small>
     <div class="hidden name"><code>combineInteractionChangedFeats.Rd</code></div>
     </div>
 
@@ -320,61 +320,61 @@
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>icfObject</dt>
+
+
+<dl><dt id="arg-icfobject">icfObject<a class="anchor" aria-label="anchor" href="#arg-icfobject"></a></dt>
 <dd><p>ICF (interaction changed feat) score object</p></dd>
 
 
-<dt>selected_ints</dt>
+<dt id="arg-selected-ints">selected_ints<a class="anchor" aria-label="anchor" href="#arg-selected-ints"></a></dt>
 <dd><p>subset of selected cell-cell interactions (optional)</p></dd>
 
 
-<dt>selected_feats</dt>
+<dt id="arg-selected-feats">selected_feats<a class="anchor" aria-label="anchor" href="#arg-selected-feats"></a></dt>
 <dd><p>subset of selected Features (optional)</p></dd>
 
 
-<dt>specific_feats_1</dt>
+<dt id="arg-specific-feats-">specific_feats_1<a class="anchor" aria-label="anchor" href="#arg-specific-feats-"></a></dt>
 <dd><p>specific Featureset combo
 (need to position match specific_feats_2)</p></dd>
 
 
-<dt>specific_feats_2</dt>
+<dt id="arg-specific-feats-">specific_feats_2<a class="anchor" aria-label="anchor" href="#arg-specific-feats-"></a></dt>
 <dd><p>specific Featureset combo
 (need to position match specific_feats_1)</p></dd>
 
 
-<dt>min_cells</dt>
+<dt id="arg-min-cells">min_cells<a class="anchor" aria-label="anchor" href="#arg-min-cells"></a></dt>
 <dd><p>minimum number of target cell type</p></dd>
 
 
-<dt>min_int_cells</dt>
+<dt id="arg-min-int-cells">min_int_cells<a class="anchor" aria-label="anchor" href="#arg-min-int-cells"></a></dt>
 <dd><p>minimum number of interacting cell type</p></dd>
 
 
-<dt>min_fdr</dt>
+<dt id="arg-min-fdr">min_fdr<a class="anchor" aria-label="anchor" href="#arg-min-fdr"></a></dt>
 <dd><p>minimum adjusted p-value</p></dd>
 
 
-<dt>min_spat_diff</dt>
+<dt id="arg-min-spat-diff">min_spat_diff<a class="anchor" aria-label="anchor" href="#arg-min-spat-diff"></a></dt>
 <dd><p>minimum absolute spatial expression difference</p></dd>
 
 
-<dt>min_log2_fc</dt>
+<dt id="arg-min-log-fc">min_log2_fc<a class="anchor" aria-label="anchor" href="#arg-min-log-fc"></a></dt>
 <dd><p>minimum absolute log2 fold-change</p></dd>
 
 
-<dt>do_parallel</dt>
+<dt id="arg-do-parallel">do_parallel<a class="anchor" aria-label="anchor" href="#arg-do-parallel"></a></dt>
 <dd><p>run calculations in parallel with mclapply</p></dd>
 
 
-<dt>verbose</dt>
+<dt id="arg-verbose">verbose<a class="anchor" aria-label="anchor" href="#arg-verbose"></a></dt>
 <dd><p>verbose</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
-<p>combIcfObject that contains the filtered differential feature scores</p>
+    <p>combIcfObject that contains the filtered differential feature scores</p>
     </div>
 
     <div id="ref-examples">
@@ -395,27 +395,31 @@
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> a giotto python environment was found</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/Users/yuanlab/Library/r-miniconda/envs/giotto_env/bin/pythonw"</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path or giotto</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  environment was specified, will check if a</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  default python path is available</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> A default python path was found: /usr/bin/python3 and will be used</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  If this is not the correct python path, either</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. use installGiottoEnvironment() to install</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  a local miniconda python environment along with required modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. provide an existing python path to</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python_path to use your own python path which has all modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  installed</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Set options("giotto.use_conda" = FALSE) if</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python functionalities are not needed</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>This giotto object was created in a newer version of</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 GiottoClass (v0.3.2)</span>
 <span class="r-in"><span><span class="va">g_icf</span> <span class="op">&lt;-</span> <span class="fu"><a href="findInteractionChangedFeats.html">findInteractionChangedFeats</a></span><span class="op">(</span><span class="va">g</span>,</span></span>
 <span class="r-in"><span>cluster_column <span class="op">=</span> <span class="st">"leiden_clus"</span>,</span></span>
 <span class="r-in"><span>selected_feats <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Gna12"</span>, <span class="st">"Ccnd2"</span>, <span class="st">"Btbd17"</span><span class="op">)</span>, nr_permutations <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in loadNamespace(x):</span> there is no package called ‘future.apply’</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">combineInteractionChangedFeats</span><span class="op">(</span><span class="va">g_icf</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> An object of class combIcfObject </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  -dimensions : 7, 36 (icf pairs, attributes)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;giotto info&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  -values          : normalized</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  -cluster         : leiden_clus</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  -spatial network : Delaunay_network</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;test info&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  -test                   : permutation</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  -p.adj                  : bonferroni</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  -min cells              : 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  -min interacting cells  : 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  -exclude selected cells : TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  -perm                   : 10</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'g_icf' not found</span>
 </code></pre></div>
     </div>
   </div>
@@ -430,15 +434,15 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer></div>
 
-  
 
 
-  
+
+
 
   </body></html>
 

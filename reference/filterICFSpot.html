@@ -9,7 +9,7 @@
 
   gtag('config', 'G-2V1K0KPLJC');
 </script></head><body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -31,7 +31,7 @@
       <ul class="nav navbar-nav"><li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Get started
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -59,7 +59,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Examples
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li class="dropdown-submenu">
@@ -187,7 +187,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tutorials
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -261,7 +261,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -280,20 +280,20 @@
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/drieslab/Giotto/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>filterICFSpot</h1>
-    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/HEAD/R/spatial_interaction_spot.R" class="external-link"><code>R/spatial_interaction_spot.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/suite/R/spatial_interaction_spot.R" class="external-link"><code>R/spatial_interaction_spot.R</code></a></small>
     <div class="hidden name"><code>filterICFSpot.Rd</code></div>
     </div>
 
@@ -318,53 +318,53 @@
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>icfObject</dt>
+
+
+<dl><dt id="arg-icfobject">icfObject<a class="anchor" aria-label="anchor" href="#arg-icfobject"></a></dt>
 <dd><p>ICF (interaction changed feature) score object</p></dd>
 
 
-<dt>min_cells</dt>
+<dt id="arg-min-cells">min_cells<a class="anchor" aria-label="anchor" href="#arg-min-cells"></a></dt>
 <dd><p>minimum number of source cell type</p></dd>
 
 
-<dt>min_cells_expr_resi</dt>
+<dt id="arg-min-cells-expr-resi">min_cells_expr_resi<a class="anchor" aria-label="anchor" href="#arg-min-cells-expr-resi"></a></dt>
 <dd><p>minimum expression residual level for source
 cell type</p></dd>
 
 
-<dt>min_int_cells</dt>
+<dt id="arg-min-int-cells">min_int_cells<a class="anchor" aria-label="anchor" href="#arg-min-int-cells"></a></dt>
 <dd><p>minimum number of interacting neighbor cell type</p></dd>
 
 
-<dt>min_int_cells_expr_resi</dt>
+<dt id="arg-min-int-cells-expr-resi">min_int_cells_expr_resi<a class="anchor" aria-label="anchor" href="#arg-min-int-cells-expr-resi"></a></dt>
 <dd><p>minimum expression residual level for
 interacting neighbor cell type</p></dd>
 
 
-<dt>min_fdr</dt>
+<dt id="arg-min-fdr">min_fdr<a class="anchor" aria-label="anchor" href="#arg-min-fdr"></a></dt>
 <dd><p>minimum adjusted p-value</p></dd>
 
 
-<dt>min_pcc_diff</dt>
+<dt id="arg-min-pcc-diff">min_pcc_diff<a class="anchor" aria-label="anchor" href="#arg-min-pcc-diff"></a></dt>
 <dd><p>minimum absolute pcc difference difference</p></dd>
 
 
-<dt>min_zscore</dt>
+<dt id="arg-min-zscore">min_zscore<a class="anchor" aria-label="anchor" href="#arg-min-zscore"></a></dt>
 <dd><p>minimum z-score change</p></dd>
 
 
-<dt>zscores_column</dt>
+<dt id="arg-zscores-column">zscores_column<a class="anchor" aria-label="anchor" href="#arg-zscores-column"></a></dt>
 <dd><p>calculate z-scores over cell types or features</p></dd>
 
 
-<dt>direction</dt>
+<dt id="arg-direction">direction<a class="anchor" aria-label="anchor" href="#arg-direction"></a></dt>
 <dd><p>differential expression directions to keep</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
-<p>icfObject that contains the filtered differential feature scores</p>
+    <p>icfObject that contains the filtered differential feature scores</p>
     </div>
 
     <div id="ref-examples">
@@ -385,25 +385,29 @@ interacting neighbor cell type</p></dd>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> a giotto python environment was found</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/Users/yuanlab/Library/r-miniconda/envs/giotto_env/bin/pythonw"</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path or giotto</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  environment was specified, will check if a</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  default python path is available</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> A default python path was found: /usr/bin/python3 and will be used</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  If this is not the correct python path, either</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. use installGiottoEnvironment() to install</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  a local miniconda python environment along with required modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. provide an existing python path to</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python_path to use your own python path which has all modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  installed</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Set options("giotto.use_conda" = FALSE) if</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python functionalities are not needed</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>This giotto object was created in a newer version of</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 GiottoClass (v0.3.2)</span>
 <span class="r-in"><span><span class="va">icfObject</span> <span class="op">&lt;-</span> <span class="fu"><a href="findInteractionChangedFeats.html">findInteractionChangedFeats</a></span><span class="op">(</span><span class="va">g</span>, cluster_column <span class="op">=</span> <span class="st">"leiden_clus"</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in loadNamespace(x):</span> there is no package called ‘future.apply’</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">filterICFSpot</span><span class="op">(</span>icfObject <span class="op">=</span> <span class="va">icfObject</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> An object of class icfObject </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  -dimensions : 2, 21 (icfs, attributes)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;giotto info&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  -values          : normalized</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  -cluster         : leiden_clus</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  -spatial network : Delaunay_network</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;test info&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  -test                   : permutation</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  -p.adj                  : bonferroni</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  -min cells              : 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  -min interacting cells  : 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  -exclude selected cells : TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  -perm                   : 1000</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'icfObject' not found</span>
 </code></pre></div>
     </div>
   </div>
@@ -418,15 +422,15 @@ interacting neighbor cell type</p></dd>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer></div>
 
-  
 
 
-  
+
+
 
   </body></html>
 

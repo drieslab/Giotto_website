@@ -9,7 +9,7 @@
 
   gtag('config', 'G-2V1K0KPLJC');
 </script></head><body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -31,7 +31,7 @@
       <ul class="nav navbar-nav"><li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Get started
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -59,7 +59,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Examples
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li class="dropdown-submenu">
@@ -187,7 +187,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tutorials
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -261,7 +261,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -280,20 +280,20 @@
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/drieslab/Giotto/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>spark</h1>
-    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/HEAD/R/spatial_genes.R" class="external-link"><code>R/spatial_genes.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/suite/R/spatial_genes.R" class="external-link"><code>R/spatial_genes.R</code></a></small>
     <div class="hidden name"><code>spark.Rd</code></div>
     </div>
 
@@ -319,57 +319,57 @@
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>gobject</dt>
+
+
+<dl><dt id="arg-gobject">gobject<a class="anchor" aria-label="anchor" href="#arg-gobject"></a></dt>
 <dd><p>giotto object</p></dd>
 
 
-<dt>spat_loc_name</dt>
+<dt id="arg-spat-loc-name">spat_loc_name<a class="anchor" aria-label="anchor" href="#arg-spat-loc-name"></a></dt>
 <dd><p>name for spatial locations</p></dd>
 
 
-<dt>feat_type</dt>
+<dt id="arg-feat-type">feat_type<a class="anchor" aria-label="anchor" href="#arg-feat-type"></a></dt>
 <dd><p>feature type</p></dd>
 
 
-<dt>spat_unit</dt>
+<dt id="arg-spat-unit">spat_unit<a class="anchor" aria-label="anchor" href="#arg-spat-unit"></a></dt>
 <dd><p>spatial unit</p></dd>
 
 
-<dt>percentage</dt>
+<dt id="arg-percentage">percentage<a class="anchor" aria-label="anchor" href="#arg-percentage"></a></dt>
 <dd><p>The percentage of cells that are expressed for analysis</p></dd>
 
 
-<dt>min_count</dt>
+<dt id="arg-min-count">min_count<a class="anchor" aria-label="anchor" href="#arg-min-count"></a></dt>
 <dd><p>minimum number of counts for a gene to be included</p></dd>
 
 
-<dt>expression_values</dt>
+<dt id="arg-expression-values">expression_values<a class="anchor" aria-label="anchor" href="#arg-expression-values"></a></dt>
 <dd><p>type of values to use (raw by default)</p></dd>
 
 
-<dt>num_core</dt>
+<dt id="arg-num-core">num_core<a class="anchor" aria-label="anchor" href="#arg-num-core"></a></dt>
 <dd><p>number of cores to use</p></dd>
 
 
-<dt>covariates</dt>
+<dt id="arg-covariates">covariates<a class="anchor" aria-label="anchor" href="#arg-covariates"></a></dt>
 <dd><p>The covariates in experiments, i.e. confounding
 factors/batch effect. Column name of giotto cell metadata.</p></dd>
 
 
-<dt>return_object</dt>
+<dt id="arg-return-object">return_object<a class="anchor" aria-label="anchor" href="#arg-return-object"></a></dt>
 <dd><p>type of result to return (data.table or spark object)</p></dd>
 
 
-<dt>...</dt>
-<dd><p>Additional parameters to the <code><a href="https://rdrr.io/pkg/SPARK/man/spark.vc.html" class="external-link">spark.vc</a></code>
+<dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
+<dd><p>Additional parameters to the <code>spark.vc</code>
 function</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
-<p>data.table with SPARK spatial genes results or the SPARK object</p>
+    <p>data.table with SPARK spatial genes results or the SPARK object</p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -377,7 +377,7 @@ function</p></dd>
 SPARK package:
 <span class="pkg">SPARK</span> package:</p><ol><li><p><strong>CreateSPARKObject</strong> create a SPARK object from a giotto object</p></li>
 <li><p><strong>spark.vc</strong> Fits the count-based spatial model to estimate the
-parameters, see <code><a href="https://rdrr.io/pkg/SPARK/man/spark.vc.html" class="external-link">spark.vc</a></code> for additional parameters</p></li>
+parameters, see <code>spark.vc</code> for additional parameters</p></li>
 <li><p><strong>spark.test</strong> Testing multiple kernel matrices</p></li>
 </ol><p>Publication: <a href="https://doi.org/10.1101/810903" class="external-link">doi:10.1101/810903</a></p>
     </div>
@@ -400,70 +400,30 @@ parameters, see <code><a href="https://rdrr.io/pkg/SPARK/man/spark.vc.html" clas
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> a giotto python environment was found</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/Users/yuanlab/Library/r-miniconda/envs/giotto_env/bin/pythonw"</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path or giotto</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  environment was specified, will check if a</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  default python path is available</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> A default python path was found: /usr/bin/python3 and will be used</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  If this is not the correct python path, either</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. use installGiottoEnvironment() to install</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  a local miniconda python environment along with required modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. provide an existing python path to</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python_path to use your own python path which has all modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  installed</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Set options("giotto.use_conda" = FALSE) if</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python functionalities are not needed</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>This giotto object was created in a newer version of</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 GiottoClass (v0.3.2)</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">spark</span><span class="op">(</span><span class="va">g</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> using 'SPARK' for spatial gene/pattern detection. If used in</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     published research, please cite:</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     Sun, Shiquan, Jiaqiang Zhu, and Xiang Zhou. 'Statistical Analysis of</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     Spatial Expression Pattern for Spatially Resolved Transcriptomic Studies.'</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     BioRxiv, October 21, 2019, 810903. https://doi.org/10.1101/810903.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ## ===== SPARK INPUT INFORMATION ==== </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ## number of total samples:  624 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ## number of total features:  576 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ## number of adjusted covariates:  0 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> # fitting count-based spatial model under the null hypothesis ... </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ## testing Gaussian kernel: 1...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ## testing Periodic kernel: 1...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ## testing Gaussian kernel: 2...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ## testing Periodic kernel: 2...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ## testing Gaussian kernel: 3...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ## testing Periodic kernel: 3...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ## testing Gaussian kernel: 4...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ## testing Periodic kernel: 4...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ## testing Gaussian kernel: 5...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ## testing Periodic kernel: 5...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              GSP1      COS1         GSP2      COS2         GSP3       COS3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>             &lt;num&gt;     &lt;num&gt;        &lt;num&gt;     &lt;num&gt;        &lt;num&gt;      &lt;num&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   1: 1.602064e-29 0.9626485 8.428986e-29 0.8746052 1.650841e-22 0.11333318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   2: 7.700079e-34 0.9996967 1.678228e-30 0.9999161 7.258092e-27 0.01100897</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   3: 1.657064e-57 0.9995031 2.002956e-64 0.9699135 1.297105e-58 0.71870162</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   4: 3.520553e-21 0.8601842 3.292507e-25 0.8338627 6.482156e-26 0.16420425</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   5: 3.652749e-42 0.9999978 6.220618e-42 0.9904633 4.684591e-33 0.87747870</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  ---                                                                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 572: 1.647226e-01 0.6121844 2.277559e-01 0.7429497 5.709877e-01 0.76957544</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 573: 5.982327e-01 0.8942523 3.619736e-01 0.5629510 3.324191e-01 0.74180068</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 574: 2.650141e-01 0.3496706 1.453781e-01 0.9886919 6.466572e-02 0.87815719</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 575: 2.112557e-01 0.5877784 5.979924e-01 0.9856482 8.825371e-01 0.75095905</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 576: 6.732644e-01 0.8912192 8.015104e-01 0.1297482 8.958441e-01 0.99644824</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              GSP4         COS4         GSP5         COS5 combined_pvalue</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>             &lt;num&gt;        &lt;num&gt;        &lt;num&gt;        &lt;num&gt;           &lt;num&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   1: 9.896061e-18 1.652221e-02 4.192463e-14 1.827476e-11    5.550000e-17</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   2: 2.071635e-22 3.492188e-05 6.823466e-18 8.573930e-04    5.550000e-17</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   3: 2.542640e-43 1.719199e-03 2.261825e-28 1.784737e-06    5.550000e-17</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   4: 1.569419e-25 3.102681e-02 4.541649e-23 1.387068e-08    5.550000e-17</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   5: 8.508284e-22 1.298126e-02 8.916407e-14 1.491978e-05    5.550000e-17</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  ---                                                                    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 572: 7.495441e-01 9.421084e-01 8.107784e-01 4.899843e-02    5.394030e-01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 573: 5.443894e-01 5.845903e-01 7.475274e-01 7.890190e-01    6.720542e-01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 574: 4.483906e-02 4.308208e-01 4.475741e-02 4.422972e-01    7.106458e-01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 575: 8.667364e-01 1.935389e-01 7.959211e-01 2.791300e-01    8.847304e-01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 576: 8.533334e-01 4.233712e-01 7.451522e-01 9.380562e-01    9.691529e-01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      adjusted_pvalue   genes</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                &lt;num&gt;  &lt;char&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   1:    8.761748e-16   Ccnd2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   2:    8.761748e-16    Sez6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   3:    8.761748e-16   Tiam1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   4:    8.761748e-16   Rab3b</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   5:    8.761748e-16  Homer3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  ---                        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 572:    1.000000e+00   Paqr5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 573:    1.000000e+00 Unc93b1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 574:    1.000000e+00   Sox18</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 575:    1.000000e+00  Pdgfra</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 576:    1.000000e+00   Itpr2</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> package 'SPARK' is not yet installed</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-err co"><span class="r-pr">#&gt;</span>  To install:</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> devtools::install_github("xzhoulab/SPARK")</span>
 </code></pre></div>
     </div>
   </div>
@@ -478,15 +438,15 @@ parameters, see <code><a href="https://rdrr.io/pkg/SPARK/man/spark.vc.html" clas
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer></div>
 
-  
 
 
-  
+
+
 
   </body></html>
 

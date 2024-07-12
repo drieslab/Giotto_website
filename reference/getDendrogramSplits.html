@@ -10,7 +10,7 @@ information."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/lib
 
   gtag('config', 'G-2V1K0KPLJC');
 </script></head><body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -32,7 +32,7 @@ information."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/lib
       <ul class="nav navbar-nav"><li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Get started
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -60,7 +60,7 @@ information."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/lib
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Examples
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li class="dropdown-submenu">
@@ -188,7 +188,7 @@ information."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/lib
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tutorials
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -262,7 +262,7 @@ information."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/lib
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -281,20 +281,20 @@ information."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/lib
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/drieslab/Giotto/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>getDendrogramSplits</h1>
-    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/HEAD/R/clustering.R" class="external-link"><code>R/clustering.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/suite/R/clustering.R" class="external-link"><code>R/clustering.R</code></a></small>
     <div class="hidden name"><code>getDendrogramSplits.Rd</code></div>
     </div>
 
@@ -321,55 +321,55 @@ information.</p>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>gobject</dt>
+
+
+<dl><dt id="arg-gobject">gobject<a class="anchor" aria-label="anchor" href="#arg-gobject"></a></dt>
 <dd><p>giotto object</p></dd>
 
 
-<dt>spat_unit</dt>
+<dt id="arg-spat-unit">spat_unit<a class="anchor" aria-label="anchor" href="#arg-spat-unit"></a></dt>
 <dd><p>spatial unit</p></dd>
 
 
-<dt>feat_type</dt>
+<dt id="arg-feat-type">feat_type<a class="anchor" aria-label="anchor" href="#arg-feat-type"></a></dt>
 <dd><p>feature type</p></dd>
 
 
-<dt>expression_values</dt>
+<dt id="arg-expression-values">expression_values<a class="anchor" aria-label="anchor" href="#arg-expression-values"></a></dt>
 <dd><p>expression values to use</p></dd>
 
 
-<dt>cluster_column</dt>
+<dt id="arg-cluster-column">cluster_column<a class="anchor" aria-label="anchor" href="#arg-cluster-column"></a></dt>
 <dd><p>name of column to use for clusters</p></dd>
 
 
-<dt>cor</dt>
+<dt id="arg-cor">cor<a class="anchor" aria-label="anchor" href="#arg-cor"></a></dt>
 <dd><p>correlation score to calculate distance</p></dd>
 
 
-<dt>distance</dt>
+<dt id="arg-distance">distance<a class="anchor" aria-label="anchor" href="#arg-distance"></a></dt>
 <dd><p>distance method to use for hierarchical clustering</p></dd>
 
 
-<dt>h</dt>
+<dt id="arg-h">h<a class="anchor" aria-label="anchor" href="#arg-h"></a></dt>
 <dd><p>height of horizontal lines to plot</p></dd>
 
 
-<dt>h_color</dt>
+<dt id="arg-h-color">h_color<a class="anchor" aria-label="anchor" href="#arg-h-color"></a></dt>
 <dd><p>color of horizontal lines</p></dd>
 
 
-<dt>show_dend</dt>
+<dt id="arg-show-dend">show_dend<a class="anchor" aria-label="anchor" href="#arg-show-dend"></a></dt>
 <dd><p>show dendrogram</p></dd>
 
 
-<dt>verbose</dt>
+<dt id="arg-verbose">verbose<a class="anchor" aria-label="anchor" href="#arg-verbose"></a></dt>
 <dd><p>be verbose</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
-<p>data.table object</p>
+    <p>data.table object</p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -398,26 +398,30 @@ each node.</p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> a giotto python environment was found</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/Users/yuanlab/Library/r-miniconda/envs/giotto_env/bin/pythonw"</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path or giotto</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  environment was specified, will check if a</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  default python path is available</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> A default python path was found: /usr/bin/python3 and will be used</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  If this is not the correct python path, either</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. use installGiottoEnvironment() to install</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  a local miniconda python environment along with required modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. provide an existing python path to</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python_path to use your own python path which has all modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  installed</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Set options("giotto.use_conda" = FALSE) if</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python functionalities are not needed</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>This giotto object was created in a newer version of</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 GiottoClass (v0.3.2)</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">getDendrogramSplits</span><span class="op">(</span><span class="va">g</span>, cluster_column <span class="op">=</span> <span class="st">"leiden_clus"</span><span class="op">)</span></span></span>
-<span class="r-plt img"><img src="getDendrogramSplits-1.png" alt="" width="700" height="433"></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> height  0.9390206 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> height  0.5534887 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> height  0.3766879 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> height  0.1956274 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> height  0.1330244 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> height  0.1259414 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>          node_h  tree_1     tree_2 nodeID</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>          &lt;list&gt;  &lt;list&gt;     &lt;list&gt; &lt;char&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1: 0.939020.... 2, 1, 3 7, 4, 5, 6 node_1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2: 0.553488....       7    4, 5, 6 node_2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3: 0.376687....       4       5, 6 node_3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4: 0.195627....       2       1, 3 node_4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5: 0.133024....       1          3 node_5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6: 0.125941....       5          6 node_6</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> package 'dendextend' is not yet installed</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-err co"><span class="r-pr">#&gt;</span>  To install:</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> install.packages(c("dendextend"))</span>
 </code></pre></div>
     </div>
   </div>
@@ -432,15 +436,15 @@ each node.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer></div>
 
-  
 
 
-  
+
+
 
   </body></html>
 

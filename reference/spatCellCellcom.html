@@ -10,7 +10,7 @@ expression of interacting cells"><!-- mathjax --><script src="https://cdnjs.clou
 
   gtag('config', 'G-2V1K0KPLJC');
 </script></head><body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -32,7 +32,7 @@ expression of interacting cells"><!-- mathjax --><script src="https://cdnjs.clou
       <ul class="nav navbar-nav"><li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Get started
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -60,7 +60,7 @@ expression of interacting cells"><!-- mathjax --><script src="https://cdnjs.clou
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Examples
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li class="dropdown-submenu">
@@ -188,7 +188,7 @@ expression of interacting cells"><!-- mathjax --><script src="https://cdnjs.clou
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tutorials
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -262,7 +262,7 @@ expression of interacting cells"><!-- mathjax --><script src="https://cdnjs.clou
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -281,20 +281,20 @@ expression of interacting cells"><!-- mathjax --><script src="https://cdnjs.clou
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/drieslab/Giotto/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>spatCellCellcom</h1>
-    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/HEAD/R/spatial_interaction.R" class="external-link"><code>R/spatial_interaction.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/suite/R/spatial_interaction.R" class="external-link"><code>R/spatial_interaction.R</code></a></small>
     <div class="hidden name"><code>spatCellCellcom.Rd</code></div>
     </div>
 
@@ -331,94 +331,94 @@ expression of interacting cells</p>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>gobject</dt>
+
+
+<dl><dt id="arg-gobject">gobject<a class="anchor" aria-label="anchor" href="#arg-gobject"></a></dt>
 <dd><p>giotto object to use</p></dd>
 
 
-<dt>feat_type</dt>
+<dt id="arg-feat-type">feat_type<a class="anchor" aria-label="anchor" href="#arg-feat-type"></a></dt>
 <dd><p>feature type</p></dd>
 
 
-<dt>spat_unit</dt>
+<dt id="arg-spat-unit">spat_unit<a class="anchor" aria-label="anchor" href="#arg-spat-unit"></a></dt>
 <dd><p>spatial unit</p></dd>
 
 
-<dt>spatial_network_name</dt>
+<dt id="arg-spatial-network-name">spatial_network_name<a class="anchor" aria-label="anchor" href="#arg-spatial-network-name"></a></dt>
 <dd><p>spatial network to use for identifying
 interacting cells</p></dd>
 
 
-<dt>cluster_column</dt>
+<dt id="arg-cluster-column">cluster_column<a class="anchor" aria-label="anchor" href="#arg-cluster-column"></a></dt>
 <dd><p>cluster column with cell type information</p></dd>
 
 
-<dt>random_iter</dt>
+<dt id="arg-random-iter">random_iter<a class="anchor" aria-label="anchor" href="#arg-random-iter"></a></dt>
 <dd><p>number of iterations</p></dd>
 
 
-<dt>feat_set_1</dt>
+<dt id="arg-feat-set-">feat_set_1<a class="anchor" aria-label="anchor" href="#arg-feat-set-"></a></dt>
 <dd><p>first specific feature set from feature pairs</p></dd>
 
 
-<dt>feat_set_2</dt>
+<dt id="arg-feat-set-">feat_set_2<a class="anchor" aria-label="anchor" href="#arg-feat-set-"></a></dt>
 <dd><p>second specific feature set from feature pairs</p></dd>
 
 
-<dt>gene_set_1</dt>
+<dt id="arg-gene-set-">gene_set_1<a class="anchor" aria-label="anchor" href="#arg-gene-set-"></a></dt>
 <dd><p>deprecated, use feat_set_1</p></dd>
 
 
-<dt>gene_set_2</dt>
+<dt id="arg-gene-set-">gene_set_2<a class="anchor" aria-label="anchor" href="#arg-gene-set-"></a></dt>
 <dd><p>deprecated, use feat_set_2</p></dd>
 
 
-<dt>log2FC_addendum</dt>
+<dt id="arg-log-fc-addendum">log2FC_addendum<a class="anchor" aria-label="anchor" href="#arg-log-fc-addendum"></a></dt>
 <dd><p>addendum to add when calculating log2FC</p></dd>
 
 
-<dt>min_observations</dt>
+<dt id="arg-min-observations">min_observations<a class="anchor" aria-label="anchor" href="#arg-min-observations"></a></dt>
 <dd><p>minimum number of interactions needed to be
 considered</p></dd>
 
 
-<dt>detailed</dt>
+<dt id="arg-detailed">detailed<a class="anchor" aria-label="anchor" href="#arg-detailed"></a></dt>
 <dd><p>provide more detailed information
 (random variance and z-score)</p></dd>
 
 
-<dt>adjust_method</dt>
+<dt id="arg-adjust-method">adjust_method<a class="anchor" aria-label="anchor" href="#arg-adjust-method"></a></dt>
 <dd><p>which method to adjust p-values</p></dd>
 
 
-<dt>adjust_target</dt>
+<dt id="arg-adjust-target">adjust_target<a class="anchor" aria-label="anchor" href="#arg-adjust-target"></a></dt>
 <dd><p>adjust multiple hypotheses at the cell or feature level</p></dd>
 
 
-<dt>do_parallel</dt>
+<dt id="arg-do-parallel">do_parallel<a class="anchor" aria-label="anchor" href="#arg-do-parallel"></a></dt>
 <dd><p>run calculations in parallel with mclapply</p></dd>
 
 
-<dt>cores</dt>
+<dt id="arg-cores">cores<a class="anchor" aria-label="anchor" href="#arg-cores"></a></dt>
 <dd><p>number of cores to use if do_parallel = TRUE</p></dd>
 
 
-<dt>set_seed</dt>
+<dt id="arg-set-seed">set_seed<a class="anchor" aria-label="anchor" href="#arg-set-seed"></a></dt>
 <dd><p>set a seed for reproducibility</p></dd>
 
 
-<dt>seed_number</dt>
+<dt id="arg-seed-number">seed_number<a class="anchor" aria-label="anchor" href="#arg-seed-number"></a></dt>
 <dd><p>seed number</p></dd>
 
 
-<dt>verbose</dt>
+<dt id="arg-verbose">verbose<a class="anchor" aria-label="anchor" href="#arg-verbose"></a></dt>
 <dd><p>verbose</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
-<p>Cell-Cell communication scores for feature pairs based on spatial
+    <p>Cell-Cell communication scores for feature pairs based on spatial
 interaction</p>
     </div>
     <div id="details">
@@ -471,9 +471,24 @@ LR_expr and rand_expr over all random spatial permutations</p></li>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> a giotto python environment was found</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/Users/yuanlab/Library/r-miniconda/envs/giotto_env/bin/pythonw"</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path or giotto</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  environment was specified, will check if a</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  default python path is available</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> A default python path was found: /usr/bin/python3 and will be used</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  If this is not the correct python path, either</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. use installGiottoEnvironment() to install</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  a local miniconda python environment along with required modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. provide an existing python path to</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python_path to use your own python path which has all modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  installed</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Set options("giotto.use_conda" = FALSE) if</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python functionalities are not needed</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>This giotto object was created in a newer version of</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 GiottoClass (v0.3.2)</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">spatCellCellcom</span><span class="op">(</span></span></span>
 <span class="r-in"><span>    gobject <span class="op">=</span> <span class="va">g</span>,</span></span>
@@ -483,150 +498,7 @@ LR_expr and rand_expr over all random spatial permutations</p></li>
 <span class="r-in"><span>    verbose <span class="op">=</span> <span class="st">"a lot"</span>,</span></span>
 <span class="r-in"><span>    random_iter <span class="op">=</span> <span class="fl">10</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 &lt;- Inf returned</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10 &lt;- Inf returned</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>no adjusted p.values that are not zero; returning Inf</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>no adjusted p.values that are not zero; returning Inf</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                   LR_comb lig_cell_type   lig_expr  ligand rec_cell_type</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                    &lt;char&gt;        &lt;fctr&gt;      &lt;num&gt;  &lt;char&gt;        &lt;fctr&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1: Gm19935-9630013A20Rik             5 1.78685038 Gm19935             6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  2: Gm19935-9630013A20Rik             6 1.25341386 Gm19935             5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3: Gm19935-9630013A20Rik             6 1.39370283 Gm19935             1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  4: Gm19935-9630013A20Rik             1 1.26325380 Gm19935             6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  5: Gm19935-9630013A20Rik             6 1.34521521 Gm19935             6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  6: Gm19935-9630013A20Rik             6 1.51239103 Gm19935             2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  7: Gm19935-9630013A20Rik             5 0.14614174 Gm19935             5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  8: Gm19935-9630013A20Rik             7 0.60289491 Gm19935             7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  9: Gm19935-9630013A20Rik             4 0.92522428 Gm19935             1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10: Gm19935-9630013A20Rik             7 0.40437296 Gm19935             1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11: Gm19935-9630013A20Rik             5 0.11024392 Gm19935             2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12: Gm19935-9630013A20Rik             6 0.59885919 Gm19935             3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13: Gm19935-9630013A20Rik             3 0.67646973 Gm19935             5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14: Gm19935-9630013A20Rik             2 0.06646316 Gm19935             5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15: Gm19935-9630013A20Rik             6 0.60686608 Gm19935             7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16: Gm19935-9630013A20Rik             1 0.55560407 Gm19935             7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17: Gm19935-9630013A20Rik             1 0.30914232 Gm19935             1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18: Gm19935-9630013A20Rik             5 0.13598163 Gm19935             1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19: Gm19935-9630013A20Rik             3 0.29380142 Gm19935             1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20: Gm19935-9630013A20Rik             6 0.27008393 Gm19935             4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21: Gm19935-9630013A20Rik             2 0.11342034 Gm19935             2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22: Gm19935-9630013A20Rik             3 0.33661638 Gm19935             4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23: Gm19935-9630013A20Rik             1 0.20683620 Gm19935             3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24: Gm19935-9630013A20Rik             1 0.17850483 Gm19935             5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25: Gm19935-9630013A20Rik             3 0.21449815 Gm19935             3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26: Gm19935-9630013A20Rik             4 0.09396233 Gm19935             4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27: Gm19935-9630013A20Rik             4 0.14061468 Gm19935             6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28: Gm19935-9630013A20Rik             1 0.00000000 Gm19935             2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29: Gm19935-9630013A20Rik             2 0.00000000 Gm19935             1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30: Gm19935-9630013A20Rik             2 0.00000000 Gm19935             6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31: Gm19935-9630013A20Rik             5 0.00000000 Gm19935             3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32: Gm19935-9630013A20Rik             4 0.00000000 Gm19935             5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 33: Gm19935-9630013A20Rik             5 0.00000000 Gm19935             4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 34: Gm19935-9630013A20Rik             1 0.00000000 Gm19935             4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 35: Gm19935-9630013A20Rik             3 0.00000000 Gm19935             6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 36: Gm19935-9630013A20Rik             4 0.00000000 Gm19935             3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 37: Gm19935-9630013A20Rik             7 0.00000000 Gm19935             6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                   LR_comb lig_cell_type   lig_expr  ligand rec_cell_type</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       rec_expr      receptor   LR_expr lig_nr rec_nr  rand_expr     av_diff</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>          &lt;num&gt;        &lt;char&gt;     &lt;num&gt;  &lt;int&gt;  &lt;int&gt;      &lt;num&gt;       &lt;num&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1: 0.98253548 9630013A20Rik 2.7693859     23     16 1.25380331  1.51558255</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  2: 0.86184960 9630013A20Rik 2.1152635     16     23 1.09797881  1.01728464</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3: 0.22070242 9630013A20Rik 1.6144053     15     17 1.11451441  0.49989085</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  4: 0.32184532 9630013A20Rik 1.5850991     17     15 0.81778091  0.76731822</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  5: 0.20155242 9630013A20Rik 1.5467676     37     37 1.46096767  0.08579996</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  6: 0.00000000 9630013A20Rik 1.5123910      2      3 0.99784387  0.51454716</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  7: 0.95582749 9630013A20Rik 1.1019692     76     76 0.97852590  0.12344334</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  8: 0.38773430 9630013A20Rik 0.9906292      8      8 1.22060116 -0.22997195</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  9: 0.00000000 9630013A20Rik 0.9252243      3      2 0.28138576  0.64383852</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10: 0.45406594 9630013A20Rik 0.8584389      8     14 0.66226014  0.19617876</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11: 0.73487022 9630013A20Rik 0.8451141     34     38 0.59552083  0.24959330</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12: 0.17685852 9630013A20Rik 0.7757177      4      9 0.90734006 -0.13162236</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13: 0.00000000 9630013A20Rik 0.6764697      5      6 0.47407385  0.20239588</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14: 0.60181006 9630013A20Rik 0.6682732     38     34 0.57442519  0.09384803</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15: 0.00000000 9630013A20Rik 0.6068661      9      5 1.42367411 -0.81680803</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16: 0.00000000 9630013A20Rik 0.5556041     14      8 0.92352381 -0.36791974</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17: 0.17530545 9630013A20Rik 0.4844478    161    161 0.48444777  0.00000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18: 0.31893557 9630013A20Rik 0.4549172     57     41 0.69040344 -0.23548624</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19: 0.12413060 9630013A20Rik 0.4179320     89    102 0.43736950 -0.01943749</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20: 0.13080439 9630013A20Rik 0.4008883     47     26 0.81445915 -0.41357082</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21: 0.23907794 9630013A20Rik 0.3524983    121    121 0.34671247  0.00578580</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22: 0.00000000 9630013A20Rik 0.3366164      6      6 0.31198154  0.02463484</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23: 0.09032721 9630013A20Rik 0.2971634    102     89 0.36467062 -0.06750721</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24: 0.11224192 9630013A20Rik 0.2907468     41     57 0.64797278 -0.35722602</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25: 0.07000002 9630013A20Rik 0.2844982    108    108 0.28449817  0.00000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26: 0.10048837 9630013A20Rik 0.1944507     93     93 0.19445069  0.00000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27: 0.00000000 9630013A20Rik 0.1406147     26     47 0.55446844 -0.41385376</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28: 0.00000000 9630013A20Rik 0.0000000      3      1 0.36365588 -0.36365588</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29: 0.00000000 9630013A20Rik 0.0000000      1      3 1.15415007 -1.15415007</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30: 0.00000000 9630013A20Rik 0.0000000      3      2 0.77674202 -0.77674202</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31: 0.00000000 9630013A20Rik 0.0000000      6      5 0.32603077 -0.32603077</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32: 0.00000000 9630013A20Rik 0.0000000      4      1 0.04787715 -0.04787715</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 33: 0.00000000 9630013A20Rik 0.0000000      1      4 0.14062751 -0.14062751</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 34: 0.00000000 9630013A20Rik 0.0000000      2      3 0.60011948 -0.60011948</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 35: 0.00000000 9630013A20Rik 0.0000000      9      4 0.52376116 -0.52376116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 36: 0.00000000 9630013A20Rik 0.0000000      6      6 0.17062548 -0.17062548</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 37: 0.00000000 9630013A20Rik 0.0000000      5      9 1.59463534 -1.59463534</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       rec_expr      receptor   LR_expr lig_nr rec_nr  rand_expr     av_diff</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>            log2fc pvalue LR_cell_comb p.adj           PI</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>             &lt;num&gt;  &lt;num&gt;       &lt;char&gt; &lt;num&gt;        &lt;num&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1:  1.083724e+00    0.0         5--6   0.0         -Inf</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  2:  8.868759e-01    0.0         6--5   0.0         -Inf</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3:  4.973286e-01    0.2         6--1   0.2  0.347617756</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  4:  8.766118e-01    0.0         1--6   0.0  0.612725328</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  5:  7.719634e-02    0.8         6--6   0.8  0.007481098</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  6:  5.545288e-01    0.6         6--2   0.6  0.123021513</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  7:  1.563391e-01    0.1         5--5   0.1  0.156339149</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  8: -2.760341e-01    0.3         7--7   0.3 -0.144332371</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  9:  1.426617e+00    0.4         4--1   0.4  0.567707847</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10:  3.304030e-01    0.4         7--1   0.4  0.131480586</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11:  4.423948e-01    0.0         5--2   0.0  0.176046606</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12: -2.020130e-01    0.6         6--3   0.6 -0.044816333</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13:  4.356933e-01    0.3         3--5   0.3  0.227814790</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14:  1.879610e-01    0.4         2--5   0.4  0.074797218</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15: -1.108046e+00    0.2         6--7   0.2 -0.774490595</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16: -6.426480e-01    0.2         1--7   0.2 -0.449191643</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17:  0.000000e+00    1.0         1--1   1.0  0.000000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18: -5.103167e-01    0.4         5--1   0.4 -0.203075434</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19: -5.315170e-02    0.4         3--1   0.4 -0.021151189</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20: -8.684297e-01    0.0         6--4   0.0          Inf</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21:  1.856575e-02    0.7         2--2   0.7  0.002875871</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22:  8.378658e-02    0.8         3--4   0.8  0.008119758</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23: -2.264757e-01    0.2         1--3   0.2 -0.158299738</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24: -9.367519e-01    0.0         1--5   0.0 -0.372771048</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25:  0.000000e+00    1.0         3--3   1.0  0.000000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26: -3.203427e-16    1.0         4--4   1.0  0.000000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27: -1.443599e+00    0.0         4--6   0.0          Inf</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28: -2.213054e+00    0.7         1--2   0.7 -0.342806471</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29: -3.648638e+00    0.6         2--1   0.6 -0.809445798</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30: -3.132152e+00    0.4         2--6   0.4 -1.246408751</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31: -2.090958e+00    0.5         5--3   0.5 -0.629440967</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32: -5.643991e-01    0.9         4--5   0.9 -0.025825487</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 33: -1.266802e+00    0.8         5--4   0.8 -0.122765760</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 34: -2.807601e+00    0.7         1--4   0.7 -0.434902922</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 35: -2.640994e+00    0.2         3--6   0.2 -1.845975399</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 36: -1.436298e+00    0.6         4--3   0.6 -0.318640847</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 37: -4.082903e+00    0.0         7--6   0.0 -2.853826696</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>            log2fc pvalue LR_cell_comb p.adj           PI</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in loadNamespace(x):</span> there is no package called ‘future.apply’</span>
 </code></pre></div>
     </div>
   </div>
@@ -641,15 +513,15 @@ LR_expr and rand_expr over all random spatial permutations</p></li>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer></div>
 
-  
 
 
-  
+
+
 
   </body></html>
 

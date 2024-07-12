@@ -10,7 +10,7 @@ and runs the different spatial gene detection tests"><!-- mathjax --><script src
 
   gtag('config', 'G-2V1K0KPLJC');
 </script></head><body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -32,7 +32,7 @@ and runs the different spatial gene detection tests"><!-- mathjax --><script src
       <ul class="nav navbar-nav"><li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Get started
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -60,7 +60,7 @@ and runs the different spatial gene detection tests"><!-- mathjax --><script src
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Examples
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li class="dropdown-submenu">
@@ -188,7 +188,7 @@ and runs the different spatial gene detection tests"><!-- mathjax --><script src
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Tutorials
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -262,7 +262,7 @@ and runs the different spatial gene detection tests"><!-- mathjax --><script src
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
@@ -281,20 +281,20 @@ and runs the different spatial gene detection tests"><!-- mathjax --><script src
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/drieslab/Giotto/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>runPatternSimulation</h1>
-    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/HEAD/R/spatial_genes.R" class="external-link"><code>R/spatial_genes.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/drieslab/Giotto/blob/suite/R/spatial_genes.R" class="external-link"><code>R/spatial_genes.R</code></a></small>
     <div class="hidden name"><code>runPatternSimulation.Rd</code></div>
     </div>
 
@@ -333,98 +333,98 @@ and runs the different spatial gene detection tests</p>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>gobject</dt>
+
+
+<dl><dt id="arg-gobject">gobject<a class="anchor" aria-label="anchor" href="#arg-gobject"></a></dt>
 <dd><p>giotto object</p></dd>
 
 
-<dt>pattern_name</dt>
+<dt id="arg-pattern-name">pattern_name<a class="anchor" aria-label="anchor" href="#arg-pattern-name"></a></dt>
 <dd><p>name of spatial pattern</p></dd>
 
 
-<dt>pattern_colors</dt>
+<dt id="arg-pattern-colors">pattern_colors<a class="anchor" aria-label="anchor" href="#arg-pattern-colors"></a></dt>
 <dd><p>2 color vector for the spatial pattern</p></dd>
 
 
-<dt>pattern_cell_ids</dt>
+<dt id="arg-pattern-cell-ids">pattern_cell_ids<a class="anchor" aria-label="anchor" href="#arg-pattern-cell-ids"></a></dt>
 <dd><p>cell ids that make up the spatial pattern</p></dd>
 
 
-<dt>gene_names</dt>
+<dt id="arg-gene-names">gene_names<a class="anchor" aria-label="anchor" href="#arg-gene-names"></a></dt>
 <dd><p>selected genes</p></dd>
 
 
-<dt>spatial_probs</dt>
+<dt id="arg-spatial-probs">spatial_probs<a class="anchor" aria-label="anchor" href="#arg-spatial-probs"></a></dt>
 <dd><p>probabilities to test for a high expressing gene
 value to be part of the spatial pattern</p></dd>
 
 
-<dt>reps</dt>
+<dt id="arg-reps">reps<a class="anchor" aria-label="anchor" href="#arg-reps"></a></dt>
 <dd><p>number of random simulation repetitions</p></dd>
 
 
-<dt>spatial_network_name</dt>
+<dt id="arg-spatial-network-name">spatial_network_name<a class="anchor" aria-label="anchor" href="#arg-spatial-network-name"></a></dt>
 <dd><p>which spatial network to use for binSpectSingle</p></dd>
 
 
-<dt>spat_methods</dt>
+<dt id="arg-spat-methods">spat_methods<a class="anchor" aria-label="anchor" href="#arg-spat-methods"></a></dt>
 <dd><p>vector of spatial methods to test</p></dd>
 
 
-<dt>spat_methods_params</dt>
+<dt id="arg-spat-methods-params">spat_methods_params<a class="anchor" aria-label="anchor" href="#arg-spat-methods-params"></a></dt>
 <dd><p>list of parameters list for each element in the
 vector of spatial methods to test</p></dd>
 
 
-<dt>spat_methods_names</dt>
+<dt id="arg-spat-methods-names">spat_methods_names<a class="anchor" aria-label="anchor" href="#arg-spat-methods-names"></a></dt>
 <dd><p>name for each element in the vector of spatial
 elements to test</p></dd>
 
 
-<dt>scalefactor</dt>
+<dt id="arg-scalefactor">scalefactor<a class="anchor" aria-label="anchor" href="#arg-scalefactor"></a></dt>
 <dd><p>library size scaling factor when re-normalizing dataset</p></dd>
 
 
-<dt>save_plot</dt>
+<dt id="arg-save-plot">save_plot<a class="anchor" aria-label="anchor" href="#arg-save-plot"></a></dt>
 <dd><p>save intermediate random simulation plots or not</p></dd>
 
 
-<dt>save_raw</dt>
+<dt id="arg-save-raw">save_raw<a class="anchor" aria-label="anchor" href="#arg-save-raw"></a></dt>
 <dd><p>save the raw expression matrix of the simulation</p></dd>
 
 
-<dt>save_norm</dt>
+<dt id="arg-save-norm">save_norm<a class="anchor" aria-label="anchor" href="#arg-save-norm"></a></dt>
 <dd><p>save the normalized expression matrix of the simulation</p></dd>
 
 
-<dt>save_dir</dt>
+<dt id="arg-save-dir">save_dir<a class="anchor" aria-label="anchor" href="#arg-save-dir"></a></dt>
 <dd><p>directory to save results to</p></dd>
 
 
-<dt>max_col</dt>
+<dt id="arg-max-col">max_col<a class="anchor" aria-label="anchor" href="#arg-max-col"></a></dt>
 <dd><p>maximum number of columns for final plots</p></dd>
 
 
-<dt>height</dt>
+<dt id="arg-height">height<a class="anchor" aria-label="anchor" href="#arg-height"></a></dt>
 <dd><p>height of final plots</p></dd>
 
 
-<dt>width</dt>
+<dt id="arg-width">width<a class="anchor" aria-label="anchor" href="#arg-width"></a></dt>
 <dd><p>width of final plots</p></dd>
 
 
-<dt>run_simulations</dt>
+<dt id="arg-run-simulations">run_simulations<a class="anchor" aria-label="anchor" href="#arg-run-simulations"></a></dt>
 <dd><p>run simulations (default = TRUE)</p></dd>
 
 
-<dt>...</dt>
+<dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
 <dd><p>additional parameters for renormalization</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    
-
-<p>data.table with results</p>
+    <p>data.table with results</p>
     </div>
 
     <div id="ref-examples">
@@ -445,9 +445,24 @@ elements to test</p></dd>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> a giotto python environment was found</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/Users/yuanlab/Library/r-miniconda/envs/giotto_env/bin/pythonw"</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path or giotto</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  environment was specified, will check if a</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  default python path is available</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> A default python path was found: /usr/bin/python3 and will be used</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  If this is not the correct python path, either</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. use installGiottoEnvironment() to install</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  a local miniconda python environment along with required modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. provide an existing python path to</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python_path to use your own python path which has all modules</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  installed</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Set options("giotto.use_conda" = FALSE) if</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  python functionalities are not needed</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>This giotto object was created in a newer version of</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 GiottoClass (v0.3.2)</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">runPatternSimulation</span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">g</span>, pattern_cell_ids <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"AAAGGGATGTAGCAAG-1"</span>,</span></span>
 <span class="r-in"><span><span class="st">"TCAAACAACCGCGTCG-1"</span>, <span class="st">"ACGATCATACATAGAG-1"</span>, <span class="st">"TATGCTCCCTACTTAC-1"</span><span class="op">)</span>,</span></span>
@@ -458,8 +473,10 @@ elements to test</p></dd>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> first scale feats and then cells</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> &gt; normalized already exists and will be replaced with new values</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> &gt; scaled already exists and will be replaced with new values</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> feat statistics has already been applied once; overwriting</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> cells statistics has already been applied once; overwriting</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> feat statistics has already been applied once, will be</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>                     overwritten</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> cells statistics has already been applied once, will be</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>                     overwritten</span>
 <span class="r-plt img"><img src="runPatternSimulation-1.png" alt="" width="700" height="433"></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> start with 0.5</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> repetition = 1</span>
@@ -469,8 +486,10 @@ elements to test</p></dd>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> first scale feats and then cells</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> &gt; normalized already exists and will be replaced with new values</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> &gt; scaled already exists and will be replaced with new values</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> feat statistics has already been applied once; overwriting</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> cells statistics has already been applied once; overwriting</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> feat statistics has already been applied once, will be</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>                     overwritten</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> cells statistics has already been applied once, will be</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>                     overwritten</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> This is the single parameter version of binSpect</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
@@ -499,39 +518,30 @@ elements to test</p></dd>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 1. matrix binarization complete</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 2. spatial enrichment test completed</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>SpatialDE python module is not installed:</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>             install in the right environment or python path with:</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>             'pip install spatialde'</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>             or from within R in the Giotto environment with:</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>             conda_path = reticulate::miniconda_path()</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>             conda_full_path = paste0(conda_path,'/','bin/conda')</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>             full_envname = paste0(conda_path,'/envs/giotto_env')</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>             reticulate::py_install(packages = c('NaiveDE', 'patsy', 'SpatialDE'),</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                                    envname = full_envname,</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                                    method = 'conda',</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                                    conda = conda_full_path,</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                                    pip = TRUE,</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                                    python_version = '3.6')</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> using 'SpatialDE' for spatial gene/pattern detection. If used in</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     published research, please cite:</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     Svensson, Valentine, Sarah A. Teichmann, and Oliver Stegle.</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     'SpatialDE: Identification of Spatially Variable Genes.'</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     Nature Methods 15, no. 5 (May 2018): 343-46.</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     https://doi.org/10.1038/nmeth.4636.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> using 'SPARK' for spatial gene/pattern detection. If used in</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     published research, please cite:</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     Sun, Shiquan, Jiaqiang Zhu, and Xiang Zhou. 'Statistical Analysis of</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     Spatial Expression Pattern for Spatially Resolved Transcriptomic Studies.'</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     BioRxiv, October 21, 2019, 810903. https://doi.org/10.1101/810903.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ## ===== SPARK INPUT INFORMATION ==== </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ## number of total samples:  624 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ## number of total features:  576 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ## number of adjusted covariates:  0 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> # fitting count-based spatial model under the null hypothesis ... </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Found more than one class "dist" in cache; using the first, from namespace 'BiocGenerics'</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Also defined by ‘spam’</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Found more than one class "dist" in cache; using the first, from namespace 'BiocGenerics'</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Also defined by ‘spam’</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ## testing Gaussian kernel: 1...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ## testing Periodic kernel: 1...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ## testing Gaussian kernel: 2...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ## testing Periodic kernel: 2...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ## testing Gaussian kernel: 3...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ## testing Periodic kernel: 3...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ## testing Gaussian kernel: 4...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ## testing Periodic kernel: 4...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ## testing Gaussian kernel: 5...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ## testing Periodic kernel: 5...</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> x being coerced from class: matrix to data.table</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in py_call_impl(callable, call_args$unnamed, call_args$named):</span> FileNotFoundError: [Errno 2] No such file or directory: 'NA/silhouetteRank_output//result_5000_0.95_0.005/par.7'</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span style="color: #555555;">Run `reticulate::py_last_error()` for details.</span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in py_run_file_impl(file, local, convert):</span> ModuleNotFoundError: No module named 'pandas'</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> Run `reticulate::py_last_error()` for details.</span>
 <span class="r-plt img"><img src="runPatternSimulation-2.png" alt="" width="700" height="433"></span>
 </code></pre></div>
     </div>
@@ -547,15 +557,15 @@ elements to test</p></dd>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer></div>
 
-  
 
 
-  
+
+
 
   </body></html>
 
