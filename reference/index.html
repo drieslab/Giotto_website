@@ -23,7 +23,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Giotto</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.1.0</span>
       </span>
     </div>
 
@@ -257,6 +257,11 @@
     <li>
       <a href="../articles/nemo_slideseq.html">NeMO Slide-seq on Terra.bio</a>
     </li>
+    <li class="divider">
+    <li class="dropdown-header">Scalability</li>
+    <li>
+      <a href="../articles/dbMatrix.html">Using dbMatrix with Giotto</a>
+    </li>
   </ul></li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -487,6 +492,34 @@
           <p><code><a href="registerGiottoObjectListRvision.html">registerGiottoObjectListRvision()</a></code> </p>
         </td>
         <td><p>registerGiottoObjectListRvision</p></td>
+      </tr><tr><td>
+          <p><code><a href="estimateAutomatedImageRegistrationWithSIFT.html">estimateAutomatedImageRegistrationWithSIFT()</a></code> </p>
+        </td>
+        <td><p>Estimate Automated ImageRegistration With SIFT</p></td>
+      </tr><tr><td>
+          <p><code><a href="dot-sift_detect.html">.sift_detect()</a></code> </p>
+        </td>
+        <td><p>Run SIFT feature detector and descriptor extractor</p></td>
+      </tr><tr><td>
+          <p><code><a href="dot-warp_transformed_image.html">.warp_transformed_image()</a></code> </p>
+        </td>
+        <td><p>Warp transformed images from estimated transformation</p></td>
+      </tr><tr><td>
+          <p><code><a href="dot-estimate_transform_from_matched_descriptor.html">.estimate_transform_from_matched_descriptor()</a></code> </p>
+        </td>
+        <td><p>Estimate affine transformation from matched descriptor</p></td>
+      </tr><tr><td>
+          <p><code><a href="dot-match_descriptor.html">.match_descriptor()</a></code> </p>
+        </td>
+        <td><p>Match image descriptors</p></td>
+      </tr><tr><td>
+          <p><code><a href="dot-plot_matched_descriptors.html">.plot_matched_descriptors()</a></code> </p>
+        </td>
+        <td><p>plot matched descriptors</p></td>
+      </tr><tr><td>
+          <p><code><a href="preprocessImageToMatrix.html">preprocessImageToMatrix()</a></code> </p>
+        </td>
+        <td><p>Preprocess from image directory to the required matrix format for Image registration pipeline built on scikit-image</p></td>
       </tr></tbody><tbody><tr><th colspan="2">
           <h2 id="giotto-object">Giotto Object <a href="#giotto-object" class="anchor" aria-hidden="true"></a></h2>
           <p class="section-desc"></p><p>Functions to help to import raw spatial data.</p>
@@ -527,6 +560,22 @@
           <p><code><a href="readPolygonFilesVizgenHDF5_old.html">readPolygonFilesVizgenHDF5_old()</a></code> </p>
         </td>
         <td><p>readPolygonFilesVizgenHDF5</p></td>
+      </tr><tr><td>
+          <p><code><a href="importCosMx.html">importCosMx()</a></code> </p>
+        </td>
+        <td><p>Import a Nanostring CosMx Assay</p></td>
+      </tr><tr><td>
+          <p><code><a href="importVisiumHD.html">importVisiumHD()</a></code> </p>
+        </td>
+        <td><p>Import a Visium HD assay</p></td>
+      </tr><tr><td>
+          <p><code><a href="importXenium.html">importXenium()</a></code> </p>
+        </td>
+        <td><p>Import a 10X Xenium Assay</p></td>
+      </tr><tr><td>
+          <p><code><a href="read10xAffineImage.html">read10xAffineImage()</a></code> </p>
+        </td>
+        <td><p>read10xAffineImage</p></td>
       </tr></tbody><tbody><tr><th colspan="2">
           <h2 id="load-and-save-giotto-object">Load and Save Giotto Object <a href="#load-and-save-giotto-object" class="anchor" aria-hidden="true"></a></h2>
           <p class="section-desc"></p><p>Functions to help loading and saving a giotto object from and to a local folder.</p>
@@ -850,7 +899,7 @@
       </tr><tr><td>
           <p><code><a href="filterCPG.html">filterCPG()</a></code> </p>
         </td>
-        <td><p>filterCPG</p></td>
+        <td><p>deprecated</p></td>
       </tr></tbody><tbody><tr><th colspan="2">
           <h2 id="dimension-reduction">Dimension Reduction <a href="#dimension-reduction" class="anchor" aria-hidden="true"></a></h2>
           <p class="section-desc"></p><p>Functions to reduce dimensions.</p>
@@ -960,17 +1009,9 @@
         </td>
         <td><p>doSNNCluster</p></td>
       </tr><tr><td>
-          <p><code><a href="subClusterCells.html">subClusterCells()</a></code> </p>
+          <p><code><a href="subClusterCells.html">subClusterCells()</a></code> <code><a href="subClusterCells.html">doLeidenSubCluster()</a></code> <code><a href="subClusterCells.html">doLouvainSubCluster()</a></code> </p>
         </td>
-        <td><p>subClusterCells</p></td>
-      </tr><tr><td>
-          <p><code><a href="doLeidenSubCluster.html">doLeidenSubCluster()</a></code> </p>
-        </td>
-        <td><p>doLeidenSubCluster</p></td>
-      </tr><tr><td>
-          <p><code><a href="doLouvainSubCluster.html">doLouvainSubCluster()</a></code> </p>
-        </td>
-        <td><p>doLouvainSubCluster</p></td>
+        <td><p>Cell subclustering</p></td>
       </tr><tr><td>
           <p><code><a href="getClusterSimilarity.html">getClusterSimilarity()</a></code> </p>
         </td>
@@ -1199,6 +1240,10 @@
           <p><code><a href="https://drieslab.github.io/GiottoClass/reference/createSpatialDefaultGrid.html" class="external-link">createSpatialDefaultGrid()</a></code> </p>
         </td>
         <td><p>createSpatialDefaultGrid (from GiottoClass)</p></td>
+      </tr><tr><td>
+          <p><code><a href="identifyTMAcores.html">identifyTMAcores()</a></code> </p>
+        </td>
+        <td><p>Split cluster annotations based on a spatial network</p></td>
       </tr></tbody><tbody><tr><th colspan="2">
           <h2 id="spatial-expression-patterns">Spatial Expression Patterns <a href="#spatial-expression-patterns" class="anchor" aria-hidden="true"></a></h2>
           <p class="section-desc"></p><p>Methods to detect spatially coherent expression patterns.</p>
@@ -1252,21 +1297,13 @@
         </td>
         <td><p>clusterSpatialCorFeats</p></td>
       </tr><tr><td>
-          <p><code><a href="detectSpatialCorFeats.html">detectSpatialCorFeats()</a></code> </p>
+          <p><code><a href="detectSpatialCorFeats.html">detectSpatialCorFeats()</a></code> <code><a href="detectSpatialCorFeats.html">detectSpatialCorFeatsMatrix()</a></code> </p>
         </td>
-        <td><p>detectSpatialCorFeats</p></td>
-      </tr><tr><td>
-          <p><code><a href="detectSpatialCorGenes.html">detectSpatialCorGenes()</a></code> </p>
-        </td>
-        <td><p>detectSpatialCorGenes</p></td>
+        <td><p>Detect spatially correlated features</p></td>
       </tr><tr><td>
           <p><code><a href="clusterSpatialCorGenes.html">clusterSpatialCorGenes()</a></code> </p>
         </td>
         <td><p>clusterSpatialCorGenes</p></td>
-      </tr><tr><td>
-          <p><code><a href="detectSpatialCorFeatsMatrix.html">detectSpatialCorFeatsMatrix()</a></code> </p>
-        </td>
-        <td><p>detectSpatialCorFeatsMatrix</p></td>
       </tr><tr><td>
           <p><code><a href="detectSpatialPatterns.html">detectSpatialPatterns()</a></code> </p>
         </td>
@@ -1294,7 +1331,7 @@
       </tr><tr><td>
           <p><code><a href="getBalancedSpatCoexpressionFeats.html">getBalancedSpatCoexpressionFeats()</a></code> </p>
         </td>
-        <td><p>getBalancedSpatCoexpressionFeats</p></td>
+        <td><p>Get balanced spatial coexpression features</p></td>
       </tr></tbody><tbody><tr><th colspan="2">
           <h2 id="spatial-data-handling">Spatial Data Handling <a href="#spatial-data-handling" class="anchor" aria-hidden="true"></a></h2>
           <p class="section-desc"></p><p>Functions to condense spatial data.</p>
@@ -1548,17 +1585,17 @@
         </td>
         <td><p>cellProximitySpatPlot3D</p></td>
       </tr><tr><td>
-          <p><code><a href="specificCellCellcommunicationScores.html">specificCellCellcommunicationScores()</a></code> </p>
+          <p><code><a href="spatCellCellcom.html">spatCellCellcom()</a></code> <code><a href="spatCellCellcom.html">specificCellCellcommunicationScores()</a></code> </p>
         </td>
-        <td><p>specificCellCellcommunicationScores</p></td>
+        <td><p>Spatial cell cell communication scoring</p></td>
       </tr><tr><td>
           <p><code><a href="filterCellProximityGenes.html">filterCellProximityGenes()</a></code> </p>
         </td>
-        <td><p>filterCellProximityGenes</p></td>
+        <td><p>deprecated</p></td>
       </tr><tr><td>
           <p><code><a href="findCellProximityGenes.html">findCellProximityGenes()</a></code> </p>
         </td>
-        <td><p>findCellProximityGenes</p></td>
+        <td><p>deprecated</p></td>
       </tr><tr><td>
           <p><code><a href="findCellTypesFromEnrichment.html">findCellTypesFromEnrichment()</a></code> </p>
         </td>
@@ -1592,13 +1629,9 @@
           <p class="section-desc"></p><p>Identify and visualize features (genes) that change in a source cell type due to interaction with another neighboring cell type.</p>
         </th>
       </tr></tbody><tbody><tr><td>
-          <p><code><a href="findInteractionChangedFeats.html">findInteractionChangedFeats()</a></code> </p>
+          <p><code><a href="findInteractionChangedFeats.html">findInteractionChangedFeats()</a></code> <code><a href="findInteractionChangedFeats.html">findICF()</a></code> </p>
         </td>
         <td><p>findInteractionChangedFeats</p></td>
-      </tr><tr><td>
-          <p><code><a href="findICF.html">findICF()</a></code> </p>
-        </td>
-        <td><p>findICF</p></td>
       </tr><tr><td>
           <p><code><a href="findICFSpot.html">findICFSpot()</a></code> </p>
         </td>
@@ -1606,23 +1639,19 @@
       </tr><tr><td>
           <p><code><a href="findICG.html">findICG()</a></code> </p>
         </td>
-        <td><p>findICG</p></td>
+        <td><p>deprecated</p></td>
       </tr><tr><td>
           <p><code><a href="findCPG.html">findCPG()</a></code> </p>
         </td>
-        <td><p>findCPG</p></td>
+        <td><p>deprecated</p></td>
       </tr><tr><td>
-          <p><code><a href="filterInteractionChangedFeats.html">filterInteractionChangedFeats()</a></code> </p>
+          <p><code><a href="filterInteractionChangedFeats.html">filterInteractionChangedFeats()</a></code> <code><a href="filterInteractionChangedFeats.html">filterICF()</a></code> </p>
         </td>
         <td><p>filterInteractionChangedFeats</p></td>
       </tr><tr><td>
           <p><code><a href="filterInteractionChangedGenes.html">filterInteractionChangedGenes()</a></code> </p>
         </td>
-        <td><p>filterInteractionChangedGenes</p></td>
-      </tr><tr><td>
-          <p><code><a href="filterICF.html">filterICF()</a></code> </p>
-        </td>
-        <td><p>filterICF</p></td>
+        <td><p>deprecated</p></td>
       </tr><tr><td>
           <p><code><a href="filterICFSpot.html">filterICFSpot()</a></code> </p>
         </td>
@@ -1630,7 +1659,7 @@
       </tr><tr><td>
           <p><code><a href="filterICG.html">filterICG()</a></code> </p>
         </td>
-        <td><p>filterICG</p></td>
+        <td><p>deprecated</p></td>
       </tr><tr><td>
           <p><code><a href="plotICF.html">plotICF()</a></code> </p>
         </td>
@@ -1648,13 +1677,9 @@
         </td>
         <td><p>plotCPF</p></td>
       </tr><tr><td>
-          <p><code><a href="combineInteractionChangedFeats.html">combineInteractionChangedFeats()</a></code> </p>
+          <p><code><a href="combineInteractionChangedFeats.html">combineInteractionChangedFeats()</a></code> <code><a href="combineInteractionChangedFeats.html">combineICF()</a></code> </p>
         </td>
         <td><p>combineInteractionChangedFeats</p></td>
-      </tr><tr><td>
-          <p><code><a href="combineICF.html">combineICF()</a></code> </p>
-        </td>
-        <td><p>combineICF</p></td>
       </tr><tr><td>
           <p><code><a href="plotCombineInteractionChangedFeats.html">plotCombineInteractionChangedFeats()</a></code> </p>
         </td>
@@ -1670,23 +1695,23 @@
       </tr><tr><td>
           <p><code><a href="combineCPG.html">combineCPG()</a></code> </p>
         </td>
-        <td><p>combineCPG</p></td>
+        <td><p>deprecated</p></td>
       </tr><tr><td>
           <p><code><a href="combineCellProximityGenes.html">combineCellProximityGenes()</a></code> </p>
         </td>
-        <td><p>combineCellProximityGenes</p></td>
+        <td><p>deprecated</p></td>
       </tr><tr><td>
           <p><code><a href="combineICG.html">combineICG()</a></code> </p>
         </td>
-        <td><p>combineICG</p></td>
+        <td><p>deprecated</p></td>
       </tr><tr><td>
           <p><code><a href="combineInteractionChangedGenes.html">combineInteractionChangedGenes()</a></code> </p>
         </td>
-        <td><p>combineInteractionChangedGenes</p></td>
+        <td><p>deprecated</p></td>
       </tr><tr><td>
           <p><code><a href="findInteractionChangedGenes.html">findInteractionChangedGenes()</a></code> </p>
         </td>
-        <td><p>findInteractionChangedGenes</p></td>
+        <td><p>deprecated</p></td>
       </tr><tr><td>
           <p><code><a href="spatialAutoCor.html">spatialAutoCorGlobal()</a></code> <code><a href="spatialAutoCor.html">spatialAutoCorLocal()</a></code> </p>
         </td>
@@ -1706,15 +1731,15 @@
       </tr></tbody><tbody><tr><td>
           <p><code><a href="combCCcom.html">combCCcom()</a></code> </p>
         </td>
-        <td><p>combCCcom</p></td>
+        <td><p>Combine cell cell communication tables</p></td>
       </tr><tr><td>
           <p><code><a href="exprCellCellcom.html">exprCellCellcom()</a></code> </p>
         </td>
         <td><p>exprCellCellcom</p></td>
       </tr><tr><td>
-          <p><code><a href="spatCellCellcom.html">spatCellCellcom()</a></code> </p>
+          <p><code><a href="spatCellCellcom.html">spatCellCellcom()</a></code> <code><a href="spatCellCellcom.html">specificCellCellcommunicationScores()</a></code> </p>
         </td>
-        <td><p>spatCellCellcom</p></td>
+        <td><p>Spatial cell cell communication scoring</p></td>
       </tr><tr><td>
           <p><code><a href="plotCCcomDotplot.html">plotCCcomDotplot()</a></code> </p>
         </td>
@@ -1851,6 +1876,14 @@
           <p><code><a href="doCellSegmentation.html">doCellSegmentation()</a></code> </p>
         </td>
         <td><p>doCellSegmentation</p></td>
+      </tr><tr><td>
+          <p><code><a href="doCellposeSegmentation.html">doCellposeSegmentation()</a></code> </p>
+        </td>
+        <td><p>perform cellpose segmentation</p></td>
+      </tr><tr><td>
+          <p><code><a href="calculateAffineMatrixFromLandmarks.html">calculateAffineMatrixFromLandmarks()</a></code> </p>
+        </td>
+        <td><p>Calculate a affine transformation matrix from two set of landmarks</p></td>
       </tr></tbody><tbody><tr><th colspan="2">
           <h2 id="doublet-detection">Doublet Detection <a href="#doublet-detection" class="anchor" aria-hidden="true"></a></h2>
           <p class="section-desc"></p><p>Function to detect doublets in raw expression data.</p>
@@ -1899,6 +1932,10 @@
           <p><code><a href="exportGiottoViewer.html">exportGiottoViewer()</a></code> </p>
         </td>
         <td><p>exportGiottoViewer</p></td>
+      </tr><tr><td>
+          <p><code><a href="interactiveLandmarkSelection.html">interactiveLandmarkSelection()</a></code> </p>
+        </td>
+        <td><p>title Record landmarks by interactive selection</p></td>
       </tr></tbody><tbody><tr><th colspan="2">
           <h2 id="interoperability">Interoperability <a href="#interoperability" class="anchor" aria-hidden="true"></a></h2>
           <p class="section-desc"></p><p>Convert other type of objects into a Giotto object and vice versa.</p>
@@ -1939,6 +1976,66 @@
           <p><code><a href="interpolateFeature.html">interpolateFeature(<i>&lt;giotto&gt;</i>,<i>&lt;missing&gt;</i>)</a></code> <code><a href="interpolateFeature.html">interpolateFeature(<i>&lt;spatLocsObj&gt;</i>,<i>&lt;data.frame&gt;</i>)</a></code> </p>
         </td>
         <td><p>Spatial feature interpolation</p></td>
+      </tr></tbody><tbody><tr><th colspan="2">
+          <h2 id="ontrac-integration">ONTraC integration <a href="#ontrac-integration" class="anchor" aria-hidden="true"></a></h2>
+          <p class="section-desc"></p><p>Functions to interact with ONTraC.</p>
+        </th>
+      </tr></tbody><tbody><tr><td>
+          <p><code><a href="getONTraCv1Input.html">getONTraCv1Input()</a></code> </p>
+        </td>
+        <td><p>getONTraCv1Input</p></td>
+      </tr><tr><td>
+          <p><code><a href="getONTraCv2Input.html">getONTraCv2Input()</a></code> </p>
+        </td>
+        <td><p>getONTraCv2Input</p></td>
+      </tr><tr><td>
+          <p><code><a href="loadOntraCResults.html">loadOntraCResults()</a></code> </p>
+        </td>
+        <td><p>loadOntraCResults</p></td>
+      </tr><tr><td>
+          <p><code><a href="load_cell_NT_score.html">load_cell_NT_score()</a></code> </p>
+        </td>
+        <td><p>load_cell_NT_score</p></td>
+      </tr><tr><td>
+          <p><code><a href="load_cell_bin_niche_cluster.html">load_cell_bin_niche_cluster()</a></code> </p>
+        </td>
+        <td><p>load_cell_bin_niche_cluster</p></td>
+      </tr><tr><td>
+          <p><code><a href="load_cell_niche_cluster_prob.html">load_cell_niche_cluster_prob()</a></code> </p>
+        </td>
+        <td><p>load_cell_niche_cluster_prob</p></td>
+      </tr><tr><td>
+          <p><code><a href="load_nc_connectivity.html">load_nc_connectivity()</a></code> </p>
+        </td>
+        <td><p>load_nc_connectivity</p></td>
+      </tr><tr><td>
+          <p><code><a href="plotCTCompositionInNicheCluster.html">plotCTCompositionInNicheCluster()</a></code> </p>
+        </td>
+        <td><p>plotCTCompositionInNicheCluster</p></td>
+      </tr><tr><td>
+          <p><code><a href="plotCTCompositionInProbCluster.html">plotCTCompositionInProbCluster()</a></code> </p>
+        </td>
+        <td><p>plotCTCompositionInProbCluster</p></td>
+      </tr><tr><td>
+          <p><code><a href="plotCellTypeNTScore.html">plotCellTypeNTScore()</a></code> </p>
+        </td>
+        <td><p>plotCellTypeNTScore</p></td>
+      </tr><tr><td>
+          <p><code><a href="plotDiscreteAlongContinuous.html">plotCellTypeNTScore()</a></code> </p>
+        </td>
+        <td><p>plotDiscreteAlongContinuous</p></td>
+      </tr><tr><td>
+          <p><code><a href="plotNicheClusterConnectivity.html">plotNicheClusterConnectivity()</a></code> </p>
+        </td>
+        <td><p>plotNicheClusterConnectivity</p></td>
+      </tr></tbody><tbody><tr><th colspan="2">
+          <h2 id="ai-technologies">AI technologies <a href="#ai-technologies" class="anchor" aria-hidden="true"></a></h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr></tbody><tbody><tr><td>
+          <p><code><a href="writeChatGPTqueryDEG.html">writeChatGPTqueryDEG()</a></code> </p>
+        </td>
+        <td><p>writeChatGPTqueryDEG</p></td>
       </tr></tbody></table></div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

@@ -26,7 +26,7 @@ from the cell metadata (pDataDT)."><!-- mathjax --><script src="https://cdnjs.cl
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Giotto</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.1.0</span>
       </span>
     </div>
 
@@ -260,6 +260,11 @@ from the cell metadata (pDataDT)."><!-- mathjax --><script src="https://cdnjs.cl
     <li>
       <a href="../articles/nemo_slideseq.html">NeMO Slide-seq on Terra.bio</a>
     </li>
+    <li class="divider">
+    <li class="dropdown-header">Scalability</li>
+    <li>
+      <a href="../articles/dbMatrix.html">Using dbMatrix with Giotto</a>
+    </li>
   </ul></li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -377,73 +382,24 @@ from the cell metadata (<code><a href="https://drieslab.github.io/GiottoClass/re
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 2. read Giotto feature information</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3. read Giotto spatial information</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3.1 read Giotto spatial shape information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> cell_spatInfo_spatVector.shp</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> cell</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3.2 read Giotto spatial centroid information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> cell</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3.3 read Giotto spatial overlap information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> No overlaps were found, overlap loading will be</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path or giotto</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  environment was specified, will check if a</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  default python path is available</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> A default python path was found: /usr/bin/python3 and will be used</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  If this is not the correct python path, either</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. use installGiottoEnvironment() to install</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  a local miniconda python environment along with required modules</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. provide an existing python path to</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  python_path to use your own python path which has all modules</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  installed</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Set options("giotto.use_conda" = FALSE) if</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  python functionalities are not needed</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>This giotto object was created in a newer version of</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 GiottoClass (v0.3.2)</span>
-<span class="r-in"><span><span class="va">sign_gene</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Bcl11b"</span>, <span class="st">"Lmo1"</span>, <span class="st">"F3"</span>, <span class="st">"Cnih3"</span>, <span class="st">"Ppp1r3c"</span>, <span class="st">"Rims2"</span>, <span class="st">"Gfap"</span>,</span></span>
-<span class="r-in"><span><span class="st">"Gjc3"</span>, <span class="st">"Chrna4"</span>, <span class="st">"Prkcd"</span>, <span class="st">"Prr18"</span>, <span class="st">"Grb14"</span>, <span class="st">"Tprn"</span>, <span class="st">"Clic1"</span>, <span class="st">"Olig2"</span>,</span></span>
-<span class="r-in"><span><span class="st">"Hrh3"</span>, <span class="st">"Tmbim1"</span>, <span class="st">"Carhsp1"</span>, <span class="st">"Tmem88b"</span>, <span class="st">"Ugt8a"</span>, <span class="st">"Arpp19"</span>, <span class="st">"Lamp5"</span>,</span></span>
-<span class="r-in"><span><span class="st">"Galnt6"</span>, <span class="st">"Hlf"</span>, <span class="st">"Hs3st2"</span>, <span class="st">"Tbr1"</span>, <span class="st">"Myl4"</span>, <span class="st">"Cygb"</span>, <span class="st">"Ttc9b"</span>,<span class="st">"Ipcef1"</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in .os_py_path(must_exist = TRUE):</span> Assertion on 'path' failed: Directory '/home/runner/.local/share/r-miniconda' does not exist.</span>
+<span class="r-in"><span><span class="va">sign_gene</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="st">"Bcl11b"</span>, <span class="st">"Lmo1"</span>, <span class="st">"F3"</span>, <span class="st">"Cnih3"</span>, <span class="st">"Ppp1r3c"</span>, <span class="st">"Rims2"</span>, <span class="st">"Gfap"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"Gjc3"</span>, <span class="st">"Chrna4"</span>, <span class="st">"Prkcd"</span>, <span class="st">"Prr18"</span>, <span class="st">"Grb14"</span>, <span class="st">"Tprn"</span>, <span class="st">"Clic1"</span>, <span class="st">"Olig2"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"Hrh3"</span>, <span class="st">"Tmbim1"</span>, <span class="st">"Carhsp1"</span>, <span class="st">"Tmem88b"</span>, <span class="st">"Ugt8a"</span>, <span class="st">"Arpp19"</span>, <span class="st">"Lamp5"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"Galnt6"</span>, <span class="st">"Hlf"</span>, <span class="st">"Hs3st2"</span>, <span class="st">"Tbr1"</span>, <span class="st">"Myl4"</span>, <span class="st">"Cygb"</span>, <span class="st">"Ttc9b"</span>, <span class="st">"Ipcef1"</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="fu">makeSignMatrixDWLS</span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">g</span>, sign_gene <span class="op">=</span> <span class="va">sign_gene</span>,</span></span>
-<span class="r-in"><span>cell_type_vector <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/pDataDT.html" class="external-link">pDataDT</a></span><span class="op">(</span><span class="va">g</span><span class="op">)</span><span class="op">[[</span><span class="st">"leiden_clus"</span><span class="op">]</span><span class="op">]</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                 2         5         1         3         6          7          4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Hlf     15.612139 15.639836 17.289286 18.085075 15.590006 13.0911268 16.1614840</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Tmbim1   8.238466  7.297166  6.295740  6.598698  5.778630  4.2988518  6.1472273</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Clic1    2.555001  1.699371  1.608139  2.355958  1.532120  1.7371642  1.2714976</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Arpp19  34.226990 34.751065 39.918072 26.214104 29.486079 21.8031661 35.8142335</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Ttc9b   37.988382 39.757988 43.483655 35.357501 39.197628 30.7511418 40.3445195</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Carhsp1  9.037082  7.562448  7.148536  8.693395  7.701865  6.5048646  5.6097201</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Cygb     5.033126  5.970012  4.881844  6.481376  4.536956  5.1795806  9.9685711</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Gfap    19.359064 22.497971 18.515361 17.468031 20.023940 18.2270851 14.3347857</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Prkcd   29.132857 25.888866 28.667508 35.812287 26.944743 22.9811272 24.4304872</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Cnih3    4.391298  7.081227  6.769247  5.724159  2.501816  7.1957853  6.9410098</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Grb14   18.561536 15.944916 13.237951 15.434521 14.330902 14.7991346 11.5074834</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Lamp5    8.039409  8.360183 10.982578  5.394880  4.112144  7.8228692  9.1375601</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Chrna4   5.863853  6.754572  7.197508  6.218107  6.287905  4.7264213  6.5607985</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> F3       3.664557  4.491230  4.394594  4.409756  5.641713  0.0000000  5.1901999</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Ugt8a   12.761762 11.392545 10.760604 10.665797 11.788462  3.1177049  8.5396165</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Tbr1    10.119032  9.479038 11.944705  8.603522  6.859176  5.5427087  9.6442050</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Lmo1     5.920985  8.538887  7.550751  8.817733  5.745929 16.2616205 10.2925223</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Galnt6   1.930852  2.186347  1.424085  1.521922  2.742209  0.8462623  0.6724375</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Rims2    8.524852  8.923649  8.502274  8.267409  4.855526  5.6659708  8.7311138</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Hrh3     8.945496  6.412411  8.662706  8.705689  4.682818  5.1288043  7.1990442</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Olig2    4.859662  4.138353  3.747277  3.310557  4.429896  8.5977174  2.9351523</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Hs3st2   4.115165  3.752086  4.417017  3.922424  2.997097  1.3225788  3.3773065</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Bcl11b   8.588378 13.631705 10.417711  9.368310 11.161096 15.7205218  9.4341857</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Tprn     5.163912  3.637867  3.678293  4.552003  4.276440  3.0696147  2.7105584</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Prr18   10.810102  9.064444  8.191267  7.427373 10.876162  4.7834087  8.4026438</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Gjc3     7.444795  8.172781  7.022191  6.823548  7.526957  2.3928261  6.7058993</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Myl4     4.875748  6.543057  8.925158  3.968603  5.552218  1.8164845  4.8371193</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Ipcef1   6.638709  5.388968  8.147932  4.878385  6.033192  6.7458541  5.5517694</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Ppp1r3c  3.850227  3.369046  3.764599  3.371323  2.506437  0.5347594  3.9979613</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Tmem88b 14.354927 10.894625 12.007654 12.527327 11.732343  6.3072160  9.9666388</span>
+<span class="r-in"><span><span class="fu">makeSignMatrixDWLS</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    gobject <span class="op">=</span> <span class="va">g</span>, sign_gene <span class="op">=</span> <span class="va">sign_gene</span>,</span></span>
+<span class="r-in"><span>    cell_type_vector <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/pDataDT.html" class="external-link">pDataDT</a></span><span class="op">(</span><span class="va">g</span><span class="op">)</span><span class="op">[[</span><span class="st">"leiden_clus"</span><span class="op">]</span><span class="op">]</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>restarting interrupted promise evaluation</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>restarting interrupted promise evaluation</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'g' not found</span>
 </code></pre></div>
     </div>
   </div>

@@ -23,7 +23,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Giotto</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.1.0</span>
       </span>
     </div>
 
@@ -257,6 +257,11 @@
     <li>
       <a href="../articles/nemo_slideseq.html">NeMO Slide-seq on Terra.bio</a>
     </li>
+    <li class="divider">
+    <li class="dropdown-header">Scalability</li>
+    <li>
+      <a href="../articles/dbMatrix.html">Using dbMatrix with Giotto</a>
+    </li>
   </ul></li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -381,117 +386,15 @@ each node (cell) in the spatial network.</p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 2. read Giotto feature information</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3. read Giotto spatial information</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3.1 read Giotto spatial shape information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> cell_spatInfo_spatVector.shp</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> cell</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3.2 read Giotto spatial centroid information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> cell</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3.3 read Giotto spatial overlap information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> No overlaps were found, overlap loading will be</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path or giotto</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  environment was specified, will check if a</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  default python path is available</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> A default python path was found: /usr/bin/python3 and will be used</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  If this is not the correct python path, either</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. use installGiottoEnvironment() to install</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  a local miniconda python environment along with required modules</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. provide an existing python path to</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  python_path to use your own python path which has all modules</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  installed</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Set options("giotto.use_conda" = FALSE) if</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  python functionalities are not needed</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>This giotto object was created in a newer version of</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 GiottoClass (v0.3.2)</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in .os_py_path(must_exist = TRUE):</span> Assertion on 'path' failed: Directory '/home/runner/.local/share/r-miniconda' does not exist.</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">cellProximityEnrichment</span><span class="op">(</span><span class="va">g</span>, cluster_column <span class="op">=</span> <span class="st">"leiden_clus"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $raw_sim_table</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Index: &lt;unified_int&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        unified_int type_int    round    V1     orig</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>             &lt;char&gt;   &lt;char&gt;   &lt;char&gt; &lt;num&gt;   &lt;char&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     1:        1--5   hetero original    91 original</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     2:        1--1     homo original   305 original</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     3:        1--3   hetero original   208 original</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     4:        2--2     homo original   287 original</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     5:        4--4     homo original   220 original</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    ---                                             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32020:        3--7   hetero   sim999     0 original</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32021:        2--3   hetero  sim1000     0 original</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32022:        2--4   hetero  sim1000     0 original</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32023:        2--7   hetero  sim1000     0 original</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32024:        3--7   hetero  sim1000     0 original</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $enrichm_res</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     unified_int type_int original simulations    enrichm p_higher_orig</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>          &lt;fctr&gt;   &lt;char&gt;    &lt;num&gt;       &lt;num&gt;      &lt;num&gt;         &lt;num&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1:        7--7     homo       10       0.400  2.9740048         0.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  2:        4--4     homo      220      39.441  2.4501558         0.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3:        2--2     homo      287      60.358  2.2307454         0.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  4:        6--6     homo       37       7.949  2.0862010         0.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  5:        5--5     homo      124      30.389  1.9935971         0.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  6:        3--3     homo      204      58.244  1.7908830         0.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  7:        6--7   hetero       12       3.678  1.4745479         0.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  8:        1--1     homo      305     130.037  1.2235574         0.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  9:        4--6   hetero       72      35.104  1.0157378         0.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10:        1--3   hetero      208     174.354  0.2532326         0.001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11:        1--7   hetero       20      14.927  0.3989148         0.085</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12:        5--6   hetero       39      30.993  0.3222437         0.064</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13:        2--5   hetero       73      85.352 -0.2227043         0.942</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14:        1--5   hetero       91     126.419 -0.4698747         1.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15:        5--7   hetero        2       7.263 -1.4617032         0.997</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16:        1--6   hetero       26      64.350 -1.2752278         1.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17:        4--7   hetero        1       8.329 -2.2217224         1.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18:        3--6   hetero       10      42.879 -1.9960271         1.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19:        3--4   hetero        9      95.910 -3.2766455         1.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20:        3--5   hetero        7      83.958 -3.4086779         1.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21:        3--7   hetero        0       9.895 -3.4455943         1.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22:        2--6   hetero        3      43.098 -3.4626413         1.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23:        2--7   hetero        0      10.108 -3.4735272         1.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24:        4--5   hetero        4      69.237 -3.8122312         1.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25:        1--4   hetero        3     143.602 -5.1759437         1.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26:        1--2   hetero        3     177.274 -5.4779525         1.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27:        2--4   hetero        0      97.936 -6.6284237         1.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28:        2--3   hetero        0     118.516 -6.9010600         1.000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     unified_int type_int original simulations    enrichm p_higher_orig</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     p_lower_orig p.adj_higher p.adj_lower    PI_value int_ranking</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>            &lt;num&gt;        &lt;num&gt;       &lt;num&gt;       &lt;num&gt;       &lt;int&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1:        1.000        0.000       1.000   8.9220144           1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  2:        1.000        0.000       1.000   7.3504674           2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3:        1.000        0.000       1.000   6.6922363           3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  4:        1.000        0.000       1.000   6.2586031           4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  5:        1.000        0.000       1.000   5.9807914           5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  6:        1.000        0.000       1.000   5.3726489           6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  7:        1.000        0.000       1.000   4.4236436           7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  8:        1.000        0.000       1.000   3.6706723           8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  9:        1.000        0.000       1.000   3.0472133           9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10:        1.000        0.001       1.000   0.6834672          10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11:        0.952        0.085       0.952   0.4250443          11</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12:        0.951        0.064       0.951   0.3825312          12</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13:        0.083        0.942       0.083  -0.2395677          13</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14:        0.000        1.000       0.000  -1.4096240          14</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15:        0.016        0.997       0.016  -2.5865584          15</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16:        0.000        1.000       0.000  -3.8256835          16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17:        0.003        1.000       0.003  -5.3275571          17</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18:        0.000        1.000       0.000  -5.9880814          18</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19:        0.000        1.000       0.000  -9.8299366          19</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20:        0.000        1.000       0.000 -10.2260337          20</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21:        0.000        1.000       0.000 -10.3367829          21</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22:        0.000        1.000       0.000 -10.3879240          22</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23:        0.000        1.000       0.000 -10.4205815          23</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24:        0.000        1.000       0.000 -11.4366937          24</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25:        0.000        1.000       0.000 -15.5278311          25</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26:        0.000        1.000       0.000 -16.4338575          26</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27:        0.000        1.000       0.000 -19.8852710          27</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28:        0.000        1.000       0.000 -20.7031799          28</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     p_lower_orig p.adj_higher p.adj_lower    PI_value int_ranking</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>restarting interrupted promise evaluation</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>restarting interrupted promise evaluation</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'g' not found</span>
 </code></pre></div>
     </div>
   </div>

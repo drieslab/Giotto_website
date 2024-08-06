@@ -24,7 +24,7 @@ detection and expression scores."><!-- mathjax --><script src="https://cdnjs.clo
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Giotto</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.1.0</span>
       </span>
     </div>
 
@@ -258,6 +258,11 @@ detection and expression scores."><!-- mathjax --><script src="https://cdnjs.clo
     <li>
       <a href="../articles/nemo_slideseq.html">NeMO Slide-seq on Terra.bio</a>
     </li>
+    <li class="divider">
+    <li class="dropdown-header">Scalability</li>
+    <li>
+      <a href="../articles/dbMatrix.html">Using dbMatrix with Giotto</a>
+    </li>
   </ul></li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -433,63 +438,15 @@ it is recommend to provide names for both groups to <em>group_1_name</em> and
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 2. read Giotto feature information</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3. read Giotto spatial information</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3.1 read Giotto spatial shape information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> cell_spatInfo_spatVector.shp</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> cell</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3.2 read Giotto spatial centroid information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> cell</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3.3 read Giotto spatial overlap information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> No overlaps were found, overlap loading will be</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path or giotto</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  environment was specified, will check if a</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  default python path is available</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> A default python path was found: /usr/bin/python3 and will be used</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  If this is not the correct python path, either</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. use installGiottoEnvironment() to install</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  a local miniconda python environment along with required modules</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. provide an existing python path to</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  python_path to use your own python path which has all modules</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  installed</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Set options("giotto.use_conda" = FALSE) if</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  python functionalities are not needed</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>This giotto object was created in a newer version of</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 GiottoClass (v0.3.2)</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in .os_py_path(must_exist = TRUE):</span> Assertion on 'path' failed: Directory '/home/runner/.local/share/r-miniconda' does not exist.</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">findGiniMarkers</span><span class="op">(</span><span class="va">g</span>, cluster_column <span class="op">=</span> <span class="st">"leiden_clus"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>               feats cluster expression expression_gini  detection</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              &lt;char&gt;  &lt;char&gt;      &lt;num&gt;           &lt;num&gt;      &lt;num&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    1:        Mustn1       2  0.2675877      0.48429164 0.09836066</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    2:          Inmt       2  0.1386324      0.45249410 0.04918033</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    3: 1700001C02Rik       2  0.1892710      0.42740432 0.05737705</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    4:          Nid1       2  0.2155386      0.42306445 0.07377049</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    5:       Slc13a4       2  0.3299290      0.34576465 0.11475410</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   ---                                                            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3467:        Hbb-bt       4  5.3661664      0.01907350 0.96774194</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3468:       Plekhb1       4  5.0305237      0.01466618 0.97849462</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3469:        Hba-a2       4  5.9526050      0.01088350 1.00000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3470:        Hba-a1       4  6.4266566      0.01066553 1.00000000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3471:          Mobp       4  6.1045819      0.01621459 0.97849462</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       detection_gini expression_rank detection_rank   comb_score comb_rank</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                &lt;num&gt;           &lt;num&gt;          &lt;num&gt;        &lt;num&gt;     &lt;int&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    1:    0.480512956            1.00           1.00 2.327084e-01         1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    2:    0.462963624            1.00           1.00 2.094883e-01         2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    3:    0.395271870            1.00           0.85 1.435998e-01         3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    4:    0.396825403            0.85           0.85 1.212953e-01         4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    5:    0.324223187            1.00           1.00 1.121049e-01         5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   ---                                                                     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3467:    0.008635794            0.10           0.25 4.117870e-06       630</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3468:    0.006564403            0.10           0.40 3.850988e-06       631</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3469:    0.003836637            0.10           0.85 3.549264e-06       632</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3470:    0.003688736            0.10           0.70 2.753962e-06       633</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3471:    0.003879016            0.10           0.10 6.289666e-07       634</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>restarting interrupted promise evaluation</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>restarting interrupted promise evaluation</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'g' not found</span>
 </code></pre></div>
     </div>
   </div>

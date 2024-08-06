@@ -24,7 +24,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Giotto</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.1.0</span>
       </span>
     </div>
 
@@ -258,6 +258,11 @@
     <li>
       <a href="../articles/nemo_slideseq.html">NeMO Slide-seq on Terra.bio</a>
     </li>
+    <li class="divider">
+    <li class="dropdown-header">Scalability</li>
+    <li>
+      <a href="../articles/dbMatrix.html">Using dbMatrix with Giotto</a>
+    </li>
   </ul></li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -334,48 +339,52 @@
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">sign_gene</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Bcl11b"</span>, <span class="st">"Lmo1"</span>, <span class="st">"F3"</span>, <span class="st">"Cnih3"</span>, <span class="st">"Ppp1r3c"</span>, <span class="st">"Rims2"</span>, <span class="st">"Gfap"</span>,</span></span>
-<span class="r-in"><span><span class="st">"Gjc3"</span>, <span class="st">"Chrna4"</span>, <span class="st">"Prkcd"</span>, <span class="st">"Prr18"</span>, <span class="st">"Grb14"</span>, <span class="st">"Tprn"</span>, <span class="st">"Clic1"</span>, <span class="st">"Olig2"</span>,</span></span>
-<span class="r-in"><span><span class="st">"Hrh3"</span>, <span class="st">"Tmbim1"</span>, <span class="st">"Carhsp1"</span>, <span class="st">"Tmem88b"</span>, <span class="st">"Ugt8a"</span>, <span class="st">"Arpp19"</span>, <span class="st">"Lamp5"</span>,</span></span>
-<span class="r-in"><span><span class="st">"Galnt6"</span>, <span class="st">"Hlf"</span>, <span class="st">"Hs3st2"</span>, <span class="st">"Tbr1"</span>, <span class="st">"Myl4"</span>, <span class="st">"Cygb"</span>, <span class="st">"Ttc9b"</span>,<span class="st">"Ipcef1"</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">sign_gene</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="st">"Bcl11b"</span>, <span class="st">"Lmo1"</span>, <span class="st">"F3"</span>, <span class="st">"Cnih3"</span>, <span class="st">"Ppp1r3c"</span>, <span class="st">"Rims2"</span>, <span class="st">"Gfap"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"Gjc3"</span>, <span class="st">"Chrna4"</span>, <span class="st">"Prkcd"</span>, <span class="st">"Prr18"</span>, <span class="st">"Grb14"</span>, <span class="st">"Tprn"</span>, <span class="st">"Clic1"</span>, <span class="st">"Olig2"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"Hrh3"</span>, <span class="st">"Tmbim1"</span>, <span class="st">"Carhsp1"</span>, <span class="st">"Tmem88b"</span>, <span class="st">"Ugt8a"</span>, <span class="st">"Arpp19"</span>, <span class="st">"Lamp5"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"Galnt6"</span>, <span class="st">"Hlf"</span>, <span class="st">"Hs3st2"</span>, <span class="st">"Tbr1"</span>, <span class="st">"Myl4"</span>, <span class="st">"Cygb"</span>, <span class="st">"Ttc9b"</span>, <span class="st">"Ipcef1"</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="va">sign_matrix</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">sign_gene</span><span class="op">)</span><span class="op">*</span><span class="fl">3</span><span class="op">)</span>, nrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">sign_gene</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">sign_matrix</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">sign_gene</span><span class="op">)</span> <span class="op">*</span> <span class="fl">3</span><span class="op">)</span>, nrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">sign_gene</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="va">sign_matrix</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="va">sign_gene</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">sign_matrix</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"cell_type1"</span>, <span class="st">"cell_type2"</span>, <span class="st">"cell_type3"</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="fu">makeSignMatrixDWLSfromMatrix</span><span class="op">(</span>matrix <span class="op">=</span> <span class="va">sign_matrix</span>, sign_gene <span class="op">=</span> <span class="va">sign_gene</span>,</span></span>
-<span class="r-in"><span>cell_type_vector <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"cell_type1"</span>, <span class="st">"cell_type2"</span>, <span class="st">"cell_type3"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>          cell_type1   cell_type2 cell_type3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Bcl11b  -0.36501325 -0.972737463 -1.1675566</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Lmo1    -1.25749970 -0.993193836  0.5752957</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> F3       1.83488077  0.937561121 -0.4856416</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Cnih3   -1.83088106 -2.039592758  0.4935636</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Ppp1r3c  0.85663864  0.438751910 -1.0777648</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Rims2   -0.74414114  1.973690229 -1.1239115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Gfap    -0.41884408 -0.736366503  0.4573269</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Gjc3    -0.33758053 -0.031216840 -1.0831848</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Chrna4   1.10305557  0.700718560  0.5047588</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Prkcd   -0.99213658  2.823828685 -1.6304120</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Prr18    0.34383022 -0.983929079  1.0882115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Grb14    0.31770487  1.958093968 -0.2134164</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Tprn     0.99218088  0.918820205  2.4485591</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Clic1    1.31473368  0.569202320  0.3902460</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Olig2   -1.58797082  1.127752637  1.4727565</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Hrh3    -1.00673870  1.600739456 -0.8093689</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Tmbim1   2.12184260  2.578022778  0.6865859</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Carhsp1  1.19720196  0.462597518  0.4161568</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Tmem88b  1.01862081  0.289727064  0.4455432</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Ugt8a   -1.63791526 -0.461013077 -0.3201547</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Arpp19  -0.33623826  1.101576182 -0.1634985</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Lamp5   -0.05181677 -1.324210178 -0.7947748</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Galnt6  -0.33976542 -0.008349889  0.2355743</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Hlf      0.49324598  0.794838080  0.9347294</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Hs3st2   0.21990781 -1.604086393 -0.1558740</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Tbr1    -0.80305024  1.656194115 -1.7256348</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Myl4     1.16778388  0.678449199 -0.7480770</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Cygb    -0.84505589 -0.672201233 -1.1949818</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Ttc9b   -1.84567330  0.063261844 -0.8274637</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Ipcef1   0.75836295  0.589892683  0.2366888</span>
+<span class="r-in"><span><span class="fu">makeSignMatrixDWLSfromMatrix</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    matrix <span class="op">=</span> <span class="va">sign_matrix</span>, sign_gene <span class="op">=</span> <span class="va">sign_gene</span>,</span></span>
+<span class="r-in"><span>    cell_type_vector <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"cell_type1"</span>, <span class="st">"cell_type2"</span>, <span class="st">"cell_type3"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           cell_type1  cell_type2  cell_type3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Bcl11b  -1.400043517  0.93536319  1.07434588</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Lmo1     0.255317055  0.17648861 -0.66508825</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> F3      -2.437263611  0.24368546  1.11395242</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Cnih3   -0.005571287  1.62354888 -0.24589641</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Ppp1r3c  0.621552721  0.11203808 -1.17756331</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Rims2    1.148411606 -0.13399701 -0.97585062</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Gfap    -1.821817661 -1.91008747  1.06505732</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Gjc3    -0.247325302 -0.27923724  0.13167063</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Chrna4  -0.244199607 -0.31344598  0.48862881</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Prkcd   -0.282705449  1.06730788 -1.69945057</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Prr18   -0.553699384  0.07003485 -1.47073631</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Grb14    0.628982042 -0.63912332  0.28415034</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Tprn     2.065024895 -0.04996490  1.33732041</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Clic1   -1.630989402 -0.25148344  0.23669628</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Olig2    0.512426950  0.44479712  1.31829338</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Hrh3    -1.863011492  2.75541758  0.52390979</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Tmbim1  -0.522012515  0.04653138  0.60674805</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Carhsp1 -0.052601910  0.57770907 -0.10993567</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Tmem88b  0.542996343  0.11819487  0.17218172</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Ugt8a   -0.914074827 -1.91172049 -0.09032729</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Arpp19   0.468154420  0.86208648  1.92434334</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Lamp5    0.362951256 -0.24323674  1.29839276</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Galnt6  -1.304543545 -0.20608719  0.74879127</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Hlf      0.737776321  0.01917759  0.55622433</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Hs3st2   1.888504929  0.02956075 -0.54825726</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Tbr1    -0.097445104  0.54982754  1.11053489</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Myl4    -0.935847354 -2.27411486 -2.61233433</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Cygb    -0.015950311  2.68255718 -0.15569378</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Ttc9b   -0.826788954 -0.36122126  0.43388979</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Ipcef1  -1.512399651  0.21335575 -0.38195111</span>
 </code></pre></div>
     </div>
   </div>

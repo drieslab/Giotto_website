@@ -7,6 +7,7 @@ articles:
   codex_mouse_spleen: codex_mouse_spleen.html
   configuration: configuration.html
   contributing: contributing.html
+  dbMatrix: dbMatrix.html
   docker: docker.html
   ecosystem: ecosystem.html
   faqs: faqs.html
@@ -49,7 +50,7 @@ articles:
   visualizations: visualizations.html
   vizgen_mouse_brain: vizgen_mouse_brain.html
   xenium_breast_cancer: xenium_breast_cancer.html
-last_built: 2024-07-12T16:29Z
+last_built: 2024-08-06T03:33Z
 urls:
   reference: https://drieslab.github.io/Giotto_website/reference
   article: https://drieslab.github.io/Giotto_website/articles

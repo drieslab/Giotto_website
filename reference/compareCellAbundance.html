@@ -23,7 +23,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Giotto</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.1.0</span>
       </span>
     </div>
 
@@ -257,6 +257,11 @@
     <li>
       <a href="../articles/nemo_slideseq.html">NeMO Slide-seq on Terra.bio</a>
     </li>
+    <li class="divider">
+    <li class="dropdown-header">Scalability</li>
+    <li>
+      <a href="../articles/dbMatrix.html">Using dbMatrix with Giotto</a>
+    </li>
   </ul></li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -353,57 +358,33 @@
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 2. read Giotto feature information</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3. read Giotto spatial information</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3.1 read Giotto spatial shape information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> cell_spatInfo_spatVector.shp</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> cell</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3.2 read Giotto spatial centroid information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> cell</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3.3 read Giotto spatial overlap information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> No overlaps were found, overlap loading will be</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path or giotto</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  environment was specified, will check if a</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  default python path is available</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> A default python path was found: /usr/bin/python3 and will be used</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  If this is not the correct python path, either</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. use installGiottoEnvironment() to install</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  a local miniconda python environment along with required modules</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. provide an existing python path to</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  python_path to use your own python path which has all modules</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  installed</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Set options("giotto.use_conda" = FALSE) if</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  python functionalities are not needed</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>This giotto object was created in a newer version of</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 GiottoClass (v0.3.2)</span>
-<span class="r-in"><span><span class="va">my_polygon_coords</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>poly_ID <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="st">"polygon1"</span>, <span class="fl">3</span><span class="op">)</span>,</span></span>
-<span class="r-in"><span>sdimx <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">5477</span>, <span class="fl">5959</span>, <span class="fl">4720</span><span class="op">)</span>, sdimy <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">4125</span>, <span class="op">-</span><span class="fl">2808</span>, <span class="op">-</span><span class="fl">5202</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in .os_py_path(must_exist = TRUE):</span> Assertion on 'path' failed: Directory '/home/runner/.local/share/r-miniconda' does not exist.</span>
+<span class="r-in"><span><span class="va">my_polygon_coords</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    poly_ID <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="st">"polygon1"</span>, <span class="fl">3</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>    sdimx <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">5477</span>, <span class="fl">5959</span>, <span class="fl">4720</span><span class="op">)</span>, sdimy <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">4125</span>, <span class="op">-</span><span class="fl">2808</span>, <span class="op">-</span><span class="fl">5202</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Add polygon coordinates to Giotto object</span></span></span>
 <span class="r-in"><span><span class="va">my_giotto_polygons</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/createGiottoPolygon.html" class="external-link">createGiottoPolygonsFromDfr</a></span><span class="op">(</span><span class="va">my_polygon_coords</span>,</span></span>
-<span class="r-in"><span>name <span class="op">=</span> <span class="st">"selections"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    name <span class="op">=</span> <span class="st">"selections"</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>   Selecting col "poly_ID" as poly_ID column</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>   Selecting cols "sdimx" and "sdimy" as x and y respectively</span>
 <span class="r-in"><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/addGiottoPolygons.html" class="external-link">addGiottoPolygons</a></span><span class="op">(</span></span></span>
 <span class="r-in"><span>    gobject <span class="op">=</span> <span class="va">g</span>,</span></span>
 <span class="r-in"><span>    gpolygons <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="va">my_giotto_polygons</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'g' not found</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Add polygon cells</span></span></span>
 <span class="r-in"><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu"><a href="addPolygonCells.html">addPolygonCells</a></span><span class="op">(</span><span class="va">g</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> These column names were already used: in_tissue nr_feats perc_feats total_expr</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  leiden_clus custom_leiden</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  and will be overwritten</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'g' not found</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">compareCellAbundance</span><span class="op">(</span><span class="va">g</span><span class="op">)</span></span></span>
-<span class="r-plt img"><img src="compareCellAbundance-1.png" alt="" width="700" height="433"></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'g' not found</span>
 </code></pre></div>
     </div>
   </div>

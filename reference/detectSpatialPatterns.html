@@ -24,7 +24,7 @@ in a spatial grid."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aj
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Giotto</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.1.0</span>
       </span>
     </div>
 
@@ -258,6 +258,11 @@ in a spatial grid."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aj
     <li>
       <a href="../articles/nemo_slideseq.html">NeMO Slide-seq on Terra.bio</a>
     </li>
+    <li class="divider">
+    <li class="dropdown-header">Scalability</li>
+    <li>
+      <a href="../articles/dbMatrix.html">Using dbMatrix with Giotto</a>
+    </li>
   </ul></li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -359,9 +364,10 @@ in a spatial grid.</p>
     </div>
     <div id="details">
     <h2>Details</h2>
-    <p>Steps to identify spatial patterns:</p><ul><li><p>1. average gene expression for cells within a grid, see createSpatialGrid</p></li>
-<li><p>2. perform PCA on the average grid expression profiles</p></li>
-<li><p>3. convert variance of principlal components (PCs) to z-scores and select PCs based on a z-score threshold</p></li>
+    <p>Steps to identify spatial patterns:</p><ul><li><p>* 1. average gene expression for cells within a grid, see createSpatialGrid
+  * 2. perform PCA on the average grid expression profiles
+  * 3. convert variance of principal components (PCs) to z-scores and
+  select PCs based on a z-score threshold</p></li>
 </ul></div>
 
   </div>

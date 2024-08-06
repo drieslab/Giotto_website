@@ -24,7 +24,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Giotto</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.1.0</span>
       </span>
     </div>
 
@@ -258,6 +258,11 @@
     <li>
       <a href="../articles/nemo_slideseq.html">NeMO Slide-seq on Terra.bio</a>
     </li>
+    <li class="divider">
+    <li class="dropdown-header">Scalability</li>
+    <li>
+      <a href="../articles/dbMatrix.html">Using dbMatrix with Giotto</a>
+    </li>
   </ul></li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -395,50 +400,33 @@ each node (spot) in the spatial network.</p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 2. read Giotto feature information</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3. read Giotto spatial information</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3.1 read Giotto spatial shape information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> cell_spatInfo_spatVector.shp</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> cell</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3.2 read Giotto spatial centroid information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> cell</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3.3 read Giotto spatial overlap information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> No overlaps were found, overlap loading will be</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path or giotto</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  environment was specified, will check if a</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  default python path is available</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> A default python path was found: /usr/bin/python3 and will be used</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  If this is not the correct python path, either</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. use installGiottoEnvironment() to install</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  a local miniconda python environment along with required modules</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. provide an existing python path to</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  python_path to use your own python path which has all modules</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  installed</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Set options("giotto.use_conda" = FALSE) if</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  python functionalities are not needed</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>This giotto object was created in a newer version of</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 GiottoClass (v0.3.2)</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in .os_py_path(must_exist = TRUE):</span> Assertion on 'path' failed: Directory '/home/runner/.local/share/r-miniconda' does not exist.</span>
 <span class="r-in"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="findMarkers_one_vs_all.html">findMarkers_one_vs_all</a></span><span class="op">(</span><span class="va">g</span>,</span></span>
-<span class="r-in"><span>cluster_column <span class="op">=</span> <span class="st">"leiden_clus"</span>, min_feats <span class="op">=</span> <span class="fl">20</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    cluster_column <span class="op">=</span> <span class="st">"leiden_clus"</span>, min_feats <span class="op">=</span> <span class="fl">20</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> using 'Scran' to detect marker feats. If used in published</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>       research, please cite: Lun ATL, McCarthy DJ, Marioni JC (2016).</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>       'A step-by-step workflow for low-level analysis of single-cell RNA-seq</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>       data with Bioconductor.'</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>       F1000Res., 5, 2122. doi: 10.12688/f1000research.9501.2. </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> start with cluster  1start with cluster  2start with cluster  3start with cluster  4start with cluster  5start with cluster  6start with cluster  7</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>restarting interrupted promise evaluation</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>restarting interrupted promise evaluation</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>restarting interrupted promise evaluation</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'g' not found</span>
 <span class="r-in"><span><span class="va">sign_gene</span> <span class="op">&lt;-</span> <span class="va">x</span><span class="op">$</span><span class="va">feats</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'x' not found</span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="va">sign_matrix</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">sign_gene</span><span class="op">)</span><span class="op">*</span><span class="fl">8</span>, mean  <span class="op">=</span> <span class="fl">10</span><span class="op">)</span>,</span></span>
-<span class="r-in"><span>nrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">sign_gene</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">sign_matrix</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">sign_gene</span><span class="op">)</span> <span class="op">*</span> <span class="fl">8</span>, mean <span class="op">=</span> <span class="fl">10</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>    nrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">sign_gene</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'sign_gene' not found</span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="va">sign_matrix</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="va">sign_gene</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">sign_matrix</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"celltype_"</span>,<span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">x</span><span class="op">$</span><span class="va">cluster</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in dimnames(x) &lt;- dn:</span> length of 'dimnames' [2] not equal to array extent</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'sign_gene' not found</span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">sign_matrix</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"celltype_"</span>, <span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">x</span><span class="op">$</span><span class="va">cluster</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'x' not found</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu"><a href="runDWLSDeconv.html">runDWLSDeconv</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">g</span>, sign_matrix <span class="op">=</span> <span class="va">sign_matrix</span><span class="op">)</span></span></span>
 <span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> package 'quadprog' is not yet installed</span>
@@ -447,61 +435,10 @@ each node (spot) in the spatial network.</p>
 <span class="r-err co"><span class="r-pr">#&gt;</span> install.packages(c("quadprog"))</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">cellProximityEnrichmentSpots</span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">g</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $raw_sim_table</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Index: &lt;unified_int&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                          unified_int type_int          V1    external</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                               &lt;char&gt;   &lt;char&gt;       &lt;num&gt;       &lt;num&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    1:         Astrocytes--Astrocytes     homo   77.097645   77.097645</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    2:            Astrocytes--Neurons   hetero  368.902614  342.075257</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    3:             Astrocytes--Oligos   hetero  258.428639  238.459464</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    4:     Astrocytes--PeripheralGlia   hetero   15.075425   13.983535</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    5:               Neurons--Neurons     homo 1572.742242 1572.742242</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   ---                                                                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1006:                Neurons--Oligos   hetero 1159.793815 1158.830010</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1007:        Neurons--PeripheralGlia   hetero   53.120837   53.097420</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1008:                 Oligos--Oligos     homo  291.758384  291.758384</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1009:         Oligos--PeripheralGlia   hetero   24.678681   24.664819</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1010: PeripheralGlia--PeripheralGlia     homo    1.249734    1.249734</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>          internal        orig    round</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>             &lt;num&gt;      &lt;char&gt;   &lt;char&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    1:  0.00000000    original original</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    2: 26.82735755    original original</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    3: 19.96917482    original original</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    4:  1.09188982    original original</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    5:  0.00000000    original original</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   ---                                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1006:  0.96380446 simulations   sim100</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1007:  0.02341696 simulations   sim100</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1008:  0.00000000 simulations   sim100</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1009:  0.01386250 simulations   sim100</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1010:  0.00000000 simulations   sim100</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $enrichm_res</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                        unified_int type_int    original simulations    enrichm</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                             &lt;fctr&gt;   &lt;char&gt;       &lt;num&gt;       &lt;num&gt;      &lt;num&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1:         Astrocytes--Astrocytes     homo   77.097645   43.908466  0.7982916</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  2: PeripheralGlia--PeripheralGlia     homo    2.741436    1.238117  0.7413068</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3:     Astrocytes--PeripheralGlia   hetero   15.075425    9.601463  0.6005935</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  4:                 Oligos--Oligos     homo  436.276740  296.264218  0.5568008</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  5:         Oligos--PeripheralGlia   hetero   34.552973   25.350889  0.4321185</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  6:             Astrocytes--Oligos   hetero  258.428639  208.237077  0.3101992</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  7:               Neurons--Neurons     homo 1572.742242 1352.935773  0.2170400</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  8:            Astrocytes--Neurons   hetero  368.902614  439.918806 -0.2533675</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  9:        Neurons--PeripheralGlia   hetero   41.364766   52.414225 -0.3343591</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10:                Neurons--Oligos   hetero  900.814538 1153.717050 -0.3566367</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     p_higher_orig p_lower_orig p.adj_higher p.adj_lower   PI_value int_ranking</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>             &lt;num&gt;        &lt;num&gt;        &lt;num&gt;       &lt;num&gt;      &lt;num&gt;       &lt;int&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1:             0            1            0           1  1.5965832           1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  2:             0            1            0           1  1.4826135           2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3:             0            1            0           1  1.2011870           3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  4:             0            1            0           1  1.1136016           4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  5:             0            1            0           1  0.8642371           5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  6:             0            1            0           1  0.6203985           6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  7:             0            1            0           1  0.4340799           7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  8:             1            0            1           0 -0.5067350           8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  9:             1            0            1           0 -0.6687182           9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10:             1            0            1           0 -0.7132734          10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>restarting interrupted promise evaluation</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>restarting interrupted promise evaluation</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>restarting interrupted promise evaluation</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'g' not found</span>
 </code></pre></div>
     </div>
   </div>

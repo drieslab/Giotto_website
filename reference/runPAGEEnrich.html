@@ -24,7 +24,7 @@ spatial position using PAGE."><!-- mathjax --><script src="https://cdnjs.cloudfl
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">Giotto</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.1.0</span>
       </span>
     </div>
 
@@ -258,6 +258,11 @@ spatial position using PAGE."><!-- mathjax --><script src="https://cdnjs.cloudfl
     <li>
       <a href="../articles/nemo_slideseq.html">NeMO Slide-seq on Terra.bio</a>
     </li>
+    <li class="divider">
+    <li class="dropdown-header">Scalability</li>
+    <li>
+      <a href="../articles/dbMatrix.html">Using dbMatrix with Giotto</a>
+    </li>
   </ul></li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -423,69 +428,27 @@ gene set.</p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 2. read Giotto feature information</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3. read Giotto spatial information</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3.1 read Giotto spatial shape information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> cell_spatInfo_spatVector.shp</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> cell</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3.2 read Giotto spatial centroid information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> cell</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3.3 read Giotto spatial overlap information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> No overlaps were found, overlap loading will be</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  skipped</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> no external python path or giotto</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  environment was specified, will check if a</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  default python path is available</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> A default python path was found: /usr/bin/python3 and will be used</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  If this is not the correct python path, either</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. use installGiottoEnvironment() to install</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  a local miniconda python environment along with required modules</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. provide an existing python path to</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  python_path to use your own python path which has all modules</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  installed</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Set options("giotto.use_conda" = FALSE) if</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>  python functionalities are not needed</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>This giotto object was created in a newer version of</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 GiottoClass (v0.3.2)</span>
-<span class="r-in"><span><span class="va">sign_gene</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Bcl11b"</span>, <span class="st">"Lmo1"</span>, <span class="st">"F3"</span>, <span class="st">"Cnih3"</span>, <span class="st">"Ppp1r3c"</span>, <span class="st">"Rims2"</span>, <span class="st">"Gfap"</span>, </span></span>
-<span class="r-in"><span><span class="st">"Gjc3"</span>, <span class="st">"Chrna4"</span>, <span class="st">"Prkcd"</span>, <span class="st">"Prr18"</span>, <span class="st">"Grb14"</span>, <span class="st">"Tprn"</span>, <span class="st">"Clic1"</span>, <span class="st">"Olig2"</span>, </span></span>
-<span class="r-in"><span><span class="st">"Hrh3"</span>, <span class="st">"Tmbim1"</span>, <span class="st">"Carhsp1"</span>, <span class="st">"Tmem88b"</span>, <span class="st">"Ugt8a"</span>, <span class="st">"Arpp19"</span>, <span class="st">"Lamp5"</span>, </span></span>
-<span class="r-in"><span><span class="st">"Galnt6"</span>, <span class="st">"Hlf"</span>, <span class="st">"Hs3st2"</span>, <span class="st">"Tbr1"</span>, <span class="st">"Myl4"</span>, <span class="st">"Cygb"</span>, <span class="st">"Ttc9b"</span>,<span class="st">"Ipcef1"</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in .os_py_path(must_exist = TRUE):</span> Assertion on 'path' failed: Directory '/home/runner/.local/share/r-miniconda' does not exist.</span>
+<span class="r-in"><span><span class="va">sign_gene</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="st">"Bcl11b"</span>, <span class="st">"Lmo1"</span>, <span class="st">"F3"</span>, <span class="st">"Cnih3"</span>, <span class="st">"Ppp1r3c"</span>, <span class="st">"Rims2"</span>, <span class="st">"Gfap"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"Gjc3"</span>, <span class="st">"Chrna4"</span>, <span class="st">"Prkcd"</span>, <span class="st">"Prr18"</span>, <span class="st">"Grb14"</span>, <span class="st">"Tprn"</span>, <span class="st">"Clic1"</span>, <span class="st">"Olig2"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"Hrh3"</span>, <span class="st">"Tmbim1"</span>, <span class="st">"Carhsp1"</span>, <span class="st">"Tmem88b"</span>, <span class="st">"Ugt8a"</span>, <span class="st">"Arpp19"</span>, <span class="st">"Lamp5"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"Galnt6"</span>, <span class="st">"Hlf"</span>, <span class="st">"Hs3st2"</span>, <span class="st">"Tbr1"</span>, <span class="st">"Myl4"</span>, <span class="st">"Cygb"</span>, <span class="st">"Ttc9b"</span>, <span class="st">"Ipcef1"</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="va">sign_matrix</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">sign_gene</span><span class="op">)</span><span class="op">*</span><span class="fl">3</span>, mean  <span class="op">=</span> <span class="fl">10</span><span class="op">)</span>, </span></span>
-<span class="r-in"><span>nrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">sign_gene</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">sign_matrix</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">sign_gene</span><span class="op">)</span> <span class="op">*</span> <span class="fl">3</span>, mean <span class="op">=</span> <span class="fl">10</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>    nrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">sign_gene</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="va">sign_matrix</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="va">sign_gene</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">sign_matrix</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"cell_type1"</span>, <span class="st">"cell_type2"</span>, <span class="st">"cell_type3"</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">runPAGEEnrich</span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">g</span>, sign_matrix <span class="op">=</span> <span class="va">sign_matrix</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> An object of class giotto </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &gt;Active spat_unit:  cell </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &gt;Active feat_type:  rna </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [SUBCELLULAR INFO]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> polygons      : cell </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [AGGREGATE INFO]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> expression -----------------------</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell][rna] raw normalized scaled</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> spatial locations ----------------</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell] raw</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> spatial networks -----------------</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell] Delaunay_network spatial_network</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> spatial enrichments --------------</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell][rna] cluster_metagene DWLS PAGE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> dim reduction --------------------</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell][rna] pca custom_pca umap custom_umap tsne</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> nearest neighbor networks --------</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell][rna] sNN.pca custom_NN</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> attached images ------------------</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> images      : alignment image </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Use objHistory() to see steps and params used</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>restarting interrupted promise evaluation</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>restarting interrupted promise evaluation</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'g' not found</span>
 </code></pre></div>
     </div>
   </div>
