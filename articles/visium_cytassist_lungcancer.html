@@ -506,7 +506,7 @@
 <span>         cell_color <span class="op">=</span> <span class="st">"in_tissue"</span>, </span>
 <span>         show_image <span class="op">=</span> <span class="cn">TRUE</span>, </span>
 <span>         point_alpha <span class="op">=</span> <span class="fl">0.7</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/visium_cytassist_lungcancer/0-spatPlot2D.png" width="50%"></p>
+<p><img src="images/visium_cytassist_lungcancer/0-spatPlot2D.png" width="50%" style="display: block; margin: auto;"></p>
 <p>How to work with Giotto instructions that are part of your Giotto object:</p>
 <ul>
 <li>show the instructions associated with your Giotto object with <strong>showGiottoInstructions()</strong>
@@ -553,14 +553,14 @@
 <code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatPlot.html" class="external-link">spatPlot2D</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">visium_lungcancer</span>, </span>
 <span>           show_image <span class="op">=</span> <span class="cn">TRUE</span>, </span>
 <span>           point_alpha <span class="op">=</span> <span class="fl">0.7</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/visium_cytassist_lungcancer/1-spatPlot2D.png" width="50%"></p>
+<p><img src="images/visium_cytassist_lungcancer/1-spatPlot2D.png" width="50%" style="display: block; margin: auto;"></p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatPlot.html" class="external-link">spatPlot2D</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">visium_lungcancer</span>, </span>
 <span>           show_image <span class="op">=</span> <span class="cn">TRUE</span>, </span>
 <span>           point_alpha <span class="op">=</span> <span class="fl">0.7</span>,</span>
 <span>           cell_color <span class="op">=</span> <span class="st">"nr_feats"</span>, </span>
 <span>           color_as_factor <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/visium_cytassist_lungcancer/2-spatPlot2D.png" width="50%"></p>
+<p><img src="images/visium_cytassist_lungcancer/2-spatPlot2D.png" width="50%" style="display: block; margin: auto;"></p>
 </div>
 </div>
 <div class="section level2" number="5">
@@ -581,10 +581,10 @@
 <span></span>
 <span><span class="fu"><a href="../reference/screePlot.html">screePlot</a></span><span class="op">(</span><span class="va">visium_lungcancer</span>, </span>
 <span>          ncp <span class="op">=</span> <span class="fl">30</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/visium_cytassist_lungcancer/3-screePlot.png" width="50%"></p>
+<p><img src="images/visium_cytassist_lungcancer/3-screePlot.png" width="50%" style="display: block; margin: auto;"></p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/plotPCA.html" class="external-link">plotPCA</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">visium_lungcancer</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/visium_cytassist_lungcancer/4-PCA.png" width="50%"></p>
+<p><img src="images/visium_cytassist_lungcancer/4-PCA.png" width="50%" style="display: block; margin: auto;"></p>
 <ul>
 <li>run UMAP and/or t-SNE on PCs (or directly on matrix)</li>
 </ul>
@@ -593,13 +593,13 @@
 <span>                             dimensions_to_use <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/plotUMAP.html" class="external-link">plotUMAP</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">visium_lungcancer</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/visium_cytassist_lungcancer/5-UMAP.png" width="50%"></p>
+<p><img src="images/visium_cytassist_lungcancer/5-UMAP.png" width="50%" style="display: block; margin: auto;"></p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">visium_lungcancer</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/runtSNE.html">runtSNE</a></span><span class="op">(</span><span class="va">visium_lungcancer</span>, </span>
 <span>                             dimensions_to_use <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/plotTSNE.html" class="external-link">plotTSNE</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">visium_lungcancer</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/visium_cytassist_lungcancer/6-tSNE.png" width="50%"></p>
+<p><img src="images/visium_cytassist_lungcancer/6-tSNE.png" width="50%" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level2" number="6">
 <h2 number="6" id="clustering">
@@ -626,21 +626,21 @@
 <span>         cell_color <span class="op">=</span> <span class="st">"leiden_clus"</span>, </span>
 <span>         show_NN_network <span class="op">=</span> <span class="cn">TRUE</span>, </span>
 <span>         point_size <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/visium_cytassist_lungcancer/7-UMAP.png" width="50%"></p>
+<p><img src="images/visium_cytassist_lungcancer/7-UMAP.png" width="50%" style="display: block; margin: auto;"></p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># visualize tSNE cluster results</span></span>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/plotTSNE.html" class="external-link">plotTSNE</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">visium_lungcancer</span>, </span>
 <span>         cell_color <span class="op">=</span> <span class="st">"leiden_clus"</span>, </span>
 <span>         show_NN_network <span class="op">=</span> <span class="cn">TRUE</span>, </span>
 <span>         point_size <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/visium_cytassist_lungcancer/8-tSNE.png" width="50%"></p>
+<p><img src="images/visium_cytassist_lungcancer/8-tSNE.png" width="50%" style="display: block; margin: auto;"></p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># visualize expression and spatial results</span></span>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatDimPlot.html" class="external-link">spatDimPlot</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">visium_lungcancer</span>, </span>
 <span>            cell_color <span class="op">=</span> <span class="st">"leiden_clus"</span>,</span>
 <span>            dim_point_size <span class="op">=</span> <span class="fl">2</span>, </span>
 <span>            spat_point_size <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/visium_cytassist_lungcancer/9-spatDimPlot2D.png" width="50%"></p>
+<p><img src="images/visium_cytassist_lungcancer/9-spatDimPlot2D.png" width="50%" style="display: block; margin: auto;"></p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatDimPlot.html" class="external-link">spatDimPlot</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">visium_lungcancer</span>, </span>
 <span>            cell_color <span class="op">=</span> <span class="st">"nr_feats"</span>, </span>
@@ -649,7 +649,7 @@
 <span>            dim_show_legend <span class="op">=</span> <span class="cn">TRUE</span>, </span>
 <span>            spat_show_legend <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>            spat_point_size <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/visium_cytassist_lungcancer/10-spatDimPlot2D.png" width="50%"></p>
+<p><img src="images/visium_cytassist_lungcancer/10-spatDimPlot2D.png" width="50%" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level2" number="7">
 <h2 number="7" id="differential-expression">
@@ -674,7 +674,7 @@
 <span>           cluster_column <span class="op">=</span> <span class="st">"leiden_clus"</span>,</span>
 <span>           strip_text <span class="op">=</span> <span class="fl">8</span>, </span>
 <span>           strip_position <span class="op">=</span> <span class="st">"right"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/visium_cytassist_lungcancer/11-violinPlot.png" width="50%"></p>
+<p><img src="images/visium_cytassist_lungcancer/11-violinPlot.png" width="50%" style="display: block; margin: auto;"></p>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># cluster heatmap</span></span>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/plotMetaDataHeatmap.html" class="external-link">plotMetaDataHeatmap</a></span><span class="op">(</span><span class="va">visium_lungcancer</span>,</span>
@@ -682,7 +682,7 @@
 <span>                    metadata_cols <span class="op">=</span> <span class="st">"leiden_clus"</span>,</span>
 <span>                    x_text_size <span class="op">=</span> <span class="fl">10</span>, </span>
 <span>                    y_text_size <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/visium_cytassist_lungcancer/12-plotMetaDataHeatmap.png" width="50%"></p>
+<p><img src="images/visium_cytassist_lungcancer/12-plotMetaDataHeatmap.png" width="50%" style="display: block; margin: auto;"></p>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># umap plots</span></span>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/dimFeatPlot2D.html" class="external-link">dimFeatPlot2D</a></span><span class="op">(</span><span class="va">visium_lungcancer</span>,</span>
@@ -690,7 +690,7 @@
 <span>              feats <span class="op">=</span> <span class="va">gini_markers_subclusters</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">.SD</span>, <span class="fl">1</span><span class="op">)</span>, by <span class="op">=</span> <span class="st">"cluster"</span><span class="op">]</span><span class="op">$</span><span class="va">feats</span>,</span>
 <span>              cow_n_col <span class="op">=</span> <span class="fl">3</span>,</span>
 <span>              point_size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/visium_cytassist_lungcancer/13-dimFeatPlot2D.png" width="50%"></p>
+<p><img src="images/visium_cytassist_lungcancer/13-dimFeatPlot2D.png" width="50%" style="display: block; margin: auto;"></p>
 <div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Cell type marker detection</span></span>
 <span><span class="co"># Scran markers</span></span>
@@ -707,7 +707,7 @@
 <span>           cluster_column <span class="op">=</span> <span class="st">"leiden_clus"</span>,</span>
 <span>           strip_text <span class="op">=</span> <span class="fl">10</span>, </span>
 <span>           strip_position <span class="op">=</span> <span class="st">"right"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/visium_cytassist_lungcancer/14-violinPlot.png" width="50%"></p>
+<p><img src="images/visium_cytassist_lungcancer/14-violinPlot.png" width="50%" style="display: block; margin: auto;"></p>
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># cluster heatmap</span></span>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/plotMetaDataHeatmap.html" class="external-link">plotMetaDataHeatmap</a></span><span class="op">(</span><span class="va">visium_lungcancer</span>,</span>
@@ -715,7 +715,7 @@
 <span>                    metadata_cols <span class="op">=</span> <span class="st">"leiden_clus"</span>,</span>
 <span>                    x_text_size <span class="op">=</span> <span class="fl">10</span>, </span>
 <span>                    y_text_size <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/visium_cytassist_lungcancer/15-plotMetaDataHeatmap.png" width="50%"></p>
+<p><img src="images/visium_cytassist_lungcancer/15-plotMetaDataHeatmap.png" width="50%" style="display: block; margin: auto;"></p>
 <div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># umap plots</span></span>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/dimFeatPlot2D.html" class="external-link">dimFeatPlot2D</a></span><span class="op">(</span><span class="va">visium_lungcancer</span>,</span>
@@ -723,7 +723,7 @@
 <span>              feats <span class="op">=</span> <span class="va">scran_markers_subclusters</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">.SD</span>, <span class="fl">1</span><span class="op">)</span>, by <span class="op">=</span> <span class="st">"cluster"</span><span class="op">]</span><span class="op">$</span><span class="va">feats</span>,</span>
 <span>              cow_n_col <span class="op">=</span> <span class="fl">3</span>, </span>
 <span>              point_size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/visium_cytassist_lungcancer/16-dimFeatPlot2D.png" width="50%"></p>
+<p><img src="images/visium_cytassist_lungcancer/16-dimFeatPlot2D.png" width="50%" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level2" number="8">
 <h2 number="8" id="cell-type-enrichment">

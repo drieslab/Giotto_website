@@ -531,7 +531,7 @@
 <span><span class="va">giotto_SC</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/filterGiotto.html">filterGiotto</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">giotto_SC</span>,</span>
 <span>                          expression_threshold <span class="op">=</span> <span class="fl">1</span>,</span>
 <span>                          feat_det_in_min_cells <span class="op">=</span> <span class="fl">10</span>,</span>
-<span>                          min_det_feats_per_cell <span class="op">=</span> <span class="fl">50</span>,</span>
+<span>                          min_det_feats_per_cell <span class="op">=</span> <span class="fl">500</span>,</span>
 <span>                          expression_values <span class="op">=</span> <span class="st">"raw"</span>,</span>
 <span>                          verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span></span>
@@ -540,8 +540,7 @@
 <span>                             scalefactor <span class="op">=</span> <span class="fl">6000</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co">## add gene &amp; cell statistics</span></span>
-<span><span class="va">giotto_SC</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/addStatistics.html">addStatistics</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">giotto_SC</span>,</span>
-<span>                           expression_values <span class="op">=</span> <span class="st">"raw"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="va">giotto_SC</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/addStatistics.html">addStatistics</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">giotto_SC</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2" number="5">
 <h2 number="5" id="dimension-reduction">
@@ -557,7 +556,7 @@
 <span></span>
 <span><span class="fu"><a href="../reference/screePlot.html">screePlot</a></span><span class="op">(</span><span class="va">giotto_SC</span>, </span>
 <span>          ncp <span class="op">=</span> <span class="fl">30</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/singlecell_lung_adenocarcinoma/0-screePlot.png" width="50%"></p>
+<p><img src="images/singlecell_lung_adenocarcinoma/0-screePlot.png" width="50%" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level2" number="6">
 <h2 number="6" id="cluster">
@@ -585,7 +584,7 @@
 <span>         cell_color <span class="op">=</span> <span class="st">"leiden_clus"</span>, </span>
 <span>         show_NN_network <span class="op">=</span> <span class="cn">TRUE</span>, </span>
 <span>         point_size <span class="op">=</span> <span class="fl">1.5</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/singlecell_lung_adenocarcinoma/1-UMAP.png" width="50%"></p>
+<p><img src="images/singlecell_lung_adenocarcinoma/1-UMAP.png" width="50%" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level2" number="7">
 <h2 number="7" id="differential-expression">
@@ -606,7 +605,7 @@
 <span>                    selected_feats <span class="op">=</span> <span class="va">topgenes_scran</span>,</span>
 <span>                    y_text_size <span class="op">=</span> <span class="fl">8</span>, </span>
 <span>                    show_values <span class="op">=</span> <span class="st">"zscores_rescaled"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/singlecell_lung_adenocarcinoma/2-plotMetaDataHeatmap.png" width="50%"></p>
+<p><img src="images/singlecell_lung_adenocarcinoma/2-plotMetaDataHeatmap.png" width="50%" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level2" number="8">
 <h2 number="8" id="featureplot">
@@ -617,7 +616,7 @@
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/dimFeatPlot2D.html" class="external-link">dimFeatPlot2D</a></span><span class="op">(</span><span class="va">giotto_SC</span>, </span>
 <span>              feats <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"EPCAM"</span>, <span class="st">"PMEL"</span>, <span class="st">"C1QA"</span>,<span class="st">"COL1A1"</span><span class="op">)</span>, </span>
 <span>              cow_n_col <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/singlecell_lung_adenocarcinoma/3-dimFeatPlot2D.png" width="50%"></p>
+<p><img src="images/singlecell_lung_adenocarcinoma/3-dimFeatPlot2D.png" width="80%" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level2" number="9">
 <h2 number="9" id="cell-type-annotation">
@@ -727,44 +726,43 @@
 <span>        <span class="op">)</span> <span class="op">)</span></span>
 <span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/grDevices/dev.html" class="external-link">dev.off</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/singlecell_lung_adenocarcinoma/4_heatmap_all_clusters_cell_types.png" width="50%"></p>
+<p><img src="images/singlecell_lung_adenocarcinoma/4_heatmap_all_clusters_cell_types.png" width="80%" style="display: block; margin: auto;"></p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">lung_labels</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"T_cells"</span>,<span class="co">#1</span></span>
-<span>               <span class="st">"macrophages"</span>,<span class="co">#2</span></span>
-<span>               <span class="st">"housekeeping"</span>,<span class="co">#3</span></span>
-<span>               <span class="st">"carcinoma_cells"</span>,<span class="co">#4</span></span>
+<code class="sourceCode R"><span><span class="va">lung_labels</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"carcinoma_cells"</span>,<span class="co">#1</span></span>
+<span>               <span class="st">"housekeeping"</span>,<span class="co">#2</span></span>
+<span>               <span class="st">"T_cells"</span>,<span class="co">#3</span></span>
+<span>               <span class="st">"macrophages"</span>,<span class="co">#4</span></span>
 <span>               <span class="st">"T_cells"</span>,<span class="co">#5</span></span>
-<span>               <span class="st">"macrophages"</span>,<span class="co">#6</span></span>
-<span>               <span class="st">"epithelial"</span>,<span class="co">#7</span></span>
-<span>               <span class="st">"carcinoma_cells"</span>,<span class="co">#8</span></span>
-<span>               <span class="st">"B_cells"</span>,<span class="co">#9</span></span>
-<span>               <span class="st">"T_cells"</span>,<span class="co">#10</span></span>
-<span>               <span class="st">"carcinoma_cells"</span>,<span class="co">#11</span></span>
-<span>               <span class="st">"housekeeping"</span>,<span class="co">#12</span></span>
+<span>               <span class="st">"housekeeping"</span>,<span class="co">#6</span></span>
+<span>               <span class="st">"T_cells"</span>,<span class="co">#7</span></span>
+<span>               <span class="st">"epithelial"</span>,<span class="co">#8</span></span>
+<span>               <span class="st">"macrophages"</span>,<span class="co">#9</span></span>
+<span>               <span class="st">"housekeeping"</span>,<span class="co">#10</span></span>
+<span>               <span class="st">"housekeeping"</span>,<span class="co">#11</span></span>
+<span>               <span class="st">"carcinoma_cells"</span>,<span class="co">#12</span></span>
 <span>               <span class="st">"housekeeping"</span>,<span class="co">#13</span></span>
-<span>               <span class="st">"housekeeping"</span>,<span class="co">#14</span></span>
+<span>               <span class="st">"B_cells"</span>,<span class="co">#14</span></span>
 <span>               <span class="st">"neutrophils"</span>,<span class="co">#15</span></span>
-<span>               <span class="st">"carcinoma_cells"</span>,<span class="co">#16</span></span>
-<span>               <span class="st">"neutrophils"</span>,<span class="co">#17</span></span>
-<span>               <span class="st">"carcinoma_cells"</span>,<span class="co">#18</span></span>
-<span>               <span class="st">"housekeeping"</span>,<span class="co">#19</span></span>
-<span>               <span class="st">"pDCs"</span>,<span class="co">#20</span></span>
+<span>               <span class="st">"pDCs"</span>,<span class="co">#16</span></span>
+<span>               <span class="st">"housekeeping"</span>,<span class="co">#17</span></span>
+<span>               <span class="st">"housekeeping"</span>,<span class="co">#18</span></span>
+<span>               <span class="st">"Mast"</span>,<span class="co">#19</span></span>
+<span>               <span class="st">"epithelial"</span>,<span class="co">#20</span></span>
 <span>               <span class="st">"housekeeping"</span>,<span class="co">#21</span></span>
-<span>               <span class="st">"Mast"</span>,<span class="co">#22</span></span>
+<span>               <span class="st">"B_cells"</span>,<span class="co">#22</span></span>
 <span>               <span class="st">"T_cells"</span>,<span class="co">#23</span></span>
-<span>               <span class="st">"macrophages"</span>,<span class="co">#24</span></span>
+<span>               <span class="st">"housekeeping"</span>,<span class="co">#24</span></span>
 <span>               <span class="st">"macrophages"</span>,<span class="co">#25</span></span>
-<span>               <span class="st">"macrophages"</span>,<span class="co">#26</span></span>
+<span>               <span class="st">"housekeeping"</span>,<span class="co">#26</span></span>
 <span>               <span class="st">"housekeeping"</span>,<span class="co">#27</span></span>
-<span>               <span class="st">"carcinoma_cells"</span>,<span class="co">#28</span></span>
-<span>               <span class="st">"carcinoma_cells"</span>,<span class="co">#29</span></span>
-<span>               <span class="st">"epithelial"</span>, <span class="co">#30</span></span>
+<span>               <span class="st">"housekeeping"</span>,<span class="co">#28</span></span>
+<span>               <span class="st">"housekeeping"</span>,<span class="co">#29</span></span>
+<span>               <span class="st">"B_cells"</span>, <span class="co">#30</span></span>
 <span>               <span class="st">"dendritic"</span>, <span class="co">#31</span></span>
-<span>               <span class="st">"dendritic"</span>, <span class="co">#32</span></span>
-<span>               <span class="st">"neutrophils"</span> <span class="co">#33</span></span>
+<span>               <span class="st">"neutrophils"</span> <span class="co">#32</span></span>
 <span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">lung_labels</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">:</span><span class="fl">33</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">lung_labels</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">:</span><span class="fl">32</span></span>
 <span></span>
 <span><span class="va">giotto_SC</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/annotateGiotto.html" class="external-link">annotateGiotto</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">giotto_SC</span>, </span>
 <span>                            annotation_vector <span class="op">=</span> <span class="va">lung_labels</span> ,</span>
@@ -776,7 +774,7 @@
 <span>          cell_color <span class="op">=</span> <span class="st">"lung_labels"</span>, </span>
 <span>          show_NN_network <span class="op">=</span> <span class="cn">TRUE</span>, </span>
 <span>          point_size <span class="op">=</span> <span class="fl">1.5</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/singlecell_lung_adenocarcinoma/4-dimPlot2D.png" width="50%"></p>
+<p><img src="images/singlecell_lung_adenocarcinoma/4-dimPlot2D.png" width="80%" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level2" number="10">
 <h2 number="10" id="session-info">
