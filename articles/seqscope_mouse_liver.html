@@ -466,7 +466,7 @@
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>bash extractCoord.sh [SeqScope_1st.fastq.gz] [SeqScope_2nd_R1.fastq.gz] [HDMI_length]</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="co">## Second, generating the count matrix via STAR.Solo:</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>bash align.sh [SeqScope_2nd_R1.fastq.gz] [abc_SeqScope_2nd_R2.fastq.gz] [HDMI_length] [whitelists.txt] [outprefix] [starpath] [seqtkpath] [geneIndex]</span></code></pre></div>
-<p>You should now have the count matrix for Giotto Object. Note the Spatial Barcodes are typically at 0.6 um resolution. One way to analyze is to use the getSimpleGrid.R or getSlidingGrid.R provided by Lee Lab to bin the counts and simply follow the Giotto analysis steps of <a href="https://giottosuite.readthedocs.io/en/latest/subsections/datasets/ouse_visium_brain.html" class="external-link">Visium</a> and <a href="https://giottosuite.readthedocs.io/en/latest/subsections/datasets/visium_prostate_integration.html" class="external-link">Integration of Visium</a></p>
+<p>You should now have the count matrix for Giotto Object. Note the Spatial Barcodes are typically at 0.6 um resolution. One way to analyze is to use the getSimpleGrid.R or getSlidingGrid.R provided by Lee Lab to bin the counts and simply follow the Giotto analysis steps of <a href="https://drieslab.github.io/Giotto_website/articles/visium_mouse_brain.html">Visium</a> and <a href="https://drieslab.github.io/Giotto_website/articles/visium_prostate_integration.html">Integration of Visium</a></p>
 </div>
 </div>
 <div class="section level2" number="2">
