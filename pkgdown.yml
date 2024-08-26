@@ -35,6 +35,7 @@ articles:
   singlecell_prostate_integration: singlecell_prostate_integration.html
   singlecell_prostate_standard: singlecell_prostate_standard.html
   singularity: singularity.html
+  slideseq_mouse_brain: slideseq_mouse_brain.html
   spatial_citeseq_human_skin: spatial_citeseq_human_skin.html
   spatial_genomics_mouse_kidney: spatial_genomics_mouse_kidney.html
   spatial_transformations: spatial_transformations.html
@@ -49,7 +50,7 @@ articles:
   visualizations: visualizations.html
   vizgen_mouse_brain: vizgen_mouse_brain.html
   xenium_breast_cancer: xenium_breast_cancer.html
-last_built: 2024-08-19T16:55Z
+last_built: 2024-08-26T15:29Z
 urls:
   reference: https://drieslab.github.io/Giotto_website/reference
   article: https://drieslab.github.io/Giotto_website/articles
