@@ -142,6 +142,13 @@
       </ul></li>
     <li class="divider">
     <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Open-ST</a>
+      <ul class="dropdown-menu" role="menu"><li>
+          <a href="../articles/openst_mouse_hippocampus.html">Open-ST Mouse Hippocampus</a>
+        </li>
+      </ul></li>
+    <li class="divider">
+    <li class="dropdown-submenu">
       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">seqFISH</a>
       <ul class="dropdown-menu" role="menu"><li>
           <a href="../articles/mini_seqfish.html">mini seqFISH</a>
@@ -531,7 +538,7 @@
 <h2 class="page-header" data-toc-text="3.3.1" id="giotto-331-20230802">Giotto 3.3.1 (2023/08/02)<a class="anchor" aria-label="anchor" href="#giotto-331-20230802"></a></h2>
 <div class="section level3">
 <h3 id="breaking-changes-3-3-1">Breaking changes<a class="anchor" aria-label="anchor" href="#breaking-changes-3-3-1"></a></h3>
-<ul><li>Change <code><a href="https://drieslab.github.io/GiottoClass/reference/checkGiottoEnvironment.html" class="external-link">checkGiottoEnvironment()</a></code>. Downgrade from error to message and return FALSE when a provided directory does not exist</li>
+<ul><li>Change <code><a href="https://drieslab.github.io/GiottoClass/reference/giotto_python.html" class="external-link">checkGiottoEnvironment()</a></code>. Downgrade from error to message and return FALSE when a provided directory does not exist</li>
 </ul></div>
 <div class="section level3">
 <h3 id="added-3-3-1">Added<a class="anchor" aria-label="anchor" href="#added-3-3-1"></a></h3>
@@ -602,7 +609,7 @@
 </li>
 <li>update <code><a href="https://drieslab.github.io/GiottoClass/reference/loadGiotto.html" class="external-link">loadGiotto()</a></code> and <code><a href="https://drieslab.github.io/GiottoClass/reference/saveGiotto.html" class="external-link">saveGiotto()</a></code> to allow using long strings as column names in the spatVector objects</li>
 <li>
-<code>'active_spat_unit'</code> and <code>'active_feat_type'</code> params that can be set through <code><a href="https://drieslab.github.io/GiottoClass/reference/instructions-generic.html" class="external-link">instructions()</a></code> are now used instead of ‘giotto.spat_unit’ and ‘giotto.feat_type’ global options</li>
+<code>'active_spat_unit'</code> and <code>'active_feat_type'</code> params that can be set through <code><a href="https://drieslab.github.io/GiottoClass/reference/giotto_instructions.html" class="external-link">instructions()</a></code> are now used instead of ‘giotto.spat_unit’ and ‘giotto.feat_type’ global options</li>
 <li>removed duplicate <code>create_dimObject()</code> internal function. Keeping <code><a href="https://drieslab.github.io/GiottoClass/reference/create_dim_obj.html" class="external-link">create_dim_obj()</a></code>
 </li>
 </ul></div>
@@ -616,7 +623,7 @@
 <li>Add exported <code>create</code> constructor functions for Giotto S4 subobjects</li>
 <li>Add <code><a href="https://drieslab.github.io/GiottoClass/reference/activeSpatUnit-generic.html" class="external-link">activeSpatUnit()</a></code> and <code><a href="https://drieslab.github.io/GiottoClass/reference/activeFeatType-generic.html" class="external-link">activeFeatType()</a></code> for getting and setting active defaults on gobject</li>
 <li>New <code>get_*_list()</code> internal functions for retrieving list of all objects of a particular class for a spat_unit and feat_type</li>
-<li>Add <code><a href="https://drieslab.github.io/GiottoClass/reference/instructions-generic.html" class="external-link">instructions()</a></code> generic for <code>giotto</code> to access and edit <code>giottoInstructions</code>
+<li>Add <code><a href="https://drieslab.github.io/GiottoClass/reference/giotto_instructions.html" class="external-link">instructions()</a></code> generic for <code>giotto</code> to access and edit <code>giottoInstructions</code>
 </li>
 <li>Add <code><a href="https://rspatial.github.io/terra/reference/centroids.html" class="external-link">centroids()</a></code> method for <code>giottoPolygon</code> to get centroid info</li>
 <li>Add <code><a href="https://drieslab.github.io/GiottoClass/reference/overlaps-generic.html" class="external-link">overlaps()</a></code> generic for accessing <code>overlaps</code> slot of <code>giottoPolygon</code>
@@ -635,9 +642,9 @@
 </ul></div>
 <div class="section level3">
 <h3 id="changes-3-3-0">Changes<a class="anchor" aria-label="anchor" href="#changes-3-3-0"></a></h3>
-<ul><li>Update <code><a href="https://drieslab.github.io/GiottoClass/reference/installGiottoEnvironment.html" class="external-link">installGiottoEnvironment()</a></code> and downstream internal functions to allow custom python installation with a new argument, <code>mini_install_path</code>.</li>
-<li>Update <code><a href="https://drieslab.github.io/GiottoClass/reference/checkGiottoEnvironment.html" class="external-link">checkGiottoEnvironment()</a></code> to account for custom python installations with a new argument, <code>mini_install_path</code>.</li>
-<li>Update <code><a href="https://drieslab.github.io/GiottoClass/reference/removeGiottoEnvironment.html" class="external-link">removeGiottoEnvironment()</a></code> to account for custom python installations with a new argument, <code>mini_path</code>.</li>
+<ul><li>Update <code><a href="https://drieslab.github.io/GiottoClass/reference/giotto_python.html" class="external-link">installGiottoEnvironment()</a></code> and downstream internal functions to allow custom python installation with a new argument, <code>mini_install_path</code>.</li>
+<li>Update <code><a href="https://drieslab.github.io/GiottoClass/reference/giotto_python.html" class="external-link">checkGiottoEnvironment()</a></code> to account for custom python installations with a new argument, <code>mini_install_path</code>.</li>
+<li>Update <code><a href="https://drieslab.github.io/GiottoClass/reference/giotto_python.html" class="external-link">removeGiottoEnvironment()</a></code> to account for custom python installations with a new argument, <code>mini_path</code>.</li>
 <li>Update <code><a href="https://drieslab.github.io/GiottoClass/reference/createGiottoObject.html" class="external-link">createGiottoObject()</a></code> with new data ingestion pipeline</li>
 <li>Modify <code>cell_ID</code>, <code>feat_ID</code>, <code>cell_metadata</code>, <code>feat_metadata</code> slot initialization</li>
 <li>Update <code>read_expression_data()</code> and <code>evaluate_expr_matrix()</code> to be compatible with <code>exprObj</code>

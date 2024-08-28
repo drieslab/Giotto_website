@@ -142,6 +142,13 @@
       </ul></li>
     <li class="divider">
     <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Open-ST</a>
+      <ul class="dropdown-menu" role="menu"><li>
+          <a href="../articles/openst_mouse_hippocampus.html">Open-ST Mouse Hippocampus</a>
+        </li>
+      </ul></li>
+    <li class="divider">
+    <li class="dropdown-submenu">
       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">seqFISH</a>
       <ul class="dropdown-menu" role="menu"><li>
           <a href="../articles/mini_seqfish.html">mini seqFISH</a>
@@ -384,15 +391,481 @@
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3.2 read Giotto spatial centroid information</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3.3 read Giotto spatial overlap information</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in .os_py_path(must_exist = TRUE):</span> Assertion on 'path' failed: Directory '/home/runner/.local/share/r-miniconda' does not exist.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> checking default envname 'giotto_env'</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> a system default python environment was found</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/usr/bin/python3"</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">clusterSpatialCorFeats</span><span class="op">(</span>spatCorObject <span class="op">=</span> <span class="fu"><a href="detectSpatialCorFeats.html">detectSpatialCorFeats</a></span><span class="op">(</span></span></span>
 <span class="r-in"><span>    <span class="va">g</span>,</span></span>
 <span class="r-in"><span>    method <span class="op">=</span> <span class="st">"network"</span></span></span>
 <span class="r-in"><span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>restarting interrupted promise evaluation</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>restarting interrupted promise evaluation</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'g' not found</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $cor_DT</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>               feat_ID      variable   spat_cor   expr_cor     cordiff spatrank</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                &lt;char&gt;        &lt;fctr&gt;      &lt;num&gt;      &lt;num&gt;       &lt;num&gt;    &lt;int&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      1: 1110017D15Rik 1110017D15Rik  1.0000000  1.0000000  0.00000000        1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      2: 1110017D15Rik        Dnali1  0.5152451  0.3690438  0.14620131        2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      3: 1110017D15Rik         Spag8  0.5044653  0.3180572  0.18640810        3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      4: 1110017D15Rik 1700001C02Rik  0.4957575  0.4021766  0.09358091        4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      5: 1110017D15Rik       Ccdc153  0.4947645  0.4050736  0.08969090        5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     ---                                                                       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 401952:         Zmat4         Cabp7 -0.3106553 -0.2099353 -0.10072002      630</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 401953:         Zmat4           Sst -0.3310337 -0.1903481 -0.14068568      631</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 401954:         Zmat4          Hopx -0.3886083 -0.2587739 -0.12983435      632</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 401955:         Zmat4           Ttr -0.4280274 -0.3482754 -0.07975206      633</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 401956:         Zmat4          Gfap -0.4757224 -0.3562773 -0.11944508      634</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         exprrank rankdiff</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            &lt;int&gt;    &lt;int&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      1:        1        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      2:        6       -4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      3:       10       -7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      4:        3        1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      5:        2        3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     ---                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 401952:      630        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 401953:      627        4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 401954:      632        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 401955:      633        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 401956:      634        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $feat_order</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [1] "Gna12"         "Ccnd2"         "Btbd17"        "Sox9"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [5] "Sez6"          "Serpinf1"      "S100a6"        "Col1a1"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [9] "Vwf"           "Esam"          "Npas1"         "Tiam1"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [13] "Bcam"          "Hmgn2"         "Rab3b"         "Inmt"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [17] "Ddr1"          "Homer3"        "Cp"            "Calb2"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [21] "Man1a"         "Efnb3"         "Hlf"           "Gstm7"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [25] "Cavin1"        "Sst"           "Hapln2"        "Hspb1"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [29] "Ndrg1"         "Nid1"          "Kit"           "Pvalb"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [33] "Tmbim1"        "Crip1"         "Tek"           "Elovl1"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [37] "Cyba"          "Itih3"         "Cnp"           "Hap1"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [41] "Clic1"         "Stx1a"         "Arpp19"        "Dio2"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [45] "Id3"           "Crlf1"         "Ttc9b"         "Carhsp1"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [49] "Cabp7"         "Fam163b"       "Rarres2"       "Syn2"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [53] "Ick"           "Prox1"         "Adssl1"        "Vipr2"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [57] "Gltp"          "Amotl1"        "Bcas1"         "Aldh1a2"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [61] "Tppp3"         "Sirt2"         "Lpl"           "Cers2"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [65] "Qdpr"          "Stk32c"        "Lbp"           "Hsd11b1"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [69] "Vtn"           "Stac2"         "Plxdc1"        "Igfbp4"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [73] "Dbndd2"        "Pltp"          "Slc12a4"       "Cadps2"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [77] "Erbb3"         "Pmp22"         "Kcnab3"        "Myh11"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [81] "Plod1"         "Etnppl"        "Arhgef25"      "Rcn3"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [85] "Vip"           "Utrn"          "Grm1"          "Reep3"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [89] "Fabp7"         "Dcn"           "Slc17a8"       "Dusp6"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [93] "Kitl"          "Ccn2"          "Timp3"         "Ascl1"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [97] "Unc5b"         "Vsir"          "Gamt"          "Ptprb"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [101] "Csrp2"         "Adarb1"        "Rnf130"        "Nefh"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [105] "Aebp1"         "Sept4"         "Gria1"         "Sypl"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [109] "Arsg"          "Cacng4"        "Rab37"         "Itgb4"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [113] "Aspa"          "Cygb"          "Rflnb"         "Doc2b"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [117] "Gfap"          "Npas3"         "Serpina3n"     "Clmn"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [121] "Prkch"         "Fbln5"         "Akr1c18"       "Gng4"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [125] "Sema4d"        "Cxcl14"        "Hexb"          "Iqgap2"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [129] "Crhbp"         "Rab3c"         "Thbs4"         "Serinc5"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [133] "Erbin"         "Prkcd"         "Pdlim2"        "Ednrb"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [137] "Cpne6"         "Sema5a"        "Matn2"         "Nptxr"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [141] "Enpp2"         "Efcab6"        "Ppp1r1a"       "Litaf"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [145] "Il1rap"        "Apod"          "Cpox"          "Grik1"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [149] "Clic6"         "Nr4a1"         "Igfbp6"        "Sncg"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [153] "Gzma"          "Grm2"          "Prph"          "Rsph1"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [157] "Sox8"          "Fam234a"       "Lims2"         "Aqp4"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [161] "Slc12a2"       "Cd74"          "Pdgfrb"        "Csf1r"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [165] "Cbln2"         "Frmd8"         "Gldc"          "Tcf7l2"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [169] "Bhlhe22"       "Kcnip2"        "Alas2"         "Gdf11"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [173] "Baiap2"        "Ifitm3"        "Phkg1"         "Nptx1"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [177] "Pde8a"         "Itih5"         "Homer2"        "Fam20c"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [181] "Cplx2"         "Myo5b"         "Snca"          "Col3a1"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [185] "Ecrg4"         "Map4k4"        "2010300C02Rik" "Ogfrl1"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [189] "Fn1"           "Efhd1"         "Ngef"          "Bok"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [193] "Tmem163"       "Lct"           "Cfh"           "Ptpn4"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [197] "Tnni1"         "Csrp1"         "Nfasc"         "Syt2"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [201] "Atp2b4"        "Rgs16"         "Ncf2"          "Cnih3"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [205] "Tmem63a"       "Cfap126"       "Meig1"         "Ccdc3"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [209] "Rgs5"          "Enkur"         "Myoc"          "Vim"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [213] "Prkcq"         "Gad2"          "Lcn2"          "Nr4a2"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [217] "Ermn"          "Fibcd1"        "Gsn"           "Grb14"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [221] "Notch1"        "Ube2l6"        "Gatm"          "Cd82"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [225] "Mdk"           "Lamp5"         "Itpka"         "Chgb"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [229] "Mal"           "Pdyn"          "Nkx2-2"        "Edn3"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [233] "Car2"          "Col9a3"        "Chrna4"        "Gss"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [237] "Slc7a11"       "Tm4sf1"        "Kcnab1"        "Shox2"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [241] "Serpini1"      "Tspan2"        "S100a11"       "Vcam1"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [245] "Lef1"          "Npy2r"         "F3"            "Calb1"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [249] "Epha7"         "Slc44a1"       "1110017D15Rik" "Tpm2"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [253] "Slc6a9"        "Laptm5"        "Sema3c"        "Hpca"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [257] "Padi2"         "Slc4a2"        "Gabrd"         "Rgs12"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [261] "Slc30a3"       "Emilin1"       "1700001C02Rik" "Gabra4"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [265] "Pdgfra"        "Epha5"         "Tesc"          "Pitpnm2"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [269] "Mmp17"         "Cit"           "Foxp2"         "Arpc1b"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [273] "Col1a2"        "Eln"           "Pcolce"        "Tsc22d4"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [277] "Cald1"         "Ccdc136"       "Npy"           "Slc13a4"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [281] "Gkn3"          "Slc6a13"       "Mgp"           "Lmo3"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [285] "Slco1c1"       "Cpne9"         "Itpr2"         "Slc6a11"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [289] "Vamp1"         "Cd9"           "Pglyrp1"       "Slc17a6"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [293] "Sipa1l3"       "Sh3gl3"        "Plekhb1"       "Nupr1"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [297] "Dkk3"          "Cox6a2"        "Dkkl1"         "Fgfr2"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [301] "Crym"          "Slc38a5"       "Flna"          "Bgn"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [305] "Col4a1"        "Plat"          "Nr3c2"         "Cbln1"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [309] "Gab1"          "Pllp"          "Necab2"        "Dbndd1"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [313] "Agt"           "Cryab"         "Tagln"         "Mcam"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [317] "Olfm2"         "Icam5"         "Anxa2"         "Rora"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [321] "Calml4"        "Htr3a"         "Paqr5"         "Rasgrf1"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [325] "Zic1"          "Mobp"          "Hhatl"         "Trf"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [329] "Cpne4"         "Cdhr4"         "Cd59a"         "Gng11"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [333] "Chrm1"         "Prr5l"         "Ugt8a"         "Rims3"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [337] "Sgpp2"         "Camkv"         "Sox10"         "Micall1"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [341] "Tie1"          "Fa2h"          "Ucp2"          "Vav3"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [345] "Ccp110"        "Gria2"         "Rasl10a"       "Foxj1"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [349] "Trim59"        "Dynlrb2"       "Gjc1"          "Neurod1"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [353] "Ttyh2"         "Cpne7"         "Nrip3"         "Tbr1"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [357] "Lcat"          "Tmem98"        "Myo1d"         "Prdm8"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [361] "Tgfbi"         "Kcnc2"         "Thrsp"         "Isg15"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [365] "Acta2"         "H2-Q4"         "Dock4"         "Myrf"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [369] "Lmo1"          "Igfbp7"        "P2ry12"        "Pcdh8"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [373] "Lgi4"          "Fxyd1"         "Fxyd7"         "Mag"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [377] "Zcchc12"       "Anln"          "Wnt4"          "C1ql2"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [381] "Unc93b1"       "Tspan15"       "Ppp1r14a"      "Clic4"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [385] "Galnt6"        "Ccn3"          "Rims2"         "Zmat4"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [389] "Cldn11"        "Ccdc33"        "Slc32a1"       "Tgm2"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [393] "Vstm2l"        "Neurod6"       "Crygn"         "Enpp6"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [397] "Neurod2"       "Satb2"         "Pcp4l1"        "Txnip"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [401] "Egr1"          "Otud7b"        "Car14"         "Rgs4"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [405] "Dock10"        "Lpar1"         "Trps1"         "Ptpn3"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [409] "Lefty1"        "Zfhx3"         "St6galnac5"    "Ak5"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [413] "Hrh3"          "Nexn"          "Adgrl4"        "Rlbp1"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [417] "Igfbp2"        "Wfs1"          "Cplx3"         "Orai2"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [421] "Olig2"         "Gpr37"         "Plcb4"         "Nxph4"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [425] "Ndufa4l2"      "Cacng5"        "Plekhg1"       "Cmtm5"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [429] "Gpr161"        "Rfx3"          "Igsf21"        "Ramp3"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [433] "Arhgap12"      "Nkx6-2"        "Ninj2"         "Cldn5"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [437] "Htr2c"         "Hspb8"         "Fmod"          "Prelp"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [441] "Mpped1"        "Rapgef5"       "Vwa1"          "Stab1"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [445] "Arl15"         "Reln"          "Mustn1"        "Pbxip1"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [449] "Dnali1"        "Id1"           "Lrrtm3"        "Tmem212"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [453] "Epop"          "Gjc2"          "1190005I06Rik" "Ctla2a"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [457] "Cnr1"          "Gpr4"          "Sowaha"        "Tent5c"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [461] "Serpinb1a"     "S1pr5"         "Penk"          "Cdc42ep2"     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [465] "Slitrk6"       "Hpcal4"        "Olig1"         "Rprml"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [469] "Stxbp6"        "Hs3st2"        "Rbp1"          "Ppm1e"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [473] "Sox18"         "Kctd4"         "Nxph3"         "Vat1l"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [477] "Cd24a"         "Odf3b"         "Gjb1"          "Selplg"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [481] "Bcl11b"        "Lhfp"          "Ranbp3l"       "Msx1"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [485] "Zdhhc22"       "Phldb1"        "Ctxn1"         "Tprn"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [489] "Vstm2a"        "Ndnf"          "Pdp1"          "Scn3b"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [493] "Cdc42ep1"      "Gal3st1"       "Rasd1"         "Spink8"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [497] "Opalin"        "Gja4"          "Synpo2"        "Pcdh20"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [501] "Adra1b"        "Fam131a"       "Tmem125"       "Mb21d2"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [505] "Lingo3"        "Ncald"         "Siglech"       "Rgs14"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [509] "Gm14964"       "Gpr17"         "Cx3cr1"        "Ezr"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [513] "Adarb2"        "Cpne8"         "Plekhg3"       "Lamb2"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [517] "Creb5"         "Cntn2"         "Aldh1a1"       "Phgdh"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [521] "Tnfaip6"       "Camk2d"        "Shisa6"        "Cthrc1"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [525] "Tmem119"       "Hmgb2"         "Tmem158"       "Dsp"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [529] "Lrtm2"         "Gabra5"        "Tns1"          "Nell1"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [533] "Slain1"        "Prr18"         "S100a8"        "S100a9"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [537] "Col8a2"        "Synpr"         "Sertm1"        "Adgrf5"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [541] "Capg"          "Gjc3"          "Fcer1g"        "Pde1a"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [545] "Tafa1"         "Ddn"           "Hopx"          "Ptk2b"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [549] "Rgs3"          "Kcng2"         "Ntng1"         "H2-Q7"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [553] "Ifitm2"        "Plaat3"        "Plekhh1"       "Myl4"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [557] "H2-K1"         "Dpp6"          "Tmem91"        "Cyp2d22"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [561] "Ttr"           "Suclg2"        "Patj"          "Btbd3"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [565] "Unc13c"        "Syt9"          "Shisal1"       "Grm4"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [569] "Sox11"         "Slc22a8"       "Slc24a3"       "Klk8"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [573] "Ipcef1"        "Tnnt1"         "Hhip"          "Spag8"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [577] "Fxyd6"         "Ppp1r3c"       "Cbln4"         "Nnat"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [581] "Myl9"          "Vxn"           "Lgals1"        "Gpr88"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [585] "Ctxn3"         "Lyz2"          "Tmem100"       "Wfdc17"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [589] "Ahnak"         "Hba-a2"        "Hba-a1"        "Ccdc153"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [593] "Ccnd1"         "Serpinh1"      "Gad1"          "Arhgef10"     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [597] "2410004P03Rik" "Nt5dc2"        "Cebpd"         "Sod3"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [601] "H2-D1"         "C4b"           "Tmem88b"       "Hbb-bt"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [605] "Rhog"          "Rprm"          "Ly6a"          "Mog"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [609] "Trbc2"         "Igkc"          "Smim1"         "Hs3st4"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [613] "Evi2a"         "Prkcg"         "Ly6c1"         "Gbp4"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [617] "Wipf3"         "BC039966"      "Gm13889"       "Plcxd2"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [621] "Mia"           "Pou3f1"        "Lrrc10b"       "Apol11b"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [625] "Gpr62"         "Shisa8"        "Gm2115"        "Kctd12"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [629] "1700047M11Rik" "Lhfpl3"        "C030029H02Rik" "Gm19935"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [633] "9630013A20Rik" "2900040C04Rik"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $cor_hclust</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $cor_hclust$spat_clus</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Call:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> stats::hclust(d = cor_dist, method = hclust_method)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Cluster method   : ward.D </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Number of objects: 634 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $cor_clusters</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $cor_clusters$spat_clus</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Gna12         Ccnd2        Btbd17          Sox9          Sez6 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             1             2             3             4             5 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      Serpinf1        S100a6        Col1a1           Vwf          Esam </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             6             4             6             6             6 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Npas1         Tiam1          Bcam         Hmgn2         Rab3b </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             7             3             6             1             5 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          Inmt          Ddr1        Homer3            Cp         Calb2 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             6             1             4             6             3 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Man1a         Efnb3           Hlf         Gstm7        Cavin1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             8             1             9             1             6 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           Sst        Hapln2         Hspb1         Ndrg1          Nid1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             5             1             3             1             6 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           Kit         Pvalb        Tmbim1         Crip1           Tek </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             8             5             1             6             6 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        Elovl1          Cyba         Itih3           Cnp          Hap1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             1             6             3             1            10 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Clic1         Stx1a        Arpp19          Dio2           Id3 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             6             5             5             7             6 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Crlf1         Ttc9b       Carhsp1         Cabp7       Fam163b </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            10             5             1             8            10 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       Rarres2          Syn2           Ick         Prox1        Adssl1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             6             2             1            10             1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Vipr2          Gltp        Amotl1         Bcas1       Aldh1a2 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             9             1             9             1             6 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Tppp3         Sirt2           Lpl         Cers2          Qdpr </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             1             1             8             1             1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        Stk32c           Lbp       Hsd11b1           Vtn         Stac2 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             5             4             2             6             2 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        Plxdc1        Igfbp4        Dbndd2          Pltp       Slc12a4 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             9             5             1             6             6 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        Cadps2         Erbb3         Pmp22        Kcnab3         Myh11 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             5             1             3             5             6 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Plod1        Etnppl      Arhgef25          Rcn3           Vip </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             1             9             2             6             5 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          Utrn          Grm1         Reep3         Fabp7           Dcn </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             6             9             1             6             6 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       Slc17a8         Dusp6          Kitl          Ccn2         Timp3 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             4             8             9             5             3 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Ascl1         Unc5b          Vsir          Gamt         Ptprb </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             1             1             7             1             6 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Csrp2        Adarb1        Rnf130          Nefh         Aebp1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             4             9             1             9             6 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Sept4         Gria1          Sypl          Arsg        Cacng4 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             1             8             1             1             3 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Rab37         Itgb4          Aspa          Cygb         Rflnb </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             9             1             1            10             3 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Doc2b          Gfap         Npas3     Serpina3n          Clmn </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             8             6             7             8             3 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Prkch         Fbln5       Akr1c18          Gng4        Sema4d </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             9             6             5             5             1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        Cxcl14          Hexb        Iqgap2         Crhbp         Rab3c </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             7             7             8             5             9 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Thbs4       Serinc5         Erbin         Prkcd        Pdlim2 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             1             1             1             9             1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Ednrb         Cpne6        Sema5a         Matn2         Nptxr </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             6             2            10             8             2 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Enpp2        Efcab6       Ppp1r1a         Litaf        Il1rap </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             1             8             2             1             1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          Apod          Cpox         Grik1         Clic6         Nr4a1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             1             1             7             4             8 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        Igfbp6          Sncg          Gzma          Grm2          Prph </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             5             7             7             3             3 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Rsph1          Sox8       Fam234a         Lims2          Aqp4 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             4             1             1             1             6 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       Slc12a2          Cd74        Pdgfrb         Csf1r         Cbln2 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             1             7             6             7             5 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Frmd8          Gldc        Tcf7l2       Bhlhe22        Kcnip2 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             1             7             9            10             2 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Alas2         Gdf11        Baiap2        Ifitm3         Phkg1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             6             3             2             6             7 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Nptx1         Pde8a         Itih5        Homer2        Fam20c </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             2             1             6             8             9 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Cplx2         Myo5b          Snca        Col3a1         Ecrg4 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             2             8             2             6             4 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        Map4k4 2010300C02Rik        Ogfrl1           Fn1         Efhd1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             1             2             9             6             1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          Ngef           Bok       Tmem163           Lct           Cfh </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             5             9             1            10             6 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Ptpn4         Tnni1         Csrp1         Nfasc          Syt2 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             9             1             1             1             5 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        Atp2b4         Rgs16          Ncf2         Cnih3       Tmem63a </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             5             9             6             5             1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       Cfap126         Meig1         Ccdc3          Rgs5         Enkur </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             4             4             6             6             4 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          Myoc           Vim         Prkcq          Gad2          Lcn2 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             6             6             1             5             6 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Nr4a2          Ermn        Fibcd1           Gsn         Grb14 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             5             1             8             1             1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        Notch1        Ube2l6          Gatm          Cd82           Mdk </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             6             6             1             1             6 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Lamp5         Itpka          Chgb           Mal          Pdyn </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             5             2             2             1            10 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        Nkx2-2          Edn3          Car2        Col9a3        Chrna4 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             1             6             1             6             9 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           Gss       Slc7a11        Tm4sf1        Kcnab1         Shox2 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             3             6             6             8             9 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      Serpini1        Tspan2       S100a11         Vcam1          Lef1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             5             1             6             6             9 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Npy2r            F3         Calb1         Epha7       Slc44a1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             8             7             3            10             1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1110017D15Rik          Tpm2        Slc6a9        Laptm5        Sema3c </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             4             6             1             7             4 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          Hpca         Padi2        Slc4a2         Gabrd         Rgs12 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             2             1             1             9             5 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       Slc30a3       Emilin1 1700001C02Rik        Gabra4        Pdgfra </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            10             6             4             9             7 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Epha5          Tesc       Pitpnm2         Mmp17           Cit </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             2             2            10             2             9 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Foxp2        Arpc1b        Col1a2           Eln        Pcolce </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             9             1             6             6             6 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       Tsc22d4         Cald1       Ccdc136           Npy       Slc13a4 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             1             6             9             5             6 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          Gkn3       Slc6a13           Mgp          Lmo3       Slco1c1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             6             6             6             2             7 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Cpne9         Itpr2       Slc6a11         Vamp1           Cd9 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             9             6             9             9             1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       Pglyrp1       Slc17a6       Sipa1l3        Sh3gl3       Plekhb1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             6             9             8             1             1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Nupr1          Dkk3        Cox6a2         Dkkl1         Fgfr2 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             6             5             9             5             1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          Crym       Slc38a5          Flna           Bgn        Col4a1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             2             6             6             6             6 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          Plat         Nr3c2         Cbln1          Gab1          Pllp </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             6             8             3             1             1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        Necab2        Dbndd1           Agt         Cryab         Tagln </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             9             9             9             1             6 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          Mcam         Olfm2         Icam5         Anxa2          Rora </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             1             5             2             4             9 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        Calml4         Htr3a         Paqr5       Rasgrf1          Zic1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             4             7             6             8             9 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          Mobp         Hhatl           Trf         Cpne4         Cdhr4 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             1             6             1             4             4 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Cd59a         Gng11         Chrm1         Prr5l         Ugt8a </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             3             1             2             1             1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Rims3         Sgpp2         Camkv         Sox10       Micall1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             9             9             2             1             1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          Tie1          Fa2h          Ucp2          Vav3        Ccp110 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             6             1             6             9             1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Gria2       Rasl10a         Foxj1        Trim59       Dynlrb2 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             2            10             1             1             4 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          Gjc1       Neurod1         Ttyh2         Cpne7         Nrip3 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             3            10             1             8             9 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          Tbr1          Lcat        Tmem98         Myo1d         Prdm8 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             5             6             1             1            10 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Tgfbi         Kcnc2         Thrsp         Isg15         Acta2 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             6             9             7             6             6 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         H2-Q4         Dock4          Myrf          Lmo1        Igfbp7 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             6             2             1             8             6 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        P2ry12         Pcdh8          Lgi4         Fxyd1         Fxyd7 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             7            10             6             6             5 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           Mag       Zcchc12          Anln          Wnt4         C1ql2 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             1             3             1             9            10 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       Unc93b1       Tspan15      Ppp1r14a         Clic4        Galnt6 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             7             1             1             1             1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          Ccn3         Rims2         Zmat4        Cldn11        Ccdc33 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             5             9             9             1             4 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       Slc32a1          Tgm2        Vstm2l       Neurod6         Crygn </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             5             6             2             2             4 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Enpp6       Neurod2         Satb2        Pcp4l1         Txnip </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             1             2             5             9             6 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          Egr1        Otud7b         Car14          Rgs4        Dock10 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             5             1             1             9             1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Lpar1         Trps1         Ptpn3        Lefty1         Zfhx3 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             1             7             9             8             9 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    St6galnac5           Ak5          Hrh3          Nexn        Adgrl4 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             2            10             9             9             3 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Rlbp1        Igfbp2          Wfs1         Cplx3         Orai2 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             7             6             8             5            10 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Olig2         Gpr37         Plcb4         Nxph4      Ndufa4l2 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             1             1             9             5             6 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        Cacng5       Plekhg1         Cmtm5        Gpr161          Rfx3 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             9             9             1             8            10 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        Igsf21         Ramp3      Arhgap12        Nkx6-2         Ninj2 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             5             9             8             1             1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Cldn5         Htr2c         Hspb8          Fmod         Prelp </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             6             3             6             6             4 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        Mpped1       Rapgef5          Vwa1         Stab1         Arl15 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             5            10             6             6             8 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          Reln        Mustn1        Pbxip1        Dnali1           Id1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             6             6             4             4             6 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        Lrrtm3       Tmem212          Epop          Gjc2 1190005I06Rik </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             5             4             5             1             1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        Ctla2a          Cnr1          Gpr4        Sowaha        Tent5c </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             6             5             3             2             6 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     Serpinb1a         S1pr5          Penk      Cdc42ep2       Slitrk6 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             1             1             8             1             9 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        Hpcal4         Olig1         Rprml        Stxbp6        Hs3st2 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             2             1             2            10             5 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          Rbp1         Ppm1e         Sox18         Kctd4         Nxph3 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             6             2             6            10             5 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Vat1l         Cd24a         Odf3b          Gjb1        Selplg </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             5             4             4             1             7 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        Bcl11b          Lhfp       Ranbp3l          Msx1       Zdhhc22 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             8             9             6             6             9 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        Phldb1         Ctxn1          Tprn        Vstm2a          Ndnf </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             1             2             1             2             6 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          Pdp1         Scn3b      Cdc42ep1       Gal3st1         Rasd1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             9             8             1             1             8 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        Spink8        Opalin          Gja4        Synpo2        Pcdh20 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             8             1             6             9            10 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        Adra1b       Fam131a       Tmem125        Mb21d2        Lingo3 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             9             2             1             9             8 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Ncald       Siglech         Rgs14       Gm14964         Gpr17 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             5             7             8             1             1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        Cx3cr1           Ezr        Adarb2         Cpne8       Plekhg3 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             7             7             9             8             1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Lamb2         Creb5         Cntn2       Aldh1a1         Phgdh </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             6             1             1             6             1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       Tnfaip6        Camk2d        Shisa6        Cthrc1       Tmem119 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             1             9             8             9             7 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Hmgb2       Tmem158           Dsp         Lrtm2        Gabra5 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             1             5            10             9             8 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          Tns1         Nell1        Slain1         Prr18        S100a8 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             6             9             1             1             7 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        S100a9        Col8a2         Synpr        Sertm1        Adgrf5 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             7             4            10             8             6 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          Capg          Gjc3        Fcer1g         Pde1a         Tafa1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             6             1             7             5             2 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           Ddn          Hopx         Ptk2b          Rgs3         Kcng2 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             2             2             2             9            10 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Ntng1         H2-Q7        Ifitm2        Plaat3       Plekhh1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             9             6             6             1             1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          Myl4         H2-K1          Dpp6        Tmem91       Cyp2d22 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             5             6             8             5             6 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           Ttr        Suclg2          Patj         Btbd3        Unc13c </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             4             6             9             3             9 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          Syt9       Shisal1          Grm4         Sox11       Slc22a8 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             9             9             9            10             6 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       Slc24a3          Klk8        Ipcef1         Tnnt1          Hhip </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             8             8             5             9             1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Spag8         Fxyd6       Ppp1r3c         Cbln4          Nnat </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             4             5             1             3             4 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          Myl9           Vxn        Lgals1         Gpr88         Ctxn3 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             6             5             6             5             3 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          Lyz2       Tmem100        Wfdc17         Ahnak        Hba-a2 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             7             7             7             6             6 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        Hba-a1       Ccdc153         Ccnd1      Serpinh1          Gad1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             6             4             8             6             5 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      Arhgef10 2410004P03Rik        Nt5dc2         Cebpd          Sod3 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             1             4            10            10             6 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         H2-D1           C4b       Tmem88b        Hbb-bt          Rhog </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             6             6             1             6             1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          Rprm          Ly6a           Mog         Trbc2          Igkc </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             5             6             1             5             1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Smim1        Hs3st4         Evi2a         Prkcg         Ly6c1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             4             2             1             8             6 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          Gbp4         Wipf3      BC039966       Gm13889        Plcxd2 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             5             8             5            10             5 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           Mia        Pou3f1       Lrrc10b       Apol11b         Gpr62 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             4             8             8             6             1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        Shisa8        Gm2115        Kctd12 1700047M11Rik        Lhfpl3 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             1             8             8             1             3 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> C030029H02Rik       Gm19935 9630013A20Rik 2900040C04Rik </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             1             4             1             4 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $cor_coexpr_groups</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $cor_coexpr_groups$spat_clus</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"class")</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "spatCorObject" "list"         </span>
 </code></pre></div>
     </div>
   </div>

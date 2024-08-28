@@ -142,6 +142,13 @@
       </ul></li>
     <li class="divider">
     <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Open-ST</a>
+      <ul class="dropdown-menu" role="menu"><li>
+          <a href="../articles/openst_mouse_hippocampus.html">Open-ST Mouse Hippocampus</a>
+        </li>
+      </ul></li>
+    <li class="divider">
+    <li class="dropdown-submenu">
       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">seqFISH</a>
       <ul class="dropdown-menu" role="menu"><li>
           <a href="../articles/mini_seqfish.html">mini seqFISH</a>
@@ -441,19 +448,176 @@ More details will follow soon.</p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3.2 read Giotto spatial centroid information</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3.3 read Giotto spatial overlap information</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in .os_py_path(must_exist = TRUE):</span> Assertion on 'path' failed: Directory '/home/runner/.local/share/r-miniconda' does not exist.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> checking default envname 'giotto_env'</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> a system default python environment was found</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/usr/bin/python3"</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu">exprCellCellcom</span><span class="op">(</span><span class="va">g</span>,</span></span>
 <span class="r-in"><span>    cluster_column <span class="op">=</span> <span class="st">"leiden_clus"</span>,</span></span>
 <span class="r-in"><span>    feat_set_1 <span class="op">=</span> <span class="st">"Gm19935"</span>,</span></span>
 <span class="r-in"><span>    feat_set_2 <span class="op">=</span> <span class="st">"9630013A20Rik"</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>restarting interrupted promise evaluation</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>restarting interrupted promise evaluation</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'g' not found</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/force.html" class="external-link">force</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'res' not found</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Key: &lt;LR_comb&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                   LR_comb lig_cell_type  lig_expr  ligand rec_cell_type</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                    &lt;char&gt;        &lt;fctr&gt;     &lt;num&gt;  &lt;char&gt;        &lt;fctr&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  1: Gm19935-9630013A20Rik             6 0.4293181 Gm19935             4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  2: Gm19935-9630013A20Rik             6 0.4293181 Gm19935             5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  3: Gm19935-9630013A20Rik             6 0.4293181 Gm19935             1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  4: Gm19935-9630013A20Rik             6 0.4293181 Gm19935             3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  5: Gm19935-9630013A20Rik             2 0.3574502 Gm19935             4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  6: Gm19935-9630013A20Rik             2 0.3574502 Gm19935             5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  7: Gm19935-9630013A20Rik             2 0.3574502 Gm19935             1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  8: Gm19935-9630013A20Rik             2 0.3574502 Gm19935             3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  9: Gm19935-9630013A20Rik             5 0.2922187 Gm19935             4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10: Gm19935-9630013A20Rik             6 0.4293181 Gm19935             2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11: Gm19935-9630013A20Rik             5 0.2922187 Gm19935             5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12: Gm19935-9630013A20Rik             5 0.2922187 Gm19935             1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13: Gm19935-9630013A20Rik             4 0.2495580 Gm19935             4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14: Gm19935-9630013A20Rik             1 0.2326362 Gm19935             4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15: Gm19935-9630013A20Rik             5 0.2922187 Gm19935             3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16: Gm19935-9630013A20Rik             3 0.2197897 Gm19935             4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17: Gm19935-9630013A20Rik             4 0.2495580 Gm19935             5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18: Gm19935-9630013A20Rik             4 0.2495580 Gm19935             1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19: Gm19935-9630013A20Rik             2 0.3574502 Gm19935             2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20: Gm19935-9630013A20Rik             6 0.4293181 Gm19935             6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21: Gm19935-9630013A20Rik             1 0.2326362 Gm19935             5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22: Gm19935-9630013A20Rik             1 0.2326362 Gm19935             1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23: Gm19935-9630013A20Rik             4 0.2495580 Gm19935             3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24: Gm19935-9630013A20Rik             3 0.2197897 Gm19935             5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25: Gm19935-9630013A20Rik             3 0.2197897 Gm19935             1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26: Gm19935-9630013A20Rik             1 0.2326362 Gm19935             3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27: Gm19935-9630013A20Rik             3 0.2197897 Gm19935             3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28: Gm19935-9630013A20Rik             5 0.2922187 Gm19935             2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29: Gm19935-9630013A20Rik             2 0.3574502 Gm19935             6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30: Gm19935-9630013A20Rik             6 0.4293181 Gm19935             7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31: Gm19935-9630013A20Rik             4 0.2495580 Gm19935             2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32: Gm19935-9630013A20Rik             1 0.2326362 Gm19935             2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 33: Gm19935-9630013A20Rik             3 0.2197897 Gm19935             2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 34: Gm19935-9630013A20Rik             5 0.2922187 Gm19935             6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 35: Gm19935-9630013A20Rik             2 0.3574502 Gm19935             7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 36: Gm19935-9630013A20Rik             4 0.2495580 Gm19935             6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 37: Gm19935-9630013A20Rik             1 0.2326362 Gm19935             6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 38: Gm19935-9630013A20Rik             7 0.0000000 Gm19935             4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 39: Gm19935-9630013A20Rik             3 0.2197897 Gm19935             6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 40: Gm19935-9630013A20Rik             7 0.0000000 Gm19935             5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 41: Gm19935-9630013A20Rik             5 0.2922187 Gm19935             7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 42: Gm19935-9630013A20Rik             7 0.0000000 Gm19935             1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 43: Gm19935-9630013A20Rik             7 0.0000000 Gm19935             3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 44: Gm19935-9630013A20Rik             4 0.2495580 Gm19935             7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 45: Gm19935-9630013A20Rik             1 0.2326362 Gm19935             7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 46: Gm19935-9630013A20Rik             3 0.2197897 Gm19935             7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 47: Gm19935-9630013A20Rik             7 0.0000000 Gm19935             2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 48: Gm19935-9630013A20Rik             7 0.0000000 Gm19935             6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 49: Gm19935-9630013A20Rik             7 0.0000000 Gm19935             7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                   LR_comb lig_cell_type  lig_expr  ligand rec_cell_type</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       rec_expr      receptor    LR_expr lig_nr rec_nr rand_expr      av_diff</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          &lt;num&gt;        &lt;char&gt;      &lt;num&gt;  &lt;int&gt;  &lt;int&gt;     &lt;num&gt;        &lt;num&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  1: 0.33023852 9630013A20Rik 0.75955660     10    108 0.5247843  0.234772341</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  2: 0.29575033 9630013A20Rik 0.72506842     10     45 0.5262755  0.198792953</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  3: 0.28874834 9630013A20Rik 0.71806642     10    122 0.5237300  0.194336461</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  4: 0.26833691 9630013A20Rik 0.69765500     10    162 0.5254247  0.172230266</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  5: 0.33023852 9630013A20Rik 0.68768868     84    108 0.5266116  0.161077071</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  6: 0.29575033 9630013A20Rik 0.65320049     84     45 0.5281028  0.125097683</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  7: 0.28874834 9630013A20Rik 0.64619850     84    122 0.5255573  0.120641191</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  8: 0.26833691 9630013A20Rik 0.62578707     84    162 0.5272521  0.098534996</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  9: 0.33023852 9630013A20Rik 0.62245718     45    108 0.5329486  0.089508532</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10: 0.17597264 9630013A20Rik 0.60529072     10     84 0.5246925  0.080598186</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11: 0.29575033 9630013A20Rik 0.58796899     45     45 0.5344398  0.053529145</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12: 0.28874834 9630013A20Rik 0.58096700     45    122 0.5318943  0.049072652</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13: 0.33023852 9630013A20Rik 0.57979653    108    108 0.5281585  0.051637977</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14: 0.33023852 9630013A20Rik 0.56287473    122    108 0.5279882  0.034886510</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15: 0.26833691 9630013A20Rik 0.56055557     45    162 0.5335891  0.026966457</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16: 0.33023852 9630013A20Rik 0.55002826    162    108 0.5269931  0.023035131</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17: 0.29575033 9630013A20Rik 0.54530835    108     45 0.5296498  0.015658590</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18: 0.28874834 9630013A20Rik 0.53830635    108    122 0.5271043  0.011202097</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19: 0.17597264 9630013A20Rik 0.53342280     84     84 0.5265199  0.006902916</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20: 0.09952757 9630013A20Rik 0.52884565     10     10 0.5209773  0.007868373</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21: 0.29575033 9630013A20Rik 0.52838655    122     45 0.5294794 -0.001092878</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22: 0.28874834 9630013A20Rik 0.52138455    122    122 0.5269339 -0.005549370</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23: 0.26833691 9630013A20Rik 0.51789492    108    162 0.5287990 -0.010904098</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24: 0.29575033 9630013A20Rik 0.51554007    162     45 0.5284843 -0.012944257</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25: 0.28874834 9630013A20Rik 0.50853808    162    122 0.5259388 -0.017400749</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26: 0.26833691 9630013A20Rik 0.50097313    122    162 0.5286287 -0.027655565</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27: 0.26833691 9630013A20Rik 0.48812665    162    162 0.5276336 -0.039506944</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28: 0.17597264 9630013A20Rik 0.46819130     45     84 0.5328569 -0.064665622</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29: 0.09952757 9630013A20Rik 0.45697772     84     10 0.5228046 -0.065826897</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30: 0.00000000 9630013A20Rik 0.42931808     10     93 0.5204358 -0.091117732</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31: 0.17597264 9630013A20Rik 0.42553065    108     84 0.5280668 -0.102536177</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32: 0.17597264 9630013A20Rik 0.40860885    122     84 0.5278965 -0.119287645</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 33: 0.17597264 9630013A20Rik 0.39576238    162     84 0.5269014 -0.131139024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 34: 0.09952757 9630013A20Rik 0.39174622     45     10 0.5291417 -0.137395436</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 35: 0.00000000 9630013A20Rik 0.35745016     84     93 0.5222632 -0.164813002</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 36: 0.09952757 9630013A20Rik 0.34908558    108     10 0.5243516 -0.175265991</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 37: 0.09952757 9630013A20Rik 0.33216378    122     10 0.5241812 -0.192017458</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 38: 0.33023852 9630013A20Rik 0.33023852     93    108 0.5372749 -0.207036394</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 39: 0.09952757 9630013A20Rik 0.31931730    162     10 0.5231861 -0.203868837</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 40: 0.29575033 9630013A20Rik 0.29575033     93     45 0.5387661 -0.243015781</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 41: 0.00000000 9630013A20Rik 0.29221866     45     93 0.5286002 -0.236381541</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 42: 0.28874834 9630013A20Rik 0.28874834     93    122 0.5362206 -0.247472274</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 43: 0.26833691 9630013A20Rik 0.26833691     93    162 0.5379154 -0.269578469</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 44: 0.00000000 9630013A20Rik 0.24955801    108     93 0.5238101 -0.274252096</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 45: 0.00000000 9630013A20Rik 0.23263621    122     93 0.5236398 -0.291003563</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 46: 0.00000000 9630013A20Rik 0.21978974    162     93 0.5226447 -0.302854942</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 47: 0.17597264 9630013A20Rik 0.17597264     93     84 0.5371832 -0.361210548</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 48: 0.09952757 9630013A20Rik 0.09952757     93     10 0.5334679 -0.433940362</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 49: 0.00000000 9630013A20Rik 0.00000000     93     93 0.5329265 -0.532926467</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       rec_expr      receptor    LR_expr lig_nr rec_nr rand_expr      av_diff</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           log2fc pvalue LR_cell_comb p.adj            PI</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            &lt;num&gt;  &lt;num&gt;       &lt;char&gt; &lt;num&gt;         &lt;num&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  1:  0.460234536  0.150         6--4 0.150  3.791913e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  2:  0.397716399  0.236         6--5 0.236  2.494032e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  3:  0.391296425  0.192         6--1 0.192  2.804417e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  4:  0.350928616  0.270         6--3 0.270  1.995507e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  5:  0.330054046  0.162         2--4 0.162  2.609028e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  6:  0.262033221  0.304         2--5 0.304  1.355043e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  7:  0.254417400  0.184         2--1 0.184  1.870431e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  8:  0.210501018  0.364         2--3 0.364  9.238861e-02</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  9:  0.190823627  0.468         5--4 0.468  6.292488e-02</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10:  0.175071769  0.606         6--2 0.606  3.808290e-02</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11:  0.116860156  0.696         5--5 0.696  1.839271e-02</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12:  0.107901525  0.644         5--1 0.644  2.062151e-02</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13:  0.113974244  0.676         4--4 0.676  1.938170e-02</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14:  0.077998759  0.698         1--4 0.698  1.217908e-02</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15:  0.060132389  0.810         5--3 0.810  5.503014e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16:  0.052052807  0.814         3--4 0.814  4.652251e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17:  0.035439134  0.888         4--5 0.888  1.828200e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18:  0.025543697  0.904         4--1 0.904  1.119620e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19:  0.015808501  0.926         2--2 0.926  5.278303e-04</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20:  0.018165474  0.942         6--6 0.942  4.713776e-04</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21: -0.002506928  0.960         1--5 0.960 -4.444474e-05</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22: -0.012827017  0.948         1--1 0.948 -2.974799e-04</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23: -0.025237452  0.950         4--3 0.950 -5.621994e-04</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24: -0.030023992  0.944         3--5 0.944 -7.514406e-04</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25: -0.040674131  0.888         3--1 0.888 -2.098258e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26: -0.064907641  0.792         1--3 0.792 -6.573510e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27: -0.093795710  0.784         3--3 0.784 -9.912700e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28: -0.155502627  0.658         5--2 0.658 -2.826635e-02</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29: -0.161160019  0.700         2--6 0.700 -2.496400e-02</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30: -0.229147029  0.894         6--7 0.894 -1.115086e-02</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31: -0.257143164  0.396         4--2 0.396 -1.034499e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32: -0.303970191  0.188         1--2 0.188 -2.206344e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 33: -0.338589761  0.214         3--2 0.214 -2.267150e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 34: -0.355470921  0.380         5--6 0.380 -1.493747e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 35: -0.443910274  0.758         2--7 0.758 -5.341608e-02</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 36: -0.475368241  0.286         4--6 0.286 -2.584263e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 37: -0.530386832  0.166         1--6 0.166 -4.136444e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 38: -0.566779176  0.642         7--4 0.642 -1.090851e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 39: -0.571620783  0.148         3--6 0.148 -4.742956e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 40: -0.690697215  0.532         7--5 0.532 -1.893121e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 41: -0.680484559  0.500         5--7 0.500 -2.048463e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 42: -0.710690600  0.522         7--1 0.522 -2.006489e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 43: -0.792339080  0.442         7--3 0.442 -2.809458e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 44: -0.835575030  0.356         4--7 0.356 -3.747972e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 45: -0.906767711  0.214         1--7 0.214 -6.071592e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 46: -0.961285460  0.216         3--7 0.216 -6.397799e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 47: -1.207182952  0.118         7--2 0.118 -1.120408e+00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 48: -1.666683505  0.082         7--6 0.082 -1.810329e+00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 49: -2.662037898  0.166         7--7 0.166 -2.076102e+00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           log2fc pvalue LR_cell_comb p.adj            PI</span>
 </code></pre></div>
     </div>
   </div>

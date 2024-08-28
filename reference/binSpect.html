@@ -148,6 +148,13 @@ binSpectSingle() and binSpectMulti()."><!-- mathjax --><script src="https://cdnj
       </ul></li>
     <li class="divider">
     <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Open-ST</a>
+      <ul class="dropdown-menu" role="menu"><li>
+          <a href="../articles/openst_mouse_hippocampus.html">Open-ST Mouse Hippocampus</a>
+        </li>
+      </ul></li>
+    <li class="divider">
+    <li class="dropdown-submenu">
       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">seqFISH</a>
       <ul class="dropdown-menu" role="menu"><li>
           <a href="../articles/mini_seqfish.html">mini seqFISH</a>
@@ -676,29 +683,125 @@ expression matrix</p></li>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3.2 read Giotto spatial centroid information</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3.3 read Giotto spatial overlap information</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in .os_py_path(must_exist = TRUE):</span> Assertion on 'path' failed: Directory '/home/runner/.local/share/r-miniconda' does not exist.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> checking default envname 'giotto_env'</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> a system default python environment was found</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/usr/bin/python3"</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">binSpect</span><span class="op">(</span><span class="va">g</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'g' not found</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> This is the single parameter version of binSpect</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. matrix binarization complete</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. spatial enrichment test completed</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 3. (optional) average expression of high</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  expressing cells calculated</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 4. (optional) number of high expressing cells</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  calculated</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         feats       p.value   estimate   adj.p.value        score  av_expr</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        &lt;char&gt;         &lt;num&gt;      &lt;num&gt;         &lt;num&gt;        &lt;num&gt;    &lt;num&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   1:    Shox2 2.079751e-222 24.3725907 3.672044e-220 1.244079e+04 3.980434</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   2:      Ddn 1.845757e-278 19.2760463 1.170210e-275 1.232714e+04 6.032232</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   3:     Hpca 1.055828e-234 12.1576137 3.346976e-232 6.549922e+03 6.930036</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   4:     Zic1 2.316747e-222 12.1139594 3.672044e-220 6.182162e+03 4.279412</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   5:    Cplx2 1.420300e-191 12.5040171 1.286386e-189 5.494801e+03 5.976190</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  ---                                                                      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 630:    Vcam1  9.683169e-01  0.9933599  9.744650e-01 3.198207e-02 3.049218</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 631:      Fn1  1.000000e+00  0.9975663  1.000000e+00 0.000000e+00 3.295082</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 632:     Ncf2  1.000000e+00  0.9690611  1.000000e+00 0.000000e+00 3.053523</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 633: Ndufa4l2  1.000000e+00  0.9933626  1.000000e+00 0.000000e+00 3.195307</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 634:     Vsir  1.000000e+00  0.9988877  1.000000e+00 0.000000e+00 3.032595</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      high_expr</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          &lt;num&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   1:       118</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   2:       428</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   3:       385</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   4:       211</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   5:       459</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  ---          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 630:       190</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 631:       193</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 632:        38</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 633:       115</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 634:       177</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">binSpectSingle</span><span class="op">(</span><span class="va">g</span><span class="op">)</span></span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>restarting interrupted promise evaluation</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>restarting interrupted promise evaluation</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'g' not found</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> This is the single parameter version of binSpect</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 1. matrix binarization complete</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2. spatial enrichment test completed</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 3. (optional) average expression of high</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  expressing cells calculated</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 4. (optional) number of high expressing cells</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  calculated</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         feats       p.value   estimate   adj.p.value        score  av_expr</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        &lt;char&gt;         &lt;num&gt;      &lt;num&gt;         &lt;num&gt;        &lt;num&gt;    &lt;num&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   1:    Shox2 2.079751e-222 24.3725907 3.672044e-220 1.244079e+04 3.980434</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   2:      Ddn 1.845757e-278 19.2760463 1.170210e-275 1.232714e+04 6.032232</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   3:     Hpca 1.055828e-234 12.1576137 3.346976e-232 6.549922e+03 6.930036</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   4:     Zic1 2.316747e-222 12.1139594 3.672044e-220 6.182162e+03 4.279412</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   5:    Cplx2 1.420300e-191 12.5040171 1.286386e-189 5.494801e+03 5.976190</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  ---                                                                      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 630:    Vcam1  9.683169e-01  0.9933599  9.744650e-01 3.198207e-02 3.049218</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 631:      Fn1  1.000000e+00  0.9975663  1.000000e+00 0.000000e+00 3.295082</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 632:     Ncf2  1.000000e+00  0.9690611  1.000000e+00 0.000000e+00 3.053523</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 633: Ndufa4l2  1.000000e+00  0.9933626  1.000000e+00 0.000000e+00 3.195307</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 634:     Vsir  1.000000e+00  0.9988877  1.000000e+00 0.000000e+00 3.032595</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      high_expr</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          &lt;num&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   1:       118</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   2:       428</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   3:       385</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   4:       211</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   5:       459</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  ---          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 630:       190</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 631:       193</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 632:        38</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 633:       115</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 634:       177</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">g_expression</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/getExpression.html" class="external-link">getExpression</a></span><span class="op">(</span><span class="va">g</span>, output <span class="op">=</span> <span class="st">"matrix"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'g' not found</span>
 <span class="r-in"><span><span class="va">g_spat_net</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/getSpatialNetwork.html" class="external-link">getSpatialNetwork</a></span><span class="op">(</span><span class="va">g</span>, output <span class="op">=</span> <span class="st">"networkDT"</span><span class="op">)</span></span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>restarting interrupted promise evaluation</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>restarting interrupted promise evaluation</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>restarting interrupted promise evaluation</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'g' not found</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">binSpectSingleMatrix</span><span class="op">(</span></span></span>
 <span class="r-in"><span>    expression_matrix <span class="op">=</span> <span class="va">g_expression</span>,</span></span>
 <span class="r-in"><span>    spatial_network <span class="op">=</span> <span class="va">g_spat_net</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'g_spat_net' not found</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              feats      p.value  estimate  adj.p.value score   av_expr</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             &lt;char&gt;        &lt;num&gt;     &lt;num&gt;        &lt;num&gt; &lt;num&gt;     &lt;num&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   1: 2900040C04Rik 2.824859e-03       Inf 4.033695e-03   Inf 17.000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   2:         Cbln1 1.788492e-05       Inf 3.048128e-05   Inf 31.333333</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   3:         Cd59a 1.788492e-05       Inf 3.048128e-05   Inf 26.333333</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   4:         Clic6 2.824859e-03       Inf 4.033695e-03   Inf 16.500000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   5:         Ctxn3 1.788492e-05       Inf 3.048128e-05   Inf 30.000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  ---                                                                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 630:          Prph 1.000000e+00 0.0000000 1.000000e+00     0  7.200000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 631:         Rlbp1 1.000000e+00 0.9947543 1.000000e+00     0  2.408163</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 632:        S100a8 1.000000e+00 0.0000000 1.000000e+00     0  8.750000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 633:          Tpm2 1.000000e+00 0.0000000 1.000000e+00     0 20.500000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 634:         Vcam1 1.000000e+00 0.0000000 1.000000e+00     0 17.000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      high_expr</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          &lt;num&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   1:         2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   2:         3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   3:         3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   4:         2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   5:         3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  ---          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 630:         5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 631:        49</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 632:         8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 633:         2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 634:         1</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

@@ -191,6 +191,16 @@
     <li class="divider">
     </li>
 <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Open-ST</a>
+      <ul class="dropdown-menu" role="menu">
+<li>
+          <a href="../articles/openst_mouse_hippocampus.html">Open-ST Mouse Hippocampus</a>
+        </li>
+      </ul>
+</li>
+    <li class="divider">
+    </li>
+<li class="dropdown-submenu">
       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">seqFISH</a>
       <ul class="dropdown-menu" role="menu">
 <li>
@@ -468,10 +478,10 @@
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://drieslab.github.io/GiottoData/" class="external-link">GiottoData</a></span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Ensure the Python environment for Giotto has been installed</span></span>
-<span><span class="va">genv_exists</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/checkGiottoEnvironment.html" class="external-link">checkGiottoEnvironment</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">genv_exists</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/giotto_python.html" class="external-link">checkGiottoEnvironment</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="kw">if</span><span class="op">(</span><span class="op">!</span><span class="va">genv_exists</span><span class="op">)</span><span class="op">{</span></span>
 <span>  <span class="co"># The following command need only be run once to install the Giotto environment</span></span>
-<span>  <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/installGiottoEnvironment.html" class="external-link">installGiottoEnvironment</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/giotto_python.html" class="external-link">installGiottoEnvironment</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="op">}</span></span></code></pre></div>
 <p>The function <a href="../md_rst/installGiottoEnvironment.html">installGiottoEnvironment</a> two particular arguments that are most useful for reinstallation, if necessary:</p>
 <ul>
@@ -535,7 +545,7 @@
 </h2>
 <p>If using <a href="https://rstudio.github.io/reticulate/" class="external-link">reticulate"s</a> default miniconda path to create an environment is undesirable, the Giotto environment may be created within an existing anaconda/miniconda environment by specifying the <code>mini_install_path</code> argument:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/installGiottoEnvironment.html" class="external-link">installGiottoEnvironment</a></span><span class="op">(</span>mini_install_path <span class="op">=</span> <span class="st">"path/to/conda"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/giotto_python.html" class="external-link">installGiottoEnvironment</a></span><span class="op">(</span>mini_install_path <span class="op">=</span> <span class="st">"path/to/conda"</span><span class="op">)</span></span></code></pre></div>
 <p>If not provided, it is chosen by <a href="https://rstudio.github.io/reticulate/reference/conda-tools.html#finding-conda-1" class="external-link">reticulate::install_miniconda()</a>. Please note the required input format: - <strong>Correct format:</strong> mini_install_path = “C:/my/conda/lives/here” OR “C:\my\conda\lives\here” - <strong>INCORRECT formats:</strong> mini_install_path = “C:/my/conda/lives/here/” AND “C:\my\conda\lives\here\”</p>
 <p>Unexpected behavior could arise if <code>force_miniconda</code> is set to <code>TRUE</code> when <code>mini_install_path</code> is specified and encompasses a non-reticulate environment, as this prompts a reticulate miniconda installation.</p>
 <p><strong>Note that the installation of all aforementioned packages is necessary for the full functionality of Giotto</strong>. A .yml file is provided in the repository for convenience of alternative installation methods. If the desired environment is not named “giotto_env”, Giotto will be unable to automatically detect the conda environment, so it must be specified within a workflow. To use a specific, non-default named Conda environment, the path to a system-specific python executable within that environment must be provided to <a href="../md_rst/createGiottoInstructions.html">createGiottoInstructions</a>. This will direct reticulate to activate and utilize that environment within that R session. See <a href="./getting_started_gobject.html">How to Create a Giotto Object</a> for more details.</p>
@@ -561,7 +571,7 @@
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Creating Giotto Instructions without specifying a Python path will make </span></span>
 <span><span class="co"># reticulate activate the default Giotto environment. </span></span>
-<span><span class="va">instructions</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/createGiottoInstructions.html" class="external-link">createGiottoInstructions</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">instructions</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/giotto_instructions.html" class="external-link">createGiottoInstructions</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Extract python path information</span></span>
 <span><span class="va">python_path</span> <span class="op">&lt;-</span> <span class="va">instructions</span><span class="op">$</span><span class="va">python_path</span></span>

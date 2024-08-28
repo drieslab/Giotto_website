@@ -143,6 +143,13 @@ for single cell data"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/
       </ul></li>
     <li class="divider">
     <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Open-ST</a>
+      <ul class="dropdown-menu" role="menu"><li>
+          <a href="../articles/openst_mouse_hippocampus.html">Open-ST Mouse Hippocampus</a>
+        </li>
+      </ul></li>
+    <li class="divider">
+    <li class="dropdown-submenu">
       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">seqFISH</a>
       <ul class="dropdown-menu" role="menu"><li>
           <a href="../articles/mini_seqfish.html">mini seqFISH</a>
@@ -432,7 +439,11 @@ returned.</p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3.2 read Giotto spatial centroid information</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3.3 read Giotto spatial overlap information</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in .os_py_path(must_exist = TRUE):</span> Assertion on 'path' failed: Directory '/home/runner/.local/share/r-miniconda' does not exist.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> checking default envname 'giotto_env'</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> a system default python environment was found</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/usr/bin/python3"</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu">doScrubletDetect</span><span class="op">(</span><span class="va">g</span><span class="op">)</span></span></span>
 <span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> package 'scrublet' is not yet installed</span>
@@ -440,11 +451,34 @@ returned.</p>
 <span class="r-err co"><span class="r-pr">#&gt;</span>  To install:</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/pDataDT.html" class="external-link">pDataDT</a></span><span class="op">(</span><span class="va">g</span><span class="op">)</span> <span class="co"># doublet_scores and doublet cols are added</span></span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>restarting interrupted promise evaluation</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>restarting interrupted promise evaluation</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'g' not found</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                 cell_ID in_tissue nr_feats perc_feats total_expr leiden_clus</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                  &lt;char&gt;     &lt;int&gt;    &lt;int&gt;      &lt;num&gt;      &lt;num&gt;       &lt;num&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   1: AACTCGATGGCGCAGT-1         1      265   41.79811  1057.9308           2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   2: GGCTGGCTAGCTTAAA-1         1      279   44.00631  1064.7493           5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   3: GACGCCTGTTGCAGGG-1         1      219   34.54259   964.9294           2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   4: GAGGGCATCGCGTATC-1         1      294   46.37224  1142.7664           2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   5: TCAACACATTGGGTAA-1         1      261   41.16719  1063.3517           2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  ---                                                                        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 620: GGTAGTGCTCGCACCA-1         1      179   28.23344   768.4749           5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 621: AAGCTCGTGCCAAGTC-1         1      195   30.75710   756.0675           5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 622: TATTCAATTCTAATCC-1         1      247   38.95899   921.8264           5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 623: TTCAAAGTCTCTAGCC-1         1      384   60.56782   916.5929           6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 624: TTGAATATGGACTTTC-1         1      380   59.93691   912.3051           6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      custom_leiden</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              &lt;num&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   1:             4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   2:             3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   3:             3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   4:             3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   5:             3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  ---              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 620:             4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 621:             4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 622:             4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 623:             7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 624:             4</span>
 <span class="r-in"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/dimPlot.html" class="external-link">dimPlot2D</a></span><span class="op">(</span><span class="va">g</span>, cell_color <span class="op">=</span> <span class="st">"doublet_scores"</span>, color_as_factor <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'g' not found</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in plot_point_layer_ggplot(ggobject = pl, instrs = instructions(gobject),     annotated_DT_selected = annotated_DT_selected, annotated_DT_other = annotated_DT_other,     cell_color = cell_color, color_as_factor = color_as_factor,     cell_color_code = cell_color_code, cell_color_gradient = cell_color_gradient,     gradient_midpoint = gradient_midpoint, gradient_style = gradient_style,     gradient_limits = gradient_limits, select_cell_groups = select_cell_groups,     select_cells = select_cells, show_other_cells = show_other_cells,     other_cell_color = other_cell_color, other_point_size = other_point_size,     show_cluster_center = show_cluster_center, show_center_label = show_center_label,     center_point_size = center_point_size, center_point_border_col = center_point_border_col,     center_point_border_stroke = center_point_border_stroke,     label_size = label_size, label_fontface = label_fontface,     edge_alpha = edge_alpha, point_size = point_size, point_alpha = point_alpha,     point_border_col = point_border_col, point_border_stroke = point_border_stroke,     show_legend = show_legend):</span> doublet_scores is not a color or a column name </span>
 </code></pre></div>
     </div>
   </div>

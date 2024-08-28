@@ -146,6 +146,13 @@ specific implementations."><!-- mathjax --><script src="https://cdnjs.cloudflare
       </ul></li>
     <li class="divider">
     <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Open-ST</a>
+      <ul class="dropdown-menu" role="menu"><li>
+          <a href="../articles/openst_mouse_hippocampus.html">Open-ST Mouse Hippocampus</a>
+        </li>
+      </ul></li>
+    <li class="divider">
+    <li class="dropdown-submenu">
       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">seqFISH</a>
       <ul class="dropdown-menu" role="menu"><li>
           <a href="../articles/mini_seqfish.html">mini seqFISH</a>
@@ -597,28 +604,60 @@ Louvain algorithm</p></li>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3.2 read Giotto spatial centroid information</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3.3 read Giotto spatial overlap information</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in .os_py_path(must_exist = TRUE):</span> Assertion on 'path' failed: Directory '/home/runner/.local/share/r-miniconda' does not exist.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> checking default envname 'giotto_env'</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> a system default python environment was found</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/usr/bin/python3"</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Run some subclusterings based on "leiden_clus" annotations that already</span></span></span>
 <span class="r-in"><span><span class="co"># exist in the visium mini object</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># default method is leiden subclustering</span></span></span>
 <span class="r-in"><span><span class="fu">subClusterCells</span><span class="op">(</span><span class="va">g</span>, cluster_column <span class="op">=</span> <span class="st">"leiden_clus"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'g' not found</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> start with cluster: 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 43 highly variable feats have been selected</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>ncp &gt;= minimum dimension of x, will be set to</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 minimum dimension of x - 1</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>You're computing too large a percentage of total singular values, use a standard svd instead.</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>did not converge--results might be invalid!; try increasing work or maxit</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in py_run_file_impl(file, local, convert):</span> ModuleNotFoundError: No module named 'igraph'</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> Run `reticulate::py_last_error()` for details.</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># use louvain instead</span></span></span>
 <span class="r-in"><span><span class="fu">subClusterCells</span><span class="op">(</span><span class="va">g</span>,</span></span>
 <span class="r-in"><span>    cluster_column <span class="op">=</span> <span class="st">"leiden_clus"</span>,</span></span>
 <span class="r-in"><span>    cluster_method <span class="op">=</span> <span class="st">"louvain_community"</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'g' not found</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> start with cluster:  1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 43 highly variable features have been selected</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>ncp &gt;= minimum dimension of x, will be set to</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 minimum dimension of x - 1</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>You're computing too large a percentage of total singular values, use a standard svd instead.</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>did not converge--results might be invalid!; try increasing work or maxit</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in py_run_file_impl(file, local, convert):</span> ModuleNotFoundError: No module named 'community'</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> Run `reticulate::py_last_error()` for details.</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># directly call the more specific functions</span></span></span>
 <span class="r-in"><span><span class="fu">doLeidenSubCluster</span><span class="op">(</span><span class="va">g</span>, cluster_column <span class="op">=</span> <span class="st">"leiden_clus"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'g' not found</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> start with cluster: 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 43 highly variable feats have been selected</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>ncp &gt;= minimum dimension of x, will be set to</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 minimum dimension of x - 1</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>You're computing too large a percentage of total singular values, use a standard svd instead.</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>did not converge--results might be invalid!; try increasing work or maxit</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in py_run_file_impl(file, local, convert):</span> ModuleNotFoundError: No module named 'igraph'</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> Run `reticulate::py_last_error()` for details.</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">doLouvainSubCluster</span><span class="op">(</span><span class="va">g</span>, cluster_column <span class="op">=</span> <span class="st">"leiden_clus"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'g' not found</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> start with cluster:  1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 43 highly variable features have been selected</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>ncp &gt;= minimum dimension of x, will be set to</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>                 minimum dimension of x - 1</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>You're computing too large a percentage of total singular values, use a standard svd instead.</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>did not converge--results might be invalid!; try increasing work or maxit</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in py_run_file_impl(file, local, convert):</span> ModuleNotFoundError: No module named 'community'</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> Run `reticulate::py_last_error()` for details.</span>
 </code></pre></div>
     </div>
   </div>

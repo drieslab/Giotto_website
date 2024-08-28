@@ -142,6 +142,13 @@
       </ul></li>
     <li class="divider">
     <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Open-ST</a>
+      <ul class="dropdown-menu" role="menu"><li>
+          <a href="../articles/openst_mouse_hippocampus.html">Open-ST Mouse Hippocampus</a>
+        </li>
+      </ul></li>
+    <li class="divider">
+    <li class="dropdown-submenu">
       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">seqFISH</a>
       <ul class="dropdown-menu" role="menu"><li>
           <a href="../articles/mini_seqfish.html">mini seqFISH</a>
@@ -402,7 +409,11 @@
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3.2 read Giotto spatial centroid information</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3.3 read Giotto spatial overlap information</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in .os_py_path(must_exist = TRUE):</span> Assertion on 'path' failed: Directory '/home/runner/.local/share/r-miniconda' does not exist.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> checking default envname 'giotto_env'</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> a system default python environment was found</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/usr/bin/python3"</span>
 <span class="r-in"><span><span class="va">my_polygon_coords</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span></span></span>
 <span class="r-in"><span>    poly_ID <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="st">"polygon1"</span>, <span class="fl">3</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>    sdimx <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">5477</span>, <span class="fl">5959</span>, <span class="fl">4720</span><span class="op">)</span>, sdimy <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">4125</span>, <span class="op">-</span><span class="fl">2808</span>, <span class="op">-</span><span class="fl">5202</span><span class="op">)</span></span></span>
@@ -418,14 +429,22 @@
 <span class="r-in"><span>    gobject <span class="op">=</span> <span class="va">g</span>,</span></span>
 <span class="r-in"><span>    gpolygons <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="va">my_giotto_polygons</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'g' not found</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Add polygon cells</span></span></span>
 <span class="r-in"><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu"><a href="addPolygonCells.html">addPolygonCells</a></span><span class="op">(</span><span class="va">g</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'g' not found</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> These column names were already used: in_tissue nr_feats perc_feats total_expr</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  leiden_clus custom_leiden</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  and will be overwritten</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">comparePolygonExpression</span><span class="op">(</span><span class="va">g</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'g' not found</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> using 'Scran' to detect marker feats. If used in published</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>       research, please cite: Lun ATL, McCarthy DJ, Marioni JC (2016).</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>       'A step-by-step workflow for low-level analysis of single-cell RNA-seq</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>       data with Bioconductor.'</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>       F1000Res., 5, 2122. doi: 10.12688/f1000research.9501.2. </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> start with cluster  no_polygonstart with cluster  polygon1</span>
+<span class="r-plt img"><img src="comparePolygonExpression-1.png" alt="" width="700" height="433"></span>
 </code></pre></div>
     </div>
   </div>

@@ -143,6 +143,13 @@ expression of interacting cells"><!-- mathjax --><script src="https://cdnjs.clou
       </ul></li>
     <li class="divider">
     <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Open-ST</a>
+      <ul class="dropdown-menu" role="menu"><li>
+          <a href="../articles/openst_mouse_hippocampus.html">Open-ST Mouse Hippocampus</a>
+        </li>
+      </ul></li>
+    <li class="divider">
+    <li class="dropdown-submenu">
       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">seqFISH</a>
       <ul class="dropdown-menu" role="menu"><li>
           <a href="../articles/mini_seqfish.html">mini seqFISH</a>
@@ -529,7 +536,11 @@ LR_expr and rand_expr over all random spatial permutations</p></li>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3.2 read Giotto spatial centroid information</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3.3 read Giotto spatial overlap information</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in .os_py_path(must_exist = TRUE):</span> Assertion on 'path' failed: Directory '/home/runner/.local/share/r-miniconda' does not exist.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> checking default envname 'giotto_env'</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> a system default python environment was found</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/usr/bin/python3"</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">res1</span> <span class="op">&lt;-</span> <span class="fu">spatCellCellcom</span><span class="op">(</span></span></span>
 <span class="r-in"><span>    gobject <span class="op">=</span> <span class="va">g</span>,</span></span>
@@ -539,9 +550,7 @@ LR_expr and rand_expr over all random spatial permutations</p></li>
 <span class="r-in"><span>    verbose <span class="op">=</span> <span class="st">"a lot"</span>,</span></span>
 <span class="r-in"><span>    random_iter <span class="op">=</span> <span class="fl">10</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>restarting interrupted promise evaluation</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>restarting interrupted promise evaluation</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'g' not found</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in loadNamespace(x):</span> there is no package called ‘future.apply’</span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/force.html" class="external-link">force</a></span><span class="op">(</span><span class="va">res1</span><span class="op">)</span></span></span>
 <span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'res1' not found</span>
 <span class="r-in"><span></span></span>
@@ -552,12 +561,22 @@ LR_expr and rand_expr over all random spatial permutations</p></li>
 <span class="r-in"><span>    feat_set_1 <span class="op">=</span> <span class="st">"Gm19935"</span>,</span></span>
 <span class="r-in"><span>    feat_set_2 <span class="op">=</span> <span class="st">"9630013A20Rik"</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>restarting interrupted promise evaluation</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>restarting interrupted promise evaluation</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'g' not found</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> simulations: 1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89  90  91  92  93  94  95  96  97  98  99  100 </span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/force.html" class="external-link">force</a></span><span class="op">(</span><span class="va">res2</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'res2' not found</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Key: &lt;LR_comb&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                  LR_comb lig_cell_type lig_expr  ligand rec_cell_type rec_expr</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                   &lt;char&gt;        &lt;fctr&gt;    &lt;num&gt;  &lt;char&gt;        &lt;fctr&gt;    &lt;num&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1: Gm19935-9630013A20Rik             1        0 Gm19935             2        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2: Gm19935-9630013A20Rik             2        0 Gm19935             1        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         receptor LR_expr lig_nr rec_nr rand_expr    av_diff    log2fc pvalue</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           &lt;char&gt;   &lt;num&gt;  &lt;int&gt;  &lt;int&gt;     &lt;num&gt;      &lt;num&gt;     &lt;num&gt;  &lt;num&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1: 9630013A20Rik       0      3      1 0.4122886 -0.4122886 -2.356957   0.80</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2: 9630013A20Rik       0      1      3 0.5421459 -0.5421459 -2.682901   0.77</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    LR_cell_comb p.adj         PI</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          &lt;char&gt; &lt;num&gt;      &lt;num&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1:         1--2  0.80 -0.2284127</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2:         2--1  0.77 -0.3045342</span>
 </code></pre></div>
     </div>
   </div>

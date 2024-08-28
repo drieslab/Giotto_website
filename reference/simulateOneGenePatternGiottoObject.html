@@ -142,6 +142,13 @@
       </ul></li>
     <li class="divider">
     <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Open-ST</a>
+      <ul class="dropdown-menu" role="menu"><li>
+          <a href="../articles/openst_mouse_hippocampus.html">Open-ST Mouse Hippocampus</a>
+        </li>
+      </ul></li>
+    <li class="divider">
+    <li class="dropdown-submenu">
       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">seqFISH</a>
       <ul class="dropdown-menu" role="menu"><li>
           <a href="../articles/mini_seqfish.html">mini seqFISH</a>
@@ -406,7 +413,11 @@ spatial pattern</p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3.2 read Giotto spatial centroid information</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3.3 read Giotto spatial overlap information</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in .os_py_path(must_exist = TRUE):</span> Assertion on 'path' failed: Directory '/home/runner/.local/share/r-miniconda' does not exist.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> checking default envname 'giotto_env'</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> a system default python environment was found</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/usr/bin/python3"</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">simulateOneGenePatternGiottoObject</span><span class="op">(</span></span></span>
 <span class="r-in"><span>    gobject <span class="op">=</span> <span class="va">g</span>,</span></span>
@@ -416,10 +427,38 @@ spatial pattern</p>
 <span class="r-in"><span>    <span class="op">)</span>,</span></span>
 <span class="r-in"><span>    gene_name <span class="op">=</span> <span class="st">"Gna12"</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>restarting interrupted promise evaluation</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>restarting interrupted promise evaluation</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>restarting interrupted promise evaluation</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'g' not found</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> &gt; raw already exists and will be replaced with new values</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Setting expression [cell][rna] raw</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> first scale feats and then cells</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> &gt; normalized already exists and will be replaced with new values</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> &gt; scaled already exists and will be replaced with new values</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> feat statistics has already been applied once; overwriting</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> cells statistics has already been applied once; overwriting</span>
+<span class="r-plt img"><img src="simulateOneGenePatternGiottoObject-1.png" alt="" width="700" height="433"></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> An object of class giotto </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &gt;Active spat_unit:  cell </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &gt;Active feat_type:  rna </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [SUBCELLULAR INFO]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> polygons      : cell </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [AGGREGATE INFO]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> expression -----------------------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell][rna] raw normalized scaled</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> spatial locations ----------------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell] raw</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> spatial networks -----------------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell] Delaunay_network spatial_network</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> spatial enrichments --------------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell][rna] cluster_metagene DWLS</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> dim reduction --------------------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell][rna] pca custom_pca umap custom_umap tsne</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> nearest neighbor networks --------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [cell][rna] sNN.pca custom_NN</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> attached images ------------------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> images      : alignment image </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Use objHistory() to see steps and params used</span>
 </code></pre></div>
     </div>
   </div>

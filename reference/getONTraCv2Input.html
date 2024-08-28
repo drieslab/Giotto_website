@@ -142,6 +142,13 @@
       </ul></li>
     <li class="divider">
     <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Open-ST</a>
+      <ul class="dropdown-menu" role="menu"><li>
+          <a href="../articles/openst_mouse_hippocampus.html">Open-ST Mouse Hippocampus</a>
+        </li>
+      </ul></li>
+    <li class="divider">
+    <li class="dropdown-submenu">
       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">seqFISH</a>
       <ul class="dropdown-menu" role="menu"><li>
           <a href="../articles/mini_seqfish.html">mini seqFISH</a>
@@ -393,15 +400,32 @@
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3.2 read Giotto spatial centroid information</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 3.3 read Giotto spatial overlap information</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 4. read Giotto image information</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in .os_py_path(must_exist = TRUE):</span> Assertion on 'path' failed: Directory '/home/runner/.local/share/r-miniconda' does not exist.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> checking default envname 'giotto_env'</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> a system default python environment was found</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Using python path:</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  "/usr/bin/python3"</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">getONTraCv2Input</span><span class="op">(</span></span></span>
 <span class="r-in"><span>  gobject <span class="op">=</span> <span class="va">g</span>,</span></span>
 <span class="r-in"><span>  cell_type <span class="op">=</span> <span class="st">"custom_leiden"</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>restarting interrupted promise evaluation</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>restarting interrupted promise evaluation</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'g' not found</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ONTraC input file was saved as</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>  /home/runner/work/Giotto_website/Giotto_website/docs/reference/ONTraC_meta_data_input.csv</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Key: &lt;Cell_ID&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                 Cell_ID Sample     x     y Cell_Type</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                  &lt;char&gt; &lt;char&gt; &lt;int&gt; &lt;int&gt;     &lt;num&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   1: AAAGGGATGTAGCAAG-1 ONTraC  5477 -4125         1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   2: AAATGGCATGTCTTGT-1 ONTraC  5959 -2808         3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   3: AAATGGTCAATGTGCC-1 ONTraC  4720 -5202         2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   4: AAATTAACGGGTAGCT-1 ONTraC  5202 -5322         2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   5: AACAACTGGTAGTTGC-1 ONTraC  4101 -4604         2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  ---                                                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 620: TTGTAATCCGTACTCG-1 ONTraC  4996 -5442         2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 621: TTGTATCACACAGAAT-1 ONTraC  6303 -2688         3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 622: TTGTCGTTCAGTTACC-1 ONTraC  5202 -3885         1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 623: TTGTGGCCCTGACAGT-1 ONTraC  5340 -3406         1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 624: TTGTTCAGTGTGCTAC-1 ONTraC  5615 -4125         1</span>
 </code></pre></div>
     </div>
   </div>
