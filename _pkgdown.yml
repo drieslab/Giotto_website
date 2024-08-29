@@ -56,6 +56,8 @@ navbar:
         href: articles/ecosystem.html
       - text: Giotto Class Structure
         href: articles/structure.html
+      - text: General Giotto Workflow
+        href: articles/general_workflow.html
       - text: FAQs
         href: articles/faqs.html
       - text: How to report a bug
@@ -267,6 +269,7 @@ articles:
   - structure
   - faqs
   - github_issues
+  - general_workflow
 - title: Giotto Object Creation
   navbar: ~
   contents:
