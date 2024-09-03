@@ -17,6 +17,7 @@ articles:
   interactive_selection: interactive_selection.html
   interoperability_anndata: interoperability_anndata.html
   interoperability_seurat: interoperability_seurat.html
+  interoperability_spatialdata: interoperability_spatialdata.html
   interoperability_spatialexperiment: interoperability_spatialexperiment.html
   merfish_mouse_hypothalamic: merfish_mouse_hypothalamic.html
   mini_seqfish: mini_seqfish.html
@@ -27,6 +28,7 @@ articles:
   openst_mouse_hippocampus: openst_mouse_hippocampus.html
   osmfish_mouse_ss_cortex: osmfish_mouse_ss_cortex.html
   presentations: presentations.html
+  process_giotto: process_giotto.html
   resolve_biosciences_human_lung: resolve_biosciences_human_lung.html
   resolve_biosciences: resolve_biosciences.html
   saving_object: saving_object.html
@@ -52,7 +54,7 @@ articles:
   visualizations: visualizations.html
   vizgen_mouse_brain: vizgen_mouse_brain.html
   xenium_breast_cancer: xenium_breast_cancer.html
-last_built: 2024-08-29T22:40Z
+last_built: 2024-09-03T20:53Z
 urls:
   reference: https://drieslab.github.io/Giotto_website/reference
   article: https://drieslab.github.io/Giotto_website/articles
