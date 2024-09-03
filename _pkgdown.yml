@@ -78,6 +78,10 @@ navbar:
         - text: Giotto Configuration
           href: articles/configuration.html
       - text: -------
+      - text: Process Giotto
+        menu:
+          - text: Process Giotto convenience function
+            href: articles/process_giotto.html
       - text: Spatial manipulation
         menu:
           - text: Spatial transformations
@@ -320,6 +324,10 @@ articles:
   navbar: ~
   contents:
   - dbMatrix
+- title: Process Giotto
+  navbar: ~
+  contents:
+  - process_giotto
 - title: Seq-Scope
   navbar: ~
   contents:
