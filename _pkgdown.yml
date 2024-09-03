@@ -117,6 +117,8 @@ navbar:
             href: articles/interoperability_seurat.html
           - text: Integrate Bento Analysis
             href: articles/bento.html
+          - text: SpatialData
+            href: articles/interoperability_spatialdata.html
       - text: -------
       - text: Try Giotto in the Cloud
         menu:
@@ -313,6 +315,7 @@ articles:
   - interoperability_spatialexperiment
   - interoperability_seurat
   - bento
+  - interoperability_spatialdata
 - title: Scalability
   navbar: ~
   contents:
