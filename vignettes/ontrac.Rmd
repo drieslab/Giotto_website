@@ -1,5 +1,5 @@
 ---
-title: "Integrate Bento Analysis"
+title: "Integrate ONTraC Analysis"
 output: 
   html_document:
     number_sections: true
@@ -7,7 +7,7 @@ output:
 pkgdown:
   as_is: true
 vignette: >
-  %\VignetteIndexEntry{Integrate Bento Analysis}
+  %\VignetteIndexEntry{Integrate ONTraC Analysis}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
