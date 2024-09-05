@@ -44,3 +44,10 @@ With Giotto version 4.0, we updated the website at http://giottosuite.com, you c
 - [Dries, R., Zhu, Q. et al. Giotto: a toolbox for integrative analysis and visualization of spatial expression data. Genome Biology (2021).](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02286-2)
 - [Dries, R., Chen, J. et al. Advances in spatial transcriptomic data analysis. Genome Research (2021).](https://genome.cshlp.org/content/31/10/1706.long)
 - [Del Rossi, N., Chen, J. et al. Analyzing Spatial Transcriptomics Data Using Giotto. Current Protocols (2022).](https://currentprotocols.onlinelibrary.wiley.com/doi/abs/10.1002/cpz1.405)
+
+## Acknowledgements
+
+This software project was supported in part by the [Essential Open Source Software for Science (EOSS) program](https://czi.co/EOSS) at [Chan Zuckerberg Initiative](https://chanzuckerberg.com/).
+
+[![CZI's Essential Open Source Software for Science](https://chanzuckerberg.github.io/open-science/badges/CZI-EOSS.svg)](https://czi.co/EOSS)
+
