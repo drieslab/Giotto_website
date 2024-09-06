@@ -52,12 +52,12 @@ Please following the [Giotto Installation Tutorial](installation.html).
 - Update to develop version
 
 ```{r, eval=FALSE}
-devtools::install_github("drieslab/GiottoClass@dev")
+devtools::install_github("wwang-chcn/Giotto@suite_dev")
+# Note: do not update GiottoClass during this installation
 ```
 
 ```{r, eval=FALSE}
-devtools::install_github("wwang-chcn/Giotto@suite_dev")
-# Note: do not update GiottoClass during this installation
+devtools::install_github("drieslab/GiottoClass@dev")
 ```
 
 ## ONTraC Installation
@@ -289,7 +289,7 @@ runONTraCV1(ONTraC_input = ONTraC_input,
        preprocessing_dir = "./results/ontrac/preprocessing_dir",
        GNN_dir = "./results/ontrac/GNN_dir",
        NTScore_dir = "./results/ontrac/NTScore_dir",
-       --n-neighbors = 50L,
+       n_neighbors = 50L,
        n_local = 20L,
        device = "cpu",
        seed = 42L,
@@ -311,7 +311,7 @@ runONTraCV1(ONTraC_input = ONTraC_input,
        preprocessing_dir = "./results/ontrac/preprocessing_dir",
        GNN_dir = "./results/ontrac/GNN_dir",
        NTScore_dir = "./results/ontrac/NTScore_dir",
-       --n-neighbors = 50L,
+       n_neighbors = 50L,
        n_local = 20L,
        device = "cpu",
        seed = 42L,
