@@ -82,6 +82,7 @@ navbar:
         menu:
           - text: Process Giotto convenience function
             href: articles/process_giotto.html
+      - text: -------
       - text: Spatial manipulation
         menu:
           - text: Spatial transformations
