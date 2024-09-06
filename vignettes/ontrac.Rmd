@@ -90,7 +90,7 @@ You need to download the processed expression, metadata, and cell segmentation i
 Note 1: there are 61 slices here, we run on two of them to save the time.
 Note 2: due to the instability of network, download processing may be interrupt.
 
-We recommend to download these data in advance or download the processing giotto obj from [Zenodo](https://zenodo.org/records/13255549).
+We recommend to download these data in advance or download the processing giotto obj from [Zenodo](https://zenodo.org/records/13713948).
 
 ```{r, eval = FALSE}
 download.file(url = "https://download.brainimagelibrary.org/cf/1c/cf1c1a431ef8d021/processed_data/counts.h5ad",
@@ -112,7 +112,7 @@ download.file(url = "https://download.brainimagelibrary.org/cf/1c/cf1c1a431ef8d0
 
 There are two options for creating the giotto object.
 Option 1 is create the giotto object step by step.
-Option 2 is load the pre-constructed giotto object from [Zenodo](https://zenodo.org/records/13255549).
+Option 2 is load the pre-constructed giotto object from [Zenodo](https://zenodo.org/records/13713948).
 
 ### Option 1
 
@@ -221,7 +221,7 @@ saveGiotto(gobject = giotto_obj, foldername = "gobject", dir=results_folder)
 
 ### Option 2
 
-If you facing network issue when downloading the raw dataset. Please download the processing giotto obj from [Zenodo](https://zenodo.org/records/13255549), unzip and move it to `results` folder.
+If you facing network issue when downloading the raw dataset. Please download the processing giotto obj from [Zenodo](https://zenodo.org/records/13713948), unzip and move it to `results` folder.
 
 ```{r, eval=FALSE}
 library(Giotto)
