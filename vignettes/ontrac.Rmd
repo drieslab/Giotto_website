@@ -12,7 +12,7 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-# Introduction to ONTraC
+# Overview of ONTraC
 
 ONTraC (Ordered Niche Trajectory Construction) is a niche-centered, machine learning
 method for constructing spatially continuous trajectories. ONTraC differs from existing tools in that it treats a niche, rather than an individual cell, as the basic unit for spatial trajectory analysis. In this context, we define niche as a multicellular, spatially localized region where different cell types may coexist and interact with each other.  ONTraC seamlessly integrates cell-type composition and spatial information by using the graph neural network modeling framework. Its output, which is called the niche trajectory, can be viewed as a one dimensional representation of the tissue microenvironment continuum. By disentangling cell-level and niche-level properties, niche trajectory analysis provides a coherent framework to study coordinated responses from all the cells in association with continuous tissue microenvironment variations.
@@ -25,7 +25,7 @@ knitr::include_graphics("images/ontrac/0-ONTraCWorkFlow.png")
 
 [ONTraC GitHub repository](https://github.com/gyuanlab/ONTraC)
 
-# Dataset explanation
+# Dataset Description
 
 In this tutorial, we ues a MERFISH mouse motor cortex dataset comprising 61 tissue sections and containing approximately 280,000 cells characterised by a 258-gene panel. The study identified 3 classes of cells, glutamatergic, GABAergic and non-neuronal cell groups, and further clustered into 23 annotated plus 1 other subclass-level cell types.
 
@@ -39,20 +39,24 @@ MERFISH is a massively multiplexed single-molecule imaging technology for spatia
 knitr::include_graphics("images/ontrac/0-MERFISH.png")
 ```
 
-# Settings
+# Pre-settings
 
 ## Giotto Installation
 
-Install Giotto by following the [Giotto Installation Tutorial](installation.html).
+We need `R>=4.4` for this tutorial.
 
-~temporal~ Update GiottoClass and Giotto with dev version.
+- Install Giotto
+
+Please following the [Giotto Installation Tutorial](installation.html).
+
+- Update to develop version
 
 ```{r, eval=FALSE}
 devtools::install_github("drieslab/GiottoClass@dev")
 ```
 
 ```{r, eval=FALSE}
-devtools::install_github("wwang-chcn/Giotto@suite")
+devtools::install_github("wwang-chcn/Giotto@suite_dev")
 # Note: do not update GiottoClass during this installation
 ```
 
@@ -61,10 +65,11 @@ devtools::install_github("wwang-chcn/Giotto@suite")
 Since ONTraC is a GNN algorithm that relies on [pytorch-geometric](https://pytorch-geometric.readthedocs.io/en/latest/), we create a new environment here in order not to interfere with other software using `installONTraCEnvironment()`.
 
 ```{r, eval=FALSE}
+library(Giotto)
 installONTraCEnvironment(envname = "giotto_ontrac_env")
 ```
 
-## Directories
+## Configuring Data and Results Paths
 
 ```{r, eval=FALSE}
 options(timeout=Inf) # In case of network interrupt
@@ -76,7 +81,7 @@ results_folder <- file.path("results","ontrac")
 dir.create(results_folder, recursive=T)
 ```
 
-# Dataset download
+# Downloading Dataset
 
 The MERFISH mouse motor cortex data to run this tutorial can be found [here](https://doi.brainimagelibrary.org/doi/10.35077/g.21)
 
@@ -101,18 +106,21 @@ download.file(url = "https://download.brainimagelibrary.org/cf/1c/cf1c1a431ef8d0
               destfile = file.path(data_path,"segmented_cells_mouse2sample6.csv"))
 ```
 
-# Analysis
+# Data Analysis
 
-## Create the Giotto object
+## Creating the Giotto Object
 
-- Option 1
+There are two options for creating the giotto object.
+Option 1 is create the giotto object step by step.
+Option 2 is load the pre-constructed giotto object from [Zenodo](https://zenodo.org/records/13255549).
+
+### Option 1
 
 ```{r, eval=FALSE}
 library(Giotto)
-library(reticulate)
 
 ## Set instructions
-python_path <- NULL
+python_path <- "giotto_ontrac_env"
 
 instructions <- createGiottoInstructions(
   save_dir = results_folder,
@@ -122,27 +130,30 @@ instructions <- createGiottoInstructions(
   python_path = python_path
 )
 
-## create Giotto object from expression counts. This file contains 61 slices here.
+## Install the anndata and scanpy package since the counts matrix was stored in h5ad format. We need it to convert an anndata object to giotto object.
+GiottoUtils::package_check("scanpy", repository= "pip:scanpy")
+
+## Create Giotto object from expression counts. This file contains 61 slices here.
 giotto_all_slices_obj <- anndataToGiotto(file.path(data_path, "counts.h5ad"))
 
-## load meta_data
+## Load meta_data
 meta_df <- read.csv(file.path(data_path, "cell_labels.csv"),
                     colClasses = "character") # as the cell IDs are 30 digit numbers, set the type as character to avoid the limitation of R in handling larger integers
 colnames(meta_df)[[1]] <- "cell_ID"
 
-### we use two slices here to speed up
+### We use two slices here to speed up
 slice1_cells <- meta_df[meta_df$slice_id == "mouse2_slice229",]$cell_ID
 slice2_cells <- meta_df[meta_df$slice_id == "mouse2_slice300",]$cell_ID
 selected_cells <- c(slice1_cells, slice2_cells)
 
-## subset giotto obj by cell ID
+## Subset giotto obj by cell ID
 giotto_slice1_obj <- subsetGiotto(gobject = giotto_all_slices_obj,
                                   cell_ids = slice1_cells)
 
 giotto_slice2_obj <- subsetGiotto(gobject = giotto_all_slices_obj,
                                   cell_ids = slice2_cells)
 
-## add cell metadata
+## Add cell metadata
 giotto_slice1_obj <- addCellMetadata(gobject = giotto_slice1_obj,
                                      new_metadata = meta_df,
                                      by_column = TRUE)
@@ -151,7 +162,7 @@ giotto_slice2_obj <- addCellMetadata(gobject = giotto_slice2_obj,
                                      new_metadata = meta_df,
                                      by_column = TRUE)
 
-## cell segmentation. Calculate center (median of vertices) of each cell.
+## Cell segmentation. Calculate center (median of vertices) of each cell.
 segments_1_df <- read.csv(file.path(data_path, "segmented_cells_mouse2sample1.csv"), 
                           row.names=1, colClasses = "character") # as the cell IDs are 30 digit numbers, set the type as character to avoid the limitation of R in handling larger integers
 
@@ -208,12 +219,15 @@ giotto_obj <- joinGiottoObjects(gobject_list = list(giotto_slice1_obj,
 saveGiotto(gobject = giotto_obj, foldername = "gobject", dir=results_folder)
 ```
 
-- Option 2
+### Option 2
 
 If you facing network issue when downloading the raw dataset. Please download the processing giotto obj from [Zenodo](https://zenodo.org/records/13255549), unzip and move it to `results` folder.
 
 ```{r, eval=FALSE}
-giotto_obj <- loadGiotto(path_to_folder = file.path(results_folder, "gobject"))
+library(Giotto)
+
+python_path <- "giotto_ontrac_env"
+giotto_obj <- loadGiotto(path_to_folder = file.path(results_folder, "gobject"), python_path=python_path)
 ```
 
 ## Spatial distribution of cell type
@@ -262,7 +276,12 @@ head(ONTraC_input)
 
 ## Perform spatial niche trajectory analysis using ONTraC
 
-- Option 1: run ONTraC through reticulate
+We have three options for running ONTraC.
+Option 1 is running ONTraC through reticulate.
+Option 2 is running ONTraC through a shell which is not usable in Windows.
+Option 3 is a example for users running ONTraC in a seperate machine, which is usually a more powerful computer with GPU.
+
+### Option 1: run ONTraC through reticulate
 
 ```{r, eval = FALSE}
 runONTraCV1(ONTraC_input = ONTraC_input,
@@ -272,9 +291,9 @@ runONTraCV1(ONTraC_input = ONTraC_input,
        NTScore_dir = "./results/ontrac/NTScore_dir")
 ```
 
-- Option 2: run ONTraC through shell
+If you encountered R session aborted, please try option 2.
 
-Please use this one in the event of R session aborted caused by segmentation fault.
+### Option 2: run ONTraC through shell
 
 ```{r, eval = FALSE}
 runONTraCV1(ONTraC_input = ONTraC_input,
@@ -285,11 +304,11 @@ runONTraCV1(ONTraC_input = ONTraC_input,
        shell = TRUE)
 ```
 
-- Option 3: run ONTraC in a separate machine through shell
+### Option 3: run ONTraC in a separate machine through shell
 
 You can run ONTraC on an HPC with an NVIDIA GPU node, which would save a lot of time when applying it on larger datasets.
 
-Install ONTraC.
+- Install ONTraC.
 
 ```{bash, eval = FALSE}
 source ~/.bash_profile
@@ -301,7 +320,7 @@ conda activate ONTraC
 pip install ONTraC
 ```
 
-Copy the input file to that machine and running ONTraC.
+- Copy the input file to that machine and running ONTraC.
 
 ```{bash, eval = FALSE}
 source ~/.bash_profile
@@ -311,7 +330,9 @@ conda activate ONTraC
 ONTraC -d results/ontrac/ONTraC_dataset_input.csv --preprocessing-dir results/ontrac/preprocessing_dir --GNN-dir results/ontrac/GNN_dir --NTScore-dir results/ontrac/NTScore_dir --device cuda     --epochs 1000 -s 42 --patience 100 --min-delta 0.001 --min-epochs 50 --lr 0.03     --hidden-feats 4 -k 6 --modularity-loss-weight 0.3 --purity-loss-weight 300 --regularization-loss-weight 0.3 --beta 0.03 2>&1 | tee results/ontrac/merfish_subset.log
 ```
 
-# Visualiztion
+- Copy the output directories (`results/ontrac/preprocessing_dir`, `results/ontrac/GNN_dir`, and `results/ontrac/NTScore_dir`) back to the machine running Giotto.
+
+# Visualization
 
 ## Load ONTraC results
 
@@ -320,7 +341,9 @@ giotto_obj <- loadOntraCResults(gobject = giotto_obj,
                                 ontrac_results_dir = results_folder)
 ```
 
-The NTScore and binarized niche cluster info were stored in cell metadata
+This function will look for the `preprocessing_dir`, `GNN_dir`, and `NTScore_dir` under the `results_folder` automatically.
+
+The NTScore and binarized niche cluster info were stored in cell metadata as below:
 
 ```{r, eval = FALSE}
 head(pDataDT(giotto_obj, spat_unit = "cell", feat_type = "rna"))
@@ -338,7 +361,7 @@ head(pDataDT(giotto_obj, spat_unit = "cell", feat_type = "rna"))
 ```
 
 The probability matrix of each cell assigned to each niche cluster and
-connectivity between niche cluster were stored here.
+connectivity between niche cluster were stored here:
 
 ```{r, eval=FALSE}
 GiottoClass::list_expression(giotto_obj)
