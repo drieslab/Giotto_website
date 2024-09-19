@@ -109,6 +109,9 @@
         <li>
           <a href="../articles/visium_cytassist_human_glioblastoma.html">CytAssist Multi-omics Human Glioblastoma</a>
         </li>
+        <li>
+          <a href="../articles/VisiumHD_Human_Colorectal_Cancer.html">VisiumHD Human Colorectal Cancer</a>
+        </li>
       </ul>
 </li>
     <li class="divider">
@@ -529,7 +532,7 @@
 </ul>
 <p>*Note that <strong>minmax</strong> refers to the relevant values of the associated spatial locations rather than those of the image. These values are given either by providing spatial locations directly when calling <strong>createGiottoImage()</strong> or in later steps that involve a <strong>giottoObjects</strong> with associated spatial locations.</p>
 <p>For maximum flexibility, Giotto plots images and spatial data on different layers that are largely independent of each other. The spatial data is plotted first, essentially serving as an anchor <strong>(xmin, xmax, ymin, ymax)</strong>. The image, no matter its actual dimensions or resolution, is then <strong>stretched</strong> to fit on the plot according to accompanying metadata <strong>(xmin_adj, xmax_adj, ymin_adj, ymax_adj)</strong> which can be edited by the user.</p>
-<p><img src="images/image_alignment/images_adjust.png"></p>
+<p><img src="images%2Fimage_alignment%2Fimages_adjust.png"></p>
 <p>Calling the <strong>giottoImage</strong> by itself will display its class and name, followed the values that occupy its minmax, boundary adjustment, scale_factor, and resolution slots. The actual image boundaries are displayed as spatial values, which detail the points to which the image"s edges will be stretched.</p>
 <p>Most spatial datasets currently generate spatial locations based on how they map onto an original image. Although this brief explanation is somewhat simplified, Giotto"s automatic alignment works as follows:</p>
 <ul>
@@ -627,7 +630,7 @@
 <span>           show_image <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>           cell_color <span class="op">=</span> <span class="st">"in_tissue"</span>,</span>
 <span>           save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>save_name <span class="op">=</span> <span class="st">"high_res_IT"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/image_alignment/high_res_IT.png"></p>
+<p><img src="images%2Fimage_alignment%2Fhigh_res_IT.png"></p>
 </div>
 <div class="section level2" number="5">
 <h2 number="5" id="standard-workflow">
@@ -640,7 +643,7 @@
 <p>Before beginning, it is important to acknowledge that differences may exist in the conventions for defining coordinates within images and plots. As a result, it is often required to make the spatial location y values negative. This inversion is necessary for the spatial locations to appear in the same orientation as the image. This transformation of the spatial locations is automatically done for Visium datasets during <strong>createGiottoVisiumObject()</strong>. In the standard workflow, it is important to determine if this is necessary for the data at hand.</p>
 <p><strong>Why this inversion is necessary</strong></p>
 <p><strong>Image Coordinates vs Plotting Coordinates</strong> By convention, the origin of image coordinates is defined in the upper left, and coordinates increase rightward (x coordinate) and downward (y coordinate). Many spatial methods inherit this convention when generating spatial location data. However, Giotto plots with the coordinates originating from the lower left. Thus, without inversion of the y coordinates, the <strong>spatial locations are displayed as vertically flipped compared to how they are intended to be seen</strong>.</p>
-<p><img src="images/image_alignment/images_coord_diffs.png"></p>
+<p><img src="images%2Fimage_alignment%2Fimages_coord_diffs.png"></p>
 <p><strong>The fix for this is to multiply all the Y-values in spatial locations by -1, inverting them.</strong> This may be done prior to creation of the giotto object by multiplying the y values within the spatial location matrix by -1. If the giotto object has already been created, yet the spatial data still needs inversion, running the following commands will invert the y coordinates.</p>
 <p>Here, my_gobject refers to the <strong>giottoObject</strong> and my_spatlocs refers to the name of the <strong>spatial locations</strong> to which the image will be aligned.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
@@ -653,7 +656,7 @@
 <span><span class="co"># Overwrite the original spatial locations with the inverted ones</span></span>
 <span><span class="va">my_gobject</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/setSpatialLocations.html" class="external-link">setSpatialLocations</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">FFPE_prostate</span>,</span>
 <span>                                  x <span class="op">=</span> <span class="va">spatlocs</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/image_alignment/images_inverty.png"></p>
+<p><img src="images%2Fimage_alignment%2Fimages_inverty.png"></p>
 </div>
 <div class="section level3" number="5.2">
 <h3 number="5.2" id="create-giottoimage">
@@ -805,7 +808,7 @@
 <span>          image_name <span class="op">=</span> <span class="st">"low_res"</span>,</span>
 <span>          cell_color <span class="op">=</span> <span class="st">"in_tissue"</span>,</span>
 <span>          save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>save_name <span class="op">=</span> <span class="st">"low_res_IT"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/image_alignment/low_res_IT.png"></p>
+<p><img src="images%2Fimage_alignment%2Flow_res_IT.png"></p>
 </div>
 </div>
 <div class="section level2" number="6">
@@ -838,7 +841,7 @@
 <span>           image_name <span class="op">=</span> <span class="st">"low_res_update_manual"</span>,</span>
 <span>           cell_color <span class="op">=</span> <span class="st">"in_tissue"</span>,</span>
 <span>           save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>save_name <span class="op">=</span> <span class="st">"low_res_update_manual_IT"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/image_alignment/low_res_update_manual_IT.png"></p>
+<p><img src="images%2Fimage_alignment%2Flow_res_update_manual_IT.png"></p>
 </div>
 <div class="section level3" number="6.2">
 <h3 number="6.2" id="after-giottoimage-creation-within-the-giottoobject">
@@ -864,7 +867,7 @@
 <span>           image_name <span class="op">=</span> <span class="st">"low_res_to_update"</span>,</span>
 <span>           cell_color <span class="op">=</span> <span class="st">"in_tissue"</span>,</span>
 <span>           save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>save_name <span class="op">=</span> <span class="st">"low_res_before_update_IT"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/image_alignment/low_res_before_update_IT.png"></p>
+<p><img src="images%2Fimage_alignment%2Flow_res_before_update_IT.png"></p>
 <div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Use updateGiottoImage() to update the image adjustment values</span></span>
 <span><span class="va">FFPE_prostate</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/updateGiottoImage.html" class="external-link">updateGiottoImage</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">FFPE_prostate</span>,</span>
@@ -879,7 +882,7 @@
 <span>           image_name <span class="op">=</span> <span class="st">"low_res_to_update"</span>,</span>
 <span>           cell_color <span class="op">=</span> <span class="st">"in_tissue"</span>,</span>
 <span>           save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>save_name <span class="op">=</span> <span class="st">"low_res_after_update_IT"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/image_alignment/low_res_after_update_IT.png"></p>
+<p><img src="images%2Fimage_alignment%2Flow_res_after_update_IT.png"></p>
 </div>
 </div>
 <div class="section level2" number="7">
@@ -958,7 +961,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.</p>
 </div>
 
       </footer>

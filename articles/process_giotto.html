@@ -109,6 +109,9 @@
         <li>
           <a href="../articles/visium_cytassist_human_glioblastoma.html">CytAssist Multi-omics Human Glioblastoma</a>
         </li>
+        <li>
+          <a href="../articles/VisiumHD_Human_Colorectal_Cancer.html">VisiumHD Human Colorectal Cancer</a>
+        </li>
       </ul>
 </li>
     <li class="divider">
@@ -544,11 +547,11 @@
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatPlot.html" class="external-link">spatPlot2D</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">visium_object</span>,</span>
 <span>           show_image <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/process_giotto/0-spatPlot2D.png" width="80%" style="display: block; margin: auto;"></p>
+<p><img src="images%2Fprocess_giotto%2F0-spatPlot2D.png" width="80%" style="display: block; margin: auto;"></p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatPlot.html" class="external-link">spatPlot2D</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">vizgen_object</span>,</span>
 <span>           show_image <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/process_giotto/1-spatPlot2D.png" width="80%" style="display: block; margin: auto;"></p>
+<p><img src="images%2Fprocess_giotto%2F1-spatPlot2D.png" width="80%" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level2" number="5">
 <h2 number="5" id="filtering">
@@ -581,7 +584,7 @@
 <span>         cell_color <span class="op">=</span> <span class="st">"leiden_clus"</span>, </span>
 <span>         show_NN_network <span class="op">=</span> <span class="cn">TRUE</span>, </span>
 <span>         point_size <span class="op">=</span> <span class="fl">2.5</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/process_giotto/2-UMAP.png" width="80%" style="display: block; margin: auto;"></p>
+<p><img src="images%2Fprocess_giotto%2F2-UMAP.png" width="80%" style="display: block; margin: auto;"></p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">vizgen_object</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/runPCA.html">runPCA</a></span><span class="op">(</span><span class="va">vizgen_object</span><span class="op">)</span></span>
 <span></span>
@@ -595,7 +598,7 @@
 <span>         cell_color <span class="op">=</span> <span class="st">"leiden_clus"</span>, </span>
 <span>         show_NN_network <span class="op">=</span> <span class="cn">TRUE</span>, </span>
 <span>         point_size <span class="op">=</span> <span class="fl">2.5</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/process_giotto/3-UMAP.png" width="80%" style="display: block; margin: auto;"></p>
+<p><img src="images%2Fprocess_giotto%2F3-UMAP.png" width="80%" style="display: block; margin: auto;"></p>
 <ul>
 <li>tSNE</li>
 </ul>
@@ -604,7 +607,7 @@
 <span>         cell_color <span class="op">=</span> <span class="st">"leiden_clus"</span>, </span>
 <span>         show_NN_network <span class="op">=</span> <span class="cn">FALSE</span>, </span>
 <span>         point_size <span class="op">=</span> <span class="fl">2.5</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/process_giotto/4-tSNE.png" width="80%" style="display: block; margin: auto;"></p>
+<p><img src="images%2Fprocess_giotto%2F4-tSNE.png" width="80%" style="display: block; margin: auto;"></p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">vizgen_object</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/runtSNE.html">runtSNE</a></span><span class="op">(</span><span class="va">vizgen_object</span><span class="op">)</span></span>
 <span></span>
@@ -612,7 +615,7 @@
 <span>         cell_color <span class="op">=</span> <span class="st">"leiden_clus"</span>, </span>
 <span>         show_NN_network <span class="op">=</span> <span class="cn">TRUE</span>, </span>
 <span>         point_size <span class="op">=</span> <span class="fl">2.5</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/process_giotto/5-tSNE.png" width="80%" style="display: block; margin: auto;"></p>
+<p><img src="images%2Fprocess_giotto%2F5-tSNE.png" width="80%" style="display: block; margin: auto;"></p>
 <ul>
 <li>Spatial plots</li>
 </ul>
@@ -621,13 +624,13 @@
 <span>           cell_color <span class="op">=</span> <span class="st">"leiden_clus"</span>,</span>
 <span>           show_image <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>           point_size <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/process_giotto/6-spatPlot2D.png" width="80%" style="display: block; margin: auto;"></p>
+<p><img src="images%2Fprocess_giotto%2F6-spatPlot2D.png" width="80%" style="display: block; margin: auto;"></p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatPlot.html" class="external-link">spatPlot2D</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">vizgen_object</span>, </span>
 <span>           cell_color <span class="op">=</span> <span class="st">"leiden_clus"</span>,</span>
 <span>           show_image <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>           point_size <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/process_giotto/7-spatPlot2D.png" width="80%" style="display: block; margin: auto;"></p>
+<p><img src="images%2Fprocess_giotto%2F7-spatPlot2D.png" width="80%" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level2" number="7">
 <h2 number="7" id="session-info">
@@ -713,7 +716,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.</p>
 </div>
 
       </footer>

@@ -109,6 +109,9 @@
         <li>
           <a href="../articles/visium_cytassist_human_glioblastoma.html">CytAssist Multi-omics Human Glioblastoma</a>
         </li>
+        <li>
+          <a href="../articles/VisiumHD_Human_Colorectal_Cancer.html">VisiumHD Human Colorectal Cancer</a>
+        </li>
       </ul>
 </li>
     <li class="divider">
@@ -521,7 +524,7 @@
 <span class="header-section-number">4</span> Dataset explanation<a class="anchor" aria-label="anchor" href="#dataset-explanation"></a>
 </h2>
 <p>This vignette covers Giotto object creation and simple exploratory analysis with 10x Genomics’ subcellular Xenium In Situ platform data using their <a href="https://www.10xgenomics.com/products/xenium-in-situ/preview-dataset-human-breast" class="external-link">Human Breast Cancer Dataset</a> provided with their recent <a href="https://www.biorxiv.org/content/10.1101/2022.10.06.510405v1" class="external-link">bioRxiv pre-print</a>. The data from the first tissue replicate will be worked with.</p>
-<p><img src="images/bento/large_preview.png" width="608"></p>
+<p><img src="images%2Fbento%2Flarge_preview.png" width="608"></p>
 </div>
 <div class="section level2" number="5">
 <h2 number="5" id="project-data-paths">
@@ -650,7 +653,7 @@
 <span>    feats <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"KRT8"</span>, <span class="st">"MS4A1"</span><span class="op">)</span></span>
 <span><span class="op">)</span></span>
 <span><span class="va">tx_dt_types</span><span class="op">$</span><span class="va">`Gene Expression`</span><span class="op">[</span><span class="va">feat_ID</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"KRT8"</span>, <span class="st">"MS4A1"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">feat_ID</span><span class="op">)</span><span class="op">]</span></span></code></pre></div>
-<p><img src="images/bento/gpoints_expr.png" width="982"></p>
+<p><img src="images%2Fbento%2Fgpoints_expr.png" width="982"></p>
 </div>
 <div class="section level4" number="7.1.2">
 <h4 number="7.1.2" id="load-polygon-data">
@@ -683,7 +686,7 @@
 <p>giottoPolygon objects can be directly plotted with plot(), but the field of view here is so large that it would take a long time and the details would be lost. Here, we will only plot the polygon centroids for the cell nucleus polygons by accessing the calculated results within the giottoPolygon’s spatVectorCentroids slot.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/plot.html" class="external-link">plot</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">gpoly_nucs</span>, point_size <span class="op">=</span> <span class="fl">0.1</span>, type <span class="op">=</span> <span class="st">"centroid"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/bento/gpolys_centroids.png" width="713"></p>
+<p><img src="images%2Fbento%2Fgpolys_centroids.png" width="713"></p>
 </div>
 <div class="section level4" number="7.1.3">
 <h4 number="7.1.3" id="create-giotto-object">
@@ -767,7 +770,7 @@
 <span>    fname1 <span class="op">=</span> <span class="st">"Bento_rna_forest_radvis.png"</span>,</span>
 <span>    fname2 <span class="op">=</span> <span class="st">"Bento_rna_forest_upset.png"</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/bento/Bento_rna_forest_radvis1.png" width="1220"></p>
+<p><img src="images%2Fbento%2FBento_rna_forest_radvis1.png" width="1220"></p>
 </div>
 <div class="section level4" number="8.2.3">
 <h4 number="8.2.3" id="colocalization-analysis">
@@ -786,7 +789,7 @@
 <span>    rank <span class="op">=</span> <span class="fl">5</span>,</span>
 <span>    fname <span class="op">=</span> <span class="st">"Bento_colocalization.png"</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/bento/Bento_colocalization_knee_pos.png" width="300"></p>
+<p><img src="images%2Fbento%2FBento_colocalization_knee_pos.png" width="300"></p>
 </div>
 </div>
 </div>
@@ -957,7 +960,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.</p>
 </div>
 
       </footer>

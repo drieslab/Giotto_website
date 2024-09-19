@@ -109,6 +109,9 @@
         <li>
           <a href="../articles/visium_cytassist_human_glioblastoma.html">CytAssist Multi-omics Human Glioblastoma</a>
         </li>
+        <li>
+          <a href="../articles/VisiumHD_Human_Colorectal_Cancer.html">VisiumHD Human Colorectal Cancer</a>
+        </li>
       </ul>
 </li>
     <li class="divider">
@@ -503,7 +506,7 @@
 </h2>
 <p>This vignette covers Giotto object creation and simple exploratory analysis with 10x Genomics’ subcellular <em>Xenium In Situ</em> platform data using their <a href="https://www.10xgenomics.com/products/xenium-in-situ/preview-dataset-human-breast" class="external-link">Human Breast Cancer Dataset</a> provided with their <a href="https://www.biorxiv.org/content/10.1101/2022.10.06.510405v1" class="external-link">bioRxiv pre-print</a>. This is a legacy pre-release dataset, and some aspects such as file and QC probe naming and image alignment have changed since.</p>
 <p>The data from the first tissue replicate will be worked with:</p>
-<p><img src="images/xenium_breast_cancer/large_preview.png"></p>
+<p><img src="images%2Fxenium_breast_cancer%2Flarge_preview.png"></p>
 </div>
 <div class="section level2" number="3">
 <h2 number="3" id="project-data-paths">
@@ -764,7 +767,7 @@
 <code class="sourceCode R"><span><span class="co"># feat_ID</span></span>
 <span><span class="co">#   KRT8  MS4A1 </span></span>
 <span><span class="co"># 530190  20926 </span></span></code></pre></div>
-<p><img src="images/xenium_breast_cancer/gpoints_blnk.png"><img src="images/xenium_breast_cancer/gpoints_ngcode.png"><img src="images/xenium_breast_cancer/gpoints_ngprbe.png"><img src="images/xenium_breast_cancer/gpoints_expr.png"></p>
+<p><img src="images%2Fxenium_breast_cancer%2Fgpoints_blnk.png"><img src="images%2Fxenium_breast_cancer%2Fgpoints_ngcode.png"><img src="images%2Fxenium_breast_cancer%2Fgpoints_ngprbe.png"><img src="images%2Fxenium_breast_cancer%2Fgpoints_expr.png"></p>
 </div>
 <div class="section level4" number="5.1.2">
 <h4 number="5.1.2" id="load-polygon-data">
@@ -791,7 +794,7 @@
 <p><code>giottoPolygon</code> objects can be directly plotted with <code><a href="https://rdrr.io/r/base/plot.html" class="external-link">plot()</a></code>, but the field of view here is so large that it would take a long time and the details would be lost. Here, we will only plot the polygon centroids for the cell nucleus polygons by accessing the calculated results within the <code>giottoPolygon</code>’s <code>spatVectorCentroids</code> slot.</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/plot.html" class="external-link">plot</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">gpoly_nucs</span>, point_size <span class="op">=</span> <span class="fl">0.1</span>, type <span class="op">=</span> <span class="st">'centroid'</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/xenium_breast_cancer/gpolys_centroids.png"></p>
+<p><img src="images%2Fxenium_breast_cancer%2Fgpolys_centroids.png"></p>
 </div>
 <div class="section level4" number="5.1.3">
 <h4 number="5.1.3" id="create-giotto-object">
@@ -1112,7 +1115,7 @@
 <span>             base_width <span class="op">=</span> <span class="fl">7</span>,</span>
 <span>             base_height <span class="op">=</span> <span class="fl">7</span>,</span>
 <span>             save_name <span class="op">=</span> <span class="st">'1_spatplot'</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/xenium_breast_cancer/1_spatplot.png"></p>
+<p><img src="images%2Fxenium_breast_cancer%2F1_spatplot.png"></p>
 </div>
 </div>
 <div class="section level2" number="7">
@@ -1530,7 +1533,7 @@
 <span><span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/fDataDT.html" class="external-link">fDataDT</a></span><span class="op">(</span><span class="va">xenium_gobj</span><span class="op">)</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">hvf</span> <span class="op">==</span> <span class="st">'yes'</span><span class="op">)</span><span class="op">]</span>, <span class="st">'hvf found'</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># 22 hvf found</span></span></code></pre></div>
-<p><img src="images/xenium_breast_cancer/2_HVF.png"></p>
+<p><img src="images%2Fxenium_breast_cancer%2F2_HVF.png"></p>
 <p>Basing clustering on only 22 highly variable genes will not be helpful. Will be using all 313 genes for clustering.</p>
 </div>
 </div>
@@ -1575,7 +1578,7 @@
 <span><span class="co">#                1 -2.459551 -0.418277</span></span>
 <span><span class="co">#                2 -2.002147 -3.239184</span></span>
 <span><span class="co">#                3 -1.588884 -2.195826</span></span></code></pre></div>
-<p><img src="images/xenium_breast_cancer/3a_screePlot.png"><img src="images/xenium_breast_cancer/3b_PCA.png"></p>
+<p><img src="images%2Fxenium_breast_cancer%2F3a_screePlot.png"><img src="images%2Fxenium_breast_cancer%2F3b_PCA.png"></p>
 </div>
 <div class="section level3" number="8.2">
 <h3 number="8.2" id="tsne-and-umap">
@@ -1597,7 +1600,7 @@
 <span>         point_size <span class="op">=</span> <span class="fl">0.01</span>,</span>
 <span>         save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
 <span>           save_name <span class="op">=</span> <span class="st">'4b_UMAP'</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/xenium_breast_cancer/4a_tSNE.png"><img src="images/xenium_breast_cancer/4b_UMAP.png"></p>
+<p><img src="images%2Fxenium_breast_cancer%2F4a_tSNE.png"><img src="images%2Fxenium_breast_cancer%2F4b_UMAP.png"></p>
 </div>
 <div class="section level3" number="8.3">
 <h3 number="8.3" id="snn-and-leiden-clustering">
@@ -1621,7 +1624,7 @@
 <span>         point_size <span class="op">=</span> <span class="fl">0.01</span>,</span>
 <span>         point_shape <span class="op">=</span> <span class="st">'no_border'</span>,</span>
 <span>         save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>save_name <span class="op">=</span> <span class="st">'5_umap_leiden'</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/xenium_breast_cancer/5_umap_leiden.png"></p>
+<p><img src="images%2Fxenium_breast_cancer%2F5_umap_leiden.png"></p>
 </div>
 <div class="section level3" number="8.4">
 <h3 number="8.4" id="visualize-umap-and-spatial-results">
@@ -1639,7 +1642,7 @@
 <span>             save_name <span class="op">=</span> <span class="st">'6_spat_leiden'</span>,</span>
 <span>             base_width <span class="op">=</span> <span class="fl">15</span>,</span>
 <span>             base_height <span class="op">=</span> <span class="fl">15</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/xenium_breast_cancer/6_spat_leiden.png"></p>
+<p><img src="images%2Fxenium_breast_cancer%2F6_spat_leiden.png"></p>
 </div>
 </div>
 <div class="section level2" number="9">
@@ -1661,7 +1664,7 @@
 <span>                     coord_fix_ratio <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>                     save_para <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
 <span>                       save_name <span class="op">=</span> <span class="st">'7_polys'</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/xenium_breast_cancer/7_polys.png"></p>
+<p><img src="images%2Fxenium_breast_cancer%2F7_polys.png"></p>
 <p>The dataset is too large to visualize with subcellular polygons and features clearly so a spatial subset is needed.</p>
 <div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">xenium_gobj_subset</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/subsetGiottoLocs.html" class="external-link">subsetGiottoLocs</a></span><span class="op">(</span><span class="va">xenium_gobj</span>,</span>
@@ -1688,7 +1691,7 @@
 <span>                     coord_fix_ratio <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>                     save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
 <span>                       save_name <span class="op">=</span> <span class="st">'8_subset_in_situ'</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/xenium_breast_cancer/8_subset_in_situ.png"></p>
+<p><img src="images%2Fxenium_breast_cancer%2F8_subset_in_situ.png"></p>
 </div>
   </div>
 
@@ -1709,7 +1712,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.</p>
 </div>
 
       </footer>

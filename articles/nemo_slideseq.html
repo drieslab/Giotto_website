@@ -109,6 +109,9 @@
         <li>
           <a href="../articles/visium_cytassist_human_glioblastoma.html">CytAssist Multi-omics Human Glioblastoma</a>
         </li>
+        <li>
+          <a href="../articles/VisiumHD_Human_Colorectal_Cancer.html">VisiumHD Human Colorectal Cancer</a>
+        </li>
       </ul>
 </li>
     <li class="divider">
@@ -473,24 +476,24 @@
 <span class="header-section-number">1</span> Identify the NeMO dataset<a class="anchor" aria-label="anchor" href="#identify-the-nemo-dataset"></a>
 </h2>
 <p>Log in to your <a href="https://app.terra.bio/" class="external-link">Terra bio</a> account and go to the left menu, select Library &gt; Datasets</p>
-<p><img src="images/nemo_slideseq/01_menu.png" width="30%" style="display: block; margin: auto;"></p>
+<p><img src="images%2Fnemo_slideseq%2F01_menu.png" width="30%" style="display: block; margin: auto;"></p>
 <p>On the datasets page, scroll down until you find the NeMO database</p>
-<p><img src="images/nemo_slideseq/02_datasets.png" width="80%" style="display: block; margin: auto;"></p>
-<p><img src="images/nemo_slideseq/03_datasets.png" width="80%" style="display: block; margin: auto;"></p>
+<p><img src="images%2Fnemo_slideseq%2F02_datasets.png" width="80%" style="display: block; margin: auto;"></p>
+<p><img src="images%2Fnemo_slideseq%2F03_datasets.png" width="80%" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level2" number="2">
 <h2 number="2" id="load-the-dataset-to-a-terra-workspace">
 <span class="header-section-number">2</span> Load the dataset to a terra workspace<a class="anchor" aria-label="anchor" href="#load-the-dataset-to-a-terra-workspace"></a>
 </h2>
 <p>By clicking on the Browse data button, you will be re-directed to the NeMO website. Use the filters menu to select the Slide-seq technology, then chose a sample to download and ddd the file to the cart.</p>
-<p><img src="images/nemo_slideseq/04_nemo.png" width="80%" style="display: block; margin: auto;"></p>
-<p><img src="images/nemo_slideseq/05_samples.png" width="80%" style="display: block; margin: auto;"></p>
+<p><img src="images%2Fnemo_slideseq%2F04_nemo.png" width="80%" style="display: block; margin: auto;"></p>
+<p><img src="images%2Fnemo_slideseq%2F05_samples.png" width="80%" style="display: block; margin: auto;"></p>
 <p>When selecting the sample, you will see multiple files available to download, including the fasta files. Uncheck the fasta files boxes and keep only the expression.mex.tar.gz file.</p>
 <p>Click the Download button and select the option “Export to terra”.</p>
-<p><img src="images/nemo_slideseq/06_files.png" width="80%" style="display: block; margin: auto;"></p>
+<p><img src="images%2Fnemo_slideseq%2F06_files.png" width="80%" style="display: block; margin: auto;"></p>
 <p>You will be directed back to your terra bio account. Select the Workspace to add your dataset.</p>
 <p>You will find the new file under the Data tab &gt; file section.</p>
-<p><img src="images/nemo_slideseq/07_data.png" width="90%" style="display: block; margin: auto;"></p>
+<p><img src="images%2Fnemo_slideseq%2F07_data.png" width="90%" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level2" number="3">
 <h2 number="3" id="open-the-dataset">
@@ -498,7 +501,7 @@
 </h2>
 <p>Scroll to the right and locate the url of the file, it should look like <a href="https://data.nemoarchive.org/biccn/grant/rf1_macosko/macosko/spatial_transcriptome/cellgroup/Slide-seq/mouse/processed/counts/2022-02-11_Puck_211013_01.matched.digital_expression.mex.tar.gz" class="external-link uri">https://data.nemoarchive.org/biccn/grant/rf1_macosko/macosko/spatial_transcriptome/cellgroup/Slide-seq/mouse/processed/counts/2022-02-11_Puck_211013_01.matched.digital_expression.mex.tar.gz</a>.</p>
 <p>Open an cloud environment, either using Jupyter notebooks or RStudio. Open the terminal and load the file to your session by running the command <code>wget &lt;file url&gt;</code>. Uncompress the file, you will get a folder with three files:</p>
-<p><img src="images/nemo_slideseq/08_files.png" width="50%" style="display: block; margin: auto;"></p>
+<p><img src="images%2Fnemo_slideseq%2F08_files.png" width="50%" style="display: block; margin: auto;"></p>
 <p>Use these files to create a Giotto object and start running the analysis.</p>
 </div>
 <div class="section level2" number="4">
@@ -582,7 +585,7 @@
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatPlot.html" class="external-link">spatPlot2D</a></span><span class="op">(</span><span class="va">giotto_object</span>,</span>
 <span>           point_size <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/nemo_slideseq/09-spatPlot2D.png" width="1350"></p>
+<p><img src="images%2Fnemo_slideseq%2F09-spatPlot2D.png" width="1350"></p>
 </div>
 <div class="section level3" number="4.4">
 <h3 number="4.4" id="filtering">
@@ -611,7 +614,7 @@
 <span>           cell_color <span class="op">=</span> <span class="st">"nr_feats"</span>,</span>
 <span>           color_as_factor <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>           point_size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/nemo_slideseq/10-spatPlot2D.png" width="1350"></p>
+<p><img src="images%2Fnemo_slideseq%2F10-spatPlot2D.png" width="1350"></p>
 </div>
 <div class="section level3" number="4.7">
 <h3 number="4.7" id="dimension-reduction">
@@ -622,7 +625,7 @@
 <span></span>
 <span><span class="fu"><a href="../reference/screePlot.html">screePlot</a></span><span class="op">(</span><span class="va">giotto_object</span>, </span>
 <span>          ncp <span class="op">=</span> <span class="fl">30</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/nemo_slideseq/11-screePlot.png" width="1350"></p>
+<p><img src="images%2Fnemo_slideseq%2F11-screePlot.png" width="1350"></p>
 </div>
 <div class="section level3" number="4.8">
 <h3 number="4.8" id="clustering">
@@ -645,17 +648,17 @@
 <code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/plotPCA.html" class="external-link">plotPCA</a></span><span class="op">(</span><span class="va">giotto_object</span>,</span>
 <span>        cell_color <span class="op">=</span> <span class="st">"leiden_clus"</span>,</span>
 <span>        point_size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/nemo_slideseq/12-PCA.png" width="1350"></p>
+<p><img src="images%2Fnemo_slideseq%2F12-PCA.png" width="1350"></p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/plotUMAP.html" class="external-link">plotUMAP</a></span><span class="op">(</span><span class="va">giotto_object</span>,</span>
 <span>         cell_color <span class="op">=</span> <span class="st">"leiden_clus"</span>,</span>
 <span>         point_size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/nemo_slideseq/13-UMAP.png" width="1350"></p>
+<p><img src="images%2Fnemo_slideseq%2F13-UMAP.png" width="1350"></p>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatPlot.html" class="external-link">spatPlot2D</a></span><span class="op">(</span><span class="va">giotto_object</span>,</span>
 <span>           cell_color <span class="op">=</span> <span class="st">"leiden_clus"</span>,</span>
 <span>           point_size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/nemo_slideseq/14-spatPlot2D.png" width="1350"></p>
+<p><img src="images%2Fnemo_slideseq%2F14-spatPlot2D.png" width="1350"></p>
 </div>
 </div>
 <div class="section level2" number="5">
@@ -759,7 +762,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.</p>
 </div>
 
       </footer>

@@ -87,6 +87,9 @@ expression of interacting cells"><!-- mathjax --><script src="https://cdnjs.clou
         <li>
           <a href="../articles/visium_cytassist_human_glioblastoma.html">CytAssist Multi-omics Human Glioblastoma</a>
         </li>
+        <li>
+          <a href="../articles/VisiumHD_Human_Colorectal_Cancer.html">VisiumHD Human Colorectal Cancer</a>
+        </li>
       </ul></li>
     <li class="divider">
     <li class="dropdown-submenu">
@@ -565,7 +568,7 @@ LR_expr and rand_expr over all random spatial permutations</p></li>
 <span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in loadNamespace(x):</span> there is no package called ‘future.apply’</span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/force.html" class="external-link">force</a></span><span class="op">(</span><span class="va">res1</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'res1' not found</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'res1' not found</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">res2</span> <span class="op">&lt;-</span> <span class="fu">specificCellCellcommunicationScores</span><span class="op">(</span><span class="va">g</span>,</span></span>
 <span class="r-in"><span>    cluster_column <span class="op">=</span> <span class="st">"leiden_clus"</span>,</span></span>
@@ -584,12 +587,12 @@ LR_expr and rand_expr over all random spatial permutations</p></li>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2: Gm19935-9630013A20Rik             2        0 Gm19935             1        0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         receptor LR_expr lig_nr rec_nr rand_expr    av_diff    log2fc pvalue</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           &lt;char&gt;   &lt;num&gt;  &lt;int&gt;  &lt;int&gt;     &lt;num&gt;      &lt;num&gt;     &lt;num&gt;  &lt;num&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1: 9630013A20Rik       0      3      1 0.3077262 -0.3077262 -2.027601   0.81</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2: 9630013A20Rik       0      1      3 0.4356263 -0.4356263 -2.421227   0.82</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1: 9630013A20Rik       0      3      1 0.5382613 -0.5382613 -2.674147   0.74</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2: 9630013A20Rik       0      1      3 0.6155602 -0.6155602 -2.839073   0.74</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    LR_cell_comb p.adj         PI</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>          &lt;char&gt; &lt;num&gt;      &lt;num&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1:         1--2  0.81 -0.1855558</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2:         2--1  0.82 -0.2086762</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1:         1--2  0.74 -0.3496936</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2:         2--1  0.74 -0.3712607</span>
 </code></pre></div>
     </div>
   </div>
@@ -604,7 +607,7 @@ LR_expr and rand_expr over all random spatial permutations</p></li>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.</p>
 </div>
 
       </footer></div>

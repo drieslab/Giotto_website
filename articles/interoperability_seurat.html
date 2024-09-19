@@ -109,6 +109,9 @@
         <li>
           <a href="../articles/visium_cytassist_human_glioblastoma.html">CytAssist Multi-omics Human Glioblastoma</a>
         </li>
+        <li>
+          <a href="../articles/VisiumHD_Human_Colorectal_Cancer.html">VisiumHD Human Colorectal Cancer</a>
+        </li>
       </ul>
 </li>
     <li class="divider">
@@ -544,7 +547,7 @@
 <p>First, we find HVF (highly varialble features) using the loess regression prediction model.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">brainG</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/calculateHVF.html">calculateHVF</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">brainG</span>, method <span class="op">=</span> <span class="st">"cov_loess"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/interoperability_seurat/0-HVF.png"> then use HVF to compute the reduced dimensions using PCA.</p>
+<p><img src="images%2Finteroperability_seurat%2F0-HVF.png"> then use HVF to compute the reduced dimensions using PCA.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## Select genes highly variable genes that fit specified statistics</span></span>
 <span><span class="co"># These are both found within feature metadata</span></span>
@@ -559,12 +562,12 @@
 <span></span>
 <span><span class="fu">Giotto</span><span class="fu">::</span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/plotPCA.html" class="external-link">plotPCA</a></span><span class="op">(</span><span class="va">brainG</span>,</span>
 <span>                save_plot <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/interoperability_seurat/1-PCA.png"></p>
+<p><img src="images%2Finteroperability_seurat%2F1-PCA.png"></p>
 <p>Here, we’ll proceed with running UMAP based on PCA dimension reduction and visualize the pre-clustering UMAP.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">brainG</span> <span class="op">&lt;-</span> <span class="fu">Giotto</span><span class="fu">::</span><span class="fu"><a href="../reference/runUMAP.html">runUMAP</a></span><span class="op">(</span><span class="va">brainG</span>, dimensions_to_use <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">15</span><span class="op">)</span></span>
 <span><span class="va">graph1</span> <span class="op">&lt;-</span> <span class="fu">Giotto</span><span class="fu">::</span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/plotUMAP.html" class="external-link">plotUMAP</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">brainG</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/interoperability_seurat/2-UMAP.png"></p>
+<p><img src="images%2Finteroperability_seurat%2F2-UMAP.png"></p>
 </div>
 <div class="section level5" number="1.1.5.3">
 <h5 number="1.1.5.3" id="clustering">
@@ -589,7 +592,7 @@
 <span>    show_NN_network <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>    point_size <span class="op">=</span> <span class="fl">2.5</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/interoperability_seurat/3-UMAP.png"></p>
+<p><img src="images%2Finteroperability_seurat%2F3-UMAP.png"></p>
 </div>
 <div class="section level5" number="1.1.5.4">
 <h5 number="1.1.5.4" id="spatial-co-expression">
@@ -641,7 +644,7 @@
 <span>    return_plot <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>    save_plot <span class="op">=</span> <span class="cn">TRUE</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/interoperability_seurat/4-heatmSpatialCorFeats.png"></p>
+<p><img src="images%2Finteroperability_seurat%2F4-heatmSpatialCorFeats.png"></p>
 <p>We’ll proceed by isolating genes from individual co-expression modules and then consolidate them into meta-genes through aggregation.</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># 3.4 create metagenes / co-expression modules</span></span>
@@ -660,7 +663,7 @@
 <span>    cow_n_col <span class="op">=</span> <span class="fl">3</span>, </span>
 <span>    gradient_style <span class="op">=</span> <span class="st">"sequential"</span></span>
 <span><span class="op">)</span>   </span></code></pre></div>
-<p><img src="images/interoperability_seurat/5-spatCellPlot2D.png"></p>
+<p><img src="images%2Finteroperability_seurat%2F5-spatCellPlot2D.png"></p>
 </div>
 </div>
 </div>
@@ -711,7 +714,7 @@
 <span></span>
 <span><span class="va">plot2</span> <span class="op">&lt;-</span> <span class="fu">SpatialFeaturePlot</span><span class="op">(</span><span class="va">brain2</span>, features <span class="op">=</span> <span class="st">"nCount_rna"</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"right"</span><span class="op">)</span></span>
 <span><span class="fu">wrap_plots</span><span class="op">(</span><span class="va">plot1</span>, <span class="va">plot2</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/interoperability_seurat/6-cellCountdist.png"></p>
+<p><img src="images%2Finteroperability_seurat%2F6-cellCountdist.png"></p>
 </div>
 <div class="section level5" number="1.2.3.3">
 <h5 number="1.2.3.3" id="data-transformation">
@@ -741,12 +744,12 @@
 <code class="sourceCode R"><span><span class="va">p1</span> <span class="op">&lt;-</span> <span class="fu">DimPlot</span><span class="op">(</span><span class="va">brain2</span>, reduction <span class="op">=</span> <span class="st">"umap"</span>, label <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="va">p2</span> <span class="op">&lt;-</span> <span class="fu">SpatialDimPlot</span><span class="op">(</span><span class="va">brain2</span>, label <span class="op">=</span> <span class="cn">TRUE</span>, label.size <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span>
 <span><span class="va">p1</span> <span class="op">+</span> <span class="va">p2</span></span></code></pre></div>
-<p><img src="images/interoperability_seurat/7-seuratUMAP.png"> Additionally, we can highlight specific cell populations within the spatial dimensional plot:</p>
+<p><img src="images%2Finteroperability_seurat%2F7-seuratUMAP.png"> Additionally, we can highlight specific cell populations within the spatial dimensional plot:</p>
 <div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">SpatialDimPlot</span><span class="op">(</span><span class="va">brain2</span>, </span>
 <span>               cells.highlight <span class="op">=</span> <span class="fu">CellsByIdentities</span><span class="op">(</span>object <span class="op">=</span> <span class="va">brain2</span>, idents <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">1</span>, <span class="fl">4</span>, <span class="fl">3</span>,</span>
 <span>    <span class="fl">5</span>, <span class="fl">8</span><span class="op">)</span><span class="op">)</span>, facet.highlight <span class="op">=</span> <span class="cn">TRUE</span>, ncol <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/interoperability_seurat/8-spatialDim.png"></p>
+<p><img src="images%2Finteroperability_seurat%2F8-spatialDim.png"></p>
 </div>
 <div class="section level5" number="1.2.3.6">
 <h5 number="1.2.3.6" id="identification-of-spatially-variable-features">
@@ -756,7 +759,7 @@
 <div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">de_markers</span> <span class="op">&lt;-</span> <span class="fu">FindMarkers</span><span class="op">(</span><span class="va">brain2</span>, ident.1 <span class="op">=</span> <span class="fl">5</span>, ident.2 <span class="op">=</span> <span class="fl">6</span><span class="op">)</span></span>
 <span><span class="fu">SpatialFeaturePlot</span><span class="op">(</span>object <span class="op">=</span> <span class="va">brain2</span>, features <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/row-plus-colnames-generic.html" class="external-link">rownames</a></span><span class="op">(</span><span class="va">de_markers</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">]</span>, alpha <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.1</span>, <span class="fl">1</span><span class="op">)</span>, ncol <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/interoperability_seurat/9-spatVarFeat.png"></p>
+<p><img src="images%2Finteroperability_seurat%2F9-spatVarFeat.png"></p>
 <p>we identify spatially variable features within the spatial data. This is achieved through the <code>FindSpatiallyVariableFeatures</code> function, which calculates spatial statistics to determine the variability of features across spatial locations. In the following code chunk, we focus on the top 1000 variable features selected from the SCT assay using the Moransi selection method.</p>
 <div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">brain2</span> <span class="op">&lt;-</span> <span class="fu">FindSpatiallyVariableFeatures</span><span class="op">(</span><span class="va">brain2</span>, </span>
@@ -777,7 +780,7 @@
 <span><span class="va">p1</span> <span class="op">&lt;-</span> <span class="fu">SpatialDimPlot</span><span class="op">(</span><span class="va">cortex</span>, crop <span class="op">=</span> <span class="cn">TRUE</span>, label <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="va">p2</span> <span class="op">&lt;-</span> <span class="fu">SpatialDimPlot</span><span class="op">(</span><span class="va">cortex</span>, crop <span class="op">=</span> <span class="cn">FALSE</span>, label <span class="op">=</span> <span class="cn">TRUE</span>, pt.size.factor <span class="op">=</span> <span class="fl">1</span>, label.size <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span>
 <span><span class="va">p1</span> <span class="op">+</span> <span class="va">p2</span></span></code></pre></div>
-<p><img src="images/interoperability_seurat/10-anatomicalRegionSubset.png"></p>
+<p><img src="images%2Finteroperability_seurat%2F10-anatomicalRegionSubset.png"></p>
 </div>
 <div class="section level5" number="1.2.3.8">
 <h5 number="1.2.3.8" id="working-with-multiple-slices-in-seurat">
@@ -801,13 +804,13 @@
 <p>After performing PCA, identifying neighbors, clustering, and running UMAP, we visualize the results:</p>
 <div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">DimPlot</span><span class="op">(</span><span class="va">brain.merge</span>, reduction <span class="op">=</span> <span class="st">"umap"</span>, group.by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"ident"</span>, <span class="st">"orig.ident"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/interoperability_seurat/11-dimPlot.png"></p>
+<p><img src="images%2Finteroperability_seurat%2F11-dimPlot.png"></p>
 <div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">SpatialDimPlot</span><span class="op">(</span><span class="va">brain.merge</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/interoperability_seurat/12-brainMerge.png"></p>
+<p><img src="images%2Finteroperability_seurat%2F12-brainMerge.png"></p>
 <div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">SpatialFeaturePlot</span><span class="op">(</span><span class="va">brain.merge</span>, features <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Hpca"</span>, <span class="st">"Plp1"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/interoperability_seurat/13-brainMerge2.png"></p>
+<p><img src="images%2Finteroperability_seurat%2F13-brainMerge2.png"></p>
 <div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true"></a>R version <span class="dv">4</span>.<span class="fl">3.1</span> (<span class="dv">2023-06-16</span>)</span>
@@ -955,7 +958,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.</p>
 </div>
 
       </footer>
