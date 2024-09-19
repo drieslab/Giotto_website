@@ -331,7 +331,7 @@ spatCellPlot(visiumHD,
              cow_n_col = 2)
 ```
 
-![](images/VisiumHD_Human_Colorectal_Cancer/image011.png)
+![](images/VisiumHD_Human_Colorectal_Cancer/image11.png)
 
 ```{r eval=FALSE}
 spatCellPlot(visiumHD,
@@ -343,7 +343,7 @@ spatCellPlot(visiumHD,
              cow_n_col = 2)
 ```
 
-![](images/VisiumHD_Human_Colorectal_Cancer/image012.png)
+![](images/VisiumHD_Human_Colorectal_Cancer/image12.png)
 
 # Plot spatial gene groups
 
@@ -376,7 +376,7 @@ spatInSituPlotPoints(visiumHD,
                      jitter = c(25,25))
 ```
 
-![](images/VisiumHD_Human_Colorectal_Cancer/image013.png)
+![](images/VisiumHD_Human_Colorectal_Cancer/image13.png)
 
 # Session info
 
