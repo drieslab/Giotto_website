@@ -95,7 +95,7 @@ navbar:
           - text: Image alignment
             href: articles/image_alignment.html
       - text: -------
-      - text: Interactive selection
+      - text: Interactivity
         menu:
           - text: Interactive selection
             href: articles/interactive_selection.html
@@ -304,7 +304,7 @@ articles:
   navbar: ~
   contents:
   - image_alignment
-- title: Interactive selection
+- title: Interactivity
   navbar: ~
   contents:
   - interactive_selection
