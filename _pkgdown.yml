@@ -99,6 +99,8 @@ navbar:
         menu:
           - text: Interactive selection
             href: articles/interactive_selection.html
+          - text: Interactive visualization with vitessceR
+            href: articles/interactive_giotto_vitessceR.html
       - text: -------
       - text: Visualizations
         menu:
@@ -306,6 +308,7 @@ articles:
   navbar: ~
   contents:
   - interactive_selection
+  - interactive_giotto_vitessceR
 - title: Visualizations
   navbar: ~
   contents:
