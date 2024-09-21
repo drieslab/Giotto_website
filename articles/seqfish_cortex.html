@@ -510,13 +510,12 @@
 </h2>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://drieslab.github.io/Giotto/" class="external-link">Giotto</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://drieslab.github.io/GiottoData/" class="external-link">GiottoData</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">data_path</span> <span class="op">&lt;-</span> <span class="st">"/path/to/data/"</span></span>
 <span></span>
-<span><span class="fu"><a href="https://drieslab.github.io/GiottoData/reference/getSpatialDataset.html" class="external-link">getSpatialDataset</a></span><span class="op">(</span>dataset <span class="op">=</span> <span class="st">"seqfish_SS_cortex"</span>, </span>
-<span>                  directory <span class="op">=</span> <span class="va">data_path</span>, </span>
-<span>                  method <span class="op">=</span> <span class="st">"wget"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu">GiottoData</span><span class="fu">::</span><span class="fu"><a href="https://drieslab.github.io/GiottoData/reference/getSpatialDataset.html" class="external-link">getSpatialDataset</a></span><span class="op">(</span>dataset <span class="op">=</span> <span class="st">"seqfish_SS_cortex"</span>, </span>
+<span>                              directory <span class="op">=</span> <span class="va">data_path</span>, </span>
+<span>                              method <span class="op">=</span> <span class="st">"wget"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2" number="4">
 <h2 number="4" id="giotto-instructions-and-preparation">
@@ -543,7 +542,9 @@
 <span><span class="co"># first merge location and additional metadata</span></span>
 <span><span class="va">SS_locations</span> <span class="op">&lt;-</span> <span class="fu">data.table</span><span class="fu">::</span><span class="fu"><a href="https://rdatatable.gitlab.io/data.table/reference/fread.html" class="external-link">fread</a></span><span class="op">(</span><span class="va">loc_path</span><span class="op">)</span></span>
 <span><span class="va">cortex_fields</span> <span class="op">&lt;-</span> <span class="fu">data.table</span><span class="fu">::</span><span class="fu"><a href="https://rdatatable.gitlab.io/data.table/reference/fread.html" class="external-link">fread</a></span><span class="op">(</span><span class="va">meta_path</span><span class="op">)</span></span>
-<span><span class="va">SS_loc_annot</span> <span class="op">&lt;-</span> <span class="fu">data.table</span><span class="fu">::</span><span class="fu"><a href="https://rdatatable.gitlab.io/data.table/reference/merge.html" class="external-link">merge.data.table</a></span><span class="op">(</span><span class="va">SS_locations</span>, <span class="va">cortex_fields</span>, by <span class="op">=</span> <span class="st">"ID"</span><span class="op">)</span></span>
+<span><span class="va">SS_loc_annot</span> <span class="op">&lt;-</span> <span class="fu">data.table</span><span class="fu">::</span><span class="fu"><a href="https://rdatatable.gitlab.io/data.table/reference/merge.html" class="external-link">merge.data.table</a></span><span class="op">(</span><span class="va">SS_locations</span>, </span>
+<span>                                             <span class="va">cortex_fields</span>, </span>
+<span>                                             by <span class="op">=</span> <span class="st">"ID"</span><span class="op">)</span></span>
 <span><span class="va">SS_loc_annot</span><span class="op">[</span>, <span class="va">ID</span> <span class="op">:=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">ID</span>, levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"cell_"</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">913</span><span class="op">)</span><span class="op">)</span><span class="op">]</span></span>
 <span><span class="fu">data.table</span><span class="fu">::</span><span class="fu"><a href="https://rdatatable.gitlab.io/data.table/reference/setorder.html" class="external-link">setorder</a></span><span class="op">(</span><span class="va">SS_loc_annot</span>, <span class="va">ID</span><span class="op">)</span></span>
 <span></span>
@@ -564,6 +565,7 @@
 <span>    reverse_final_x <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>    reverse_final_y <span class="op">=</span> <span class="cn">TRUE</span></span>
 <span><span class="op">)</span></span>
+<span></span>
 <span><span class="va">stitch_file</span> <span class="op">&lt;-</span> <span class="va">stitch_file</span><span class="op">[</span>, <span class="fu">.</span><span class="op">(</span><span class="va">ID</span>, <span class="va">X_final</span>, <span class="va">Y_final</span><span class="op">)</span><span class="op">]</span></span>
 <span><span class="va">stitch_file</span><span class="op">$</span><span class="va">ID</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">as.character</a></span><span class="op">(</span><span class="va">stitch_file</span><span class="op">$</span><span class="va">ID</span><span class="op">)</span></span>
 <span><span class="va">my_offset_file</span> <span class="op">&lt;-</span> <span class="va">my_offset_file</span><span class="op">[</span>, <span class="fu">.</span><span class="op">(</span><span class="va">field</span>, <span class="va">x_offset_final</span>, <span class="va">y_offset_final</span><span class="op">)</span><span class="op">]</span></span></code></pre></div>
@@ -579,12 +581,14 @@
 <span>                                 offset_file <span class="op">=</span> <span class="va">my_offset_file</span>,</span>
 <span>                                 instructions <span class="op">=</span> <span class="va">instructions</span></span>
 <span><span class="op">)</span></span>
+<span></span>
 <span><span class="co"># add additional annotation if wanted</span></span>
 <span><span class="va">SS_seqfish</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/addCellMetadata.html" class="external-link">addCellMetadata</a></span><span class="op">(</span><span class="va">SS_seqfish</span>,</span>
 <span>                              new_metadata <span class="op">=</span> <span class="va">cortex_fields</span>,</span>
 <span>                              by_column <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>                              column_cell_ID <span class="op">=</span> <span class="st">"ID"</span></span>
 <span><span class="op">)</span></span>
+<span></span>
 <span><span class="co"># subset data to the cortex field of views</span></span>
 <span><span class="va">cell_metadata</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/pDataDT.html" class="external-link">pDataDT</a></span><span class="op">(</span><span class="va">SS_seqfish</span><span class="op">)</span></span>
 <span><span class="va">cortex_cell_ids</span> <span class="op">&lt;-</span> <span class="va">cell_metadata</span><span class="op">[</span><span class="va">FOV</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fl">0</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span><span class="op">$</span><span class="va">cell_ID</span></span>
@@ -598,10 +602,12 @@
 <span>                           expression_values <span class="op">=</span> <span class="st">"raw"</span>,</span>
 <span>                           verbose <span class="op">=</span> <span class="cn">TRUE</span></span>
 <span><span class="op">)</span></span>
+<span></span>
 <span><span class="co"># normalize</span></span>
 <span><span class="va">SS_seqfish</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/normalizeGiotto.html">normalizeGiotto</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">SS_seqfish</span>, </span>
 <span>                              scalefactor <span class="op">=</span> <span class="fl">6000</span>, </span>
 <span>                              verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span></span>
 <span><span class="co"># add gene &amp; cell statistics</span></span>
 <span><span class="va">SS_seqfish</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/addStatistics.html">addStatistics</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">SS_seqfish</span><span class="op">)</span></span>
 <span></span>
@@ -623,7 +629,8 @@
 </h2>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## highly variable features (HVF)</span></span>
-<span><span class="va">SS_seqfish</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/calculateHVF.html">calculateHVF</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">SS_seqfish</span><span class="op">)</span></span></code></pre></div>
+<span><span class="va">SS_seqfish</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/calculateHVF.html">calculateHVF</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">SS_seqfish</span>,</span>
+<span>                           save_plot <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <p><img src="images%2Fseqfish_cortex%2F1-HVFplot.png"></p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## select genes based on highly variable features and gene statistics, both found in feature (gene) metadata</span></span>
@@ -635,6 +642,7 @@
 <span>                     genes_to_use <span class="op">=</span> <span class="va">featgenes</span>, </span>
 <span>                     scale_unit <span class="op">=</span> <span class="cn">FALSE</span>, </span>
 <span>                     center <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span></span>
 <span><span class="fu"><a href="../reference/screePlot.html">screePlot</a></span><span class="op">(</span><span class="va">SS_seqfish</span><span class="op">)</span></span></code></pre></div>
 <p><img src="images%2Fseqfish_cortex%2F2-screePlot.png"></p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
@@ -644,11 +652,13 @@
 <code class="sourceCode R"><span><span class="va">SS_seqfish</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/runUMAP.html">runUMAP</a></span><span class="op">(</span><span class="va">SS_seqfish</span>, </span>
 <span>                      dimensions_to_use <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">15</span>, </span>
 <span>                      n_threads <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
+<span></span>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/plotUMAP.html" class="external-link">plotUMAP</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">SS_seqfish</span><span class="op">)</span></span></code></pre></div>
 <p><img src="images%2Fseqfish_cortex%2F4-UMAP.png"></p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">SS_seqfish</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/runtSNE.html">runtSNE</a></span><span class="op">(</span><span class="va">SS_seqfish</span>, </span>
 <span>                      dimensions_to_use <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">15</span><span class="op">)</span></span>
+<span></span>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/plotTSNE.html" class="external-link">plotTSNE</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">SS_seqfish</span><span class="op">)</span></span></code></pre></div>
 <p><img src="images%2Fseqfish_cortex%2F5-tSNE.png"></p>
 </div>
@@ -662,11 +672,13 @@
 <span>                                   dimensions_to_use <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">15</span>,</span>
 <span>                                   k <span class="op">=</span> <span class="fl">15</span></span>
 <span><span class="op">)</span></span>
+<span></span>
 <span><span class="co">## Leiden clustering</span></span>
 <span><span class="va">SS_seqfish</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/doLeidenCluster.html">doLeidenCluster</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">SS_seqfish</span>,</span>
 <span>                              resolution <span class="op">=</span> <span class="fl">0.4</span>,</span>
 <span>                              n_iterations <span class="op">=</span> <span class="fl">1000</span></span>
 <span><span class="op">)</span></span>
+<span></span>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/plotUMAP.html" class="external-link">plotUMAP</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">SS_seqfish</span>,</span>
 <span>         cell_color <span class="op">=</span> <span class="st">"leiden_clus"</span>,</span>
 <span>         show_NN_network <span class="op">=</span> <span class="cn">TRUE</span>,</span>
@@ -679,11 +691,13 @@
 <span>                                 cluster_column <span class="op">=</span> <span class="st">"leiden_clus"</span>,</span>
 <span>                                 resolution <span class="op">=</span> <span class="fl">0.2</span>, </span>
 <span>                                 k_neighbors <span class="op">=</span> <span class="fl">10</span>,</span>
-<span>                                 pca_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>expression_values <span class="op">=</span> <span class="st">"normalized"</span>, scale_unit <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>,</span>
+<span>                                 pca_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>expression_values <span class="op">=</span> <span class="st">"normalized"</span>, </span>
+<span>                                                  scale_unit <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>,</span>
 <span>                                 nn_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>dimensions_to_use <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">)</span>,</span>
 <span>                                 selected_clusters <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">6</span>, <span class="fl">7</span><span class="op">)</span>,</span>
 <span>                                 name <span class="op">=</span> <span class="st">"sub_leiden_clus_select"</span></span>
 <span><span class="op">)</span></span>
+<span></span>
 <span><span class="co">## set colors for clusters</span></span>
 <span><span class="va">subleiden_order</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
 <span>    <span class="fl">1.1</span>, <span class="fl">2.1</span>, <span class="fl">3.1</span>, <span class="fl">4.1</span>, <span class="fl">5.1</span>, <span class="fl">5.2</span>,</span>
@@ -702,7 +716,7 @@
 <span>         legend_text <span class="op">=</span> <span class="fl">12</span>, </span>
 <span>         legend_symbol_size <span class="op">=</span> <span class="fl">3</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fseqfish_cortex%2F10-UMAP.png"></p>
+<p><img src="images%2Fseqfish_cortex%2F7-UMAP.png"></p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## show cluster relationships</span></span>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/showClusterHeatmap.html" class="external-link">showClusterHeatmap</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">SS_seqfish</span>, </span>
@@ -710,7 +724,7 @@
 <span>                   row_names_gp <span class="op">=</span> <span class="fu">grid</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/grid/gpar.html" class="external-link">gpar</a></span><span class="op">(</span>fontsize <span class="op">=</span> <span class="fl">9</span><span class="op">)</span>, </span>
 <span>                   column_names_gp <span class="op">=</span> <span class="fu">grid</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/grid/gpar.html" class="external-link">gpar</a></span><span class="op">(</span>fontsize <span class="op">=</span> <span class="fl">9</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fseqfish_cortex%2F11-showClusterHeatmap.png"></p>
+<p><img src="images%2Fseqfish_cortex%2F8-showClusterHeatmap.png"></p>
 <p>The following step requires the installation of {ggdendro}.</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># install.packages('ggdendro')</span></span>
@@ -719,7 +733,7 @@
 <span>                      h <span class="op">=</span> <span class="fl">0.5</span>, </span>
 <span>                      rotate <span class="op">=</span> <span class="cn">TRUE</span>, </span>
 <span>                      cluster_column <span class="op">=</span> <span class="st">"sub_leiden_clus_select"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fseqfish_cortex%2F12-showClusterDendrogram.png"></p>
+<p><img src="images%2Fseqfish_cortex%2F9-showClusterDendrogram.png"></p>
 </div>
 <div class="section level2" number="8">
 <h2 number="8" id="visualize-spatial-and-expression-space">
@@ -733,12 +747,13 @@
 <span>            dim_point_size <span class="op">=</span> <span class="fl">2</span>, </span>
 <span>            spat_point_size <span class="op">=</span> <span class="fl">2</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fseqfish_cortex%2F13-spatDimPlot2D.png"></p>
+<p><img src="images%2Fseqfish_cortex%2F10-spatDimPlot2D.png"></p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># selected groups and provide new colors</span></span>
 <span><span class="va">groups_of_interest</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">6.1</span>, <span class="fl">6.2</span>, <span class="fl">7.1</span>, <span class="fl">7.2</span><span class="op">)</span></span>
 <span><span class="va">group_colors</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"red"</span>, <span class="st">"green"</span>, <span class="st">"blue"</span>, <span class="st">"purple"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">group_colors</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="va">groups_of_interest</span></span>
+<span></span>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatDimPlot.html" class="external-link">spatDimPlot</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">SS_seqfish</span>, </span>
 <span>            cell_color <span class="op">=</span> <span class="st">"sub_leiden_clus_select"</span>,</span>
 <span>            dim_point_size <span class="op">=</span> <span class="fl">2</span>, </span>
@@ -746,7 +761,7 @@
 <span>            select_cell_groups <span class="op">=</span> <span class="va">groups_of_interest</span>, </span>
 <span>            cell_color_code <span class="op">=</span> <span class="va">group_colors</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fseqfish_cortex%2F14-spatDimPlot2D.png"></p>
+<p><img src="images%2Fseqfish_cortex%2F11-spatDimPlot2D.png"></p>
 </div>
 <div class="section level2" number="9">
 <h2 number="9" id="cell-type-marker-gene-detection">
@@ -755,13 +770,14 @@
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## gini</span></span>
 <span><span class="va">markers_gini</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/findMarkers_one_vs_all.html">findMarkers_one_vs_all</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">SS_seqfish</span>,</span>
-<span>                                                   method <span class="op">=</span> <span class="st">"gini"</span>,</span>
-<span>                                                   expression_values <span class="op">=</span> <span class="st">"normalized"</span>,</span>
-<span>                                                   cluster_column <span class="op">=</span> <span class="st">"sub_leiden_clus_select"</span>,</span>
-<span>                                                   min_feats <span class="op">=</span> <span class="fl">20</span>,</span>
-<span>                                                   min_expr_gini_score <span class="op">=</span> <span class="fl">0.5</span>,</span>
-<span>                                                   min_det_gini_score <span class="op">=</span> <span class="fl">0.5</span></span>
+<span>                                       method <span class="op">=</span> <span class="st">"gini"</span>,</span>
+<span>                                       expression_values <span class="op">=</span> <span class="st">"normalized"</span>,</span>
+<span>                                       cluster_column <span class="op">=</span> <span class="st">"sub_leiden_clus_select"</span>,</span>
+<span>                                       min_feats <span class="op">=</span> <span class="fl">20</span>,</span>
+<span>                                       min_expr_gini_score <span class="op">=</span> <span class="fl">0.5</span>,</span>
+<span>                                       min_det_gini_score <span class="op">=</span> <span class="fl">0.5</span></span>
 <span><span class="op">)</span></span>
+<span></span>
 <span><span class="va">topgenes_gini</span> <span class="op">&lt;-</span> <span class="va">markers_gini</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">.SD</span>, <span class="fl">2</span><span class="op">)</span>, by <span class="op">=</span> <span class="st">"cluster"</span><span class="op">]</span></span>
 <span></span>
 <span><span class="co">## violin plot</span></span>
@@ -772,10 +788,11 @@
 <span>           strip_position <span class="op">=</span> <span class="st">"right"</span>, </span>
 <span>           cluster_custom_order <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">topgenes_gini</span><span class="op">$</span><span class="va">cluster</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fseqfish_cortex%2F15-violinPlot.png"></p>
+<p><img src="images%2Fseqfish_cortex%2F12-violinPlot.png"></p>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># cluster heatmap</span></span>
 <span><span class="va">topgenes_gini</span> <span class="op">&lt;-</span> <span class="va">markers_gini</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">.SD</span>, <span class="fl">6</span><span class="op">)</span>, by <span class="op">=</span> <span class="st">"cluster"</span><span class="op">]</span></span>
+<span></span>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/plotMetaDataHeatmap.html" class="external-link">plotMetaDataHeatmap</a></span><span class="op">(</span><span class="va">SS_seqfish</span>,</span>
 <span>                    selected_feats <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">topgenes_gini</span><span class="op">$</span><span class="va">feats</span><span class="op">)</span>,</span>
 <span>                    custom_feat_order <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">topgenes_gini</span><span class="op">$</span><span class="va">feats</span><span class="op">)</span>,</span>
@@ -783,7 +800,7 @@
 <span>                    metadata_cols <span class="op">=</span> <span class="st">"sub_leiden_clus_select"</span>, </span>
 <span>                    x_text_size <span class="op">=</span> <span class="fl">10</span>, y_text_size <span class="op">=</span> <span class="fl">10</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fseqfish_cortex%2F16-plotMetaDataHeatmap.png"></p>
+<p><img src="images%2Fseqfish_cortex%2F13-plotMetaDataHeatmap.png"></p>
 </div>
 <div class="section level2" number="10">
 <h2 number="10" id="cell-type-annotation">
@@ -792,19 +809,16 @@
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## general cell types</span></span>
 <span><span class="co">## create vector with names</span></span>
-<span><span class="va">clusters_cell_types</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
-<span>    <span class="st">"L6 eNeuron"</span>, <span class="st">"L4 eNeuron"</span>, <span class="st">"L2/3 eNeuron"</span>, <span class="st">"L5 eNeuron"</span>,</span>
-<span>    <span class="st">"Lhx6 iNeuron"</span>, <span class="st">"Adarb2 iNeuron"</span>,</span>
-<span>    <span class="st">"endothelial"</span>, <span class="st">"mural"</span>,</span>
-<span>    <span class="st">"OPC"</span>, <span class="st">"Olig"</span>,</span>
-<span>    <span class="st">"astrocytes"</span>, <span class="st">"microglia"</span></span>
-<span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">clusters_cell_types</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
-<span>    <span class="fl">1.1</span>, <span class="fl">2.1</span>, <span class="fl">3.1</span>, <span class="fl">4.1</span>,</span>
-<span>    <span class="fl">5.1</span>, <span class="fl">5.2</span>,</span>
-<span>    <span class="fl">6.1</span>, <span class="fl">6.2</span>,</span>
-<span>    <span class="fl">7.1</span>, <span class="fl">7.2</span>,</span>
-<span>    <span class="fl">8.1</span>, <span class="fl">9.1</span></span>
+<span><span class="va">clusters_cell_types</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"1.1"</span> <span class="op">=</span> <span class="st">"L4 eNeuron"</span>,</span>
+<span>                         <span class="st">"2.1"</span> <span class="op">=</span> <span class="st">"L6 eNeuron"</span>,</span>
+<span>                         <span class="st">"3.1"</span> <span class="op">=</span> <span class="st">"L5 eNeuron"</span>, </span>
+<span>                         <span class="st">"4.1"</span> <span class="op">=</span> <span class="st">"endothelial"</span>,</span>
+<span>                         <span class="st">"5.1"</span> <span class="op">=</span> <span class="st">"Lhx6 iNeuron"</span>, </span>
+<span>                         <span class="st">"5.2"</span> <span class="op">=</span> <span class="st">"Adarb2 iNeuron"</span>,</span>
+<span>                         <span class="st">"6.1"</span> <span class="op">=</span> <span class="st">"Olig"</span>,</span>
+<span>                         <span class="st">"6.2"</span> <span class="op">=</span> <span class="st">"OPC"</span>,</span>
+<span>                         <span class="st">"7.1"</span> <span class="op">=</span> <span class="st">"astrocytes"</span>,</span>
+<span>                         <span class="st">"8.1"</span> <span class="op">=</span> <span class="st">"microglia"</span></span>
 <span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">SS_seqfish</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/annotateGiotto.html" class="external-link">annotateGiotto</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">SS_seqfish</span>, </span>
@@ -815,9 +829,9 @@
 <span></span>
 <span><span class="co"># cell type order and colors</span></span>
 <span><span class="va">cell_type_order</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
-<span>    <span class="st">"L6 eNeuron"</span>, <span class="st">"L5 eNeuron"</span>, <span class="st">"L4 eNeuron"</span>, <span class="st">"L2/3 eNeuron"</span>,</span>
+<span>    <span class="st">"L4 eNeuron"</span>, <span class="st">"L5 eNeuron"</span>, <span class="st">"L6 eNeuron"</span>,</span>
 <span>    <span class="st">"astrocytes"</span>, <span class="st">"Olig"</span>, <span class="st">"OPC"</span>, <span class="st">"Adarb2 iNeuron"</span>, <span class="st">"Lhx6 iNeuron"</span>,</span>
-<span>    <span class="st">"endothelial"</span>, <span class="st">"mural"</span>, <span class="st">"microglia"</span></span>
+<span>    <span class="st">"endothelial"</span>, <span class="st">"microglia"</span></span>
 <span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">cell_type_colors</span> <span class="op">&lt;-</span> <span class="va">giotto_colors</span></span>
@@ -833,7 +847,7 @@
 <span>           cluster_column <span class="op">=</span> <span class="st">"cell_types"</span>, </span>
 <span>           color_violin <span class="op">=</span> <span class="st">"cluster"</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fseqfish_cortex%2F17-violinPlot.png"></p>
+<p><img src="images%2Fseqfish_cortex%2F14-violinPlot.png"></p>
 <div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># co-visualization</span></span>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatDimPlot.html" class="external-link">spatDimPlot</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">SS_seqfish</span>, </span>
@@ -843,7 +857,7 @@
 <span>            dim_show_cluster_center <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>            dim_show_center_label <span class="op">=</span> <span class="cn">TRUE</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fseqfish_cortex%2F18-spatDimPlot2D.png"></p>
+<p><img src="images%2Fseqfish_cortex%2F15-spatDimPlot2D.png"></p>
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## heatmap genes vs cells</span></span>
 <span><span class="va">markers_gini</span><span class="op">[</span>, <span class="va">cell_types</span> <span class="op">:=</span> <span class="va">clusters_cell_types</span><span class="op">[</span><span class="va">cluster</span><span class="op">]</span><span class="op">]</span></span>
@@ -858,10 +872,9 @@
 <span>            cluster_custom_order <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">markers_gini</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">.SD</span>, <span class="fl">3</span><span class="op">)</span>, by <span class="op">=</span> <span class="st">"cell_types"</span><span class="op">]</span><span class="op">$</span><span class="va">cell_types</span><span class="op">)</span>,</span>
 <span>            legend_nrows <span class="op">=</span> <span class="fl">2</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fseqfish_cortex%2F19-plotHeatmap.png"></p>
+<p><img src="images%2Fseqfish_cortex%2F16-plotHeatmap.png"></p>
 <div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/plotHeatmap.html" class="external-link">plotHeatmap</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">SS_seqfish</span>,</span>
-<span>            cluster_color_code <span class="op">=</span> <span class="va">cell_type_colors</span>,</span>
 <span>            feats <span class="op">=</span> <span class="va">markers_gini</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">.SD</span>, <span class="fl">6</span><span class="op">)</span>, by <span class="op">=</span> <span class="st">"cell_types"</span><span class="op">]</span><span class="op">$</span><span class="va">feats</span>,</span>
 <span>            feat_order <span class="op">=</span> <span class="st">"custom"</span>,</span>
 <span>            feat_label_selection <span class="op">=</span> <span class="va">markers_gini</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">.SD</span>, <span class="fl">2</span><span class="op">)</span>, by <span class="op">=</span> <span class="st">"cluster"</span><span class="op">]</span><span class="op">$</span><span class="va">feats</span>,</span>
@@ -870,7 +883,7 @@
 <span>            cluster_custom_order <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">markers_gini</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">.SD</span>, <span class="fl">3</span><span class="op">)</span>, by <span class="op">=</span> <span class="st">"cell_types"</span><span class="op">]</span><span class="op">$</span><span class="va">cell_types</span><span class="op">)</span>,</span>
 <span>            legend_nrows <span class="op">=</span> <span class="fl">2</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fseqfish_cortex%2F20-plotHeatmap.png"></p>
+<p><img src="images%2Fseqfish_cortex%2F17-plotHeatmap.png"></p>
 </div>
 <div class="section level2" number="11">
 <h2 number="11" id="spatial-grid">
@@ -886,7 +899,7 @@
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatPlot.html" class="external-link">spatPlot</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">SS_seqfish</span>, </span>
 <span>         show_grid <span class="op">=</span> <span class="cn">TRUE</span>, </span>
 <span>         point_size <span class="op">=</span> <span class="fl">1.5</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fseqfish_cortex%2F21-spatPlot2D.png"></p>
+<p><img src="images%2Fseqfish_cortex%2F18-spatPlot2D.png"></p>
 </div>
 <div class="section level2" number="12">
 <h2 number="12" id="spatial-network">
@@ -895,10 +908,10 @@
 <div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## delaunay network: stats + creation</span></span>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/plotStatDelaunayNetwork.html" class="external-link">plotStatDelaunayNetwork</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">SS_seqfish</span>, </span>
-<span>                        maximum_distance <span class="op">=</span> <span class="fl">400</span>, </span>
-<span>                        save_plot <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">SS_seqfish</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/createSpatialNetwork.html" class="external-link">createSpatialNetwork</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">SS_seqfish</span>,</span>
+<span>                        maximum_distance <span class="op">=</span> <span class="fl">400</span><span class="op">)</span></span></code></pre></div>
+<p><img src="images%2Fseqfish_cortex%2F19-plotStatDelaunayNetwork.png"></p>
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">SS_seqfish</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/createSpatialNetwork.html" class="external-link">createSpatialNetwork</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">SS_seqfish</span>,</span>
 <span>                                   minimum_k <span class="op">=</span> <span class="fl">2</span>, </span>
 <span>                                   maximum_distance_delaunay <span class="op">=</span> <span class="fl">400</span><span class="op">)</span></span>
 <span></span>
@@ -925,7 +938,8 @@
 <span><span class="va">cell_metadata</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/pDataDT.html" class="external-link">pDataDT</a></span><span class="op">(</span><span class="va">SS_seqfish</span><span class="op">)</span></span>
 <span><span class="va">field1_ids</span> <span class="op">&lt;-</span> <span class="va">cell_metadata</span><span class="op">[</span><span class="va">FOV</span> <span class="op">==</span> <span class="fl">0</span><span class="op">]</span><span class="op">$</span><span class="va">cell_ID</span></span>
 <span></span>
-<span><span class="va">subSS_seqfish</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/subsetGiotto.html" class="external-link">subsetGiotto</a></span><span class="op">(</span><span class="va">SS_seqfish</span>, cell_ids <span class="op">=</span> <span class="va">field1_ids</span><span class="op">)</span></span>
+<span><span class="va">subSS_seqfish</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/subsetGiotto.html" class="external-link">subsetGiotto</a></span><span class="op">(</span><span class="va">SS_seqfish</span>, </span>
+<span>                              cell_ids <span class="op">=</span> <span class="va">field1_ids</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatPlot.html" class="external-link">spatPlot</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">subSS_seqfish</span>, </span>
 <span>         show_network <span class="op">=</span> <span class="cn">TRUE</span>,</span>
@@ -934,8 +948,8 @@
 <span>         point_size <span class="op">=</span> <span class="fl">2.5</span>, </span>
 <span>         cell_color <span class="op">=</span> <span class="st">"cell_types"</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fseqfish_cortex%2F22-spatPlot2D.png"></p>
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<p><img src="images%2Fseqfish_cortex%2F20-spatPlot2D.png"></p>
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatPlot.html" class="external-link">spatPlot</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">subSS_seqfish</span>, </span>
 <span>         show_network <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>         network_color <span class="op">=</span> <span class="st">"blue"</span>, </span>
@@ -943,8 +957,8 @@
 <span>         point_size <span class="op">=</span> <span class="fl">2.5</span>, </span>
 <span>         cell_color <span class="op">=</span> <span class="st">"cell_types"</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fseqfish_cortex%2F23-spatPlot2D.png"></p>
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<p><img src="images%2Fseqfish_cortex%2F21-spatPlot2D.png"></p>
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatPlot.html" class="external-link">spatPlot</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">subSS_seqfish</span>, </span>
 <span>         show_network <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>         network_color <span class="op">=</span> <span class="st">"blue"</span>, </span>
@@ -952,8 +966,8 @@
 <span>         point_size <span class="op">=</span> <span class="fl">2.5</span>, </span>
 <span>         cell_color <span class="op">=</span> <span class="st">"cell_types"</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fseqfish_cortex%2F24-spatPlot2D.png"></p>
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<p><img src="images%2Fseqfish_cortex%2F22-spatPlot2D.png"></p>
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatPlot.html" class="external-link">spatPlot</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">subSS_seqfish</span>, </span>
 <span>         show_network <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>         network_color <span class="op">=</span> <span class="st">"blue"</span>, </span>
@@ -961,7 +975,7 @@
 <span>         point_size <span class="op">=</span> <span class="fl">2.5</span>, </span>
 <span>         cell_color <span class="op">=</span> <span class="st">"cell_types"</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fseqfish_cortex%2F25-spatPlot2D.png"></p>
+<p><img src="images%2Fseqfish_cortex%2F23-spatPlot2D.png"></p>
 </div>
 <div class="section level2" number="13">
 <h2 number="13" id="spatial-genes">
@@ -971,8 +985,8 @@
 <h3 number="13.1" id="individual-spatial-genes">
 <span class="header-section-number">13.1</span> Individual spatial genes<a class="anchor" aria-label="anchor" href="#individual-spatial-genes"></a>
 </h3>
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co">## 3 new methods to identify spatial genes</span></span>
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">## identify spatial genes</span></span>
 <span><span class="va">km_spatialfeats</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/binSpect.html">binSpect</a></span><span class="op">(</span><span class="va">SS_seqfish</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatFeatPlot2D.html" class="external-link">spatFeatPlot2D</a></span><span class="op">(</span><span class="va">SS_seqfish</span>,</span>
@@ -985,13 +999,13 @@
 <span>               point_size <span class="op">=</span> <span class="fl">2.5</span>,</span>
 <span>               cow_n_col <span class="op">=</span> <span class="fl">2</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fseqfish_cortex%2F26-spatGenePlot2D.png"></p>
+<p><img src="images%2Fseqfish_cortex%2F24-spatFeatPlot2D.png"></p>
 </div>
 <div class="section level3" number="13.2">
 <h3 number="13.2" id="spatial-genes-co-expression-modules">
 <span class="header-section-number">13.2</span> Spatial Genes Co-Expression Modules<a class="anchor" aria-label="anchor" href="#spatial-genes-co-expression-modules"></a>
 </h3>
-<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## spatial co-expression patterns ##</span></span>
 <span><span class="va">ext_spatial_genes</span> <span class="op">&lt;-</span> <span class="va">km_spatialfeats</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">500</span><span class="op">]</span><span class="op">$</span><span class="va">feats</span></span>
 <span></span>
@@ -1014,8 +1028,8 @@
 <span>                     use_clus_name <span class="op">=</span> <span class="st">"spat_netw_clus"</span>,</span>
 <span>                     heatmap_legend_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>title <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fseqfish_cortex%2F27-heatmSpatialCorFeats.png"></p>
-<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
+<p><img src="images%2Fseqfish_cortex%2F25-heatmSpatialCorFeats.png"></p>
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># 3. rank spatial correlated clusters and show genes for selected clusters</span></span>
 <span><span class="va">netw_ranks</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/rankSpatialCorGroups.html">rankSpatialCorGroups</a></span><span class="op">(</span><span class="va">SS_seqfish</span>,</span>
 <span>                                   spatCorObject <span class="op">=</span> <span class="va">spat_cor_netw_DT</span>,</span>
@@ -1027,8 +1041,8 @@
 <span>                                             selected_clusters <span class="op">=</span> <span class="fl">6</span>,</span>
 <span>                                             show_top_feats <span class="op">=</span> <span class="fl">1</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fseqfish_cortex%2F28-rankSpatialCorGroups.png"></p>
-<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
+<p><img src="images%2Fseqfish_cortex%2F26-rankSpatialCorGroups.png"></p>
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># 4. create metagene enrichment score for clusters</span></span>
 <span><span class="va">cluster_genes_DT</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/showSpatialCorFeats.html">showSpatialCorFeats</a></span><span class="op">(</span><span class="va">spat_cor_netw_DT</span>,</span>
 <span>                                        use_clus_name <span class="op">=</span> <span class="st">"spat_netw_clus"</span>,</span>
@@ -1049,14 +1063,14 @@
 <span>             point_size <span class="op">=</span> <span class="fl">1.5</span>, </span>
 <span>             cow_n_col <span class="op">=</span> <span class="fl">3</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fseqfish_cortex%2F29-spatCellPlot2D.png"></p>
+<p><img src="images%2Fseqfish_cortex%2F27-spatCellPlot2D.png"></p>
 </div>
 </div>
 <div class="section level2" number="14">
 <h2 number="14" id="hmrf-spatial-domains">
 <span class="header-section-number">14</span> HMRF Spatial Domains<a class="anchor" aria-label="anchor" href="#hmrf-spatial-domains"></a>
 </h2>
-<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">hmrf_folder</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="va">results_folder</span>, <span class="st">"/11_HMRF/"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/files.html" class="external-link">file.exists</a></span><span class="op">(</span><span class="va">hmrf_folder</span><span class="op">)</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/files2.html" class="external-link">dir.create</a></span><span class="op">(</span><span class="va">hmrf_folder</span>, recursive <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
@@ -1101,27 +1115,28 @@
 <span>    point_size <span class="op">=</span> <span class="fl">3</span>,</span>
 <span>    coord_fix_ratio <span class="op">=</span> <span class="fl">1</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fseqfish_cortex%2F30-spatPlot2D.png"></p>
+<p><img src="images%2Fseqfish_cortex%2F28-spatPlot2D.png"></p>
 </div>
 <div class="section level2" number="15">
 <h2 number="15" id="cell-neighborhood-cell-typecell-type-interactions">
 <span class="header-section-number">15</span> Cell Neighborhood: Cell-Type/Cell-Type Interactions<a class="anchor" aria-label="anchor" href="#cell-neighborhood-cell-typecell-type-interactions"></a>
 </h2>
-<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">cell_proximities</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/cellProximityEnrichment.html">cellProximityEnrichment</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">SS_seqfish</span>,</span>
 <span>                                            cluster_column <span class="op">=</span> <span class="st">"cell_types"</span>,</span>
 <span>                                            spatial_network_name <span class="op">=</span> <span class="st">"Delaunay_network"</span>,</span>
 <span>                                            adjust_method <span class="op">=</span> <span class="st">"fdr"</span>,</span>
 <span>                                            number_of_simulations <span class="op">=</span> <span class="fl">2000</span></span>
 <span><span class="op">)</span></span>
+<span></span>
 <span><span class="co">## barplot</span></span>
 <span><span class="fu"><a href="../reference/cellProximityBarplot.html">cellProximityBarplot</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">SS_seqfish</span>,</span>
 <span>                     CPscore <span class="op">=</span> <span class="va">cell_proximities</span>,</span>
 <span>                     min_orig_ints <span class="op">=</span> <span class="fl">5</span>, </span>
 <span>                     min_sim_ints <span class="op">=</span> <span class="fl">5</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fseqfish_cortex%2F31-cellProximityBarplot.png"></p>
-<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
+<p><img src="images%2Fseqfish_cortex%2F29-cellProximityBarplot.png"></p>
+<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## heatmap</span></span>
 <span><span class="fu"><a href="../reference/cellProximityHeatmap.html">cellProximityHeatmap</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">SS_seqfish</span>,</span>
 <span>                     CPscore <span class="op">=</span> <span class="va">cell_proximities</span>,</span>
@@ -1130,16 +1145,16 @@
 <span>                     color_breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">1.5</span>, <span class="fl">0</span>, <span class="fl">1.5</span><span class="op">)</span>,</span>
 <span>                     color_names <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"blue"</span>, <span class="st">"white"</span>, <span class="st">"red"</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fseqfish_cortex%2F32-cellProximityHeatmap.png"></p>
-<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
+<p><img src="images%2Fseqfish_cortex%2F30-cellProximityHeatmap.png"></p>
+<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## network</span></span>
 <span><span class="fu"><a href="../reference/cellProximityNetwork.html">cellProximityNetwork</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">SS_seqfish</span>,</span>
 <span>                     CPscore <span class="op">=</span> <span class="va">cell_proximities</span>, </span>
 <span>                     remove_self_edges <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>                     only_show_enrichment_edges <span class="op">=</span> <span class="cn">TRUE</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fseqfish_cortex%2F33-cellProximityNetwork.png"></p>
-<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
+<p><img src="images%2Fseqfish_cortex%2F31-cellProximityNetwork.png"></p>
+<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## network with self-edges</span></span>
 <span><span class="fu"><a href="../reference/cellProximityNetwork.html">cellProximityNetwork</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">SS_seqfish</span>, </span>
 <span>                     CPscore <span class="op">=</span> <span class="va">cell_proximities</span>,</span>
@@ -1151,8 +1166,8 @@
 <span>                     edge_weight_range_depletion <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span><span class="op">)</span>,</span>
 <span>                     edge_weight_range_enrichment <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">5</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fseqfish_cortex%2F12_d_network_cell_cell_enrichment_self.png"></p>
-<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
+<p><img src="images%2Fseqfish_cortex%2F32-cellProximityNetwork.png"></p>
+<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## visualization of specific cell types</span></span>
 <span><span class="co"># Option 1</span></span>
 <span><span class="va">spec_interaction</span> <span class="op">&lt;-</span> <span class="st">"astrocytes--Olig"</span></span>
@@ -1166,8 +1181,8 @@
 <span>                        point_size_select <span class="op">=</span> <span class="fl">4</span>, </span>
 <span>                        point_size_other <span class="op">=</span> <span class="fl">2</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fseqfish_cortex%2F34-cellProximitySpatPlot2D.png"></p>
-<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
+<p><img src="images%2Fseqfish_cortex%2F33-cellProximitySpatPlot2D.png"></p>
+<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Option 2: create additional metadata</span></span>
 <span><span class="va">SS_seqfish</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/addCellIntMetadata.html">addCellIntMetadata</a></span><span class="op">(</span><span class="va">SS_seqfish</span>,</span>
 <span>                                 spatial_network <span class="op">=</span> <span class="st">"spatial_network"</span>,</span>
@@ -1181,49 +1196,46 @@
 <span>         select_cell_groups <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"other_astrocytes"</span>, <span class="st">"other_Olig"</span>, <span class="st">"select_astrocytes"</span>, <span class="st">"select_Olig"</span><span class="op">)</span>,</span>
 <span>         legend_symbol_size <span class="op">=</span> <span class="fl">3</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fseqfish_cortex%2F35-spatPlot2D.png"></p>
+<p><img src="images%2Fseqfish_cortex%2F34-spatPlot2D.png"></p>
 </div>
 <div class="section level2" number="16">
 <h2 number="16" id="cell-neighborhood-interaction-changed-features">
 <span class="header-section-number">16</span> Cell Neighborhood: Interaction Changed Features<a class="anchor" aria-label="anchor" href="#cell-neighborhood-interaction-changed-features"></a>
 </h2>
-<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://future.futureverse.org" class="external-link">future</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="co">## select top 25th highest expressing genes</span></span>
-<span><span class="va">gene_metadata</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/fDataDT.html" class="external-link">fDataDT</a></span><span class="op">(</span><span class="va">SS_seqfish</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">gene_metadata</span><span class="op">$</span><span class="va">nr_cells</span>, <span class="va">gene_metadata</span><span class="op">$</span><span class="va">mean_expr</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">gene_metadata</span><span class="op">$</span><span class="va">nr_cells</span>, <span class="va">gene_metadata</span><span class="op">$</span><span class="va">mean_expr_det</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/stats/quantile.html" class="external-link">quantile</a></span><span class="op">(</span><span class="va">gene_metadata</span><span class="op">$</span><span class="va">mean_expr_det</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">high_expressed_genes</span> <span class="op">&lt;-</span> <span class="va">gene_metadata</span><span class="op">[</span><span class="va">mean_expr_det</span> <span class="op">&gt;</span> <span class="fl">3.5</span><span class="op">]</span><span class="op">$</span><span class="va">feat_ID</span></span>
-<span></span>
-<span><span class="co">## identify genes that are associated with proximity to other cell types</span></span>
-<span><span class="fu">plan</span><span class="op">(</span><span class="st">"multisession"</span>, workers <span class="op">=</span> <span class="fl">6</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">ICFsForesHighGenes</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/findInteractionChangedFeats.html">findInteractionChangedFeats</a></span><span class="op">(</span></span>
-<span>    gobject <span class="op">=</span> <span class="va">SS_seqfish</span>,</span>
-<span>    selected_feats <span class="op">=</span> <span class="va">high_expressed_genes</span>,</span>
-<span>    spatial_network_name <span class="op">=</span> <span class="st">"Delaunay_network"</span>,</span>
-<span>    cluster_column <span class="op">=</span> <span class="st">"cell_types"</span>,</span>
-<span>    diff_test <span class="op">=</span> <span class="st">"permutation"</span>,</span>
-<span>    adjust_method <span class="op">=</span> <span class="st">"fdr"</span>,</span>
-<span>    nr_permutations <span class="op">=</span> <span class="fl">2000</span>,</span>
-<span>    do_parallel <span class="op">=</span> <span class="cn">TRUE</span></span>
-<span><span class="op">)</span></span>
-<span></span>
-<span><span class="co">## visualize all genes</span></span>
-<span><span class="fu"><a href="../reference/plotCellProximityFeats.html">plotCellProximityFeats</a></span><span class="op">(</span><span class="va">SS_seqfish</span>,</span>
-<span>                       icfObject <span class="op">=</span> <span class="va">ICFscoresHighGenes</span>,</span>
-<span>                       method <span class="op">=</span> <span class="st">"dotplot"</span></span>
-<span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fseqfish_cortex%2F36-plotCellProximityGenes.png"></p>
-<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true"></a><span class="kw">library</span>(future)</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true"></a></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true"></a><span class="co">## select top 25th highest expressing genes</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true"></a>gene_metadata &lt;-<span class="st"> </span><span class="kw">fDataDT</span>(SS_seqfish)</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true"></a></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true"></a><span class="kw">plot</span>(gene_metadata<span class="op">$</span>nr_cells, gene_metadata<span class="op">$</span>mean_expr)</span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true"></a></span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true"></a><span class="kw">plot</span>(gene_metadata<span class="op">$</span>nr_cells, gene_metadata<span class="op">$</span>mean_expr_det)</span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true"></a></span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true"></a><span class="kw">quantile</span>(gene_metadata<span class="op">$</span>mean_expr_det)</span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true"></a></span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true"></a>high_expressed_genes &lt;-<span class="st"> </span>gene_metadata[mean_expr_det <span class="op">&gt;</span><span class="st"> </span><span class="fl">3.5</span>]<span class="op">$</span>feat_ID</span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true"></a></span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true"></a><span class="co">## identify genes that are associated with proximity to other cell types</span></span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true"></a><span class="kw">plan</span>(<span class="st">"multisession"</span>, <span class="dt">workers =</span> <span class="dv">6</span>)</span>
+<span id="cb39-16"><a href="#cb39-16" aria-hidden="true"></a></span>
+<span id="cb39-17"><a href="#cb39-17" aria-hidden="true"></a>ICFsForesHighGenes &lt;-<span class="st"> </span><span class="kw">findInteractionChangedFeats</span>(</span>
+<span id="cb39-18"><a href="#cb39-18" aria-hidden="true"></a>    <span class="dt">gobject =</span> SS_seqfish,</span>
+<span id="cb39-19"><a href="#cb39-19" aria-hidden="true"></a>    <span class="dt">selected_feats =</span> high_expressed_genes,</span>
+<span id="cb39-20"><a href="#cb39-20" aria-hidden="true"></a>    <span class="dt">spatial_network_name =</span> <span class="st">"Delaunay_network"</span>,</span>
+<span id="cb39-21"><a href="#cb39-21" aria-hidden="true"></a>    <span class="dt">cluster_column =</span> <span class="st">"cell_types"</span></span>
+<span id="cb39-22"><a href="#cb39-22" aria-hidden="true"></a>    <span class="dt">diff_test =</span> <span class="st">"permutation"</span>,</span>
+<span id="cb39-23"><a href="#cb39-23" aria-hidden="true"></a>    <span class="dt">adjust_method =</span> <span class="st">"fdr"</span>,</span>
+<span id="cb39-24"><a href="#cb39-24" aria-hidden="true"></a>    <span class="dt">nr_permutations =</span> <span class="dv">2000</span>,</span>
+<span id="cb39-25"><a href="#cb39-25" aria-hidden="true"></a>    <span class="dt">do_parallel =</span> <span class="ot">TRUE</span></span>
+<span id="cb39-26"><a href="#cb39-26" aria-hidden="true"></a>)</span>
+<span id="cb39-27"><a href="#cb39-27" aria-hidden="true"></a></span>
+<span id="cb39-28"><a href="#cb39-28" aria-hidden="true"></a><span class="co">## visualize all genes</span></span>
+<span id="cb39-29"><a href="#cb39-29" aria-hidden="true"></a><span class="kw">plotCellProximityFeats</span>(SS_seqfish,</span>
+<span id="cb39-30"><a href="#cb39-30" aria-hidden="true"></a>                       <span class="dt">icfObject =</span> ICFsForesHighGenes,</span>
+<span id="cb39-31"><a href="#cb39-31" aria-hidden="true"></a>                       <span class="dt">method =</span> <span class="st">"dotplot"</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## filter genes</span></span>
-<span><span class="va">ICFscoresFilt</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/filterInteractionChangedFeats.html">filterICF</a></span><span class="op">(</span><span class="va">ICFscoresHighGenes</span><span class="op">)</span></span>
+<span><span class="va">ICFscoresFilt</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/filterInteractionChangedFeats.html">filterICF</a></span><span class="op">(</span><span class="va">ICFsForesHighGenes</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co">## visualize subset of interaction changed genes (ICFs)</span></span>
 <span><span class="va">ICF_genes</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Jakmip1"</span>, <span class="st">"Golgb1"</span>, <span class="st">"Dact2"</span>, <span class="st">"Ddx27"</span>, <span class="st">"Abl1"</span>, <span class="st">"Zswim8"</span><span class="op">)</span></span>
@@ -1231,18 +1243,17 @@
 <span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">ICF_genes</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="va">ICF_genes_types</span></span>
 <span></span>
 <span><span class="fu"><a href="../reference/plotICF.html">plotICF</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">SS_seqfish</span>,</span>
-<span>        icfObject <span class="op">=</span> <span class="va">ICFscoresHighGenes</span>,</span>
+<span>        icfObject <span class="op">=</span> <span class="va">ICFsForesHighGenes</span>,</span>
 <span>        source_type <span class="op">=</span> <span class="st">"endothelial"</span>,</span>
 <span>        source_markers <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Pltp"</span>, <span class="st">"Cldn5"</span>, <span class="st">"Apcdd1"</span><span class="op">)</span>,</span>
 <span>        ICF_feats <span class="op">=</span> <span class="va">ICF_genes</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fseqfish_cortex%2F37-plotICF.png"></p>
 </div>
 <div class="section level2" number="17">
 <h2 number="17" id="cell-neighborhood-ligand-receptor-cell-cell-communication">
 <span class="header-section-number">17</span> Cell Neighborhood: Ligand-Receptor Cell-Cell Communication<a class="anchor" aria-label="anchor" href="#cell-neighborhood-ligand-receptor-cell-cell-communication"></a>
 </h2>
-<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## LR expression</span></span>
 <span><span class="co">## LR activity changes</span></span>
 <span><span class="va">LR_data</span> <span class="op">&lt;-</span> <span class="fu">data.table</span><span class="fu">::</span><span class="fu"><a href="https://rdatatable.gitlab.io/data.table/reference/fread.html" class="external-link">fread</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"mouse_ligand_receptors.txt"</span>, package <span class="op">=</span> <span class="st">"GiottoData"</span><span class="op">)</span><span class="op">)</span></span>
@@ -1294,8 +1305,8 @@
 <span>                 selected_cell_LR <span class="op">=</span> <span class="va">top_LR_cell_ints</span>,</span>
 <span>                 cluster_on <span class="op">=</span> <span class="st">"PI"</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fseqfish_cortex%2F38-plotCCcomDotplot.png"></p>
-<div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
+<p><img src="images%2Fseqfish_cortex%2F37-plotCCcomDotplot.png"></p>
+<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## spatial vs rank ####</span></span>
 <span><span class="va">comb_comm</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/combCCcom.html">combCCcom</a></span><span class="op">(</span></span>
 <span>    spatialCC <span class="op">=</span> <span class="va">spatial_all_scores</span>,</span>
@@ -1308,10 +1319,10 @@
 <span>                   <span class="va">comb_comm</span>,</span>
 <span>                   expr_rnk_column <span class="op">=</span> <span class="st">"LR_expr_rnk"</span>,</span>
 <span>                   spat_rnk_column <span class="op">=</span> <span class="st">"LR_spat_rnk"</span>,</span>
-<span>                   midpoint <span class="op">=</span> <span class="fl">10</span></span>
+<span>                   gradient_midpoint <span class="op">=</span> <span class="fl">10</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fseqfish_cortex%2F39-plotRankSpatvsExpr.png"></p>
-<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
+<p><img src="images%2Fseqfish_cortex%2F38-plotRankSpatvsExpr.png"></p>
+<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## recovery</span></span>
 <span><span class="fu"><a href="../reference/plotRecovery.html">plotRecovery</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">SS_seqfish</span>,</span>
 <span>             <span class="va">comb_comm</span>,</span>
@@ -1319,14 +1330,102 @@
 <span>             spat_rnk_column <span class="op">=</span> <span class="st">"LR_spat_rnk"</span>,</span>
 <span>             ground_truth <span class="op">=</span> <span class="st">"spatial"</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fseqfish_cortex%2F40-plotRecovery.png"></p>
+<p><img src="images%2Fseqfish_cortex%2F39-plotRecovery.png"></p>
 </div>
 <div class="section level2" number="18">
 <h2 number="18" id="session-info">
 <span class="header-section-number">18</span> Session info<a class="anchor" aria-label="anchor" href="#session-info"></a>
 </h2>
-<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true"></a>R version <span class="dv">4</span>.<span class="fl">4.1</span> (<span class="dv">2024-06-14</span>)</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true"></a>Platform<span class="op">:</span><span class="st"> </span>x86_<span class="dv">64</span><span class="op">-</span>apple<span class="op">-</span>darwin20</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true"></a>Running under<span class="op">:</span><span class="st"> </span>macOS Sonoma <span class="dv">14</span>.<span class="fl">6.1</span></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true"></a></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true"></a>Matrix products<span class="op">:</span><span class="st"> </span>default</span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true"></a>BLAS<span class="op">:</span><span class="st">   </span><span class="er">/</span>System<span class="op">/</span>Library<span class="op">/</span>Frameworks<span class="op">/</span>Accelerate.framework<span class="op">/</span>Versions<span class="op">/</span>A<span class="op">/</span>Frameworks<span class="op">/</span>vecLib.framework<span class="op">/</span>Versions<span class="op">/</span>A<span class="op">/</span>libBLAS.dylib </span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true"></a>LAPACK<span class="op">:</span><span class="st"> </span><span class="er">/</span>Library<span class="op">/</span>Frameworks<span class="op">/</span>R.framework<span class="op">/</span>Versions<span class="op">/</span><span class="fl">4.4</span><span class="op">-</span>x86_<span class="dv">64</span><span class="op">/</span>Resources<span class="op">/</span>lib<span class="op">/</span>libRlapack.dylib;  LAPACK version <span class="dv">3</span>.<span class="fl">12.0</span></span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true"></a></span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true"></a>locale<span class="op">:</span></span>
+<span id="cb45-10"><a href="#cb45-10" aria-hidden="true"></a>[<span class="dv">1</span>] en_US.UTF<span class="dv">-8</span><span class="op">/</span>en_US.UTF<span class="dv">-8</span><span class="op">/</span>en_US.UTF<span class="dv">-8</span><span class="op">/</span>C<span class="op">/</span>en_US.UTF<span class="dv">-8</span><span class="op">/</span>en_US.UTF<span class="dv">-8</span></span>
+<span id="cb45-11"><a href="#cb45-11" aria-hidden="true"></a></span>
+<span id="cb45-12"><a href="#cb45-12" aria-hidden="true"></a>time zone<span class="op">:</span><span class="st"> </span>America<span class="op">/</span>New_York</span>
+<span id="cb45-13"><a href="#cb45-13" aria-hidden="true"></a>tzcode source<span class="op">:</span><span class="st"> </span>internal</span>
+<span id="cb45-14"><a href="#cb45-14" aria-hidden="true"></a></span>
+<span id="cb45-15"><a href="#cb45-15" aria-hidden="true"></a>attached base packages<span class="op">:</span></span>
+<span id="cb45-16"><a href="#cb45-16" aria-hidden="true"></a>[<span class="dv">1</span>] stats     graphics  grDevices utils     datasets  methods   base     </span>
+<span id="cb45-17"><a href="#cb45-17" aria-hidden="true"></a></span>
+<span id="cb45-18"><a href="#cb45-18" aria-hidden="true"></a>other attached packages<span class="op">:</span></span>
+<span id="cb45-19"><a href="#cb45-19" aria-hidden="true"></a>[<span class="dv">1</span>] future_<span class="dv">1</span>.<span class="fl">34.0</span>     ggdendro_<span class="dv">0</span>.<span class="fl">2.0</span>    Giotto_<span class="dv">4</span>.<span class="fl">1.3</span>      GiottoClass_<span class="dv">0</span>.<span class="fl">4.0</span></span>
+<span id="cb45-20"><a href="#cb45-20" aria-hidden="true"></a></span>
+<span id="cb45-21"><a href="#cb45-21" aria-hidden="true"></a>loaded via a <span class="kw">namespace</span> (and not attached)<span class="op">:</span></span>
+<span id="cb45-22"><a href="#cb45-22" aria-hidden="true"></a><span class="st">  </span>[<span class="dv">1</span>] RColorBrewer_<span class="fl">1.1</span><span class="dv">-3</span>          rstudioapi_<span class="dv">0</span>.<span class="fl">16.0</span>          </span>
+<span id="cb45-23"><a href="#cb45-23" aria-hidden="true"></a>  [<span class="dv">3</span>] jsonlite_<span class="dv">1</span>.<span class="fl">8.8</span>              shape_<span class="dv">1</span>.<span class="dv">4</span>.<span class="fl">6.1</span>              </span>
+<span id="cb45-24"><a href="#cb45-24" aria-hidden="true"></a>  [<span class="dv">5</span>] magrittr_<span class="dv">2</span>.<span class="fl">0.3</span>              magick_<span class="dv">2</span>.<span class="fl">8.4</span>               </span>
+<span id="cb45-25"><a href="#cb45-25" aria-hidden="true"></a>  [<span class="dv">7</span>] farver_<span class="dv">2</span>.<span class="fl">1.2</span>                rmarkdown_<span class="fl">2.28</span>             </span>
+<span id="cb45-26"><a href="#cb45-26" aria-hidden="true"></a>  [<span class="dv">9</span>] GlobalOptions_<span class="dv">0</span>.<span class="fl">1.2</span>         zlibbioc_<span class="dv">1</span>.<span class="fl">50.0</span>            </span>
+<span id="cb45-27"><a href="#cb45-27" aria-hidden="true"></a> [<span class="dv">11</span>] ragg_<span class="dv">1</span>.<span class="fl">3.2</span>                  vctrs_<span class="dv">0</span>.<span class="fl">6.5</span>                </span>
+<span id="cb45-28"><a href="#cb45-28" aria-hidden="true"></a> [<span class="dv">13</span>] memoise_<span class="dv">2</span>.<span class="fl">0.1</span>               Cairo_<span class="fl">1.6</span><span class="dv">-2</span>                </span>
+<span id="cb45-29"><a href="#cb45-29" aria-hidden="true"></a> [<span class="dv">15</span>] GiottoUtils_<span class="dv">0</span>.<span class="fl">1.12</span>          terra_<span class="fl">1.7</span><span class="dv">-78</span>               </span>
+<span id="cb45-30"><a href="#cb45-30" aria-hidden="true"></a> [<span class="dv">17</span>] htmltools_<span class="dv">0</span>.<span class="dv">5</span>.<span class="fl">8.1</span>           S4Arrays_<span class="dv">1</span>.<span class="fl">4.1</span>             </span>
+<span id="cb45-31"><a href="#cb45-31" aria-hidden="true"></a> [<span class="dv">19</span>] SparseArray_<span class="dv">1</span>.<span class="fl">4.8</span>           parallelly_<span class="dv">1</span>.<span class="fl">38.0</span>          </span>
+<span id="cb45-32"><a href="#cb45-32" aria-hidden="true"></a> [<span class="dv">21</span>] htmlwidgets_<span class="dv">1</span>.<span class="fl">6.4</span>           cachem_<span class="dv">1</span>.<span class="fl">1.0</span>               </span>
+<span id="cb45-33"><a href="#cb45-33" aria-hidden="true"></a> [<span class="dv">23</span>] plotly_<span class="dv">4</span>.<span class="fl">10.4</span>               igraph_<span class="dv">2</span>.<span class="fl">0.3</span>               </span>
+<span id="cb45-34"><a href="#cb45-34" aria-hidden="true"></a> [<span class="dv">25</span>] lifecycle_<span class="dv">1</span>.<span class="fl">0.4</span>             iterators_<span class="dv">1</span>.<span class="fl">0.14</span>           </span>
+<span id="cb45-35"><a href="#cb45-35" aria-hidden="true"></a> [<span class="dv">27</span>] pkgconfig_<span class="dv">2</span>.<span class="fl">0.3</span>             rsvd_<span class="dv">1</span>.<span class="fl">0.5</span>                 </span>
+<span id="cb45-36"><a href="#cb45-36" aria-hidden="true"></a> [<span class="dv">29</span>] Matrix_<span class="fl">1.7</span><span class="dv">-0</span>                R6_<span class="dv">2</span>.<span class="fl">5.1</span>                   </span>
+<span id="cb45-37"><a href="#cb45-37" aria-hidden="true"></a> [<span class="dv">31</span>] fastmap_<span class="dv">1</span>.<span class="fl">2.0</span>               GenomeInfoDbData_<span class="dv">1</span>.<span class="fl">2.12</span>    </span>
+<span id="cb45-38"><a href="#cb45-38" aria-hidden="true"></a> [<span class="dv">33</span>] MatrixGenerics_<span class="dv">1</span>.<span class="fl">16.0</span>       clue_<span class="fl">0.3</span><span class="dv">-65</span>                </span>
+<span id="cb45-39"><a href="#cb45-39" aria-hidden="true"></a> [<span class="dv">35</span>] digest_<span class="dv">0</span>.<span class="fl">6.37</span>               colorspace_<span class="fl">2.1</span><span class="dv">-1</span>           </span>
+<span id="cb45-40"><a href="#cb45-40" aria-hidden="true"></a> [<span class="dv">37</span>] S4Vectors_<span class="dv">0</span>.<span class="fl">42.1</span>            irlba_<span class="dv">2</span>.<span class="dv">3</span>.<span class="fl">5.1</span>              </span>
+<span id="cb45-41"><a href="#cb45-41" aria-hidden="true"></a> [<span class="dv">39</span>] textshaping_<span class="dv">0</span>.<span class="fl">4.0</span>           GenomicRanges_<span class="dv">1</span>.<span class="fl">56.1</span>       </span>
+<span id="cb45-42"><a href="#cb45-42" aria-hidden="true"></a> [<span class="dv">41</span>] beachmat_<span class="dv">2</span>.<span class="fl">20.0</span>             labeling_<span class="dv">0</span>.<span class="fl">4.3</span>             </span>
+<span id="cb45-43"><a href="#cb45-43" aria-hidden="true"></a> [<span class="dv">43</span>] progressr_<span class="dv">0</span>.<span class="fl">14.0</span>            fansi_<span class="dv">1</span>.<span class="fl">0.6</span>                </span>
+<span id="cb45-44"><a href="#cb45-44" aria-hidden="true"></a> [<span class="dv">45</span>] polyclip_<span class="fl">1.10</span><span class="dv">-7</span>             httr_<span class="dv">1</span>.<span class="fl">4.7</span>                 </span>
+<span id="cb45-45"><a href="#cb45-45" aria-hidden="true"></a> [<span class="dv">47</span>] abind_<span class="fl">1.4</span><span class="dv">-5</span>                 compiler_<span class="dv">4</span>.<span class="fl">4.1</span>             </span>
+<span id="cb45-46"><a href="#cb45-46" aria-hidden="true"></a> [<span class="dv">49</span>] withr_<span class="dv">3</span>.<span class="fl">0.1</span>                 doParallel_<span class="dv">1</span>.<span class="fl">0.17</span>          </span>
+<span id="cb45-47"><a href="#cb45-47" aria-hidden="true"></a> [<span class="dv">51</span>] backports_<span class="dv">1</span>.<span class="fl">5.0</span>             BiocParallel_<span class="dv">1</span>.<span class="fl">38.0</span>        </span>
+<span id="cb45-48"><a href="#cb45-48" aria-hidden="true"></a> [<span class="dv">53</span>] viridis_<span class="dv">0</span>.<span class="fl">6.5</span>               ggforce_<span class="dv">0</span>.<span class="fl">4.2</span>              </span>
+<span id="cb45-49"><a href="#cb45-49" aria-hidden="true"></a> [<span class="dv">55</span>] R.utils_<span class="dv">2</span>.<span class="fl">12.3</span>              MASS_<span class="fl">7.3-60.2</span>              </span>
+<span id="cb45-50"><a href="#cb45-50" aria-hidden="true"></a> [<span class="dv">57</span>] DelayedArray_<span class="dv">0</span>.<span class="fl">30.1</span>         rjson_<span class="dv">0</span>.<span class="fl">2.22</span>               </span>
+<span id="cb45-51"><a href="#cb45-51" aria-hidden="true"></a> [<span class="dv">59</span>] gtools_<span class="dv">3</span>.<span class="fl">9.5</span>                GiottoVisuals_<span class="dv">0</span>.<span class="fl">2.5</span>        </span>
+<span id="cb45-52"><a href="#cb45-52" aria-hidden="true"></a> [<span class="dv">61</span>] tools_<span class="dv">4</span>.<span class="fl">4.1</span>                 future.apply_<span class="dv">1</span>.<span class="fl">11.2</span>        </span>
+<span id="cb45-53"><a href="#cb45-53" aria-hidden="true"></a> [<span class="dv">63</span>] R.oo_<span class="dv">1</span>.<span class="fl">26.0</span>                 glue_<span class="dv">1</span>.<span class="fl">7.0</span>                 </span>
+<span id="cb45-54"><a href="#cb45-54" aria-hidden="true"></a> [<span class="dv">65</span>] dbscan_<span class="fl">1.2</span><span class="dv">-0</span>                grid_<span class="dv">4</span>.<span class="fl">4.1</span>                 </span>
+<span id="cb45-55"><a href="#cb45-55" aria-hidden="true"></a> [<span class="dv">67</span>] checkmate_<span class="dv">2</span>.<span class="fl">3.2</span>             Rtsne_<span class="fl">0.17</span>                 </span>
+<span id="cb45-56"><a href="#cb45-56" aria-hidden="true"></a> [<span class="dv">69</span>] cluster_<span class="dv">2</span>.<span class="fl">1.6</span>               generics_<span class="dv">0</span>.<span class="fl">1.3</span>             </span>
+<span id="cb45-57"><a href="#cb45-57" aria-hidden="true"></a> [<span class="dv">71</span>] gtable_<span class="dv">0</span>.<span class="fl">3.5</span>                R.methodsS3_<span class="dv">1</span>.<span class="fl">8.2</span>          </span>
+<span id="cb45-58"><a href="#cb45-58" aria-hidden="true"></a> [<span class="dv">73</span>] tidyr_<span class="dv">1</span>.<span class="fl">3.1</span>                 data.table_<span class="dv">1</span>.<span class="fl">16.0</span>          </span>
+<span id="cb45-59"><a href="#cb45-59" aria-hidden="true"></a> [<span class="dv">75</span>] tidygraph_<span class="dv">1</span>.<span class="fl">3.1</span>             BiocSingular_<span class="dv">1</span>.<span class="fl">20.0</span>        </span>
+<span id="cb45-60"><a href="#cb45-60" aria-hidden="true"></a> [<span class="dv">77</span>] ScaledMatrix_<span class="dv">1</span>.<span class="fl">12.0</span>         sp_<span class="fl">2.1</span><span class="dv">-4</span>                   </span>
+<span id="cb45-61"><a href="#cb45-61" aria-hidden="true"></a> [<span class="dv">79</span>] utf8_<span class="dv">1</span>.<span class="fl">2.4</span>                  XVector_<span class="dv">0</span>.<span class="fl">44.0</span>             </span>
+<span id="cb45-62"><a href="#cb45-62" aria-hidden="true"></a> [<span class="dv">81</span>] BiocGenerics_<span class="dv">0</span>.<span class="fl">50.0</span>         ggrepel_<span class="dv">0</span>.<span class="fl">9.6</span>              </span>
+<span id="cb45-63"><a href="#cb45-63" aria-hidden="true"></a> [<span class="dv">83</span>] foreach_<span class="dv">1</span>.<span class="fl">5.2</span>               pillar_<span class="dv">1</span>.<span class="fl">9.0</span>               </span>
+<span id="cb45-64"><a href="#cb45-64" aria-hidden="true"></a> [<span class="dv">85</span>] limma_<span class="dv">3</span>.<span class="fl">60.4</span>                circlize_<span class="dv">0</span>.<span class="fl">4.16</span>            </span>
+<span id="cb45-65"><a href="#cb45-65" aria-hidden="true"></a> [<span class="dv">87</span>] tweenr_<span class="dv">2</span>.<span class="fl">0.3</span>                dplyr_<span class="dv">1</span>.<span class="fl">1.4</span>                </span>
+<span id="cb45-66"><a href="#cb45-66" aria-hidden="true"></a> [<span class="dv">89</span>] lattice_<span class="fl">0.22</span><span class="dv">-6</span>              FNN_<span class="dv">1</span>.<span class="fl">1.4</span>                  </span>
+<span id="cb45-67"><a href="#cb45-67" aria-hidden="true"></a> [<span class="dv">91</span>] deldir_<span class="fl">2.0</span><span class="dv">-4</span>                tidyselect_<span class="dv">1</span>.<span class="fl">2.1</span>           </span>
+<span id="cb45-68"><a href="#cb45-68" aria-hidden="true"></a> [<span class="dv">93</span>] ComplexHeatmap_<span class="dv">2</span>.<span class="fl">20.0</span>       SingleCellExperiment_<span class="dv">1</span>.<span class="fl">26.0</span></span>
+<span id="cb45-69"><a href="#cb45-69" aria-hidden="true"></a> [<span class="dv">95</span>] knitr_<span class="fl">1.48</span>                  gridExtra_<span class="fl">2.3</span>              </span>
+<span id="cb45-70"><a href="#cb45-70" aria-hidden="true"></a> [<span class="dv">97</span>] IRanges_<span class="dv">2</span>.<span class="fl">38.1</span>              SummarizedExperiment_<span class="dv">1</span>.<span class="fl">34.0</span></span>
+<span id="cb45-71"><a href="#cb45-71" aria-hidden="true"></a> [<span class="dv">99</span>] scattermore_<span class="fl">1.2</span>             stats4_<span class="dv">4</span>.<span class="fl">4.1</span>               </span>
+<span id="cb45-72"><a href="#cb45-72" aria-hidden="true"></a>[<span class="dv">101</span>] xfun_<span class="fl">0.47</span>                   graphlayouts_<span class="dv">1</span>.<span class="fl">1.1</span>         </span>
+<span id="cb45-73"><a href="#cb45-73" aria-hidden="true"></a>[<span class="dv">103</span>] Biobase_<span class="dv">2</span>.<span class="fl">64.0</span>              statmod_<span class="dv">1</span>.<span class="fl">5.0</span>              </span>
+<span id="cb45-74"><a href="#cb45-74" aria-hidden="true"></a>[<span class="dv">105</span>] matrixStats_<span class="dv">1</span>.<span class="fl">4.1</span>           UCSC.utils_<span class="dv">1</span>.<span class="fl">0.0</span>           </span>
+<span id="cb45-75"><a href="#cb45-75" aria-hidden="true"></a>[<span class="dv">107</span>] lazyeval_<span class="dv">0</span>.<span class="fl">2.2</span>              yaml_<span class="dv">2</span>.<span class="fl">3.10</span>                </span>
+<span id="cb45-76"><a href="#cb45-76" aria-hidden="true"></a>[<span class="dv">109</span>] evaluate_<span class="dv">0</span>.<span class="fl">24.0</span>             codetools_<span class="fl">0.2</span><span class="dv">-20</span>           </span>
+<span id="cb45-77"><a href="#cb45-77" aria-hidden="true"></a>[<span class="dv">111</span>] ggraph_<span class="dv">2</span>.<span class="fl">2.1</span>                GiottoData_<span class="dv">0</span>.<span class="fl">2.13</span>          </span>
+<span id="cb45-78"><a href="#cb45-78" aria-hidden="true"></a>[<span class="dv">113</span>] tibble_<span class="dv">3</span>.<span class="fl">2.1</span>                colorRamp2_<span class="dv">0</span>.<span class="fl">1.0</span>           </span>
+<span id="cb45-79"><a href="#cb45-79" aria-hidden="true"></a>[<span class="dv">115</span>] cli_<span class="dv">3</span>.<span class="fl">6.3</span>                   uwot_<span class="dv">0</span>.<span class="fl">2.2</span>                 </span>
+<span id="cb45-80"><a href="#cb45-80" aria-hidden="true"></a>[<span class="dv">117</span>] reticulate_<span class="dv">1</span>.<span class="fl">39.0</span>           systemfonts_<span class="dv">1</span>.<span class="fl">1.0</span>          </span>
+<span id="cb45-81"><a href="#cb45-81" aria-hidden="true"></a>[<span class="dv">119</span>] munsell_<span class="dv">0</span>.<span class="fl">5.1</span>               Rcpp_<span class="dv">1</span>.<span class="fl">0.13</span>                </span>
+<span id="cb45-82"><a href="#cb45-82" aria-hidden="true"></a>[<span class="dv">121</span>] GenomeInfoDb_<span class="dv">1</span>.<span class="fl">40.1</span>         globals_<span class="dv">0</span>.<span class="fl">16.3</span>             </span>
+<span id="cb45-83"><a href="#cb45-83" aria-hidden="true"></a>[<span class="dv">123</span>] png_<span class="fl">0.1</span><span class="dv">-8</span>                   parallel_<span class="dv">4</span>.<span class="fl">4.1</span>             </span>
+<span id="cb45-84"><a href="#cb45-84" aria-hidden="true"></a>[<span class="dv">125</span>] ggplot2_<span class="dv">3</span>.<span class="fl">5.1</span>               listenv_<span class="dv">0</span>.<span class="fl">9.1</span>              </span>
+<span id="cb45-85"><a href="#cb45-85" aria-hidden="true"></a>[<span class="dv">127</span>] SpatialExperiment_<span class="dv">1</span>.<span class="fl">14.0</span>    viridisLite_<span class="dv">0</span>.<span class="fl">4.2</span>          </span>
+<span id="cb45-86"><a href="#cb45-86" aria-hidden="true"></a>[<span class="dv">129</span>] scales_<span class="dv">1</span>.<span class="fl">3.0</span>                purrr_<span class="dv">1</span>.<span class="fl">0.2</span>                </span>
+<span id="cb45-87"><a href="#cb45-87" aria-hidden="true"></a>[<span class="dv">131</span>] crayon_<span class="dv">1</span>.<span class="fl">5.3</span>                GetoptLong_<span class="dv">1</span>.<span class="fl">0.5</span>           </span>
+<span id="cb45-88"><a href="#cb45-88" aria-hidden="true"></a>[<span class="dv">133</span>] rlang_<span class="dv">1</span>.<span class="fl">1.4</span>                 cowplot_<span class="dv">1</span>.<span class="fl">1.3</span> </span></code></pre></div>
 </div>
   </div>
 
