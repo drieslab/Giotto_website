@@ -48,13 +48,12 @@ image:
 
 ```{r, eval=FALSE}
 library(Giotto)
-library(GiottoData)
 
 data_path <- "/path/to/data/"
 
-getSpatialDataset(dataset = "seqfish_SS_cortex", 
-                  directory = data_path, 
-                  method = "wget")
+GiottoData::getSpatialDataset(dataset = "seqfish_SS_cortex", 
+                              directory = data_path, 
+                              method = "wget")
 ```
 
 # Giotto Instructions and Preparation
@@ -80,7 +79,9 @@ meta_path <- paste0(data_path, "cortex_svz_centroids_annot.txt")
 # first merge location and additional metadata
 SS_locations <- data.table::fread(loc_path)
 cortex_fields <- data.table::fread(meta_path)
-SS_loc_annot <- data.table::merge.data.table(SS_locations, cortex_fields, by = "ID")
+SS_loc_annot <- data.table::merge.data.table(SS_locations, 
+                                             cortex_fields, 
+                                             by = "ID")
 SS_loc_annot[, ID := factor(ID, levels = paste0("cell_", 1:913))]
 data.table::setorder(SS_loc_annot, ID)
 
@@ -101,6 +102,7 @@ stitch_file <- stitchFieldCoordinates(
     reverse_final_x = FALSE,
     reverse_final_y = TRUE
 )
+
 stitch_file <- stitch_file[, .(ID, X_final, Y_final)]
 stitch_file$ID <- as.character(stitch_file$ID)
 my_offset_file <- my_offset_file[, .(field, x_offset_final, y_offset_final)]
@@ -115,12 +117,14 @@ SS_seqfish <- createGiottoObject(expression = expr_path,
                                  offset_file = my_offset_file,
                                  instructions = instructions
 )
+
 # add additional annotation if wanted
 SS_seqfish <- addCellMetadata(SS_seqfish,
                               new_metadata = cortex_fields,
                               by_column = TRUE,
                               column_cell_ID = "ID"
 )
+
 # subset data to the cortex field of views
 cell_metadata <- pDataDT(SS_seqfish)
 cortex_cell_ids <- cell_metadata[FOV %in% 0:4]$cell_ID
@@ -134,10 +138,12 @@ SS_seqfish <- filterGiotto(gobject = SS_seqfish,
                            expression_values = "raw",
                            verbose = TRUE
 )
+
 # normalize
 SS_seqfish <- normalizeGiotto(gobject = SS_seqfish, 
                               scalefactor = 6000, 
                               verbose = TRUE)
+
 # add gene & cell statistics
 SS_seqfish <- addStatistics(gobject = SS_seqfish)
 
@@ -159,7 +165,8 @@ spatPlot(gobject = SS_seqfish)
 
 ```{r, eval=FALSE}
 ## highly variable features (HVF)
-SS_seqfish <- calculateHVF(gobject = SS_seqfish)
+SS_seqfish <- calculateHVF(gobject = SS_seqfish,
+                           save_plot = TRUE)
 ```
 
 ![](images/seqfish_cortex/1-HVFplot.png)
@@ -174,6 +181,7 @@ SS_seqfish <- runPCA(gobject = SS_seqfish,
                      genes_to_use = featgenes, 
                      scale_unit = FALSE, 
                      center = FALSE)
+
 screePlot(SS_seqfish)
 ```
 
@@ -189,6 +197,7 @@ plotPCA(gobject = SS_seqfish)
 SS_seqfish <- runUMAP(SS_seqfish, 
                       dimensions_to_use = 1:15, 
                       n_threads = 10)
+
 plotUMAP(gobject = SS_seqfish)
 ```
 
@@ -197,6 +206,7 @@ plotUMAP(gobject = SS_seqfish)
 ```{r, eval=FALSE}
 SS_seqfish <- runtSNE(SS_seqfish, 
                       dimensions_to_use = 1:15)
+
 plotTSNE(gobject = SS_seqfish)
 ```
 
@@ -210,11 +220,13 @@ SS_seqfish <- createNearestNetwork(gobject = SS_seqfish,
                                    dimensions_to_use = 1:15,
                                    k = 15
 )
+
 ## Leiden clustering
 SS_seqfish <- doLeidenCluster(gobject = SS_seqfish,
                               resolution = 0.4,
                               n_iterations = 1000
 )
+
 plotUMAP(gobject = SS_seqfish,
          cell_color = "leiden_clus",
          show_NN_network = TRUE,
@@ -230,11 +242,13 @@ SS_seqfish <- doLeidenSubCluster(gobject = SS_seqfish,
                                  cluster_column = "leiden_clus",
                                  resolution = 0.2, 
                                  k_neighbors = 10,
-                                 pca_param = list(expression_values = "normalized", scale_unit = FALSE),
+                                 pca_param = list(expression_values = "normalized", 
+                                                  scale_unit = FALSE),
                                  nn_param = list(dimensions_to_use = 1:5),
                                  selected_clusters = c(5, 6, 7),
                                  name = "sub_leiden_clus_select"
 )
+
 ## set colors for clusters
 subleiden_order <- c(
     1.1, 2.1, 3.1, 4.1, 5.1, 5.2,
@@ -255,7 +269,7 @@ plotUMAP(gobject = SS_seqfish,
 )
 ```
 
-![](images/seqfish_cortex/10-UMAP.png)
+![](images/seqfish_cortex/7-UMAP.png)
 
 ```{r, eval=FALSE}
 ## show cluster relationships
@@ -266,7 +280,7 @@ showClusterHeatmap(gobject = SS_seqfish,
 )
 ```
 
-![](images/seqfish_cortex/11-showClusterHeatmap.png)
+![](images/seqfish_cortex/8-showClusterHeatmap.png)
 
 The following step requires the installation of {ggdendro}.
 
@@ -279,7 +293,7 @@ showClusterDendrogram(SS_seqfish,
                       cluster_column = "sub_leiden_clus_select")
 ```
 
-![](images/seqfish_cortex/12-showClusterDendrogram.png)
+![](images/seqfish_cortex/9-showClusterDendrogram.png)
 
 # Visualize Spatial and Expression Space
 
@@ -293,13 +307,14 @@ spatDimPlot(gobject = SS_seqfish,
 )
 ```
 
-![](images/seqfish_cortex/13-spatDimPlot2D.png)
+![](images/seqfish_cortex/10-spatDimPlot2D.png)
 
 ```{r, eval=FALSE}
 # selected groups and provide new colors
 groups_of_interest <- c(6.1, 6.2, 7.1, 7.2)
 group_colors <- c("red", "green", "blue", "purple")
 names(group_colors) <- groups_of_interest
+
 spatDimPlot(gobject = SS_seqfish, 
             cell_color = "sub_leiden_clus_select",
             dim_point_size = 2, 
@@ -309,20 +324,21 @@ spatDimPlot(gobject = SS_seqfish,
 )
 ```
 
-![](images/seqfish_cortex/14-spatDimPlot2D.png)
+![](images/seqfish_cortex/11-spatDimPlot2D.png)
 
 # Cell Type Marker Gene Detection
 
 ```{r, eval=FALSE}
 ## gini
 markers_gini <- findMarkers_one_vs_all(gobject = SS_seqfish,
-                                                   method = "gini",
-                                                   expression_values = "normalized",
-                                                   cluster_column = "sub_leiden_clus_select",
-                                                   min_feats = 20,
-                                                   min_expr_gini_score = 0.5,
-                                                   min_det_gini_score = 0.5
+                                       method = "gini",
+                                       expression_values = "normalized",
+                                       cluster_column = "sub_leiden_clus_select",
+                                       min_feats = 20,
+                                       min_expr_gini_score = 0.5,
+                                       min_det_gini_score = 0.5
 )
+
 topgenes_gini <- markers_gini[, head(.SD, 2), by = "cluster"]
 
 ## violin plot
@@ -335,11 +351,12 @@ violinPlot(SS_seqfish,
 )
 ```
 
-![](images/seqfish_cortex/15-violinPlot.png)
+![](images/seqfish_cortex/12-violinPlot.png)
 
 ```{r, eval=FALSE}
 # cluster heatmap
 topgenes_gini <- markers_gini[, head(.SD, 6), by = "cluster"]
+
 plotMetaDataHeatmap(SS_seqfish,
                     selected_feats = unique(topgenes_gini$feats),
                     custom_feat_order = unique(topgenes_gini$feats),
@@ -349,26 +366,23 @@ plotMetaDataHeatmap(SS_seqfish,
 )
 ```
 
-![](images/seqfish_cortex/16-plotMetaDataHeatmap.png)
+![](images/seqfish_cortex/13-plotMetaDataHeatmap.png)
 
 # Cell Type Annotation
 
 ```{r, eval=FALSE}
 ## general cell types
 ## create vector with names
-clusters_cell_types <- c(
-    "L6 eNeuron", "L4 eNeuron", "L2/3 eNeuron", "L5 eNeuron",
-    "Lhx6 iNeuron", "Adarb2 iNeuron",
-    "endothelial", "mural",
-    "OPC", "Olig",
-    "astrocytes", "microglia"
-)
-names(clusters_cell_types) <- c(
-    1.1, 2.1, 3.1, 4.1,
-    5.1, 5.2,
-    6.1, 6.2,
-    7.1, 7.2,
-    8.1, 9.1
+clusters_cell_types <- c("1.1" = "L4 eNeuron",
+                         "2.1" = "L6 eNeuron",
+                         "3.1" = "L5 eNeuron", 
+                         "4.1" = "endothelial",
+                         "5.1" = "Lhx6 iNeuron", 
+                         "5.2" = "Adarb2 iNeuron",
+                         "6.1" = "Olig",
+                         "6.2" = "OPC",
+                         "7.1" = "astrocytes",
+                         "8.1" = "microglia"
 )
 
 SS_seqfish <- annotateGiotto(gobject = SS_seqfish, 
@@ -379,9 +393,9 @@ SS_seqfish <- annotateGiotto(gobject = SS_seqfish,
 
 # cell type order and colors
 cell_type_order <- c(
-    "L6 eNeuron", "L5 eNeuron", "L4 eNeuron", "L2/3 eNeuron",
+    "L4 eNeuron", "L5 eNeuron", "L6 eNeuron",
     "astrocytes", "Olig", "OPC", "Adarb2 iNeuron", "Lhx6 iNeuron",
-    "endothelial", "mural", "microglia"
+    "endothelial", "microglia"
 )
 
 cell_type_colors <- giotto_colors
@@ -399,7 +413,7 @@ violinPlot(gobject = SS_seqfish,
 )
 ```
 
-![](images/seqfish_cortex/17-violinPlot.png)
+![](images/seqfish_cortex/14-violinPlot.png)
 
 ```{r, eval=FALSE}
 # co-visualization
@@ -412,7 +426,7 @@ spatDimPlot(gobject = SS_seqfish,
 )
 ```
 
-![](images/seqfish_cortex/18-spatDimPlot2D.png)
+![](images/seqfish_cortex/15-spatDimPlot2D.png)
 
 ```{r, eval=FALSE}
 ## heatmap genes vs cells
@@ -430,11 +444,10 @@ plotHeatmap(gobject = SS_seqfish,
 )
 ```
 
-![](images/seqfish_cortex/19-plotHeatmap.png)
+![](images/seqfish_cortex/16-plotHeatmap.png)
 
 ```{r, eval=FALSE}
 plotHeatmap(gobject = SS_seqfish,
-            cluster_color_code = cell_type_colors,
             feats = markers_gini[, head(.SD, 6), by = "cell_types"]$feats,
             feat_order = "custom",
             feat_label_selection = markers_gini[, head(.SD, 2), by = "cluster"]$feats,
@@ -445,7 +458,7 @@ plotHeatmap(gobject = SS_seqfish,
 )
 ```
 
-![](images/seqfish_cortex/20-plotHeatmap.png)
+![](images/seqfish_cortex/17-plotHeatmap.png)
 
 # Spatial Grid
 
@@ -461,16 +474,19 @@ spatPlot(gobject = SS_seqfish,
          point_size = 1.5)
 ```
 
-![](images/seqfish_cortex/21-spatPlot2D.png)
+![](images/seqfish_cortex/18-spatPlot2D.png)
 
 # Spatial Network
 
 ```{r, eval=FALSE}
 ## delaunay network: stats + creation
 plotStatDelaunayNetwork(gobject = SS_seqfish, 
-                        maximum_distance = 400, 
-                        save_plot = FALSE)
+                        maximum_distance = 400)
+```
 
+![](images/seqfish_cortex/19-plotStatDelaunayNetwork.png)
+
+```{r, eval=FALSE}
 SS_seqfish <- createSpatialNetwork(gobject = SS_seqfish,
                                    minimum_k = 2, 
                                    maximum_distance_delaunay = 400)
@@ -498,7 +514,8 @@ SS_seqfish <- createSpatialNetwork(gobject = SS_seqfish,
 cell_metadata <- pDataDT(SS_seqfish)
 field1_ids <- cell_metadata[FOV == 0]$cell_ID
 
-subSS_seqfish <- subsetGiotto(SS_seqfish, cell_ids = field1_ids)
+subSS_seqfish <- subsetGiotto(SS_seqfish, 
+                              cell_ids = field1_ids)
 
 spatPlot(gobject = subSS_seqfish, 
          show_network = TRUE,
@@ -509,7 +526,7 @@ spatPlot(gobject = subSS_seqfish,
 )
 ```
 
-![](images/seqfish_cortex/22-spatPlot2D.png)
+![](images/seqfish_cortex/20-spatPlot2D.png)
 
 ```{r, eval=FALSE}
 spatPlot(gobject = subSS_seqfish, 
@@ -521,7 +538,7 @@ spatPlot(gobject = subSS_seqfish,
 )
 ```
 
-![](images/seqfish_cortex/23-spatPlot2D.png)
+![](images/seqfish_cortex/21-spatPlot2D.png)
 
 ```{r, eval=FALSE}
 spatPlot(gobject = subSS_seqfish, 
@@ -533,7 +550,7 @@ spatPlot(gobject = subSS_seqfish,
 )
 ```
 
-![](images/seqfish_cortex/24-spatPlot2D.png)
+![](images/seqfish_cortex/22-spatPlot2D.png)
 
 ```{r, eval=FALSE}
 spatPlot(gobject = subSS_seqfish, 
@@ -545,7 +562,7 @@ spatPlot(gobject = subSS_seqfish,
 )
 ```
 
-![](images/seqfish_cortex/25-spatPlot2D.png)
+![](images/seqfish_cortex/23-spatPlot2D.png)
 
 # Spatial Genes
 
@@ -553,7 +570,7 @@ spatPlot(gobject = subSS_seqfish,
 
 
 ```{r, eval=FALSE}
-## 3 new methods to identify spatial genes
+## identify spatial genes
 km_spatialfeats <- binSpect(SS_seqfish)
 
 spatFeatPlot2D(SS_seqfish,
@@ -568,7 +585,7 @@ spatFeatPlot2D(SS_seqfish,
 )
 ```
 
-![](images/seqfish_cortex/26-spatGenePlot2D.png)
+![](images/seqfish_cortex/24-spatFeatPlot2D.png)
 
 ## Spatial Genes Co-Expression Modules
 
@@ -597,7 +614,7 @@ heatmSpatialCorFeats(SS_seqfish,
 )
 ```
 
-![](images/seqfish_cortex/27-heatmSpatialCorFeats.png)
+![](images/seqfish_cortex/25-heatmSpatialCorFeats.png)
 
 ```{r, eval=FALSE}
 # 3. rank spatial correlated clusters and show genes for selected clusters
@@ -613,7 +630,7 @@ top_netw_spat_cluster <- showSpatialCorFeats(spat_cor_netw_DT,
 )
 ```
 
-![](images/seqfish_cortex/28-rankSpatialCorGroups.png)
+![](images/seqfish_cortex/26-rankSpatialCorGroups.png)
 
 ```{r, eval=FALSE}
 # 4. create metagene enrichment score for clusters
@@ -638,7 +655,7 @@ spatCellPlot(SS_seqfish,
 )
 ```
 
-![](images/seqfish_cortex/29-spatCellPlot2D.png)
+![](images/seqfish_cortex/27-spatCellPlot2D.png)
 
 # HMRF Spatial Domains
 
@@ -689,7 +706,7 @@ spatPlot(
 )
 ```
 
-![](images/seqfish_cortex/30-spatPlot2D.png)
+![](images/seqfish_cortex/28-spatPlot2D.png)
 
 # Cell Neighborhood: Cell-Type/Cell-Type Interactions
 
@@ -700,6 +717,7 @@ cell_proximities <- cellProximityEnrichment(gobject = SS_seqfish,
                                             adjust_method = "fdr",
                                             number_of_simulations = 2000
 )
+
 ## barplot
 cellProximityBarplot(gobject = SS_seqfish,
                      CPscore = cell_proximities,
@@ -708,7 +726,7 @@ cellProximityBarplot(gobject = SS_seqfish,
 )
 ```
 
-![](images/seqfish_cortex/31-cellProximityBarplot.png)
+![](images/seqfish_cortex/29-cellProximityBarplot.png)
 
 ```{r, eval=FALSE}
 ## heatmap
@@ -721,7 +739,7 @@ cellProximityHeatmap(gobject = SS_seqfish,
 )
 ```
 
-![](images/seqfish_cortex/32-cellProximityHeatmap.png)
+![](images/seqfish_cortex/30-cellProximityHeatmap.png)
 
 ```{r, eval=FALSE}
 ## network
@@ -732,7 +750,7 @@ cellProximityNetwork(gobject = SS_seqfish,
 )
 ```
 
-![](images/seqfish_cortex/33-cellProximityNetwork.png)
+![](images/seqfish_cortex/31-cellProximityNetwork.png)
 
 ```{r, eval=FALSE}
 ## network with self-edges
@@ -748,7 +766,7 @@ cellProximityNetwork(gobject = SS_seqfish,
 )
 ```
 
-![](images/seqfish_cortex/12_d_network_cell_cell_enrichment_self.png)
+![](images/seqfish_cortex/32-cellProximityNetwork.png)
 
 ```{r, eval=FALSE}
 ## visualization of specific cell types
@@ -766,7 +784,7 @@ cellProximitySpatPlot2D(gobject = SS_seqfish,
 )
 ```
 
-![](images/seqfish_cortex/34-cellProximitySpatPlot2D.png)
+![](images/seqfish_cortex/33-cellProximitySpatPlot2D.png)
 
 ```{r, eval=FALSE}
 # Option 2: create additional metadata
@@ -784,7 +802,7 @@ spatPlot(SS_seqfish,
 )
 ```
 
-![](images/seqfish_cortex/35-spatPlot2D.png)
+![](images/seqfish_cortex/34-spatPlot2D.png)
 
 # Cell Neighborhood: Interaction Changed Features
 
@@ -809,7 +827,7 @@ ICFsForesHighGenes <- findInteractionChangedFeats(
     gobject = SS_seqfish,
     selected_feats = high_expressed_genes,
     spatial_network_name = "Delaunay_network",
-    cluster_column = "cell_types",
+    cluster_column = "cell_types"
     diff_test = "permutation",
     adjust_method = "fdr",
     nr_permutations = 2000,
@@ -818,16 +836,14 @@ ICFsForesHighGenes <- findInteractionChangedFeats(
 
 ## visualize all genes
 plotCellProximityFeats(SS_seqfish,
-                       icfObject = ICFscoresHighGenes,
-                       method = "dotplot"
-)
+                       icfObject = ICFsForesHighGenes,
+                       method = "dotplot")
 ```
 
-![](images/seqfish_cortex/36-plotCellProximityGenes.png)
 
 ```{r, eval=FALSE}
 ## filter genes
-ICFscoresFilt <- filterICF(ICFscoresHighGenes)
+ICFscoresFilt <- filterICF(ICFsForesHighGenes)
 
 ## visualize subset of interaction changed genes (ICFs)
 ICF_genes <- c("Jakmip1", "Golgb1", "Dact2", "Ddx27", "Abl1", "Zswim8")
@@ -835,14 +851,13 @@ ICF_genes_types <- c("Lhx6 iNeuron", "Lhx6 iNeuron", "L4 eNeuron", "L4 eNeuron",
 names(ICF_genes) <- ICF_genes_types
 
 plotICF(gobject = SS_seqfish,
-        icfObject = ICFscoresHighGenes,
+        icfObject = ICFsForesHighGenes,
         source_type = "endothelial",
         source_markers = c("Pltp", "Cldn5", "Apcdd1"),
         ICF_feats = ICF_genes
 )
 ```
 
-![](images/seqfish_cortex/37-plotICF.png)
 
 # Cell Neighborhood: Ligand-Receptor Cell-Cell Communication
 
@@ -900,7 +915,7 @@ plotCCcomDotplot(gobject = SS_seqfish,
 )
 ```
 
-![](images/seqfish_cortex/38-plotCCcomDotplot.png)
+![](images/seqfish_cortex/37-plotCCcomDotplot.png)
 
 ```{r, eval=FALSE}
 ## spatial vs rank ####
@@ -915,11 +930,11 @@ plotRankSpatvsExpr(gobject = SS_seqfish,
                    comb_comm,
                    expr_rnk_column = "LR_expr_rnk",
                    spat_rnk_column = "LR_spat_rnk",
-                   midpoint = 10
+                   gradient_midpoint = 10
 )
 ```
 
-![](images/seqfish_cortex/39-plotRankSpatvsExpr.png)
+![](images/seqfish_cortex/38-plotRankSpatvsExpr.png)
 
 ```{r, eval=FALSE}
 ## recovery
@@ -931,7 +946,7 @@ plotRecovery(gobject = SS_seqfish,
 )
 ```
 
-![](images/seqfish_cortex/40-plotRecovery.png)
+![](images/seqfish_cortex/39-plotRecovery.png)
 
 # Session info
 
@@ -940,7 +955,94 @@ sessionInfo()
 ```
 
 ```{r, eval=FALSE}
+R version 4.4.1 (2024-06-14)
+Platform: x86_64-apple-darwin20
+Running under: macOS Sonoma 14.6.1
 
+Matrix products: default
+BLAS:   /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib 
+LAPACK: /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+time zone: America/New_York
+tzcode source: internal
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] future_1.34.0     ggdendro_0.2.0    Giotto_4.1.3      GiottoClass_0.4.0
+
+loaded via a namespace (and not attached):
+  [1] RColorBrewer_1.1-3          rstudioapi_0.16.0          
+  [3] jsonlite_1.8.8              shape_1.4.6.1              
+  [5] magrittr_2.0.3              magick_2.8.4               
+  [7] farver_2.1.2                rmarkdown_2.28             
+  [9] GlobalOptions_0.1.2         zlibbioc_1.50.0            
+ [11] ragg_1.3.2                  vctrs_0.6.5                
+ [13] memoise_2.0.1               Cairo_1.6-2                
+ [15] GiottoUtils_0.1.12          terra_1.7-78               
+ [17] htmltools_0.5.8.1           S4Arrays_1.4.1             
+ [19] SparseArray_1.4.8           parallelly_1.38.0          
+ [21] htmlwidgets_1.6.4           cachem_1.1.0               
+ [23] plotly_4.10.4               igraph_2.0.3               
+ [25] lifecycle_1.0.4             iterators_1.0.14           
+ [27] pkgconfig_2.0.3             rsvd_1.0.5                 
+ [29] Matrix_1.7-0                R6_2.5.1                   
+ [31] fastmap_1.2.0               GenomeInfoDbData_1.2.12    
+ [33] MatrixGenerics_1.16.0       clue_0.3-65                
+ [35] digest_0.6.37               colorspace_2.1-1           
+ [37] S4Vectors_0.42.1            irlba_2.3.5.1              
+ [39] textshaping_0.4.0           GenomicRanges_1.56.1       
+ [41] beachmat_2.20.0             labeling_0.4.3             
+ [43] progressr_0.14.0            fansi_1.0.6                
+ [45] polyclip_1.10-7             httr_1.4.7                 
+ [47] abind_1.4-5                 compiler_4.4.1             
+ [49] withr_3.0.1                 doParallel_1.0.17          
+ [51] backports_1.5.0             BiocParallel_1.38.0        
+ [53] viridis_0.6.5               ggforce_0.4.2              
+ [55] R.utils_2.12.3              MASS_7.3-60.2              
+ [57] DelayedArray_0.30.1         rjson_0.2.22               
+ [59] gtools_3.9.5                GiottoVisuals_0.2.5        
+ [61] tools_4.4.1                 future.apply_1.11.2        
+ [63] R.oo_1.26.0                 glue_1.7.0                 
+ [65] dbscan_1.2-0                grid_4.4.1                 
+ [67] checkmate_2.3.2             Rtsne_0.17                 
+ [69] cluster_2.1.6               generics_0.1.3             
+ [71] gtable_0.3.5                R.methodsS3_1.8.2          
+ [73] tidyr_1.3.1                 data.table_1.16.0          
+ [75] tidygraph_1.3.1             BiocSingular_1.20.0        
+ [77] ScaledMatrix_1.12.0         sp_2.1-4                   
+ [79] utf8_1.2.4                  XVector_0.44.0             
+ [81] BiocGenerics_0.50.0         ggrepel_0.9.6              
+ [83] foreach_1.5.2               pillar_1.9.0               
+ [85] limma_3.60.4                circlize_0.4.16            
+ [87] tweenr_2.0.3                dplyr_1.1.4                
+ [89] lattice_0.22-6              FNN_1.1.4                  
+ [91] deldir_2.0-4                tidyselect_1.2.1           
+ [93] ComplexHeatmap_2.20.0       SingleCellExperiment_1.26.0
+ [95] knitr_1.48                  gridExtra_2.3              
+ [97] IRanges_2.38.1              SummarizedExperiment_1.34.0
+ [99] scattermore_1.2             stats4_4.4.1               
+[101] xfun_0.47                   graphlayouts_1.1.1         
+[103] Biobase_2.64.0              statmod_1.5.0              
+[105] matrixStats_1.4.1           UCSC.utils_1.0.0           
+[107] lazyeval_0.2.2              yaml_2.3.10                
+[109] evaluate_0.24.0             codetools_0.2-20           
+[111] ggraph_2.2.1                GiottoData_0.2.13          
+[113] tibble_3.2.1                colorRamp2_0.1.0           
+[115] cli_3.6.3                   uwot_0.2.2                 
+[117] reticulate_1.39.0           systemfonts_1.1.0          
+[119] munsell_0.5.1               Rcpp_1.0.13                
+[121] GenomeInfoDb_1.40.1         globals_0.16.3             
+[123] png_0.1-8                   parallel_4.4.1             
+[125] ggplot2_3.5.1               listenv_0.9.1              
+[127] SpatialExperiment_1.14.0    viridisLite_0.4.2          
+[129] scales_1.3.0                purrr_1.0.2                
+[131] crayon_1.5.3                GetoptLong_1.0.5           
+[133] rlang_1.1.4                 cowplot_1.1.3 
 ```
 
 
