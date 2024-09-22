@@ -311,6 +311,8 @@ ONTraC -d results/ontrac/ONTraC_dataset_input.csv --preprocessing-dir results/on
 
 - Copy the output directories (`results/ontrac/preprocessing_dir`, `results/ontrac/GNN_dir`, and `results/ontrac/NTScore_dir`) back to the machine running Giotto.
 
+- For details, please refer [ONTraC's website](https://github.com/gyuanlab/ONTraC).
+
 # Visualization
 
 ## Load ONTraC results
