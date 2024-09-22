@@ -58,6 +58,14 @@ library(Giotto)
 installONTraCEnvironment(envname = "giotto_ontrac_env")
 ```
 
+You can also update/re-install ONTraC.
+
+```{r, eval=FALSE}
+reticulate::conda_install(envname = 'giotto_ontrac_env',
+                          packages = 'ontrac',
+                          pip = TRUE)
+```
+
 ## Configuring Data and Results Paths
 
 ```{r, eval=FALSE}
