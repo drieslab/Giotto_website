@@ -49,17 +49,6 @@ We need `R>=4.4` for this tutorial.
 
 Please following the [Giotto Installation Tutorial](installation.html).
 
-- Update to develop version
-
-```{r, eval=FALSE}
-devtools::install_github("wwang-chcn/Giotto@suite_dev")
-# Note: do not update GiottoClass during this installation
-```
-
-```{r, eval=FALSE}
-devtools::install_github("drieslab/GiottoClass@dev")
-```
-
 ## ONTraC Installation
 
 Since ONTraC is a GNN algorithm that relies on [pytorch-geometric](https://pytorch-geometric.readthedocs.io/en/latest/), we create a new environment here in order not to interfere with other software using `installONTraCEnvironment()`.
@@ -118,17 +107,7 @@ Option 2 is load the pre-constructed giotto object from [Zenodo](https://zenodo.
 
 ```{r, eval=FALSE}
 library(Giotto)
-
-## Set instructions
-python_path <- "giotto_ontrac_env"
-
-instructions <- createGiottoInstructions(
-  save_dir = results_folder,
-  save_plot = TRUE,
-  show_plot = FALSE,
-  return_plot = FALSE,
-  python_path = python_path
-)
+set_giotto_python_path("giotto_ontrac_env")
 
 ## Install the anndata and scanpy package since the counts matrix was stored in h5ad format. We need it to convert an anndata object to giotto object.
 GiottoUtils::package_check("scanpy", repository= "pip:scanpy")
@@ -276,12 +255,7 @@ head(ONTraC_input)
 
 ## Perform spatial niche trajectory analysis using ONTraC
 
-We have three options for running ONTraC.
-Option 1 is running ONTraC through reticulate.
-Option 2 is running ONTraC through a shell which is not usable in Windows.
-Option 3 is a example for users running ONTraC in a seperate machine, which is usually a more powerful computer with GPU.
-
-### Option 1: run ONTraC through reticulate
+### Option 1: run ONTraC through Giotto
 
 ```{r, eval = FALSE}
 runONTraCV1(ONTraC_input = ONTraC_input,
@@ -301,30 +275,7 @@ runONTraCV1(ONTraC_input = ONTraC_input,
        python_path = "giotto_ontrac_env")
 ```
 
-If you encountered R session aborted, please try option 2.
-
-### Option 2: run ONTraC through shell
-
-```{r, eval = FALSE}
-runONTraCV1(ONTraC_input = ONTraC_input,
-       dataset = "./results/ontrac/ONTraC_dataset_input.csv",
-       preprocessing_dir = "./results/ontrac/preprocessing_dir",
-       GNN_dir = "./results/ontrac/GNN_dir",
-       NTScore_dir = "./results/ontrac/NTScore_dir",
-       n_neighbors = 50L,
-       n_local = 20L,
-       device = "cpu",
-       seed = 42L,
-       k = 6L,
-       modularity_loss_weight = 0.3,
-       purity_loss_weight = 300.0,
-       regularization_loss_weight = 0.3,
-       beta = 0.03,
-       python_path = "giotto_ontrac_env",
-       shell = TRUE)
-```
-
-### Option 3: run ONTraC in a separate machine through shell
+### Option 2: run ONTraC in a separate machine
 
 You can run ONTraC on an HPC with an NVIDIA GPU node, which would save a lot of time when applying it on larger datasets.
 
@@ -347,7 +298,7 @@ source ~/.bash_profile
 
 conda activate ONTraC
 
-ONTraC -d results/ontrac/ONTraC_dataset_input.csv --preprocessing-dir results/ontrac/preprocessing_dir --GNN-dir results/ontrac/GNN_dir --NTScore-dir results/ontrac/NTScore_dir --device cuda     --epochs 1000 -s 42 --patience 100 --min-delta 0.001 --min-epochs 50 --lr 0.03     --hidden-feats 4 -k 6 --modularity-loss-weight 0.3 --purity-loss-weight 300 --regularization-loss-weight 0.3 --beta 0.03 2>&1 | tee results/ontrac/merfish_subset.log
+ONTraC -d results/ontrac/ONTraC_dataset_input.csv --preprocessing-dir results/ontrac/preprocessing_dir --GNN-dir results/ontrac/GNN_dir --NTScore-dir results/ontrac/NTScore_dir --device cuda --epochs 1000 -s 42 --patience 100 --min-delta 0.001 --min-epochs 50 --lr 0.03 --hidden-feats 4 -k 6 --modularity-loss-weight 0.3 --purity-loss-weight 300 --regularization-loss-weight 0.3 --beta 0.03 2>&1 | tee results/ontrac/merfish_subset.log
 ```
 
 - Copy the output directories (`results/ontrac/preprocessing_dir`, `results/ontrac/GNN_dir`, and `results/ontrac/NTScore_dir`) back to the machine running Giotto.
@@ -498,7 +449,8 @@ knitr::include_graphics("images/ontrac/6-violinCellTypeOverNTScore.png")
 
 ```{r, eval=FALSE}
 plotCTCompositionInNicheCluster(gobject = giotto_obj,
-                                cell_type = "subclass")
+                                cell_type = "subclass",
+                                )
 ```
 
 ```{r, echo=FALSE, out.width="80%", fig.align="center"}
