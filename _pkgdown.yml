@@ -101,6 +101,8 @@ navbar:
             href: articles/interactive_selection.html
           - text: Interactive visualization with vitessceR
             href: articles/interactive_giotto_vitessceR.html
+          - text: Interactive region selection on large datasets
+            href: articles/interactive_selection_cosmx.html
       - text: -------
       - text: Visualizations
         menu:
@@ -309,6 +311,7 @@ articles:
   contents:
   - interactive_selection
   - interactive_giotto_vitessceR
+  - interactive_selection_cosmx
 - title: Visualizations
   navbar: ~
   contents:
