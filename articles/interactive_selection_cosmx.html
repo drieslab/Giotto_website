@@ -657,7 +657,7 @@
 <p>Let’s see how it looks like now the cell_metadata</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/pDataDT.html" class="external-link">pDataDT</a></span><span class="op">(</span><span class="va">giotto_object</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Finteractive_selection_cosmx%2F07_new_metadata.png" width="60%"></p>
+<p><img src="images%2Finteractive_selection_cosmx%2F07_new_metadata.png" width="80%" style="display: block; margin: auto;"></p>
 </div>
 </div>
 <div class="section level2" number="13">
@@ -672,7 +672,7 @@
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/getCellsFromPolygon.html">getCellsFromPolygon</a></span><span class="op">(</span><span class="va">giotto_object</span>,</span>
 <span>                    polygon_name <span class="op">=</span> <span class="st">"selections"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Finteractive_selection_cosmx%2F08_get_cells.png" width="50%"></p>
+<p><img src="images%2Finteractive_selection_cosmx%2F08_get_cells.png" width="70%" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level3" number="13.2">
 <h3 number="13.2" id="compare-the-cell-types-between-regions">
@@ -681,7 +681,7 @@
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/compareCellAbundance.html">compareCellAbundance</a></span><span class="op">(</span><span class="va">giotto_object</span>, </span>
 <span>                     cell_type_column <span class="op">=</span> <span class="st">"cell_types"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Finteractive_selection_cosmx%2F09_compare_cells.png" width="100%"></p>
+<p><img src="images%2Finteractive_selection_cosmx%2F09_compare_cells.png" width="80%" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level3" number="13.3">
 <h3 number="13.3" id="compare-the-gene-expression-between-regions">
@@ -691,7 +691,7 @@
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/comparePolygonExpression.html">comparePolygonExpression</a></span><span class="op">(</span><span class="va">giotto_object</span>,</span>
 <span>                         selected_feats <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"KRT19"</span>, <span class="st">"SERPINA1"</span>, <span class="st">"TYK2"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Finteractive_selection_cosmx%2F10_compare_genes.png" width="100%"></p>
+<p><img src="images%2Finteractive_selection_cosmx%2F10_compare_genes.png" width="80%" style="display: block; margin: auto;"></p>
 <p>Or you can calculate the top expressed genes per region and then plot them.</p>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">markers_scran</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/findMarkers_one_vs_all.html">findMarkers_one_vs_all</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">giotto_object</span>,</span>
@@ -703,7 +703,7 @@
 <span></span>
 <span><span class="fu"><a href="../reference/comparePolygonExpression.html">comparePolygonExpression</a></span><span class="op">(</span><span class="va">giotto_object</span>,</span>
 <span>                         selected_feats <span class="op">=</span> <span class="va">topgenes_scran</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Finteractive_selection_cosmx%2F11_scran_genes.png" width="100%"></p>
+<p><img src="images%2Finteractive_selection_cosmx%2F11_scran_genes.png" width="80%" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level3" number="13.4">
 <h3 number="13.4" id="plot-again-the-selected-regions">
