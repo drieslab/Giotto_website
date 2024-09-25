@@ -209,7 +209,7 @@ Let's see how it looks like now the cell_metadata
 pDataDT(giotto_object)
 ```
 
-```{r, echo=FALSE, out.width="60%"}
+```{r, echo=FALSE, out.width="80%", fig.align='center'}
 knitr::include_graphics("images/interactive_selection_cosmx/07_new_metadata.png")
 ```
 
@@ -224,7 +224,7 @@ getCellsFromPolygon(giotto_object,
                     polygon_name = "selections")
 ```
 
-```{r, echo=FALSE, out.width="50%"}
+```{r, echo=FALSE, out.width="70%", fig.align='center'}
 knitr::include_graphics("images/interactive_selection_cosmx/08_get_cells.png")
 ```
 
@@ -235,7 +235,7 @@ compareCellAbundance(giotto_object,
                      cell_type_column = "cell_types")
 ```
 
-```{r, echo=FALSE, out.width="100%"}
+```{r, echo=FALSE, out.width="80%", fig.align='center'}
 knitr::include_graphics("images/interactive_selection_cosmx/09_compare_cells.png")
 ```
 
@@ -248,7 +248,7 @@ comparePolygonExpression(giotto_object,
                          selected_feats = c("KRT19", "SERPINA1", "TYK2"))
 ```
 
-```{r, echo=FALSE, out.width="100%"}
+```{r, echo=FALSE, out.width="80%", fig.align='center'}
 knitr::include_graphics("images/interactive_selection_cosmx/10_compare_genes.png")
 ```
 
@@ -266,7 +266,7 @@ comparePolygonExpression(giotto_object,
                          selected_feats = topgenes_scran)
 ```
 
-```{r, echo=FALSE, out.width="100%"}
+```{r, echo=FALSE, out.width="80%", fig.align='center'}
 knitr::include_graphics("images/interactive_selection_cosmx/11_scran_genes.png")
 ```
 
