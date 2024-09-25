@@ -148,7 +148,7 @@ knitr::include_graphics("images/interactive_selection_cosmx/03_selected_region.p
 
 You can see your selected regions in the Cell Sets panel, under the My Selections group. 
 
-```{r, echo=FALSE, out.width="40%"}
+```{r, echo=FALSE, out.width="40%", fig.align='center'}
 knitr::include_graphics("images/interactive_selection_cosmx/04_selections_window.png")
 ```
 
@@ -156,7 +156,7 @@ knitr::include_graphics("images/interactive_selection_cosmx/04_selections_window
 
 When you have finished selecting the regions of interest, click on the dots menu and select the option Export hierarchy to csv.
 
-```{r, echo=FALSE, out.width="40%"}
+```{r, echo=FALSE, out.width="40%", fig.align='center'}
 knitr::include_graphics("images/interactive_selection_cosmx/05_export_to_csv.png")
 ```
 
@@ -169,7 +169,7 @@ my_selections <- read.csv("my_selections.csv")
 colnames(my_selections)[4] <- "cell_ID"
 ```
 
-```{r, echo=FALSE, out.width="70%"}
+```{r, echo=FALSE, out.width="70%", fig.align='center'}
 knitr::include_graphics("images/interactive_selection_cosmx/06_selections_table.png")
 ```
 
