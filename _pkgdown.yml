@@ -95,10 +95,14 @@ navbar:
           - text: Image alignment
             href: articles/image_alignment.html
       - text: -------
-      - text: Interactive selection
+      - text: Interactivity
         menu:
           - text: Interactive selection
             href: articles/interactive_selection.html
+          - text: Interactive visualization with vitessceR
+            href: articles/interactive_giotto_vitessceR.html
+          - text: Interactive region selection on large datasets
+            href: articles/interactive_selection_cosmx.html
       - text: -------
       - text: Visualizations
         menu:
@@ -165,6 +169,8 @@ navbar:
           href: articles/visium_cytassist_lungcancer.html
         - text: CytAssist Multi-omics Human Glioblastoma
           href: articles/visium_cytassist_human_glioblastoma.html
+        - text: VisiumHD Human Colorectal Cancer
+          href: articles/VisiumHD_Human_Colorectal_Cancer.html
       - text: -------
       - text: Slide-seq
         menu:
@@ -302,10 +308,12 @@ articles:
   navbar: ~
   contents:
   - image_alignment
-- title: Interactive selection
+- title: Interactivity
   navbar: ~
   contents:
   - interactive_selection
+  - interactive_giotto_vitessceR
+  - interactive_selection_cosmx
 - title: Visualizations
   navbar: ~
   contents:
@@ -344,6 +352,7 @@ articles:
   - visium_prostate_integration
   - visium_cytassist_lungcancer
   - visium_cytassist_human_glioblastoma
+  - VisiumHD_Human_Colorectal_Cancer
 - title: Slide-seq
   navbar: ~
   contents:

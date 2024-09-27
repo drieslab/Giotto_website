@@ -34,18 +34,15 @@ if(!genv_exists){
 
 # Setup
 
-
 ```{r, eval=FALSE}
 library(Giotto)
 
 # Custom color palettes from rcartocolor
-# pal10 = rcartocolor::carto_pal(n = 10, name = "Pastel")
-pal10 = c("#66C5CC","#F6CF71","#F89C74","#DCB0F2","#87C55F",
-          "#9EB9F3","#FE88B1","#C9DB74","#8BE0A4","#B3B3B3")
+pal10 <- c("#66C5CC","#F6CF71","#F89C74","#DCB0F2","#87C55F",
+           "#9EB9F3","#FE88B1","#C9DB74","#8BE0A4","#B3B3B3")
 
-# viv10 = rcartocolor::carto_pal(n = 10, name = "Vivid")
-viv10 = c("#E58606","#5D69B1","#52BCA3","#99C945","#CC61B0",
-          "#24796C","#DAA51B","#2F8AC4","#764E9F","#A5AA99")
+viv10 <- c("#E58606","#5D69B1","#52BCA3","#99C945","#CC61B0",
+           "#24796C","#DAA51B","#2F8AC4","#764E9F","#A5AA99")
 
 # set working directory
 results_folder <- "/path/to/results/"
@@ -65,7 +62,7 @@ instructions <- createGiottoInstructions(save_dir = results_folder,
 ```
 
 
-## CosMx Project loading function 
+# Create the Giotto object using the convenience function
 
 Convenience function for loading in the CosMx data. It loads subcellular transcript information and polygons and generates a `giotto` object with `giottoPoints` objects for both "rna" and "neg_probe" nested in the gobject `feat_info` slot, and a `giottoPolygon` object for the "cell" spatial unit in the `spatial_info` slot.
 
@@ -76,7 +73,7 @@ Additionally, a comparison of the count matrix produced through the convenience 
 
 ```{r, eval=FALSE}
 ## provide path to nanostring folder
-data_path <- "/path/to/data/Lung12-Flat_files_and_images"
+data_path <- "/path/to/data/"
 
 ## create giotto cosmx object
 fov_join <- createGiottoCosMxObject(cosmx_dir = data_path,
@@ -89,7 +86,7 @@ showGiottoSpatialInfo(fov_join)
 ```
 
 
-# Data exploration and loading
+# Manual creation of the Giotto object
 
 ## Subcellular detections (points info)
 
@@ -108,7 +105,7 @@ showGiottoSpatialInfo(fov_join)
 
 ```{r, eval=FALSE}
 # load transcript coordinates
-tx_coord_all <- data.table::fread(paste0(data_path, "Lung12_tx_file.csv"))
+tx_coord_all <- data.table::fread(file.path(data_path, "Lung12_tx_file.csv"))
 
 colnames(tx_coord_all)
 
@@ -169,8 +166,7 @@ plot(neg_points,
 
 ```{r, eval=FALSE}
 #  load field of vision (fov) positions
-fov_offset_file <- data.table::fread(paste0(data_path, 
-                                           "Lung12_fov_positions_file.csv"))
+fov_offset_file <- data.table::fread(file.path(data_path, "Lung12_fov_positions_file.csv"))
 ```
 
 
@@ -187,7 +183,7 @@ gobjects_list <- list()
 id_set <- c("02", "03", "04")
 ```
 
-# Create a Giotto Object for each FOV
+## Create a Giotto Object for each FOV
 
 ```{r, eval=FALSE}
 for(fov_i in 1:length(id_set)) {
@@ -235,7 +231,7 @@ for(fov_i in 1:length(id_set)) {
                                       name = "composite")
 
   fovsubset <- addGiottoImage(gobject = fovsubset,
-                              largeImages = list(composite))
+                              images = list(composite))
 
 
   fovsubset <- convertGiottoLargeImageToMG(giottoLargeImage = composite,
@@ -248,7 +244,7 @@ for(fov_i in 1:length(id_set)) {
 ```
 
 
-# Join FOV Giotto Objects
+## Join FOV Giotto Objects
 
 
 ```{r, eval=FALSE}
@@ -293,11 +289,10 @@ spatInSituPlotPoints(fov_join,
                      polygon_feat_type = "cell",
                      polygon_color = "white",
                      polygon_line_size = 0.03,
-                     save_param = list(base_height = 3,
-                                       save_name = "1_inSituFeats"))
+                     save_param = list(base_height = 3))
 ```
 
-![](images/nanostring_cosmx_lung_cancer/1_inSituFeats.png)
+![](images/nanostring_cosmx_lung_cancer/0-spatInSituPlotPoints.png)
 
 ## Visualize Cell Centroids
 
@@ -311,11 +306,10 @@ spatPlot2D(gobject = fov_join,
            point_size = 0.01,
            point_alpha = 0.5,
            coord_fix_ratio = 1,
-           save_param = list(base_height = 2,
-                             save_name = "2_spatCentroids"))
+           save_param = list(base_height = 2))
 ```
 
-![](images/nanostring_cosmx_lung_cancer/2_spatCentroids.png)
+![](images/nanostring_cosmx_lung_cancer/1-spatPlot2D.png)
 
 # Aggregate subcellular features
 
@@ -354,25 +348,22 @@ filterDistributions(fov_join,
                     method = "sum",
                     feat_type = "rna",
                     nr_bins = 100,
-                    save_param = list(base_height = 3,
-                                      save_name = "3.1_totalexpr"))
+                    save_param = list(base_height = 3))
+```
 
+![](images/nanostring_cosmx_lung_cancer/2-filterDistributions.png)
+
+```{r, eval=FALSE}
 filterDistributions(fov_join,
                     plot_type = "hist",
                     detection = "cells",
                     method = "sum",
                     feat_type = "neg_probe",
                     nr_bins = 25,
-                    save_param = list(base_height = 3,
-                                      save_name = "3.2_totalnegprbe"))
+                    save_param = list(base_height = 3))
 ```
 
-
-**RNA**
-![](images/nanostring_cosmx_lung_cancer/3.1_totalexpr.png)
-
-**Negative Probes**
-![](images/nanostring_cosmx_lung_cancer/3.2_totalnegprbe.png)
+![](images/nanostring_cosmx_lung_cancer/3-filterDistributions.png)
 
 ## 2D Density Plots
 
@@ -383,11 +374,10 @@ spatInSituPlotDensity(gobject = fov_join,
                       feats = c("MMP2", "VEGFA", "IGF1R",
                                 "MKI67", "EPCAM", "KRT8"),
                       cow_n_col = 2,
-                      save_param = list(base_height = 4,
-                                        save_name = "4_inSituDens"))
+                      save_param = list(base_height = 4))
 ```
 
-![](images/nanostring_cosmx_lung_cancer/4_inSituDens.png)
+![](images/nanostring_cosmx_lung_cancer/4-spatInSituPlotDensity.png)
 
 ## Extract Data from Giotto Object
 
@@ -471,9 +461,8 @@ pl_g <- pl_g + theme(panel.grid.major = element_blank(),
 combplot <- cowplot::plot_grid(pl_n, pl_g,
                                nrow = 2,
                                labels = "AUTO")
-combplot
 
-ggsave(paste0(results_folder, "mat_comparison.png"))
+ggsave(file.path(results_folder, "mat_comparison.png"), combplot)
 ```
 
 ![](images/nanostring_cosmx_lung_cancer/mat_comparison.png)
@@ -494,9 +483,8 @@ pl <- ggplot()
 pl <- pl + geom_bar(data = vartestDT, aes(x = diff))
 pl <- pl + theme_bw()
 pl <- pl + labs(x = "difference nanostring - Giotto")
-pl
 
-ggsave(paste0(results_folder,"values_diff.png"))
+ggsave(file.path(results_folder,"values_diff.png"), pl)
 
 testDT[order(x)]
 ```
@@ -509,9 +497,7 @@ testDT[, .N, by = "method"]
 testDT[, method, by = combo][, sum(duplicated(combo))]
 ```
 
-
-Overall, the nanostring matrix has **416099 - 415952 = 147** more non-zero values than giotto's matrix for FOV2. Within the **411050** shared entries that were called by both methods (common i and j indices), there appears to be no major bias in terms of counts/values assigned. Moreover, the vast majority of these shared entries have the same values (difference of 0).
-
+Overall, the nanostring matrix has **416099 - 415952 = 147** more non-zero values than giotto's matrix for FOV2. Within the **411053** shared entries that were called by both methods (common i and j indices), there appears to be no major bias in terms of counts/values assigned. Moreover, the vast majority of these shared entries have the same values (difference of 0).
 
 # Filtering and normalization
 
@@ -587,27 +573,22 @@ filterDistributions(fov_join,
                     expression_values = "normalized",
                     method = "sum",
                     nr_bins = 100,
-                    save_param = list(base_height = 3,
-                                      save_name = "5.1_rna_norm_total_hist"))
+                    save_param = list(base_height = 3))
+```
 
+![](images/nanostring_cosmx_lung_cancer/5-filterDistributions.png)
+
+```{r, eval=FALSE}
 filterDistributions(fov_join,
                     detection = "cell",
                     feat_type = "neg_probe",
                     expression_values = "normalized",
                     method = "sum",
                     nr_bins = 20,
-                    save_param = list(base_height = 3,
-                                      save_name = "5.2_neg_norm_total_hist"))
+                    save_param = list(base_height = 3))
 ```
 
-
-**RNA**
-
-![](images/nanostring_cosmx_lung_cancer/5.1_rna_norm_total_hist.png)
-
-**Negative Probe**
-
-![](images/nanostring_cosmx_lung_cancer/5.2_neg_norm_total_hist.png)
+![](images/nanostring_cosmx_lung_cancer/6-filterDistributions.png)
 
 ## Plot spatially as centroids
 
@@ -619,11 +600,10 @@ spatPlot2D(gobject = fov_join,
            image_name = image_names,
            point_size = 0.9,
            point_alpha = 0.75,
-           save_param = list(base_height = 2,
-                             save_name = "5.3_color_centroids"))
+           save_param = list(base_height = 2))
 ```
 
-![](images/nanostring_cosmx_lung_cancer/5.3_color_centroids.png)
+![](images/nanostring_cosmx_lung_cancer/7-spatPlot2D.png)
 
 ## Plot spatially as color-scaled polygons
 
@@ -634,9 +614,12 @@ spatInSituPlotPoints(fov_join,
                      polygon_line_size = 0.05,
                      polygon_fill = "total_expr",
                      polygon_fill_as_factor = FALSE,
-                     save_param = list(base_height = 2,
-                                       save_name = "5.4_rna_color_polys"))
+                     save_param = list(base_height = 2))
+```
 
+![](images/nanostring_cosmx_lung_cancer/8-spatInSituPlotPoints.png)
+
+```{r, eval=FALSE}
 spatInSituPlotPoints(fov_join,
                      feat_type = "neg_probe",
                      show_polygon = TRUE,
@@ -644,18 +627,10 @@ spatInSituPlotPoints(fov_join,
                      polygon_line_size = 0.05,
                      polygon_fill = "total_expr",
                      polygon_fill_as_factor = FALSE,
-                     save_param = list(base_height = 2,
-                                       save_name = "5.5_neg_color_polys"))
+                     save_param = list(base_height = 2))
 ```
 
-
-**RNA**
-
-![](images/nanostring_cosmx_lung_cancer/5.4_rna_color_polys.png)
-
-**Negative Probe**
-
-![](images/nanostring_cosmx_lung_cancer/5.5_neg_color_polys.png)
+![](images/nanostring_cosmx_lung_cancer/9-spatInSituPlotPoints.png)
 
 # Dimension Reduction
 
@@ -669,15 +644,16 @@ PCA generation will also be based on the "pearson" matrix. Scaling and centering
 fov_join <- calculateHVF(fov_join,
                          method = "var_p_resid",
                          expression_values = "pearson",
-                         save_param = list(base_height = 5,
-                                           save_name = "6.1_pearson_HVF"))
+                         save_plot = TRUE)
+# If you get an Error related to future.apply, please modify the maximum size 
+# of global variables by running: options(future.globals.maxSize = 1e10)
 
 # print HVFs
 gene_metadata <- fDataDT(fov_join)
 gene_metadata[hvf == "yes", feat_ID]
 ```
 
-![](images/nanostring_cosmx_lung_cancer/6.1_pearson_HVF.png)
+![](images/nanostring_cosmx_lung_cancer/10-HVFplot.png)
 
 ```{r, eval=FALSE}
 fov_join <- runPCA(fov_join,
@@ -687,19 +663,20 @@ fov_join <- runPCA(fov_join,
 
 # screeplot uses the generated PCA. No need to specify expr values
 screePlot(fov_join, 
-          ncp = 20, 
-          save_param = list(save_name = "6.2_screeplot"))
+          ncp = 20)
+```
 
+![](images/nanostring_cosmx_lung_cancer/11-screePlot.png)
+
+```{r, eval=FALSE}
 plotPCA(fov_join,
         cell_color = "nr_feats", # (from log norm statistics)
         color_as_factor = FALSE,
         point_size = 0.1,
-        point_shape = "no_border",
-        save_param = list(save_name = "6.3_PCA"))
+        point_shape = "no_border")
 ```
 
-![](images/nanostring_cosmx_lung_cancer/6.2_screeplot.png)
-![](images/nanostring_cosmx_lung_cancer/6.3_PCA.png)
+![](images/nanostring_cosmx_lung_cancer/12-PCA.png)
 
 ## Run UMAP
 
@@ -709,11 +686,10 @@ fov_join <- runUMAP(fov_join,
                     dimensions_to_use = 1:10,
                     n_threads = 4)
 
-plotUMAP(gobject = fov_join, 
-         save_param = list(save_name = "6.4_UMAP"))
+plotUMAP(gobject = fov_join)
 ```
 
-![](images/nanostring_cosmx_lung_cancer/6.4_UMAP.png)
+![](images/nanostring_cosmx_lung_cancer/13-UMAP.png)
 
 ## Plot features on expression space
 
@@ -726,11 +702,10 @@ dimFeatPlot2D(gobject = fov_join,
               point_shape = "no_border",
               point_size = 0.01,
               cow_n_col = 3,
-              save_param = list(base_height = 5,
-                                save_name = "6.5_UMAP_feats"))
+              save_param = list(base_height = 5))
 ```
 
-![](images/nanostring_cosmx_lung_cancer/6.5_UMAP_feats.png)
+![](images/nanostring_cosmx_lung_cancer/14-dimFeatPlot2D.png)
 
 # Cluster
 
@@ -750,11 +725,10 @@ plotUMAP(gobject = fov_join,
          cell_color = "leiden_clus",
          cell_color_code = pal10,
          show_NN_network = TRUE,
-         point_size = 2,
-         save_param = list(save_name = "7.1_UMAP_leiden"))
+         point_size = 2)
 ```
 
-![](images/nanostring_cosmx_lung_cancer/7.1_UMAP_leiden.png)
+![](images/nanostring_cosmx_lung_cancer/15-UMAP.png)
 
 ## Visualize clustering on expression and spatial space
 
@@ -765,11 +739,10 @@ spatDimPlot2D(gobject = fov_join,
               image_name = image_names,
               cell_color = "leiden_clus",
               cell_color_code = pal10,
-              spat_point_size = 1,
-              save_param = list(save_name = "7.2_spatdim_leiden"))
+              spat_point_size = 1)
 ```
 
-![](images/nanostring_cosmx_lung_cancer/7.2_spatdim_leiden.png)
+![](images/nanostring_cosmx_lung_cancer/16-spatDimPlot2D.png)
 
 ## Map clustering spatially
 
@@ -785,11 +758,10 @@ spatInSituPlotPoints(fov_join,
                      polygon_fill = "leiden_clus",
                      polygon_fill_as_factor = TRUE,
                      polygon_fill_code = pal10,
-                     save_param = list(base_height = 5,
-                                       save_name = "7.3_spatinsitu_leiden"))
+                     save_param = list(base_height = 5))
 ```
 
-![](images/nanostring_cosmx_lung_cancer/7.3_spatinsitu_leiden.png)
+![](images/nanostring_cosmx_lung_cancer/17-spatInSituPlotPoints.png)
 
 # Small Subset Visualization
 
@@ -812,10 +784,13 @@ spatInSituPlotPoints(smallfov,
                      show_polygon = TRUE,
                      polygon_color = "white",
                      show_image = TRUE,
-                     largeImage_name = "fov002-composite",
-                     show_legend = FALSE,
-                     save_param = list(save_name = "8.1_smallfov_points"))
+                     image_name = "fov002-composite",
+                     show_legend = FALSE)
+```
 
+![](images/nanostring_cosmx_lung_cancer/18-spatInSituPlotPoints.png)
+
+```{r, eval=FALSE}
 # plot only the polygon outlines
 spatInSituPlotPoints(smallfov,
                      polygon_line_size = 0.1,
@@ -823,10 +798,13 @@ spatInSituPlotPoints(smallfov,
                      polygon_color = "white",
                      show_polygon = TRUE,
                      show_image = TRUE,
-                     largeImage_name = "fov002-composite",
-                     show_legend = FALSE,
-                     save_param = list(save_name = "8.2_smallfov_poly"))
+                     image_name = "fov002-composite",
+                     show_legend = FALSE)
+```
 
+![](images/nanostring_cosmx_lung_cancer/19-spatInSituPlotPoints.png)
+
+```{r, eval=FALSE}
 # plot polygons colorlabeled with leiden clusters
 spatInSituPlotPoints(smallfov,
                      polygon_line_size = 0.1,
@@ -835,15 +813,11 @@ spatInSituPlotPoints(smallfov,
                      polygon_fill_as_factor = TRUE,
                      polygon_fill_code = pal10,
                      show_image = TRUE,
-                     largeImage_name = "fov002-composite",
-                     show_legend = FALSE,
-                     save_param = list(save_name = "8.3_smallfov_leiden"))
+                     image_name = "fov002-composite",
+                     show_legend = FALSE)
 ```
 
-
-![](images/nanostring_cosmx_lung_cancer/8.1_smallfov_points.png)
-![](images/nanostring_cosmx_lung_cancer/8.2_smallfov_poly.png)
-![](images/nanostring_cosmx_lung_cancer/8.3_smallfov_leiden.png)
+![](images/nanostring_cosmx_lung_cancer/20-spatInSituPlotPoints.png)
 
 # Spatial Expression Patterns
 
@@ -861,15 +835,14 @@ km_spatialfeats <- binSpect(fov_join)
 # visualize spatial expression of selected genes obtained from binSpect
 spatFeatPlot2D(fov_join,
                expression_values = "normalized",
-               feats = km_spatialgenes$feats[1:10],
+               feats = km_spatialfeats$feats[1:10],
                point_shape = "no_border",
                point_border_stroke = 0.01,
                point_size = 0.01,
-               cow_n_col = 2,
-               save_param = list(save_name = "9_binspect_genes"))
+               cow_n_col = 2)
 ```
 
-![](images/nanostring_cosmx_lung_cancer/9_binspect_genes.png)
+![](images/nanostring_cosmx_lung_cancer/21-spatFeatPlot2D.png)
 
 # Identify cluster differential expression genes
 
@@ -893,11 +866,10 @@ topgenes_gini <- unique(markers_gini[, head(.SD, 2), by = "cluster"]$feats)
 violinPlot(fov_join,
            feats = topgenes_gini,
            cluster_column = "leiden_clus",
-           strip_position = "right",
-           save_param = list(save_name = "10.1_gini_violin"))
+           strip_position = "right")
 ```
 
-![](images/nanostring_cosmx_lung_cancer/10.1_gini_violin.png)
+![](images/nanostring_cosmx_lung_cancer/22-violinPlot.png)
 
 ## Heatmap
 
@@ -909,11 +881,10 @@ plotMetaDataHeatmap(fov_join,
                     metadata_cols = "leiden_clus",
                     selected_feats = topgenes_gini,
                     custom_cluster_order = cluster_order,
-                    save_param = list(base_height = 5,
-                                      save_name = "10.2_heatmap"))
+                    save_param = list(base_height = 5))
 ```
 
-![](images/nanostring_cosmx_lung_cancer/10.2_heatmap.png)
+![](images/nanostring_cosmx_lung_cancer/23-plotMetaDataHeatmap.png)
 
 ## Plot gini genes on UMAP
 
@@ -929,11 +900,10 @@ dimFeatPlot2D(fov_join,
               point_shape = "no_border",
               point_size = 0.001,
               cow_n_col = 4,
-              save_param = list(base_height = 8,
-                                save_name = "10.3_gini_genes"))
+              save_param = list(base_height = 8))
 ```
 
-![](images/nanostring_cosmx_lung_cancer/10.3_gini_genes.png)
+![](images/nanostring_cosmx_lung_cancer/24-dimFeatPlot2D.png)
 
 ## Cell Type Annotation
 
@@ -943,7 +913,7 @@ clusters_cell_types <- c("Normal Epithelial 1", "Cancer", "Stromal", "B-lineage"
                          "Macrophage", "B-lineage", "Cancer",
                          "Normal Epithelial 2", "Stromal", "B-lineage")
 
-names(clusters_cell_types) = 1:10
+names(clusters_cell_types) <- 1:10
 
 fov_join <- annotateGiotto(gobject = fov_join,
                            annotation_vector = clusters_cell_types,
@@ -953,11 +923,10 @@ fov_join <- annotateGiotto(gobject = fov_join,
 plotUMAP(fov_join,
          cell_color = "cell_types",
          cell_color_code = viv10,
-         point_size = 1.5,
-         save_param = list(save_name = "11_anno_umap"))
+         point_size = 1.5)
 ```
 
-![](images/nanostring_cosmx_lung_cancer/11_anno_umap.png)
+![](images/nanostring_cosmx_lung_cancer/25-UMAP.png)
 
 ## Visualize
 
@@ -967,11 +936,10 @@ spatDimPlot2D(gobject = fov_join,
               image_name = image_names,
               cell_color = "cell_types",
               cell_color_code = viv10,
-              spat_point_size = 1,
-              save_param = list(save_name = "12_spatdim_type"))
+              spat_point_size = 1)
 ```
 
-![](images/nanostring_cosmx_lung_cancer/12_spatdim_type.png)
+![](images/nanostring_cosmx_lung_cancer/26-spatDimPlot2D.png)
 
 ```{r, eval=FALSE}
 spatInSituPlotPoints(fov_join,
@@ -982,11 +950,10 @@ spatInSituPlotPoints(fov_join,
                      polygon_fill = "cell_types",
                      polygon_fill_as_factor = TRUE,
                      polygon_fill_code = viv10,
-                     save_param = list(base_height = 2,
-                                       save_name = "13_insitu_type"))
+                     save_param = list(base_height = 2))
 ```
 
-![](images/nanostring_cosmx_lung_cancer/13_insitu_type.png)
+![](images/nanostring_cosmx_lung_cancer/27-spatInSituPlotPoints.png)
 
 # Interaction Changed Genes
 
@@ -1013,11 +980,10 @@ spatInSituPlotPoints(fov_join,
                      polygon_fill = "cell_types",
                      polygon_fill_as_factor = TRUE,
                      polygon_fill_code = pal10,
-                     save_param = list(base_height = 6,
-                                       save_name = "14_ICF"))
+                     save_param = list(base_height = 6))
 ```
 
-![](images/nanostring_cosmx_lung_cancer/14_ICF.png)
+![](images/nanostring_cosmx_lung_cancer/28-spatInSituPlotPoints.png)
 
 # Saving the giotto object
 
@@ -1031,18 +997,20 @@ saveGiotto(gobject = fov_join,
            dir = "/directory/to/save/to/")
 ```
 
+# Session Info
+
 ```{r, eval=FALSE}
 sessionInfo()
 ```
 
 ```{r, eval=FALSE}
-R version 4.3.2 (2023-10-31)
-Platform: x86_64-apple-darwin20 (64-bit)
-Running under: macOS Sonoma 14.3.1
+R version 4.4.1 (2024-06-14)
+Platform: x86_64-apple-darwin20
+Running under: macOS Sonoma 14.6.1
 
 Matrix products: default
 BLAS:   /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib 
-LAPACK: /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.11.0
+LAPACK: /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0
 
 locale:
 [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
@@ -1054,42 +1022,44 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] ggplot2_3.4.4     Giotto_4.0.2      GiottoClass_0.1.3
+[1] ggplot2_3.5.1     Giotto_4.1.3      GiottoClass_0.4.0
 
 loaded via a namespace (and not attached):
-  [1] tidyselect_1.2.0            viridisLite_0.4.2           dplyr_1.1.4                
-  [4] farver_2.1.1                GiottoVisuals_0.1.4         bitops_1.0-7               
-  [7] fastmap_1.1.1               SingleCellExperiment_1.24.0 RCurl_1.98-1.14            
- [10] digest_0.6.34               rsvd_1.0.5                  lifecycle_1.0.4            
- [13] terra_1.7-71                dbscan_1.1-12               magrittr_2.0.3             
- [16] compiler_4.3.2              rlang_1.1.3                 tools_4.3.2                
- [19] igraph_2.0.1.1              utf8_1.2.4                  yaml_2.3.8                 
- [22] data.table_1.15.0           knitr_1.45                  S4Arrays_1.2.0             
- [25] labeling_0.4.3              reticulate_1.35.0           DelayedArray_0.28.0        
- [28] RColorBrewer_1.1-3          abind_1.4-5                 BiocParallel_1.36.0        
- [31] withr_3.0.0                 BiocGenerics_0.48.1         grid_4.3.2                 
- [34] stats4_4.3.2                fansi_1.0.6                 beachmat_2.18.0            
- [37] future_1.33.1               colorspace_2.1-0            progressr_0.14.0           
- [40] globals_0.16.2              MASS_7.3-60.0.1             scales_1.3.0               
- [43] gtools_3.9.5                SummarizedExperiment_1.32.0 cli_3.6.2                  
- [46] rmarkdown_2.25              crayon_1.5.2                ragg_1.2.7                 
- [49] generics_0.1.3              future.apply_1.11.1         rstudioapi_0.15.0          
- [52] rjson_0.2.21                zlibbioc_1.48.0             parallel_4.3.2             
- [55] XVector_0.42.0              matrixStats_1.2.0           vctrs_0.6.5                
- [58] Matrix_1.6-5                jsonlite_1.8.8              BiocSingular_1.18.0        
- [61] IRanges_2.36.0              S4Vectors_0.40.2            ggrepel_0.9.5              
- [64] irlba_2.3.5.1               scattermore_1.2             listenv_0.9.1              
- [67] systemfonts_1.0.5           magick_2.8.2                GiottoUtils_0.1.5          
- [70] parallelly_1.36.0           glue_1.7.0                  codetools_0.2-19           
- [73] cowplot_1.1.3               uwot_0.1.16                 RcppAnnoy_0.0.22           
- [76] gtable_0.3.4                deldir_2.0-2                GenomeInfoDb_1.38.6        
- [79] GenomicRanges_1.54.1        ScaledMatrix_1.10.0         munsell_0.5.0              
- [82] tibble_3.2.1                pillar_1.9.0                htmltools_0.5.7            
- [85] GenomeInfoDbData_1.2.11     R6_2.5.1                    textshaping_0.3.7          
- [88] evaluate_0.23               lattice_0.22-5              Biobase_2.62.0             
- [91] png_0.1-8                   backports_1.4.1             SpatialExperiment_1.12.0   
- [94] Rcpp_1.0.12                 SparseArray_1.2.4           checkmate_2.3.1            
- [97] colorRamp2_0.1.0            xfun_0.42                   MatrixGenerics_1.14.0      
-[100] pkgconfig_2.0.3
+  [1] colorRamp2_0.1.0            deldir_2.0-4                rlang_1.1.4                
+  [4] magrittr_2.0.3              RcppAnnoy_0.0.22            GiottoUtils_0.1.12         
+  [7] matrixStats_1.4.1           compiler_4.4.1              png_0.1-8                  
+ [10] systemfonts_1.1.0           vctrs_0.6.5                 pkgconfig_2.0.3            
+ [13] SpatialExperiment_1.14.0    crayon_1.5.3                fastmap_1.2.0              
+ [16] backports_1.5.0             magick_2.8.4                XVector_0.44.0             
+ [19] labeling_0.4.3              utf8_1.2.4                  rmarkdown_2.28             
+ [22] UCSC.utils_1.0.0            ragg_1.3.2                  purrr_1.0.2                
+ [25] xfun_0.47                   beachmat_2.20.0             zlibbioc_1.50.0            
+ [28] GenomeInfoDb_1.40.1         jsonlite_1.8.8              DelayedArray_0.30.1        
+ [31] BiocParallel_1.38.0         terra_1.7-78                irlba_2.3.5.1              
+ [34] parallel_4.4.1              R6_2.5.1                    RColorBrewer_1.1-3         
+ [37] reticulate_1.39.0           parallelly_1.38.0           GenomicRanges_1.56.1       
+ [40] scattermore_1.2             Rcpp_1.0.13                 SummarizedExperiment_1.34.0
+ [43] knitr_1.48                  future.apply_1.11.2         R.utils_2.12.3             
+ [46] IRanges_2.38.1              Matrix_1.7-0                igraph_2.0.3               
+ [49] tidyselect_1.2.1            rstudioapi_0.16.0           abind_1.4-5                
+ [52] yaml_2.3.10                 codetools_0.2-20            listenv_0.9.1              
+ [55] lattice_0.22-6              tibble_3.2.1                Biobase_2.64.0             
+ [58] withr_3.0.1                 evaluate_0.24.0             future_1.34.0              
+ [61] pillar_1.9.0                MatrixGenerics_1.16.0       checkmate_2.3.2            
+ [64] stats4_4.4.1                plotly_4.10.4               generics_0.1.3             
+ [67] dbscan_1.2-0                sp_2.1-4                    S4Vectors_0.42.1           
+ [70] munsell_0.5.1               scales_1.3.0                gtools_3.9.5               
+ [73] globals_0.16.3              glue_1.7.0                  lazyeval_0.2.2             
+ [76] tools_4.4.1                 GiottoVisuals_0.2.5         data.table_1.16.0          
+ [79] ScaledMatrix_1.12.0         cowplot_1.1.3               grid_4.4.1                 
+ [82] tidyr_1.3.1                 colorspace_2.1-1            SingleCellExperiment_1.26.0
+ [85] GenomeInfoDbData_1.2.12     BiocSingular_1.20.0         rsvd_1.0.5                 
+ [88] cli_3.6.3                   textshaping_0.4.0           fansi_1.0.6                
+ [91] S4Arrays_1.4.1              viridisLite_0.4.2           dplyr_1.1.4                
+ [94] uwot_0.2.2                  gtable_0.3.5                R.methodsS3_1.8.2          
+ [97] digest_0.6.37               progressr_0.14.0            BiocGenerics_0.50.0        
+[100] SparseArray_1.4.8           ggrepel_0.9.6               rjson_0.2.22               
+[103] htmlwidgets_1.6.4           farver_2.1.2                htmltools_0.5.8.1          
+[106] R.oo_1.26.0                 lifecycle_1.0.4             httr_1.4.7                 
+[109] MASS_7.3-60.2 
 ```
-
