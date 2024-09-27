@@ -41,6 +41,11 @@ knitr::include_graphics("images/ontrac/0-MERFISH.png")
 
 # Pre-settings
 
+```{r, eval=FALSE}
+python_path <- "giotto_ontrac_env"
+env_name <- "giotto_ontrac_env"
+```
+
 ## Giotto Installation
 
 We need `R>=4.4` for this tutorial.
@@ -51,17 +56,17 @@ Please following the [Giotto Installation Tutorial](installation.html).
 
 ## ONTraC Installation
 
-Since ONTraC is a GNN algorithm that relies on [pytorch-geometric](https://pytorch-geometric.readthedocs.io/en/latest/), we create a new environment here in order not to interfere with other software using `installONTraCEnvironment()`.
+Since ONTraC is a GNN algorithm that relies on [pytorch-geometric](https://pytorch-geometric.readthedocs.io/en/latest/), we create a new environment here in order not to interfere with other software using `installGiottoONTraCEnvironment()`.
 
 ```{r, eval=FALSE}
 library(Giotto)
-installONTraCEnvironment(envname = "giotto_ontrac_env")
+installGiottoONTraCEnvironment(envname = env_name)
 ```
 
 You can also update/re-install ONTraC.
 
 ```{r, eval=FALSE}
-reticulate::conda_install(envname = 'giotto_ontrac_env',
+reticulate::conda_install(envname = 'giotto_env',  # giotto_env is the default Giotto's conda environment name
                           packages = 'ontrac',
                           pip = TRUE)
 ```
@@ -71,10 +76,10 @@ reticulate::conda_install(envname = 'giotto_ontrac_env',
 ```{r, eval=FALSE}
 options(timeout=Inf) # In case of network interrupt
 
-data_path <- file.path("data","ontrac")
+data_path <- "/path/to/data"
 dir.create(data_path, recursive=T)
 
-results_folder <- file.path("results","ontrac")
+results_folder <- "/path/to/results"
 dir.create(results_folder, recursive=T)
 ```
 
@@ -87,7 +92,7 @@ You need to download the processed expression, metadata, and cell segmentation i
 Note 1: there are 61 slices here, we run on two of them to save the time.
 Note 2: due to the instability of network, download processing may be interrupt.
 
-We recommend to download these data in advance or download the processing giotto obj from [Zenodo](https://zenodo.org/records/13713948).
+We recommend to download these data in advance or download the processing giotto object from [Zenodo](https://zenodo.org/records/13713948).
 
 ```{r, eval = FALSE}
 download.file(url = "https://download.brainimagelibrary.org/cf/1c/cf1c1a431ef8d021/processed_data/counts.h5ad",
@@ -99,8 +104,8 @@ download.file(url = "https://download.brainimagelibrary.org/cf/1c/cf1c1a431ef8d0
 download.file(url = "https://download.brainimagelibrary.org/cf/1c/cf1c1a431ef8d021/processed_data/segmented_cells_mouse2sample1.csv",
               destfile = file.path(data_path,"segmented_cells_mouse2sample1.csv"))
 
-download.file(url = "https://download.brainimagelibrary.org/cf/1c/cf1c1a431ef8d021/processed_data/segmented_cells_mouse2sample6.csv",
-              destfile = file.path(data_path,"segmented_cells_mouse2sample6.csv"))
+
+
 ```
 
 # Data Analysis
@@ -115,13 +120,13 @@ Option 2 is load the pre-constructed giotto object from [Zenodo](https://zenodo.
 
 ```{r, eval=FALSE}
 library(Giotto)
-set_giotto_python_path("giotto_ontrac_env")
+set_giotto_python_path(python_path = python_path)
 
 ## Install the anndata and scanpy package since the counts matrix was stored in h5ad format. We need it to convert an anndata object to giotto object.
-GiottoUtils::package_check("scanpy", repository= "pip:scanpy")
+reticulate::conda_install(envname = env_name, packages = c('scanpy'), pip = TRUE)
 
 ## Create Giotto object from expression counts. This file contains 61 slices here.
-giotto_all_slices_obj <- anndataToGiotto(file.path(data_path, "counts.h5ad"))
+giotto_all_slices_obj <- anndataToGiotto(file.path(data_path, "counts.h5ad"), python_path = python_path)
 
 ## Load meta_data
 meta_df <- read.csv(file.path(data_path, "cell_labels.csv"),
@@ -143,11 +148,13 @@ giotto_slice2_obj <- subsetGiotto(gobject = giotto_all_slices_obj,
 ## Add cell metadata
 giotto_slice1_obj <- addCellMetadata(gobject = giotto_slice1_obj,
                                      new_metadata = meta_df,
-                                     by_column = TRUE)
+                                     by_column = TRUE,
+                                     column_cell_ID = 'cell_ID')
 
 giotto_slice2_obj <- addCellMetadata(gobject = giotto_slice2_obj,
                                      new_metadata = meta_df,
-                                     by_column = TRUE)
+                                     by_column = TRUE,
+                                     column_cell_ID = 'cell_ID')
 
 ## Cell segmentation. Calculate center (median of vertices) of each cell.
 segments_1_df <- read.csv(file.path(data_path, "segmented_cells_mouse2sample1.csv"), 
@@ -213,8 +220,8 @@ If you facing network issue when downloading the raw dataset. Please download th
 ```{r, eval=FALSE}
 library(Giotto)
 
-python_path <- "giotto_ontrac_env"
-giotto_obj <- loadGiotto(path_to_folder = file.path(results_folder, "gobject"), python_path=python_path)
+set_giotto_python_path(python_path = python_path)
+giotto_obj <- loadGiotto(path_to_folder = file.path(results_folder, "gobject"), python_path = python_path)
 ```
 
 ## Spatial distribution of cell type
@@ -267,10 +274,10 @@ head(ONTraC_input)
 
 ```{r, eval = FALSE}
 runONTraCV1(ONTraC_input = ONTraC_input,
-       dataset = "./results/ontrac/ONTraC_dataset_input.csv",
-       preprocessing_dir = "./results/ontrac/preprocessing_dir",
-       GNN_dir = "./results/ontrac/GNN_dir",
-       NTScore_dir = "./results/ontrac/NTScore_dir",
+       dataset = file.path(results_folder, "ONTraC_dataset_input.csv"),
+       preprocessing_dir = file.path(results_folder, "preprocessing_dir"),
+       GNN_dir = file.path(results_folder, "GNN_dir"),
+       NTScore_dir = file.path(results_folder, "NTScore_dir"),
        n_neighbors = 50L,
        n_local = 20L,
        device = "cpu",
@@ -280,7 +287,7 @@ runONTraCV1(ONTraC_input = ONTraC_input,
        purity_loss_weight = 300.0,
        regularization_loss_weight = 0.3,
        beta = 0.03,
-       python_path = "giotto_ontrac_env")
+       python_path = python_path)
 ```
 
 ### Option 2: run ONTraC in a separate machine
@@ -306,10 +313,10 @@ source ~/.bash_profile
 
 conda activate ONTraC
 
-ONTraC -d results/ontrac/ONTraC_dataset_input.csv --preprocessing-dir results/ontrac/preprocessing_dir --GNN-dir results/ontrac/GNN_dir --NTScore-dir results/ontrac/NTScore_dir --device cuda --epochs 1000 -s 42 --patience 100 --min-delta 0.001 --min-epochs 50 --lr 0.03 --hidden-feats 4 -k 6 --modularity-loss-weight 0.3 --purity-loss-weight 300 --regularization-loss-weight 0.3 --beta 0.03 2>&1 | tee results/ontrac/merfish_subset.log
+ONTraC -d /path/to/results/ONTraC_dataset_input.csv --preprocessing-dir /path/to/results/preprocessing_dir --GNN-dir /path/to/results/GNN_dir --NTScore-dir /path/to/results/NTScore_dir --device cuda --epochs 1000 -s 42 --patience 100 --min-delta 0.001 --min-epochs 50 --lr 0.03 --hidden-feats 4 -k 6 --modularity-loss-weight 0.3 --purity-loss-weight 300 --regularization-loss-weight 0.3 --beta 0.03 2>&1 | tee /path/to/results/merfish_subset.log
 ```
 
-- Copy the output directories (`results/ontrac/preprocessing_dir`, `results/ontrac/GNN_dir`, and `results/ontrac/NTScore_dir`) back to the machine running Giotto.
+- Copy the output directories (`/path/to/results/preprocessing_dir`, `/path/to/results/GNN_dir`, and `/path/to/results/NTScore_dir`) back to the machine running Giotto.
 
 - For details, please refer [ONTraC's website](https://github.com/gyuanlab/ONTraC).
 
@@ -319,7 +326,9 @@ ONTraC -d results/ontrac/ONTraC_dataset_input.csv --preprocessing-dir results/on
 
 ```{r, eval = FALSE}
 giotto_obj <- loadOntraCResults(gobject = giotto_obj,
-                                ontrac_results_dir = results_folder)
+                                ontrac_results_dir = results_folder,
+                                NTScore_reverse = TRUE # whether to reverse the NTScore (direction of the trajectory)
+                                )
 ```
 
 This function will look for the `preprocessing_dir`, `GNN_dir`, and `NTScore_dir` under the `results_folder` automatically.
@@ -331,18 +340,18 @@ head(pDataDT(giotto_obj, spat_unit = "cell", feat_type = "rna"))
 ```
 
 ```{r, eval = FALSE}
-#                                                       cell_ID      sample_id        slice_id   class_label subclass    label      list_ID         NicheCluster   NTScore
-#                                                        <char>         <char>          <char>        <char>   <char>   <char>       <char>                <int>     <num>
-#   1:  mouse2_slice229-100101435705986292663283283043431511315	mouse2_sample6	mouse2_slice229	Glutamatergic	L6 CT	L6_CT_5	    mouse2_slice229	          3	0.2002081
-#   2:  mouse2_slice229-100104370212612969023746137269354247741	mouse2_sample6	mouse2_slice229	Other	        OPC     OPC	        mouse2_slice229.          1 0.7999791
-#   3:  mouse2_slice229-100128078183217482733448056590230529739	mouse2_sample6	mouse2_slice229	Glutamatergic	L2/3 IT	L23_IT_4	mouse2_slice229	          1	0.7662198
-#   4:  mouse2_slice229-100209662400867003194056898065587980841	mouse2_sample6	mouse2_slice229	Other	        Oligo	Oligo_1	    mouse2_slice229	          5	0.6010420
-#   5:  mouse2_slice229-100218038012295593766653119076639444055	mouse2_sample6	mouse2_slice229	Glutamatergic	L2/3 IT	L23_IT_4	mouse2_slice229	          1	0.7132024
-#   6:  mouse2_slice229-100252992997994275968450436343196667192	mouse2_sample6	mouse2_slice229	Other	        Astro	Astro_2	    mouse2_slice229	          3	0.1980136
+#                                                       cell_ID      sample_id        slice_id    class_label subclass   label           list_ID  NTScore   niche cluster
+#                                                        <char>         <char>          <char>         <char>   <char>  <char>            <char>  <dbl>     <fctr>
+#   1:  mouse2_slice229-100101435705986292663283283043431511315	mouse2_sample6	mouse2_slice229	Glutamatergic	L6 CT    L6_CT_5   mouse2_slice229  0.2002081 NicheCluster_3
+#   2:  mouse2_slice229-100104370212612969023746137269354247741	mouse2_sample6	mouse2_slice229	Other	        OPC      OPC       mouse2_slice229  0.7999791 NicheCluster_1
+#   3:  mouse2_slice229-100128078183217482733448056590230529739	mouse2_sample6	mouse2_slice229	Glutamatergic	L2/3 IT	 L23_IT_4  mouse2_slice229  0.7662198 NicheCluster_1
+#   4:  mouse2_slice229-100209662400867003194056898065587980841	mouse2_sample6	mouse2_slice229	Other	        Oligo    Oligo_1   mouse2_slice229  0.6010420 NicheCluster_5
+#   5:  mouse2_slice229-100218038012295593766653119076639444055	mouse2_sample6	mouse2_slice229	Glutamatergic	L2/3 IT	 L23_IT_4  mouse2_slice229  0.7132024 NicheCluster_1
+#   6:  mouse2_slice229-100252992997994275968450436343196667192	mouse2_sample6	mouse2_slice229	Other	        Astro    Astro_2   mouse2_slice229  0.1980136 NicheCluster_3
 ```
 
-The probability matrix of each cell assigned to each niche cluster and
-connectivity between niche cluster were stored here:
+The 1) probability matrix of each cell assigned to each niche cluster and
+2) connectivity between niche cluster were stored as additional matrix here:
 
 ```{r, eval=FALSE}
 GiottoClass::list_expression(giotto_obj)
@@ -359,14 +368,11 @@ GiottoClass::list_expression(giotto_obj)
 ## Niche cluster probability distribution
 
 ```{r, eval = FALSE}
-spatFeatPlot2D(gobject = giotto_obj, 
-               spat_unit = "cell",
-               feat_type = "niche cluster",
-               expression_values = "prob",
-               group_by = "list_ID",
-               feats = rownames(giotto_obj@expression$cell$`niche cluster`$prob),
-               point_border_col = "gray"
-)
+plotSpatNicheClusterProb(gobject = giotto_obj,
+                         group_by = "list_ID",
+                         gradient_limits = c(0, 1),
+                         point_border_col = "gray",
+                         show_plot = T)
 ```
 
 ```{r, echo=FALSE, out.width="60%", fig.align="center"}
@@ -376,13 +382,11 @@ knitr::include_graphics("images/ontrac/2-spatialNicheClusterProb.png")
 ## Binarized niche cluster for each cell
 
 ```{r, eval = FALSE}
-spatPlot2D(giotto_obj,
-           spat_unit = "cell",
-           group_by = "slice_id",
-           cell_color = "NicheCluster",
-           color_as_factor = TRUE,
-           point_size = 1,
-           point_border_stroke = NA)
+plotSpatNicheClusterBin(gobject = giotto_obj,
+                        group_by = "list_ID",
+                        point_size = 1,
+                        point_border_stroke = NA,
+                        show_plot = TRUE)
 ```
 
 ```{r, echo=FALSE, out.width="80%", fig.align="center"}
@@ -394,7 +398,8 @@ knitr::include_graphics("images/ontrac/3-spatialBinNicheCluster.png")
 ```{r, eval=FALSE}
 set.seed(42)  # fix the node positions
 
-plotNicheClusterConnectivity(gobject = giotto_obj)
+plotNicheClusterConnectivity(gobject = giotto_obj,
+                             show_plot = TRUE)
 ```
 
 ```{r, echo=FALSE, out.width="60%", fig.align="center"}
@@ -407,35 +412,13 @@ knitr::include_graphics("images/ontrac/4-nicheClusterConnectivity.png")
 spatPlot2D(gobject = giotto_obj, 
            spat_unit = "cell",
            feat_type = "rna",
-           group_by = "slice_id",
+           group_by = "list_ID",
            cell_color = "NTScore",
            color_as_factor = FALSE,
            cell_color_gradient = "turbo",
            point_size = 1,
-           point_border_stroke = NA
-)
-```
-
-```{r, echo=FALSE, out.width="80%", fig.align="center"}
-knitr::include_graphics("images/ontrac/5-1-rawSpatialNTScore.png")
-```
-
-We could change the direction of NT scores here.
-
-```{r, eval=FALSE}
-giotto_obj@cell_metadata$cell$rna$NTScore <- 1 - giotto_obj@cell_metadata$cell$rna$NTScore
-```
-
-```{r, eval=FALSE}
-spatPlot2D(gobject = giotto_obj, 
-           spat_unit = "cell",
-           feat_type = "rna",
-           group_by = "slice_id",
-           cell_color = "NTScore",
-           color_as_factor = FALSE,
-           cell_color_gradient = "turbo",
-           point_size = 1,
-           point_border_stroke = NA
+           point_border_stroke = NA,
+           show_plot = TRUE
 )
 ```
 
@@ -448,7 +431,8 @@ plotCellTypeNTScore(gobject = giotto_obj,
                     cell_type = "subclass",
                     values = "NTScore",
                     spat_unit = "cell",
-                    feat_type = "rna")
+                    feat_type = "rna",
+                    show_plot = TRUE)
 ```
 
 ```{r, echo=FALSE, out.width="80%", fig.align="center"}
@@ -460,11 +444,27 @@ knitr::include_graphics("images/ontrac/6-violinCellTypeOverNTScore.png")
 ```{r, eval=FALSE}
 plotCTCompositionInNicheCluster(gobject = giotto_obj,
                                 cell_type = "subclass",
+                                normalization = "by_niche_cluster",
+                                show_plot = TRUE
                                 )
 ```
 
 ```{r, echo=FALSE, out.width="80%", fig.align="center"}
-knitr::include_graphics("images/ontrac/7-heatmapCellTypeCompositionInNicheCluster.png")
+knitr::include_graphics("images/ontrac/7-heatmapCellTypeCompositionInNicheClusterNormByNicheCluster.png")
+```
+
+We can also normalized by cell type.
+
+```{r, eval=FALSE}
+plotCTCompositionInNicheCluster(gobject = giotto_obj,
+                                cell_type = "subclass",
+                                normalization = "by_cell_type",
+                                show_plot = TRUE
+                                )
+```
+
+```{r, echo=FALSE, out.width="80%", fig.align="center"}
+knitr::include_graphics("images/ontrac/7-heatmapCellTypeCompositionInNicheClusterNormByNicheCluster.png")
 ```
 
 # Session info
