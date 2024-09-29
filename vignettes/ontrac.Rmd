@@ -63,10 +63,10 @@ library(Giotto)
 installGiottoONTraCEnvironment(envname = env_name)
 ```
 
-You can also update/re-install ONTraC.
+You can also update/re-install ONTraC in a specific env.
 
 ```{r, eval=FALSE}
-reticulate::conda_install(envname = 'giotto_env',  # giotto_env is the default Giotto's conda environment name
+reticulate::conda_install(envname = env_name,
                           packages = 'ontrac',
                           pip = TRUE)
 ```
@@ -104,8 +104,8 @@ download.file(url = "https://download.brainimagelibrary.org/cf/1c/cf1c1a431ef8d0
 download.file(url = "https://download.brainimagelibrary.org/cf/1c/cf1c1a431ef8d021/processed_data/segmented_cells_mouse2sample1.csv",
               destfile = file.path(data_path,"segmented_cells_mouse2sample1.csv"))
 
-
-
+download.file(url = "https://download.brainimagelibrary.org/cf/1c/cf1c1a431ef8d021/processed_data/segmented_cells_mouse2sample6.csv",
+              destfile = file.path(data_path,"segmented_cells_mouse2sample6.csv"))
 ```
 
 # Data Analysis
