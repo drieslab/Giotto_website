@@ -72,6 +72,8 @@ navbar:
         menu:
         - text: Giotto Object Creation
           href: articles/object_creation.html
+        - text: Create a simulated datastet object
+          href: articles/create_simulated_object.html
       - text: -------
       - text: Giotto Configuration
         menu:
@@ -287,6 +289,7 @@ articles:
   navbar: ~
   contents:
   - object_creation
+  - create_simulated_object
 - title: Giotto Configuration
   navbar: ~
   contents:
