@@ -281,6 +281,9 @@
 <li>
           <a href="../articles/object_creation.html">Giotto Object Creation</a>
         </li>
+        <li>
+          <a href="../articles/create_simulated_object.html">Create a simulated datastet object</a>
+        </li>
       </ul>
 </li>
     <li class="divider">
@@ -485,10 +488,28 @@
 <p>More information about this dataset can be found <a href="https://www.10xgenomics.com/resources/datasets/gene-and-protein-expression-library-of-human-glioblastoma-cytassist-ffpe-2-standard" class="external-link">here</a>.</p>
 </div>
 <div class="section level2" number="2">
-<h2 number="2" id="start-giotto">
-<span class="header-section-number">2</span> Start Giotto<a class="anchor" aria-label="anchor" href="#start-giotto"></a>
+<h2 number="2" id="download-dataset">
+<span class="header-section-number">2</span> Download dataset<a class="anchor" aria-label="anchor" href="#download-dataset"></a>
 </h2>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/files2.html" class="external-link">dir.create</a></span><span class="op">(</span><span class="st">"data"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/download.file.html" class="external-link">download.file</a></span><span class="op">(</span>url <span class="op">=</span> <span class="st">"https://cf.10xgenomics.com/samples/spatial-exp/2.1.0/CytAssist_FFPE_Protein_Expression_Human_Glioblastoma/CytAssist_FFPE_Protein_Expression_Human_Glioblastoma_raw_feature_bc_matrix.tar.gz"</span>, </span>
+<span>              destfile <span class="op">=</span> <span class="st">"data/CytAssist_FFPE_Protein_Expression_Human_Glioblastoma_raw_feature_bc_matrix.tar.gz"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/download.file.html" class="external-link">download.file</a></span><span class="op">(</span>url <span class="op">=</span> <span class="st">"https://cf.10xgenomics.com/samples/spatial-exp/2.1.0/CytAssist_FFPE_Protein_Expression_Human_Glioblastoma/CytAssist_FFPE_Protein_Expression_Human_Glioblastoma_spatial.tar.gz"</span>,</span>
+<span>              destfile <span class="op">=</span> <span class="st">"data/CytAssist_FFPE_Protein_Expression_Human_Glioblastoma_spatial.tar.gz"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/untar.html" class="external-link">untar</a></span><span class="op">(</span><span class="st">"data/CytAssist_FFPE_Protein_Expression_Human_Glioblastoma_raw_feature_bc_matrix.tar.gz"</span>,</span>
+<span>      exdir <span class="op">=</span> <span class="st">"data"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/untar.html" class="external-link">untar</a></span><span class="op">(</span><span class="st">"data/CytAssist_FFPE_Protein_Expression_Human_Glioblastoma_spatial.tar.gz"</span>,</span>
+<span>      exdir <span class="op">=</span> <span class="st">"data"</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level2" number="3">
+<h2 number="3" id="start-giotto">
+<span class="header-section-number">3</span> Start Giotto<a class="anchor" aria-label="anchor" href="#start-giotto"></a>
+</h2>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Ensure Giotto Suite is installed</span></span>
 <span><span class="kw">if</span><span class="op">(</span><span class="op">!</span><span class="st">"Giotto"</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/installed.packages.html" class="external-link">installed.packages</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pkg_install.html" class="external-link">pkg_install</a></span><span class="op">(</span><span class="st">"drieslab/Giotto"</span><span class="op">)</span></span>
@@ -501,7 +522,7 @@
 <span>  <span class="co"># The following command need only be run once to install the Giotto environment</span></span>
 <span>  <span class="fu">Giotto</span><span class="fu">::</span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/giotto_python.html" class="external-link">installGiottoEnvironment</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="op">}</span></span></code></pre></div>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://drieslab.github.io/Giotto/" class="external-link">Giotto</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># 1. set results directory</span></span>
@@ -519,9 +540,9 @@
 <span>                                         return_plot <span class="op">=</span> <span class="cn">FALSE</span>, </span>
 <span>                                         python_path <span class="op">=</span> <span class="va">python_path</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div class="section level2" number="3">
-<h2 number="3" id="create-giotto-object">
-<span class="header-section-number">3</span> Create Giotto object<a class="anchor" aria-label="anchor" href="#create-giotto-object"></a>
+<div class="section level2" number="4">
+<h2 number="4" id="create-giotto-object">
+<span class="header-section-number">4</span> Create Giotto object<a class="anchor" aria-label="anchor" href="#create-giotto-object"></a>
 </h2>
 <p>The minimum requirements are</p>
 <ul>
@@ -529,7 +550,7 @@
 <li>x,y(,z) coordinates for cells or spots (or path to)</li>
 </ul>
 <p>createGiottoVisiumObject() will automatically detect both rna and protein modalities within the expression matrix creating a multi-omics Giotto object.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Provide path to visium folder</span></span>
 <span><span class="va">data_path</span> <span class="op">&lt;-</span> <span class="st">"/path/to/data/"</span></span>
 <span></span>
@@ -546,13 +567,13 @@
 <li>Replace all instructions at once with replaceGiottoInstructions()</li>
 <li>Read or get a specific Giotto instruction with readGiottoInstructions()</li>
 </ul>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># show instructions associated with the giotto object</span></span>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/showGiottoInstructions.html" class="external-link">showGiottoInstructions</a></span><span class="op">(</span><span class="va">visium</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div class="section level2" number="4">
-<h2 number="4" id="processing">
-<span class="header-section-number">4</span> Processing<a class="anchor" aria-label="anchor" href="#processing"></a>
+<div class="section level2" number="5">
+<h2 number="5" id="processing">
+<span class="header-section-number">5</span> Processing<a class="anchor" aria-label="anchor" href="#processing"></a>
 </h2>
 <ul>
 <li>Filter features and cells based on detection frequencies</li>
@@ -560,7 +581,7 @@
 <li>Add cell and feature statistics (optional)</li>
 <li>Adjust expression matrix for technical covariates or batches (optional).</li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Subset on spots that were covered by tissue</span></span>
 <span><span class="va">metadata</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/pDataDT.html" class="external-link">pDataDT</a></span><span class="op">(</span><span class="va">visium</span><span class="op">)</span></span>
 <span><span class="va">in_tissue_barcodes</span> <span class="op">&lt;-</span> <span class="va">metadata</span><span class="op">[</span><span class="va">in_tissue</span> <span class="op">==</span> <span class="fl">1</span><span class="op">]</span><span class="op">$</span><span class="va">cell_ID</span></span>
@@ -571,8 +592,8 @@
 <span><span class="co">## Visualize aligned tissue</span></span>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatPlot.html" class="external-link">spatPlot2D</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">visium</span>,</span>
 <span>           point_alpha <span class="op">=</span> <span class="fl">0.7</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fvisium_cytassist_human_glioblastoma%2F0-spatPlot2D.png" width="60%"></p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<p><img src="images%2Fvisium_cytassist_human_glioblastoma%2F0-spatPlot2D.png" width="60%" style="display: block; margin: auto;"></p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Filtering, normalization, and statistics</span></span>
 <span></span>
 <span><span class="co">## RNA feature</span></span>
@@ -594,8 +615,8 @@
 <span>           point_alpha <span class="op">=</span> <span class="fl">0.7</span>,</span>
 <span>           cell_color <span class="op">=</span> <span class="st">"nr_feats"</span>,</span>
 <span>           color_as_factor <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fvisium_cytassist_human_glioblastoma%2F1-spatPlot2D.png" width="60%"></p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<p><img src="images%2Fvisium_cytassist_human_glioblastoma%2F1-spatPlot2D.png" width="60%" style="display: block; margin: auto;"></p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## Protein feature </span></span>
 <span><span class="va">visium</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/filterGiotto.html">filterGiotto</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">visium</span>, </span>
 <span>                       spat_unit <span class="op">=</span> <span class="st">"cell"</span>,</span>
@@ -623,28 +644,28 @@
 <span>           point_alpha <span class="op">=</span> <span class="fl">0.7</span>, </span>
 <span>           cell_color <span class="op">=</span> <span class="st">"nr_feats"</span>, </span>
 <span>           color_as_factor <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fvisium_cytassist_human_glioblastoma%2F2-spatPlot2D.png" width="60%"></p>
+<p><img src="images%2Fvisium_cytassist_human_glioblastoma%2F2-spatPlot2D.png" width="60%" style="display: block; margin: auto;"></p>
 </div>
-<div class="section level2" number="5">
-<h2 number="5" id="dimension-reduction">
-<span class="header-section-number">5</span> Dimension Reduction<a class="anchor" aria-label="anchor" href="#dimension-reduction"></a>
+<div class="section level2" number="6">
+<h2 number="6" id="dimension-reduction">
+<span class="header-section-number">6</span> Dimension Reduction<a class="anchor" aria-label="anchor" href="#dimension-reduction"></a>
 </h2>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Identify highly variable features (HVF)</span></span>
 <span><span class="va">visium</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/calculateHVF.html">calculateHVF</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">visium</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># PCA</span></span>
 <span></span>
 <span><span class="co">## RNA</span></span>
 <span><span class="va">visium</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/runPCA.html">runPCA</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">visium</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="../reference/screePlot.html">screePlot</a></span><span class="op">(</span><span class="va">visium</span>, ncp <span class="op">=</span> <span class="fl">30</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fvisium_cytassist_human_glioblastoma%2F3-screePlot.png" width="60%"></p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<p><img src="images%2Fvisium_cytassist_human_glioblastoma%2F3-screePlot.png" width="60%" style="display: block; margin: auto;"></p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">### Visualize RNA PCA</span></span>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/plotPCA.html" class="external-link">plotPCA</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">visium</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fvisium_cytassist_human_glioblastoma%2F4-PCA.png" width="60%"></p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<p><img src="images%2Fvisium_cytassist_human_glioblastoma%2F4-PCA.png" width="60%" style="display: block; margin: auto;"></p>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## Protein</span></span>
 <span><span class="va">visium</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/runPCA.html">runPCA</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">visium</span>,</span>
 <span>                 spat_unit <span class="op">=</span> <span class="st">"cell"</span>,</span>
@@ -654,19 +675,19 @@
 <span>          spat_unit <span class="op">=</span> <span class="st">"cell"</span>,</span>
 <span>          feat_type <span class="op">=</span> <span class="st">"protein"</span>,</span>
 <span>          ncp <span class="op">=</span> <span class="fl">30</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fvisium_cytassist_human_glioblastoma%2F5-screePlot.png" width="60%"></p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<p><img src="images%2Fvisium_cytassist_human_glioblastoma%2F5-screePlot.png" width="60%" style="display: block; margin: auto;"></p>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">### Visualize Protein PCA</span></span>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/plotPCA.html" class="external-link">plotPCA</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">visium</span>,</span>
 <span>        spat_unit <span class="op">=</span> <span class="st">"cell"</span>,</span>
 <span>        feat_type <span class="op">=</span> <span class="st">"protein"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fvisium_cytassist_human_glioblastoma%2F6-PCA.png" width="60%"></p>
+<p><img src="images%2Fvisium_cytassist_human_glioblastoma%2F6-PCA.png" width="60%" style="display: block; margin: auto;"></p>
 </div>
-<div class="section level2" number="6">
-<h2 number="6" id="clustering">
-<span class="header-section-number">6</span> Clustering<a class="anchor" aria-label="anchor" href="#clustering"></a>
+<div class="section level2" number="7">
+<h2 number="7" id="clustering">
+<span class="header-section-number">7</span> Clustering<a class="anchor" aria-label="anchor" href="#clustering"></a>
 </h2>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># cluster and run UMAP</span></span>
 <span><span class="co"># sNN network (default)</span></span>
 <span></span>
@@ -706,8 +727,8 @@
 <span>         cell_color <span class="op">=</span> <span class="st">"leiden_clus"</span>,</span>
 <span>         show_NN_network <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>         point_size <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fvisium_cytassist_human_glioblastoma%2F7-UMAP.png" width="60%"></p>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<p><img src="images%2Fvisium_cytassist_human_glioblastoma%2F7-UMAP.png" width="60%" style="display: block; margin: auto;"></p>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## Protein feature </span></span>
 <span><span class="va">visium</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/runUMAP.html">runUMAP</a></span><span class="op">(</span><span class="va">visium</span>,</span>
 <span>                  spat_unit <span class="op">=</span> <span class="st">"cell"</span>, </span>
@@ -720,8 +741,8 @@
 <span>         cell_color <span class="op">=</span> <span class="st">"leiden_clus"</span>, </span>
 <span>         show_NN_network <span class="op">=</span> <span class="cn">TRUE</span>, </span>
 <span>         point_size <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fvisium_cytassist_human_glioblastoma%2F8-UMAP.png" width="60%"></p>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<p><img src="images%2Fvisium_cytassist_human_glioblastoma%2F8-UMAP.png" width="60%" style="display: block; margin: auto;"></p>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Visualize spatial plot</span></span>
 <span></span>
 <span><span class="co">## RNA feature</span></span>
@@ -729,8 +750,8 @@
 <span>           show_image <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>           cell_color <span class="op">=</span> <span class="st">"leiden_clus"</span>,</span>
 <span>           point_size <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fvisium_cytassist_human_glioblastoma%2F9-spatPlot2D.png" width="60%"></p>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<p><img src="images%2Fvisium_cytassist_human_glioblastoma%2F9-spatPlot2D.png" width="60%" style="display: block; margin: auto;"></p>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## Protein feature</span></span>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatPlot.html" class="external-link">spatPlot2D</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">visium</span>,</span>
 <span>           spat_unit <span class="op">=</span> <span class="st">"cell"</span>,</span>
@@ -738,14 +759,14 @@
 <span>           show_image <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>           cell_color <span class="op">=</span> <span class="st">"leiden_clus"</span>,</span>
 <span>           point_size <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fvisium_cytassist_human_glioblastoma%2F10-spatPlot2D.png" width="60%"></p>
+<p><img src="images%2Fvisium_cytassist_human_glioblastoma%2F10-spatPlot2D.png" width="60%" style="display: block; margin: auto;"></p>
 </div>
-<div class="section level2" number="7">
-<h2 number="7" id="multi-omics-integration">
-<span class="header-section-number">7</span> Multi-omics integration<a class="anchor" aria-label="anchor" href="#multi-omics-integration"></a>
+<div class="section level2" number="8">
+<h2 number="8" id="multi-omics-integration">
+<span class="header-section-number">8</span> Multi-omics integration<a class="anchor" aria-label="anchor" href="#multi-omics-integration"></a>
 </h2>
 <p>The Weighted Nearest Neighbors allows to integrate two or more modalities acquired from the same sample. WNN will re-calculate the clustering to provide an integrated umap and leiden clustering. For running WNN, the Giotto object must contain the results of running PCA calculation for each modality.</p>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Calculate kNN</span></span>
 <span></span>
 <span><span class="co">## RNA modality</span></span>
@@ -765,23 +786,15 @@
 <span><span class="co"># Run WNN</span></span>
 <span><span class="va">visium</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/runWNN.html">runWNN</a></span><span class="op">(</span><span class="va">visium</span>,</span>
 <span>                 spat_unit <span class="op">=</span> <span class="st">"cell"</span>,</span>
-<span>                 modality_1 <span class="op">=</span> <span class="st">"rna"</span>,</span>
-<span>                 modality_2 <span class="op">=</span> <span class="st">"protein"</span>,</span>
-<span>                 pca_name_modality_1 <span class="op">=</span> <span class="st">"pca"</span>,</span>
-<span>                 pca_name_modality_2 <span class="op">=</span> <span class="st">"protein.pca"</span>,</span>
+<span>                 feat_types <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"rna"</span>, <span class="st">"protein"</span><span class="op">)</span>,</span>
+<span>                 reduction_methods <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"pca"</span>, <span class="st">"pca"</span><span class="op">)</span>,</span>
+<span>                 reduction_names <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"pca"</span>, <span class="st">"protein.pca"</span><span class="op">)</span>,</span>
 <span>                 k <span class="op">=</span> <span class="fl">20</span>,</span>
-<span>                 integrated_feat_type <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>                 matrix_result_name <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>                 w_name_modality_1 <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>                 w_name_modality_2 <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>                 verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Run Integrated umap</span></span>
 <span><span class="va">visium</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/runIntegratedUMAP.html">runIntegratedUMAP</a></span><span class="op">(</span><span class="va">visium</span>,</span>
-<span>                            modality1 <span class="op">=</span> <span class="st">"rna"</span>,</span>
-<span>                            modality2 <span class="op">=</span> <span class="st">"protein"</span>,</span>
-<span>                            spread <span class="op">=</span> <span class="fl">5</span>,</span>
-<span>                            min_dist <span class="op">=</span> <span class="fl">0.5</span>,</span>
+<span>                            feat_types <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"rna"</span>, <span class="st">"protein"</span><span class="op">)</span>,</span>
 <span>                            force <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Calculate integrated clusters</span></span>
@@ -791,7 +804,7 @@
 <span>                          nn_network_to_use <span class="op">=</span> <span class="st">"kNN"</span>,</span>
 <span>                          network_name <span class="op">=</span> <span class="st">"integrated_kNN"</span>,</span>
 <span>                          name <span class="op">=</span> <span class="st">"integrated_leiden_clus"</span>,</span>
-<span>                          resolution <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
+<span>                          resolution <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Visualize integrated umap</span></span>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/plotUMAP.html" class="external-link">plotUMAP</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">visium</span>,</span>
@@ -803,8 +816,8 @@
 <span>         title <span class="op">=</span> <span class="st">"Integrated UMAP using Integrated Leiden clusters"</span>,</span>
 <span>         axis_title <span class="op">=</span> <span class="fl">12</span>,</span>
 <span>         axis_text <span class="op">=</span> <span class="fl">10</span> <span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fvisium_cytassist_human_glioblastoma%2F11-UMAP.png" width="60%"></p>
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<p><img src="images%2Fvisium_cytassist_human_glioblastoma%2F11-UMAP.png" width="60%" style="display: block; margin: auto;"></p>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Visualize spatial plot with integrated clusters</span></span>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatPlot.html" class="external-link">spatPlot2D</a></span><span class="op">(</span><span class="va">visium</span>,</span>
 <span>           spat_unit <span class="op">=</span> <span class="st">"cell"</span>,</span>
@@ -813,73 +826,71 @@
 <span>           point_size <span class="op">=</span> <span class="fl">2</span>,</span>
 <span>           show_image <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>           title <span class="op">=</span> <span class="st">"Integrated Leiden clustering"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fvisium_cytassist_human_glioblastoma%2F12-spatPlot2D.png" width="60%"></p>
+<p><img src="images%2Fvisium_cytassist_human_glioblastoma%2F12-spatPlot2D.png" width="60%" style="display: block; margin: auto;"></p>
 </div>
-<div class="section level2" number="8">
-<h2 number="8" id="session-info">
-<span class="header-section-number">8</span> Session Info<a class="anchor" aria-label="anchor" href="#session-info"></a>
+<div class="section level2" number="9">
+<h2 number="9" id="session-info">
+<span class="header-section-number">9</span> Session Info<a class="anchor" aria-label="anchor" href="#session-info"></a>
 </h2>
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true"></a>R version <span class="dv">4</span>.<span class="fl">4.0</span> (<span class="dv">2024-04-24</span>)</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true"></a>Platform<span class="op">:</span><span class="st"> </span>x86_<span class="dv">64</span><span class="op">-</span>apple<span class="op">-</span>darwin20</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true"></a>Running under<span class="op">:</span><span class="st"> </span>macOS Sonoma <span class="fl">14.5</span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true"></a></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true"></a>Matrix products<span class="op">:</span><span class="st"> </span>default</span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true"></a>BLAS<span class="op">:</span><span class="st">   </span><span class="er">/</span>System<span class="op">/</span>Library<span class="op">/</span>Frameworks<span class="op">/</span>Accelerate.framework<span class="op">/</span>Versions<span class="op">/</span>A<span class="op">/</span>Frameworks<span class="op">/</span>vecLib.framework<span class="op">/</span>Versions<span class="op">/</span>A<span class="op">/</span>libBLAS.dylib </span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true"></a>LAPACK<span class="op">:</span><span class="st"> </span><span class="er">/</span>Library<span class="op">/</span>Frameworks<span class="op">/</span>R.framework<span class="op">/</span>Versions<span class="op">/</span><span class="fl">4.4</span><span class="op">-</span>x86_<span class="dv">64</span><span class="op">/</span>Resources<span class="op">/</span>lib<span class="op">/</span>libRlapack.dylib;  LAPACK version <span class="dv">3</span>.<span class="fl">12.0</span></span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true"></a></span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true"></a>locale<span class="op">:</span></span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true"></a>[<span class="dv">1</span>] en_US.UTF<span class="dv">-8</span><span class="op">/</span>en_US.UTF<span class="dv">-8</span><span class="op">/</span>en_US.UTF<span class="dv">-8</span><span class="op">/</span>C<span class="op">/</span>en_US.UTF<span class="dv">-8</span><span class="op">/</span>en_US.UTF<span class="dv">-8</span></span>
-<span id="cb20-11"><a href="#cb20-11" aria-hidden="true"></a></span>
-<span id="cb20-12"><a href="#cb20-12" aria-hidden="true"></a>time zone<span class="op">:</span><span class="st"> </span>America<span class="op">/</span>New_York</span>
-<span id="cb20-13"><a href="#cb20-13" aria-hidden="true"></a>tzcode source<span class="op">:</span><span class="st"> </span>internal</span>
-<span id="cb20-14"><a href="#cb20-14" aria-hidden="true"></a></span>
-<span id="cb20-15"><a href="#cb20-15" aria-hidden="true"></a>attached base packages<span class="op">:</span></span>
-<span id="cb20-16"><a href="#cb20-16" aria-hidden="true"></a>[<span class="dv">1</span>] stats     graphics  grDevices utils     datasets  methods   base     </span>
-<span id="cb20-17"><a href="#cb20-17" aria-hidden="true"></a></span>
-<span id="cb20-18"><a href="#cb20-18" aria-hidden="true"></a>other attached packages<span class="op">:</span></span>
-<span id="cb20-19"><a href="#cb20-19" aria-hidden="true"></a>[<span class="dv">1</span>] Giotto_<span class="dv">4</span>.<span class="fl">1.0</span>      GiottoClass_<span class="dv">0</span>.<span class="fl">3.4</span></span>
-<span id="cb20-20"><a href="#cb20-20" aria-hidden="true"></a></span>
-<span id="cb20-21"><a href="#cb20-21" aria-hidden="true"></a>loaded via a <span class="kw">namespace</span> (and not attached)<span class="op">:</span></span>
-<span id="cb20-22"><a href="#cb20-22" aria-hidden="true"></a><span class="st">  </span>[<span class="dv">1</span>] colorRamp2_<span class="dv">0</span>.<span class="fl">1.0</span>            deldir_<span class="fl">2.0</span><span class="dv">-4</span>                rlang_<span class="dv">1</span>.<span class="fl">1.4</span>                </span>
-<span id="cb20-23"><a href="#cb20-23" aria-hidden="true"></a>  [<span class="dv">4</span>] magrittr_<span class="dv">2</span>.<span class="fl">0.3</span>              RcppAnnoy_<span class="dv">0</span>.<span class="fl">0.22</span>            GiottoUtils_<span class="dv">0</span>.<span class="fl">1.10</span>         </span>
-<span id="cb20-24"><a href="#cb20-24" aria-hidden="true"></a>  [<span class="dv">7</span>] matrixStats_<span class="dv">1</span>.<span class="fl">3.0</span>           compiler_<span class="dv">4</span>.<span class="fl">4.0</span>              png_<span class="fl">0.1</span><span class="dv">-8</span>                  </span>
-<span id="cb20-25"><a href="#cb20-25" aria-hidden="true"></a> [<span class="dv">10</span>] systemfonts_<span class="dv">1</span>.<span class="fl">1.0</span>           vctrs_<span class="dv">0</span>.<span class="fl">6.5</span>                 reshape2_<span class="dv">1</span>.<span class="fl">4.4</span>             </span>
-<span id="cb20-26"><a href="#cb20-26" aria-hidden="true"></a> [<span class="dv">13</span>] stringr_<span class="dv">1</span>.<span class="fl">5.1</span>               pkgconfig_<span class="dv">2</span>.<span class="fl">0.3</span>             SpatialExperiment_<span class="dv">1</span>.<span class="fl">14.0</span>   </span>
-<span id="cb20-27"><a href="#cb20-27" aria-hidden="true"></a> [<span class="dv">16</span>] crayon_<span class="dv">1</span>.<span class="fl">5.3</span>                fastmap_<span class="dv">1</span>.<span class="fl">2.0</span>               backports_<span class="dv">1</span>.<span class="fl">5.0</span>            </span>
-<span id="cb20-28"><a href="#cb20-28" aria-hidden="true"></a> [<span class="dv">19</span>] magick_<span class="dv">2</span>.<span class="fl">8.4</span>                XVector_<span class="dv">0</span>.<span class="fl">44.0</span>              labeling_<span class="dv">0</span>.<span class="fl">4.3</span>             </span>
-<span id="cb20-29"><a href="#cb20-29" aria-hidden="true"></a> [<span class="dv">22</span>] utf8_<span class="dv">1</span>.<span class="fl">2.4</span>                  rmarkdown_<span class="fl">2.27</span>              UCSC.utils_<span class="dv">1</span>.<span class="fl">0.0</span>           </span>
-<span id="cb20-30"><a href="#cb20-30" aria-hidden="true"></a> [<span class="dv">25</span>] ragg_<span class="dv">1</span>.<span class="fl">3.2</span>                  purrr_<span class="dv">1</span>.<span class="fl">0.2</span>                 xfun_<span class="fl">0.46</span>                  </span>
-<span id="cb20-31"><a href="#cb20-31" aria-hidden="true"></a> [<span class="dv">28</span>] beachmat_<span class="dv">2</span>.<span class="fl">20.0</span>             zlibbioc_<span class="dv">1</span>.<span class="fl">50.0</span>             GenomeInfoDb_<span class="dv">1</span>.<span class="fl">40.1</span>        </span>
-<span id="cb20-32"><a href="#cb20-32" aria-hidden="true"></a> [<span class="dv">31</span>] jsonlite_<span class="dv">1</span>.<span class="fl">8.8</span>              DelayedArray_<span class="dv">0</span>.<span class="fl">30.1</span>         BiocParallel_<span class="dv">1</span>.<span class="fl">38.0</span>        </span>
-<span id="cb20-33"><a href="#cb20-33" aria-hidden="true"></a> [<span class="dv">34</span>] terra_<span class="fl">1.7</span><span class="dv">-78</span>                irlba_<span class="dv">2</span>.<span class="dv">3</span>.<span class="fl">5.1</span>               parallel_<span class="dv">4</span>.<span class="fl">4.0</span>             </span>
-<span id="cb20-34"><a href="#cb20-34" aria-hidden="true"></a> [<span class="dv">37</span>] R6_<span class="dv">2</span>.<span class="fl">5.1</span>                    stringi_<span class="dv">1</span>.<span class="fl">8.4</span>               RColorBrewer_<span class="fl">1.1</span><span class="dv">-3</span>         </span>
-<span id="cb20-35"><a href="#cb20-35" aria-hidden="true"></a> [<span class="dv">40</span>] reticulate_<span class="dv">1</span>.<span class="fl">38.0</span>           parallelly_<span class="dv">1</span>.<span class="fl">38.0</span>           GenomicRanges_<span class="dv">1</span>.<span class="fl">56.1</span>       </span>
-<span id="cb20-36"><a href="#cb20-36" aria-hidden="true"></a> [<span class="dv">43</span>] scattermore_<span class="fl">1.2</span>             Rcpp_<span class="dv">1</span>.<span class="fl">0.13</span>                 SummarizedExperiment_<span class="dv">1</span>.<span class="fl">34.0</span></span>
-<span id="cb20-37"><a href="#cb20-37" aria-hidden="true"></a> [<span class="dv">46</span>] knitr_<span class="fl">1.48</span>                  future.apply_<span class="dv">1</span>.<span class="fl">11.2</span>         R.utils_<span class="dv">2</span>.<span class="fl">12.3</span>             </span>
-<span id="cb20-38"><a href="#cb20-38" aria-hidden="true"></a> [<span class="dv">49</span>] IRanges_<span class="dv">2</span>.<span class="fl">38.1</span>              Matrix_<span class="fl">1.7</span><span class="dv">-0</span>                igraph_<span class="dv">2</span>.<span class="fl">0.3</span>               </span>
-<span id="cb20-39"><a href="#cb20-39" aria-hidden="true"></a> [<span class="dv">52</span>] tidyselect_<span class="dv">1</span>.<span class="fl">2.1</span>            rstudioapi_<span class="dv">0</span>.<span class="fl">16.0</span>           abind_<span class="fl">1.4</span><span class="dv">-5</span>                </span>
-<span id="cb20-40"><a href="#cb20-40" aria-hidden="true"></a> [<span class="dv">55</span>] yaml_<span class="dv">2</span>.<span class="fl">3.10</span>                 codetools_<span class="fl">0.2</span><span class="dv">-20</span>            listenv_<span class="dv">0</span>.<span class="fl">9.1</span>              </span>
-<span id="cb20-41"><a href="#cb20-41" aria-hidden="true"></a> [<span class="dv">58</span>] lattice_<span class="fl">0.22</span><span class="dv">-6</span>              tibble_<span class="dv">3</span>.<span class="fl">2.1</span>                plyr_<span class="dv">1</span>.<span class="fl">8.9</span>                 </span>
-<span id="cb20-42"><a href="#cb20-42" aria-hidden="true"></a> [<span class="dv">61</span>] Biobase_<span class="dv">2</span>.<span class="fl">64.0</span>              withr_<span class="dv">3</span>.<span class="fl">0.0</span>                 evaluate_<span class="dv">0</span>.<span class="fl">24.0</span>            </span>
-<span id="cb20-43"><a href="#cb20-43" aria-hidden="true"></a> [<span class="dv">64</span>] future_<span class="dv">1</span>.<span class="fl">34.0</span>               pillar_<span class="dv">1</span>.<span class="fl">9.0</span>                MatrixGenerics_<span class="dv">1</span>.<span class="fl">16.0</span>      </span>
-<span id="cb20-44"><a href="#cb20-44" aria-hidden="true"></a> [<span class="dv">67</span>] checkmate_<span class="dv">2</span>.<span class="fl">3.2</span>             stats4_<span class="dv">4</span>.<span class="fl">4.0</span>                plotly_<span class="dv">4</span>.<span class="fl">10.4</span>              </span>
-<span id="cb20-45"><a href="#cb20-45" aria-hidden="true"></a> [<span class="dv">70</span>] generics_<span class="dv">0</span>.<span class="fl">1.3</span>              dbscan_<span class="fl">1.2</span><span class="dv">-0</span>                sp_<span class="fl">2.1</span><span class="dv">-4</span>                   </span>
-<span id="cb20-46"><a href="#cb20-46" aria-hidden="true"></a> [<span class="dv">73</span>] S4Vectors_<span class="dv">0</span>.<span class="fl">42.1</span>            ggplot2_<span class="dv">3</span>.<span class="fl">5.1</span>               munsell_<span class="dv">0</span>.<span class="fl">5.1</span>              </span>
-<span id="cb20-47"><a href="#cb20-47" aria-hidden="true"></a> [<span class="dv">76</span>] scales_<span class="dv">1</span>.<span class="fl">3.0</span>                globals_<span class="dv">0</span>.<span class="fl">16.3</span>              gtools_<span class="dv">3</span>.<span class="fl">9.5</span>               </span>
-<span id="cb20-48"><a href="#cb20-48" aria-hidden="true"></a> [<span class="dv">79</span>] glue_<span class="dv">1</span>.<span class="fl">7.0</span>                  lazyeval_<span class="dv">0</span>.<span class="fl">2.2</span>              tools_<span class="dv">4</span>.<span class="fl">4.0</span>                </span>
-<span id="cb20-49"><a href="#cb20-49" aria-hidden="true"></a> [<span class="dv">82</span>] GiottoVisuals_<span class="dv">0</span>.<span class="fl">2.4</span>         data.table_<span class="dv">1</span>.<span class="fl">15.4</span>           ScaledMatrix_<span class="dv">1</span>.<span class="fl">12.0</span>        </span>
-<span id="cb20-50"><a href="#cb20-50" aria-hidden="true"></a> [<span class="dv">85</span>] cowplot_<span class="dv">1</span>.<span class="fl">1.3</span>               grid_<span class="dv">4</span>.<span class="fl">4.0</span>                  tidyr_<span class="dv">1</span>.<span class="fl">3.1</span>                </span>
-<span id="cb20-51"><a href="#cb20-51" aria-hidden="true"></a> [<span class="dv">88</span>] colorspace_<span class="fl">2.1</span><span class="dv">-1</span>            SingleCellExperiment_<span class="dv">1</span>.<span class="fl">26.0</span> GenomeInfoDbData_<span class="dv">1</span>.<span class="fl">2.12</span>    </span>
-<span id="cb20-52"><a href="#cb20-52" aria-hidden="true"></a> [<span class="dv">91</span>] BiocSingular_<span class="dv">1</span>.<span class="fl">20.0</span>         rsvd_<span class="dv">1</span>.<span class="fl">0.5</span>                  cli_<span class="dv">3</span>.<span class="fl">6.3</span>                  </span>
-<span id="cb20-53"><a href="#cb20-53" aria-hidden="true"></a> [<span class="dv">94</span>] textshaping_<span class="dv">0</span>.<span class="fl">4.0</span>           fansi_<span class="dv">1</span>.<span class="fl">0.6</span>                 S4Arrays_<span class="dv">1</span>.<span class="fl">4.1</span>             </span>
-<span id="cb20-54"><a href="#cb20-54" aria-hidden="true"></a> [<span class="dv">97</span>] viridisLite_<span class="dv">0</span>.<span class="fl">4.2</span>           dplyr_<span class="dv">1</span>.<span class="fl">1.4</span>                 uwot_<span class="dv">0</span>.<span class="fl">2.2</span>                 </span>
-<span id="cb20-55"><a href="#cb20-55" aria-hidden="true"></a>[<span class="dv">100</span>] gtable_<span class="dv">0</span>.<span class="fl">3.5</span>                R.methodsS3_<span class="dv">1</span>.<span class="fl">8.2</span>           digest_<span class="dv">0</span>.<span class="fl">6.36</span>              </span>
-<span id="cb20-56"><a href="#cb20-56" aria-hidden="true"></a>[<span class="dv">103</span>] BiocGenerics_<span class="dv">0</span>.<span class="fl">50.0</span>         SparseArray_<span class="dv">1</span>.<span class="fl">4.8</span>           ggrepel_<span class="dv">0</span>.<span class="fl">9.5</span>              </span>
-<span id="cb20-57"><a href="#cb20-57" aria-hidden="true"></a>[<span class="dv">106</span>] rjson_<span class="dv">0</span>.<span class="fl">2.21</span>                htmlwidgets_<span class="dv">1</span>.<span class="fl">6.4</span>           farver_<span class="dv">2</span>.<span class="fl">1.2</span>               </span>
-<span id="cb20-58"><a href="#cb20-58" aria-hidden="true"></a>[<span class="dv">109</span>] htmltools_<span class="dv">0</span>.<span class="dv">5</span>.<span class="fl">8.1</span>           R.oo_<span class="dv">1</span>.<span class="fl">26.0</span>                 lifecycle_<span class="dv">1</span>.<span class="fl">0.4</span>            </span>
-<span id="cb20-59"><a href="#cb20-59" aria-hidden="true"></a>[<span class="dv">112</span>] httr_<span class="dv">1</span>.<span class="fl">4.7</span> </span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true"></a>R version <span class="dv">4</span>.<span class="fl">4.1</span> (<span class="dv">2024-06-14</span>)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true"></a>Platform<span class="op">:</span><span class="st"> </span>x86_<span class="dv">64</span><span class="op">-</span>apple<span class="op">-</span>darwin20</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true"></a>Running under<span class="op">:</span><span class="st"> </span>macOS <span class="fl">15.0</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true"></a></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true"></a>Matrix products<span class="op">:</span><span class="st"> </span>default</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true"></a>BLAS<span class="op">:</span><span class="st">   </span><span class="er">/</span>System<span class="op">/</span>Library<span class="op">/</span>Frameworks<span class="op">/</span>Accelerate.framework<span class="op">/</span>Versions<span class="op">/</span>A<span class="op">/</span>Frameworks<span class="op">/</span>vecLib.framework<span class="op">/</span>Versions<span class="op">/</span>A<span class="op">/</span>libBLAS.dylib </span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true"></a>LAPACK<span class="op">:</span><span class="st"> </span><span class="er">/</span>Library<span class="op">/</span>Frameworks<span class="op">/</span>R.framework<span class="op">/</span>Versions<span class="op">/</span><span class="fl">4.4</span><span class="op">-</span>x86_<span class="dv">64</span><span class="op">/</span>Resources<span class="op">/</span>lib<span class="op">/</span>libRlapack.dylib;  LAPACK version <span class="dv">3</span>.<span class="fl">12.0</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true"></a></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true"></a>locale<span class="op">:</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true"></a>[<span class="dv">1</span>] en_US.UTF<span class="dv">-8</span><span class="op">/</span>en_US.UTF<span class="dv">-8</span><span class="op">/</span>en_US.UTF<span class="dv">-8</span><span class="op">/</span>C<span class="op">/</span>en_US.UTF<span class="dv">-8</span><span class="op">/</span>en_US.UTF<span class="dv">-8</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true"></a></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true"></a>time zone<span class="op">:</span><span class="st"> </span>America<span class="op">/</span>New_York</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true"></a>tzcode source<span class="op">:</span><span class="st"> </span>internal</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true"></a></span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true"></a>attached base packages<span class="op">:</span></span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true"></a>[<span class="dv">1</span>] stats     graphics  grDevices utils     datasets  methods   base     </span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true"></a></span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true"></a>other attached packages<span class="op">:</span></span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true"></a>[<span class="dv">1</span>] Giotto_<span class="dv">4</span>.<span class="fl">1.3</span>      GiottoClass_<span class="dv">0</span>.<span class="fl">4.0</span></span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true"></a></span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true"></a>loaded via a <span class="kw">namespace</span> (and not attached)<span class="op">:</span></span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true"></a><span class="st">  </span>[<span class="dv">1</span>] colorRamp2_<span class="dv">0</span>.<span class="fl">1.0</span>            deldir_<span class="fl">2.0</span><span class="dv">-4</span>                rlang_<span class="dv">1</span>.<span class="fl">1.4</span>                </span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true"></a>  [<span class="dv">4</span>] magrittr_<span class="dv">2</span>.<span class="fl">0.3</span>              RcppAnnoy_<span class="dv">0</span>.<span class="fl">0.22</span>            GiottoUtils_<span class="dv">0</span>.<span class="fl">1.12</span>         </span>
+<span id="cb21-24"><a href="#cb21-24" aria-hidden="true"></a>  [<span class="dv">7</span>] matrixStats_<span class="dv">1</span>.<span class="fl">4.1</span>           compiler_<span class="dv">4</span>.<span class="fl">4.1</span>              png_<span class="fl">0.1</span><span class="dv">-8</span>                  </span>
+<span id="cb21-25"><a href="#cb21-25" aria-hidden="true"></a> [<span class="dv">10</span>] systemfonts_<span class="dv">1</span>.<span class="fl">1.0</span>           vctrs_<span class="dv">0</span>.<span class="fl">6.5</span>                 pkgconfig_<span class="dv">2</span>.<span class="fl">0.3</span>            </span>
+<span id="cb21-26"><a href="#cb21-26" aria-hidden="true"></a> [<span class="dv">13</span>] SpatialExperiment_<span class="dv">1</span>.<span class="fl">14.0</span>    crayon_<span class="dv">1</span>.<span class="fl">5.3</span>                fastmap_<span class="dv">1</span>.<span class="fl">2.0</span>              </span>
+<span id="cb21-27"><a href="#cb21-27" aria-hidden="true"></a> [<span class="dv">16</span>] backports_<span class="dv">1</span>.<span class="fl">5.0</span>             magick_<span class="dv">2</span>.<span class="fl">8.5</span>                XVector_<span class="dv">0</span>.<span class="fl">44.0</span>             </span>
+<span id="cb21-28"><a href="#cb21-28" aria-hidden="true"></a> [<span class="dv">19</span>] labeling_<span class="dv">0</span>.<span class="fl">4.3</span>              utf8_<span class="dv">1</span>.<span class="fl">2.4</span>                  rmarkdown_<span class="fl">2.28</span>             </span>
+<span id="cb21-29"><a href="#cb21-29" aria-hidden="true"></a> [<span class="dv">22</span>] UCSC.utils_<span class="dv">1</span>.<span class="fl">0.0</span>            ragg_<span class="dv">1</span>.<span class="fl">3.3</span>                  purrr_<span class="dv">1</span>.<span class="fl">0.2</span>                </span>
+<span id="cb21-30"><a href="#cb21-30" aria-hidden="true"></a> [<span class="dv">25</span>] xfun_<span class="fl">0.47</span>                   beachmat_<span class="dv">2</span>.<span class="fl">20.0</span>             zlibbioc_<span class="dv">1</span>.<span class="fl">50.0</span>            </span>
+<span id="cb21-31"><a href="#cb21-31" aria-hidden="true"></a> [<span class="dv">28</span>] GenomeInfoDb_<span class="dv">1</span>.<span class="fl">40.1</span>         jsonlite_<span class="dv">1</span>.<span class="fl">8.9</span>              DelayedArray_<span class="dv">0</span>.<span class="fl">30.1</span>        </span>
+<span id="cb21-32"><a href="#cb21-32" aria-hidden="true"></a> [<span class="dv">31</span>] BiocParallel_<span class="dv">1</span>.<span class="fl">38.0</span>         terra_<span class="fl">1.7</span><span class="dv">-78</span>                irlba_<span class="dv">2</span>.<span class="dv">3</span>.<span class="fl">5.1</span>              </span>
+<span id="cb21-33"><a href="#cb21-33" aria-hidden="true"></a> [<span class="dv">34</span>] parallel_<span class="dv">4</span>.<span class="fl">4.1</span>              R6_<span class="dv">2</span>.<span class="fl">5.1</span>                    RColorBrewer_<span class="fl">1.1</span><span class="dv">-3</span>         </span>
+<span id="cb21-34"><a href="#cb21-34" aria-hidden="true"></a> [<span class="dv">37</span>] reticulate_<span class="dv">1</span>.<span class="fl">39.0</span>           parallelly_<span class="dv">1</span>.<span class="fl">38.0</span>           GenomicRanges_<span class="dv">1</span>.<span class="fl">56.1</span>       </span>
+<span id="cb21-35"><a href="#cb21-35" aria-hidden="true"></a> [<span class="dv">40</span>] scattermore_<span class="fl">1.2</span>             Rcpp_<span class="dv">1</span>.<span class="fl">0.13</span>                 SummarizedExperiment_<span class="dv">1</span>.<span class="fl">34.0</span></span>
+<span id="cb21-36"><a href="#cb21-36" aria-hidden="true"></a> [<span class="dv">43</span>] knitr_<span class="fl">1.48</span>                  future.apply_<span class="dv">1</span>.<span class="fl">11.2</span>         R.utils_<span class="dv">2</span>.<span class="fl">12.3</span>             </span>
+<span id="cb21-37"><a href="#cb21-37" aria-hidden="true"></a> [<span class="dv">46</span>] IRanges_<span class="dv">2</span>.<span class="fl">38.1</span>              Matrix_<span class="fl">1.7</span><span class="dv">-0</span>                igraph_<span class="dv">2</span>.<span class="fl">0.3</span>               </span>
+<span id="cb21-38"><a href="#cb21-38" aria-hidden="true"></a> [<span class="dv">49</span>] tidyselect_<span class="dv">1</span>.<span class="fl">2.1</span>            rstudioapi_<span class="dv">0</span>.<span class="fl">16.0</span>           abind_<span class="fl">1.4</span><span class="dv">-8</span>                </span>
+<span id="cb21-39"><a href="#cb21-39" aria-hidden="true"></a> [<span class="dv">52</span>] yaml_<span class="dv">2</span>.<span class="fl">3.10</span>                 codetools_<span class="fl">0.2</span><span class="dv">-20</span>            listenv_<span class="dv">0</span>.<span class="fl">9.1</span>              </span>
+<span id="cb21-40"><a href="#cb21-40" aria-hidden="true"></a> [<span class="dv">55</span>] lattice_<span class="fl">0.22</span><span class="dv">-6</span>              tibble_<span class="dv">3</span>.<span class="fl">2.1</span>                Biobase_<span class="dv">2</span>.<span class="fl">64.0</span>             </span>
+<span id="cb21-41"><a href="#cb21-41" aria-hidden="true"></a> [<span class="dv">58</span>] withr_<span class="dv">3</span>.<span class="fl">0.1</span>                 evaluate_<span class="dv">1</span>.<span class="fl">0.0</span>              future_<span class="dv">1</span>.<span class="fl">34.0</span>              </span>
+<span id="cb21-42"><a href="#cb21-42" aria-hidden="true"></a> [<span class="dv">61</span>] pillar_<span class="dv">1</span>.<span class="fl">9.0</span>                MatrixGenerics_<span class="dv">1</span>.<span class="fl">16.0</span>       checkmate_<span class="dv">2</span>.<span class="fl">3.2</span>            </span>
+<span id="cb21-43"><a href="#cb21-43" aria-hidden="true"></a> [<span class="dv">64</span>] stats4_<span class="dv">4</span>.<span class="fl">4.1</span>                plotly_<span class="dv">4</span>.<span class="fl">10.4</span>               generics_<span class="dv">0</span>.<span class="fl">1.3</span>             </span>
+<span id="cb21-44"><a href="#cb21-44" aria-hidden="true"></a> [<span class="dv">67</span>] dbscan_<span class="fl">1.2</span><span class="dv">-0</span>                sp_<span class="fl">2.1</span><span class="dv">-4</span>                    S4Vectors_<span class="dv">0</span>.<span class="fl">42.1</span>           </span>
+<span id="cb21-45"><a href="#cb21-45" aria-hidden="true"></a> [<span class="dv">70</span>] ggplot2_<span class="dv">3</span>.<span class="fl">5.1</span>               munsell_<span class="dv">0</span>.<span class="fl">5.1</span>               scales_<span class="dv">1</span>.<span class="fl">3.0</span>               </span>
+<span id="cb21-46"><a href="#cb21-46" aria-hidden="true"></a> [<span class="dv">73</span>] gtools_<span class="dv">3</span>.<span class="fl">9.5</span>                globals_<span class="dv">0</span>.<span class="fl">16.3</span>              glue_<span class="dv">1</span>.<span class="fl">7.0</span>                 </span>
+<span id="cb21-47"><a href="#cb21-47" aria-hidden="true"></a> [<span class="dv">76</span>] lazyeval_<span class="dv">0</span>.<span class="fl">2.2</span>              tools_<span class="dv">4</span>.<span class="fl">4.1</span>                 GiottoVisuals_<span class="dv">0</span>.<span class="fl">2.5</span>        </span>
+<span id="cb21-48"><a href="#cb21-48" aria-hidden="true"></a> [<span class="dv">79</span>] data.table_<span class="dv">1</span>.<span class="fl">16.0</span>           ScaledMatrix_<span class="dv">1</span>.<span class="fl">12.0</span>         cowplot_<span class="dv">1</span>.<span class="fl">1.3</span>              </span>
+<span id="cb21-49"><a href="#cb21-49" aria-hidden="true"></a> [<span class="dv">82</span>] grid_<span class="dv">4</span>.<span class="fl">4.1</span>                  tidyr_<span class="dv">1</span>.<span class="fl">3.1</span>                 colorspace_<span class="fl">2.1</span><span class="dv">-1</span>           </span>
+<span id="cb21-50"><a href="#cb21-50" aria-hidden="true"></a> [<span class="dv">85</span>] SingleCellExperiment_<span class="dv">1</span>.<span class="fl">26.0</span> GenomeInfoDbData_<span class="dv">1</span>.<span class="fl">2.12</span>     BiocSingular_<span class="dv">1</span>.<span class="fl">20.0</span>        </span>
+<span id="cb21-51"><a href="#cb21-51" aria-hidden="true"></a> [<span class="dv">88</span>] rsvd_<span class="dv">1</span>.<span class="fl">0.5</span>                  cli_<span class="dv">3</span>.<span class="fl">6.3</span>                   textshaping_<span class="dv">0</span>.<span class="fl">4.0</span>          </span>
+<span id="cb21-52"><a href="#cb21-52" aria-hidden="true"></a> [<span class="dv">91</span>] fansi_<span class="dv">1</span>.<span class="fl">0.6</span>                 S4Arrays_<span class="dv">1</span>.<span class="fl">4.1</span>              viridisLite_<span class="dv">0</span>.<span class="fl">4.2</span>          </span>
+<span id="cb21-53"><a href="#cb21-53" aria-hidden="true"></a> [<span class="dv">94</span>] dplyr_<span class="dv">1</span>.<span class="fl">1.4</span>                 uwot_<span class="dv">0</span>.<span class="fl">2.2</span>                  gtable_<span class="dv">0</span>.<span class="fl">3.5</span>               </span>
+<span id="cb21-54"><a href="#cb21-54" aria-hidden="true"></a> [<span class="dv">97</span>] R.methodsS3_<span class="dv">1</span>.<span class="fl">8.2</span>           digest_<span class="dv">0</span>.<span class="fl">6.37</span>               BiocGenerics_<span class="dv">0</span>.<span class="fl">50.0</span>        </span>
+<span id="cb21-55"><a href="#cb21-55" aria-hidden="true"></a>[<span class="dv">100</span>] SparseArray_<span class="dv">1</span>.<span class="fl">4.8</span>           ggrepel_<span class="dv">0</span>.<span class="fl">9.6</span>               rjson_<span class="dv">0</span>.<span class="fl">2.23</span>               </span>
+<span id="cb21-56"><a href="#cb21-56" aria-hidden="true"></a>[<span class="dv">103</span>] htmlwidgets_<span class="dv">1</span>.<span class="fl">6.4</span>           farver_<span class="dv">2</span>.<span class="fl">1.2</span>                htmltools_<span class="dv">0</span>.<span class="dv">5</span>.<span class="fl">8.1</span>          </span>
+<span id="cb21-57"><a href="#cb21-57" aria-hidden="true"></a>[<span class="dv">106</span>] R.oo_<span class="dv">1</span>.<span class="fl">26.0</span>                 lifecycle_<span class="dv">1</span>.<span class="fl">0.4</span>             httr_<span class="dv">1</span>.<span class="fl">4.7</span></span></code></pre></div>
 </div>
   </div>
 

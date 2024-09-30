@@ -213,6 +213,9 @@
       <ul class="dropdown-menu" role="menu"><li>
           <a href="../articles/object_creation.html">Giotto Object Creation</a>
         </li>
+        <li>
+          <a href="../articles/create_simulated_object.html">Create a simulated datastet object</a>
+        </li>
       </ul></li>
     <li class="divider">
     <li class="dropdown-submenu">
@@ -412,37 +415,37 @@
 <span class="r-in"><span>    matrix <span class="op">=</span> <span class="va">sign_matrix</span>, sign_gene <span class="op">=</span> <span class="va">sign_gene</span>,</span></span>
 <span class="r-in"><span>    cell_type_vector <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"cell_type1"</span>, <span class="st">"cell_type2"</span>, <span class="st">"cell_type3"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>          cell_type1  cell_type2 cell_type3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Bcl11b   0.42254196 -0.20346923 -1.6036251</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Lmo1     0.31482570 -0.85452088 -0.6638157</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> F3      -0.50919336  0.50502501  0.9741938</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Cnih3   -0.17555042  0.41066025 -1.0323498</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Ppp1r3c  0.88595469  0.98921482  1.2029770</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Rims2    0.04720663 -0.24778790 -0.4664154</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Gfap     0.12916093 -0.13582993  0.7081738</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Gjc3     0.94580165 -0.65733289 -1.3473145</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Chrna4   0.52309037  1.80981932  0.9385938</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Prkcd   -1.43249429  0.05663895 -0.7763922</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Prr18   -1.26526273  2.62974014  0.6215356</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Grb14    0.03097587  0.81665487  0.4251440</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Tprn     0.06380199 -0.58661990 -1.0427390</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Clic1   -0.76519500 -0.77398595 -1.2305006</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Olig2    0.14509539 -1.49294679  0.2993058</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Hrh3     0.62052580  2.10876904 -0.1180448</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Tmbim1  -0.24434148  1.25836862  0.2320602</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Carhsp1  0.70465555 -0.45267673  1.0654256</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Tmem88b -0.23363026  0.17219747 -0.4047348</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Ugt8a   -1.43063928  1.12856490  1.3207382</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Arpp19  -1.38328966 -0.02542607 -2.9794709</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Lamp5    1.02415233 -0.18043465 -0.7634350</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Galnt6   1.69829412  0.81675968 -0.3397235</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Hlf      0.33588495  0.30408973  0.9368228</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Hs3st2  -0.70650364 -1.91714143 -2.5445932</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Tbr1     0.04385634  1.17692924 -0.8303934</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Myl4     0.60314006 -2.33288760  1.4221586</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Cygb    -0.70281908  1.63119181  1.3844684</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Ttc9b   -0.64860591  0.19055740 -0.7055280</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Ipcef1   1.94440423 -1.51621248  0.6156130</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          cell_type1  cell_type2   cell_type3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Bcl11b  -0.84599403  0.64239602  0.683730862</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Lmo1     1.33431530 -2.23865639 -0.129504128</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> F3      -0.29116055 -0.68084435 -0.704960440</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Cnih3   -0.58585343 -0.23820175  1.267468316</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Ppp1r3c -1.54033943 -1.74145552 -0.291842954</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Rims2   -0.15122840 -0.05724975 -0.463397086</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Gfap     1.13427123  1.25241395  1.832264721</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Gjc3    -0.11755215 -1.16972673  1.778239716</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Chrna4  -1.12039690 -0.06364044  0.047212093</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Prkcd   -0.84815886 -1.43717428  0.693668316</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Prr18    1.56040480 -0.53619485 -1.080884734</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Grb14   -0.19369480  0.12019651 -0.178992464</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Tprn    -0.28873419  0.72606530  0.323050590</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Clic1   -0.35949898  0.99507807  0.271559325</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Olig2    0.56465186  1.17684107  0.912840023</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Hrh3     0.13168367 -0.87460994  0.057183532</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Tmbim1   0.92981649  0.01094305  1.616281311</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Carhsp1 -0.93025071 -0.28037058 -0.005722987</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Tmem88b  0.19159646  0.94724024 -0.045293852</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Ugt8a    0.94248117  1.57934675 -0.067217024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Arpp19  -0.22991397  0.35183694 -0.749687443</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Lamp5    1.79188287  0.22211917 -0.998937391</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Galnt6  -1.15909546  1.95948869  0.637563743</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Hlf      0.32669817  0.14878975  1.030541489</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Hs3st2  -0.13397725 -1.54505691 -0.254546908</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Tbr1     0.28514776 -0.14377238 -1.353578393</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Myl4    -0.01772491  0.21268426  1.711438905</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Cygb    -1.18172605  0.50667297  0.542344240</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Ttc9b   -0.36766040 -0.05624850  1.222109864</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Ipcef1  -0.54414254 -2.04063281 -0.375213647</span>
 </code></pre></div>
     </div>
   </div>
