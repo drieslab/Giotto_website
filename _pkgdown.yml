@@ -345,6 +345,7 @@ articles:
   navbar: ~
   contents:
   - process_giotto
+  - dimension_reduction
 - title: Seq-Scope
   navbar: ~
   contents:
