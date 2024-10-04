@@ -86,6 +86,8 @@ navbar:
             href: articles/process_giotto.html
           - text: Dimension Reduction
             href: articles/dimension_reduction.html
+          - text: Spatial and Feature Networks
+            href: articles/networks.html
       - text: -------
       - text: Spatial manipulation
         menu:
@@ -346,6 +348,7 @@ articles:
   contents:
   - process_giotto
   - dimension_reduction
+  - networks
 - title: Seq-Scope
   navbar: ~
   contents:
