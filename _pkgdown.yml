@@ -124,12 +124,14 @@ navbar:
         menu:
           - text: AnnData
             href: articles/interoperability_anndata.html
+          - text: Integrate Bento Analysis
+            href: articles/bento.html
+          - text: Integrate ONTraC Analysis
+            href: articles/ontrac.html
           - text: SpatialExperiment
             href: articles/interoperability_spatialexperiment.html
           - text: Seurat
             href: articles/interoperability_seurat.html
-          - text: Integrate Bento Analysis
-            href: articles/bento.html
           - text: SpatialData
             href: articles/interoperability_spatialdata.html
       - text: -------
@@ -330,9 +332,10 @@ articles:
   navbar: ~
   contents:
   - interoperability_anndata
+  - bento
+  - ontrac
   - interoperability_spatialexperiment
   - interoperability_seurat
-  - bento
   - interoperability_spatialdata
 - title: Scalability
   navbar: ~
