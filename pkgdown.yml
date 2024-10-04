@@ -8,6 +8,7 @@ articles:
   configuration: configuration.html
   create_simulated_object: create_simulated_object.html
   dbMatrix: dbMatrix.html
+  dimension_reduction: dimension_reduction.html
   docker: docker.html
   ecosystem: ecosystem.html
   faqs: faqs.html
@@ -28,6 +29,7 @@ articles:
   nanostring_cosmx_lung_cancer: nanostring_cosmx_lung_cancer.html
   nemo_slideseq: nemo_slideseq.html
   object_creation: object_creation.html
+  ontrac: ontrac.html
   openst_mouse_hippocampus: openst_mouse_hippocampus.html
   osmfish_mouse_ss_cortex: osmfish_mouse_ss_cortex.html
   presentations: presentations.html
@@ -58,7 +60,7 @@ articles:
   visualizations: visualizations.html
   vizgen_mouse_brain: vizgen_mouse_brain.html
   xenium_breast_cancer: xenium_breast_cancer.html
-last_built: 2024-09-30T02:12Z
+last_built: 2024-10-04T15:30Z
 urls:
   reference: https://drieslab.github.io/Giotto_website/reference
   article: https://drieslab.github.io/Giotto_website/articles
