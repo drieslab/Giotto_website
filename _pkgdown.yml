@@ -80,7 +80,7 @@ navbar:
         - text: Giotto Configuration
           href: articles/configuration.html
       - text: -------
-      - text: Process Giotto
+      - text: Data Processing
         menu:
           - text: Process Giotto convenience function
             href: articles/process_giotto.html
@@ -341,7 +341,7 @@ articles:
   navbar: ~
   contents:
   - dbMatrix
-- title: Process Giotto
+- title: Data Processing
   navbar: ~
   contents:
   - process_giotto
