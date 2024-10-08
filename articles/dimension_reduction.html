@@ -558,22 +558,37 @@
 <span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/runPCA.html">runPCA</a></span><span class="op">(</span><span class="va">g</span>, feats_to_use <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span> </span>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/dimPlot.html" class="external-link">dimPlot2D</a></span><span class="op">(</span><span class="va">g</span>, dim_reduction_to_use <span class="op">=</span> <span class="st">"pca"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="images%2Fdimension_reduction%2F1_pca.png" width="60%" style="display: block; margin: auto;"></p>
-<p>A PCA is a rotation of the data into an orientation where the first PCs contain the most variance. Limiting the number of PCs used in downstream steps can be a good idea to focus on the PCs with useful information and minimize the effect of PCs that are essentially noise. A screeplot can be used in order to gauge up to which PCs contain useful information.</p>
+<div class="section level4" number="2.1.1">
+<h4 number="2.1.1" id="scree-plot">
+<span class="header-section-number">2.1.1</span> Scree Plot<a class="anchor" aria-label="anchor" href="#scree-plot"></a>
+</h4>
+<p>A PCA is a rotation of the data into an orientation where the first PCs contain the most variance. Limiting the number of PCs used in downstream steps can be a good idea to focus on the PCs with useful information and minimize the effect of less significant PCs that describe noise more than biological variation. A screeplot can be used in order to gauge up to which PCs contain useful information.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># will plot the `pca` by default</span></span>
 <span><span class="fu"><a href="../reference/screePlot.html">screePlot</a></span><span class="op">(</span><span class="va">g</span>, ncp <span class="op">=</span> <span class="fl">50</span><span class="op">)</span></span></code></pre></div>
 <p><img src="images%2Fdimension_reduction%2F2_scree.png" width="80%" style="display: block; margin: auto;"></p>
-<p>The first 20 PCs are a good cutoff. Following applications of this PCA such as umap or clustering should use only the first 20 PCs.</p>
+<p>The scree plot lets us estimate that the first 20 PCs are a good cutoff. Following applications of this PCA such as umap or clustering should use only the first 20 PCs.</p>
+</div>
+<div class="section level4" number="2.1.2">
+<h4 number="2.1.2" id="jackstraw-plot">
+<span class="header-section-number">2.1.2</span> Jackstraw Plot<a class="anchor" aria-label="anchor" href="#jackstraw-plot"></a>
+</h4>
+<p>Another way of determining number of significant PCs is through permuting the input expression matrix across the features so that the set of expression values for a feature does not change, but which cells they are assigned to is randomized. Then, comparing the variation explained by the actual vs permuted values.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># will plot the `pca` by default</span></span>
+<span><span class="fu"><a href="../reference/jackstrawPlot.html">jackstrawPlot</a></span><span class="op">(</span><span class="va">g</span>, feats_to_use <span class="op">=</span> <span class="cn">NULL</span>, ncp <span class="op">=</span> <span class="fl">50</span><span class="op">)</span></span></code></pre></div>
+<p><img src="images%2Fdimension_reduction%2F3_jackstraw.png" width="80%" style="display: block; margin: auto;"></p>
+</div>
 </div>
 <div class="section level3" number="2.2">
 <h3 number="2.2" id="non-negative-matrix-factorization-nmf">
 <span class="header-section-number">2.2</span> Non-negative Matrix Factorization (NMF)<a class="anchor" aria-label="anchor" href="#non-negative-matrix-factorization-nmf"></a>
 </h3>
 <p>A technique that decomposes non-negative data into two non-negative matrices. In biology, it’s useful for analyzing gene expression, metagenomics, and protein-ligand interactions. NMF can reveal underlying patterns and molecular signatures in complex biological datasets. While it is fine to calculate as many PCs as desired for PCA, the k (rank) value for NMF requires more fine tuning since the k value essentially define how many metafeatures to split the expression information into. Too few, and there is not enough extracted information. Too many, and single signatures will be split and diluted. Giotto implements NMF through RcppML.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu">runNMF</span><span class="op">(</span><span class="va">g</span>, k <span class="op">=</span> <span class="fl">20</span>, feats_to_use <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/dimPlot.html" class="external-link">dimPlot2D</a></span><span class="op">(</span><span class="va">g</span>, dim_reduction_to_use <span class="op">=</span> <span class="st">"nmf"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fdimension_reduction%2F3_nmf.png" width="60%" style="display: block; margin: auto;"></p>
+<p><img src="images%2Fdimension_reduction%2F4_nmf.png" width="60%" style="display: block; margin: auto;"></p>
 </div>
 </div>
 <div class="section level2" number="3">
@@ -597,7 +612,7 @@
 <span class="header-section-number">3.1</span> Uniform Manifold Approximation and Projection (UMAP)<a class="anchor" aria-label="anchor" href="#uniform-manifold-approximation-and-projection-umap"></a>
 </h3>
 <p>A non-linear dimensionality reduction method that preserves both local and global structure of the data.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/runUMAP.html">runUMAP</a></span><span class="op">(</span><span class="va">g</span>, <span class="co"># uses any calculated 'pca' by default, default name is "umap"</span></span>
 <span>    dimensions_to_use <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">20</span> <span class="co"># determined from screePlot</span></span>
 <span><span class="op">)</span></span>
@@ -610,20 +625,20 @@
 <span></span>
 <span><span class="co"># visualize both dim reductions with previously added annotations</span></span>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/dimPlot.html" class="external-link">dimPlot2D</a></span><span class="op">(</span><span class="va">g</span>, dim_reduction_name <span class="op">=</span> <span class="st">"umap"</span>, cell_color <span class="op">=</span> <span class="st">"leiden_clus"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fdimension_reduction%2F4_pca_umap.png" width="60%" style="display: block; margin: auto;"></p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<p><img src="images%2Fdimension_reduction%2F5_pca_umap.png" width="60%" style="display: block; margin: auto;"></p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/dimPlot.html" class="external-link">dimPlot2D</a></span><span class="op">(</span><span class="va">g</span>, dim_reduction_name <span class="op">=</span> <span class="st">"nmf_umap"</span>, cell_color <span class="op">=</span> <span class="st">"leiden_clus"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fdimension_reduction%2F5_nmf_umap.png" width="60%" style="display: block; margin: auto;"></p>
+<p><img src="images%2Fdimension_reduction%2F6_nmf_umap.png" width="60%" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level3" number="3.2">
 <h3 number="3.2" id="t-distributed-stochastic-neighbor-embedding-t-sne">
 <span class="header-section-number">3.2</span> t-distributed Stochastic Neighbor Embedding (t-SNE)<a class="anchor" aria-label="anchor" href="#t-distributed-stochastic-neighbor-embedding-t-sne"></a>
 </h3>
 <p>A non-linear dimensionality reduction technique that emphasizes preserving local structure. It’s widely used in single-cell analysis, particularly for visualizing clusters of cell types. t-SNE is good at revealing local patterns in data but may not preserve global structure as well as UMAP.</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/runtSNE.html">runtSNE</a></span><span class="op">(</span><span class="va">g</span>, dimensions_to_use <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">20</span><span class="op">)</span> <span class="co"># uses any calculated 'pca' by default</span></span>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/dimPlot.html" class="external-link">dimPlot2D</a></span><span class="op">(</span><span class="va">g</span>, dim_reduction_to_use <span class="op">=</span> <span class="st">"tsne"</span>, cell_color <span class="op">=</span> <span class="st">"leiden_clus"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fdimension_reduction%2F6_pca_tsne.png" width="60%" style="display: block; margin: auto;"></p>
+<p><img src="images%2Fdimension_reduction%2F7_pca_tsne.png" width="60%" style="display: block; margin: auto;"></p>
 </div>
 </div>
 <div class="section level2" number="4">
@@ -653,7 +668,7 @@
 <span class="header-section-number">6</span> API function<a class="anchor" aria-label="anchor" href="#api-function"></a>
 </h2>
 <p>A convenient single function for access to the above functions is <code>reduceDims()</code>. This makes it easy to create workflow functions or parallelized implementations to perform several dimension reductions with programmatically defined settings.</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># example of a pca run with projection approach through reduceDims()</span></span>
 <span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu">reduceDims</span><span class="op">(</span><span class="va">g</span>, method <span class="op">=</span> <span class="st">"pca"</span>, feats_to_use <span class="op">=</span> <span class="cn">NULL</span>, projection <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 </div>
@@ -661,7 +676,7 @@
 <h2 number="7" id="session-info">
 <span class="header-section-number">7</span> Session Info<a class="anchor" aria-label="anchor" href="#session-info"></a>
 </h2>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <pre><code>R version 4.4.1 (2024-06-14)
 Platform: aarch64-apple-darwin20
@@ -684,41 +699,58 @@ other attached packages:
 [1] Giotto_4.1.3      GiottoClass_0.4.0
 
 loaded via a namespace (and not attached):
-  [1] colorRamp2_0.1.0            deldir_2.0-4                rlang_1.1.4                
-  [4] magrittr_2.0.3              GiottoUtils_0.2.0           matrixStats_1.4.1          
-  [7] compiler_4.4.1              png_0.1-8                   vctrs_0.6.5                
- [10] pkgconfig_2.0.3             SpatialExperiment_1.14.0    crayon_1.5.3               
- [13] fastmap_1.2.0               backports_1.5.0             magick_2.8.4               
- [16] XVector_0.44.0              labeling_0.4.3              utf8_1.2.4                 
- [19] rmarkdown_2.28              UCSC.utils_1.0.0            purrr_1.0.2                
- [22] xfun_0.47                   zlibbioc_1.50.0             beachmat_2.20.0            
- [25] GenomeInfoDb_1.40.0         jsonlite_1.8.9              DelayedArray_0.30.0        
- [28] BiocParallel_1.38.0         terra_1.7-78                irlba_2.3.5.1              
- [31] parallel_4.4.1              R6_2.5.1                    RColorBrewer_1.1-3         
- [34] reticulate_1.39.0           GenomicRanges_1.56.0        scattermore_1.2            
- [37] Rcpp_1.0.13                 SummarizedExperiment_1.34.0 knitr_1.48                 
- [40] R.utils_2.12.3              IRanges_2.38.0              FNN_1.1.4.1                
- [43] Matrix_1.7-0                igraph_2.0.3                tidyselect_1.2.1           
- [46] rstudioapi_0.16.0           abind_1.4-8                 yaml_2.3.10                
- [49] codetools_0.2-20            lattice_0.22-6              tibble_3.2.1               
- [52] Biobase_2.64.0              withr_3.0.1                 Rtsne_0.17                 
- [55] evaluate_1.0.0              pillar_1.9.0                MatrixGenerics_1.16.0      
- [58] checkmate_2.3.1             stats4_4.4.1                plotly_4.10.4              
- [61] generics_0.1.3              dbscan_1.2-0                sp_2.1-4                   
- [64] S4Vectors_0.42.0            ggplot2_3.5.1               munsell_0.5.1              
- [67] scales_1.3.0                GiottoData_0.2.15           gtools_3.9.5               
- [70] glue_1.8.0                  lazyeval_0.2.2              tools_4.4.1                
- [73] GiottoVisuals_0.2.5         data.table_1.16.0           ScaledMatrix_1.12.0        
- [76] RcppML_0.3.7                cowplot_1.1.3               grid_4.4.1                 
- [79] tidyr_1.3.1                 colorspace_2.1-1            SingleCellExperiment_1.26.0
- [82] GenomeInfoDbData_1.2.12     BiocSingular_1.20.0         cli_3.6.3                  
- [85] rsvd_1.0.5                  fansi_1.0.6                 S4Arrays_1.4.0             
- [88] viridisLite_0.4.2           dplyr_1.1.4                 uwot_0.2.2                 
- [91] gtable_0.3.5                R.methodsS3_1.8.2           digest_0.6.37              
- [94] BiocGenerics_0.50.0         SparseArray_1.4.1           ggrepel_0.9.6              
- [97] rjson_0.2.21                htmlwidgets_1.6.4           farver_2.1.2               
-[100] htmltools_0.5.8.1           R.oo_1.26.0                 lifecycle_1.0.4            
-[103] httr_1.4.7     </code></pre>
+  [1] colorRamp2_0.1.0            deldir_2.0-4               
+  [3] rlang_1.1.4                 magrittr_2.0.3             
+  [5] GiottoUtils_0.2.0           matrixStats_1.4.1          
+  [7] compiler_4.4.1              png_0.1-8                  
+  [9] vctrs_0.6.5                 pkgconfig_2.0.3            
+ [11] SpatialExperiment_1.14.0    crayon_1.5.3               
+ [13] fastmap_1.2.0               backports_1.5.0            
+ [15] magick_2.8.4                XVector_0.44.0             
+ [17] labeling_0.4.3              utf8_1.2.4                 
+ [19] rmarkdown_2.28              UCSC.utils_1.0.0           
+ [21] purrr_1.0.2                 xfun_0.47                  
+ [23] zlibbioc_1.50.0             beachmat_2.20.0            
+ [25] GenomeInfoDb_1.40.0         jsonlite_1.8.9             
+ [27] DelayedArray_0.30.0         BiocParallel_1.38.0        
+ [29] terra_1.7-78                irlba_2.3.5.1              
+ [31] parallel_4.4.1              R6_2.5.1                   
+ [33] RColorBrewer_1.1-3          reticulate_1.39.0          
+ [35] GenomicRanges_1.56.0        scattermore_1.2            
+ [37] Rcpp_1.0.13                 SummarizedExperiment_1.34.0
+ [39] knitr_1.48                  R.utils_2.12.3             
+ [41] IRanges_2.38.0              FNN_1.1.4.1                
+ [43] Matrix_1.7-0                igraph_2.0.3               
+ [45] tidyselect_1.2.1            rstudioapi_0.16.0          
+ [47] abind_1.4-8                 codetools_0.2-20           
+ [49] lattice_0.22-6              tibble_3.2.1               
+ [51] Biobase_2.64.0              withr_3.0.1                
+ [53] Rtsne_0.17                  evaluate_1.0.0             
+ [55] pillar_1.9.0                MatrixGenerics_1.16.0      
+ [57] checkmate_2.3.1             stats4_4.4.1               
+ [59] plotly_4.10.4               generics_0.1.3             
+ [61] dbscan_1.2-0                sp_2.1-4                   
+ [63] S4Vectors_0.42.0            ggplot2_3.5.1              
+ [65] munsell_0.5.1               scales_1.3.0               
+ [67] GiottoData_0.2.15           gtools_3.9.5               
+ [69] glue_1.8.0                  lazyeval_0.2.2             
+ [71] tools_4.4.1                 GiottoVisuals_0.2.5        
+ [73] data.table_1.16.0           ScaledMatrix_1.12.0        
+ [75] RcppML_0.3.7                cowplot_1.1.3              
+ [77] grid_4.4.1                  tidyr_1.3.1                
+ [79] colorspace_2.1-1            SingleCellExperiment_1.26.0
+ [81] GenomeInfoDbData_1.2.12     BiocSingular_1.20.0        
+ [83] cli_3.6.3                   rsvd_1.0.5                 
+ [85] fansi_1.0.6                 S4Arrays_1.4.0             
+ [87] viridisLite_0.4.2           dplyr_1.1.4                
+ [89] uwot_0.2.2                  gtable_0.3.5               
+ [91] R.methodsS3_1.8.2           digest_0.6.37              
+ [93] progressr_0.14.0            BiocGenerics_0.50.0        
+ [95] SparseArray_1.4.1           ggrepel_0.9.6              
+ [97] rjson_0.2.21                htmlwidgets_1.6.4          
+ [99] farver_2.1.2                htmltools_0.5.8.1          
+[101] R.oo_1.26.0                 lifecycle_1.0.4            
+[103] httr_1.4.7      </code></pre>
 </div>
   </div>
 
