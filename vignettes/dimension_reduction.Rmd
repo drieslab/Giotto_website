@@ -85,7 +85,9 @@ dimPlot2D(g, dim_reduction_to_use = "pca")
 knitr::include_graphics("images/dimension_reduction/1_pca.png")
 ```
 
-A PCA is a rotation of the data into an orientation where the first PCs contain the most variance. Limiting the number of PCs used in downstream steps can be a good idea to focus on the PCs with useful information and minimize the effect of PCs that are essentially noise. A screeplot can be used in order to gauge up to which PCs contain useful information.
+### Scree Plot
+
+A PCA is a rotation of the data into an orientation where the first PCs contain the most variance. Limiting the number of PCs used in downstream steps can be a good idea to focus on the PCs with useful information and minimize the effect of less significant PCs that describe noise more than biological variation. A screeplot can be used in order to gauge up to which PCs contain useful information.
 
 ```{r, eval=FALSE}
 # will plot the `pca` by default
@@ -96,7 +98,20 @@ screePlot(g, ncp = 50)
 knitr::include_graphics("images/dimension_reduction/2_scree.png")
 ```
 
-The first 20 PCs are a good cutoff. Following applications of this PCA such as umap or clustering should use only the first 20 PCs.
+The scree plot lets us estimate that the first 20 PCs are a good cutoff. Following applications of this PCA such as umap or clustering should use only the first 20 PCs.
+
+### Jackstraw Plot
+
+Another way of determining number of significant PCs is through permuting the input expression matrix across the features so that the set of expression values for a feature does not change, but which cells they are assigned to is randomized. Then, comparing the variation explained by the actual vs permuted values.
+
+```{r, eval=FALSE}
+# will plot the `pca` by default
+jackstrawPlot(g, feats_to_use = NULL, ncp = 50)
+```
+
+```{r, echo=FALSE, out.width="80%", fig.align="center"}
+knitr::include_graphics("images/dimension_reduction/3_jackstraw.png")
+```
 
 ## Non-negative Matrix Factorization (NMF)
 
@@ -109,7 +124,7 @@ dimPlot2D(g, dim_reduction_to_use = "nmf")
 ```
 
 ```{r, echo=FALSE, out.width="60%", fig.align="center"}
-knitr::include_graphics("images/dimension_reduction/3_nmf.png")
+knitr::include_graphics("images/dimension_reduction/4_nmf.png")
 ```
 
 
@@ -148,7 +163,7 @@ dimPlot2D(g, dim_reduction_name = "umap", cell_color = "leiden_clus")
 ```
 
 ```{r, echo=FALSE, out.width="60%", fig.align="center"}
-knitr::include_graphics("images/dimension_reduction/4_pca_umap.png")
+knitr::include_graphics("images/dimension_reduction/5_pca_umap.png")
 ```
 
 ```{r, eval=FALSE}
@@ -156,7 +171,7 @@ dimPlot2D(g, dim_reduction_name = "nmf_umap", cell_color = "leiden_clus")
 ```
 
 ```{r, echo=FALSE, out.width="60%", fig.align="center"}
-knitr::include_graphics("images/dimension_reduction/5_nmf_umap.png")
+knitr::include_graphics("images/dimension_reduction/6_nmf_umap.png")
 ```
 
 
@@ -171,7 +186,7 @@ dimPlot2D(g, dim_reduction_to_use = "tsne", cell_color = "leiden_clus")
 ```
 
 ```{r, echo=FALSE, out.width="60%", fig.align="center"}
-knitr::include_graphics("images/dimension_reduction/6_pca_tsne.png")
+knitr::include_graphics("images/dimension_reduction/7_pca_tsne.png")
 ```
 
 # Typical Workflow
@@ -225,41 +240,58 @@ other attached packages:
 [1] Giotto_4.1.3      GiottoClass_0.4.0
 
 loaded via a namespace (and not attached):
-  [1] colorRamp2_0.1.0            deldir_2.0-4                rlang_1.1.4                
-  [4] magrittr_2.0.3              GiottoUtils_0.2.0           matrixStats_1.4.1          
-  [7] compiler_4.4.1              png_0.1-8                   vctrs_0.6.5                
- [10] pkgconfig_2.0.3             SpatialExperiment_1.14.0    crayon_1.5.3               
- [13] fastmap_1.2.0               backports_1.5.0             magick_2.8.4               
- [16] XVector_0.44.0              labeling_0.4.3              utf8_1.2.4                 
- [19] rmarkdown_2.28              UCSC.utils_1.0.0            purrr_1.0.2                
- [22] xfun_0.47                   zlibbioc_1.50.0             beachmat_2.20.0            
- [25] GenomeInfoDb_1.40.0         jsonlite_1.8.9              DelayedArray_0.30.0        
- [28] BiocParallel_1.38.0         terra_1.7-78                irlba_2.3.5.1              
- [31] parallel_4.4.1              R6_2.5.1                    RColorBrewer_1.1-3         
- [34] reticulate_1.39.0           GenomicRanges_1.56.0        scattermore_1.2            
- [37] Rcpp_1.0.13                 SummarizedExperiment_1.34.0 knitr_1.48                 
- [40] R.utils_2.12.3              IRanges_2.38.0              FNN_1.1.4.1                
- [43] Matrix_1.7-0                igraph_2.0.3                tidyselect_1.2.1           
- [46] rstudioapi_0.16.0           abind_1.4-8                 yaml_2.3.10                
- [49] codetools_0.2-20            lattice_0.22-6              tibble_3.2.1               
- [52] Biobase_2.64.0              withr_3.0.1                 Rtsne_0.17                 
- [55] evaluate_1.0.0              pillar_1.9.0                MatrixGenerics_1.16.0      
- [58] checkmate_2.3.1             stats4_4.4.1                plotly_4.10.4              
- [61] generics_0.1.3              dbscan_1.2-0                sp_2.1-4                   
- [64] S4Vectors_0.42.0            ggplot2_3.5.1               munsell_0.5.1              
- [67] scales_1.3.0                GiottoData_0.2.15           gtools_3.9.5               
- [70] glue_1.8.0                  lazyeval_0.2.2              tools_4.4.1                
- [73] GiottoVisuals_0.2.5         data.table_1.16.0           ScaledMatrix_1.12.0        
- [76] RcppML_0.3.7                cowplot_1.1.3               grid_4.4.1                 
- [79] tidyr_1.3.1                 colorspace_2.1-1            SingleCellExperiment_1.26.0
- [82] GenomeInfoDbData_1.2.12     BiocSingular_1.20.0         cli_3.6.3                  
- [85] rsvd_1.0.5                  fansi_1.0.6                 S4Arrays_1.4.0             
- [88] viridisLite_0.4.2           dplyr_1.1.4                 uwot_0.2.2                 
- [91] gtable_0.3.5                R.methodsS3_1.8.2           digest_0.6.37              
- [94] BiocGenerics_0.50.0         SparseArray_1.4.1           ggrepel_0.9.6              
- [97] rjson_0.2.21                htmlwidgets_1.6.4           farver_2.1.2               
-[100] htmltools_0.5.8.1           R.oo_1.26.0                 lifecycle_1.0.4            
-[103] httr_1.4.7     
+  [1] colorRamp2_0.1.0            deldir_2.0-4               
+  [3] rlang_1.1.4                 magrittr_2.0.3             
+  [5] GiottoUtils_0.2.0           matrixStats_1.4.1          
+  [7] compiler_4.4.1              png_0.1-8                  
+  [9] vctrs_0.6.5                 pkgconfig_2.0.3            
+ [11] SpatialExperiment_1.14.0    crayon_1.5.3               
+ [13] fastmap_1.2.0               backports_1.5.0            
+ [15] magick_2.8.4                XVector_0.44.0             
+ [17] labeling_0.4.3              utf8_1.2.4                 
+ [19] rmarkdown_2.28              UCSC.utils_1.0.0           
+ [21] purrr_1.0.2                 xfun_0.47                  
+ [23] zlibbioc_1.50.0             beachmat_2.20.0            
+ [25] GenomeInfoDb_1.40.0         jsonlite_1.8.9             
+ [27] DelayedArray_0.30.0         BiocParallel_1.38.0        
+ [29] terra_1.7-78                irlba_2.3.5.1              
+ [31] parallel_4.4.1              R6_2.5.1                   
+ [33] RColorBrewer_1.1-3          reticulate_1.39.0          
+ [35] GenomicRanges_1.56.0        scattermore_1.2            
+ [37] Rcpp_1.0.13                 SummarizedExperiment_1.34.0
+ [39] knitr_1.48                  R.utils_2.12.3             
+ [41] IRanges_2.38.0              FNN_1.1.4.1                
+ [43] Matrix_1.7-0                igraph_2.0.3               
+ [45] tidyselect_1.2.1            rstudioapi_0.16.0          
+ [47] abind_1.4-8                 codetools_0.2-20           
+ [49] lattice_0.22-6              tibble_3.2.1               
+ [51] Biobase_2.64.0              withr_3.0.1                
+ [53] Rtsne_0.17                  evaluate_1.0.0             
+ [55] pillar_1.9.0                MatrixGenerics_1.16.0      
+ [57] checkmate_2.3.1             stats4_4.4.1               
+ [59] plotly_4.10.4               generics_0.1.3             
+ [61] dbscan_1.2-0                sp_2.1-4                   
+ [63] S4Vectors_0.42.0            ggplot2_3.5.1              
+ [65] munsell_0.5.1               scales_1.3.0               
+ [67] GiottoData_0.2.15           gtools_3.9.5               
+ [69] glue_1.8.0                  lazyeval_0.2.2             
+ [71] tools_4.4.1                 GiottoVisuals_0.2.5        
+ [73] data.table_1.16.0           ScaledMatrix_1.12.0        
+ [75] RcppML_0.3.7                cowplot_1.1.3              
+ [77] grid_4.4.1                  tidyr_1.3.1                
+ [79] colorspace_2.1-1            SingleCellExperiment_1.26.0
+ [81] GenomeInfoDbData_1.2.12     BiocSingular_1.20.0        
+ [83] cli_3.6.3                   rsvd_1.0.5                 
+ [85] fansi_1.0.6                 S4Arrays_1.4.0             
+ [87] viridisLite_0.4.2           dplyr_1.1.4                
+ [89] uwot_0.2.2                  gtable_0.3.5               
+ [91] R.methodsS3_1.8.2           digest_0.6.37              
+ [93] progressr_0.14.0            BiocGenerics_0.50.0        
+ [95] SparseArray_1.4.1           ggrepel_0.9.6              
+ [97] rjson_0.2.21                htmlwidgets_1.6.4          
+ [99] farver_2.1.2                htmltools_0.5.8.1          
+[101] R.oo_1.26.0                 lifecycle_1.0.4            
+[103] httr_1.4.7      
 ```
 
 
