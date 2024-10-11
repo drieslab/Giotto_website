@@ -6,6 +6,7 @@ articles:
   branches: branches.html
   codex_mouse_spleen: codex_mouse_spleen.html
   configuration: configuration.html
+  core_functions: core_functions.html
   create_simulated_object: create_simulated_object.html
   dbMatrix: dbMatrix.html
   dimension_reduction: dimension_reduction.html
@@ -61,7 +62,7 @@ articles:
   visualizations: visualizations.html
   vizgen_mouse_brain: vizgen_mouse_brain.html
   xenium_breast_cancer: xenium_breast_cancer.html
-last_built: 2024-10-08T18:10Z
+last_built: 2024-10-11T19:30Z
 urls:
   reference: https://drieslab.github.io/Giotto_website/reference
   article: https://drieslab.github.io/Giotto_website/articles
