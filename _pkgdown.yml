@@ -58,6 +58,8 @@ navbar:
         href: articles/structure.html
       - text: General Giotto Workflow
         href: articles/general_workflow.html
+      - text: Giotto Core Functions
+        href: articles/core_functions.html
       - text: FAQs
         href: articles/faqs.html
       - text: How to report a bug
@@ -291,6 +293,7 @@ articles:
   - faqs
   - github_issues
   - general_workflow
+  - core_functions
 - title: Giotto Object Creation
   navbar: ~
   contents:

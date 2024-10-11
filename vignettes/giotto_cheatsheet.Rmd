@@ -1,0 +1,250 @@
+---
+title: "Core Functions"
+output: 
+  html_document:
+    number_sections: true
+    toc: true
+pkgdown:
+  as_is: true
+vignette: >
+  %\VignetteIndexEntry{Core Functions}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# Load example dataset
+```{r, eval=FALSE}
+# Ensure Giotto Suite is installed.
+if(!"Giotto" %in% installed.packages()) {
+  pak::pkg_install("drieslab/Giotto")
+}
+
+# Ensure the Python environment for Giotto has been installed.
+genv_exists <- Giotto::checkGiottoEnvironment()
+if(!genv_exists){
+  # The following command need only be run once to install the Giotto environment.
+  Giotto::installGiottoEnvironment()
+}
+```
+
+```{r, eval=FALSE}
+library(Giotto)
+g <- GiottoData::loadGiottoMini("vizgen")
+
+# drop pre-computed information (these steps can be ignored)
+data_list <- c(g[["images"]], g[["spatial_info"]], g[["feat_info"]])
+g <- giotto()
+g <- setGiotto(g, data_list)
+```
+
+
+# Spatial Aggregation
+For use with raw subcellular data. Find overlapped feature information and convert to a matrix
+```{r, eval=FALSE}
+# overlap of feature points with polygons
+g <- calculateOverlap(g)
+g <- overlapToMatrix(g)
+
+# specifically use a polygon set & subset of points
+g <- calculateOverlap(g,
+    spatial_info = "z0", # use polygons from z0
+    feat_subset_column = "global_z",
+    feat_subset_ids = 0
+)
+g <- overlapToMatrix(g)
+
+# overlap of image intensity values with polygons
+g <- calculateOverlap(g, 
+    image_names = c("dapi_z0", "dapi_z1"),
+    name_overlap = "image" # default name would be "protein" for image overlaps
+)
+g <- overlapToMatrix(g,
+    type = "intensity", 
+    feat_info = "image"
+)
+
+# combine overlaps data from multiple spatial units (intended for z stack data)
+# also calculate z1
+g <- calculateOverlap(g,
+    spatial_info = "z1", # use polygons from z1
+    feat_subset_column = "global_z",
+    feat_subset_ids = 1
+)
+g <- overlapToMatrix(g, poly_info = "z1")
+g = aggregateStacks(g,
+    spat_units = c("z0", "z1"),
+    feat_type = "rna",
+    new_spat_unit = "aggregate",
+    values = "raw"
+)
+```
+
+# Set default Spatial Unit and Feature Type
+```{r, eval = FALSE}
+# setting active spatial unit and feature type
+activeSpatUnit(g) <- "aggregate"
+activeFeatType(g) <- "rna"
+```
+
+# Spatial Centroid Calculation
+
+```{r, eval=FALSE}
+g <- addSpatialCentroidLocations(g, poly_info = "aggregate")
+``` 
+
+# Standard workflow
+
+For more detail, see the standard workflow vignette
+```{r, eval=FALSE}
+g <- filterGiotto(g,
+    expression_threshold = 1,
+    feat_det_in_min_cells = 3,
+    min_det_feats_per_cell = 5
+)
+g <- normalizeGiotto(g)
+g <- addStatistics(g)
+g <- runPCA(g)
+g <- runUMAP(g, dimensions_to_use = 1:20)
+g <- createNearestNetwork(g, dimensions_to_use = 1:20)
+g <- doLeidenCluster(g)
+dimPlot2D(g, cell_color = "leiden_clus")
+``` 
+
+
+
+# Giotto Object Names and Dimensions
+*Available with dev version 0.4.0 of GiottoClass*
+```{r, eval = FALSE}
+# Feature IDs
+rownames(g)
+featIDs(g)
+
+# Spatial IDs (cells or spots)
+colnames(g)
+spatIDs(g)
+
+# both sets of IDs
+dimnames(g)
+
+# Select specific sets of IDs
+featIDs(g, subset = total_expr >= 500)
+spatIDs(g, subset = leiden_clus %in% c(4, 5))
+spatIDs(g, subset = leiden_clus %in% c(4, 5), negate = TRUE)
+
+# number of cells and features
+ncol(g)
+nrow(g)
+dim(g)
+```
+
+# Metadata
+```{r, eval=FALSE}
+# feature metadata
+fDataDT(g)
+
+# get specific values from cell metadata
+g$leiden_clus
+
+# cell metadata
+pDataDT(g)
+```
+
+# Giotto Subobjects
+Giotto subobjects carry their own metadata about where they should be in
+the object. There are several specific getter and setter functions.
+GiottoClass 0.4.0 introduces some common APIs
+```{r, eval=FALSE}
+# also see ?subset_giotto_subobjects
+# get any of: “spatial_info”, “spatial_locs”, “spatial_network”, “feat_info”,
+#  “expression”, “cell_metadata”, “feat_metadata”, “spatial_enrichment”, 
+#  “nn_network”, “dimension_reduction”, “multiomics”, “images"
+#  Output is as a list of objects
+g[["expression"]]
+
+# be more specific with object name
+a <- g[["expression", "raw"]] # (4 items)
+# further filter by requested spatial unit. feat_type can also be used.
+b <- g[["expression", "raw", spat_unit = "aggregate"]] # (only 1 item)
+
+# any subobject can be set into the Giotto object using setGiotto
+g <- setGiotto(g, b)
+g <- setGiotto(g, a) # multiple objects can be set at once. 
+# Validity is only checked once all items are added.
+
+# pull out all the subobjects of a giotto object
+as.list(g)
+
+# Giotto subobjects are S4 structures. They usually wrap a core data object
+# This can be extracted using an empty call to `[`
+a[[1]][]
+```
+
+# spatValues
+
+```{r, eval=FALSE}
+# See also ?spatValues
+# spatValues can pull data from any of: 
+# cell expression, cell metadata, spatial locations, spatial enrichment, 
+# dimension reduction, polygon info
+# The values will be provided as a data.table with the cell_IDs
+spatValues(g, feats = c("leiden_clus", "nr_feats"))
+# The first object found will be selected by default.
+# It is possible to be more specific by mentioning the name of the object to check
+spatValues(g, feats = c("Pdgfra", "Mlc1"), expression_values = "normalized")
+# Pulling values from multiple spatial units
+spatValues(g, feats = c("Pdgfra", "Mlc1"), spat_unit = c("aggregate", "z0", "z1"))
+```
+
+
+# Subset and Join
+
+# Subsetting objects
+GiottoClass 0.4.0 introduces `[` and `subset` generic subsetting
+```{r, eval=FALSE}
+# also see `subset_giotto`
+# subset by i (features) and j (observations)
+g[1:200, 1:300]
+
+subset(g, subset = leiden_clus %in% c(4, 5))
+subset(g, subset = leiden_clus %in% c(4, 5), negate = TRUE)
+
+# The older subsetGiotto() can also be used.
+subsetGiotto(g, cell_ids = spatIDs(g)[1:300], feat_ids = featIDs(g)[1:200])
+
+# subset by spatial locations centroids
+subsetGiottoLocs(g, y_max = -4900)
+
+# subset subcellular (used when no aggregate information has been calculated yet)
+subsetGiottoLocsSubcellular(g, y_max = -4900) # will not work now
+```
+
+
+# Joining objects
+
+```{r, eval=FALSE}
+# join objects (without integration) into a single object so that they can be
+# analyzed in a common spatial and expression space.
+
+# This updates the cell_IDs and image names, and adds a new `list_ID` column in cell metadata
+
+# dry run can be turned on to preview the spatial positioning of the objects after joining.
+joinGiottoObjects(list(g, g), gobject_names = c("a", "b"), dry_run = TRUE)
+
+j <- joinGiottoObjects(list(g, g), gobject_names = c("a", "b"))
+```
+
+# Splitting objects
+
+```{r, eval=FALSE}
+# split a Giotto object into a list of multiple smaller ones based on a cell metadata column
+splitGiotto(g, "leiden_clus")
+```
+
+# Slicing objects
+
+```{r, eval=FALSE}
+# slice the giotto object based on spatial unit and feature type
+z0 <- sliceGiotto(g, spat_unit = "z0")
+```
+
+
