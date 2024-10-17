@@ -528,8 +528,8 @@
 <p>Single cell datasets (shown at the bottom) can also be worked using Giotto, and only need a matrix without the need for paired spatial locations.</p>
 </div>
 <div class="section level2" number="3">
-<h2 number="3" id="create-from-matrix-locations">
-<span class="header-section-number">3</span> Create from matrix + locations<a class="anchor" aria-label="anchor" href="#create-from-matrix-locations"></a>
+<h2 number="3" id="create-from-matrix-and-spatial-locations">
+<span class="header-section-number">3</span> Create from matrix and spatial locations<a class="anchor" aria-label="anchor" href="#create-from-matrix-and-spatial-locations"></a>
 </h2>
 <p>This example will be shown using an osmFISH dataset. To download this data, please ensure that <a href="https://www.gnu.org/software/wget/?" class="external-link">wget</a> is installed locally.</p>
 <div class="section level3" number="3.1">
@@ -693,7 +693,13 @@ Use objHistory() to see steps and params used</code></pre>
 <h3 number="4.2" id="read-into-giotto-subobjects-and-assemble-into-giotto-object">
 <span class="header-section-number">4.2</span> Read into Giotto subobjects and assemble into giotto object<a class="anchor" aria-label="anchor" href="#read-into-giotto-subobjects-and-assemble-into-giotto-object"></a>
 </h3>
-<p>Polygons can be read into Giotto Suite in multiple ways. If a <code>character</code> input is provided, it is assumed to be a filepath to a .GeoJSON or mask image file. Which it is is determined based on file extension. If a <code>data.frame</code> is provided, then it is expected to be a <code>data.frame</code> with vertex X, Y, and poly_ID information. The columns can be guessed, but naming them specifically <code>x</code>, <code>y</code>, and <code>poly_ID</code> will ensure that the correct ones are picked.</p>
+<p>Polygons can be read into Giotto Suite in multiple ways.</p>
+<p>When using <code><a href="https://drieslab.github.io/GiottoClass/reference/createGiottoPolygon.html" class="external-link">createGiottoPolygon()</a></code>:</p>
+<ul>
+<li>If a <code>character</code> input is provided, it is assumed to be a filepath to a .GeoJSON or mask image file. Which it is is determined based on file extension.</li>
+<li>If a <code>data.frame</code> is provided, then it is expected to be a <code>data.frame</code> with vertex X, Y, and poly_ID information. The columns can be guessed, but naming them specifically <code>x</code>, <code>y</code>, and <code>poly_ID</code> will ensure that the correct ones are picked.</li>
+</ul>
+<p></p>
 <p>You can also be more explicit about the type of input provided by calling any of the following directly, instead of having <code><a href="https://drieslab.github.io/GiottoClass/reference/createGiottoPolygon.html" class="external-link">createGiottoPolygon()</a></code> guess.</p>
 <ul>
 <li><code><a href="https://drieslab.github.io/GiottoClass/reference/createGiottoPolygon.html" class="external-link">createGiottoPolygonsFromMask()</a></code></li>
@@ -845,7 +851,7 @@ Use objHistory() to see steps and params used</code></pre>
 <span>  gradient_style <span class="op">=</span> <span class="st">"sequential"</span>,</span>
 <span>  background_color <span class="op">=</span> <span class="st">"black"</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fobject_creation%2F6_example_featplot_sub.png" width="80%" style="display: block; margin: auto;"></p>
+<p><img src="images%2Fobject_creation%2F6_example_featplot_sub.png" width="100%" style="display: block; margin: auto;"></p>
 </div>
 </div>
 <div class="section level2" number="5">
@@ -858,7 +864,7 @@ Use objHistory() to see steps and params used</code></pre>
 <span class="header-section-number">5.1</span> Download data to use<a class="anchor" aria-label="anchor" href="#download-data-to-use-1"></a>
 </h3>
 <div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Ensure imcdatasets and EBImage are installed.</span></span>
+<code class="sourceCode R"><span><span class="co"># Ensure imcdatasets is installed.</span></span>
 <span><span class="kw">if</span><span class="op">(</span><span class="op">!</span><span class="st">"imcdatasets"</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/installed.packages.html" class="external-link">installed.packages</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pkg_install.html" class="external-link">pkg_install</a></span><span class="op">(</span><span class="st">"imcdatasets"</span><span class="op">)</span></span>
 <span><span class="op">}</span></span>
@@ -984,7 +990,7 @@ Use objHistory() to see steps and params used</code></pre>
 <span>  gradient_style <span class="op">=</span> <span class="st">"sequential"</span>,</span>
 <span>  background_color <span class="op">=</span> <span class="st">"black"</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p><img src="images%2Fobject_creation%2F10_example_plot_imc.png" width="80%" style="display: block; margin: auto;"></p>
+<p><img src="images%2Fobject_creation%2F10_example_plot_imc.png" width="100%" style="display: block; margin: auto;"></p>
 <p><strong>Note:</strong> If you notice a single extremely bright center spot, then there was likely a background polygon that was not removed.</p>
 </div>
 </div>
