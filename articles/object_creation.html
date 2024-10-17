@@ -863,11 +863,16 @@ Use objHistory() to see steps and params used</code></pre>
 <h3 number="5.1" id="download-data-to-use-1">
 <span class="header-section-number">5.1</span> Download data to use<a class="anchor" aria-label="anchor" href="#download-data-to-use-1"></a>
 </h3>
+<p>The package <em>exactextractr</em> is also used due to its speed with image data extractions.</p>
 <div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Ensure imcdatasets is installed.</span></span>
+<code class="sourceCode R"><span><span class="co"># Ensure imcdatasets and exactextractr are installed.</span></span>
 <span><span class="kw">if</span><span class="op">(</span><span class="op">!</span><span class="st">"imcdatasets"</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/installed.packages.html" class="external-link">installed.packages</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pkg_install.html" class="external-link">pkg_install</a></span><span class="op">(</span><span class="st">"imcdatasets"</span><span class="op">)</span></span>
 <span><span class="op">}</span></span>
+<span><span class="kw">if</span><span class="op">(</span><span class="op">!</span><span class="st">"exactextractr"</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/installed.packages.html" class="external-link">installed.packages</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pkg_install.html" class="external-link">pkg_install</a></span><span class="op">(</span><span class="st">"exactextractr"</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
 <span><span class="co"># load dataset</span></span>
 <span><span class="va">imc_masks</span> <span class="op">&lt;-</span> <span class="fu">imcdatasets</span><span class="fu">::</span><span class="fu">IMMUcan_2022_CancerExample</span><span class="op">(</span><span class="st">"masks"</span><span class="op">)</span></span>
 <span><span class="va">imc_imgs</span> <span class="op">&lt;-</span> <span class="fu">imcdatasets</span><span class="fu">::</span><span class="fu">IMMUcan_2022_CancerExample</span><span class="op">(</span><span class="st">"images"</span><span class="op">)</span></span>
