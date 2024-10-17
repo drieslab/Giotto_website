@@ -458,11 +458,17 @@ The IMC data to run this tutorial can be found in the *imcdatasets* package. We 
 
 ## Download data to use
 
+The package *exactextractr* is also used due to its speed with image data extractions.
+
 ```{r, eval=FALSE}
-# Ensure imcdatasets is installed.
+# Ensure imcdatasets and exactextractr are installed.
 if(!"imcdatasets" %in% installed.packages()) {
   pak::pkg_install("imcdatasets")
 }
+if(!"exactextractr" %in% installed.packages()) {
+  pak::pkg_install("exactextractr")
+}
+
 # load dataset
 imc_masks <- imcdatasets::IMMUcan_2022_CancerExample("masks")
 imc_imgs <- imcdatasets::IMMUcan_2022_CancerExample("images")
