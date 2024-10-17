@@ -44,7 +44,7 @@ With Giotto, the minimal requirements for a spatial dataset are either:
 
 Single cell datasets (shown at the bottom) can also be worked using Giotto, and only need a matrix without the need for paired spatial locations.
 
-# Create from matrix + locations
+# Create from matrix and spatial locations
 
 This example will be shown using an osmFISH dataset.
 To download this data, please ensure that [wget](https://www.gnu.org/software/wget/?) is installed locally.
@@ -229,12 +229,17 @@ mini_viz_tx_path <- mini_viz_raw("vizgen_transcripts.gz")
 
 ## Read into Giotto subobjects and assemble into giotto object
 
-Polygons can be read into Giotto Suite in multiple ways. If a `character` input is
-provided, it is assumed to be a filepath to a .GeoJSON or mask image file.
-Which it is is determined based on file extension. If a `data.frame` is provided,
-then it is expected to be a `data.frame` with vertex X, Y, and poly_ID
+Polygons can be read into Giotto Suite in multiple ways. 
+
+When using `createGiottoPolygon()`:
+
+- If a `character` input is provided, it is assumed to be a filepath to a .GeoJSON or mask image file.
+Which it is is determined based on file extension. 
+- If a `data.frame` is provided, then it is expected to be a `data.frame` with vertex X, Y, and poly_ID
 information. The columns can be guessed, but naming them specifically `x`, `y`, 
 and `poly_ID` will ensure that the correct ones are picked.
+
+</br>
 
 You can also be more explicit about the type of input provided by calling any
 of the following directly, instead of having `createGiottoPolygon()` guess.
@@ -443,7 +448,7 @@ spatFeatPlot2D(
 )
 ```
 
-```{r, echo=FALSE, out.width="80%", fig.align="center"}
+```{r, echo=FALSE, out.width="100%", fig.align="center"}
 knitr::include_graphics("images/object_creation/6_example_featplot_sub.png")
 ```
 
@@ -454,7 +459,7 @@ The IMC data to run this tutorial can be found in the *imcdatasets* package. We 
 ## Download data to use
 
 ```{r, eval=FALSE}
-# Ensure imcdatasets and EBImage are installed.
+# Ensure imcdatasets is installed.
 if(!"imcdatasets" %in% installed.packages()) {
   pak::pkg_install("imcdatasets")
 }
@@ -602,7 +607,7 @@ spatFeatPlot2D(
 )
 ```
 
-```{r, echo=FALSE, out.width="80%", fig.align="center"}
+```{r, echo=FALSE, out.width="100%", fig.align="center"}
 knitr::include_graphics("images/object_creation/10_example_plot_imc.png")
 ```
 
