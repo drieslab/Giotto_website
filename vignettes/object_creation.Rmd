@@ -692,6 +692,19 @@ Use objHistory() to see steps and params used
 ```
 
 
+# Convenience functions for specific platforms
+
+There are also several convenience functions we provide for loading in data from popular platforms. These functions take care of reading the expected output folder structures, auto-detecting where needed data items are, formatting items for ingestion, then object creation. These technologies also have expanded tutorials under the examples tab.
+
+```
+createGiottoVisiumObject()
+createGiottoVisiumHDObject()
+createGiottoXeniumObject()
+createGiottoCosMxObject()
+createGiottoMerscopeObject()
+```
+
+
 # Customizing the Giotto Object
 
 By providing values to other `createGiottoObject()` or `createGiottoObjectSubcellular()` parameters, it is possible to add:
