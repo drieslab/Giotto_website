@@ -180,6 +180,34 @@ as.list(g)
 a[[1]][]
 ```
 
+## Spatial Subobject Coordinates
+
+```{r, eval=FALSE}
+# Accessing terra object spatial values can be done either through as.data.table()
+gpoly <- g[["spatial_info", "aggregate"]][[1]]
+gpoints <- g[["feat_info", "rna"]][[1]]
+
+data.table::as.data.table(gpoly, geom = "XY")
+data.table::as.data.table(gpoints, geom = "XY")
+data.table::as.data.table(gpoly, geom = "WKT")
+data.table::as.data.table(gpoly, geom = "HEX")
+
+# or XY() (GiottoClass 0.4.0 or greater) which works for all spatial objects
+# and retrieves xy(z) coordinates as `matrix` and sets them
+sl <- g[["spatial_locs", "raw"]][[1]]
+
+# get
+m1 <- XY(sl)
+m2 <- XY(gpoly)
+m3 <- XY(gpoints)
+XY(gpoly[1]) # vertices from first polygon
+
+# set
+XY(sl) <- m1
+XY(gpoly) <- m2
+XY(gpoints) <- m3
+```
+
 ## spatValues
 
 ```{r, eval=FALSE}
