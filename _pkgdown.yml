@@ -70,11 +70,11 @@ navbar:
     tools:
       text: Tutorials
       menu:
-      - text: Giotto Object Creation
+      - text: Giotto Object
         menu:
-        - text: Giotto Object Creation
+        - text: Object creation
           href: articles/object_creation.html
-        - text: Create a simulated datastet object
+        - text: Create a simulated dataset object
           href: articles/create_simulated_object.html
       - text: -------
       - text: Giotto Configuration
@@ -86,9 +86,9 @@ navbar:
         menu:
           - text: Process Giotto convenience function
             href: articles/process_giotto.html
-          - text: Dimension Reduction
+          - text: Dimension reduction
             href: articles/dimension_reduction.html
-          - text: Spatial and Feature Networks
+          - text: Spatial and feature networks
             href: articles/networks.html
       - text: -------
       - text: Spatial manipulation
@@ -294,7 +294,7 @@ articles:
   - github_issues
   - general_workflow
   - core_functions
-- title: Giotto Object Creation
+- title: Giotto Object
   navbar: ~
   contents:
   - object_creation
