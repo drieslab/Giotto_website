@@ -728,7 +728,7 @@ By providing values to other `createGiottoObject()` or `createGiottoObjectSubcel
     [createGiottoInstructions](../docs/reference/createGiottoInstructions.html) 
 For a more in-depth look at the `giotto` object structure, take a look at the [introduction to giotto classes](./classes_intro.html)
 
-## Session Info
+# Session Info
 
 ```{r, eval=FALSE}
 sessionInfo()
