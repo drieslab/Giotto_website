@@ -74,6 +74,8 @@ navbar:
         menu:
         - text: Object creation
           href: articles/object_creation.html
+        - text: Object splitting and joining
+          href: articles/split_join.html
         - text: Create a simulated dataset object
           href: articles/create_simulated_object.html
       - text: -------
@@ -298,6 +300,7 @@ articles:
   navbar: ~
   contents:
   - object_creation
+  - split_join
   - create_simulated_object
 - title: Giotto Configuration
   navbar: ~
