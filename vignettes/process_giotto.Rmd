@@ -102,7 +102,9 @@ spatPlot2D(gobject = vizgen_object,
 knitr::include_graphics("images/process_giotto/1-spatPlot2D.png")
 ```
 
-# Filtering
+# Process the object
+
+The function `processGiotto` performs the filtering, normalization, statistics and matrix adjustment calculation in a single step. You can pass the regular arguments from the individual `filterGiotto`, `normalizeGiotto`, `addStatistics`, and `adjustGiottoMatrix` functions to perform these steps.
 
 ```{r, eval=FALSE}
 visium_object <- processGiotto(visium_object,
@@ -120,7 +122,7 @@ vizgen_object <- processGiotto(gobject = vizgen_object,
                                adjust_params = NULL)
 ```
 
-# Plot the new objects
+# Dimension reduction and Clustering
 
 - UMAP
 
@@ -192,7 +194,6 @@ spatPlot2D(gobject = visium_object,
 ```{r, echo=FALSE, out.width="80%", fig.align="center"}
 knitr::include_graphics("images/process_giotto/6-spatPlot2D.png")
 ```
-
 
 ```{r, eval=FALSE}
 spatPlot2D(gobject = vizgen_object, 
