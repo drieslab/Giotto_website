@@ -578,9 +578,10 @@
 <p><img src="images%2Fprocess_giotto%2F1-spatPlot2D.png" width="80%" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level2" number="5">
-<h2 number="5" id="filtering">
-<span class="header-section-number">5</span> Filtering<a class="anchor" aria-label="anchor" href="#filtering"></a>
+<h2 number="5" id="process-the-object">
+<span class="header-section-number">5</span> Process the object<a class="anchor" aria-label="anchor" href="#process-the-object"></a>
 </h2>
+<p>The function <code>processGiotto</code> performs the filtering, normalization, statistics and matrix adjustment calculation in a single step. You can pass the regular arguments from the individual <code>filterGiotto</code>, <code>normalizeGiotto</code>, <code>addStatistics</code>, and <code>adjustGiottoMatrix</code> functions to perform these steps.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">visium_object</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/processGiotto.html">processGiotto</a></span><span class="op">(</span><span class="va">visium_object</span>,</span>
 <span>                               filter_params <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>expression_threshold <span class="op">=</span> <span class="fl">1</span>,</span>
@@ -597,8 +598,8 @@
 <span>                               adjust_params <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2" number="6">
-<h2 number="6" id="plot-the-new-objects">
-<span class="header-section-number">6</span> Plot the new objects<a class="anchor" aria-label="anchor" href="#plot-the-new-objects"></a>
+<h2 number="6" id="dimension-reduction-and-clustering">
+<span class="header-section-number">6</span> Dimension reduction and Clustering<a class="anchor" aria-label="anchor" href="#dimension-reduction-and-clustering"></a>
 </h2>
 <ul>
 <li>UMAP</li>
