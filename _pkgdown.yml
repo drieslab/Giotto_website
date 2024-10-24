@@ -88,10 +88,14 @@ navbar:
         menu:
           - text: Process Giotto convenience function
             href: articles/process_giotto.html
+          - text: Detection of Highly Variable Features
+            href: articles/hvf.html
           - text: Dimension reduction
             href: articles/dimension_reduction.html
           - text: Spatial and feature networks
             href: articles/networks.html
+          - text: Detection of spatial genes
+            href: articles/spatial_genes.html
       - text: -------
       - text: Spatial manipulation
         menu:
@@ -353,8 +357,10 @@ articles:
   navbar: ~
   contents:
   - process_giotto
+  - hvf
   - dimension_reduction
   - networks
+  - spatial_genes
 - title: Seq-Scope
   navbar: ~
   contents:
