@@ -25,6 +25,10 @@ To install Giotto suite use
 
 Visit the Giotto [Discussions](https://github.com/drieslab/Giotto/discussions) page for more information.
 
+## Docker and Singularity images
+
+If you prefer to skip the installation process, check the tutorials for using Giotto Suite with our [Docker](https://drieslab.github.io/Giotto_website/articles/docker.html) and [Singularity](https://drieslab.github.io/Giotto_website/articles/singularity.html) containers.
+
 ## Website Update!
 
 With Giotto version 4.0, we updated the website at http://giottosuite.com, you can still find the previous website at https://giottosuite.readthedocs.io/en/latest/
