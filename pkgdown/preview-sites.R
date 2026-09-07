@@ -6,6 +6,7 @@
 #   Rscript pkgdown/preview-sites.R --quick        # skip articles (~1 min)
 #   Rscript pkgdown/preview-sites.R --no-serve     # build, don't open a browser
 #   Rscript pkgdown/preview-sites.R --pkg ../Giotto  # where the package lives
+#   Rscript pkgdown/preview-sites.R --skip-check   # build even if checks fail
 #
 # Run from the repository root.
 #
@@ -30,6 +31,7 @@ args     <- commandArgs(trailingOnly = TRUE)
 with_dev <- "--dev"        %in% args
 quick    <- "--quick"      %in% args
 serve    <- !("--no-serve" %in% args)
+check    <- !("--skip-check" %in% args)
 
 pkg_arg <- which(args == "--pkg")
 pkg_src <- if (length(pkg_arg) && length(args) > pkg_arg[[1]]) {
@@ -51,6 +53,20 @@ if (!file.exists(file.path(pkg_src, "DESCRIPTION"))) {
 }
 if (!requireNamespace("pkgdown", quietly = TRUE)) {
   stop("pkgdown is not installed: install.packages('pkgdown')", call. = FALSE)
+}
+
+# ---- validate before spending 20-30 minutes on a build ---------------------
+# check-site.R catches registration and figure mistakes in about a second.
+# Especially worth it with --quick, which skips article pages and so cannot
+# surface them at all.
+if (check) {
+  message("=== checking site structure ===")
+  rc <- system2(file.path(R.home("bin"), "Rscript"),
+                c("pkgdown/check-site.R", "--pkg", shQuote(pkg_src)))
+  if (!identical(rc, 0L)) {
+    stop("check-site.R found errors (above). Fix them, or pass --skip-check.",
+         call. = FALSE)
+  }
 }
 
 DEST  <- normalizePath("docs-preview", mustWork = FALSE)

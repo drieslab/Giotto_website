@@ -39,7 +39,26 @@ on:
         required: false
 
 jobs:
+  # Structure check -- registration, navbar links, section anchors, figure
+  # paths. Runs in seconds and installs nothing but yaml, so a mistake that
+  # would otherwise surface an hour into the build is reported before the
+  # build starts. A caller job that uses a reusable workflow cannot have its
+  # own steps:, which is why this is a separate job the site job gates on.
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+      - name: Install yaml
+        run: install.packages("yaml")
+        shell: Rscript {0}
+      - name: Check site structure
+        run: Rscript pkgdown/check-site.R
+
   site:
+    needs: check
     permissions:
       contents: write
     uses: giotto-suite/.github/.github/workflows/pkgdown-site.yaml@main

@@ -17,8 +17,9 @@
 #   Rscript pkgdown/convert-tutorial.R <source.Rmd> <rendered.html> <slug>
 #
 # Writes vignettes/<slug>.Rmd and vignettes/images/<slug>/NN_<chunk>.png, then
-# prints a report. Register the result in _pkgdown.yml under BOTH articles: and
-# navbar: -- missing the second fails the build.
+# prints a report. Register the result in _pkgdown.yml under articles: -- that
+# one is required, and pkgdown fails the build without it. A navbar: entry is
+# optional and only affects discoverability. Then run pkgdown/check-site.R.
 
 suppressPackageStartupMessages({
   library(magick)
@@ -245,5 +246,6 @@ if (anyNA(owner)) {
   }
 }
 if (length(params_chunk)) cat("  params:    surfaced as a visible `paths` chunk\n")
-cat("\n  Next: register in _pkgdown.yml under BOTH articles: and navbar:\n")
+cat("\n  Next: add the slug to a contents: list under articles: in _pkgdown.yml\n")
+cat("        (required), optionally a navbar: entry, then pkgdown/check-site.R\n")
 cat(sprintf("%s\n", strrep("-", 60)))
