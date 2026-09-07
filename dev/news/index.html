@@ -197,6 +197,11 @@
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="4.2.4" id="giotto-424-in-development">Giotto 4.2.4 (in development)<a class="anchor" aria-label="anchor" href="#giotto-424-in-development"></a></h2>
 <div class="section level3">
+<h3 id="enhancements-4-2-4">Enhancements<a class="anchor" aria-label="anchor" href="#enhancements-4-2-4"></a></h3>
+<ul><li>
+<code><a href="../reference/importXenium.html">importXenium()</a></code> / <code>importAtera()</code> path detection now recognizes zarr output (<code>.zarr.zip</code> archives and unzipped <code>.zarr</code> trees): <code>filetype</code> accepts <code>"zarr"</code> for transcripts / boundaries / cell_meta / expression, and detection falls back to zarr automatically when a slot’s requested filetype matches nothing but a zarr archive is present (zarr-only exports, e.g. Atera). Existing datasets detect exactly as before — parquet/csv/h5/mtx still win when present. Reading zarr requires the disk pathway (<code>GiottoDisk::importXeniumDisk()</code> / <code>importAteraDisk()</code>); the in-memory loaders now point there instead of a bare “not yet supported” stop.</li>
+</ul></div>
+<div class="section level3">
 <h3 id="bug-fixes-4-2-4">Bug fixes<a class="anchor" aria-label="anchor" href="#bug-fixes-4-2-4"></a></h3>
 <ul><li>
 <code><a href="../reference/createGiottoXeniumObject.html">createGiottoXeniumObject()</a></code> no longer errors on Xenium-format directories that ship no panel json; feature metadata is generated from the expression matrix when the panel is absent.</li>
@@ -225,7 +230,9 @@
 </ul></div>
 <div class="section level3">
 <h3 id="changes-4-2-4">Changes<a class="anchor" aria-label="anchor" href="#changes-4-2-4"></a></h3>
-<ul><li>gini <code>min_expr_gini_score</code> and <code>min_det_gini_score</code> renamed <code>min_expression</code> and <code>min_detection</code> — they gate mean expression and detection fraction, not the gini coefficients. Old names deprecated. <a href="https://github.com/drieslab/Giotto/pull/1238" class="external-link">#1238</a> by eryuluts</li>
+<ul><li>
+<code><a href="../reference/createGiottoXeniumObject.html">createGiottoXeniumObject()</a></code> reads <code>ome.tif</code> morphology images directly and no longer converts them through python, so no <code>tif_exports/</code> directory is written next to the data. A converted tif left by an earlier run is still used if present. JPEG-2000 images, which is what 10x actually ships, are read through a GDAL VRT rather than decoded up front.</li>
+<li>gini <code>min_expr_gini_score</code> and <code>min_det_gini_score</code> renamed <code>min_expression</code> and <code>min_detection</code> — they gate mean expression and detection fraction, not the gini coefficients. Old names deprecated. <a href="https://github.com/drieslab/Giotto/pull/1238" class="external-link">#1238</a> by eryuluts</li>
 </ul></div>
 <div class="section level3">
 <h3 id="new-4-2-4">New<a class="anchor" aria-label="anchor" href="#new-4-2-4"></a></h3>

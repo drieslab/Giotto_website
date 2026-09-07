@@ -423,7 +423,7 @@ Show what is available in different information slots.
 - [`showGiottoImageNames()`](https://giotto-suite.github.io/GiottoClass/reference/showGiottoImageNames.html)
   : showGiottoImageNames (from GiottoClass)
 - [`showGiottoInstructions()`](https://giotto-suite.github.io/GiottoClass/reference/showGiottoInstructions.html)
-  : deprecated (from GiottoClass)
+  : Show giotto instructions (from GiottoClass)
 - [`showGiottoNearestNetworks()`](https://giotto-suite.github.io/GiottoClass/reference/showGiottoNearestNetworks.html)
   : showGiottoNearestNetworks (from GiottoClass)
 - [`showGiottoSpatEnrichments()`](https://giotto-suite.github.io/GiottoClass/reference/showGiottoSpatEnrichments.html)

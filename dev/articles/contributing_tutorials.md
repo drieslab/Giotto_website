@@ -40,7 +40,7 @@ Create a new .Rmd (R markdown) file under the folder “vignettes”.
       %\VignetteEncoding{UTF-8}
     ---
 
-## 3 Set the R chuncks correctly
+## 3 Set the R chunks correctly
 
 Absolutely no `eval=TRUE` for example code. To save time when rendering
 the website, all chunks should not evaluate the code.
@@ -64,7 +64,25 @@ and default values in this
 
 Files should have a session info section at the end of the tutorial.
 
-## 6 Preview the document
+## 6 Already have a rendered tutorial?
+
+If your tutorial already exists as a normal, fully-evaluated `.Rmd` plus
+the `.html` you knitted from it, you do not have to convert it by hand:
+
+    Rscript pkgdown/convert-tutorial.R path/to/source.Rmd path/to/rendered.html your-slug
+
+It pulls the figures out of the rendered HTML and downsizes them, works
+out which chunk produced each one, switches every chunk to `eval=FALSE`,
+and inserts the
+[`knitr::include_graphics()`](https://rdrr.io/pkg/knitr/man/include_graphics.html)
+calls. The result is `vignettes/your-slug.Rmd` plus
+`vignettes/images/your-slug/`, ready for the registration step below.
+
+It refuses to run if the `.html` is older than the `.Rmd`, because a
+stale render silently pairs figures with code that no longer produced
+them. Re-knit and try again if that happens.
+
+## 7 Preview the document
 
 Knit the document to check if the vignette looks how you like, and that
 it actually knits properly.
@@ -73,38 +91,75 @@ Optionally, you can run
 [`pkgdown::build_site()`](https://pkgdown.r-lib.org/reference/build_site.html),
 but this may be hard to run locally.
 
-## 7 Register the tutorial in `_pkgdown.yml`
+## 8 Register the tutorial in `_pkgdown.yml`
 
-Add your tutorial in **two** places in `_pkgdown.yml`. Missing the
-second one fails the build.
+There are two places your tutorial can appear, and they are not equally
+important.
 
-**1. Under `articles:`** — find the section your tutorial belongs to and
-add the vignette name (the filename without `.Rmd`) to its `contents:`
-list:
+**1. Under `articles:` — required.** Find the section your tutorial
+belongs to and add the vignette name (the filename without `.Rmd`) to
+its `contents:` list:
 
     - title: Analysis
       contents:
       - hvf
       - YOUR_VIGNETTE_NAME
 
-**2. Under `navbar:`** — add a menu entry so people can find it, with
-`href` pointing at `articles/YOUR_VIGNETTE_NAME.html`:
+Without this, pkgdown fails the entire build with *“Vignettes missing
+from index”* and produces nothing.
+
+**2. Under `navbar:` — optional.** A menu entry makes the tutorial
+directly reachable from the top of the site:
 
           - text: A short, descriptive title
             href: articles/YOUR_VIGNETTE_NAME.html
+
+This is discoverability, not a build requirement. The navbar
+deliberately does not list everything — 43 of the current tutorials have
+no entry and are found through the [tutorial
+index](https://giottosuite.com/dev/articles/index.md) instead. Add one
+if your tutorial belongs in the analytical core; leave it out for more
+specialised material.
+
+One thing to be careful of: if you *rename* an `articles:` section, the
+navbar links into it will silently stop working. Each section’s `desc:`
+carries a `<span id="...">` anchor that navbar entries point at with
+`articles/index.html#anchor`.
 
 Because you are on the `dev` branch, this only affects the development
 site. The change reaches <https://giottosuite.com> when `dev` is merged
 into `suite`.
 
-## 8 Preview locally
+## 9 Check your work
+
+    Rscript pkgdown/check-site.R
+
+This takes about a second and needs no build. It reports an unregistered
+tutorial, a navbar link pointing at a file that does not exist, a broken
+section anchor, a missing `pkgdown: as_is: true` header, and any figure
+you referenced but did not commit. It also prints warnings, which are
+informational — the current tree has 19 of them.
+
+If you have a clone of the package beside this repository, it
+additionally checks that every documented function is listed under
+`reference:`, which is the other way a build can fail outright.
+
+## 10 Preview locally
 
     Rscript pkgdown/preview-sites.R --dev --quick
 
-This builds the site and opens it in a browser. `--quick` skips the
-other tutorials so it takes about a minute; drop it for a full build.
+This builds the site and opens it in a browser, running the checks above
+first. `--quick` skips the other tutorials so it takes about a minute;
+drop it to render yours.
 
-## 9 Push the changes to Github
+This repository holds website content only, so a preview also needs a
+clone of the package beside it:
+
+    git clone https://github.com/giotto-suite/Giotto ../Giotto
+
+or point at one you already have with `--pkg <path>`.
+
+## 11 Push the changes to Github
 
 Push your branch and open a Pull Request **against `dev`**.
 

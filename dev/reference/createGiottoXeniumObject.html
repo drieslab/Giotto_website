@@ -310,9 +310,8 @@ as a subcellular transcript detection (default = 20)</p></dd>
 
 <dt id="arg-load-images">load_images<a class="anchor" aria-label="anchor" href="#arg-load-images"></a></dt>
 <dd><p>Named list of filepaths to <code>.tif</code> images, usually the
-ones in the <code>morphology_focus</code> directory. These <code>ome.tif</code> images are not
-compatible and must be converted to <code>tif</code> using
-<code>[GiottoClass::to_simple_tif()]</code>.</p></dd>
+ones in the <code>morphology_focus</code> directory. <code>ome.tif</code> images are read
+directly, including the JPEG-2000 compressed ones Xenium ships.</p></dd>
 
 
 <dt id="arg-load-aligned-images">load_aligned_images<a class="anchor" aria-label="anchor" href="#arg-load-aligned-images"></a></dt>

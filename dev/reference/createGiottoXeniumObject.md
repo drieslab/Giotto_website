@@ -93,9 +93,8 @@ createGiottoXeniumObject(
 - load_images:
 
   Named list of filepaths to `.tif` images, usually the ones in the
-  `morphology_focus` directory. These `ome.tif` images are not
-  compatible and must be converted to `tif` using
-  `[GiottoClass::to_simple_tif()]`.
+  `morphology_focus` directory. `ome.tif` images are read directly,
+  including the JPEG-2000 compressed ones Xenium ships.
 
 - load_aligned_images:
 

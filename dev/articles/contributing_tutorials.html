@@ -281,9 +281,9 @@ vignette: &gt;
 ---</code></pre>
 </div>
 <div class="section level2" number="3">
-<h2 id="set-the-r-chuncks-correctly">
-<span class="header-section-number">3</span> Set the R chuncks
-correctly<a class="anchor" aria-label="anchor" href="#set-the-r-chuncks-correctly"></a>
+<h2 id="set-the-r-chunks-correctly">
+<span class="header-section-number">3</span> Set the R chunks
+correctly<a class="anchor" aria-label="anchor" href="#set-the-r-chunks-correctly"></a>
 </h2>
 <p>Absolutely no <code>eval=TRUE</code> for example code. To save time
 when rendering the website, all chunks should not evaluate the code.</p>
@@ -310,8 +310,29 @@ and default values in this <a href="https://docs.google.com/spreadsheets/d/1ciK9
 tutorial.</p>
 </div>
 <div class="section level2" number="6">
+<h2 id="already-have-a-rendered-tutorial">
+<span class="header-section-number">6</span> Already have a rendered
+tutorial?<a class="anchor" aria-label="anchor" href="#already-have-a-rendered-tutorial"></a>
+</h2>
+<p>If your tutorial already exists as a normal, fully-evaluated
+<code>.Rmd</code> plus the <code>.html</code> you knitted from it, you
+do not have to convert it by hand:</p>
+<pre><code>Rscript pkgdown/convert-tutorial.R path/to/source.Rmd path/to/rendered.html your-slug</code></pre>
+<p>It pulls the figures out of the rendered HTML and downsizes them,
+works out which chunk produced each one, switches every chunk to
+<code>eval=FALSE</code>, and inserts the
+<code><a href="https://rdrr.io/pkg/knitr/man/include_graphics.html" class="external-link">knitr::include_graphics()</a></code> calls. The result is
+<code>vignettes/your-slug.Rmd</code> plus
+<code>vignettes/images/your-slug/</code>, ready for the registration
+step below.</p>
+<p>It refuses to run if the <code>.html</code> is older than the
+<code>.Rmd</code>, because a stale render silently pairs figures with
+code that no longer produced them. Re-knit and try again if that
+happens.</p>
+</div>
+<div class="section level2" number="7">
 <h2 id="preview-the-document">
-<span class="header-section-number">6</span> Preview the
+<span class="header-section-number">7</span> Preview the
 document<a class="anchor" aria-label="anchor" href="#preview-the-document"></a>
 </h2>
 <p>Knit the document to check if the vignette looks how you like, and
@@ -319,41 +340,74 @@ that it actually knits properly.</p>
 <p>Optionally, you can run <code><a href="https://pkgdown.r-lib.org/reference/build_site.html" class="external-link">pkgdown::build_site()</a></code>, but this
 may be hard to run locally.</p>
 </div>
-<div class="section level2" number="7">
+<div class="section level2" number="8">
 <h2 id="register-the-tutorial-in-_pkgdown-yml">
-<span class="header-section-number">7</span> Register the tutorial
+<span class="header-section-number">8</span> Register the tutorial
 in <code>_pkgdown.yml</code><a class="anchor" aria-label="anchor" href="#register-the-tutorial-in-_pkgdown-yml"></a>
 </h2>
-<p>Add your tutorial in <strong>two</strong> places in
-<code>_pkgdown.yml</code>. Missing the second one fails the build.</p>
-<p><strong>1. Under <code>articles:</code></strong> — find the section
-your tutorial belongs to and add the vignette name (the filename without
-<code>.Rmd</code>) to its <code>contents:</code> list:</p>
+<p>There are two places your tutorial can appear, and they are not
+equally important.</p>
+<p><strong>1. Under <code>articles:</code> — required.</strong> Find the
+section your tutorial belongs to and add the vignette name (the filename
+without <code>.Rmd</code>) to its <code>contents:</code> list:</p>
 <pre><code><span><span class="op">-</span> <span class="va">title</span><span class="op">:</span> <span class="va">Analysis</span></span>
 <span>  <span class="va">contents</span><span class="op">:</span></span>
 <span>  <span class="op">-</span> <span class="va">hvf</span></span>
 <span>  <span class="op">-</span> <span class="va">YOUR_VIGNETTE_NAME</span></span></code></pre>
-<p><strong>2. Under <code>navbar:</code></strong> — add a menu entry so
-people can find it, with <code>href</code> pointing at
-<code>articles/YOUR_VIGNETTE_NAME.html</code>:</p>
+<p>Without this, pkgdown fails the entire build with <em>“Vignettes
+missing from index”</em> and produces nothing.</p>
+<p><strong>2. Under <code>navbar:</code> — optional.</strong> A menu
+entry makes the tutorial directly reachable from the top of the
+site:</p>
 <pre><code>      - text: A short, descriptive title
         href: articles/YOUR_VIGNETTE_NAME.html</code></pre>
+<p>This is discoverability, not a build requirement. The navbar
+deliberately does not list everything — 43 of the current tutorials have
+no entry and are found through the <a href="index.html">tutorial
+index</a> instead. Add one if your tutorial belongs in the analytical
+core; leave it out for more specialised material.</p>
+<p>One thing to be careful of: if you <em>rename</em> an
+<code>articles:</code> section, the navbar links into it will silently
+stop working. Each section’s <code>desc:</code> carries a
+<code>&lt;span id="..."&gt;</code> anchor that navbar entries point at
+with <code>articles/index.html#anchor</code>.</p>
 <p>Because you are on the <code>dev</code> branch, this only affects the
 development site. The change reaches <a href="https://giottosuite.com" class="uri">https://giottosuite.com</a> when <code>dev</code> is merged
 into <code>suite</code>.</p>
 </div>
-<div class="section level2" number="8">
+<div class="section level2" number="9">
+<h2 id="check-your-work">
+<span class="header-section-number">9</span> Check your work<a class="anchor" aria-label="anchor" href="#check-your-work"></a>
+</h2>
+<pre><code>Rscript pkgdown/check-site.R</code></pre>
+<p>This takes about a second and needs no build. It reports an
+unregistered tutorial, a navbar link pointing at a file that does not
+exist, a broken section anchor, a missing
+<code>pkgdown: as_is: true</code> header, and any figure you referenced
+but did not commit. It also prints warnings, which are informational —
+the current tree has 19 of them.</p>
+<p>If you have a clone of the package beside this repository, it
+additionally checks that every documented function is listed under
+<code>reference:</code>, which is the other way a build can fail
+outright.</p>
+</div>
+<div class="section level2" number="10">
 <h2 id="preview-locally">
-<span class="header-section-number">8</span> Preview locally<a class="anchor" aria-label="anchor" href="#preview-locally"></a>
+<span class="header-section-number">10</span> Preview locally<a class="anchor" aria-label="anchor" href="#preview-locally"></a>
 </h2>
 <pre><code>Rscript pkgdown/preview-sites.R --dev --quick</code></pre>
-<p>This builds the site and opens it in a browser. <code>--quick</code>
-skips the other tutorials so it takes about a minute; drop it for a full
-build.</p>
+<p>This builds the site and opens it in a browser, running the checks
+above first. <code>--quick</code> skips the other tutorials so it takes
+about a minute; drop it to render yours.</p>
+<p>This repository holds website content only, so a preview also needs a
+clone of the package beside it:</p>
+<pre><code>git clone https://github.com/giotto-suite/Giotto ../Giotto</code></pre>
+<p>or point at one you already have with
+<code>--pkg &lt;path&gt;</code>.</p>
 </div>
-<div class="section level2" number="9">
+<div class="section level2" number="11">
 <h2 id="push-the-changes-to-github">
-<span class="header-section-number">9</span> Push the changes to
+<span class="header-section-number">11</span> Push the changes to
 Github<a class="anchor" aria-label="anchor" href="#push-the-changes-to-github"></a>
 </h2>
 <p>Push your branch and open a Pull Request <strong>against

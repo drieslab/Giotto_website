@@ -2,6 +2,20 @@
 
 ## Giotto 4.2.4 (in development)
 
+### Enhancements
+
+- [`importXenium()`](https://giottosuite.com/dev/reference/importXenium.md)
+  / `importAtera()` path detection now recognizes zarr output
+  (`.zarr.zip` archives and unzipped `.zarr` trees): `filetype` accepts
+  `"zarr"` for transcripts / boundaries / cell_meta / expression, and
+  detection falls back to zarr automatically when a slot’s requested
+  filetype matches nothing but a zarr archive is present (zarr-only
+  exports, e.g. Atera). Existing datasets detect exactly as before —
+  parquet/csv/h5/mtx still win when present. Reading zarr requires the
+  disk pathway (`GiottoDisk::importXeniumDisk()` / `importAteraDisk()`);
+  the in-memory loaders now point there instead of a bare “not yet
+  supported” stop.
+
 ### Bug fixes
 
 - [`createGiottoXeniumObject()`](https://giottosuite.com/dev/reference/createGiottoXeniumObject.md)
@@ -121,6 +135,12 @@
 
 ### Changes
 
+- [`createGiottoXeniumObject()`](https://giottosuite.com/dev/reference/createGiottoXeniumObject.md)
+  reads `ome.tif` morphology images directly and no longer converts them
+  through python, so no `tif_exports/` directory is written next to the
+  data. A converted tif left by an earlier run is still used if present.
+  JPEG-2000 images, which is what 10x actually ships, are read through a
+  GDAL VRT rather than decoded up front.
 - gini `min_expr_gini_score` and `min_det_gini_score` renamed
   `min_expression` and `min_detection` — they gate mean expression and
   detection fraction, not the gini coefficients. Old names deprecated.

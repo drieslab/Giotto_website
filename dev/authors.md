@@ -16,7 +16,7 @@
 
 - **Edward Ruiz**. Author.
 
-- **Wen Wang**. Author.
+- **Wen Wang**. Author. [](https://orcid.org/0000-0003-4366-933X)
 
 - **Natalie Del Rossi**. Author.
 
